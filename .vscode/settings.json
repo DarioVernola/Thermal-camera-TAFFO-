@@ -1,0 +1,12 @@
+{
+    "files.associations": {
+        "*.lex": "lex",
+        "*.tcc": "cpp",
+        "string_view": "cpp",
+        "algorithm": "cpp",
+        "random": "cpp",
+        "limits": "cpp",
+        "numeric": "cpp",
+        "2015q3": "cpp"
+    }
+}
