@@ -78,7 +78,6 @@ int main(int argc, char *argv[])
     const int nx = 32, ny = 24;
 
     // Temperature is an array, the values of temperature are flattened
-    // Prova
     __attribute__((annotate("scalar(range(0, 256) final)"))) float temperature[nx*ny]  ; 
     
     //
