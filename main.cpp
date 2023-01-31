@@ -67,7 +67,8 @@ float max_f(float  __attribute__((annotate("scalar(range(0, 256) final)"))) a,  
 
 int main(int argc, char *argv[])
 {
-    paramsMLX90640 mlx90640;
+    //mlx90640
+    paramsMLX90640 __attribute__((annotate("struct[void, void, scalar(), scalar(), void, scalar(), void, scalar(),scalar(),scalar(),void,void,scalar(),scalar(), void, scalar(),void,scalar(),scalar(),scalar(), void, scalar(), void,void]"))) mlx90640;
     if (MLX90640_ExtractParameters(eeprom, &mlx90640))
         return 1;
     

@@ -344,7 +344,7 @@ int MLX90640_GetCurMode(uint8_t slaveAddr)
 
 //------------------------------------------------------------------------------
 
-void MLX90640_CalculateTo(const uint16_t *frameData, const paramsMLX90640 *params, float __attribute__((annotate("scalar()"))) emissivity , float __attribute__((annotate("scalar()"))) tr, float *result __attribute((annotate("scalar(range(0, 256) final)"))))
+void MLX90640_CalculateTo(const uint16_t *frameData, const paramsMLX90640 __attribute__((annotate("struct[void, void, scalar(), scalar(), void, scalar(), void, scalar(),scalar(),scalar(),void,void,scalar(),scalar(), void, scalar(),void,scalar(),scalar(),scalar(), void, scalar(), void,void]"))) *params, float __attribute__((annotate("scalar()"))) emissivity , float __attribute__((annotate("scalar()"))) tr, float *result __attribute((annotate("scalar(range(0, 256) final)"))))
 {
     __attribute__((annotate("scalar()"))) float vdd ; // Range not working (floating point exception)
     float  __attribute__((annotate("scalar()"))) ta ; // FP exception
@@ -593,7 +593,7 @@ float MLX90640_GetVdd(const uint16_t *frameData, const paramsMLX90640 *params)
 
 //------------------------------------------------------------------------------
 
-float MLX90640_GetTa(const uint16_t *frameData, const paramsMLX90640 *params)
+float MLX90640_GetTa(const uint16_t *frameData, const paramsMLX90640 __attribute__((annotate("struct[void, void, scalar(), scalar(), void, scalar(), void, scalar(),scalar(),scalar(),void,void,scalar(),scalar(), void, scalar(),void,scalar(),scalar(),scalar(), void, scalar(), void,void]"))) *params)
 {
     __attribute__((annotate("scalar()"))) float ptat;
     __attribute__((annotate("scalar()"))) float ptatArt;
