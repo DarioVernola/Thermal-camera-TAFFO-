@@ -477,20 +477,20 @@ void MLX90640_CalculateTo(const uint16_t *frameData, const paramsMLX90640 __attr
 
 //------------------------------------------------------------------------------
 
-void MLX90640_GetImage(const uint16_t *frameData, const paramsMLX90640 *params, float *result)
+void MLX90640_GetImage(const uint16_t *frameData, const paramsMLX90640 __attribute__((annotate("struct[void, void, scalar(), scalar(), void, scalar(), void, scalar(),scalar(),scalar(),void,void,scalar(),scalar(), void, scalar(),void,scalar(),scalar(),scalar(), void, scalar(), void,void]"))) *params, float  __attribute__((annotate("scalar()"))) *result)
 {
-    float vdd;
-    float ta;
-    float gain;
-    float irDataCP[2];
-    float irData;
-    float alphaCompensated;
+    float  __attribute__((annotate("scalar()"))) vdd;
+    float  __attribute__((annotate("scalar()"))) ta;
+    float  __attribute__((annotate("scalar()"))) gain;
+    float  __attribute__((annotate("scalar()"))) irDataCP[2];
+    float  __attribute__((annotate("scalar()"))) irData;
+    float  __attribute__((annotate("scalar()"))) alphaCompensated;
     uint8_t mode;
     int8_t ilPattern;
     int8_t chessPattern;
     int8_t pattern;
     int8_t conversionPattern;
-    float image;
+    float  __attribute__((annotate("scalar()")))image;
     uint16_t subPage;
     
     subPage = frameData[833];
@@ -572,7 +572,7 @@ void MLX90640_GetImage(const uint16_t *frameData, const paramsMLX90640 *params, 
 
 //------------------------------------------------------------------------------
 
-float MLX90640_GetVdd(const uint16_t *frameData, const paramsMLX90640 *params)
+float MLX90640_GetVdd(const uint16_t *frameData, const paramsMLX90640 __attribute__((annotate("struct[void, void, scalar(), scalar(), void, scalar(), void, scalar(),scalar(),scalar(),void,void,scalar(),scalar(), void, scalar(),void,scalar(),scalar(),scalar(), void, scalar(), void,void]"))) *params)
 {
     __attribute__((annotate("scalar()"))) float vdd;
     __attribute__((annotate("scalar()"))) float resolutionCorrection;
