@@ -13,7 +13,7 @@ void printPPM(FILE *fp, float __attribute__((annotate("scalar(range(0,256) final
 {
     fprintf(fp, "P3\n");
     fprintf(fp, "%d %d\n", nx, ny);
-    fprintf(fp, "255\n"); //cc
+    fprintf(fp, "255\n"); 
     
     // Nx : # of horizontal pixels
     // Ny : # of vertical pixels, this function iterates through such ranges to print the PPM
