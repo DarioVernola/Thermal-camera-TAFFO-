@@ -9,6 +9,9 @@
 
 using namespace std;
 
+
+paramsMLX90640 __attribute__((annotate("struct[void, void, scalar(), scalar(), void, scalar(), void, scalar(),scalar(),scalar(),void,void,scalar(),scalar(), void, scalar(),void,scalar(),scalar(),scalar(), void, scalar(), void,void]"))) mlx90640;
+
 void printPPM(FILE *fp, float __attribute__((annotate("scalar(range(0,256) final)")))temperature[] , int nx, int ny, float  __attribute__((annotate("scalar(range(0,256) final)"))) minVal, float __attribute__((annotate("scalar(range (15,256) final)"))) range)
 {
     fprintf(fp, "P3\n");
@@ -68,7 +71,7 @@ float max_f(float  __attribute__((annotate("scalar(range(0, 256) final)"))) a,  
 int main(int argc, char *argv[])
 {
     //mlx90640
-    paramsMLX90640 __attribute__((annotate("struct[void, void, scalar(), scalar(), void, scalar(), void, scalar(),scalar(),scalar(),void,void,scalar(),scalar(), void, scalar(),void,scalar(),scalar(),scalar(), void, scalar(), void,void]"))) mlx90640;
+   
     if (MLX90640_ExtractParameters(eeprom, &mlx90640))
         return 1;
     

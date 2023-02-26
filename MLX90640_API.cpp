@@ -636,16 +636,17 @@ void ExtractVDDParameters(const uint16_t *eeData, paramsMLX90640  __attribute__(
     int16_t kVdd;
     int16_t vdd25;
     
-    kVdd = eeData[51];
+    kVdd = eeData[51]; //  0x9f7b = 40827
     
+    // 40704 / 2^8 = 159
     kVdd = (eeData[51] & 0xFF00) >> 8;
     if(kVdd > 127)
     {
-        kVdd = kVdd - 256;
+        kVdd = kVdd - 256; // -97
     }
-    kVdd = 32 * kVdd;
-    vdd25 = eeData[51] & 0x00FF;
-    vdd25 = ((vdd25 - 256) << 5) - 8192;
+    kVdd = 32 * kVdd; // -3104
+    vdd25 = eeData[51] & 0x00FF; //123
+    vdd25 = ((vdd25 - 256) << 5) - 8192; //-12448
     
     mlx90640->kVdd = kVdd;
     mlx90640->vdd25 = vdd25; 
@@ -655,11 +656,13 @@ void ExtractVDDParameters(const uint16_t *eeData, paramsMLX90640  __attribute__(
 
 void ExtractPTATParameters(const uint16_t *eeData, paramsMLX90640  __attribute__((annotate("struct[void, void, scalar(), scalar(), void, scalar(), void, scalar(),scalar(),scalar(),void,void,scalar(),scalar(), void, scalar(),void,scalar(),scalar(),scalar(), void, scalar(), void,void]"))) *mlx90640)
 {
-    float __attribute__((annotate("scalar()"))) KvPTAT;
-    float __attribute__((annotate("scalar()"))) KtPTAT;
+    // eeprom values go from 0x0000 to 0xFFFF (65535) 
+    float __attribute__((annotate("scalar(range(-32,63))"))) KvPTAT; 
+    float __attribute__((annotate("scalar(range(-512,1023))"))) KtPTAT;
     int16_t vPTAT25;
-    float __attribute__((annotate("scalar()"))) alphaPTAT;
+    float __attribute__((annotate("scalar(range(8,11.75))"))) alphaPTAT;
     
+    // Considering 0xFFFF as the maximum, bitwise and with 0xFC00 shifted of 10 bits generates at most 63
     KvPTAT = (eeData[50] & 0xFC00) >> 10;
     if(KvPTAT > 31)
     {
@@ -690,7 +693,7 @@ void ExtractGainParameters(const uint16_t *eeData, paramsMLX90640 __attribute__(
 {
     int16_t gainEE;
     
-    gainEE = eeData[48];
+    gainEE = eeData[48]; // gain range(-1,32767)
     if(gainEE > 32767)
     {
         gainEE = gainEE -65536;
@@ -703,7 +706,7 @@ void ExtractGainParameters(const uint16_t *eeData, paramsMLX90640 __attribute__(
 
 void ExtractTgcParameters(const uint16_t *eeData, paramsMLX90640 __attribute__((annotate("struct[void, void, scalar(), scalar(), void, scalar(), void, scalar(),scalar(),scalar(),void,void,scalar(),scalar(), void, scalar(),void,scalar(),scalar(),scalar(), void, scalar(), void,void]"))) *mlx90640)
 {
-    float __attribute__((annotate("scalar()"))) tgc;
+    float __attribute__((annotate("scalar(range(-128,255))"))) tgc;
     tgc = eeData[60] & 0x00FF;
     if(tgc > 127)
     {
@@ -728,7 +731,7 @@ void ExtractResolutionParameters(const uint16_t *eeData, paramsMLX90640 __attrib
 
 void ExtractKsTaParameters(const uint16_t *eeData, paramsMLX90640 __attribute__((annotate("struct[void, void, scalar(), scalar(), void, scalar(), void, scalar(),scalar(),scalar(),void,void,scalar(),scalar(), void, scalar(),void,scalar(),scalar(),scalar(), void, scalar(), void,void]"))) *mlx90640)
 {
-    float __attribute__((annotate("scalar()"))) KsTa;
+    float __attribute__((annotate("scalar(range(-128,255) final)"))) KsTa;
     KsTa = (eeData[60] & 0xFF00) >> 8;
     if(KsTa > 127)
     {
@@ -1041,10 +1044,10 @@ void ExtractKvPixelParameters(const uint16_t *eeData, paramsMLX90640 __attribute
 
 void ExtractCPParameters(const uint16_t *eeData, paramsMLX90640 __attribute__((annotate("struct[void, void, scalar(), scalar(), void, scalar(), void, scalar(),scalar(),scalar(),void,void,scalar(),scalar(), void, scalar(),void,scalar(),scalar(),scalar(), void, scalar(), void,void]"))) *mlx90640)
 {
-    float __attribute__((annotate("scalar()"))) alphaSP[2];
+    float __attribute__((annotate("scalar(range(-512,1527))"))) alphaSP[2];
     int16_t offsetSP[2];
-    float __attribute__((annotate("scalar()"))) cpKv;
-    float __attribute__((annotate("scalar()"))) cpKta;
+    float __attribute__((annotate("scalar(range(-128,255))"))) cpKv;
+    float __attribute__((annotate("scalar(range(-128,255))"))) cpKta;
     uint8_t alphaScale;
     uint8_t ktaScale1;
     uint8_t kvScale;
@@ -1076,7 +1079,7 @@ void ExtractCPParameters(const uint16_t *eeData, paramsMLX90640 __attribute__((a
     {
         alphaSP[1] = alphaSP[1] - 64;
     }
-    alphaSP[1] = (1 + alphaSP[1]/128) * alphaSP[0];
+    alphaSP[1] = (1 + alphaSP[1]/128) * alphaSP[0]; // update upper bound
     
     cpKta = (eeData[59] & 0x00FF);
     if (cpKta > 127)
@@ -1104,27 +1107,27 @@ void ExtractCPParameters(const uint16_t *eeData, paramsMLX90640 __attribute__((a
 
 void ExtractCILCParameters(const uint16_t *eeData, paramsMLX90640 __attribute__((annotate("struct[void, void, scalar(), scalar(), void, scalar(), void, scalar(),scalar(),scalar(),void,void,scalar(),scalar(), void, scalar(),void,scalar(),scalar(),scalar(), void, scalar(), void,void]"))) *mlx90640)
 {
-    float __attribute__((annotate("scalar()"))) ilChessC[3];
+    float __attribute__((annotate("scalar(range(-32,63))"))) ilChessC[3];
     uint8_t calibrationModeEE;
     
     calibrationModeEE = (eeData[10] & 0x0800) >> 4;
     calibrationModeEE = calibrationModeEE ^ 0x80;
 
-    ilChessC[0] = (eeData[53] & 0x003F);
+    ilChessC[0] = (eeData[53] & 0x003F); // -32, 63
     if (ilChessC[0] > 31)
     {
         ilChessC[0] = ilChessC[0] - 64;
     }
     ilChessC[0] = ilChessC[0] / 16.0f;
     
-    ilChessC[1] = (eeData[53] & 0x07C0) >> 6;
+    ilChessC[1] = (eeData[53] & 0x07C0) >> 6; // -16,31
     if (ilChessC[1] > 15)
     {
         ilChessC[1] = ilChessC[1] - 32;
     }
     ilChessC[1] = ilChessC[1] / 2.0f;
     
-    ilChessC[2] = (eeData[53] & 0xF800) >> 11;
+    ilChessC[2] = (eeData[53] & 0xF800) >> 11; // -16,31
     if (ilChessC[2] > 15)
     {
         ilChessC[2] = ilChessC[2] - 32;
@@ -1139,7 +1142,7 @@ void ExtractCILCParameters(const uint16_t *eeData, paramsMLX90640 __attribute__(
 
 //------------------------------------------------------------------------------
 
-int ExtractDeviatingPixels(const uint16_t *eeData, paramsMLX90640 __attribute__((annotate("struct[void, void, scalar(), scalar(), void, scalar(), void, scalar(),scalar(),scalar(),void,void,scalar(),scalar(), void, scalar(),void,scalar(),scalar(),scalar(), void, scalar(), void,void]"))) *mlx90640)
+int ExtractDeviatingPixels(const uint16_t *eeData, paramsMLX90640 __attribute__((annotate("struct[void, void, scalar(range(-32,63)), scalar(), void, scalar(), void, scalar(),scalar(),scalar(),void,void,scalar(),scalar(), void, scalar(),void,scalar(),scalar(),scalar(), void, scalar(), void,void]"))) *mlx90640)
 {
     uint16_t pixCnt = 0;
     uint16_t brokenPixCnt = 0;
