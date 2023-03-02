@@ -12,6 +12,25 @@ using namespace std;
 
 paramsMLX90640 __attribute__((annotate("struct[void, void, scalar(), scalar(), void, scalar(), void, scalar(),scalar(),scalar(),void,void,scalar(),scalar(), void, scalar(),void,scalar(),scalar(),scalar(), void, scalar(), void,void]"))) mlx90640;
 
+// Substituting the bugged min and max functions
+// Max and min are always calculated over temperature array values, which range from 0 to 256
+float min_f(float  __attribute__((annotate("scalar(range(0, 256) final)"))) a,  __attribute__((annotate("scalar(range(0, 256) final)"))) float b)
+{
+    if(a < b)
+        return a;
+    else
+        return b;
+}
+
+float max_f(float  __attribute__((annotate("scalar(range(0, 256) final)"))) a,  __attribute__((annotate("scalar(range(0, 256) final)"))) float b)
+{
+    if(a > b)
+        return a;
+    else
+        return b;
+}
+
+
 void printPPM(FILE *fp, float __attribute__((annotate("scalar(range(0,256) final)")))temperature[] , int nx, int ny, float  __attribute__((annotate("scalar(range(0,256) final)"))) minVal, float __attribute__((annotate("scalar(range (15,256) final)"))) range)
 {
     fprintf(fp, "P3\n");
@@ -24,8 +43,8 @@ void printPPM(FILE *fp, float __attribute__((annotate("scalar(range(0,256) final
     // Pixel : normalizes the value of the pixel temperature 
     for (int y = 0; y < ny; y++) {
         for (int x = 0; x < nx; x++) {
-            float  __attribute__((annotate("scalar(range(0, 256) final)"))) t = temperature[(nx - 1 - x) + y * nx];
-            float  __attribute__((annotate("scalar(range(0, 128.0) final)"))) pixel = ((t - minVal) / range);
+            float  __attribute__((annotate("scalar()"))) t = temperature[(nx - 1 - x) + y * nx];
+            float  __attribute__((annotate("scalar()"))) pixel = ((t - minVal) / range);
 
             
             // Value of the pixels is decided using ternary operators, depending on the temperature value the pixel is normalized
@@ -50,24 +69,6 @@ void printPPM(FILE *fp, float __attribute__((annotate("scalar(range(0,256) final
 }
 
 
-// Substituting the bugged min and max functions
-// Max and min are always calculated over temperature array values, which range from 0 to 256
-float min_f(float  __attribute__((annotate("scalar(range(0, 256) final)"))) a,  __attribute__((annotate("scalar(range(0, 256) final)"))) float b)
-{
-    if(a < b)
-        return a;
-    else
-        return b;
-}
-
-float max_f(float  __attribute__((annotate("scalar(range(0, 256) final)"))) a,  __attribute__((annotate("scalar(range(0, 256) final)"))) float b)
-{
-    if(a > b)
-        return a;
-    else
-        return b;
-}
-
 int main(int argc, char *argv[])
 {
     //mlx90640
@@ -84,10 +85,10 @@ int main(int argc, char *argv[])
     // Temperature is an array, the values of temperature are flattened
     __attribute__((annotate("scalar(range(0, 256) final)"))) float temperature[nx*ny]  ; 
     
-    //
-    float __attribute__((annotate("scalar(range(0,16) final)"))) Ta = MLX90640_GetTa(subframe1, &mlx90640);
-    // Range of tr should go from -8 to 8 but it won't work
-    float __attribute__((annotate("scalar()"))) tr = Ta - ta_shift;
+    
+    float __attribute__((annotate("scalar(range(-99,999))"))) Ta = MLX90640_GetTa(subframe1, &mlx90640); // Ambient temperature
+    
+    float __attribute__((annotate("scalar()"))) tr = Ta - ta_shift; // No need to annotate
     MLX90640_CalculateTo(subframe1, &mlx90640, emissivity, tr, temperature);
     
     Ta = MLX90640_GetTa(subframe2, &mlx90640);
@@ -95,7 +96,7 @@ int main(int argc, char *argv[])
 
     MLX90640_CalculateTo(subframe2, &mlx90640, emissivity, tr, temperature);
     
-     __attribute__((annotate("scalar(range(0,256) final)"))) float  minVal = temperature[0], maxVal = temperature[0];
+     __attribute__((annotate("scalar()"))) float  minVal = temperature[0], maxVal = temperature[0];
     for(int i = 1; i < nx * ny; i++) {
        minVal = min_f(minVal, temperature[i]);
        maxVal = max_f(maxVal, temperature[i]);
