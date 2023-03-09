@@ -185,8 +185,9 @@ int MLX90640_GetFrameData(uint8_t slaveAddr, uint16_t *frameData)
 
 int MLX90640_ExtractParameters(const uint16_t *eeData, paramsMLX90640  __attribute__((annotate("struct[void, void, scalar(), scalar(), void, scalar(), void, scalar(),scalar(),scalar(),void,void,scalar(),scalar(), void, scalar(),void,scalar(),scalar(),scalar(), void, scalar(), void,void]"))) *mlx90640)
 {
+   
     int error = CheckEEPROMValid(eeData);
-    
+   
     if(error == 0)
     {
         ExtractVDDParameters(eeData, mlx90640);
@@ -346,28 +347,33 @@ int MLX90640_GetCurMode(uint8_t slaveAddr)
 
 void MLX90640_CalculateTo(const uint16_t *frameData, const paramsMLX90640 __attribute__((annotate("struct[void, void, scalar(), scalar(), void, scalar(), void, scalar(),scalar(),scalar(),void,void,scalar(),scalar(), void, scalar(),void,scalar(),scalar(),scalar(), void, scalar(), void,void]"))) *params, float __attribute__((annotate("scalar()"))) emissivity , float __attribute__((annotate("scalar()"))) tr, float *result __attribute((annotate("scalar(range(0, 256) final)"))))
 {
-    __attribute__((annotate("scalar()"))) float vdd ; // Range not working (floating point exception)
+    
+    float  __attribute__((annotate("scalar(range(-32767,32767))"))) vdd ; // Range not working (floating point exception)
     float  __attribute__((annotate("scalar()"))) ta ; // FP exception
     float  __attribute__((annotate("scalar()"))) ta4 ; // ta dependent
     float  __attribute__((annotate("scalar()"))) tr4; // ta
-    float __attribute__((annotate("scalar()"))) taTr ;
-    float __attribute__((annotate("scalar()"))) gain ;
-    float __attribute__((annotate("scalar()"))) irDataCP[2] ; // ta dependent
-    float __attribute__((annotate("scalar()"))) irData;
-    float __attribute__((annotate("scalar()"))) alphaCompensated;
+    float  __attribute__((annotate("scalar()"))) taTr;
+    float  __attribute__((annotate("scalar()"))) gain; // Too big of a error
+    float  __attribute__((annotate("scalar()"))) irDataCP[2]; // ta dependent
+    float  irData;
+    float  alphaCompensated;
     uint8_t mode;
     int8_t ilPattern;
     int8_t chessPattern;
     int8_t pattern;
     int8_t conversionPattern;
-    float __attribute__((annotate("scalar()")))  Sx ;
-    float __attribute((annotate("scalar()"))) To;
-    float __attribute__((annotate("scalar()"))) alphaCorrR[4];
+    float  Sx ;
+    float __attribute__((annotate("scalar()"))) To;
+    float __attribute__((annotate("scalar()")))  alphaCorrR[4];
     int8_t range;
     uint16_t subPage;
+
+
+   
     
     subPage = frameData[833];
     vdd = MLX90640_GetVdd(frameData, params);
+    
     ta = MLX90640_GetTa(frameData, params);
     ta4 = pow((ta + 273.15), (double)4);
     tr4 = pow((tr + 273.15), (double)4);
@@ -409,9 +415,10 @@ void MLX90640_CalculateTo(const uint16_t *frameData, const paramsMLX90640 __attr
     {
       irDataCP[1] = irDataCP[1] - (params->cpOffset[1] + params->ilChessC[0]) * (1 + params->cpKta * (ta - 25)) * (1 + params->cpKv * (vdd - 3.3));
     }
-
+     
     for( int pixelNumber = 0; pixelNumber < 768; pixelNumber++)
     {
+        
         ilPattern = pixelNumber / 32 - (pixelNumber / 64) * 2; 
         chessPattern = ilPattern ^ (pixelNumber - (pixelNumber/2)*2); 
         conversionPattern = ((pixelNumber + 2) / 4 - (pixelNumber + 3) / 4 + (pixelNumber + 1) / 4 - pixelNumber / 4) * (1 - 2 * ilPattern);
@@ -448,9 +455,25 @@ void MLX90640_CalculateTo(const uint16_t *frameData, const paramsMLX90640 __attr
             
             Sx = pow((double)alphaCompensated, (double)3) * (irData + alphaCompensated * taTr);
             Sx = sqrt(sqrt(Sx)) * params->ksTo[1];
-            
-            To = sqrt(sqrt(irData/(alphaCompensated * (1 - params->ksTo[1] * 273.15) + Sx) + taTr)) - 273.15;
-                    
+            printf("irData %f\n",irData);
+            printf("alpha %d\n",alphaCompensated);
+            printf("Sx %d\n",Sx);
+            // To = sqrt(sqrt(irData/(alphaCompensated * (1 - params->ksTo[1] * 273.15) + Sx) + taTr)) - 273.15; // <--- THIS ONE
+            // --- To Decomposition ---
+            float  t1 = params->ksTo[1] * 273.15;
+            printf("t1 %f\n",t1);
+            float  t2 = 1 - t1;
+            printf("t2 %f\n",t2);
+            float  t3 = alphaCompensated * t2;
+            printf("t3 %f\n",t3);
+            float  t4 = t3 + Sx;
+            printf("t4 %f\n",t4);
+            float  t5 = irData / t4;
+            printf("t5 %f\n",t5);
+            float  t6 = t5 + taTr;
+            printf("t6 %f\n",t6);
+            float To = sqrt(sqrt(t6)) - 273.15;
+            printf("To %f\n", To);     
             if(To < params->ct[1])
             {
                 range = 0;
@@ -467,20 +490,39 @@ void MLX90640_CalculateTo(const uint16_t *frameData, const paramsMLX90640 __attr
             {
                 range = 3;            
             }      
+            printf("To %f\n", To);
             
-            To = sqrt(sqrt(irData / (alphaCompensated * alphaCorrR[range] * (1 + params->ksTo[range] * (To - params->ct[range]))) + taTr)) - 273.15;
+            //To = sqrt(sqrt(irData / (alphaCompensated * alphaCorrR[range] * (1 + params->ksTo[range] * (To - params->ct[range]))) + taTr)) - 273.15;
             
+            // --- To decomposition ---
+            float __attribute__((annotate("scalar()"))) t8 = To - params->ct[range];
+            printf("t8 %f\n",t8);
+            float __attribute__((annotate("scalar()"))) t9 = params->ksTo[range]*t8;
+            printf("t9 %f\n",t9);
+            float __attribute__((annotate("scalar()"))) t10 = 1 + t9;
+            printf("t10 %f\n",t10);
+            float __attribute__((annotate("scalar()"))) t11 = alphaCompensated * alphaCorrR[range];
+            printf("t11 %f\n",t11);
+            float   t12 = t11*t10;
+            printf("t12 %f\n",t12);
+            float  t13 = irData/t12;
+            printf("t13 %f\n",t13);
+            float t14 = t13 + taTr;
+            printf("t14 %f\n",t14);
+            To = sqrt(sqrt(t14)) - 273.15;
+            printf("To %f\n", To);
             result[pixelNumber] = To;
         }
     }
+    printf("vdd %f\n", vdd);
 }
 
 //------------------------------------------------------------------------------
 
 void MLX90640_GetImage(const uint16_t *frameData, const paramsMLX90640 __attribute__((annotate("struct[void, void, scalar(), scalar(), void, scalar(), void, scalar(),scalar(),scalar(),void,void,scalar(),scalar(), void, scalar(),void,scalar(),scalar(),scalar(), void, scalar(), void,void]"))) *params, float  __attribute__((annotate("scalar()"))) *result)
 {
-    float  __attribute__((annotate("scalar(range(1.32, 65543))"))) vdd;
-    float  __attribute__((annotate("scalar(range(0,16))"))) ta; // check
+    float  __attribute__((annotate("scalar(range(-65535, 65543))"))) vdd; //min 1.32
+    float  __attribute__((annotate("scalar()"))) ta; // check
     float  __attribute__((annotate("scalar()"))) gain;
     float  __attribute__((annotate("scalar()"))) irDataCP[2];
     float  __attribute__((annotate("scalar()"))) irData;
@@ -574,6 +616,7 @@ void MLX90640_GetImage(const uint16_t *frameData, const paramsMLX90640 __attribu
 
 float MLX90640_GetVdd(const uint16_t *frameData, const paramsMLX90640 __attribute__((annotate("struct[void, void, scalar(), scalar(), void, scalar(), void, scalar(),scalar(),scalar(),void,void,scalar(),scalar(), void, scalar(),void,scalar(),scalar(),scalar(), void, scalar(), void,void]"))) *params)
 {
+    
     __attribute__((annotate("scalar(range(-32768,65535))"))) float vdd;
     __attribute__((annotate("scalar(range(0.125,4096))"))) float resolutionCorrection;
 
@@ -586,8 +629,9 @@ float MLX90640_GetVdd(const uint16_t *frameData, const paramsMLX90640 __attribut
     }
     resolutionRAM = (frameData[832] & 0x0C00) >> 10; // max 3, min 0
     resolutionCorrection = pow(2, (double)params->resolutionEE) / pow(2, (double)resolutionRAM); // min 1/2^8, max 2^12
+    // printf("resolutionRAM: %d\n", resolutionRAM);
     vdd = (resolutionCorrection * vdd - params->vdd25) / params->kVdd + 3.3; // max 65.543 min 1.32
-    
+    // printf("kVdd: %d\n", params->kVdd);
     return vdd;
 }
 
@@ -617,7 +661,13 @@ float MLX90640_GetTa(const uint16_t *frameData, const paramsMLX90640 __attribute
     
     ta = (ptatArt / (1 + params->KvPTAT * (vdd - 3.3)) - params->vPTAT25); // kvptat range(-0.0078,0.0154)
     ta = ta / params->KtPTAT + 25; // how? 
-    
+    /*
+    printf("KvPTAT: %f\n", params->KvPTAT);
+    printf("KtPTAT: %f\n", params->KtPTAT);
+    printf("vdd: %f\n", vdd);
+    printf("ta: %f\n", ta);
+    */
+
     return ta;
 }
 

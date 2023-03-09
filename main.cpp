@@ -72,23 +72,26 @@ void printPPM(FILE *fp, float __attribute__((annotate("scalar(range(0,256) final
 int main(int argc, char *argv[])
 {
     //mlx90640
-   
+    
     if (MLX90640_ExtractParameters(eeprom, &mlx90640))
         return 1;
+    
     
     const float ta_shift  __attribute((annotate("scalar()")))= 8.f; //Default shift for MLX90640 in open air
     const float emissivity  __attribute((annotate("scalar()"))) = 0.95f;
     const float minRange  __attribute((annotate("scalar()"))) = 15.f;
-    
+    //lol
     const int nx = 32, ny = 24;
 
     // Temperature is an array, the values of temperature are flattened
     __attribute__((annotate("scalar(range(0, 256) final)"))) float temperature[nx*ny]  ; 
     
-    
+   
     float __attribute__((annotate("scalar(range(-99,999))"))) Ta = MLX90640_GetTa(subframe1, &mlx90640); // Ambient temperature
     
     float __attribute__((annotate("scalar()"))) tr = Ta - ta_shift; // No need to annotate
+
+    
     MLX90640_CalculateTo(subframe1, &mlx90640, emissivity, tr, temperature);
     
     Ta = MLX90640_GetTa(subframe2, &mlx90640);
