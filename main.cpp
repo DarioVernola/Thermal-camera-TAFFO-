@@ -14,7 +14,7 @@ paramsMLX90640 __attribute__((annotate("struct[void, void, scalar(), scalar(), v
 
 // Substituting the bugged min and max functions
 // Max and min are always calculated over temperature array values, which range from 0 to 256
-float min_f(float  __attribute__((annotate("scalar(range(0, 256) final)"))) a,  __attribute__((annotate("scalar(range(0, 256) final)"))) float b)
+float min_f(float  __attribute__((annotate("scalar(range(-99,999) final)"))) a,  __attribute__((annotate("scalar(range(-99,999) final)"))) float b)
 {
     if(a < b)
         return a;
@@ -22,7 +22,7 @@ float min_f(float  __attribute__((annotate("scalar(range(0, 256) final)"))) a,  
         return b;
 }
 
-float max_f(float  __attribute__((annotate("scalar(range(0, 256) final)"))) a,  __attribute__((annotate("scalar(range(0, 256) final)"))) float b)
+float max_f(float  __attribute__((annotate("scalar(range(-99,999) final)"))) a,  __attribute__((annotate("scalar(range(-99,999) final)"))) float b)
 {
     if(a > b)
         return a;
@@ -31,7 +31,7 @@ float max_f(float  __attribute__((annotate("scalar(range(0, 256) final)"))) a,  
 }
 
 
-void printPPM(FILE *fp, float __attribute__((annotate("scalar(range(0,256) final)")))temperature[] , int nx, int ny, float  __attribute__((annotate("scalar(range(0,256) final)"))) minVal, float __attribute__((annotate("scalar(range (15,256) final)"))) range)
+void printPPM(FILE *fp, float __attribute__((annotate("scalar(range(-99,999) final)")))temperature[] , int nx, int ny, float  __attribute__((annotate("scalar(range(0,256) final)"))) minVal, float __attribute__((annotate("scalar(range (15,256) final)"))) range)
 {
     fprintf(fp, "P3\n");
     fprintf(fp, "%d %d\n", nx, ny);
@@ -84,13 +84,15 @@ int main(int argc, char *argv[])
     const int nx = 32, ny = 24;
 
     // Temperature is an array, the values of temperature are flattened
-    __attribute__((annotate("scalar(range(0, 256) final)"))) float temperature[nx*ny]  ; 
+    float __attribute__((annotate("scalar(range(-99,999) final)"))) temperature[nx*ny]  ; 
     
    
-    float __attribute__((annotate("scalar(range(-99,999))"))) Ta = MLX90640_GetTa(subframe1, &mlx90640); // Ambient temperature
+    float __attribute__((annotate("scalar(range(-32767,32767))"))) Ta = MLX90640_GetTa(subframe1, &mlx90640); // Ambient temperature
     
     float __attribute__((annotate("scalar()"))) tr = Ta - ta_shift; // No need to annotate
 
+    printf("TaMain = %.10f\n",Ta);
+    printf("TrMain = %.10f\n",tr);
     
     MLX90640_CalculateTo(subframe1, &mlx90640, emissivity, tr, temperature);
     
@@ -98,13 +100,15 @@ int main(int argc, char *argv[])
     tr = Ta - ta_shift;
 
     MLX90640_CalculateTo(subframe2, &mlx90640, emissivity, tr, temperature);
-    
+    printf("TaMain = %.10f\n",Ta);
+    printf("TrMain = %.10f\n",tr);
      __attribute__((annotate("scalar()"))) float  minVal = temperature[0], maxVal = temperature[0];
     for(int i = 1; i < nx * ny; i++) {
        minVal = min_f(minVal, temperature[i]);
        maxVal = max_f(maxVal, temperature[i]);
+       printf("temp[%d] = %.10f\n", i, temperature[i]);
     }
-    float  __attribute__((annotate("scalar(range (15,256) final)"))) range = max_f(minRange, maxVal - minVal);
+    float  __attribute__((annotate("scalar(range (-99,999) final)"))) range = max_f(minRange, maxVal - minVal);
    
     FILE *fp = fopen("thermalmap.ppm", "w");
     if (fp == NULL)
@@ -115,5 +119,6 @@ int main(int argc, char *argv[])
     fprintf(stderr, "min = %d max = %d\n",
            static_cast<int>(minVal),
            static_cast<int>(maxVal));
+           
     return 0;
 }
