@@ -24,20 +24,20 @@
 #define iprintf printf
 #endif
 
-void ExtractVDDParameters(const uint16_t *eeData, paramsMLX90640 *mlx90640);
-void ExtractPTATParameters(const uint16_t *eeData, paramsMLX90640 *mlx90640);
-void ExtractGainParameters(const uint16_t *eeData, paramsMLX90640 *mlx90640);
-void ExtractTgcParameters(const uint16_t *eeData, paramsMLX90640 *mlx90640);
-void ExtractResolutionParameters(const uint16_t *eeData, paramsMLX90640 *mlx90640);
-void ExtractKsTaParameters(const uint16_t *eeData, paramsMLX90640 *mlx90640);
-void ExtractKsToParameters(const uint16_t *eeData, paramsMLX90640 *mlx90640);
-void ExtractAlphaParameters(const uint16_t *eeData, paramsMLX90640 *mlx90640);
-void ExtractOffsetParameters(const uint16_t *eeData, paramsMLX90640 *mlx90640);
-void ExtractKtaPixelParameters(const uint16_t *eeData, paramsMLX90640 *mlx90640);
-void ExtractKvPixelParameters(const uint16_t *eeData, paramsMLX90640 *mlx90640);
-void ExtractCPParameters(const uint16_t *eeData, paramsMLX90640 *mlx90640);
-void ExtractCILCParameters(const uint16_t *eeData, paramsMLX90640 *mlx90640);
-int ExtractDeviatingPixels(const uint16_t *eeData, paramsMLX90640 *mlx90640);
+void ExtractVDDParameters(const uint16_t *eeData);
+void ExtractPTATParameters(const uint16_t *eeData);
+void ExtractGainParameters(const uint16_t *eeData);
+void ExtractTgcParameters(const uint16_t *eeData);
+void ExtractResolutionParameters(const uint16_t *eeData);
+void ExtractKsTaParameters(const uint16_t *eeData);
+void ExtractKsToParameters(const uint16_t *eeData);
+void ExtractAlphaParameters(const uint16_t *eeData);
+void ExtractOffsetParameters(const uint16_t *eeData);
+void ExtractKtaPixelParameters(const uint16_t *eeData);
+void ExtractKvPixelParameters(const uint16_t *eeData);
+void ExtractCPParameters(const uint16_t *eeData);
+void ExtractCILCParameters(const uint16_t *eeData);
+int ExtractDeviatingPixels(const uint16_t *eeData);
 int CheckAdjacentPixels(uint16_t pix1, uint16_t pix2);
 int CheckEEPROMValid(const uint16_t *eeData);  
 
@@ -183,27 +183,27 @@ int MLX90640_GetFrameData(uint8_t slaveAddr, uint16_t *frameData)
 //     return frameData[833];
 }
 
-int MLX90640_ExtractParameters(const uint16_t *eeData, paramsMLX90640  __attribute__((annotate("struct[void, void, scalar(), scalar(), void, scalar(), void, scalar(),scalar(),scalar(),void,void,scalar(),scalar(), void, scalar(),void,scalar(),scalar(),scalar(), void, scalar(), void,void]"))) *mlx90640)
+int MLX90640_ExtractParameters(const uint16_t *eeData)
 {
    
     int error = CheckEEPROMValid(eeData);
    
     if(error == 0)
     {
-        ExtractVDDParameters(eeData, mlx90640);
-        ExtractPTATParameters(eeData, mlx90640);
-        ExtractGainParameters(eeData, mlx90640);
-        ExtractTgcParameters(eeData, mlx90640);
-        ExtractResolutionParameters(eeData, mlx90640);
-        ExtractKsTaParameters(eeData, mlx90640);
-        ExtractKsToParameters(eeData, mlx90640);
-        ExtractAlphaParameters(eeData, mlx90640);
-        ExtractOffsetParameters(eeData, mlx90640);
-        ExtractKtaPixelParameters(eeData, mlx90640);
-        ExtractKvPixelParameters(eeData, mlx90640);
-        ExtractCPParameters(eeData, mlx90640);
-        ExtractCILCParameters(eeData, mlx90640);
-        error = ExtractDeviatingPixels(eeData, mlx90640);  
+        ExtractVDDParameters(eeData);
+        ExtractPTATParameters(eeData);
+        ExtractGainParameters(eeData);
+        ExtractTgcParameters(eeData);
+        ExtractResolutionParameters(eeData);
+        ExtractKsTaParameters(eeData);
+        ExtractKsToParameters(eeData);
+        ExtractAlphaParameters(eeData);
+        ExtractOffsetParameters(eeData);
+        ExtractKtaPixelParameters(eeData);
+        ExtractKvPixelParameters(eeData);
+        ExtractCPParameters(eeData);
+        ExtractCILCParameters(eeData);
+        error = ExtractDeviatingPixels(eeData);  
     }
     
     return error;
@@ -345,12 +345,12 @@ int MLX90640_GetCurMode(uint8_t slaveAddr)
 
 //------------------------------------------------------------------------------
 
-void MLX90640_CalculateTo(const uint16_t *frameData, const paramsMLX90640 __attribute__((annotate("struct[void, void, scalar(), scalar(), void, scalar(), void, scalar(),scalar(),scalar(),void,void,scalar(),scalar(), void, scalar(),void,scalar(),scalar(),scalar(), void, scalar(), void,void]"))) *params, float __attribute__((annotate("scalar()"))) emissivity , float __attribute__((annotate("scalar()"))) tr, float *result __attribute((annotate("scalar(range(-99, 999) final)"))))
+void MLX90640_CalculateTo(const uint16_t *frameData, float __attribute__((annotate("scalar()"))) emissivity , float __attribute__((annotate("scalar()"))) tr, float *result __attribute((annotate("scalar(range(-99, 999) final)"))))
 {
     
     float  __attribute__((annotate("scalar(range(-32767,32767))"))) vdd ; // Range not working (floating point exception)
     float  __attribute__((annotate("scalar(range(-32767,32767))"))) ta ; // FP exception
-    float  __attribute__((annotate("scalar(range(0, 8000000000) final)"))) ta4 ; // ta dependent
+    float  __attribute__((annotate("scalar(range(-80000000000, 80000000000) final)"))) ta4 ; // ta dependent
     float  __attribute__((annotate("scalar()"))) tr4; // ta
     float  __attribute__((annotate("scalar()"))) taTr;
     float  __attribute__((annotate("scalar()"))) gain; // Too big of a error
@@ -372,28 +372,30 @@ void MLX90640_CalculateTo(const uint16_t *frameData, const paramsMLX90640 __attr
    
     
     subPage = frameData[833];
-    vdd = MLX90640_GetVdd(frameData, params);
+    vdd = MLX90640_GetVdd(frameData);
     
-    ta = MLX90640_GetTa(frameData, params);
+    ta = MLX90640_GetTa(frameData);
     printf("taTO %.10f\n",ta);
     printf("trTO %.10f\n",tr);
-    ta4 = pow((ta + 273.15), (double)4);
+    __attribute__((annotate("scalar(range(-80000000000, 80000000000) final)"))) float ta_kelvin = ta + 273.15;
+    printf("taTO Kelvin %.10f\n",ta_kelvin);
+    ta4 = ta_kelvin*ta_kelvin*ta_kelvin*ta_kelvin;
     printf("ta4 %.10f\n",ta4);
-    tr4 = pow((tr + 273.15), (double)4);
+    tr4 = (tr + 273.15)*(tr + 273.15)*(tr + 273.15)*(tr + 273.15);
     printf("tr4 %.10f\n",tr4);
     // taTr decomposition
     float taTr1 = tr4 - ta4;
-    printf("taTr1 %.10f\n",taTr);
+    printf("taTr1 %e\n",taTr1);
     float taTr2 = taTr1 / emissivity;
-    printf("taTr2 %.10f\n",taTr2);
+    printf("taTr2 %.10f (emissivity=%.10f)\n",taTr2, emissivity);
     taTr = tr4 - taTr2;
     printf("taTr %.10f\n",taTr);
     // taTr = tr4 - (tr4-ta4)/emissivity;
     
-    alphaCorrR[0] = 1 / (1 + params->ksTo[0] * 40);
+    alphaCorrR[0] = 1 / (1 + params_ksTo[0] * 40);
     alphaCorrR[1] = 1 ;
-    alphaCorrR[2] = (1 + params->ksTo[2] * params->ct[2]);
-    alphaCorrR[3] = alphaCorrR[2] * (1 + params->ksTo[3] * (params->ct[3] - params->ct[2]));
+    alphaCorrR[2] = (1 + params_ksTo[2] * params_ct[2]);
+    alphaCorrR[3] = alphaCorrR[2] * (1 + params_ksTo[3] * (params_ct[3] - params_ct[2]));
      
 //------------------------- Gain calculation -----------------------------------    
     gain = frameData[778]; // min -32768 max 65535
@@ -402,7 +404,7 @@ void MLX90640_CalculateTo(const uint16_t *frameData, const paramsMLX90640 __attr
         gain = gain - 65536;
     }
     
-    gain = params->gainEE / gain;  // min -1 max 32767 
+    gain = params_gainEE / gain;  // min -1 max 32767 
   
 //------------------------- To calculation -------------------------------------    
     mode = (frameData[832] & 0x1000) >> 5;
@@ -417,14 +419,14 @@ void MLX90640_CalculateTo(const uint16_t *frameData, const paramsMLX90640 __attr
         }
         irDataCP[i] = irDataCP[i] * gain;
     }
-    irDataCP[0] = irDataCP[0] - params->cpOffset[0] * (1 + params->cpKta * (ta - 25)) * (1 + params->cpKv * (vdd - 3.3));
-    if( mode ==  params->calibrationModeEE)
+    irDataCP[0] = irDataCP[0] - params_cpOffset[0] * (1 + params_cpKta * (ta - 25)) * (1 + params_cpKv * (vdd - 3.3));
+    if( mode ==  params_calibrationModeEE)
     {
-        irDataCP[1] = irDataCP[1] - params->cpOffset[1] * (1 + params->cpKta * (ta - 25)) * (1 + params->cpKv * (vdd - 3.3));
+        irDataCP[1] = irDataCP[1] - params_cpOffset[1] * (1 + params_cpKta * (ta - 25)) * (1 + params_cpKv * (vdd - 3.3));
     }
     else
     {
-      irDataCP[1] = irDataCP[1] - (params->cpOffset[1] + params->ilChessC[0]) * (1 + params->cpKta * (ta - 25)) * (1 + params->cpKv * (vdd - 3.3));
+      irDataCP[1] = irDataCP[1] - (params_cpOffset[1] + params_ilChessC[0]) * (1 + params_cpKta * (ta - 25)) * (1 + params_cpKv * (vdd - 3.3));
     }
      
     for( int pixelNumber = 0; pixelNumber < 768; pixelNumber++)
@@ -452,27 +454,27 @@ void MLX90640_CalculateTo(const uint16_t *frameData, const paramsMLX90640 __attr
             }
             irData = irData * gain;
             
-            irData = irData - params->offset[pixelNumber]*(1 + params->kta[pixelNumber]*(ta - 25))*(1 + params->kv[pixelNumber]*(vdd - 3.3));
-            if(mode !=  params->calibrationModeEE)
+            irData = irData - params_offset[pixelNumber]*(1 + params_kta[pixelNumber]*(ta - 25))*(1 + params_kv[pixelNumber]*(vdd - 3.3));
+            if(mode !=  params_calibrationModeEE)
             {
-              irData = irData + params->ilChessC[2] * (2 * ilPattern - 1) - params->ilChessC[1] * conversionPattern; 
+              irData = irData + params_ilChessC[2] * (2 * ilPattern - 1) - params_ilChessC[1] * conversionPattern; 
             }
             
             irData = irData / emissivity;
     
-            irData = irData - params->tgc * irDataCP[subPage];
+            irData = irData - params_tgc * irDataCP[subPage];
             
-            //alphaCompensated = (params->alpha[pixelNumber] - params->tgc * params->cpAlpha[subPage])*(1 + params->KsTa * (ta - 25));
-            float __attribute__((annotate("scalar()")))  a1 = params->tgc * params->cpAlpha[subPage];
-            // printf("tgc %.10f\n",params->tgc  );
-            // printf("cpAlpha %.10f \n",params->cpAlpha[subPage] );
+            //alphaCompensated = (params_alpha[pixelNumber] - params_tgc * params_cpAlpha[subPage])*(1 + params_KsTa * (ta - 25));
+            float __attribute__((annotate("scalar()")))  a1 = params_tgc * params_cpAlpha[subPage];
+            // printf("tgc %.10f\n",params_tgc  );
+            // printf("cpAlpha %.10f \n",params_cpAlpha[subPage] );
             //printf("a1 %.10f\n",a1);
 
-            float  __attribute__((annotate("scalar()")))  a2 = params->alpha[pixelNumber] - a1;
-            printf("alphastruct %.10f \n",params->alpha[pixelNumber] );
+            float  __attribute__((annotate("scalar()")))  a2 = params_alpha[pixelNumber] - a1;
+            printf("alphastruct %.10f \n",params_alpha[pixelNumber] );
             //printf("a2 %.10f\n",a2);
 
-            float a3 = params->KsTa * (ta-25);
+            float a3 = params_KsTa * (ta-25);
             //printf("a3 %.10f\n",a3);
 
             float a4 = 1 + a3;
@@ -485,23 +487,23 @@ void MLX90640_CalculateTo(const uint16_t *frameData, const paramsMLX90640 __attr
             printf("alpha %.10f\n",alphaCompensated);
 
             float  __attribute__((annotate("scalar()"))) s1 = alphaCompensated*taTr;
-            //printf("s1 %.10f\n",s1);
+            printf("s1 %.10f\n",s1);
 
             float  __attribute__((annotate("scalar()"))) s2 = irData + s1;
-            //printf("s2 %.10f\n",s2);
+            printf("s2 %.10f\n",s2);
 
-            float  __attribute__((annotate("scalar()"))) s3 = pow((double)alphaCompensated,(double)3);
+            float  __attribute__((annotate("scalar()"))) s3 = alphaCompensated*alphaCompensated*alphaCompensated;
             //printf("s3 %.10f\n",s3);
 
             float  __attribute__((annotate("scalar()"))) s4 = s3*s2;
             //printf("S4 %.10f\n",s4);
 
-            Sx = sqrt(sqrt(s4)) * params->ksTo[1];
+            Sx = sqrt(sqrt(s4)) * params_ksTo[1];
             //printf("Sx %.10f\n",Sx);
 
-            // To = sqrt(sqrt(irData/(alphaCompensated * (1 - params->ksTo[1] * 273.15) + Sx) + taTr)) - 273.15; // <--- THIS ONE
+            // To = sqrt(sqrt(irData/(alphaCompensated * (1 - params_ksTo[1] * 273.15) + Sx) + taTr)) - 273.15; // <--- THIS ONE
             // --- To Decomposition ---
-            float __attribute__((annotate("scalar()"))) t1 = params->ksTo[1] * 273.15;
+            float __attribute__((annotate("scalar()"))) t1 = params_ksTo[1] * 273.15;
             //printf("t1 %.10f\n",t1);
 
             float __attribute__((annotate("scalar()"))) t2 = 1 - t1;
@@ -520,20 +522,20 @@ void MLX90640_CalculateTo(const uint16_t *frameData, const paramsMLX90640 __attr
             printf("t6 %.10f\n",t6);
 
             float __attribute__((annotate("scalar()"))) To = sqrt(sqrt(t6)) - 273.15;
-            //printf("To %d params 1 %d\n", (int)To, params->ct[1]);     
+            //printf("To %d params 1 %d\n", (int)To, params_ct[1]);     
             printf("To %.10f\n", To);  
             printf("taTr %.10f \n", taTr);   
                
             // To in if conditions was cast to int because of a taffo problem (?)
-            if((int)To < params->ct[1])
+            if((int)To < params_ct[1])
             {
                 range = 0;    
             }
-            else if((int)To < params->ct[2])   
+            else if((int)To < params_ct[2])   
             {
                 range = 1;            
             }   
-            else if((int)To < params->ct[3])
+            else if((int)To < params_ct[3])
             {
                 range = 2;            
             }
@@ -544,17 +546,17 @@ void MLX90640_CalculateTo(const uint16_t *frameData, const paramsMLX90640 __attr
             }  
             printf("range %d \n", range);
             
-            //To = sqrt(sqrt(irData / (alphaCompensated * alphaCorrR[range] * (1 + params->ksTo[range] * (To - params->ct[range]))) + taTr)) - 273.15;
+            //To = sqrt(sqrt(irData / (alphaCompensated * alphaCorrR[range] * (1 + params_ksTo[range] * (To - params_ct[range]))) + taTr)) - 273.15;
             
             // --- To decomposition ---
             
             //printf("range %d\n", range);
-            //printf("ct %d\n", params->ct[range]);
+            //printf("ct %d\n", params_ct[range]);
 
-            float __attribute__((annotate("scalar(range(-599,1039) final)"))) t8 = To - params->ct[range];
+            float __attribute__((annotate("scalar(range(-599,1039) final)"))) t8 = To - params_ct[range];
             //printf("t8 %.10f\n",t8);
 
-            float __attribute__((annotate("scalar(range(-1,1) final)"))) t9 = params->ksTo[range]*t8;
+            float __attribute__((annotate("scalar(range(-1,1) final)"))) t9 = params_ksTo[range]*t8;
             //printf("t9 %.10f\n",t9);
 
             float __attribute__((annotate("scalar()"))) t10 = 1 + t9;
@@ -583,12 +585,11 @@ void MLX90640_CalculateTo(const uint16_t *frameData, const paramsMLX90640 __attr
     printf("ta %f \n", ta);
     printf("tr %.10f\n",tr);
     printf("taTr %.10f\n",taTr);
-    
 }
 
 //------------------------------------------------------------------------------
 
-void MLX90640_GetImage(const uint16_t *frameData, const paramsMLX90640 __attribute__((annotate("struct[void, void, scalar(), scalar(), void, scalar(), void, scalar(),scalar(),scalar(),void,void,scalar(),scalar(), void, scalar(),void,scalar(),scalar(),scalar(), void, scalar(), void,void]"))) *params, float  __attribute__((annotate("scalar()"))) *result)
+void MLX90640_GetImage(const uint16_t *frameData, float  __attribute__((annotate("scalar()"))) *result)
 {
     float  __attribute__((annotate("scalar(range(-65535, 65543))"))) vdd; //min 1.32
     float  __attribute__((annotate("scalar()"))) ta; // check
@@ -605,8 +606,8 @@ void MLX90640_GetImage(const uint16_t *frameData, const paramsMLX90640 __attribu
     uint16_t subPage;
     
     subPage = frameData[833];
-    vdd = MLX90640_GetVdd(frameData, params);
-    ta = MLX90640_GetTa(frameData, params);
+    vdd = MLX90640_GetVdd(frameData);
+    ta = MLX90640_GetTa(frameData);
     
 //------------------------- Gain calculation -----------------------------------    
     gain = frameData[778];
@@ -615,7 +616,7 @@ void MLX90640_GetImage(const uint16_t *frameData, const paramsMLX90640 __attribu
         gain = gain - 65536;
     }
     
-    gain = params->gainEE / gain; 
+    gain = params_gainEE / gain; 
   
 //------------------------- Image calculation -------------------------------------    
     mode = (frameData[832] & 0x1000) >> 5;
@@ -630,14 +631,14 @@ void MLX90640_GetImage(const uint16_t *frameData, const paramsMLX90640 __attribu
         }
         irDataCP[i] = irDataCP[i] * gain;
     }
-    irDataCP[0] = irDataCP[0] - params->cpOffset[0] * (1 + params->cpKta * (ta - 25)) * (1 + params->cpKv * (vdd - 3.3));
-    if( mode ==  params->calibrationModeEE)
+    irDataCP[0] = irDataCP[0] - params_cpOffset[0] * (1 + params_cpKta * (ta - 25)) * (1 + params_cpKv * (vdd - 3.3));
+    if( mode ==  params_calibrationModeEE)
     {
-        irDataCP[1] = irDataCP[1] - params->cpOffset[1] * (1 + params->cpKta * (ta - 25)) * (1 + params->cpKv * (vdd - 3.3));
+        irDataCP[1] = irDataCP[1] - params_cpOffset[1] * (1 + params_cpKta * (ta - 25)) * (1 + params_cpKv * (vdd - 3.3));
     }
     else
     {
-      irDataCP[1] = irDataCP[1] - (params->cpOffset[1] + params->ilChessC[0]) * (1 + params->cpKta * (ta - 25)) * (1 + params->cpKv * (vdd - 3.3));
+      irDataCP[1] = irDataCP[1] - (params_cpOffset[1] + params_ilChessC[0]) * (1 + params_cpKta * (ta - 25)) * (1 + params_cpKv * (vdd - 3.3));
     }
 
     for( int pixelNumber = 0; pixelNumber < 768; pixelNumber++)
@@ -664,15 +665,15 @@ void MLX90640_GetImage(const uint16_t *frameData, const paramsMLX90640 __attribu
             }
             irData = irData * gain;
             
-            irData = irData - params->offset[pixelNumber]*(1 + params->kta[pixelNumber]*(ta - 25))*(1 + params->kv[pixelNumber]*(vdd - 3.3));
-            if(mode !=  params->calibrationModeEE)
+            irData = irData - params_offset[pixelNumber]*(1 + params_kta[pixelNumber]*(ta - 25))*(1 + params_kv[pixelNumber]*(vdd - 3.3));
+            if(mode !=  params_calibrationModeEE)
             {
-              irData = irData + params->ilChessC[2] * (2 * ilPattern - 1) - params->ilChessC[1] * conversionPattern; 
+              irData = irData + params_ilChessC[2] * (2 * ilPattern - 1) - params_ilChessC[1] * conversionPattern; 
             }
             
-            irData = irData - params->tgc * irDataCP[subPage];
+            irData = irData - params_tgc * irDataCP[subPage];
             
-            alphaCompensated = (params->alpha[pixelNumber] - params->tgc * params->cpAlpha[subPage])*(1 + params->KsTa * (ta - 25));
+            alphaCompensated = (params_alpha[pixelNumber] - params_tgc * params_cpAlpha[subPage])*(1 + params_KsTa * (ta - 25));
             
             image = irData/alphaCompensated;
             
@@ -683,7 +684,7 @@ void MLX90640_GetImage(const uint16_t *frameData, const paramsMLX90640 __attribu
 
 //------------------------------------------------------------------------------
 
-float MLX90640_GetVdd(const uint16_t *frameData, const paramsMLX90640 __attribute__((annotate("struct[void, void, scalar(), scalar(), void, scalar(), void, scalar(),scalar(),scalar(),void,void,scalar(),scalar(), void, scalar(),void,scalar(),scalar(),scalar(), void, scalar(), void,void]"))) *params)
+float MLX90640_GetVdd(const uint16_t *frameData)
 {
     
     __attribute__((annotate("scalar(range(-32768,65535))"))) float vdd;
@@ -697,23 +698,26 @@ float MLX90640_GetVdd(const uint16_t *frameData, const paramsMLX90640 __attribut
         vdd = vdd - 65536;
     }
     resolutionRAM = (frameData[832] & 0x0C00) >> 10; // max 3, min 0
-    resolutionCorrection = pow(2, (double)params->resolutionEE) / pow(2, (double)resolutionRAM); // min 1/2^8, max 2^12
-    // printf("resolutionRAM: %d\n", resolutionRAM);
-    vdd = (resolutionCorrection * vdd - params->vdd25) / params->kVdd + 3.3; // max 65.543 min 1.32
-    // printf("kVdd: %d\n", params->kVdd);
+    resolutionCorrection = pow(2, (double)params_resolutionEE) / pow(2, (double)resolutionRAM); // min 1/2^8, max 2^12
+    printf("resolutionRAM: %d\n", resolutionRAM);
+    printf("kVdd: %d, vdd25: %d\n", params_kVdd, params_vdd25);
+    vdd = (resolutionCorrection * vdd - params_vdd25) / params_kVdd + 3.3; // max 65.543 min 1.32
+    printf("vdd: %e\n", vdd);
     return vdd;
 }
 
 //------------------------------------------------------------------------------
 
-float MLX90640_GetTa(const uint16_t *frameData, const paramsMLX90640 __attribute__((annotate("struct[void, void, scalar(), scalar(), void, scalar(), void, scalar(),scalar(),scalar(),void,void,scalar(),scalar(), void, scalar(),void,scalar(),scalar(),scalar(), void, scalar(), void,void]"))) *params)
+float MLX90640_GetTa(const uint16_t *frameData)
 {
     __attribute__((annotate("scalar(range(-32768, 65535))"))) float ptat;
     __attribute__((annotate("scalar(range(-32768, 65535))"))) float ptatArt;
     __attribute__((annotate("scalar(range(1.32, 65543))"))) float vdd; // Value should be between 3.3 and 5 according to the specification
     __attribute__((annotate("scalar(range(-32767,32767))")))  float ta; //
     
-    vdd = MLX90640_GetVdd(frameData, params);
+    printf("getVdd...\n");
+    vdd = MLX90640_GetVdd(frameData);
+    printf("vdd = %e\n", vdd);
     
     ptat = frameData[800];
     if(ptat > 32767)
@@ -727,20 +731,20 @@ float MLX90640_GetTa(const uint16_t *frameData, const paramsMLX90640 __attribute
         ptatArt = ptatArt - 65536;
     }
     // DECOMPOSED ptatArt calculation
-    float __attribute__((annotate("scalar()"))) ptatArt1 = ptat * params->alphaPTAT;
+    float __attribute__((annotate("scalar()"))) ptatArt1 = ptat * params_alphaPTAT;
     float __attribute__((annotate("scalar()"))) ptatArt2 = ptatArt1 + ptatArt;
     float __attribute__((annotate("scalar()"))) ptatArt3 = ptat/ptatArt2;
-    ptatArt = ptatArt3 * pow(2,(double)18);
-    //ptatArt = (ptat / (ptat * params->alphaPTAT + ptatArt)) * pow(2, (double)18);
+    ptatArt = ptatArt3 * 262144.0f;
+    //ptatArt = (ptat / (ptat * params_alphaPTAT + ptatArt)) * pow(2, (double)18);
     printf("ptat= %.10f\n",ptat);
-    printf("alphaptat= %.10f\n",params->alphaPTAT);
+    printf("alphaptat= %.10f\n",params_alphaPTAT);
     printf("ptatArt= %.10f\n",ptatArt);
     // DECOMPOSED ta calculation
     float  __attribute__((annotate("scalar(range(-1,1) final)"))) vd1 = vdd - 3.3;
     printf("vd1= %.10f\n",vd1);
     
-    float  __attribute__((annotate("scalar()"))) ta1 = params->KvPTAT * vd1;
-    printf("kvPTAT= %.10f\n",params->KvPTAT);
+    float  __attribute__((annotate("scalar()"))) ta1 = params_KvPTAT * vd1;
+    printf("kvPTAT= %.10f\n",params_KvPTAT);
     printf("vdd= %.10f\n",vdd);
     
     printf("ta1= %.10f\n",ta1);
@@ -748,15 +752,15 @@ float MLX90640_GetTa(const uint16_t *frameData, const paramsMLX90640 __attribute
     printf("ta2= %.10f\n",ta2);
     float  __attribute__((annotate("scalar()"))) ta3 = ptatArt/ta2;
     printf("ta3= %.10f\n",ta3);
-    ta = ta3 - params->vPTAT25;
+    ta = ta3 - params_vPTAT25;
     
-    //ta = (ptatArt / (1 + params->KvPTAT * (vdd - 3.3)) - params->vPTAT25); // kvptat range(-0.0078,0.0154)
+    //ta = (ptatArt / (1 + params_KvPTAT * (vdd - 3.3)) - params_vPTAT25); // kvptat range(-0.0078,0.0154)
     printf("taBDiv= %.10f\n",ta);
-    ta = ta / params->KtPTAT + 25; 
+    ta = ta / params_KtPTAT + 25; 
     printf("taADiv= %.10f\n",ta);
     /*
-    printf("KvPTAT: %f\n", params->KvPTAT);
-    printf("KtPTAT: %f\n", params->KtPTAT);
+    printf("KvPTAT: %f\n", params_KvPTAT);
+    printf("KtPTAT: %f\n", params_KtPTAT);
     printf("vdd: %f\n", vdd);
     printf("ta: %f\n", ta);
     */
@@ -774,7 +778,7 @@ int MLX90640_GetSubPageNumber(const uint16_t *frameData)
 
 //------------------------------------------------------------------------------
 
-void ExtractVDDParameters(const uint16_t *eeData, paramsMLX90640  __attribute__((annotate("struct[void, void, scalar(), scalar(), void, scalar(), void, scalar(),scalar(),scalar(),void,void,scalar(),scalar(), void, scalar(),void,scalar(),scalar(),scalar(), void, scalar(), void,void]"))) *mlx90640)
+void ExtractVDDParameters(const uint16_t *eeData)
 {
     int16_t kVdd;
     int16_t vdd25;
@@ -791,13 +795,13 @@ void ExtractVDDParameters(const uint16_t *eeData, paramsMLX90640  __attribute__(
     vdd25 = eeData[51] & 0x00FF; // min 0 max 255
     vdd25 = ((vdd25 - 256) << 5) - 8192; // min -16384 max -8224
     
-    mlx90640->kVdd = kVdd;
-    mlx90640->vdd25 = vdd25; 
+    params_kVdd = kVdd;
+    params_vdd25 = vdd25; 
 }
 
 //------------------------------------------------------------------------------
 
-void ExtractPTATParameters(const uint16_t *eeData, paramsMLX90640  __attribute__((annotate("struct[void, void, scalar(), scalar(), void, scalar(), void, scalar(),scalar(),scalar(),void,void,scalar(),scalar(), void, scalar(),void,scalar(),scalar(),scalar(), void, scalar(), void,void]"))) *mlx90640)
+void ExtractPTATParameters(const uint16_t *eeData)
 {
     // eeprom values go from 0x0000 to 0xFFFF (65535) 
     float __attribute__((annotate("scalar(range(-32,63))"))) KvPTAT; 
@@ -824,15 +828,15 @@ void ExtractPTATParameters(const uint16_t *eeData, paramsMLX90640  __attribute__
     
     alphaPTAT = (eeData[16] & 0xF000) / pow(2, (double)14) + 8.0f;
     
-    mlx90640->KvPTAT = KvPTAT; // range(-0.0078,0.0154)
-    mlx90640->KtPTAT = KtPTAT; // range(-64,128)
-    mlx90640->vPTAT25 = vPTAT25;
-    mlx90640->alphaPTAT = alphaPTAT;   
+    params_KvPTAT = KvPTAT; // range(-0.0078,0.0154)
+    params_KtPTAT = KtPTAT; // range(-64,128)
+    params_vPTAT25 = vPTAT25;
+    params_alphaPTAT = alphaPTAT;   
 }
 
 //------------------------------------------------------------------------------
 
-void ExtractGainParameters(const uint16_t *eeData, paramsMLX90640 __attribute__((annotate("struct[void, void, scalar(), scalar(), void, scalar(), void, scalar(),scalar(),scalar(),void,void,scalar(),scalar(), void, scalar(),void,scalar(),scalar(),scalar(), void, scalar(), void,void]"))) *mlx90640)
+void ExtractGainParameters(const uint16_t *eeData)
 {
     int16_t gainEE;
     
@@ -842,12 +846,12 @@ void ExtractGainParameters(const uint16_t *eeData, paramsMLX90640 __attribute__(
         gainEE = gainEE -65536;
     }
     
-    mlx90640->gainEE = gainEE;    
+    params_gainEE = gainEE;    
 }
 
 //------------------------------------------------------------------------------
 
-void ExtractTgcParameters(const uint16_t *eeData, paramsMLX90640 __attribute__((annotate("struct[void, void, scalar(), scalar(), void, scalar(), void, scalar(),scalar(),scalar(),void,void,scalar(),scalar(), void, scalar(),void,scalar(),scalar(),scalar(), void, scalar(), void,void]"))) *mlx90640)
+void ExtractTgcParameters(const uint16_t *eeData)
 {
     float __attribute__((annotate("scalar(range(-128,255))"))) tgc;
     tgc = eeData[60] & 0x00FF;
@@ -857,22 +861,22 @@ void ExtractTgcParameters(const uint16_t *eeData, paramsMLX90640 __attribute__((
     }
     tgc = tgc / 32.0f;
     
-    mlx90640->tgc = tgc;        
+    params_tgc = tgc;        
 }
 
 //------------------------------------------------------------------------------
 
-void ExtractResolutionParameters(const uint16_t *eeData, paramsMLX90640 __attribute__((annotate("struct[void, void, scalar(), scalar(), void, scalar(), void, scalar(),scalar(),scalar(),void,void,scalar(),scalar(), void, scalar(),void,scalar(),scalar(),scalar(), void, scalar(), void,void]"))) *mlx90640)
+void ExtractResolutionParameters(const uint16_t *eeData)
 {
     uint8_t resolutionEE;
     resolutionEE = (eeData[56] & 0x3000) >> 12;    // min 0, max 12
     
-    mlx90640->resolutionEE = resolutionEE;
+    params_resolutionEE = resolutionEE;
 }
 
 //------------------------------------------------------------------------------
 
-void ExtractKsTaParameters(const uint16_t *eeData, paramsMLX90640 __attribute__((annotate("struct[void, void, scalar(), scalar(), void, scalar(), void, scalar(),scalar(),scalar(),void,void,scalar(),scalar(), void, scalar(),void,scalar(),scalar(),scalar(), void, scalar(), void,void]"))) *mlx90640)
+void ExtractKsTaParameters(const uint16_t *eeData)
 {
     float __attribute__((annotate("scalar(range(-128,255) final)"))) KsTa; //range(-128,255)
     KsTa = (eeData[60] & 0xFF00) >> 8;
@@ -882,48 +886,48 @@ void ExtractKsTaParameters(const uint16_t *eeData, paramsMLX90640 __attribute__(
     }
     KsTa = KsTa / 8192.0f;
     
-    mlx90640->KsTa = KsTa;
+    params_KsTa = KsTa;
 }
 
 //------------------------------------------------------------------------------
 
-void ExtractKsToParameters(const uint16_t *eeData, paramsMLX90640 __attribute__((annotate("struct[void, void, scalar(), scalar(), void, scalar(), void, scalar(),scalar(),scalar(),void,void,scalar(),scalar(), void, scalar(),void,scalar(),scalar(),scalar(), void, scalar(), void,void]"))) *mlx90640)
+void ExtractKsToParameters(const uint16_t *eeData)
 {
     int KsToScale;
     int8_t step;
     
     step = ((eeData[63] & 0x3000) >> 12) * 10;
     
-    mlx90640->ct[0] = -40;
-    mlx90640->ct[1] = 0;
-    mlx90640->ct[2] = (eeData[63] & 0x00F0) >> 4;
-    mlx90640->ct[3] = (eeData[63] & 0x0F00) >> 8;
+    params_ct[0] = -40;
+    params_ct[1] = 0;
+    params_ct[2] = (eeData[63] & 0x00F0) >> 4;
+    params_ct[3] = (eeData[63] & 0x0F00) >> 8;
     
-    mlx90640->ct[2] = mlx90640->ct[2]*step;
-    mlx90640->ct[3] = mlx90640->ct[2] + mlx90640->ct[3]*step;
+    params_ct[2] = params_ct[2]*step;
+    params_ct[3] = params_ct[2] + params_ct[3]*step;
     
     KsToScale = (eeData[63] & 0x000F) + 8;
     KsToScale = 1 << KsToScale;
     
-    mlx90640->ksTo[0] = eeData[61] & 0x00FF;
-    mlx90640->ksTo[1] = (eeData[61] & 0xFF00) >> 8;
-    mlx90640->ksTo[2] = eeData[62] & 0x00FF;
-    mlx90640->ksTo[3] = (eeData[62] & 0xFF00) >> 8;
+    params_ksTo[0] = eeData[61] & 0x00FF;
+    params_ksTo[1] = (eeData[61] & 0xFF00) >> 8;
+    params_ksTo[2] = eeData[62] & 0x00FF;
+    params_ksTo[3] = (eeData[62] & 0xFF00) >> 8;
     
     
     for(int i = 0; i < 4; i++)
     {
-        if(mlx90640->ksTo[i] > 127)
+        if(params_ksTo[i] > 127)
         {
-            mlx90640->ksTo[i] = mlx90640->ksTo[i] -256;
+            params_ksTo[i] = params_ksTo[i] -256;
         }
-        mlx90640->ksTo[i] = mlx90640->ksTo[i] / KsToScale;
+        params_ksTo[i] = params_ksTo[i] / KsToScale;
     } 
 }
 
 //------------------------------------------------------------------------------
 
-void ExtractAlphaParameters(const uint16_t *eeData, paramsMLX90640 __attribute__((annotate("struct[void, void, scalar(), scalar(), void, scalar(), void, scalar(),scalar(),scalar(),void,void,scalar(),scalar(), void, scalar(),void,scalar(),scalar(),scalar(), void, scalar(), void,void]"))) *mlx90640)
+void ExtractAlphaParameters(const uint16_t *eeData)
 {
     int accRow[24];
     int accColumn[32];
@@ -980,21 +984,21 @@ void ExtractAlphaParameters(const uint16_t *eeData, paramsMLX90640 __attribute__
         for(int j = 0; j < 32; j ++)
         {
             p = 32 * i +j;
-            mlx90640->alpha[p] = (eeData[64 + p] & 0x03F0) >> 4;
-            if (mlx90640->alpha[p] > 31)
+            params_alpha[p] = (eeData[64 + p] & 0x03F0) >> 4;
+            if (params_alpha[p] > 31)
             {
-                mlx90640->alpha[p] = mlx90640->alpha[p] - 64;
+                params_alpha[p] = params_alpha[p] - 64;
             }
-            mlx90640->alpha[p] = mlx90640->alpha[p]*(1 << accRemScale);
-            mlx90640->alpha[p] = (alphaRef + (accRow[i] << accRowScale) + (accColumn[j] << accColumnScale) + mlx90640->alpha[p]);
-            mlx90640->alpha[p] = mlx90640->alpha[p] / pow(2,(double)alphaScale);
+            params_alpha[p] = params_alpha[p]*(1 << accRemScale);
+            params_alpha[p] = (alphaRef + (accRow[i] << accRowScale) + (accColumn[j] << accColumnScale) + params_alpha[p]);
+            params_alpha[p] = params_alpha[p] / pow(2,(double)alphaScale);
         }
     }
 }
 
 //------------------------------------------------------------------------------
 
-void ExtractOffsetParameters(const uint16_t *eeData, paramsMLX90640 __attribute__((annotate("struct[void, void, scalar(), scalar(), void, scalar(), void, scalar(),scalar(),scalar(),void,void,scalar(),scalar(), void, scalar(),void,scalar(),scalar(),scalar(), void, scalar(), void,void]"))) *mlx90640)
+void ExtractOffsetParameters(const uint16_t *eeData)
 {
     int occRow[24];
     int occColumn[32];
@@ -1053,20 +1057,20 @@ void ExtractOffsetParameters(const uint16_t *eeData, paramsMLX90640 __attribute_
         for(int j = 0; j < 32; j ++)
         {
             p = 32 * i +j;
-            mlx90640->offset[p] = (eeData[64 + p] & 0xFC00) >> 10;
-            if (mlx90640->offset[p] > 31)
+            params_offset[p] = (eeData[64 + p] & 0xFC00) >> 10;
+            if (params_offset[p] > 31)
             {
-                mlx90640->offset[p] = mlx90640->offset[p] - 64;
+                params_offset[p] = params_offset[p] - 64;
             }
-            mlx90640->offset[p] = mlx90640->offset[p]*(1 << occRemScale);
-            mlx90640->offset[p] = (offsetRef + (occRow[i] << occRowScale) + (occColumn[j] << occColumnScale) + mlx90640->offset[p]);
+            params_offset[p] = params_offset[p]*(1 << occRemScale);
+            params_offset[p] = (offsetRef + (occRow[i] << occRowScale) + (occColumn[j] << occColumnScale) + params_offset[p]);
         }
     }
 }
 
 //------------------------------------------------------------------------------
 
-void ExtractKtaPixelParameters(const uint16_t *eeData, paramsMLX90640 __attribute__((annotate("struct[void, void, scalar(), scalar(), void, scalar(), void, scalar(),scalar(),scalar(),void,void,scalar(),scalar(), void, scalar(),void,scalar(),scalar(),scalar(), void, scalar(), void,void]"))) *mlx90640)
+void ExtractKtaPixelParameters(const uint16_t *eeData)
 {
     int p = 0;
     int8_t KtaRC[4];
@@ -1115,21 +1119,21 @@ void ExtractKtaPixelParameters(const uint16_t *eeData, paramsMLX90640 __attribut
         {
             p = 32 * i +j;
             split = 2*(p/32 - (p/64)*2) + p%2;
-            mlx90640->kta[p] = (eeData[64 + p] & 0x000E) >> 1;
-            if (mlx90640->kta[p] > 3)
+            params_kta[p] = (eeData[64 + p] & 0x000E) >> 1;
+            if (params_kta[p] > 3)
             {
-                mlx90640->kta[p] = mlx90640->kta[p] - 8;
+                params_kta[p] = params_kta[p] - 8;
             }
-            mlx90640->kta[p] = mlx90640->kta[p] * (1 << ktaScale2);
-            mlx90640->kta[p] = KtaRC[split] + mlx90640->kta[p];
-            mlx90640->kta[p] = mlx90640->kta[p] / pow(2,(double)ktaScale1);
+            params_kta[p] = params_kta[p] * (1 << ktaScale2);
+            params_kta[p] = KtaRC[split] + params_kta[p];
+            params_kta[p] = params_kta[p] / pow(2,(double)ktaScale1);
         }
     }
 }
 
 //------------------------------------------------------------------------------
 
-void ExtractKvPixelParameters(const uint16_t *eeData, paramsMLX90640 __attribute__((annotate("struct[void, void, scalar(), scalar(), void, scalar(), void, scalar(),scalar(),scalar(),void,void,scalar(),scalar(), void, scalar(),void,scalar(),scalar(),scalar(), void, scalar(), void,void]"))) *mlx90640)
+void ExtractKvPixelParameters(const uint16_t *eeData)
 {
     int p = 0;
     int8_t KvT[4];
@@ -1177,15 +1181,15 @@ void ExtractKvPixelParameters(const uint16_t *eeData, paramsMLX90640 __attribute
         {
             p = 32 * i +j;
             split = 2*(p/32 - (p/64)*2) + p%2;
-            mlx90640->kv[p] = KvT[split];
-            mlx90640->kv[p] = mlx90640->kv[p] / pow(2,(double)kvScale);
+            params_kv[p] = KvT[split];
+            params_kv[p] = params_kv[p] / pow(2,(double)kvScale);
         }
     }
 }
 
 //------------------------------------------------------------------------------
 
-void ExtractCPParameters(const uint16_t *eeData, paramsMLX90640 __attribute__((annotate("struct[void, void, scalar(), scalar(), void, scalar(), void, scalar(),scalar(),scalar(),void,void,scalar(),scalar(), void, scalar(),void,scalar(),scalar(),scalar(), void, scalar(), void,void]"))) *mlx90640)
+void ExtractCPParameters(const uint16_t *eeData)
 {
     float __attribute__((annotate("scalar(range(-512,1527))"))) alphaSP[2]; //range(-512,1527)
     int16_t offsetSP[2];
@@ -1230,7 +1234,7 @@ void ExtractCPParameters(const uint16_t *eeData, paramsMLX90640 __attribute__((a
         cpKta = cpKta - 256;
     }
     ktaScale1 = ((eeData[56] & 0x00F0) >> 4) + 8;    // min 0 max 23
-    mlx90640->cpKta = cpKta / pow(2,(double)ktaScale1); // min circa 0 max 255
+    params_cpKta = cpKta / pow(2,(double)ktaScale1); // min circa 0 max 255
     
     cpKv = (eeData[59] & 0xFF00) >> 8;
     if (cpKv > 127)
@@ -1238,17 +1242,17 @@ void ExtractCPParameters(const uint16_t *eeData, paramsMLX90640 __attribute__((a
         cpKv = cpKv - 256;
     }
     kvScale = (eeData[56] & 0x0F00) >> 8; // min 0 max 15
-    mlx90640->cpKv = cpKv / pow(2,(double)kvScale); // min -0.0039 max 255
+    params_cpKv = cpKv / pow(2,(double)kvScale); // min -0.0039 max 255
        
-    mlx90640->cpAlpha[0] = alphaSP[0];
-    mlx90640->cpAlpha[1] = alphaSP[1];
-    mlx90640->cpOffset[0] = offsetSP[0];
-    mlx90640->cpOffset[1] = offsetSP[1];  
+    params_cpAlpha[0] = alphaSP[0];
+    params_cpAlpha[1] = alphaSP[1];
+    params_cpOffset[0] = offsetSP[0];
+    params_cpOffset[1] = offsetSP[1];  
 }
 
 //------------------------------------------------------------------------------
 
-void ExtractCILCParameters(const uint16_t *eeData, paramsMLX90640 __attribute__((annotate("struct[void, void, scalar(), scalar(), void, scalar(), void, scalar(),scalar(),scalar(),void,void,scalar(),scalar(), void, scalar(),void,scalar(),scalar(),scalar(), void, scalar(), void,void]"))) *mlx90640)
+void ExtractCILCParameters(const uint16_t *eeData)
 {
     float __attribute__((annotate("scalar(range(-32,63))"))) ilChessC[3];
     uint8_t calibrationModeEE;
@@ -1277,15 +1281,15 @@ void ExtractCILCParameters(const uint16_t *eeData, paramsMLX90640 __attribute__(
     }
     ilChessC[2] = ilChessC[2] / 8.0f;
     
-    mlx90640->calibrationModeEE = calibrationModeEE;
-    mlx90640->ilChessC[0] = ilChessC[0];
-    mlx90640->ilChessC[1] = ilChessC[1];
-    mlx90640->ilChessC[2] = ilChessC[2];
+    params_calibrationModeEE = calibrationModeEE;
+    params_ilChessC[0] = ilChessC[0];
+    params_ilChessC[1] = ilChessC[1];
+    params_ilChessC[2] = ilChessC[2];
 }
 
 //------------------------------------------------------------------------------
 
-int ExtractDeviatingPixels(const uint16_t *eeData, paramsMLX90640 __attribute__((annotate("struct[void, void, scalar(range(-32,63)), scalar(), void, scalar(), void, scalar(),scalar(),scalar(),void,void,scalar(),scalar(), void, scalar(),void,scalar(),scalar(),scalar(), void, scalar(), void,void]"))) *mlx90640)
+int ExtractDeviatingPixels(const uint16_t *eeData)
 {
     uint16_t pixCnt = 0;
     uint16_t brokenPixCnt = 0;
@@ -1295,8 +1299,8 @@ int ExtractDeviatingPixels(const uint16_t *eeData, paramsMLX90640 __attribute__(
     
     for(pixCnt = 0; pixCnt<5; pixCnt++)
     {
-        mlx90640->brokenPixels[pixCnt] = 0xFFFF;
-        mlx90640->outlierPixels[pixCnt] = 0xFFFF;
+        params_brokenPixels[pixCnt] = 0xFFFF;
+        params_outlierPixels[pixCnt] = 0xFFFF;
     }
         
     pixCnt = 0;    
@@ -1304,12 +1308,12 @@ int ExtractDeviatingPixels(const uint16_t *eeData, paramsMLX90640 __attribute__(
     {
         if(eeData[pixCnt+64] == 0)
         {
-            mlx90640->brokenPixels[brokenPixCnt] = pixCnt;
+            params_brokenPixels[brokenPixCnt] = pixCnt;
             brokenPixCnt = brokenPixCnt + 1;
         }    
         else if((eeData[pixCnt+64] & 0x0001) != 0)
         {
-            mlx90640->outlierPixels[outlierPixCnt] = pixCnt;
+            params_outlierPixels[outlierPixCnt] = pixCnt;
             outlierPixCnt = outlierPixCnt + 1;
         }    
         
@@ -1335,7 +1339,7 @@ int ExtractDeviatingPixels(const uint16_t *eeData, paramsMLX90640 __attribute__(
         {
             for(i=pixCnt+1; i<brokenPixCnt; i++)
             {
-                warn = CheckAdjacentPixels(mlx90640->brokenPixels[pixCnt],mlx90640->brokenPixels[i]);
+                warn = CheckAdjacentPixels(params_brokenPixels[pixCnt],params_brokenPixels[i]);
                 if(warn != 0)
                 {
                     return warn;
@@ -1347,7 +1351,7 @@ int ExtractDeviatingPixels(const uint16_t *eeData, paramsMLX90640 __attribute__(
         {
             for(i=pixCnt+1; i<outlierPixCnt; i++)
             {
-                warn = CheckAdjacentPixels(mlx90640->outlierPixels[pixCnt],mlx90640->outlierPixels[i]);
+                warn = CheckAdjacentPixels(params_outlierPixels[pixCnt],params_outlierPixels[i]);
                 if(warn != 0)
                 {
                     return warn;
@@ -1359,7 +1363,7 @@ int ExtractDeviatingPixels(const uint16_t *eeData, paramsMLX90640 __attribute__(
         {
             for(i=0; i<outlierPixCnt; i++)
             {
-                warn = CheckAdjacentPixels(mlx90640->brokenPixels[pixCnt],mlx90640->outlierPixels[i]);
+                warn = CheckAdjacentPixels(params_brokenPixels[pixCnt],params_outlierPixels[i]);
                 if(warn != 0)
                 {
                     return warn;

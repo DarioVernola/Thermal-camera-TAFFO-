@@ -10,7 +10,6 @@
 using namespace std;
 
 
-paramsMLX90640 __attribute__((annotate("struct[void, void, scalar(), scalar(), void, scalar(), void, scalar(),scalar(),scalar(),void,void,scalar(),scalar(), void, scalar(),void,scalar(),scalar(),scalar(), void, scalar(), void,void]"))) mlx90640;
 
 // Substituting the bugged min and max functions
 // Max and min are always calculated over temperature array values, which range from 0 to 256
@@ -73,33 +72,33 @@ int main(int argc, char *argv[])
 {
     //mlx90640
     
-    if (MLX90640_ExtractParameters(eeprom, &mlx90640))
+    if (MLX90640_ExtractParameters(eeprom))
         return 1;
     
     
-    const float ta_shift  __attribute((annotate("scalar()")))= 8.f; //Default shift for MLX90640 in open air
+    const float ta_shift  __attribute((annotate("scalar() target('ta_shift')")))= 8.f; //Default shift for MLX90640 in open air
     const float emissivity  __attribute((annotate("scalar()"))) = 0.95f;
     const float minRange  __attribute((annotate("scalar()"))) = 15.f;
     //lol
     const int nx = 32, ny = 24;
 
     // Temperature is an array, the values of temperature are flattened
-    float __attribute__((annotate("scalar(range(-99,999) final)"))) temperature[nx*ny]  ; 
+    float __attribute__((annotate("scalar(range(-10000,10000) final)"))) temperature[nx*ny]  ; 
     
-   
-    float __attribute__((annotate("scalar(range(-32767,32767))"))) Ta = MLX90640_GetTa(subframe1, &mlx90640); // Ambient temperature
-    
+    printf("getTa...\n");
+    float __attribute__((annotate("scalar(range(-32767,32767))"))) Ta = MLX90640_GetTa(subframe1); // Ambient temperature
+    printf("ta = %e\n", Ta);
     float __attribute__((annotate("scalar()"))) tr = Ta - ta_shift; // No need to annotate
 
     printf("TaMain = %.10f\n",Ta);
     printf("TrMain = %.10f\n",tr);
     
-    MLX90640_CalculateTo(subframe1, &mlx90640, emissivity, tr, temperature);
+    MLX90640_CalculateTo(subframe1, emissivity, tr, temperature);
     
-    Ta = MLX90640_GetTa(subframe2, &mlx90640);
+    Ta = MLX90640_GetTa(subframe2);
     tr = Ta - ta_shift;
 
-    MLX90640_CalculateTo(subframe2, &mlx90640, emissivity, tr, temperature);
+    MLX90640_CalculateTo(subframe2, emissivity, tr, temperature);
     printf("TaMain = %.10f\n",Ta);
     printf("TrMain = %.10f\n",tr);
      __attribute__((annotate("scalar()"))) float  minVal = temperature[0], maxVal = temperature[0];
