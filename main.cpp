@@ -12,7 +12,7 @@ using namespace std;
 
 
 // Substituting the bugged min and max functions
-// Max and min are always calculated over temperature array values, which range from 0 to 256
+// Max and min are always calculated over temperature array values
 float min_f(float  __attribute__((annotate("scalar(range(-99,999) final)"))) a,  __attribute__((annotate("scalar(range(-99,999) final)"))) float b)
 {
     if(a < b)
@@ -76,7 +76,7 @@ int main(int argc, char *argv[])
         return 1;
     
     
-    const float ta_shift  __attribute((annotate("scalar() target('ta_shift')")))= 8.f; //Default shift for MLX90640 in open air
+    const float ta_shift  __attribute((annotate("scalar()  target('ta_shift')")))= 8.f; //Default shift for MLX90640 in open air
     const float emissivity  __attribute((annotate("scalar()"))) = 0.95f;
     const float minRange  __attribute((annotate("scalar()"))) = 15.f;
     //lol
@@ -86,13 +86,13 @@ int main(int argc, char *argv[])
     float __attribute__((annotate("scalar(range(-10000,10000) final)"))) temperature[nx*ny]  ; 
     
     printf("getTa...\n");
-    float __attribute__((annotate("scalar(range(-32767,32767))"))) Ta = MLX90640_GetTa(subframe1); // Ambient temperature
+    float __attribute__((annotate("scalar(range(-32767,32767))"))) Ta = MLX90640_GetTa(subframe1); // Environment temperature
     printf("ta = %e\n", Ta);
     float __attribute__((annotate("scalar()"))) tr = Ta - ta_shift; // No need to annotate
 
     printf("TaMain = %.10f\n",Ta);
     printf("TrMain = %.10f\n",tr);
-    
+
     MLX90640_CalculateTo(subframe1, emissivity, tr, temperature);
     
     Ta = MLX90640_GetTa(subframe2);
@@ -105,9 +105,9 @@ int main(int argc, char *argv[])
     for(int i = 1; i < nx * ny; i++) {
        minVal = min_f(minVal, temperature[i]);
        maxVal = max_f(maxVal, temperature[i]);
-       printf("temp[%d] = %.10f\n", i, temperature[i]);
+       //printf("temp[%d] = %.10f\n", i, temperature[i]);
     }
-    float  __attribute__((annotate("scalar(range (-99,999) final)"))) range = max_f(minRange, maxVal - minVal);
+    float  __attribute__((annotate("scalar(range (-10000,10000) final)"))) range = max_f(minRange, maxVal - minVal);
    
     FILE *fp = fopen("thermalmap.ppm", "w");
     if (fp == NULL)

@@ -355,7 +355,7 @@ void MLX90640_CalculateTo(const uint16_t *frameData, float __attribute__((annota
     float  __attribute__((annotate("scalar()"))) taTr;
     float  __attribute__((annotate("scalar()"))) gain; // Too big of a error
     float  __attribute__((annotate("scalar()"))) irDataCP[2]; // ta dependent
-    float  irData; // generates unreasonable values
+    float   irData; // generates unreasonable values
     float  __attribute__((annotate("scalar()"))) alphaCompensated;
     uint8_t mode;
     int8_t ilPattern;
@@ -487,10 +487,10 @@ void MLX90640_CalculateTo(const uint16_t *frameData, float __attribute__((annota
             printf("alpha %.10f\n",alphaCompensated);
 
             float  __attribute__((annotate("scalar()"))) s1 = alphaCompensated*taTr;
-            printf("s1 %.10f\n",s1);
+            //printf("s1 %.10f\n",s1);
 
             float  __attribute__((annotate("scalar()"))) s2 = irData + s1;
-            printf("s2 %.10f\n",s2);
+            //printf("s2 %.10f\n",s2);
 
             float  __attribute__((annotate("scalar()"))) s3 = alphaCompensated*alphaCompensated*alphaCompensated;
             //printf("s3 %.10f\n",s3);
@@ -499,21 +499,21 @@ void MLX90640_CalculateTo(const uint16_t *frameData, float __attribute__((annota
             //printf("S4 %.10f\n",s4);
 
             Sx = sqrt(sqrt(s4)) * params_ksTo[1];
-            //printf("Sx %.10f\n",Sx);
+            printf("Sx %.10f\n",Sx);
 
             // To = sqrt(sqrt(irData/(alphaCompensated * (1 - params_ksTo[1] * 273.15) + Sx) + taTr)) - 273.15; // <--- THIS ONE
             // --- To Decomposition ---
             float __attribute__((annotate("scalar()"))) t1 = params_ksTo[1] * 273.15;
-            //printf("t1 %.10f\n",t1);
+            printf("t1 %.10f\n",t1);
 
             float __attribute__((annotate("scalar()"))) t2 = 1 - t1;
-            //printf("t2 %.10f\n",t2);
+            printf("t2 %.10f\n",t2);
 
             float __attribute__((annotate("scalar()")))  t3 = alphaCompensated * t2;
-            //printf("t3 %.10f\n",t3);
+            printf("t3 %.10f\n",t3);
 
             float  __attribute__((annotate("scalar(range(-8000000000,8000000000) final)"))) t4 = t3 + Sx;
-            //printf("t4 %.10f\n",t4);
+            printf("t4 %.10f\n",t4);
 
             float __attribute__((annotate("scalar()"))) t5 = irData / t4;
             printf("t5 %.10f\n",t5);
@@ -554,24 +554,24 @@ void MLX90640_CalculateTo(const uint16_t *frameData, float __attribute__((annota
             //printf("ct %d\n", params_ct[range]);
 
             float __attribute__((annotate("scalar(range(-599,1039) final)"))) t8 = To - params_ct[range];
-            //printf("t8 %.10f\n",t8);
+            printf("t8 %.10f\n",t8);
 
             float __attribute__((annotate("scalar(range(-1,1) final)"))) t9 = params_ksTo[range]*t8;
-            //printf("t9 %.10f\n",t9);
+            printf("t9 %.10f\n",t9);
 
             float __attribute__((annotate("scalar()"))) t10 = 1 + t9;
-            //printf("t10 %.10f\n",t10);
+            printf("t10 %.10f\n",t10);
             
             float __attribute__((annotate("scalar(range(-1,1) final)"))) t11 = alphaCompensated * alphaCorrR[range];
-            //printf("t11 %.10f\n",t11);
+            printf("t11 %.10f\n",t11);
 
-            float  __attribute__((annotate("scalar(range(0,8000000000) final)")))  t12 = t11*t10;
-            //printf("t12 %.10f\n",t12);
+            float t12 = t11*t10;
+            printf("t12 %.10f\n",t12);
 
-            float  __attribute__((annotate("scalar()"))) t13 = irData/t12;
+            float t13 = irData/t12;
             printf("t13 %.10f\n",t13);
 
-            float  __attribute__((annotate("scalar(range(0,80000000000) final)"))) t14 = t13 + taTr;
+            float t14 = t13 + taTr;
             printf("t14 %.10f\n",t14);
 
             float __attribute__((annotate("scalar()"))) ToF = sqrt(sqrt(t14)) - 273.15;
@@ -584,7 +584,7 @@ void MLX90640_CalculateTo(const uint16_t *frameData, float __attribute__((annota
     printf("vdd %f\n", vdd);
     printf("ta %f \n", ta);
     printf("tr %.10f\n",tr);
-    printf("taTr %.10f\n",taTr);
+    printf("taTr %.10f\n",taTr); 
 }
 
 //------------------------------------------------------------------------------
@@ -687,7 +687,7 @@ void MLX90640_GetImage(const uint16_t *frameData, float  __attribute__((annotate
 float MLX90640_GetVdd(const uint16_t *frameData)
 {
     
-    __attribute__((annotate("scalar(range(-32768,65535))"))) float vdd;
+    __attribute__((annotate("scalar(range(3,5) final)"))) float vdd;
     __attribute__((annotate("scalar(range(0.125,4096))"))) float resolutionCorrection;
 
     int resolutionRAM;    
@@ -712,7 +712,7 @@ float MLX90640_GetTa(const uint16_t *frameData)
 {
     __attribute__((annotate("scalar(range(-32768, 65535))"))) float ptat;
     __attribute__((annotate("scalar(range(-32768, 65535))"))) float ptatArt;
-    __attribute__((annotate("scalar(range(1.32, 65543))"))) float vdd; // Value should be between 3.3 and 5 according to the specification
+    __attribute__((annotate("scalar(range(3,5) disabled)"))) float vdd; // Value should be between 3.3 and 5 according to the specification
     __attribute__((annotate("scalar(range(-32767,32767))")))  float ta; //
     
     printf("getVdd...\n");
@@ -740,7 +740,7 @@ float MLX90640_GetTa(const uint16_t *frameData)
     printf("alphaptat= %.10f\n",params_alphaPTAT);
     printf("ptatArt= %.10f\n",ptatArt);
     // DECOMPOSED ta calculation
-    float  __attribute__((annotate("scalar(range(-1,1) final)"))) vd1 = vdd - 3.3;
+    float  __attribute__((annotate("scalar()")))  vd1 = vdd - 3.3;
     printf("vd1= %.10f\n",vd1);
     
     float  __attribute__((annotate("scalar()"))) ta1 = params_KvPTAT * vd1;
