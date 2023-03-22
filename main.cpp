@@ -76,19 +76,19 @@ int main(int argc, char *argv[])
         return 1;
     
     
-    const float ta_shift  __attribute((annotate("scalar()  target('ta_shift')")))= 8.f; //Default shift for MLX90640 in open air
+    const float ta_shift  __attribute((annotate("scalar()")))= 8.f; //Default shift for MLX90640 in open air
     const float emissivity  __attribute((annotate("scalar()"))) = 0.95f;
     const float minRange  __attribute((annotate("scalar()"))) = 15.f;
     //lol
     const int nx = 32, ny = 24;
 
     // Temperature is an array, the values of temperature are flattened
-    float __attribute__((annotate("scalar(range(-10000,10000) final)"))) temperature[nx*ny]  ; 
+    float __attribute__((annotate("scalar(range(-10000,10000) final) target('temperature')"))) temperature[nx*ny]  ; 
     
     printf("getTa...\n");
     float __attribute__((annotate("scalar(range(-32767,32767))"))) Ta = MLX90640_GetTa(subframe1); // Environment temperature
     printf("ta = %e\n", Ta);
-    float __attribute__((annotate("scalar()"))) tr = Ta - ta_shift; // No need to annotate
+    float __attribute__((annotate("scalar() "))) tr = Ta - ta_shift; // No need to annotate
 
     printf("TaMain = %.10f\n",Ta);
     printf("TrMain = %.10f\n",tr);
