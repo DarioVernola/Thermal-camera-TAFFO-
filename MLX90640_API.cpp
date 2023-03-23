@@ -355,8 +355,8 @@ void MLX90640_CalculateTo(const uint16_t *frameData, float __attribute__((annota
     float  __attribute__((annotate("scalar()"))) taTr;
     float  __attribute__((annotate("scalar()"))) gain; // Too big of a error
     float  __attribute__((annotate("scalar()"))) irDataCP[2]; // ta dependent
-    float   irData; // generates unreasonable values
-    float  __attribute__((annotate("scalar()"))) alphaCompensated;
+    float  irData; // generates unreasonable values
+    float  __attribute__((annotate("scalar(range(-1,1) final)"))) alphaCompensated;
     uint8_t mode;
     int8_t ilPattern;
     int8_t chessPattern;
@@ -381,12 +381,13 @@ void MLX90640_CalculateTo(const uint16_t *frameData, float __attribute__((annota
     printf("taTO Kelvin %.10f\n",ta_kelvin);
     ta4 = ta_kelvin*ta_kelvin*ta_kelvin*ta_kelvin;
     printf("ta4 %.10f\n",ta4);
-    tr4 = (tr + 273.15)*(tr + 273.15)*(tr + 273.15)*(tr + 273.15);
+    tr4 = pow(tr + 273.15,4);
+    //tr4 = (tr + 273.15)*(tr + 273.15)*(tr + 273.15)*(tr + 273.15);
     printf("tr4 %.10f\n",tr4);
     // taTr decomposition
-    float taTr1 = tr4 - ta4;
+    float __attribute__((annotate("scalar()"))) taTr1 = tr4 - ta4;
     printf("taTr1 %e\n",taTr1);
-    float taTr2 = taTr1 / emissivity;
+    float __attribute__((annotate("scalar()"))) taTr2 = taTr1 / emissivity;
     printf("taTr2 %.10f (emissivity=%.10f)\n",taTr2, emissivity);
     taTr = tr4 - taTr2;
     printf("taTr %.10f\n",taTr);
@@ -429,7 +430,7 @@ void MLX90640_CalculateTo(const uint16_t *frameData, float __attribute__((annota
       irDataCP[1] = irDataCP[1] - (params_cpOffset[1] + params_ilChessC[0]) * (1 + params_cpKta * (ta - 25)) * (1 + params_cpKv * (vdd - 3.3));
     }
      
-    for( int pixelNumber = 0; pixelNumber < 768; pixelNumber++)
+    for( int pixelNumber = 0; pixelNumber < 768; pixelNumber++) // was 768
     {
         
         ilPattern = pixelNumber / 32 - (pixelNumber / 64) * 2; 
@@ -452,9 +453,45 @@ void MLX90640_CalculateTo(const uint16_t *frameData, float __attribute__((annota
             {
                 irData = irData - 65536;
             }
+            // IR DATA DECOMPOSITION
+            printf("irDataBGain %.10f\n", irData );
             irData = irData * gain;
+            printf("irDataAGain %.10f\n", irData );
+
+            float __attribute__((annotate("scalar()"))) ir1 = ta - 25; //Annotation causes precision loss
+            printf("ta %.10f\n", ta);
+            printf("ir1 %.10f\n", ir1);
+
+            float __attribute__((annotate("scalar()"))) ir2 = ir1*params_kta[pixelNumber];
+            printf("ir2 %.10f\n", ir2);
+
+            float __attribute__((annotate("scalar()"))) ir3 = 1 + ir2; //Annotation causes more precision loss
+            printf("ir3 %.10f\n", ir3);
+
+
+            float __attribute__((annotate("scalar()"))) ir4 = ir3*params_offset[pixelNumber];
+            printf("ir4 %.10f\n", ir4);
+            printf("params_offset %d\n", params_offset[pixelNumber]);
+
+            float ir5 = vdd - 3.3; // Annotation causes precision loss
+            printf("ir5 %.10f\n", ir5);
+
+            float ir6 = ir5*params_kv[pixelNumber]; // Same
+            printf("ir6 %.10f\n", ir6);
+
+            float __attribute__((annotate("scalar()"))) ir7 = 1 + ir6;
+            printf("ir7 %.10f\n", ir7);
+
+            float __attribute__((annotate("scalar()"))) ir8 = ir7*ir3;
+            printf("ir8 %.10f\n", ir8);
+
+            float __attribute__((annotate("scalar()"))) ir9 = ir8*params_offset[pixelNumber];
+            printf("ir9 %.10f\n", ir9);
+
+            irData= irData - ir9;
             
-            irData = irData - params_offset[pixelNumber]*(1 + params_kta[pixelNumber]*(ta - 25))*(1 + params_kv[pixelNumber]*(vdd - 3.3));
+            // irData = irData - params_offset[pixelNumber]*(1 + params_kta[pixelNumber]*(ta - 25))*(1 + params_kv[pixelNumber]*(vdd - 3.3));
+            printf("irDataACalc %.10f\n", irData );
             if(mode !=  params_calibrationModeEE)
             {
               irData = irData + params_ilChessC[2] * (2 * ilPattern - 1) - params_ilChessC[1] * conversionPattern; 
@@ -465,38 +502,39 @@ void MLX90640_CalculateTo(const uint16_t *frameData, float __attribute__((annota
             irData = irData - params_tgc * irDataCP[subPage];
             
             //alphaCompensated = (params_alpha[pixelNumber] - params_tgc * params_cpAlpha[subPage])*(1 + params_KsTa * (ta - 25));
-            float __attribute__((annotate("scalar()")))  a1 = params_tgc * params_cpAlpha[subPage];
-            // printf("tgc %.10f\n",params_tgc  );
-            // printf("cpAlpha %.10f \n",params_cpAlpha[subPage] );
-            //printf("a1 %.10f\n",a1);
+            float a1 = params_tgc * params_cpAlpha[subPage]; // Annotation generates FP exeption
+            printf("tgc %.10f\n",params_tgc  );
+            printf("cpAlpha %.10f \n",params_cpAlpha[subPage] );
+            printf("a1 %.10f\n",a1);
 
-            float  __attribute__((annotate("scalar()")))  a2 = params_alpha[pixelNumber] - a1;
+            float a2 = params_alpha[pixelNumber] - a1; // Same
             printf("alphastruct %.10f \n",params_alpha[pixelNumber] );
-            //printf("a2 %.10f\n",a2);
+            printf("a2 %.10f\n",a2);
 
-            float a3 = params_KsTa * (ta-25);
-            //printf("a3 %.10f\n",a3);
+            float __attribute__((annotate("scalar()"))) a3 = params_KsTa * (ta-25);
+            printf("a3 %.10f\n",a3);
 
-            float a4 = 1 + a3;
-            //printf("a4 %.10f\n", a4);
+            float a4 = 1 + a3; // Same
+            printf("a4 %.10f\n", a4);
 
             alphaCompensated = a2 * a4;
             
             //Sx = pow((double)alphaCompensated, (double)3) * (irData + alphaCompensated * taTr);
             printf("irData %.10f\n",irData);
+            printf("gain %.10f\n",gain);
             printf("alpha %.10f\n",alphaCompensated);
 
-            float  __attribute__((annotate("scalar()"))) s1 = alphaCompensated*taTr;
-            //printf("s1 %.10f\n",s1);
+            float s1 = alphaCompensated*taTr;
+            printf("s1 %.10f\n",s1);
 
             float  __attribute__((annotate("scalar()"))) s2 = irData + s1;
-            //printf("s2 %.10f\n",s2);
+            printf("s2 %.10f\n",s2);
 
             float  __attribute__((annotate("scalar()"))) s3 = alphaCompensated*alphaCompensated*alphaCompensated;
-            //printf("s3 %.10f\n",s3);
+            printf("s3 %.10f\n",s3);
 
             float  __attribute__((annotate("scalar()"))) s4 = s3*s2;
-            //printf("S4 %.10f\n",s4);
+            printf("S4 %.10f\n",s4);
 
             Sx = sqrt(sqrt(s4)) * params_ksTo[1];
             printf("Sx %.10f\n",Sx);
@@ -568,10 +606,10 @@ void MLX90640_CalculateTo(const uint16_t *frameData, float __attribute__((annota
             float t12 = t11*t10;
             printf("t12 %.10f\n",t12);
 
-            float t13 = irData/t12;
+            float __attribute__((annotate("scalar(range(-32767,32767) final)"))) t13 = irData/t12;
             printf("t13 %.10f\n",t13);
 
-            float t14 = t13 + taTr;
+            float __attribute__((annotate("scalar()"))) t14 = t13 + taTr;
             printf("t14 %.10f\n",t14);
 
             float __attribute__((annotate("scalar()"))) ToF = sqrt(sqrt(t14)) - 273.15;
@@ -585,6 +623,7 @@ void MLX90640_CalculateTo(const uint16_t *frameData, float __attribute__((annota
     printf("ta %f \n", ta);
     printf("tr %.10f\n",tr);
     printf("taTr %.10f\n",taTr); 
+    
 }
 
 //------------------------------------------------------------------------------
@@ -641,7 +680,7 @@ void MLX90640_GetImage(const uint16_t *frameData, float  __attribute__((annotate
       irDataCP[1] = irDataCP[1] - (params_cpOffset[1] + params_ilChessC[0]) * (1 + params_cpKta * (ta - 25)) * (1 + params_cpKv * (vdd - 3.3));
     }
 
-    for( int pixelNumber = 0; pixelNumber < 768; pixelNumber++)
+    for( int pixelNumber = 0; pixelNumber < 768; pixelNumber++) // was 768
     {
         ilPattern = pixelNumber / 32 - (pixelNumber / 64) * 2; 
         chessPattern = ilPattern ^ (pixelNumber - (pixelNumber/2)*2); 
@@ -687,7 +726,7 @@ void MLX90640_GetImage(const uint16_t *frameData, float  __attribute__((annotate
 float MLX90640_GetVdd(const uint16_t *frameData)
 {
     
-    __attribute__((annotate("scalar(range(3,5) final)"))) float vdd;
+    float __attribute__((annotate("scalar(range(-32767,32767) final)"))) vdd;
     __attribute__((annotate("scalar(range(0.125,4096))"))) float resolutionCorrection;
 
     int resolutionRAM;    
@@ -697,12 +736,16 @@ float MLX90640_GetVdd(const uint16_t *frameData)
     {
         vdd = vdd - 65536;
     }
+    printf("vdd: %f\n", vdd);
     resolutionRAM = (frameData[832] & 0x0C00) >> 10; // max 3, min 0
+    
     resolutionCorrection = pow(2, (double)params_resolutionEE) / pow(2, (double)resolutionRAM); // min 1/2^8, max 2^12
     printf("resolutionRAM: %d\n", resolutionRAM);
+    printf("resolutionEE: %d\n", params_resolutionEE);
+    printf("resolutionCorrection: %.10f\n", resolutionCorrection);
     printf("kVdd: %d, vdd25: %d\n", params_kVdd, params_vdd25);
     vdd = (resolutionCorrection * vdd - params_vdd25) / params_kVdd + 3.3; // max 65.543 min 1.32
-    printf("vdd: %e\n", vdd);
+    printf("vdd: %f\n", vdd);
     return vdd;
 }
 
