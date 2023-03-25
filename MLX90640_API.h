@@ -22,26 +22,26 @@
 
 __attribute__((annotate("scalar(range(-32768,32767) disabled)"))) int16_t   params_kVdd;
 __attribute__((annotate("scalar(range(-32768,32767) disabled)"))) int16_t   params_vdd25;
-float     params_KvPTAT;
-float     params_KtPTAT;
+float     __attribute__((annotate("scalar(range(-0.0078, 0.0154) final)")))  params_KvPTAT;
+float     __attribute__((annotate("scalar(range(-64, 128) final)"))) params_KtPTAT;
 __attribute__((annotate("scalar(range(-32768,32767) disabled)"))) uint16_t  params_vPTAT25;
-float     params_alphaPTAT;
+float     __attribute__((annotate("scalar(range(8, 11.75) final)"))) params_alphaPTAT;
 __attribute__((annotate("scalar(range(-32768,32767) disabled)"))) int16_t   params_gainEE;
-float     params_tgc;
-float     params_cpKv;
-float     params_cpKta;
+float     __attribute__((annotate("scalar(range(-4, 8) final)"))) params_tgc;
+float     __attribute__((annotate("scalar(range(-0.0039, 255) final)")))params_cpKv;
+float     __attribute__((annotate("scalar(range(0, 255) final)"))) params_cpKta;
 __attribute__((annotate("scalar(range(0,256) disabled)"))) int   params_resolutionEE; // was uint8_t
 __attribute__((annotate("scalar(range(0,256) disabled)"))) uint8_t   params_calibrationModeEE;
-float     params_KsTa;
-float     params_ksTo[4];
+float     __attribute__((annotate("scalar(range(-1,1) final)"))) params_KsTa;
+float     __attribute__((annotate("scalar()"))) params_ksTo[4];
 __attribute__((annotate("scalar(range(-32768,32767) disabled)"))) int16_t   params_ct[4];
 float     params_alpha[768];    
 __attribute__((annotate("scalar(range(-32768,32767) disabled)"))) int16_t   params_offset[768];    
-float     params_kta[768];    
-float     params_kv[768];
-float     params_cpAlpha[2];
+float     __attribute__((annotate("scalar()"))) params_kta[768];    
+float     __attribute__((annotate("scalar()"))) params_kv[768];
+float     __attribute__((annotate("scalar(range(-512, 1527) final)"))) params_cpAlpha[2];
 __attribute__((annotate("scalar(range(-32768,32767) disabled)"))) int16_t   params_cpOffset[2];
-float     params_ilChessC[3]; 
+float     __attribute__((annotate("scalar()"))) params_ilChessC[3]; 
 __attribute__((annotate("scalar(range(0,65536) disabled)"))) uint16_t  params_brokenPixels[5];
 __attribute__((annotate("scalar(range(0,65536) disabled)"))) uint16_t  params_outlierPixels[5];  
 
