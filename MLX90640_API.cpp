@@ -507,14 +507,14 @@ void MLX90640_CalculateTo(const uint16_t *frameData, float __attribute__((annota
             printf("cpAlpha %.10f \n",params_cpAlpha[subPage] );
             printf("a1 %.10f\n",a1);
 
-            float a2 = params_alpha[pixelNumber] - a1; // Same
+            float __attribute__((annotate("scalar()"))) a2 = params_alpha[pixelNumber] - a1; // Same
             printf("alphastruct %.10f \n",params_alpha[pixelNumber] );
             printf("a2 %.10f\n",a2);
 
             float __attribute__((annotate("scalar()"))) a3 = params_KsTa * (ta-25);
             printf("a3 %.10f\n",a3);
 
-            float a4 = 1 + a3; // Same
+            float __attribute__((annotate("scalar()"))) a4 = 1 + a3; // Same
             printf("a4 %.10f\n", a4);
 
             alphaCompensated = a2 * a4;
@@ -524,7 +524,7 @@ void MLX90640_CalculateTo(const uint16_t *frameData, float __attribute__((annota
             printf("gain %.10f\n",gain);
             printf("alpha %.10f\n",alphaCompensated);
 
-            float s1 = alphaCompensated*taTr;
+            float __attribute__((annotate("scalar()"))) s1 = alphaCompensated*taTr;
             printf("s1 %.10f\n",s1);
 
             float  __attribute__((annotate("scalar()"))) s2 = irData + s1;
@@ -1125,36 +1125,36 @@ void ExtractKtaPixelParameters(const uint16_t *eeData)
     uint8_t ktaScale2;
     uint8_t split;
 
-    KtaRoCo = (eeData[54] & 0xFF00) >> 8;
+    KtaRoCo = (eeData[54] & 0xFF00) >> 8; // min 0 max 255
     if (KtaRoCo > 127)
     {
-        KtaRoCo = KtaRoCo - 256;
+        KtaRoCo = KtaRoCo - 256; // min -128 max 127
     }
     KtaRC[0] = KtaRoCo;
     
-    KtaReCo = (eeData[54] & 0x00FF);
+    KtaReCo = (eeData[54] & 0x00FF); // min 0 max 255
     if (KtaReCo > 127)
     {
-        KtaReCo = KtaReCo - 256;
+        KtaReCo = KtaReCo - 256; // min -128 max 127
     }
     KtaRC[2] = KtaReCo;
       
-    KtaRoCe = (eeData[55] & 0xFF00) >> 8;
+    KtaRoCe = (eeData[55] & 0xFF00) >> 8; // min 0 max 255
     if (KtaRoCe > 127)
     {
-        KtaRoCe = KtaRoCe - 256;
+        KtaRoCe = KtaRoCe - 256; // min -128 max 127
     }
     KtaRC[1] = KtaRoCe;
       
-    KtaReCe = (eeData[55] & 0x00FF);
+    KtaReCe = (eeData[55] & 0x00FF); // min 0 max 255
     if (KtaReCe > 127)
     {
-        KtaReCe = KtaReCe - 256;
+        KtaReCe = KtaReCe - 256; // min -128 max 127
     }
     KtaRC[3] = KtaReCe;
   
-    ktaScale1 = ((eeData[56] & 0x00F0) >> 4) + 8;
-    ktaScale2 = (eeData[56] & 0x000F);
+    ktaScale1 = ((eeData[56] & 0x00F0) >> 4) + 8; // min 8 max 15 + 8
+    ktaScale2 = (eeData[56] & 0x000F); // min 0 max 15
 
     for(int i = 0; i < 24; i++)
     {
@@ -1162,14 +1162,14 @@ void ExtractKtaPixelParameters(const uint16_t *eeData)
         {
             p = 32 * i +j;
             split = 2*(p/32 - (p/64)*2) + p%2;
-            params_kta[p] = (eeData[64 + p] & 0x000E) >> 1;
+            params_kta[p] = (eeData[64 + p] & 0x000E) >> 1; // min 0 max 7
             if (params_kta[p] > 3)
             {
-                params_kta[p] = params_kta[p] - 8;
+                params_kta[p] = params_kta[p] - 8; // min -4 max 3
             }
-            params_kta[p] = params_kta[p] * (1 << ktaScale2);
-            params_kta[p] = KtaRC[split] + params_kta[p];
-            params_kta[p] = params_kta[p] / pow(2,(double)ktaScale1);
+            params_kta[p] = params_kta[p] * (1 << ktaScale2); // min -4*32768 max 3*32768
+            params_kta[p] = KtaRC[split] + params_kta[p]; // min -128-4*32768 = -131200 max 127 + 3*32768 = 98431
+            params_kta[p] = params_kta[p] / pow(2,(double)ktaScale1); // they will be lower
         }
     }
 }
@@ -1187,35 +1187,35 @@ void ExtractKvPixelParameters(const uint16_t *eeData)
     uint8_t kvScale;
     uint8_t split;
 
-    KvRoCo = (eeData[52] & 0xF000) >> 12;
+    KvRoCo = (eeData[52] & 0xF000) >> 12; // min 0 max 15
     if (KvRoCo > 7)
     {
-        KvRoCo = KvRoCo - 16;
+        KvRoCo = KvRoCo - 16; // min -8 max 7
     }
     KvT[0] = KvRoCo;
     
-    KvReCo = (eeData[52] & 0x0F00) >> 8;
+    KvReCo = (eeData[52] & 0x0F00) >> 8; // min 0 max 15
     if (KvReCo > 7)
     {
-        KvReCo = KvReCo - 16;
+        KvReCo = KvReCo - 16; // min -8 max 7
     }
     KvT[2] = KvReCo;
       
     KvRoCe = (eeData[52] & 0x00F0) >> 4;
     if (KvRoCe > 7)
     {
-        KvRoCe = KvRoCe - 16;
+        KvRoCe = KvRoCe - 16; // min -8 max 7
     }
     KvT[1] = KvRoCe;
       
     KvReCe = (eeData[52] & 0x000F);
     if (KvReCe > 7)
     {
-        KvReCe = KvReCe - 16;
+        KvReCe = KvReCe - 16; // min -8 max 7
     }
     KvT[3] = KvReCe;
   
-    kvScale = (eeData[56] & 0x0F00) >> 8;
+    kvScale = (eeData[56] & 0x0F00) >> 8; // min 0 max 15
 
 
     for(int i = 0; i < 24; i++)
@@ -1224,7 +1224,7 @@ void ExtractKvPixelParameters(const uint16_t *eeData)
         {
             p = 32 * i +j;
             split = 2*(p/32 - (p/64)*2) + p%2;
-            params_kv[p] = KvT[split];
+            params_kv[p] = KvT[split]; // min -8 max 7
             params_kv[p] = params_kv[p] / pow(2,(double)kvScale);
         }
     }

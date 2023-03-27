@@ -83,7 +83,7 @@ int main(int argc, char *argv[])
     const int nx = 32, ny = 24;
 
     // Temperature is an array, the values of temperature are flattened
-    float __attribute__((annotate("scalar(range(-10000,10000) final)"))) temperature[nx*ny]  ; 
+    float __attribute__((annotate("scalar(range(-99,999) final)"))) temperature[nx*ny]  ; 
     
     printf("getTa...\n");
     float __attribute__((annotate("scalar(range(-32767,32767))"))) Ta = MLX90640_GetTa(subframe1); // Environment temperature

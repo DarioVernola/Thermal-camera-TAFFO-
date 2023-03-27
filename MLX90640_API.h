@@ -33,12 +33,12 @@ float     __attribute__((annotate("scalar(range(0, 255) final)"))) params_cpKta;
 __attribute__((annotate("scalar(range(0,256) disabled)"))) int   params_resolutionEE; // was uint8_t
 __attribute__((annotate("scalar(range(0,256) disabled)"))) uint8_t   params_calibrationModeEE;
 float     __attribute__((annotate("scalar(range(-1,1) final)"))) params_KsTa;
-float     __attribute__((annotate("scalar()"))) params_ksTo[4];
+float     __attribute__((annotate("scalar(range(-256, 255))"))) params_ksTo[4];
 __attribute__((annotate("scalar(range(-32768,32767) disabled)"))) int16_t   params_ct[4];
 float     params_alpha[768];    
 __attribute__((annotate("scalar(range(-32768,32767) disabled)"))) int16_t   params_offset[768];    
-float     __attribute__((annotate("scalar()"))) params_kta[768];    
-float     __attribute__((annotate("scalar()"))) params_kv[768];
+float     __attribute__((annotate("scalar(range(-131200,98431) final)"))) params_kta[768];    
+float     __attribute__((annotate("scalar(range(-8,7) final)"))) params_kv[768]; // decreases slghtly precision
 float     __attribute__((annotate("scalar(range(-512, 1527) final)"))) params_cpAlpha[2];
 __attribute__((annotate("scalar(range(-32768,32767) disabled)"))) int16_t   params_cpOffset[2];
 float     __attribute__((annotate("scalar()"))) params_ilChessC[3]; 
