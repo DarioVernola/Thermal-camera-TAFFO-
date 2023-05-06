@@ -350,7 +350,7 @@ void MLX90640_CalculateTo(const uint16_t *frameData, float __attribute__((annota
     
     float  __attribute__((annotate("scalar(range(-32767,32767))"))) vdd ; // Range not working (floating point exception)
     float  __attribute__((annotate("scalar(range(-32767,32767))"))) ta ; // FP exception
-    float  __attribute__((annotate("scalar(range(-8000000000, 8000000000) final)"))) ta4 ; // ta dependent
+    float  __attribute__((annotate("scalar(range(-5000000000,1000000000) final)"))) ta4 ; // ta dependent
     float  __attribute__((annotate("scalar()"))) tr4; // ta
     float  __attribute__((annotate("scalar()"))) taTr;
     float  __attribute__((annotate("scalar()"))) gain; // Too big of a error
@@ -377,7 +377,7 @@ void MLX90640_CalculateTo(const uint16_t *frameData, float __attribute__((annota
     ta = MLX90640_GetTa(frameData);
     printf("taTO %.10f\n",ta);
     printf("trTO %.10f\n",tr);
-    __attribute__((annotate("scalar(range(-8000000000, 8000000000) final)"))) float ta_kelvin = ta + 273.15;
+    __attribute__((annotate("scalar(range(-5000000000, 5000000000) final)"))) float ta_kelvin = ta + 273.15;
     printf("taTO Kelvin %.10f\n",ta_kelvin);
     ta4 = ta_kelvin*ta_kelvin*ta_kelvin*ta_kelvin;
     printf("ta4 %.10f\n",ta4);
