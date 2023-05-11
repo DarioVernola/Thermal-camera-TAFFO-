@@ -725,10 +725,18 @@ void MLX90640_GetImage(const uint16_t *frameData, float  __attribute__((annotate
 
 float MLX90640_GetVdd(const uint16_t *frameData)
 {
-    
+    #define BETTER_ERRROR 
+    #ifdef BETTER_ERROR
+    float vdd;
+    #else
     float __attribute__((annotate("scalar(range(-32768,65536) final)"))) vdd;
+    #endif
+    
+    #ifdef BETTER_ERROR
+    float resolutionCorrection;
+    #else
     __attribute__((annotate("scalar(range(0.125,4096))"))) float resolutionCorrection;
-
+    #endif
     int resolutionRAM;    
     
     vdd = frameData[810];
@@ -736,16 +744,26 @@ float MLX90640_GetVdd(const uint16_t *frameData)
     {
         vdd = vdd - 65536;
     }
-    printf("vdd: %f\n", vdd);
+    //printf("vdd: %f\n", vdd);
     resolutionRAM = (frameData[832] & 0x0C00) >> 10; // max 3, min 0
     
     resolutionCorrection = pow(2, (double)params_resolutionEE) / pow(2, (double)resolutionRAM); // min 1/2^8, max 2^12
-    printf("resolutionRAM: %d\n", resolutionRAM);
-    printf("resolutionEE: %d\n", params_resolutionEE);
-    printf("resolutionCorrection: %.10f\n", resolutionCorrection);
-    printf("kVdd: %d, vdd25: %d\n", params_kVdd, params_vdd25);
+    //printf("resolutionRAM: %d\n", resolutionRAM);
+    //printf("resolutionEE: %d\n", params_resolutionEE);
+    //printf("resolutionCorrection: %.10f\n", resolutionCorrection);
+    //printf("kVdd: %d, vdd25: %d\n", params_kVdd, params_vdd25);
     vdd = (resolutionCorrection * vdd - params_vdd25) / params_kVdd + 3.3; // max 65.543 min 1.32
+    /* -- vdd calculation decomposition --
+    float vd1 = resolutionCorrection * vdd;
+    printf("vd1: %f\n", vd1);
+    float vd2 = vd1 - params_vdd25;
+    printf("vd2: %f\n", vd2);
+    float vd3 = vd2 / params_kVdd;
+    printf("vd3: %f\n", vd3);
+    vdd = vd3 + 3.3;
     printf("vdd: %f\n", vdd);
+    */ 
+    #undef BETTER_ERROR //
     return vdd;
 }
 
@@ -753,10 +771,36 @@ float MLX90640_GetVdd(const uint16_t *frameData)
 
 float MLX90640_GetTa(const uint16_t *frameData)
 {
+    // #define BETTER_ERROR
+    #ifdef BETTER_ERROR
+    float ptat;
+    #else
     __attribute__((annotate("scalar(range(-32768, 65535) final)"))) float ptat;
+    #endif
+    
+    #ifdef BETTER_ERROR
+    float ptatArt;
+    #else
     __attribute__((annotate("scalar(range(-32768, 65535))"))) float ptatArt;
+    #endif
+    
+    
+    #ifdef BETTER_ERROR
+    float vdd;
+    #else
     __attribute__((annotate("scalar(range(-32768, 32767))"))) float vdd; 
+    #endif
+    
+    
+    #ifdef BETTER_ERROR
+    float ta; 
+    #else
     __attribute__((annotate("scalar(range(-32767, 32767))")))  float ta; 
+    #endif
+    
+    
+    
+    
     
     printf("getVdd...\n");
     vdd = MLX90640_GetVdd(frameData);
@@ -773,12 +817,19 @@ float MLX90640_GetTa(const uint16_t *frameData)
     {
         ptatArt = ptatArt - 65536;
     }
+    
     // DECOMPOSED ptatArt calculation
     float __attribute__((annotate("scalar()"))) ptatArt1 = ptat * params_alphaPTAT;
     printf("ptatArt1= %.10f\n",ptatArt1);
     float __attribute__((annotate("scalar()"))) ptatArt2 = ptatArt1 + ptatArt;
     printf("ptatArt2= %.10f\n",ptatArt2);
+
+    #ifdef BETTER_ERROR
+    float ptatArt3 = ptat/ptatArt2;
+    #else
     float __attribute__((annotate("scalar()"))) ptatArt3 = ptat/ptatArt2;
+    #endif
+
     printf("ptatArt3= %.10f\n",ptatArt3);
     ptatArt = ptatArt3 * 262144.0f;
     //ptatArt = (ptat / (ptat * params_alphaPTAT + ptatArt)) * pow(2, (double)18);
@@ -792,17 +843,30 @@ float MLX90640_GetTa(const uint16_t *frameData)
     float  __attribute__((annotate("scalar()"))) ta1 = params_KvPTAT * vd1;
     printf("kvPTAT= %.10f\n",params_KvPTAT);
     printf("vdd= %.10f\n",vdd);
-    
+     
     printf("ta1= %.10f\n",ta1);
+    #ifdef BETTER_ERROR
+    float ta2 = 1 + ta1;
+    #else
     float  __attribute__((annotate("scalar()"))) ta2 = 1 + ta1;
+    #endif
     printf("ta2= %.10f\n",ta2);
+    #ifdef BETTER_ERROR
+    float ta3 = ptatArt/ta2;
+    #else
     float  __attribute__((annotate("scalar()"))) ta3 = ptatArt/ta2;
+    #endif
     printf("ta3= %.10f\n",ta3);
     ta = ta3 - params_vPTAT25;
     
     //ta = (ptatArt / (1 + params_KvPTAT * (vdd - 3.3)) - params_vPTAT25); // kvptat range(-0.0078,0.0154)
     printf("taBDiv= %.10f\n",ta);
-    ta = ta / params_KtPTAT + 25; 
+    #ifdef BETTER_ERROR
+    float ktptat = params_KtPTAT;
+    #else
+    float __attribute__((annotate("scalar()"))) ktptat = params_KtPTAT;
+    #endif
+    ta = ta / ktptat + 25; 
     printf("taADiv= %.10f\n",ta);
     /*
     printf("KvPTAT: %f\n", params_KvPTAT);

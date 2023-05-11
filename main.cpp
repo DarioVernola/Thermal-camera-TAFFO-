@@ -71,7 +71,7 @@ void printPPM(FILE *fp, float __attribute__((annotate("scalar(range(-99,999) fin
 int main(int argc, char *argv[])
 {
     //mlx90640
-    
+    //#define BETTER_ERROR
     if (MLX90640_ExtractParameters(eeprom))
         return 1;
     
@@ -83,10 +83,19 @@ int main(int argc, char *argv[])
     const int nx = 32, ny = 24;
 
     // Temperature is an array, the values of temperature are flattened
+    #ifdef BETTER_ERROR
+    float temperature[nx*ny];
+    #else
     float __attribute__((annotate("scalar(range(-99,999) final)"))) temperature[nx*ny]  ; 
+    #endif
     
     printf("getTa...\n");
-    float __attribute__((annotate("scalar(range(-99,999))"))) Ta = MLX90640_GetTa(subframe1); // Environment temperature
+    #ifdef BETTER_ERROR
+    float Ta = MLX90640_GetTa(subframe1);
+    #else
+    float __attribute__((annotate("scalar(range(-99,999))"))) Ta = MLX90640_GetTa(subframe1);
+    #endif
+     // Environment temperature
     printf("ta = %e\n", Ta);
     float __attribute__((annotate("scalar() "))) tr = Ta - ta_shift; // No need to annotate
 
