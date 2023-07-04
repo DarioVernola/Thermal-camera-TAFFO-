@@ -36,7 +36,7 @@ $_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integ
 @params_KsTa = dso_local global float 0.000000e+00, align 4
 @.str.9 = private unnamed_addr constant [26 x i8] c"scalar(range(-1,1) final)\00", section "llvm.metadata"
 @params_ksTo = dso_local global [4 x float] zeroinitializer, align 16
-@.str.10 = private unnamed_addr constant [25 x i8] c"scalar(range(-256, 255))\00", section "llvm.metadata"
+@.str.10 = private unnamed_addr constant [34 x i8] c"scalar(range(-256, 256) disabled)\00", section "llvm.metadata"
 @params_ct = dso_local global [4 x i16] zeroinitializer, align 2
 @params_alpha = dso_local global [768 x float] zeroinitializer, align 16
 @params_offset = dso_local global [768 x i16] zeroinitializer, align 16
@@ -56,7 +56,7 @@ $_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integ
 @.str.17 = private unnamed_addr constant [19 x i8] c"./MLX90640_API.cpp\00", section "llvm.metadata"
 @.str.18 = private unnamed_addr constant [30 x i8] c"scalar(range(-99, 999) final)\00", section "llvm.metadata"
 @.str.19 = private unnamed_addr constant [28 x i8] c"scalar(range(-32767,32767))\00", section "llvm.metadata"
-@.str.20 = private unnamed_addr constant [47 x i8] c"scalar(range(-80000000000, 80000000000) final)\00", section "llvm.metadata"
+@.str.20 = private unnamed_addr constant [45 x i8] c"scalar(range(-5000000000,10000000000) final)\00", section "llvm.metadata"
 @.str.21 = private unnamed_addr constant [29 x i8] c"scalar(range(-99,999) final)\00", section "llvm.metadata"
 @.str.22 = private unnamed_addr constant [12 x i8] c"taTO %.10f\0A\00", align 1
 @.str.23 = private unnamed_addr constant [12 x i8] c"trTO %.10f\0A\00", align 1
@@ -65,7 +65,7 @@ $_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integ
 @.str.26 = private unnamed_addr constant [11 x i8] c"tr4 %.10f\0A\00", align 1
 @.str.27 = private unnamed_addr constant [10 x i8] c"taTr1 %e\0A\00", align 1
 @.str.28 = private unnamed_addr constant [32 x i8] c"taTr2 %.10f (emissivity=%.10f)\0A\00", align 1
-@.str.29 = private unnamed_addr constant [12 x i8] c"taTr %.10f\0A\00", align 1
+@.str.29 = private unnamed_addr constant [9 x i8] c"taTr %e\0A\00", align 1
 @.str.30 = private unnamed_addr constant [19 x i8] c"irDataBGain %.10f\0A\00", align 1
 @.str.31 = private unnamed_addr constant [19 x i8] c"irDataAGain %.10f\0A\00", align 1
 @.str.32 = private unnamed_addr constant [10 x i8] c"ta %.10f\0A\00", align 1
@@ -95,87 +95,88 @@ $_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integ
 @.str.56 = private unnamed_addr constant [10 x i8] c"s3 %.10f\0A\00", align 1
 @.str.57 = private unnamed_addr constant [10 x i8] c"S4 %.10f\0A\00", align 1
 @.str.58 = private unnamed_addr constant [10 x i8] c"Sx %.10f\0A\00", align 1
-@.str.59 = private unnamed_addr constant [10 x i8] c"t1 %.10f\0A\00", align 1
-@.str.60 = private unnamed_addr constant [10 x i8] c"t2 %.10f\0A\00", align 1
-@.str.61 = private unnamed_addr constant [10 x i8] c"t3 %.10f\0A\00", align 1
-@.str.62 = private unnamed_addr constant [44 x i8] c"scalar(range(-8000000000,8000000000) final)\00", section "llvm.metadata"
+@.str.59 = private unnamed_addr constant [27 x i8] c"scalar(range(-1, 1) final)\00", section "llvm.metadata"
+@.str.60 = private unnamed_addr constant [22 x i8] c"t1 %.10f, ksTo %.10f\0A\00", align 1
+@.str.61 = private unnamed_addr constant [10 x i8] c"t2 %.10f\0A\00", align 1
+@.str.62 = private unnamed_addr constant [10 x i8] c"t3 %.10f\0A\00", align 1
 @.str.63 = private unnamed_addr constant [10 x i8] c"t4 %.10f\0A\00", align 1
 @.str.64 = private unnamed_addr constant [10 x i8] c"t5 %.10f\0A\00", align 1
-@.str.65 = private unnamed_addr constant [35 x i8] c"scalar(range(0,80000000000) final)\00", section "llvm.metadata"
-@.str.66 = private unnamed_addr constant [10 x i8] c"t6 %.10f\0A\00", align 1
-@.str.67 = private unnamed_addr constant [10 x i8] c"To %.10f\0A\00", align 1
-@.str.68 = private unnamed_addr constant [13 x i8] c"taTr %.10f \0A\00", align 1
-@.str.69 = private unnamed_addr constant [11 x i8] c"range %d \0A\00", align 1
-@.str.70 = private unnamed_addr constant [31 x i8] c"scalar(range(-599,1039) final)\00", section "llvm.metadata"
-@.str.71 = private unnamed_addr constant [10 x i8] c"t8 %.10f\0A\00", align 1
-@.str.72 = private unnamed_addr constant [10 x i8] c"t9 %.10f\0A\00", align 1
-@.str.73 = private unnamed_addr constant [11 x i8] c"t10 %.10f\0A\00", align 1
-@.str.74 = private unnamed_addr constant [11 x i8] c"t11 %.10f\0A\00", align 1
-@.str.75 = private unnamed_addr constant [11 x i8] c"t12 %.10f\0A\00", align 1
-@.str.76 = private unnamed_addr constant [34 x i8] c"scalar(range(-32767,32767) final)\00", section "llvm.metadata"
-@.str.77 = private unnamed_addr constant [11 x i8] c"t13 %.10f\0A\00", align 1
-@.str.78 = private unnamed_addr constant [11 x i8] c"t14 %.10f\0A\00", align 1
-@.str.79 = private unnamed_addr constant [11 x i8] c"ToF %.10f\0A\00", align 1
-@.str.80 = private unnamed_addr constant [18 x i8] c"pixel Number %d \0A\00", align 1
-@.str.81 = private unnamed_addr constant [8 x i8] c"vdd %f\0A\00", align 1
-@.str.82 = private unnamed_addr constant [8 x i8] c"ta %f \0A\00", align 1
-@.str.83 = private unnamed_addr constant [10 x i8] c"tr %.10f\0A\00", align 1
-@.str.84 = private unnamed_addr constant [29 x i8] c"scalar(range(-65535, 65543))\00", section "llvm.metadata"
-@.str.85 = private unnamed_addr constant [26 x i8] c"scalar(range(0.125,4096))\00", section "llvm.metadata"
-@.str.86 = private unnamed_addr constant [9 x i8] c"vdd: %f\0A\00", align 1
-@.str.87 = private unnamed_addr constant [19 x i8] c"resolutionRAM: %d\0A\00", align 1
-@.str.88 = private unnamed_addr constant [18 x i8] c"resolutionEE: %d\0A\00", align 1
-@.str.89 = private unnamed_addr constant [29 x i8] c"resolutionCorrection: %.10f\0A\00", align 1
-@.str.90 = private unnamed_addr constant [21 x i8] c"kVdd: %d, vdd25: %d\0A\00", align 1
-@.str.91 = private unnamed_addr constant [35 x i8] c"scalar(range(-32768, 65535) final)\00", section "llvm.metadata"
-@.str.92 = private unnamed_addr constant [29 x i8] c"scalar(range(-32768, 65535))\00", section "llvm.metadata"
-@.str.93 = private unnamed_addr constant [29 x i8] c"scalar(range(-32767, 32767))\00", section "llvm.metadata"
-@.str.94 = private unnamed_addr constant [11 x i8] c"getVdd...\0A\00", align 1
-@.str.95 = private unnamed_addr constant [10 x i8] c"vdd = %e\0A\00", align 1
-@.str.96 = private unnamed_addr constant [17 x i8] c"ptatArt1= %.10f\0A\00", align 1
-@.str.97 = private unnamed_addr constant [17 x i8] c"ptatArt2= %.10f\0A\00", align 1
-@.str.98 = private unnamed_addr constant [17 x i8] c"ptatArt3= %.10f\0A\00", align 1
-@.str.99 = private unnamed_addr constant [13 x i8] c"ptat= %.10f\0A\00", align 1
-@.str.100 = private unnamed_addr constant [18 x i8] c"alphaptat= %.10f\0A\00", align 1
-@.str.101 = private unnamed_addr constant [16 x i8] c"ptatArt= %.10f\0A\00", align 1
-@.str.102 = private unnamed_addr constant [12 x i8] c"vd1= %.10f\0A\00", align 1
-@.str.103 = private unnamed_addr constant [15 x i8] c"kvPTAT= %.10f\0A\00", align 1
-@.str.104 = private unnamed_addr constant [12 x i8] c"vdd= %.10f\0A\00", align 1
-@.str.105 = private unnamed_addr constant [12 x i8] c"ta1= %.10f\0A\00", align 1
-@.str.106 = private unnamed_addr constant [12 x i8] c"ta2= %.10f\0A\00", align 1
-@.str.107 = private unnamed_addr constant [12 x i8] c"ta3= %.10f\0A\00", align 1
-@.str.108 = private unnamed_addr constant [15 x i8] c"taBDiv= %.10f\0A\00", align 1
-@.str.109 = private unnamed_addr constant [15 x i8] c"taADiv= %.10f\0A\00", align 1
-@.str.110 = private unnamed_addr constant [22 x i8] c"scalar(range(-32,63))\00", section "llvm.metadata"
-@.str.111 = private unnamed_addr constant [25 x i8] c"scalar(range(-512,1023))\00", section "llvm.metadata"
-@.str.112 = private unnamed_addr constant [23 x i8] c"scalar(range(8,11.75))\00", section "llvm.metadata"
-@.str.113 = private unnamed_addr constant [24 x i8] c"scalar(range(-128,255))\00", section "llvm.metadata"
-@.str.114 = private unnamed_addr constant [30 x i8] c"scalar(range(-128,255) final)\00", section "llvm.metadata"
-@.str.115 = private unnamed_addr constant [25 x i8] c"scalar(range(-512,1527))\00", section "llvm.metadata"
-@.str.116 = private unnamed_addr constant [9 x i8] c"main.cpp\00", section "llvm.metadata"
-@.str.117 = private unnamed_addr constant [27 x i8] c"scalar(range(0,256) final)\00", section "llvm.metadata"
-@.str.118 = private unnamed_addr constant [29 x i8] c"scalar(range (15,256) final)\00", section "llvm.metadata"
-@.str.119 = private unnamed_addr constant [4 x i8] c"P3\0A\00", align 1
-@.str.120 = private unnamed_addr constant [7 x i8] c"%d %d\0A\00", align 1
-@.str.121 = private unnamed_addr constant [5 x i8] c"255\0A\00", align 1
-@.str.122 = private unnamed_addr constant [10 x i8] c"%d %d %d \00", align 1
-@.str.123 = private unnamed_addr constant [2 x i8] c"\0A\00", align 1
-@_ZL6eeprom = internal constant [832 x i16] [i16 165, i16 -30305, i16 0, i16 8289, i16 5, i16 800, i16 992, i16 2347, i16 -19931, i16 24966, i16 1177, i16 0, i16 6401, i16 0, i16 0, i16 -16845, i16 17184, i16 -81, i16 257, i16 257, i16 257, i16 -3599, i16 -7951, i16 -16176, i16 273, i16 274, i16 258, i16 -3838, i16 -3597, i16 -7694, i16 -12062, i16 -20271, i16 -30571, i16 14876, i16 -4678, i16 4607, i16 13090, i16 13107, i16 34, i16 -13073, i16 -9029, i16 254, i16 8465, i16 8754, i16 8755, i16 4386, i16 -239, i16 -13074, i16 6118, i16 12203, i16 6486, i16 -24709, i16 30310, i16 -1597, i16 14391, i16 13876, i16 9298, i16 2187, i16 6059, i16 1577, i16 -5120, i16 -26729, i16 -26729, i16 11003, i16 3262, i16 2176, i16 8398, i16 1054, i16 3246, i16 48, i16 7214, i16 1006, i16 3182, i16 2160, i16 9358, i16 -1076, i16 4158, i16 944, i16 8302, i16 -884, i16 513, i16 2944, i16 8192, i16 -5970, i16 6656, i16 -1024, i16 3232, i16 -1074, i16 -1008, i16 -176, i16 6192, i16 -3058, i16 -3954, i16 -2064, i16 4176, i16 -6050, i16 3200, i16 62, i16 -1892, i16 5120, i16 2192, i16 -2018, i16 -2036, i16 6096, i16 2112, i16 1102, i16 76, i16 3984, i16 6128, i16 862, i16 44, i16 5200, i16 3874, i16 1998, i16 972, i16 2128, i16 2098, i16 -994, i16 -2946, i16 5024, i16 994, i16 800, i16 -2, i16 4064, i16 -1952, i16 -64, i16 -3026, i16 32, i16 4110, i16 1152, i16 8318, i16 2030, i16 2238, i16 48, i16 9166, i16 1022, i16 3086, i16 3136, i16 8334, i16 -178, i16 5120, i16 1856, i16 8254, i16 -882, i16 -48, i16 2992, i16 6192, i16 -4066, i16 1136, i16 -1904, i16 4176, i16 -2050, i16 1904, i16 -1056, i16 5216, i16 -3058, i16 -2976, i16 -3984, i16 4130, i16 -3138, i16 5104, i16 -930, i16 -932, i16 6080, i16 1168, i16 -2018, i16 -100, i16 6080, i16 5074, i16 2078, i16 92, i16 4864, i16 6098, i16 782, i16 14, i16 5184, i16 914, i16 2926, i16 -1010, i16 4064, i16 2098, i16 -1970, i16 -2018, i16 5040, i16 3922, i16 -96, i16 -978, i16 5088, i16 -976, i16 -3008, i16 -1056, i16 2944, i16 7200, i16 2144, i16 8272, i16 4014, i16 5296, i16 3008, i16 10112, i16 1038, i16 7152, i16 4160, i16 9280, i16 -98, i16 5248, i16 2880, i16 10224, i16 1118, i16 3040, i16 4016, i16 7184, i16 -2032, i16 3152, i16 64, i16 6208, i16 -2930, i16 1040, i16 912, i16 6240, i16 -2034, i16 -1888, i16 -960, i16 5170, i16 -2080, i16 5232, i16 -864, i16 -850, i16 7136, i16 3330, i16 16, i16 990, i16 4176, i16 5154, i16 2158, i16 142, i16 4048, i16 4290, i16 1934, i16 76, i16 5248, i16 1074, i16 3070, i16 78, i16 3136, i16 3218, i16 -912, i16 -1938, i16 2240, i16 2116, i16 960, i16 158, i16 4160, i16 -798, i16 -1936, i16 -2960, i16 2080, i16 4110, i16 2080, i16 7438, i16 3022, i16 2224, i16 1072, i16 10176, i16 2046, i16 5088, i16 6112, i16 9216, i16 -130, i16 2142, i16 2928, i16 7344, i16 94, i16 -64, i16 3056, i16 9104, i16 -50, i16 112, i16 -912, i16 6160, i16 -2002, i16 2034, i16 928, i16 7218, i16 -2034, i16 32, i16 992, i16 5154, i16 -4080, i16 1072, i16 -2978, i16 -4802, i16 4096, i16 -784, i16 -2976, i16 -1026, i16 3104, i16 2080, i16 1024, i16 -962, i16 2992, i16 160, i16 -96, i16 -2834, i16 3200, i16 -2046, i16 1024, i16 -66, i16 3040, i16 162, i16 -2896, i16 -3010, i16 2128, i16 66, i16 -1104, i16 -1938, i16 3136, i16 82, i16 -2000, i16 -4000, i16 80, i16 6032, i16 2162, i16 7344, i16 1102, i16 2288, i16 2048, i16 7184, i16 14, i16 5086, i16 3200, i16 8320, i16 -162, i16 3136, i16 2944, i16 8192, i16 1054, i16 960, i16 2048, i16 6178, i16 -128, i16 2128, i16 1026, i16 5152, i16 -2962, i16 50, i16 914, i16 4306, i16 -3952, i16 -944, i16 -1950, i16 4194, i16 -4096, i16 3010, i16 -6016, i16 -5906, i16 1152, i16 -1758, i16 -5072, i16 -5058, i16 2080, i16 18, i16 -1888, i16 -3922, i16 1904, i16 114, i16 -2144, i16 -4002, i16 3136, i16 -1038, i16 -1008, i16 -4018, i16 3008, i16 114, i16 -3040, i16 -5026, i16 1152, i16 -926, i16 -2128, i16 -3890, i16 1200, i16 -878, i16 -2928, i16 -4992, i16 50, i16 8098, i16 3058, i16 6192, i16 3022, i16 4224, i16 1056, i16 7152, i16 1920, i16 6096, i16 5024, i16 6272, i16 -1184, i16 6096, i16 2898, i16 5200, i16 96, i16 1922, i16 4864, i16 7138, i16 -3042, i16 1120, i16 -958, i16 4130, i16 -2032, i16 930, i16 866, i16 4112, i16 -2080, i16 -2944, i16 -14, i16 1170, i16 -5088, i16 1970, i16 -5136, i16 -7106, i16 2016, i16 -1870, i16 -6096, i16 -7138, i16 1952, i16 2, i16 -1088, i16 -5986, i16 -1152, i16 2034, i16 -3232, i16 -4994, i16 1136, i16 -1118, i16 784, i16 -5106, i16 -960, i16 -910, i16 -5040, i16 -6082, i16 32, i16 -30, i16 -3216, i16 -4048, i16 34, i16 -3934, i16 -4080, i16 -6992, i16 -1984, i16 976, i16 1042, i16 5120, i16 -960, i16 -1840, i16 50, i16 5104, i16 -1954, i16 1968, i16 2064, i16 5202, i16 -3154, i16 -864, i16 912, i16 5152, i16 -1906, i16 -4080, i16 3026, i16 4162, i16 -4066, i16 -894, i16 -7982, i16 1186, i16 -3072, i16 -62, i16 864, i16 4130, i16 -4048, i16 -3934, i16 -1998, i16 2082, i16 -4112, i16 2018, i16 -2032, i16 -2018, i16 4160, i16 208, i16 -1984, i16 -1026, i16 4208, i16 5058, i16 3088, i16 94, i16 5040, i16 2224, i16 1952, i16 78, i16 6290, i16 66, i16 5088, i16 -914, i16 5152, i16 4226, i16 1088, i16 -1858, i16 7200, i16 6132, i16 3952, i16 2096, i16 7234, i16 2258, i16 3152, i16 1088, i16 6178, i16 -4176, i16 -990, i16 144, i16 -1136, i16 -3024, i16 -46, i16 2992, i16 -1168, i16 -3072, i16 98, i16 2160, i16 -4226, i16 -2976, i16 -128, i16 3120, i16 -2994, i16 -3216, i16 2930, i16 2082, i16 -6050, i16 -2992, i16 -2030, i16 96, i16 -3088, i16 -1182, i16 -126, i16 1106, i16 -5120, i16 -5040, i16 -3950, i16 1058, i16 -5136, i16 -3168, i16 -6128, i16 -9074, i16 2944, i16 -1982, i16 -3120, i16 -5154, i16 3968, i16 -1006, i16 -944, i16 -3970, i16 1920, i16 -894, i16 -1152, i16 -4018, i16 4178, i16 -142, i16 2912, i16 -4034, i16 2128, i16 1138, i16 -976, i16 -4994, i16 4114, i16 3940, i16 896, i16 -1968, i16 5122, i16 1106, i16 -912, i16 -2016, i16 4082, i16 -1168, i16 -2046, i16 -992, i16 -2144, i16 -3072, i16 -1182, i16 864, i16 -4128, i16 -2064, i16 -1006, i16 -1888, i16 -6240, i16 -2016, i16 -2094, i16 2032, i16 -3952, i16 -6110, i16 930, i16 66, i16 -7104, i16 -2080, i16 -1038, i16 -974, i16 -6096, i16 -5134, i16 -3104, i16 962, i16 -6994, i16 -7152, i16 -4030, i16 -4030, i16 -8192, i16 -3214, i16 -7184, i16 -11250, i16 -110, i16 -3086, i16 -5296, i16 -8338, i16 -64, i16 -3054, i16 -3072, i16 -8018, i16 -2144, i16 -974, i16 -4144, i16 -4098, i16 144, i16 -4046, i16 -64, i16 -7090, i16 80, i16 2, i16 -3072, i16 -6098, i16 2112, i16 -2030, i16 -2080, i16 -2096, i16 -864, i16 -2030, i16 -3024, i16 -6096, i16 -32, i16 -1120, i16 3138, i16 4112, i16 3008, i16 -928, i16 3074, i16 4144, i16 80, i16 80, i16 4306, i16 5346, i16 -16, i16 176, i16 5058, i16 6272, i16 2176, i16 -32, i16 5184, i16 5298, i16 -898, i16 176, i16 2224, i16 3216, i16 -864, i16 2034, i16 4098, i16 6274, i16 1120, i16 -896, i16 3138, i16 2194, i16 -16, i16 -3182, i16 -4080, i16 -6146, i16 3986, i16 -1966, i16 -2112, i16 -6130, i16 3106, i16 66, i16 176, i16 -3874, i16 4048, i16 162, i16 1984, i16 -1938, i16 6290, i16 994, i16 2096, i16 -2882, i16 5248, i16 2210, i16 128, i16 -3986, i16 5264, i16 5106, i16 4064, i16 1134, i16 8272, i16 2146, i16 3072, i16 -2962, i16 7152, i16 -6336, i16 930, i16 -2032, i16 -192, i16 -2224, i16 850, i16 832, i16 -2176, i16 -2160, i16 2066, i16 192, i16 -4160, i16 -4912, i16 -14, i16 1186, i16 -2866, i16 -4208, i16 2048, i16 1088, i16 -4944, i16 -2976, i16 16, i16 -944, i16 -1040, i16 -2112, i16 1906, i16 2066, i16 -3072, i16 -3152, i16 1938, i16 -48, i16 -3184, i16 -2144, i16 -32, i16 -7074, i16 7042, i16 4002, i16 928, i16 -2162, i16 7122, i16 4066, i16 3168, i16 -2802, i16 5168, i16 1328, i16 3152, i16 -738, i16 8496, i16 2082, i16 6240, i16 1198, i16 7456, i16 5362, i16 4288, i16 -786, i16 10338, i16 7186, i16 8112, i16 3166, i16 11344, i16 8178, i16 8160, i16 2078, i16 11218, i16 -7280, i16 -3070, i16 -2112, i16 -3216, i16 -8160, i16 -2174, i16 -3264, i16 -5264, i16 -8176, i16 -1952, i16 -3968, i16 -7186, i16 -6016, i16 -158, i16 -4816, i16 -3952, i16 -9088, i16 50, i16 -862, i16 -5984, i16 -4944, i16 -1888, i16 -2928, i16 -5008, i16 -6224, i16 -78, i16 -4048, i16 -3154, i16 -7248, i16 866, i16 -8192, i16 -2272, i16 -6272, i16 -5184, i16 -9314, i16 1840, i16 -7168, i16 -4288, i16 -9426, i16 1888, i16 -3104, i16 -3024, i16 -8082, i16 -1104, i16 -928, i16 816, i16 -6898, i16 5232, i16 -2960, i16 2080, i16 -3970, i16 4226, i16 2226, i16 1136, i16 -4994, i16 6224, i16 2946, i16 2928, i16 -2018, i16 7056, i16 3986, i16 4912, i16 -2082, i16 8976], align 16
-@.str.124 = private unnamed_addr constant [28 x i8] c"target('ta_shift') scalar()\00", section "llvm.metadata"
-@.str.125 = private unnamed_addr constant [10 x i8] c"getTa...\0A\00", align 1
-@.str.126 = private unnamed_addr constant [23 x i8] c"scalar(range(-99,999))\00", section "llvm.metadata"
-@_ZL9subframe1 = internal constant [834 x i16] [i16 -90, i16 -94, i16 -88, i16 -100, i16 -90, i16 -101, i16 -90, i16 -103, i16 -76, i16 -72, i16 -52, i16 -90, i16 -88, i16 -106, i16 -72, i16 -71, i16 -54, i16 -90, i16 -92, i16 -119, i16 -67, i16 -76, i16 -61, i16 -102, i16 -92, i16 -116, i16 -99, i16 -126, i16 -104, i16 -122, i16 -100, i16 -132, i16 -104, i16 -100, i16 -107, i16 -103, i16 -103, i16 -105, i16 -110, i16 -100, i16 -87, i16 -76, i16 -73, i16 -83, i16 -103, i16 -110, i16 -82, i16 -69, i16 -68, i16 -91, i16 -113, i16 -114, i16 -75, i16 -79, i16 -82, i16 -95, i16 -105, i16 -117, i16 -116, i16 -121, i16 -115, i16 -124, i16 -119, i16 -131, i16 -92, i16 -98, i16 -87, i16 -103, i16 -90, i16 -102, i16 -88, i16 -103, i16 -71, i16 -62, i16 -47, i16 -90, i16 -89, i16 -102, i16 -55, i16 -68, i16 -55, i16 -101, i16 -93, i16 -109, i16 -55, i16 -71, i16 -65, i16 -110, i16 -94, i16 -122, i16 -100, i16 -125, i16 -102, i16 -125, i16 -100, i16 -132, i16 -103, i16 -103, i16 -109, i16 -104, i16 -104, i16 -107, i16 -112, i16 -102, i16 -78, i16 -66, i16 -71, i16 -83, i16 -100, i16 -105, i16 -69, i16 -63, i16 -78, i16 -98, i16 -112, i16 -105, i16 -62, i16 -72, i16 -97, i16 -108, i16 -108, i16 -122, i16 -119, i16 -121, i16 -115, i16 -127, i16 -119, i16 -128, i16 -87, i16 -99, i16 -86, i16 -100, i16 -86, i16 -100, i16 -89, i16 -103, i16 -68, i16 -57, i16 -44, i16 -85, i16 -88, i16 -91, i16 -44, i16 -65, i16 -60, i16 -104, i16 -85, i16 -87, i16 -47, i16 -71, i16 -81, i16 -120, i16 -95, i16 -120, i16 -100, i16 -124, i16 -102, i16 -125, i16 -100, i16 -134, i16 -102, i16 -102, i16 -106, i16 -99, i16 -101, i16 -106, i16 -109, i16 -103, i16 -76, i16 -67, i16 -67, i16 -75, i16 -100, i16 -94, i16 -63, i16 -62, i16 -81, i16 -105, i16 -96, i16 -80, i16 -62, i16 -71, i16 -109, i16 -117, i16 -111, i16 -123, i16 -121, i16 -121, i16 -116, i16 -126, i16 -121, i16 -132, i16 -89, i16 -91, i16 -81, i16 -82, i16 -67, i16 -97, i16 -90, i16 -105, i16 -69, i16 -56, i16 -37, i16 -72, i16 -84, i16 -76, i16 -45, i16 -65, i16 -66, i16 -105, i16 -64, i16 -72, i16 -52, i16 -79, i16 -91, i16 -122, i16 -97, i16 -122, i16 -101, i16 -126, i16 -102, i16 -124, i16 -101, i16 -136, i16 -104, i16 -102, i16 -100, i16 -81, i16 -78, i16 -94, i16 -114, i16 -106, i16 -82, i16 -66, i16 -61, i16 -63, i16 -94, i16 -83, i16 -66, i16 -64, i16 -92, i16 -108, i16 -73, i16 -69, i16 -69, i16 -83, i16 -117, i16 -121, i16 -112, i16 -125, i16 -123, i16 -126, i16 -119, i16 -128, i16 -125, i16 -133, i16 -88, i16 -94, i16 -82, i16 -82, i16 -49, i16 -70, i16 -92, i16 -106, i16 -71, i16 -60, i16 -38, i16 -64, i16 -73, i16 -66, i16 -43, i16 -64, i16 -73, i16 -96, i16 -49, i16 -69, i16 -55, i16 -95, i16 -100, i16 -125, i16 -101, i16 -122, i16 -107, i16 -132, i16 -102, i16 -128, i16 -102, i16 -136, i16 -105, i16 -108, i16 -108, i16 -94, i16 -65, i16 -68, i16 -115, i16 -106, i16 -87, i16 -72, i16 -64, i16 -63, i16 -80, i16 -71, i16 -67, i16 -63, i16 -92, i16 -99, i16 -73, i16 -68, i16 -82, i16 -105, i16 -124, i16 -125, i16 -118, i16 -128, i16 -128, i16 -130, i16 -119, i16 -130, i16 -125, i16 -133, i16 -87, i16 -97, i16 -87, i16 -94, i16 -44, i16 -53, i16 -71, i16 -102, i16 -73, i16 -60, i16 -41, i16 -59, i16 -45, i16 -57, i16 -42, i16 -68, i16 -68, i16 -76, i16 -48, i16 -70, i16 -72, i16 -114, i16 -101, i16 -127, i16 -99, i16 -122, i16 -103, i16 -128, i16 -106, i16 -126, i16 -105, i16 -138, i16 -106, i16 -106, i16 -112, i16 -101, i16 -66, i16 -63, i16 -88, i16 -96, i16 -89, i16 -72, i16 -63, i16 -61, i16 -58, i16 -63, i16 -67, i16 -64, i16 -72, i16 -78, i16 -74, i16 -72, i16 -100, i16 -119, i16 -126, i16 -125, i16 -115, i16 -128, i16 -125, i16 -127, i16 -122, i16 -130, i16 -127, i16 -135, i16 -96, i16 -98, i16 -90, i16 -102, i16 -72, i16 -59, i16 -46, i16 -77, i16 -60, i16 -55, i16 -42, i16 -61, i16 -46, i16 -58, i16 -45, i16 -66, i16 -47, i16 -67, i16 -52, i16 -78, i16 -88, i16 -126, i16 -103, i16 -126, i16 -99, i16 -122, i16 -104, i16 -129, i16 -104, i16 -123, i16 -101, i16 -134, i16 -115, i16 -113, i16 -119, i16 -111, i16 -96, i16 -79, i16 -72, i16 -63, i16 -64, i16 -64, i16 -68, i16 -62, i16 -65, i16 -65, i16 -72, i16 -68, i16 -67, i16 -73, i16 -79, i16 -80, i16 -113, i16 -123, i16 -128, i16 -123, i16 -117, i16 -124, i16 -126, i16 -124, i16 -109, i16 -117, i16 -123, i16 -130, i16 -98, i16 -100, i16 -98, i16 -106, i16 -88, i16 -82, i16 -45, i16 -57, i16 -46, i16 -57, i16 -39, i16 -58, i16 -41, i16 -58, i16 -47, i16 -65, i16 -46, i16 -67, i16 -56, i16 -89, i16 -97, i16 -117, i16 -104, i16 -124, i16 -98, i16 -116, i16 -79, i16 -95, i16 -63, i16 -86, i16 -82, i16 -124, i16 -118, i16 -116, i16 -128, i16 -114, i16 -109, i16 -105, i16 -75, i16 -64, i16 -66, i16 -66, i16 -66, i16 -58, i16 -61, i16 -65, i16 -74, i16 -68, i16 -66, i16 -73, i16 -84, i16 -88, i16 -118, i16 -128, i16 -128, i16 -126, i16 -110, i16 -113, i16 -92, i16 -89, i16 -79, i16 -89, i16 -114, i16 -126, i16 -94, i16 -101, i16 -97, i16 -109, i16 -90, i16 -94, i16 -50, i16 -62, i16 -41, i16 -51, i16 -37, i16 -53, i16 -37, i16 -54, i16 -44, i16 -63, i16 -46, i16 -68, i16 -57, i16 -90, i16 -96, i16 -118, i16 -101, i16 -123, i16 -71, i16 -81, i16 -62, i16 -84, i16 -80, i16 -112, i16 -100, i16 -135, i16 -118, i16 -117, i16 -128, i16 -115, i16 -113, i16 -110, i16 -77, i16 -68, i16 -62, i16 -63, i16 -67, i16 -60, i16 -58, i16 -63, i16 -72, i16 -68, i16 -70, i16 -75, i16 -85, i16 -87, i16 -117, i16 -125, i16 -128, i16 -117, i16 -78, i16 -87, i16 -83, i16 -89, i16 -111, i16 -123, i16 -129, i16 -136, i16 -99, i16 -104, i16 -98, i16 -109, i16 -97, i16 -101, i16 -57, i16 -62, i16 -45, i16 -52, i16 -39, i16 -54, i16 -39, i16 -51, i16 -44, i16 -65, i16 -47, i16 -68, i16 -57, i16 -79, i16 -92, i16 -117, i16 -81, i16 -87, i16 -57, i16 -75, i16 -70, i16 -113, i16 -100, i16 -124, i16 -107, i16 -139, i16 -125, i16 -120, i16 -131, i16 -120, i16 -120, i16 -116, i16 -88, i16 -71, i16 -69, i16 -65, i16 -68, i16 -60, i16 -64, i16 -63, i16 -74, i16 -68, i16 -69, i16 -76, i16 -83, i16 -76, i16 -100, i16 -111, i16 -94, i16 -88, i16 -74, i16 -85, i16 -116, i16 -118, i16 -124, i16 -133, i16 -134, i16 -140, i16 -107, i16 -106, i16 -103, i16 -113, i16 -97, i16 -101, i16 -61, i16 -68, i16 -48, i16 -54, i16 -41, i16 -55, i16 -40, i16 -54, i16 -44, i16 -65, i16 -51, i16 -67, i16 -53, i16 -75, i16 -57, i16 -75, i16 -63, i16 -83, i16 -62, i16 -95, i16 -98, i16 -127, i16 -106, i16 -125, i16 -111, i16 -139, i16 -132, i16 -125, i16 -138, i16 -123, i16 -120, i16 -119, i16 -94, i16 -77, i16 -74, i16 -71, i16 -74, i16 -63, i16 -67, i16 -66, i16 -79, i16 -73, i16 -75, i16 -82, i16 -86, i16 -80, i16 -79, i16 -85, i16 -93, i16 -87, i16 -96, i16 -115, i16 -131, i16 -132, i16 -130, i16 -140, i16 -138, i16 -142, i16 -106, i16 -107, i16 -104, i16 -113, i16 -101, i16 -103, i16 -67, i16 -74, i16 -53, i16 -61, i16 -48, i16 -61, i16 -45, i16 -58, i16 -55, i16 -71, i16 -55, i16 -71, i16 -57, i16 -77, i16 -58, i16 -77, i16 -67, i16 -89, i16 -94, i16 -119, i16 -111, i16 -130, i16 -112, i16 -128, i16 -116, i16 -137, i16 -143, i16 -136, i16 -147, i16 -137, i16 -136, i16 -126, i16 -109, i16 -95, i16 -90, i16 -88, i16 -90, i16 -82, i16 -82, i16 -85, i16 -97, i16 -90, i16 -91, i16 -93, i16 -99, i16 -94, i16 -92, i16 -99, i16 -110, i16 -108, i16 -132, i16 -142, i16 -149, i16 -145, i16 -143, i16 -148, i16 -150, i16 -152, i16 20276, i16 6436, i16 32767, i16 6436, i16 32767, i16 6434, i16 32767, i16 6434, i16 -90, i16 -12788, i16 6240, i16 -10474, i16 -8, i16 8, i16 -1, i16 -2, i16 6161, i16 973, i16 608, i16 32767, i16 6161, i16 973, i16 608, i16 32767, i16 1, i16 1, i16 1, i16 1, i16 1, i16 1, i16 1, i16 1, i16 1609, i16 32767, i16 6436, i16 32767, i16 6436, i16 32767, i16 6434, i16 32767, i16 -88, i16 -2799, i16 -12384, i16 -10410, i16 6, i16 -3, i16 -4, i16 -1, i16 230, i16 95, i16 9921, i16 55, i16 230, i16 95, i16 9921, i16 55, i16 1, i16 1, i16 1, i16 1, i16 1, i16 1, i16 1, i16 1, i16 6401, i16 0], align 16
-@.str.127 = private unnamed_addr constant [9 x i8] c"ta = %e\0A\00", align 1
-@.str.128 = private unnamed_addr constant [10 x i8] c"scalar() \00", section "llvm.metadata"
-@.str.129 = private unnamed_addr constant [16 x i8] c"TaMain = %.10f\0A\00", align 1
-@.str.130 = private unnamed_addr constant [16 x i8] c"TrMain = %.10f\0A\00", align 1
-@_ZL9subframe2 = internal constant [834 x i16] [i16 -90, i16 -92, i16 -88, i16 -97, i16 -90, i16 -96, i16 -90, i16 -100, i16 -76, i16 -69, i16 -52, i16 -82, i16 -88, i16 -101, i16 -72, i16 -68, i16 -54, i16 -80, i16 -92, i16 -112, i16 -67, i16 -74, i16 -61, i16 -93, i16 -92, i16 -109, i16 -99, i16 -117, i16 -104, i16 -116, i16 -100, i16 -128, i16 -97, i16 -100, i16 -104, i16 -103, i16 -98, i16 -105, i16 -106, i16 -100, i16 -83, i16 -76, i16 -66, i16 -83, i16 -97, i16 -110, i16 -81, i16 -69, i16 -59, i16 -91, i16 -108, i16 -114, i16 -70, i16 -79, i16 -75, i16 -95, i16 -101, i16 -117, i16 -113, i16 -121, i16 -109, i16 -124, i16 -113, i16 -131, i16 -92, i16 -93, i16 -87, i16 -98, i16 -90, i16 -96, i16 -88, i16 -98, i16 -71, i16 -57, i16 -47, i16 -81, i16 -89, i16 -98, i16 -55, i16 -61, i16 -55, i16 -91, i16 -93, i16 -107, i16 -55, i16 -65, i16 -65, i16 -103, i16 -94, i16 -114, i16 -100, i16 -120, i16 -102, i16 -120, i16 -100, i16 -127, i16 -98, i16 -103, i16 -105, i16 -104, i16 -99, i16 -107, i16 -105, i16 -102, i16 -78, i16 -66, i16 -65, i16 -83, i16 -96, i16 -105, i16 -63, i16 -63, i16 -67, i16 -98, i16 -109, i16 -105, i16 -57, i16 -72, i16 -88, i16 -108, i16 -101, i16 -122, i16 -114, i16 -121, i16 -109, i16 -127, i16 -116, i16 -128, i16 -87, i16 -92, i16 -86, i16 -96, i16 -86, i16 -95, i16 -89, i16 -98, i16 -68, i16 -55, i16 -44, i16 -74, i16 -88, i16 -90, i16 -44, i16 -58, i16 -60, i16 -95, i16 -85, i16 -82, i16 -47, i16 -63, i16 -81, i16 -113, i16 -95, i16 -113, i16 -100, i16 -119, i16 -102, i16 -117, i16 -100, i16 -126, i16 -96, i16 -102, i16 -101, i16 -99, i16 -98, i16 -106, i16 -104, i16 -103, i16 -74, i16 -67, i16 -59, i16 -75, i16 -95, i16 -94, i16 -58, i16 -62, i16 -71, i16 -105, i16 -92, i16 -80, i16 -54, i16 -71, i16 -102, i16 -117, i16 -104, i16 -123, i16 -115, i16 -121, i16 -110, i16 -126, i16 -116, i16 -132, i16 -89, i16 -90, i16 -81, i16 -79, i16 -67, i16 -88, i16 -90, i16 -100, i16 -69, i16 -53, i16 -37, i16 -62, i16 -84, i16 -73, i16 -45, i16 -58, i16 -66, i16 -98, i16 -64, i16 -66, i16 -52, i16 -70, i16 -91, i16 -116, i16 -97, i16 -115, i16 -101, i16 -121, i16 -102, i16 -118, i16 -101, i16 -128, i16 -98, i16 -102, i16 -99, i16 -81, i16 -71, i16 -94, i16 -109, i16 -106, i16 -80, i16 -66, i16 -53, i16 -63, i16 -90, i16 -83, i16 -60, i16 -64, i16 -80, i16 -108, i16 -70, i16 -69, i16 -61, i16 -83, i16 -110, i16 -121, i16 -107, i16 -125, i16 -117, i16 -126, i16 -110, i16 -128, i16 -118, i16 -133, i16 -88, i16 -89, i16 -82, i16 -81, i16 -49, i16 -60, i16 -92, i16 -101, i16 -71, i16 -56, i16 -38, i16 -56, i16 -73, i16 -63, i16 -43, i16 -58, i16 -73, i16 -91, i16 -49, i16 -63, i16 -55, i16 -88, i16 -100, i16 -120, i16 -101, i16 -115, i16 -107, i16 -124, i16 -102, i16 -120, i16 -102, i16 -128, i16 -99, i16 -108, i16 -102, i16 -94, i16 -60, i16 -68, i16 -110, i16 -106, i16 -82, i16 -72, i16 -59, i16 -63, i16 -76, i16 -71, i16 -61, i16 -63, i16 -85, i16 -99, i16 -65, i16 -68, i16 -72, i16 -105, i16 -119, i16 -125, i16 -111, i16 -128, i16 -121, i16 -130, i16 -111, i16 -130, i16 -119, i16 -133, i16 -87, i16 -90, i16 -87, i16 -89, i16 -44, i16 -49, i16 -71, i16 -94, i16 -73, i16 -58, i16 -41, i16 -53, i16 -45, i16 -51, i16 -42, i16 -59, i16 -68, i16 -70, i16 -48, i16 -65, i16 -72, i16 -102, i16 -101, i16 -120, i16 -99, i16 -116, i16 -103, i16 -121, i16 -106, i16 -118, i16 -105, i16 -129, i16 -100, i16 -106, i16 -106, i16 -101, i16 -66, i16 -63, i16 -80, i16 -96, i16 -84, i16 -72, i16 -59, i16 -61, i16 -52, i16 -63, i16 -61, i16 -64, i16 -67, i16 -78, i16 -66, i16 -72, i16 -90, i16 -119, i16 -119, i16 -125, i16 -109, i16 -128, i16 -118, i16 -127, i16 -113, i16 -130, i16 -122, i16 -135, i16 -96, i16 -93, i16 -90, i16 -97, i16 -72, i16 -53, i16 -46, i16 -66, i16 -60, i16 -50, i16 -42, i16 -54, i16 -46, i16 -51, i16 -45, i16 -59, i16 -47, i16 -60, i16 -52, i16 -70, i16 -88, i16 -117, i16 -103, i16 -119, i16 -99, i16 -115, i16 -104, i16 -123, i16 -104, i16 -116, i16 -101, i16 -127, i16 -109, i16 -113, i16 -112, i16 -111, i16 -92, i16 -79, i16 -65, i16 -63, i16 -54, i16 -64, i16 -62, i16 -62, i16 -58, i16 -65, i16 -66, i16 -68, i16 -58, i16 -73, i16 -72, i16 -80, i16 -103, i16 -123, i16 -121, i16 -123, i16 -109, i16 -124, i16 -117, i16 -124, i16 -104, i16 -117, i16 -114, i16 -130, i16 -98, i16 -94, i16 -98, i16 -100, i16 -88, i16 -79, i16 -45, i16 -51, i16 -46, i16 -49, i16 -39, i16 -50, i16 -41, i16 -49, i16 -47, i16 -59, i16 -46, i16 -59, i16 -56, i16 -76, i16 -97, i16 -109, i16 -104, i16 -116, i16 -98, i16 -109, i16 -79, i16 -86, i16 -63, i16 -78, i16 -82, i16 -118, i16 -112, i16 -116, i16 -121, i16 -114, i16 -102, i16 -105, i16 -69, i16 -64, i16 -59, i16 -66, i16 -59, i16 -58, i16 -54, i16 -65, i16 -66, i16 -68, i16 -58, i16 -73, i16 -76, i16 -88, i16 -110, i16 -128, i16 -123, i16 -126, i16 -105, i16 -113, i16 -83, i16 -89, i16 -71, i16 -89, i16 -106, i16 -126, i16 -94, i16 -95, i16 -97, i16 -102, i16 -90, i16 -90, i16 -50, i16 -55, i16 -41, i16 -46, i16 -37, i16 -47, i16 -37, i16 -45, i16 -44, i16 -58, i16 -46, i16 -59, i16 -57, i16 -80, i16 -96, i16 -108, i16 -101, i16 -116, i16 -71, i16 -74, i16 -62, i16 -79, i16 -80, i16 -104, i16 -100, i16 -127, i16 -114, i16 -117, i16 -122, i16 -115, i16 -108, i16 -110, i16 -75, i16 -68, i16 -57, i16 -63, i16 -60, i16 -60, i16 -49, i16 -63, i16 -62, i16 -68, i16 -60, i16 -75, i16 -77, i16 -87, i16 -106, i16 -125, i16 -121, i16 -117, i16 -73, i16 -87, i16 -77, i16 -89, i16 -103, i16 -123, i16 -121, i16 -136, i16 -99, i16 -97, i16 -98, i16 -103, i16 -97, i16 -94, i16 -57, i16 -57, i16 -45, i16 -45, i16 -39, i16 -45, i16 -39, i16 -45, i16 -44, i16 -58, i16 -47, i16 -61, i16 -57, i16 -69, i16 -92, i16 -111, i16 -81, i16 -82, i16 -57, i16 -68, i16 -70, i16 -102, i16 -100, i16 -114, i16 -107, i16 -131, i16 -118, i16 -120, i16 -126, i16 -120, i16 -114, i16 -116, i16 -80, i16 -71, i16 -60, i16 -65, i16 -63, i16 -60, i16 -55, i16 -63, i16 -67, i16 -68, i16 -61, i16 -76, i16 -75, i16 -76, i16 -93, i16 -111, i16 -87, i16 -88, i16 -66, i16 -85, i16 -107, i16 -118, i16 -115, i16 -133, i16 -128, i16 -140, i16 -107, i16 -100, i16 -103, i16 -106, i16 -97, i16 -95, i16 -61, i16 -62, i16 -48, i16 -49, i16 -41, i16 -49, i16 -40, i16 -46, i16 -44, i16 -56, i16 -51, i16 -61, i16 -53, i16 -66, i16 -57, i16 -67, i16 -63, i16 -73, i16 -62, i16 -85, i16 -98, i16 -119, i16 -106, i16 -119, i16 -111, i16 -133, i16 -126, i16 -125, i16 -130, i16 -123, i16 -115, i16 -119, i16 -86, i16 -77, i16 -66, i16 -71, i16 -68, i16 -63, i16 -57, i16 -66, i16 -71, i16 -73, i16 -67, i16 -82, i16 -80, i16 -80, i16 -69, i16 -85, i16 -87, i16 -87, i16 -85, i16 -115, i16 -124, i16 -132, i16 -119, i16 -140, i16 -131, i16 -142, i16 -106, i16 -101, i16 -104, i16 -107, i16 -101, i16 -97, i16 -67, i16 -66, i16 -53, i16 -54, i16 -48, i16 -53, i16 -45, i16 -48, i16 -55, i16 -63, i16 -55, i16 -64, i16 -57, i16 -69, i16 -58, i16 -71, i16 -67, i16 -79, i16 -94, i16 -111, i16 -111, i16 -123, i16 -112, i16 -120, i16 -116, i16 -130, i16 -135, i16 -136, i16 -139, i16 -137, i16 -130, i16 -126, i16 -103, i16 -95, i16 -84, i16 -88, i16 -84, i16 -82, i16 -75, i16 -85, i16 -93, i16 -90, i16 -82, i16 -93, i16 -92, i16 -94, i16 -84, i16 -99, i16 -100, i16 -108, i16 -123, i16 -142, i16 -141, i16 -145, i16 -134, i16 -148, i16 -142, i16 -152, i16 20276, i16 6437, i16 32767, i16 6437, i16 32767, i16 6436, i16 32767, i16 6436, i16 -90, i16 -12790, i16 6240, i16 -10474, i16 -8, i16 8, i16 -1, i16 -1, i16 6161, i16 974, i16 608, i16 32767, i16 6161, i16 974, i16 608, i16 32767, i16 1, i16 1, i16 1, i16 1, i16 1, i16 1, i16 1, i16 1, i16 1609, i16 32767, i16 6437, i16 32767, i16 6437, i16 32767, i16 6436, i16 32767, i16 -84, i16 -2799, i16 -12385, i16 -10410, i16 7, i16 -3, i16 -4, i16 -1, i16 236, i16 95, i16 9927, i16 55, i16 236, i16 95, i16 9927, i16 55, i16 1, i16 1, i16 1, i16 1, i16 1, i16 1, i16 1, i16 1, i16 6401, i16 1], align 16
-@.str.131 = private unnamed_addr constant [30 x i8] c"scalar(range (-99,999) final)\00", section "llvm.metadata"
-@.str.132 = private unnamed_addr constant [15 x i8] c"thermalmap.ppm\00", align 1
-@.str.133 = private unnamed_addr constant [2 x i8] c"w\00", align 1
+@.str.65 = private unnamed_addr constant [10 x i8] c"t6 %.10f\0A\00", align 1
+@.str.66 = private unnamed_addr constant [10 x i8] c"To %.10f\0A\00", align 1
+@.str.67 = private unnamed_addr constant [13 x i8] c"taTr %.10f \0A\00", align 1
+@.str.68 = private unnamed_addr constant [11 x i8] c"range %d \0A\00", align 1
+@.str.69 = private unnamed_addr constant [10 x i8] c"t8 %.10f\0A\00", align 1
+@.str.70 = private unnamed_addr constant [10 x i8] c"t9 %.10f\0A\00", align 1
+@.str.71 = private unnamed_addr constant [11 x i8] c"t10 %.10f\0A\00", align 1
+@.str.72 = private unnamed_addr constant [11 x i8] c"t11 %.10f\0A\00", align 1
+@.str.73 = private unnamed_addr constant [11 x i8] c"t12 %.10f\0A\00", align 1
+@.str.74 = private unnamed_addr constant [36 x i8] c"scalar(range(0,100000000000) final)\00", section "llvm.metadata"
+@.str.75 = private unnamed_addr constant [11 x i8] c"t13 %.10f\0A\00", align 1
+@.str.76 = private unnamed_addr constant [11 x i8] c"t14 %.10f\0A\00", align 1
+@.str.77 = private unnamed_addr constant [11 x i8] c"ToF %.10f\0A\00", align 1
+@.str.78 = private unnamed_addr constant [39 x i8] c"-------------------------------------\0A\00", align 1
+@.str.79 = private unnamed_addr constant [18 x i8] c"pixel Number %d \0A\00", align 1
+@.str.80 = private unnamed_addr constant [8 x i8] c"vdd %f\0A\00", align 1
+@.str.81 = private unnamed_addr constant [8 x i8] c"ta %f \0A\00", align 1
+@.str.82 = private unnamed_addr constant [10 x i8] c"tr %.10f\0A\00", align 1
+@.str.83 = private unnamed_addr constant [12 x i8] c"taTr %.10f\0A\00", align 1
+@.str.84 = private unnamed_addr constant [34 x i8] c"scalar(range(-32768,32767) final)\00", section "llvm.metadata"
+@.str.85 = private unnamed_addr constant [29 x i8] c"scalar(range(-32767, 32767))\00", section "llvm.metadata"
+@.str.86 = private unnamed_addr constant [34 x i8] c"scalar(range(-32768,65536) final)\00", section "llvm.metadata"
+@.str.87 = private unnamed_addr constant [26 x i8] c"scalar(range(0.125,4096))\00", section "llvm.metadata"
+@.str.88 = private unnamed_addr constant [35 x i8] c"scalar(range(-32768, 65535) final)\00", section "llvm.metadata"
+@.str.89 = private unnamed_addr constant [29 x i8] c"scalar(range(-32768, 65535))\00", section "llvm.metadata"
+@.str.90 = private unnamed_addr constant [29 x i8] c"scalar(range(-32768, 32767))\00", section "llvm.metadata"
+@.str.91 = private unnamed_addr constant [11 x i8] c"getVdd...\0A\00", align 1
+@.str.92 = private unnamed_addr constant [10 x i8] c"vdd = %e\0A\00", align 1
+@.str.93 = private unnamed_addr constant [17 x i8] c"ptatArt1= %.10f\0A\00", align 1
+@.str.94 = private unnamed_addr constant [17 x i8] c"ptatArt2= %.10f\0A\00", align 1
+@.str.95 = private unnamed_addr constant [17 x i8] c"ptatArt3= %.10f\0A\00", align 1
+@.str.96 = private unnamed_addr constant [13 x i8] c"ptat= %.10f\0A\00", align 1
+@.str.97 = private unnamed_addr constant [18 x i8] c"alphaptat= %.10f\0A\00", align 1
+@.str.98 = private unnamed_addr constant [16 x i8] c"ptatArt= %.10f\0A\00", align 1
+@.str.99 = private unnamed_addr constant [12 x i8] c"vd1= %.10f\0A\00", align 1
+@.str.100 = private unnamed_addr constant [15 x i8] c"kvPTAT= %.10f\0A\00", align 1
+@.str.101 = private unnamed_addr constant [12 x i8] c"vdd= %.10f\0A\00", align 1
+@.str.102 = private unnamed_addr constant [12 x i8] c"ta1= %.10f\0A\00", align 1
+@.str.103 = private unnamed_addr constant [12 x i8] c"ta2= %.10f\0A\00", align 1
+@.str.104 = private unnamed_addr constant [12 x i8] c"ta3= %.10f\0A\00", align 1
+@.str.105 = private unnamed_addr constant [15 x i8] c"taBDiv= %.10f\0A\00", align 1
+@.str.106 = private unnamed_addr constant [15 x i8] c"taADiv= %.10f\0A\00", align 1
+@.str.107 = private unnamed_addr constant [22 x i8] c"scalar(range(-32,63))\00", section "llvm.metadata"
+@.str.108 = private unnamed_addr constant [25 x i8] c"scalar(range(-512,1023))\00", section "llvm.metadata"
+@.str.109 = private unnamed_addr constant [23 x i8] c"scalar(range(8,11.75))\00", section "llvm.metadata"
+@.str.110 = private unnamed_addr constant [24 x i8] c"scalar(range(-128,255))\00", section "llvm.metadata"
+@.str.111 = private unnamed_addr constant [30 x i8] c"scalar(range(-128,255) final)\00", section "llvm.metadata"
+@.str.112 = private unnamed_addr constant [25 x i8] c"scalar(range(-512,1527))\00", section "llvm.metadata"
+@.str.113 = private unnamed_addr constant [9 x i8] c"main.cpp\00", section "llvm.metadata"
+@.str.114 = private unnamed_addr constant [30 x i8] c"scalar(range (15,999) final) \00", section "llvm.metadata"
+@.str.115 = private unnamed_addr constant [4 x i8] c"P3\0A\00", align 1
+@.str.116 = private unnamed_addr constant [7 x i8] c"%d %d\0A\00", align 1
+@.str.117 = private unnamed_addr constant [5 x i8] c"255\0A\00", align 1
+@.str.118 = private unnamed_addr constant [10 x i8] c"%d %d %d \00", align 1
+@.str.119 = private unnamed_addr constant [2 x i8] c"\0A\00", align 1
+@_ZL6eeprom = internal constant [832 x i16] [i16 195, i16 14751, i16 0, i16 8289, i16 5, i16 800, i16 992, i16 5919, i16 -13513, i16 393, i16 1177, i16 0, i16 6401, i16 0, i16 0, i16 -16845, i16 16928, i16 -58, i16 530, i16 514, i16 -3582, i16 -7694, i16 -11807, i16 -24640, i16 257, i16 258, i16 -3838, i16 -3838, i16 -3598, i16 -7694, i16 -7966, i16 -16159, i16 -30571, i16 15246, i16 -4678, i16 4607, i16 13106, i16 13107, i16 290, i16 -13057, i16 -8756, i16 255, i16 8465, i16 8755, i16 8755, i16 4386, i16 -4351, i16 -17442, i16 6224, i16 12195, i16 5461, i16 -23164, i16 26197, i16 2512, i16 14646, i16 13363, i16 9298, i16 4262, i16 6079, i16 1572, i16 -2560, i16 -14900, i16 -26703, i16 9833, i16 4126, i16 4240, i16 7246, i16 222, i16 1070, i16 4224, i16 9118, i16 -1010, i16 3072, i16 1216, i16 6382, i16 1022, i16 1950, i16 -18, i16 6238, i16 -1922, i16 5056, i16 2016, i16 5246, i16 -3938, i16 2048, i16 -928, i16 4128, i16 -3042, i16 1938, i16 992, i16 7120, i16 -6048, i16 -64, i16 -5054, i16 4288, i16 -8080, i16 2032, i16 110, i16 -5076, i16 1198, i16 -3040, i16 -946, i16 -3204, i16 944, i16 -32, i16 -3954, i16 -4916, i16 3008, i16 -1166, i16 -4178, i16 -5060, i16 1088, i16 1936, i16 -1106, i16 -5044, i16 -944, i16 980, i16 -4048, i16 -5124, i16 2, i16 884, i16 -1088, i16 -2098, i16 -1982, i16 -1102, i16 -6112, i16 -4976, i16 -3006, i16 5008, i16 4160, i16 6190, i16 -866, i16 -978, i16 3184, i16 8060, i16 -1042, i16 126, i16 1104, i16 6222, i16 878, i16 1870, i16 -96, i16 6158, i16 -1970, i16 3070, i16 2032, i16 6112, i16 -3122, i16 -896, i16 -16, i16 5106, i16 -2096, i16 1968, i16 -912, i16 7120, i16 -6000, i16 -32, i16 -4960, i16 5282, i16 -8144, i16 7008, i16 3102, i16 -2020, i16 5216, i16 2, i16 2126, i16 -180, i16 5008, i16 1088, i16 1054, i16 -980, i16 6928, i16 2850, i16 -146, i16 -36, i16 5136, i16 4018, i16 2976, i16 -66, i16 3984, i16 1106, i16 960, i16 -1074, i16 6064, i16 3972, i16 1104, i16 1998, i16 2144, i16 3010, i16 -2960, i16 -880, i16 18, i16 8992, i16 3152, i16 5150, i16 -882, i16 3072, i16 4128, i16 8062, i16 -1074, i16 3134, i16 1104, i16 6208, i16 974, i16 2926, i16 -80, i16 7134, i16 -1970, i16 5040, i16 2944, i16 6128, i16 -3042, i16 2160, i16 2, i16 3198, i16 -3040, i16 2000, i16 -816, i16 7136, i16 -4976, i16 -16, i16 -3918, i16 6226, i16 -7072, i16 9058, i16 1182, i16 -2964, i16 4272, i16 3170, i16 2142, i16 -82, i16 4080, i16 2176, i16 142, i16 -1892, i16 6112, i16 2976, i16 -18, i16 -978, i16 4238, i16 6130, i16 3022, i16 -1970, i16 3136, i16 3268, i16 62, i16 -2882, i16 5234, i16 3092, i16 1296, i16 1072, i16 1218, i16 2130, i16 -2832, i16 160, i16 162, i16 2990, i16 3152, i16 5150, i16 -882, i16 46, i16 3168, i16 7040, i16 -1090, i16 3038, i16 1056, i16 6176, i16 1790, i16 1808, i16 880, i16 5152, i16 -2034, i16 3040, i16 2896, i16 4112, i16 -4080, i16 82, i16 -974, i16 5106, i16 -3072, i16 2852, i16 98, i16 7106, i16 -6000, i16 978, i16 -3038, i16 6210, i16 -7088, i16 3040, i16 142, i16 -4004, i16 2208, i16 -944, i16 128, i16 -2100, i16 3024, i16 1026, i16 -946, i16 -2962, i16 5904, i16 1890, i16 -1106, i16 -3988, i16 4144, i16 2084, i16 1888, i16 -4018, i16 2096, i16 1154, i16 -944, i16 -4050, i16 3122, i16 4934, i16 128, i16 1022, i16 1202, i16 1026, i16 -1984, i16 -896, i16 130, i16 3038, i16 2128, i16 5150, i16 -1906, i16 30, i16 3072, i16 7008, i16 -2066, i16 3008, i16 160, i16 5168, i16 -80, i16 -1056, i16 -1056, i16 3280, i16 -2896, i16 3024, i16 1024, i16 3168, i16 -4080, i16 -864, i16 -910, i16 2144, i16 -4016, i16 1972, i16 194, i16 5186, i16 -6880, i16 -1008, i16 -3966, i16 6162, i16 -7040, i16 880, i16 -1042, i16 -5170, i16 1056, i16 -2094, i16 912, i16 -3314, i16 880, i16 882, i16 -2978, i16 -4164, i16 3906, i16 -2160, i16 -3200, i16 -6004, i16 1104, i16 1906, i16 -98, i16 -6100, i16 1968, i16 -958, i16 -3056, i16 -6098, i16 3040, i16 1894, i16 -944, i16 -1056, i16 -814, i16 946, i16 -3040, i16 -64, i16 -2014, i16 5906, i16 2066, i16 5038, i16 -2000, i16 2960, i16 4050, i16 4960, i16 -2192, i16 2046, i16 96, i16 2222, i16 -160, i16 1856, i16 -176, i16 4078, i16 -3056, i16 3970, i16 1936, i16 3072, i16 -5104, i16 1010, i16 -1006, i16 3026, i16 -1152, i16 -1070, i16 -894, i16 4066, i16 -5968, i16 -1038, i16 -3054, i16 3202, i16 -7136, i16 6962, i16 1056, i16 -2098, i16 3138, i16 4018, i16 3038, i16 -1140, i16 4994, i16 3074, i16 -928, i16 -2868, i16 6000, i16 3938, i16 848, i16 -1026, i16 4112, i16 6068, i16 2974, i16 -2002, i16 4146, i16 3108, i16 1072, i16 -1026, i16 7058, i16 4084, i16 2192, i16 14, i16 2240, i16 2052, i16 32, i16 160, i16 2082, i16 -80, i16 2082, i16 3056, i16 -2944, i16 -2066, i16 1072, i16 4014, i16 -3120, i16 -1072, i16 -864, i16 2128, i16 -2050, i16 -1216, i16 -1088, i16 4064, i16 -4064, i16 -990, i16 -992, i16 1152, i16 -7072, i16 -2014, i16 -1934, i16 98, i16 -3104, i16 -142, i16 34, i16 2096, i16 -7024, i16 -1118, i16 -4958, i16 3122, i16 -7152, i16 -62, i16 -2002, i16 -7154, i16 1136, i16 -1038, i16 -962, i16 -5172, i16 978, i16 -16, i16 -2898, i16 -5010, i16 4080, i16 -160, i16 -1104, i16 -3074, i16 3120, i16 1076, i16 -992, i16 -5970, i16 1106, i16 1090, i16 -1936, i16 -6002, i16 4098, i16 3972, i16 1056, i16 -1954, i16 2178, i16 1986, i16 -1888, i16 -944, i16 1026, i16 1822, i16 5122, i16 4064, i16 80, i16 912, i16 4130, i16 5920, i16 -112, i16 1968, i16 2130, i16 4222, i16 894, i16 -1074, i16 1922, i16 4208, i16 -1952, i16 3008, i16 4000, i16 3168, i16 -3984, i16 992, i16 1104, i16 3090, i16 -80, i16 2850, i16 2160, i16 5122, i16 -3984, i16 1872, i16 -942, i16 7154, i16 -5120, i16 1826, i16 -1010, i16 -4180, i16 3136, i16 -94, i16 16, i16 -3266, i16 2978, i16 1970, i16 -928, i16 -3970, i16 7026, i16 -46, i16 -144, i16 -4964, i16 4176, i16 4036, i16 1952, i16 -3970, i16 3168, i16 3060, i16 80, i16 -4050, i16 7090, i16 5940, i16 2160, i16 1022, i16 3186, i16 4930, i16 64, i16 2016, i16 4082, i16 928, i16 5104, i16 2976, i16 -944, i16 -2032, i16 5042, i16 2912, i16 -4050, i16 992, i16 1122, i16 1120, i16 -1058, i16 848, i16 834, i16 1104, i16 -2928, i16 96, i16 1138, i16 2128, i16 -4016, i16 1042, i16 50, i16 2080, i16 -1088, i16 -1086, i16 2130, i16 4016, i16 -5040, i16 -1120, i16 -1982, i16 2096, i16 -4160, i16 -2158, i16 -1072, i16 -8290, i16 -960, i16 -5120, i16 -112, i16 -7314, i16 -1008, i16 -46, i16 -4002, i16 -7044, i16 1968, i16 -190, i16 -2224, i16 -7058, i16 144, i16 82, i16 -1938, i16 -6034, i16 64, i16 1042, i16 -992, i16 -6114, i16 5072, i16 962, i16 64, i16 -1106, i16 48, i16 914, i16 -2016, i16 -2032, i16 1954, i16 -4354, i16 3026, i16 -2032, i16 -4000, i16 -5200, i16 2066, i16 -64, i16 -4144, i16 -4114, i16 -926, i16 128, i16 -2162, i16 -5234, i16 -1166, i16 -866, i16 -4048, i16 -1136, i16 992, i16 -880, i16 -6064, i16 -3006, i16 -1022, i16 2, i16 -3120, i16 -2208, i16 1058, i16 3906, i16 -7056, i16 -2318, i16 -1038, i16 2016, i16 -4272, i16 -3200, i16 -3024, i16 -11138, i16 -830, i16 -4062, i16 -1936, i16 -8114, i16 66, i16 -2958, i16 -2880, i16 -6914, i16 4080, i16 -2064, i16 -2080, i16 -6882, i16 3232, i16 1026, i16 96, i16 -6882, i16 1216, i16 178, i16 112, i16 -4994, i16 5186, i16 3010, i16 2176, i16 -66, i16 2226, i16 3922, i16 64, i16 -944, i16 5042, i16 -5154, i16 3074, i16 -2032, i16 -48, i16 -4194, i16 3106, i16 1968, i16 -3984, i16 -4048, i16 1138, i16 1166, i16 -80, i16 -2160, i16 1874, i16 2160, i16 -2848, i16 -16, i16 2080, i16 2112, i16 -4048, i16 -1024, i16 2050, i16 96, i16 -2016, i16 -1152, i16 5074, i16 3954, i16 -4046, i16 -1216, i16 1970, i16 2066, i16 -1216, i16 -7248, i16 -2096, i16 -10242, i16 1952, i16 -4238, i16 -1040, i16 -7250, i16 -958, i16 -3040, i16 -1968, i16 -7042, i16 5008, i16 -1152, i16 -1216, i16 -6034, i16 3248, i16 2018, i16 1024, i16 -5058, i16 2064, i16 3058, i16 976, i16 -6066, i16 6130, i16 1892, i16 4000, i16 -1202, i16 3074, i16 2834, i16 1920, i16 -32, i16 6930, i16 -48, i16 6242, i16 48, i16 64, i16 -3026, i16 6194, i16 2992, i16 -992, i16 64, i16 3312, i16 2224, i16 1056, i16 -994, i16 2144, i16 2206, i16 -704, i16 2128, i16 7138, i16 4160, i16 -912, i16 1138, i16 4178, i16 3104, i16 1072, i16 -1058, i16 6162, i16 3984, i16 -976, i16 -1120, i16 5074, i16 2064, i16 2992, i16 -3152, i16 -3024, i16 -11234, i16 1042, i16 -4112, i16 16, i16 -7266, i16 994, i16 -976, i16 -2880, i16 -7010, i16 2048, i16 -1040, i16 -3024, i16 -4978, i16 1312, i16 2112, i16 4016, i16 -4050, i16 4160, i16 2130, i16 2080, i16 -3074, i16 6146, i16 1954, i16 4064, i16 -146, i16 3104, i16 2946, i16 3968, i16 14, i16 8082], align 16
+@.str.120 = private unnamed_addr constant [28 x i8] c"target('ta_shift') scalar()\00", section "llvm.metadata"
+@.str.121 = private unnamed_addr constant [10 x i8] c"getTa...\0A\00", align 1
+@.str.122 = private unnamed_addr constant [23 x i8] c"scalar(range(-99,999))\00", section "llvm.metadata"
+@_ZL9subframe1 = internal constant [834 x i16] [i16 64, i16 70, i16 75, i16 92, i16 151, i16 186, i16 214, i16 244, i16 405, i16 490, i16 645, i16 859, i16 1012, i16 1263, i16 1328, i16 1261, i16 1132, i16 1068, i16 690, i16 563, i16 435, i16 261, i16 277, i16 78, i16 182, i16 34, i16 82, i16 2, i16 63, i16 20, i16 19, i16 -24, i16 62, i16 62, i16 70, i16 78, i16 175, i16 156, i16 231, i16 227, i16 412, i16 459, i16 770, i16 752, i16 1256, i16 1169, i16 1379, i16 1398, i16 1248, i16 1038, i16 721, i16 618, i16 331, i16 408, i16 118, i16 235, i16 61, i16 135, i16 7, i16 53, i16 33, i16 35, i16 -5, i16 -14, i16 61, i16 62, i16 85, i16 95, i16 167, i16 239, i16 219, i16 307, i16 439, i16 544, i16 743, i16 1035, i16 1324, i16 1660, i16 1691, i16 1611, i16 1418, i16 1386, i16 890, i16 633, i16 545, i16 301, i16 339, i16 92, i16 211, i16 47, i16 92, i16 0, i16 59, i16 12, i16 19, i16 -27, i16 47, i16 54, i16 74, i16 92, i16 208, i16 172, i16 302, i16 237, i16 468, i16 484, i16 889, i16 917, i16 1687, i16 1610, i16 1757, i16 1806, i16 1646, i16 1300, i16 868, i16 809, i16 402, i16 495, i16 125, i16 282, i16 71, i16 171, i16 11, i16 54, i16 23, i16 33, i16 -10, i16 -6, i16 60, i16 56, i16 93, i16 100, i16 200, i16 264, i16 252, i16 397, i16 456, i16 606, i16 921, i16 1277, i16 1980, i16 2292, i16 2320, i16 2172, i16 1776, i16 1836, i16 1338, i16 967, i16 711, i16 346, i16 423, i16 104, i16 259, i16 65, i16 111, i16 10, i16 82, i16 17, i16 38, i16 -20, i16 44, i16 45, i16 70, i16 100, i16 223, i16 205, i16 387, i16 285, i16 571, i16 512, i16 1080, i16 1264, i16 2427, i16 2613, i16 2483, i16 2444, i16 2242, i16 1967, i16 1525, i16 1308, i16 530, i16 660, i16 158, i16 387, i16 90, i16 210, i16 23, i16 88, i16 26, i16 68, i16 -6, i16 14, i16 42, i16 53, i16 70, i16 105, i16 205, i16 278, i16 348, i16 499, i16 529, i16 820, i16 1344, i16 2058, i16 4073, i16 4406, i16 4128, i16 3380, i16 3650, i16 4246, i16 3658, i16 2540, i16 1152, i16 530, i16 590, i16 146, i16 324, i16 76, i16 162, i16 12, i16 122, i16 21, i16 70, i16 -18, i16 35, i16 34, i16 74, i16 65, i16 235, i16 215, i16 434, i16 389, i16 819, i16 695, i16 1926, i16 2511, i16 5561, i16 6537, i16 5440, i16 4374, i16 5785, i16 6292, i16 5305, i16 4151, i16 955, i16 1065, i16 223, i16 557, i16 110, i16 272, i16 31, i16 126, i16 33, i16 96, i16 -2, i16 37, i16 45, i16 49, i16 59, i16 109, i16 162, i16 308, i16 392, i16 572, i16 832, i16 1383, i16 3556, i16 6000, i16 7453, i16 7504, i16 4862, i16 4630, i16 5474, i16 6661, i16 6244, i16 6027, i16 3074, i16 1378, i16 764, i16 223, i16 433, i16 89, i16 173, i16 22, i16 122, i16 24, i16 72, i16 -15, i16 33, i16 37, i16 61, i16 58, i16 241, i16 173, i16 492, i16 455, i16 1186, i16 1273, i16 5250, i16 6399, i16 6391, i16 4915, i16 4152, i16 3442, i16 4982, i16 4750, i16 5558, i16 5675, i16 3712, i16 2605, i16 371, i16 582, i16 129, i16 313, i16 40, i16 118, i16 35, i16 84, i16 -3, i16 30, i16 47, i16 41, i16 61, i16 70, i16 141, i16 248, i16 342, i16 611, i16 1161, i16 2199, i16 5690, i16 5733, i16 3687, i16 2943, i16 2550, i16 2883, i16 3122, i16 3589, i16 3717, i16 4264, i16 4198, i16 2904, i16 697, i16 305, i16 292, i16 115, i16 128, i16 29, i16 94, i16 20, i16 50, i16 -17, i16 30, i16 34, i16 33, i16 53, i16 158, i16 146, i16 434, i16 398, i16 1438, i16 1773, i16 5272, i16 4908, i16 2736, i16 2914, i16 2412, i16 2334, i16 2736, i16 2999, i16 3961, i16 3672, i16 3548, i16 2941, i16 581, i16 512, i16 170, i16 204, i16 45, i16 75, i16 31, i16 58, i16 -8, i16 11, i16 34, i16 34, i16 42, i16 50, i16 106, i16 178, i16 273, i16 520, i16 1094, i16 2434, i16 4131, i16 3548, i16 3074, i16 2153, i16 1830, i16 1691, i16 2276, i16 2664, i16 3824, i16 4401, i16 5338, i16 4773, i16 1509, i16 730, i16 263, i16 146, i16 87, i16 32, i16 67, i16 20, i16 27, i16 -25, i16 18, i16 17, i16 21, i16 22, i16 116, i16 106, i16 330, i16 310, i16 1613, i16 1960, i16 4551, i16 4384, i16 2495, i16 2580, i16 1573, i16 1529, i16 2061, i16 2619, i16 3580, i16 3925, i16 6124, i16 6833, i16 2080, i16 1006, i16 240, i16 172, i16 48, i16 55, i16 28, i16 31, i16 -10, i16 -13, i16 30, i16 32, i16 26, i16 27, i16 82, i16 119, i16 196, i16 391, i16 1023, i16 2974, i16 6014, i16 4455, i16 3093, i16 2497, i16 1861, i16 1346, i16 1825, i16 2703, i16 3528, i16 3477, i16 5243, i16 6289, i16 2899, i16 1399, i16 312, i16 210, i16 85, i16 45, i16 48, i16 22, i16 7, i16 -22, i16 15, i16 10, i16 10, i16 14, i16 81, i16 87, i16 228, i16 227, i16 1365, i16 1587, i16 6060, i16 5603, i16 2994, i16 2765, i16 1843, i16 1599, i16 1903, i16 2519, i16 3975, i16 3812, i16 5231, i16 5529, i16 2760, i16 1566, i16 342, i16 212, i16 67, i16 49, i16 32, i16 14, i16 -12, i16 -26, i16 31, i16 28, i16 27, i16 26, i16 86, i16 112, i16 151, i16 241, i16 548, i16 1097, i16 3195, i16 5306, i16 4717, i16 3717, i16 3162, i16 2159, i16 2046, i16 3563, i16 5343, i16 5595, i16 3692, i16 2226, i16 947, i16 802, i16 312, i16 200, i16 82, i16 51, i16 46, i16 24, i16 -1, i16 -22, i16 15, i16 12, i16 6, i16 11, i16 81, i16 85, i16 145, i16 151, i16 563, i16 549, i16 2496, i16 3109, i16 5173, i16 5066, i16 3852, i16 3211, i16 2679, i16 3809, i16 5414, i16 4995, i16 1997, i16 1231, i16 539, i16 464, i16 252, i16 170, i16 66, i16 43, i16 35, i16 12, i16 -13, i16 -30, i16 24, i16 28, i16 23, i16 21, i16 78, i16 99, i16 114, i16 142, i16 278, i16 414, i16 549, i16 1027, i16 1371, i16 1933, i16 2150, i16 2011, i16 1460, i16 1860, i16 1444, i16 1059, i16 660, i16 531, i16 312, i16 291, i16 196, i16 137, i16 77, i16 47, i16 46, i16 25, i16 1, i16 -24, i16 10, i16 5, i16 2, i16 4, i16 65, i16 69, i16 97, i16 98, i16 265, i16 257, i16 485, i16 451, i16 886, i16 728, i16 875, i16 726, i16 737, i16 663, i16 709, i16 692, i16 489, i16 407, i16 299, i16 245, i16 160, i16 119, i16 55, i16 37, i16 37, i16 13, i16 -17, i16 -30, i16 18, i16 25, i16 17, i16 13, i16 65, i16 76, i16 81, i16 92, i16 167, i16 204, i16 263, i16 354, i16 455, i16 475, i16 452, i16 420, i16 372, i16 443, i16 460, i16 467, i16 450, i16 386, i16 222, i16 170, i16 132, i16 94, i16 56, i16 32, i16 42, i16 20, i16 -5, i16 -27, i16 1, i16 1, i16 -8, i16 -2, i16 47, i16 50, i16 58, i16 61, i16 148, i16 141, i16 228, i16 236, i16 423, i16 397, i16 388, i16 378, i16 329, i16 377, i16 424, i16 401, i16 338, i16 278, i16 153, i16 128, i16 98, i16 69, i16 35, i16 17, i16 29, i16 7, i16 -24, i16 -34, i16 17, i16 21, i16 9, i16 5, i16 47, i16 52, i16 53, i16 53, i16 99, i16 109, i16 121, i16 136, i16 191, i16 202, i16 183, i16 172, i16 168, i16 191, i16 180, i16 170, i16 172, i16 153, i16 101, i16 79, i16 79, i16 63, i16 25, i16 15, i16 31, i16 14, i16 -16, i16 -27, i16 -13, i16 -14, i16 -29, i16 -20, i16 16, i16 15, i16 13, i16 17, i16 68, i16 64, i16 77, i16 79, i16 146, i16 137, i16 131, i16 120, i16 127, i16 131, i16 125, i16 117, i16 122, i16 96, i16 40, i16 29, i16 40, i16 20, i16 -4, i16 -10, i16 7, i16 -10, i16 -40, i16 -48, i16 19521, i16 6481, i16 32767, i16 6481, i16 32767, i16 6479, i16 32767, i16 6479, i16 -24, i16 -12735, i16 6189, i16 -10502, i16 12, i16 26, i16 -2, i16 -5, i16 5771, i16 961, i16 622, i16 32767, i16 5772, i16 960, i16 622, i16 32767, i16 3, i16 3, i16 3, i16 3, i16 3, i16 3, i16 3, i16 3, i16 1620, i16 32767, i16 6481, i16 32767, i16 6481, i16 32767, i16 6479, i16 32767, i16 -17, i16 -2859, i16 -12236, i16 -10457, i16 27, i16 14, i16 -5, i16 -3, i16 246, i16 73, i16 10643, i16 53, i16 246, i16 72, i16 10643, i16 53, i16 3, i16 3, i16 3, i16 3, i16 3, i16 3, i16 3, i16 3, i16 6529, i16 1], align 16
+@.str.123 = private unnamed_addr constant [9 x i8] c"ta = %e\0A\00", align 1
+@.str.124 = private unnamed_addr constant [10 x i8] c"scalar() \00", section "llvm.metadata"
+@.str.125 = private unnamed_addr constant [16 x i8] c"TaMain = %.10f\0A\00", align 1
+@.str.126 = private unnamed_addr constant [16 x i8] c"TrMain = %.10f\0A\00", align 1
+@_ZL9subframe2 = internal constant [834 x i16] [i16 125, i16 70, i16 194, i16 92, i16 286, i16 186, i16 344, i16 244, i16 487, i16 490, i16 759, i16 859, i16 940, i16 1263, i16 1019, i16 1261, i16 847, i16 1068, i16 613, i16 563, i16 326, i16 261, i16 136, i16 78, i16 73, i16 34, i16 23, i16 2, i16 36, i16 20, i16 3, i16 -24, i16 62, i16 134, i16 70, i16 202, i16 175, i16 292, i16 231, i16 363, i16 412, i16 563, i16 770, i16 865, i16 1256, i16 1034, i16 1379, i16 1048, i16 1248, i16 856, i16 721, i16 524, i16 331, i16 264, i16 118, i16 88, i16 61, i16 39, i16 7, i16 -1, i16 33, i16 8, i16 -5, i16 -30, i16 131, i16 62, i16 198, i16 95, i16 317, i16 239, i16 412, i16 307, i16 611, i16 544, i16 970, i16 1035, i16 1349, i16 1660, i16 1363, i16 1611, i16 1205, i16 1386, i16 758, i16 633, i16 416, i16 301, i16 145, i16 92, i16 81, i16 47, i16 26, i16 0, i16 24, i16 12, i16 -1, i16 -27, i16 47, i16 139, i16 74, i16 202, i16 208, i16 329, i16 302, i16 453, i16 468, i16 691, i16 889, i16 1210, i16 1687, i16 1540, i16 1757, i16 1419, i16 1646, i16 1201, i16 868, i16 713, i16 402, i16 314, i16 125, i16 105, i16 71, i16 55, i16 11, i16 5, i16 23, i16 2, i16 -10, i16 -31, i16 133, i16 56, i16 201, i16 100, i16 318, i16 264, i16 458, i16 397, i16 760, i16 606, i16 1299, i16 1277, i16 2174, i16 2292, i16 1929, i16 2172, i16 1863, i16 1836, i16 1324, i16 967, i16 549, i16 346, i16 200, i16 104, i16 111, i16 65, i16 42, i16 10, i16 30, i16 17, i16 0, i16 -20, i16 44, i16 149, i16 70, i16 203, i16 223, i16 324, i16 387, i16 522, i16 571, i16 888, i16 1080, i16 1801, i16 2427, i16 2703, i16 2483, i16 2117, i16 2242, i16 2162, i16 1525, i16 1406, i16 530, i16 425, i16 158, i16 159, i16 90, i16 83, i16 23, i16 13, i16 26, i16 5, i16 -6, i16 -28, i16 137, i16 53, i16 215, i16 105, i16 323, i16 278, i16 496, i16 499, i16 963, i16 820, i16 2147, i16 2058, i16 4553, i16 4406, i16 4105, i16 3380, i16 4373, i16 4246, i16 4189, i16 2540, i16 870, i16 530, i16 300, i16 146, i16 142, i16 76, i16 52, i16 12, i16 34, i16 21, i16 2, i16 -18, i16 35, i16 142, i16 74, i16 221, i16 235, i16 349, i16 434, i16 549, i16 819, i16 1264, i16 1926, i16 3731, i16 5561, i16 6647, i16 5440, i16 4483, i16 5785, i16 6684, i16 5305, i16 4202, i16 955, i16 746, i16 223, i16 239, i16 110, i16 108, i16 31, i16 19, i16 33, i16 7, i16 -2, i16 -26, i16 100, i16 49, i16 189, i16 109, i16 334, i16 308, i16 530, i16 572, i16 1256, i16 1383, i16 5041, i16 6000, i16 6602, i16 7504, i16 4590, i16 4630, i16 5386, i16 6661, i16 5946, i16 6027, i16 2620, i16 1378, i16 549, i16 223, i16 225, i16 89, i16 70, i16 22, i16 34, i16 24, i16 7, i16 -15, i16 33, i16 96, i16 61, i16 183, i16 241, i16 344, i16 492, i16 597, i16 1186, i16 1993, i16 5250, i16 6450, i16 6391, i16 4392, i16 4152, i16 3648, i16 4982, i16 4658, i16 5558, i16 5234, i16 3712, i16 1978, i16 371, i16 475, i16 129, i16 164, i16 40, i16 26, i16 35, i16 8, i16 -3, i16 -27, i16 57, i16 41, i16 118, i16 70, i16 273, i16 248, i16 504, i16 611, i16 1527, i16 2199, i16 5634, i16 5733, i16 3140, i16 2943, i16 2650, i16 2883, i16 3401, i16 3589, i16 3457, i16 4264, i16 3672, i16 2904, i16 702, i16 305, i16 285, i16 115, i16 76, i16 29, i16 34, i16 20, i16 6, i16 -17, i16 30, i16 41, i16 33, i16 105, i16 158, i16 294, i16 434, i16 597, i16 1438, i16 2534, i16 5272, i16 3985, i16 2736, i16 2526, i16 2412, i16 2407, i16 2736, i16 3323, i16 3961, i16 3481, i16 3548, i16 2451, i16 581, i16 570, i16 170, i16 187, i16 45, i16 31, i16 31, i16 10, i16 -8, i16 -27, i16 35, i16 34, i16 64, i16 50, i16 201, i16 178, i16 532, i16 520, i16 1666, i16 2434, i16 3955, i16 3548, i16 2698, i16 2153, i16 1801, i16 1691, i16 2508, i16 2664, i16 4763, i16 4401, i16 5581, i16 4773, i16 1341, i16 730, i16 257, i16 146, i16 66, i16 32, i16 33, i16 20, i16 6, i16 -25, i16 18, i16 18, i16 21, i16 49, i16 116, i16 225, i16 330, i16 640, i16 1613, i16 3210, i16 4551, i16 3961, i16 2495, i16 2420, i16 1573, i16 1609, i16 2061, i16 2928, i16 3580, i16 5057, i16 6124, i16 6396, i16 2080, i16 864, i16 240, i16 152, i16 48, i16 32, i16 28, i16 9, i16 -10, i16 -27, i16 28, i16 32, i16 43, i16 27, i16 136, i16 119, i16 436, i16 391, i16 1900, i16 2974, i16 5803, i16 4455, i16 2996, i16 2497, i16 1835, i16 1346, i16 2183, i16 2703, i16 4270, i16 3477, i16 5745, i16 6289, i16 2038, i16 1399, i16 257, i16 210, i16 71, i16 45, i16 35, i16 22, i16 4, i16 -22, i16 15, i16 14, i16 10, i16 28, i16 81, i16 160, i16 228, i16 496, i16 1365, i16 2617, i16 6060, i16 5252, i16 2994, i16 2883, i16 1843, i16 1582, i16 1903, i16 3108, i16 3975, i16 4854, i16 5231, i16 4710, i16 2760, i16 1101, i16 342, i16 175, i16 67, i16 41, i16 32, i16 10, i16 -12, i16 -25, i16 32, i16 28, i16 37, i16 26, i16 114, i16 112, i16 229, i16 241, i16 805, i16 1097, i16 3857, i16 5306, i16 5023, i16 3717, i16 2998, i16 2159, i16 2953, i16 3563, i16 5550, i16 5595, i16 2537, i16 2226, i16 708, i16 802, i16 246, i16 200, i16 72, i16 51, i16 41, i16 24, i16 1, i16 -22, i16 15, i16 12, i16 6, i16 18, i16 81, i16 102, i16 145, i16 224, i16 563, i16 794, i16 2496, i16 3496, i16 5173, i16 4944, i16 3852, i16 2766, i16 2679, i16 4555, i16 5414, i16 3765, i16 1997, i16 839, i16 539, i16 387, i16 252, i16 142, i16 66, i16 40, i16 35, i16 9, i16 -13, i16 -28, i16 24, i16 28, i16 27, i16 21, i16 91, i16 99, i16 136, i16 142, i16 348, i16 414, i16 649, i16 1027, i16 1218, i16 1933, i16 1532, i16 2011, i16 1240, i16 1860, i16 909, i16 1059, i16 540, i16 531, i16 304, i16 291, i16 170, i16 137, i16 73, i16 47, i16 39, i16 25, i16 1, i16 -24, i16 10, i16 7, i16 2, i16 6, i16 65, i16 75, i16 97, i16 127, i16 265, i16 305, i16 485, i16 499, i16 886, i16 677, i16 875, i16 571, i16 737, i16 590, i16 709, i16 585, i16 489, i16 373, i16 299, i16 216, i16 160, i16 102, i16 55, i16 36, i16 37, i16 9, i16 -17, i16 -30, i16 20, i16 25, i16 19, i16 13, i16 70, i16 76, i16 88, i16 92, i16 183, i16 204, i16 306, i16 354, i16 462, i16 475, i16 418, i16 420, i16 383, i16 443, i16 475, i16 467, i16 400, i16 386, i16 195, i16 170, i16 118, i16 94, i16 54, i16 32, i16 37, i16 20, i16 -3, i16 -27, i16 1, i16 1, i16 -8, i16 -2, i16 47, i16 51, i16 58, i16 67, i16 148, i16 154, i16 228, i16 260, i16 423, i16 378, i16 388, i16 325, i16 329, i16 383, i16 424, i16 350, i16 338, i16 228, i16 153, i16 110, i16 98, i16 65, i16 35, i16 20, i16 29, i16 5, i16 -24, i16 -33, i16 15, i16 21, i16 7, i16 5, i16 48, i16 52, i16 56, i16 53, i16 102, i16 109, i16 123, i16 136, i16 187, i16 202, i16 167, i16 172, i16 171, i16 191, i16 175, i16 170, i16 159, i16 153, i16 92, i16 79, i16 72, i16 63, i16 23, i16 15, i16 25, i16 14, i16 -11, i16 -27, i16 -13, i16 -17, i16 -29, i16 -20, i16 16, i16 16, i16 13, i16 17, i16 68, i16 62, i16 77, i16 84, i16 146, i16 129, i16 131, i16 100, i16 127, i16 124, i16 125, i16 104, i16 122, i16 80, i16 40, i16 24, i16 40, i16 21, i16 -4, i16 -11, i16 7, i16 -12, i16 -40, i16 -46, i16 19522, i16 6481, i16 32767, i16 6481, i16 32767, i16 6479, i16 32767, i16 6479, i16 -23, i16 -12735, i16 6189, i16 -10502, i16 8, i16 26, i16 -2, i16 -5, i16 5775, i16 961, i16 623, i16 32767, i16 5776, i16 960, i16 623, i16 32767, i16 3, i16 3, i16 3, i16 3, i16 3, i16 3, i16 3, i16 3, i16 1620, i16 32767, i16 6481, i16 32767, i16 6481, i16 32767, i16 6479, i16 32767, i16 -17, i16 -2859, i16 -12236, i16 -10458, i16 27, i16 13, i16 -5, i16 -3, i16 246, i16 71, i16 10643, i16 56, i16 246, i16 71, i16 10643, i16 56, i16 3, i16 3, i16 3, i16 3, i16 3, i16 3, i16 3, i16 3, i16 6529, i16 0], align 16
+@.str.127 = private unnamed_addr constant [18 x i8] c"temp[%d] = %.10f\0A\00", align 1
+@.str.128 = private unnamed_addr constant [30 x i8] c"scalar(range (-99,999) final)\00", section "llvm.metadata"
+@.str.129 = private unnamed_addr constant [15 x i8] c"Range = %.10f\0A\00", align 1
+@.str.130 = private unnamed_addr constant [18 x i8] c"minRange = %.10f\0A\00", align 1
+@.str.131 = private unnamed_addr constant [16 x i8] c"maxVal = %.10f\0A\00", align 1
+@.str.132 = private unnamed_addr constant [16 x i8] c"minVal = %.10f\0A\00", align 1
+@.str.133 = private unnamed_addr constant [15 x i8] c"thermalmap.ppm\00", align 1
+@.str.134 = private unnamed_addr constant [2 x i8] c"w\00", align 1
 @stderr = external dso_local global %struct._IO_FILE*, align 8
-@.str.134 = private unnamed_addr constant [19 x i8] c"min = %d max = %d\0A\00", align 1
-@llvm.global.annotations = appending global [23 x { i8*, i8*, i8*, i32, i8* }] [{ i8*, i8*, i8*, i32, i8* } { i8* bitcast (i16* @params_kVdd to i8*), i8* getelementptr inbounds ([37 x i8], [37 x i8]* @.str, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 23, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast (i16* @params_vdd25 to i8*), i8* getelementptr inbounds ([37 x i8], [37 x i8]* @.str, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 24, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast (float* @params_KvPTAT to i8*), i8* getelementptr inbounds ([37 x i8], [37 x i8]* @.str.2, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 25, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast (float* @params_KtPTAT to i8*), i8* getelementptr inbounds ([30 x i8], [30 x i8]* @.str.3, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 26, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast (i16* @params_vPTAT25 to i8*), i8* getelementptr inbounds ([37 x i8], [37 x i8]* @.str, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 27, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast (float* @params_alphaPTAT to i8*), i8* getelementptr inbounds ([30 x i8], [30 x i8]* @.str.4, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 28, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast (i16* @params_gainEE to i8*), i8* getelementptr inbounds ([37 x i8], [37 x i8]* @.str, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 29, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast (float* @params_tgc to i8*), i8* getelementptr inbounds ([27 x i8], [27 x i8]* @.str.5, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 30, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast (float* @params_cpKv to i8*), i8* getelementptr inbounds ([34 x i8], [34 x i8]* @.str.6, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 31, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast (float* @params_cpKta to i8*), i8* getelementptr inbounds ([28 x i8], [28 x i8]* @.str.7, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 32, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast (i32* @params_resolutionEE to i8*), i8* getelementptr inbounds ([30 x i8], [30 x i8]* @.str.8, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 33, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* @params_calibrationModeEE, i8* getelementptr inbounds ([30 x i8], [30 x i8]* @.str.8, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 34, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast (float* @params_KsTa to i8*), i8* getelementptr inbounds ([26 x i8], [26 x i8]* @.str.9, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 35, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast ([4 x float]* @params_ksTo to i8*), i8* getelementptr inbounds ([25 x i8], [25 x i8]* @.str.10, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 36, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast ([4 x i16]* @params_ct to i8*), i8* getelementptr inbounds ([37 x i8], [37 x i8]* @.str, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 37, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast ([768 x i16]* @params_offset to i8*), i8* getelementptr inbounds ([37 x i8], [37 x i8]* @.str, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 39, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast ([768 x float]* @params_kta to i8*), i8* getelementptr inbounds ([35 x i8], [35 x i8]* @.str.11, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 40, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast ([768 x float]* @params_kv to i8*), i8* getelementptr inbounds ([26 x i8], [26 x i8]* @.str.12, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 41, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast ([2 x float]* @params_cpAlpha to i8*), i8* getelementptr inbounds ([32 x i8], [32 x i8]* @.str.13, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 42, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast ([2 x i16]* @params_cpOffset to i8*), i8* getelementptr inbounds ([37 x i8], [37 x i8]* @.str, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 43, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast ([3 x float]* @params_ilChessC to i8*), i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 44, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast ([5 x i16]* @params_brokenPixels to i8*), i8* getelementptr inbounds ([32 x i8], [32 x i8]* @.str.15, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 45, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast ([5 x i16]* @params_outlierPixels to i8*), i8* getelementptr inbounds ([32 x i8], [32 x i8]* @.str.15, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 46, i8* null }], section "llvm.metadata"
+@.str.135 = private unnamed_addr constant [19 x i8] c"min = %d max = %d\0A\00", align 1
+@llvm.global.annotations = appending global [23 x { i8*, i8*, i8*, i32, i8* }] [{ i8*, i8*, i8*, i32, i8* } { i8* bitcast (i16* @params_kVdd to i8*), i8* getelementptr inbounds ([37 x i8], [37 x i8]* @.str, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 23, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast (i16* @params_vdd25 to i8*), i8* getelementptr inbounds ([37 x i8], [37 x i8]* @.str, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 24, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast (float* @params_KvPTAT to i8*), i8* getelementptr inbounds ([37 x i8], [37 x i8]* @.str.2, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 25, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast (float* @params_KtPTAT to i8*), i8* getelementptr inbounds ([30 x i8], [30 x i8]* @.str.3, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 26, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast (i16* @params_vPTAT25 to i8*), i8* getelementptr inbounds ([37 x i8], [37 x i8]* @.str, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 27, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast (float* @params_alphaPTAT to i8*), i8* getelementptr inbounds ([30 x i8], [30 x i8]* @.str.4, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 28, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast (i16* @params_gainEE to i8*), i8* getelementptr inbounds ([37 x i8], [37 x i8]* @.str, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 29, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast (float* @params_tgc to i8*), i8* getelementptr inbounds ([27 x i8], [27 x i8]* @.str.5, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 30, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast (float* @params_cpKv to i8*), i8* getelementptr inbounds ([34 x i8], [34 x i8]* @.str.6, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 31, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast (float* @params_cpKta to i8*), i8* getelementptr inbounds ([28 x i8], [28 x i8]* @.str.7, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 32, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast (i32* @params_resolutionEE to i8*), i8* getelementptr inbounds ([30 x i8], [30 x i8]* @.str.8, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 33, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* @params_calibrationModeEE, i8* getelementptr inbounds ([30 x i8], [30 x i8]* @.str.8, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 34, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast (float* @params_KsTa to i8*), i8* getelementptr inbounds ([26 x i8], [26 x i8]* @.str.9, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 35, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast ([4 x float]* @params_ksTo to i8*), i8* getelementptr inbounds ([34 x i8], [34 x i8]* @.str.10, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 36, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast ([4 x i16]* @params_ct to i8*), i8* getelementptr inbounds ([37 x i8], [37 x i8]* @.str, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 37, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast ([768 x i16]* @params_offset to i8*), i8* getelementptr inbounds ([37 x i8], [37 x i8]* @.str, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 39, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast ([768 x float]* @params_kta to i8*), i8* getelementptr inbounds ([35 x i8], [35 x i8]* @.str.11, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 40, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast ([768 x float]* @params_kv to i8*), i8* getelementptr inbounds ([26 x i8], [26 x i8]* @.str.12, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 41, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast ([2 x float]* @params_cpAlpha to i8*), i8* getelementptr inbounds ([32 x i8], [32 x i8]* @.str.13, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 42, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast ([2 x i16]* @params_cpOffset to i8*), i8* getelementptr inbounds ([37 x i8], [37 x i8]* @.str, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 43, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast ([3 x float]* @params_ilChessC to i8*), i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 44, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast ([5 x i16]* @params_brokenPixels to i8*), i8* getelementptr inbounds ([32 x i8], [32 x i8]* @.str.15, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 45, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast ([5 x i16]* @params_outlierPixels to i8*), i8* getelementptr inbounds ([32 x i8], [32 x i8]* @.str.15, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 46, i8* null }], section "llvm.metadata"
 
 ; Function Attrs: noinline uwtable mustprogress
 define dso_local i32 @_Z15MLX90640_DumpEEhPt(i8 zeroext %0, i16* %1) #0 {
@@ -542,11 +543,11 @@ define dso_local void @_Z21ExtractPTATParametersPKt(i16* %0) #0 {
   %6 = alloca float, align 4
   store i16* %0, i16** %2, align 8
   %7 = bitcast float* %3 to i8*
-  call void @llvm.var.annotation(i8* %7, i8* getelementptr inbounds ([22 x i8], [22 x i8]* @.str.110, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 853, i8* null)
+  call void @llvm.var.annotation(i8* %7, i8* getelementptr inbounds ([22 x i8], [22 x i8]* @.str.107, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 927, i8* null)
   %8 = bitcast float* %4 to i8*
-  call void @llvm.var.annotation(i8* %8, i8* getelementptr inbounds ([25 x i8], [25 x i8]* @.str.111, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 854, i8* null)
+  call void @llvm.var.annotation(i8* %8, i8* getelementptr inbounds ([25 x i8], [25 x i8]* @.str.108, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 928, i8* null)
   %9 = bitcast float* %6 to i8*
-  call void @llvm.var.annotation(i8* %9, i8* getelementptr inbounds ([23 x i8], [23 x i8]* @.str.112, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 856, i8* null)
+  call void @llvm.var.annotation(i8* %9, i8* getelementptr inbounds ([23 x i8], [23 x i8]* @.str.109, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 930, i8* null)
   %10 = load i16*, i16** %2, align 8
   %11 = getelementptr inbounds i16, i16* %10, i64 50
   %12 = load i16, i16* %11, align 2
@@ -650,7 +651,7 @@ define dso_local void @_Z20ExtractTgcParametersPKt(i16* %0) #1 {
   %3 = alloca float, align 4
   store i16* %0, i16** %2, align 8
   %4 = bitcast float* %3 to i8*
-  call void @llvm.var.annotation(i8* %4, i8* getelementptr inbounds ([24 x i8], [24 x i8]* @.str.113, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 902, i8* null)
+  call void @llvm.var.annotation(i8* %4, i8* getelementptr inbounds ([24 x i8], [24 x i8]* @.str.110, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 976, i8* null)
   %5 = load i16*, i16** %2, align 8
   %6 = getelementptr inbounds i16, i16* %5, i64 60
   %7 = load i16, i16* %6, align 2
@@ -702,7 +703,7 @@ define dso_local void @_Z21ExtractKsTaParametersPKt(i16* %0) #1 {
   %3 = alloca float, align 4
   store i16* %0, i16** %2, align 8
   %4 = bitcast float* %3 to i8*
-  call void @llvm.var.annotation(i8* %4, i8* getelementptr inbounds ([30 x i8], [30 x i8]* @.str.114, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 927, i8* null)
+  call void @llvm.var.annotation(i8* %4, i8* getelementptr inbounds ([30 x i8], [30 x i8]* @.str.111, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 1001, i8* null)
   %5 = load i16*, i16** %2, align 8
   %6 = getelementptr inbounds i16, i16* %5, i64 60
   %7 = load i16, i16* %6, align 2
@@ -2175,11 +2176,11 @@ define dso_local void @_Z19ExtractCPParametersPKt(i16* %0) #0 {
   %9 = alloca i8, align 1
   store i16* %0, i16** %2, align 8
   %10 = bitcast [2 x float]* %3 to i8*
-  call void @llvm.var.annotation(i8* %10, i8* getelementptr inbounds ([25 x i8], [25 x i8]* @.str.115, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 1240, i8* null)
+  call void @llvm.var.annotation(i8* %10, i8* getelementptr inbounds ([25 x i8], [25 x i8]* @.str.112, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 1314, i8* null)
   %11 = bitcast float* %5 to i8*
-  call void @llvm.var.annotation(i8* %11, i8* getelementptr inbounds ([24 x i8], [24 x i8]* @.str.113, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 1242, i8* null)
+  call void @llvm.var.annotation(i8* %11, i8* getelementptr inbounds ([24 x i8], [24 x i8]* @.str.110, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 1316, i8* null)
   %12 = bitcast float* %6 to i8*
-  call void @llvm.var.annotation(i8* %12, i8* getelementptr inbounds ([24 x i8], [24 x i8]* @.str.113, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 1243, i8* null)
+  call void @llvm.var.annotation(i8* %12, i8* getelementptr inbounds ([24 x i8], [24 x i8]* @.str.110, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 1317, i8* null)
   %13 = load i16*, i16** %2, align 8
   %14 = getelementptr inbounds i16, i16* %13, i64 32
   %15 = load i16, i16* %14, align 2
@@ -2406,7 +2407,7 @@ define dso_local void @_Z21ExtractCILCParametersPKt(i16* %0) #1 {
   %4 = alloca i8, align 1
   store i16* %0, i16** %2, align 8
   %5 = bitcast [3 x float]* %3 to i8*
-  call void @llvm.var.annotation(i8* %5, i8* getelementptr inbounds ([22 x i8], [22 x i8]* @.str.110, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 1303, i8* null)
+  call void @llvm.var.annotation(i8* %5, i8* getelementptr inbounds ([22 x i8], [22 x i8]* @.str.107, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 1377, i8* null)
   %6 = load i16*, i16** %2, align 8
   %7 = getelementptr inbounds i16, i16* %6, i64 10
   %8 = load i16, i16* %7, align 2
@@ -3210,7 +3211,7 @@ define dso_local void @_Z20MLX90640_CalculateToPKtffPf(i16* %0, float %1, float 
   %69 = bitcast float* %10 to i8*
   call void @llvm.var.annotation(i8* %69, i8* getelementptr inbounds ([28 x i8], [28 x i8]* @.str.19, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 352, i8* null)
   %70 = bitcast float* %11 to i8*
-  call void @llvm.var.annotation(i8* %70, i8* getelementptr inbounds ([47 x i8], [47 x i8]* @.str.20, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 353, i8* null)
+  call void @llvm.var.annotation(i8* %70, i8* getelementptr inbounds ([45 x i8], [45 x i8]* @.str.20, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 353, i8* null)
   %71 = bitcast float* %12 to i8*
   call void @llvm.var.annotation(i8* %71, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 354, i8* null)
   %72 = bitcast float* %13 to i8*
@@ -3244,7 +3245,7 @@ define dso_local void @_Z20MLX90640_CalculateToPKtffPf(i16* %0, float %1, float 
   %90 = fpext float %89 to double
   %91 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([12 x i8], [12 x i8]* @.str.23, i64 0, i64 0), double %90)
   %92 = bitcast float* %28 to i8*
-  call void @llvm.var.annotation(i8* %92, i8* getelementptr inbounds ([47 x i8], [47 x i8]* @.str.20, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 380, i8* null)
+  call void @llvm.var.annotation(i8* %92, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 380, i8* null)
   %93 = load float, float* %10, align 4
   %94 = fpext float %93 to double
   %95 = fadd double %94, 2.731500e+02
@@ -3299,7 +3300,7 @@ define dso_local void @_Z20MLX90640_CalculateToPKtffPf(i16* %0, float %1, float 
   store float %136, float* %13, align 4
   %137 = load float, float* %13, align 4
   %138 = fpext float %137 to double
-  %139 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([12 x i8], [12 x i8]* @.str.29, i64 0, i64 0), double %138)
+  %139 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.29, i64 0, i64 0), double %138)
   %140 = load float, float* getelementptr inbounds ([4 x float], [4 x float]* @params_ksTo, i64 0, i64 0), align 16
   %141 = fmul float %140, 4.000000e+01
   %142 = fadd float 1.000000e+00, %141
@@ -3514,10 +3515,10 @@ define dso_local void @_Z20MLX90640_CalculateToPKtffPf(i16* %0, float %1, float 
   store i32 0, i32* %32, align 4
   br label %312
 
-312:                                              ; preds = %768, %311
+312:                                              ; preds = %779, %311
   %313 = load i32, i32* %32, align 4
   %314 = icmp slt i32 %313, 768
-  br i1 %314, label %315, label %771
+  br i1 %314, label %315, label %782
 
 315:                                              ; preds = %312
   %316 = load i32, i32* %32, align 4
@@ -3582,7 +3583,7 @@ define dso_local void @_Z20MLX90640_CalculateToPKtffPf(i16* %0, float %1, float 
   %364 = load i16, i16* %363, align 2
   %365 = zext i16 %364 to i32
   %366 = icmp eq i32 %361, %365
-  br i1 %366, label %367, label %767
+  br i1 %366, label %367, label %778
 
 367:                                              ; preds = %359
   %368 = load i16*, i16** %5, align 8
@@ -3614,7 +3615,7 @@ define dso_local void @_Z20MLX90640_CalculateToPKtffPf(i16* %0, float %1, float 
   %387 = fpext float %386 to double
   %388 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.31, i64 0, i64 0), double %387)
   %389 = bitcast float* %33 to i8*
-  call void @llvm.var.annotation(i8* %389, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 461, i8* null)
+  call void @llvm.var.annotation(i8* %389, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 462, i8* null)
   %390 = load float, float* %10, align 4
   %391 = fsub float %390, 2.500000e+01
   store float %391, float* %33, align 4
@@ -3625,7 +3626,7 @@ define dso_local void @_Z20MLX90640_CalculateToPKtffPf(i16* %0, float %1, float 
   %396 = fpext float %395 to double
   %397 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([11 x i8], [11 x i8]* @.str.33, i64 0, i64 0), double %396)
   %398 = bitcast float* %34 to i8*
-  call void @llvm.var.annotation(i8* %398, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 465, i8* null)
+  call void @llvm.var.annotation(i8* %398, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 466, i8* null)
   %399 = load float, float* %33, align 4
   %400 = load i32, i32* %32, align 4
   %401 = sext i32 %400 to i64
@@ -3637,7 +3638,7 @@ define dso_local void @_Z20MLX90640_CalculateToPKtffPf(i16* %0, float %1, float 
   %406 = fpext float %405 to double
   %407 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([11 x i8], [11 x i8]* @.str.34, i64 0, i64 0), double %406)
   %408 = bitcast float* %35 to i8*
-  call void @llvm.var.annotation(i8* %408, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 468, i8* null)
+  call void @llvm.var.annotation(i8* %408, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 469, i8* null)
   %409 = load float, float* %34, align 4
   %410 = fadd float 1.000000e+00, %409
   store float %410, float* %35, align 4
@@ -3645,7 +3646,7 @@ define dso_local void @_Z20MLX90640_CalculateToPKtffPf(i16* %0, float %1, float 
   %412 = fpext float %411 to double
   %413 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([11 x i8], [11 x i8]* @.str.35, i64 0, i64 0), double %412)
   %414 = bitcast float* %36 to i8*
-  call void @llvm.var.annotation(i8* %414, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 472, i8* null)
+  call void @llvm.var.annotation(i8* %414, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 473, i8* null)
   %415 = load float, float* %35, align 4
   %416 = load i32, i32* %32, align 4
   %417 = sext i32 %416 to i64
@@ -3683,7 +3684,7 @@ define dso_local void @_Z20MLX90640_CalculateToPKtffPf(i16* %0, float %1, float 
   %446 = fpext float %445 to double
   %447 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([11 x i8], [11 x i8]* @.str.39, i64 0, i64 0), double %446)
   %448 = bitcast float* %39 to i8*
-  call void @llvm.var.annotation(i8* %448, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 482, i8* null)
+  call void @llvm.var.annotation(i8* %448, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 483, i8* null)
   %449 = load float, float* %38, align 4
   %450 = fadd float 1.000000e+00, %449
   store float %450, float* %39, align 4
@@ -3691,7 +3692,7 @@ define dso_local void @_Z20MLX90640_CalculateToPKtffPf(i16* %0, float %1, float 
   %452 = fpext float %451 to double
   %453 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([11 x i8], [11 x i8]* @.str.40, i64 0, i64 0), double %452)
   %454 = bitcast float* %40 to i8*
-  call void @llvm.var.annotation(i8* %454, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 485, i8* null)
+  call void @llvm.var.annotation(i8* %454, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 486, i8* null)
   %455 = load float, float* %39, align 4
   %456 = load float, float* %35, align 4
   %457 = fmul float %455, %456
@@ -3700,7 +3701,7 @@ define dso_local void @_Z20MLX90640_CalculateToPKtffPf(i16* %0, float %1, float 
   %459 = fpext float %458 to double
   %460 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([11 x i8], [11 x i8]* @.str.41, i64 0, i64 0), double %459)
   %461 = bitcast float* %41 to i8*
-  call void @llvm.var.annotation(i8* %461, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 488, i8* null)
+  call void @llvm.var.annotation(i8* %461, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 489, i8* null)
   %462 = load float, float* %40, align 4
   %463 = load i32, i32* %32, align 4
   %464 = sext i32 %463 to i64
@@ -3780,7 +3781,7 @@ define dso_local void @_Z20MLX90640_CalculateToPKtffPf(i16* %0, float %1, float 
   %528 = fpext float %527 to double
   %529 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str.46, i64 0, i64 0), double %528)
   %530 = bitcast float* %43 to i8*
-  call void @llvm.var.annotation(i8* %530, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 510, i8* null)
+  call void @llvm.var.annotation(i8* %530, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 511, i8* null)
   %531 = load i32, i32* %32, align 4
   %532 = sext i32 %531 to i64
   %533 = getelementptr inbounds [768 x float], [768 x float]* @params_alpha, i64 0, i64 %532
@@ -3798,7 +3799,7 @@ define dso_local void @_Z20MLX90640_CalculateToPKtffPf(i16* %0, float %1, float 
   %544 = fpext float %543 to double
   %545 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str.48, i64 0, i64 0), double %544)
   %546 = bitcast float* %44 to i8*
-  call void @llvm.var.annotation(i8* %546, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 514, i8* null)
+  call void @llvm.var.annotation(i8* %546, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 515, i8* null)
   %547 = load float, float* @params_KsTa, align 4
   %548 = load float, float* %10, align 4
   %549 = fsub float %548, 2.500000e+01
@@ -3808,7 +3809,7 @@ define dso_local void @_Z20MLX90640_CalculateToPKtffPf(i16* %0, float %1, float 
   %552 = fpext float %551 to double
   %553 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str.49, i64 0, i64 0), double %552)
   %554 = bitcast float* %45 to i8*
-  call void @llvm.var.annotation(i8* %554, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 517, i8* null)
+  call void @llvm.var.annotation(i8* %554, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 518, i8* null)
   %555 = load float, float* %44, align 4
   %556 = fadd float 1.000000e+00, %555
   store float %556, float* %45, align 4
@@ -3829,7 +3830,7 @@ define dso_local void @_Z20MLX90640_CalculateToPKtffPf(i16* %0, float %1, float 
   %570 = fpext float %569 to double
   %571 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([13 x i8], [13 x i8]* @.str.53, i64 0, i64 0), double %570)
   %572 = bitcast float* %46 to i8*
-  call void @llvm.var.annotation(i8* %572, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 527, i8* null)
+  call void @llvm.var.annotation(i8* %572, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 528, i8* null)
   %573 = load float, float* %17, align 4
   %574 = load float, float* %13, align 4
   %575 = fmul float %573, %574
@@ -3838,7 +3839,7 @@ define dso_local void @_Z20MLX90640_CalculateToPKtffPf(i16* %0, float %1, float 
   %577 = fpext float %576 to double
   %578 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str.54, i64 0, i64 0), double %577)
   %579 = bitcast float* %47 to i8*
-  call void @llvm.var.annotation(i8* %579, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 530, i8* null)
+  call void @llvm.var.annotation(i8* %579, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 531, i8* null)
   %580 = load float, float* %16, align 4
   %581 = load float, float* %46, align 4
   %582 = fadd float %580, %581
@@ -3847,7 +3848,7 @@ define dso_local void @_Z20MLX90640_CalculateToPKtffPf(i16* %0, float %1, float 
   %584 = fpext float %583 to double
   %585 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str.55, i64 0, i64 0), double %584)
   %586 = bitcast float* %48 to i8*
-  call void @llvm.var.annotation(i8* %586, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 533, i8* null)
+  call void @llvm.var.annotation(i8* %586, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 534, i8* null)
   %587 = load float, float* %17, align 4
   %588 = load float, float* %17, align 4
   %589 = fmul float %587, %588
@@ -3858,7 +3859,7 @@ define dso_local void @_Z20MLX90640_CalculateToPKtffPf(i16* %0, float %1, float 
   %593 = fpext float %592 to double
   %594 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str.56, i64 0, i64 0), double %593)
   %595 = bitcast float* %49 to i8*
-  call void @llvm.var.annotation(i8* %595, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 536, i8* null)
+  call void @llvm.var.annotation(i8* %595, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 537, i8* null)
   %596 = load float, float* %48, align 4
   %597 = load float, float* %47, align 4
   %598 = fmul float %596, %597
@@ -3876,7 +3877,7 @@ define dso_local void @_Z20MLX90640_CalculateToPKtffPf(i16* %0, float %1, float 
   %608 = fpext float %607 to double
   %609 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str.58, i64 0, i64 0), double %608)
   %610 = bitcast float* %50 to i8*
-  call void @llvm.var.annotation(i8* %610, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 544, i8* null)
+  call void @llvm.var.annotation(i8* %610, i8* getelementptr inbounds ([27 x i8], [27 x i8]* @.str.59, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 545, i8* null)
   %611 = load float, float* getelementptr inbounds ([4 x float], [4 x float]* @params_ksTo, i64 0, i64 1), align 4
   %612 = fpext float %611 to double
   %613 = fmul double %612, 2.731500e+02
@@ -3884,230 +3885,245 @@ define dso_local void @_Z20MLX90640_CalculateToPKtffPf(i16* %0, float %1, float 
   store float %614, float* %50, align 4
   %615 = load float, float* %50, align 4
   %616 = fpext float %615 to double
-  %617 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str.59, i64 0, i64 0), double %616)
-  %618 = bitcast float* %51 to i8*
-  call void @llvm.var.annotation(i8* %618, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 547, i8* null)
-  %619 = load float, float* %50, align 4
-  %620 = fsub float 1.000000e+00, %619
-  store float %620, float* %51, align 4
-  %621 = load float, float* %51, align 4
-  %622 = fpext float %621 to double
-  %623 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str.60, i64 0, i64 0), double %622)
-  %624 = bitcast float* %52 to i8*
-  call void @llvm.var.annotation(i8* %624, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 550, i8* null)
-  %625 = load float, float* %17, align 4
-  %626 = load float, float* %51, align 4
-  %627 = fmul float %625, %626
-  store float %627, float* %52, align 4
-  %628 = load float, float* %52, align 4
-  %629 = fpext float %628 to double
-  %630 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str.61, i64 0, i64 0), double %629)
-  %631 = bitcast float* %53 to i8*
-  call void @llvm.var.annotation(i8* %631, i8* getelementptr inbounds ([44 x i8], [44 x i8]* @.str.62, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 553, i8* null)
-  %632 = load float, float* %52, align 4
-  %633 = load float, float* %23, align 4
-  %634 = fadd float %632, %633
-  store float %634, float* %53, align 4
-  %635 = load float, float* %53, align 4
-  %636 = fpext float %635 to double
-  %637 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str.63, i64 0, i64 0), double %636)
-  %638 = bitcast float* %54 to i8*
-  call void @llvm.var.annotation(i8* %638, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 556, i8* null)
-  %639 = load float, float* %16, align 4
-  %640 = load float, float* %53, align 4
-  %641 = fdiv float %639, %640
-  store float %641, float* %54, align 4
-  %642 = load float, float* %54, align 4
-  %643 = fpext float %642 to double
-  %644 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str.64, i64 0, i64 0), double %643)
-  %645 = bitcast float* %55 to i8*
-  call void @llvm.var.annotation(i8* %645, i8* getelementptr inbounds ([35 x i8], [35 x i8]* @.str.65, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 559, i8* null)
-  %646 = load float, float* %54, align 4
-  %647 = load float, float* %13, align 4
-  %648 = fadd float %646, %647
-  store float %648, float* %55, align 4
-  %649 = load float, float* %55, align 4
-  %650 = fpext float %649 to double
-  %651 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str.66, i64 0, i64 0), double %650)
-  %652 = bitcast float* %56 to i8*
-  call void @llvm.var.annotation(i8* %652, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 562, i8* null)
-  %653 = load float, float* %55, align 4
-  %654 = call float @_ZSt4sqrtf(float %653)
-  %655 = call float @_ZSt4sqrtf(float %654)
-  %656 = fpext float %655 to double
-  %657 = fsub double %656, 2.731500e+02
-  %658 = fptrunc double %657 to float
-  store float %658, float* %56, align 4
-  %659 = load float, float* %56, align 4
-  %660 = fpext float %659 to double
-  %661 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str.67, i64 0, i64 0), double %660)
-  %662 = load float, float* %13, align 4
-  %663 = fpext float %662 to double
-  %664 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([13 x i8], [13 x i8]* @.str.68, i64 0, i64 0), double %663)
-  %665 = load float, float* %56, align 4
-  %666 = fptosi float %665 to i32
-  %667 = load i16, i16* getelementptr inbounds ([4 x i16], [4 x i16]* @params_ct, i64 0, i64 1), align 2
-  %668 = sext i16 %667 to i32
-  %669 = icmp slt i32 %666, %668
-  br i1 %669, label %670, label %671
+  %617 = load float, float* getelementptr inbounds ([4 x float], [4 x float]* @params_ksTo, i64 0, i64 1), align 4
+  %618 = fpext float %617 to double
+  %619 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([22 x i8], [22 x i8]* @.str.60, i64 0, i64 0), double %616, double %618)
+  %620 = bitcast float* %51 to i8*
+  call void @llvm.var.annotation(i8* %620, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 548, i8* null)
+  %621 = load float, float* %50, align 4
+  %622 = fsub float 1.000000e+00, %621
+  store float %622, float* %51, align 4
+  %623 = load float, float* %51, align 4
+  %624 = fpext float %623 to double
+  %625 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str.61, i64 0, i64 0), double %624)
+  %626 = bitcast float* %52 to i8*
+  call void @llvm.var.annotation(i8* %626, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 551, i8* null)
+  %627 = load float, float* %17, align 4
+  %628 = load float, float* %51, align 4
+  %629 = fmul float %627, %628
+  store float %629, float* %52, align 4
+  %630 = load float, float* %52, align 4
+  %631 = fpext float %630 to double
+  %632 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str.62, i64 0, i64 0), double %631)
+  %633 = bitcast float* %53 to i8*
+  call void @llvm.var.annotation(i8* %633, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 554, i8* null)
+  %634 = load float, float* %52, align 4
+  %635 = load float, float* %23, align 4
+  %636 = fadd float %634, %635
+  store float %636, float* %53, align 4
+  %637 = load float, float* %53, align 4
+  %638 = fpext float %637 to double
+  %639 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str.63, i64 0, i64 0), double %638)
+  %640 = bitcast float* %54 to i8*
+  call void @llvm.var.annotation(i8* %640, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 557, i8* null)
+  %641 = load float, float* %16, align 4
+  %642 = load float, float* %53, align 4
+  %643 = fdiv float %641, %642
+  store float %643, float* %54, align 4
+  %644 = load float, float* %54, align 4
+  %645 = fpext float %644 to double
+  %646 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str.64, i64 0, i64 0), double %645)
+  %647 = bitcast float* %55 to i8*
+  call void @llvm.var.annotation(i8* %647, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 560, i8* null)
+  %648 = load float, float* %54, align 4
+  %649 = load float, float* %13, align 4
+  %650 = fadd float %648, %649
+  store float %650, float* %55, align 4
+  %651 = load float, float* %55, align 4
+  %652 = fpext float %651 to double
+  %653 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str.65, i64 0, i64 0), double %652)
+  %654 = bitcast float* %56 to i8*
+  call void @llvm.var.annotation(i8* %654, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 563, i8* null)
+  %655 = load float, float* %55, align 4
+  %656 = call float @_ZSt4sqrtf(float %655)
+  %657 = call float @_ZSt4sqrtf(float %656)
+  %658 = fpext float %657 to double
+  %659 = fsub double %658, 2.731500e+02
+  %660 = fptrunc double %659 to float
+  store float %660, float* %56, align 4
+  %661 = load float, float* %56, align 4
+  %662 = fpext float %661 to double
+  %663 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str.66, i64 0, i64 0), double %662)
+  %664 = load float, float* %13, align 4
+  %665 = fpext float %664 to double
+  %666 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([13 x i8], [13 x i8]* @.str.67, i64 0, i64 0), double %665)
+  %667 = load float, float* %56, align 4
+  %668 = fptosi float %667 to i32
+  %669 = load i16, i16* getelementptr inbounds ([4 x i16], [4 x i16]* @params_ct, i64 0, i64 1), align 2
+  %670 = sext i16 %669 to i32
+  %671 = icmp slt i32 %668, %670
+  br i1 %671, label %672, label %673
 
-670:                                              ; preds = %500
+672:                                              ; preds = %500
   store i8 0, i8* %26, align 1
-  br label %688
+  br label %690
 
-671:                                              ; preds = %500
-  %672 = load float, float* %56, align 4
-  %673 = fptosi float %672 to i32
-  %674 = load i16, i16* getelementptr inbounds ([4 x i16], [4 x i16]* @params_ct, i64 0, i64 2), align 2
-  %675 = sext i16 %674 to i32
-  %676 = icmp slt i32 %673, %675
-  br i1 %676, label %677, label %678
+673:                                              ; preds = %500
+  %674 = load float, float* %56, align 4
+  %675 = fptosi float %674 to i32
+  %676 = load i16, i16* getelementptr inbounds ([4 x i16], [4 x i16]* @params_ct, i64 0, i64 2), align 2
+  %677 = sext i16 %676 to i32
+  %678 = icmp slt i32 %675, %677
+  br i1 %678, label %679, label %680
 
-677:                                              ; preds = %671
+679:                                              ; preds = %673
   store i8 1, i8* %26, align 1
-  br label %687
+  br label %689
 
-678:                                              ; preds = %671
-  %679 = load float, float* %56, align 4
-  %680 = fptosi float %679 to i32
-  %681 = load i16, i16* getelementptr inbounds ([4 x i16], [4 x i16]* @params_ct, i64 0, i64 3), align 2
-  %682 = sext i16 %681 to i32
-  %683 = icmp slt i32 %680, %682
-  br i1 %683, label %684, label %685
+680:                                              ; preds = %673
+  %681 = load float, float* %56, align 4
+  %682 = fptosi float %681 to i32
+  %683 = load i16, i16* getelementptr inbounds ([4 x i16], [4 x i16]* @params_ct, i64 0, i64 3), align 2
+  %684 = sext i16 %683 to i32
+  %685 = icmp slt i32 %682, %684
+  br i1 %685, label %686, label %687
 
-684:                                              ; preds = %678
+686:                                              ; preds = %680
   store i8 2, i8* %26, align 1
-  br label %686
-
-685:                                              ; preds = %678
-  store i8 3, i8* %26, align 1
-  br label %686
-
-686:                                              ; preds = %685, %684
-  br label %687
-
-687:                                              ; preds = %686, %677
   br label %688
 
-688:                                              ; preds = %687, %670
-  %689 = load i8, i8* %26, align 1
-  %690 = sext i8 %689 to i32
-  %691 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([11 x i8], [11 x i8]* @.str.69, i64 0, i64 0), i32 %690)
-  %692 = bitcast float* %57 to i8*
-  call void @llvm.var.annotation(i8* %692, i8* getelementptr inbounds ([31 x i8], [31 x i8]* @.str.70, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 594, i8* null)
-  %693 = load float, float* %56, align 4
-  %694 = load i8, i8* %26, align 1
-  %695 = sext i8 %694 to i64
-  %696 = getelementptr inbounds [4 x i16], [4 x i16]* @params_ct, i64 0, i64 %695
-  %697 = load i16, i16* %696, align 2
-  %698 = sext i16 %697 to i32
-  %699 = sitofp i32 %698 to float
-  %700 = fsub float %693, %699
-  store float %700, float* %57, align 4
-  %701 = load float, float* %57, align 4
-  %702 = fpext float %701 to double
-  %703 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str.71, i64 0, i64 0), double %702)
-  %704 = bitcast float* %58 to i8*
-  call void @llvm.var.annotation(i8* %704, i8* getelementptr inbounds ([26 x i8], [26 x i8]* @.str.9, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 597, i8* null)
-  %705 = load i8, i8* %26, align 1
-  %706 = sext i8 %705 to i64
-  %707 = getelementptr inbounds [4 x float], [4 x float]* @params_ksTo, i64 0, i64 %706
-  %708 = load float, float* %707, align 4
-  %709 = load float, float* %57, align 4
-  %710 = fmul float %708, %709
-  store float %710, float* %58, align 4
-  %711 = load float, float* %58, align 4
-  %712 = fpext float %711 to double
-  %713 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str.72, i64 0, i64 0), double %712)
-  %714 = bitcast float* %59 to i8*
-  call void @llvm.var.annotation(i8* %714, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 600, i8* null)
-  %715 = load float, float* %58, align 4
-  %716 = fadd float 1.000000e+00, %715
-  store float %716, float* %59, align 4
-  %717 = load float, float* %59, align 4
-  %718 = fpext float %717 to double
-  %719 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([11 x i8], [11 x i8]* @.str.73, i64 0, i64 0), double %718)
-  %720 = bitcast float* %60 to i8*
-  call void @llvm.var.annotation(i8* %720, i8* getelementptr inbounds ([26 x i8], [26 x i8]* @.str.9, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 603, i8* null)
-  %721 = load float, float* %17, align 4
-  %722 = load i8, i8* %26, align 1
-  %723 = sext i8 %722 to i64
-  %724 = getelementptr inbounds [4 x float], [4 x float]* %25, i64 0, i64 %723
-  %725 = load float, float* %724, align 4
-  %726 = fmul float %721, %725
-  store float %726, float* %60, align 4
-  %727 = load float, float* %60, align 4
-  %728 = fpext float %727 to double
-  %729 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([11 x i8], [11 x i8]* @.str.74, i64 0, i64 0), double %728)
-  %730 = load float, float* %60, align 4
-  %731 = load float, float* %59, align 4
-  %732 = fmul float %730, %731
-  store float %732, float* %61, align 4
-  %733 = load float, float* %61, align 4
-  %734 = fpext float %733 to double
-  %735 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([11 x i8], [11 x i8]* @.str.75, i64 0, i64 0), double %734)
-  %736 = bitcast float* %62 to i8*
-  call void @llvm.var.annotation(i8* %736, i8* getelementptr inbounds ([34 x i8], [34 x i8]* @.str.76, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 609, i8* null)
-  %737 = load float, float* %16, align 4
-  %738 = load float, float* %61, align 4
-  %739 = fdiv float %737, %738
-  store float %739, float* %62, align 4
-  %740 = load float, float* %62, align 4
-  %741 = fpext float %740 to double
-  %742 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([11 x i8], [11 x i8]* @.str.77, i64 0, i64 0), double %741)
-  %743 = bitcast float* %63 to i8*
-  call void @llvm.var.annotation(i8* %743, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 612, i8* null)
-  %744 = load float, float* %62, align 4
-  %745 = load float, float* %13, align 4
-  %746 = fadd float %744, %745
-  store float %746, float* %63, align 4
-  %747 = load float, float* %63, align 4
-  %748 = fpext float %747 to double
-  %749 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([11 x i8], [11 x i8]* @.str.78, i64 0, i64 0), double %748)
-  %750 = bitcast float* %64 to i8*
-  call void @llvm.var.annotation(i8* %750, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 615, i8* null)
-  %751 = load float, float* %63, align 4
-  %752 = call float @_ZSt4sqrtf(float %751)
-  %753 = call float @_ZSt4sqrtf(float %752)
-  %754 = fpext float %753 to double
-  %755 = fsub double %754, 2.731500e+02
-  %756 = fptrunc double %755 to float
-  store float %756, float* %64, align 4
-  %757 = load float, float* %64, align 4
-  %758 = fpext float %757 to double
-  %759 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([11 x i8], [11 x i8]* @.str.79, i64 0, i64 0), double %758)
-  %760 = load float, float* %64, align 4
-  %761 = load float*, float** %8, align 8
+687:                                              ; preds = %680
+  store i8 3, i8* %26, align 1
+  br label %688
+
+688:                                              ; preds = %687, %686
+  br label %689
+
+689:                                              ; preds = %688, %679
+  br label %690
+
+690:                                              ; preds = %689, %672
+  %691 = load i8, i8* %26, align 1
+  %692 = sext i8 %691 to i32
+  %693 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([11 x i8], [11 x i8]* @.str.68, i64 0, i64 0), i32 %692)
+  %694 = bitcast float* %57 to i8*
+  call void @llvm.var.annotation(i8* %694, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 595, i8* null)
+  %695 = load float, float* %56, align 4
+  %696 = load i8, i8* %26, align 1
+  %697 = sext i8 %696 to i64
+  %698 = getelementptr inbounds [4 x i16], [4 x i16]* @params_ct, i64 0, i64 %697
+  %699 = load i16, i16* %698, align 2
+  %700 = sext i16 %699 to i32
+  %701 = sitofp i32 %700 to float
+  %702 = fsub float %695, %701
+  store float %702, float* %57, align 4
+  %703 = load float, float* %57, align 4
+  %704 = fpext float %703 to double
+  %705 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str.69, i64 0, i64 0), double %704)
+  %706 = bitcast float* %58 to i8*
+  call void @llvm.var.annotation(i8* %706, i8* getelementptr inbounds ([26 x i8], [26 x i8]* @.str.9, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 598, i8* null)
+  %707 = load i8, i8* %26, align 1
+  %708 = sext i8 %707 to i64
+  %709 = getelementptr inbounds [4 x float], [4 x float]* @params_ksTo, i64 0, i64 %708
+  %710 = load float, float* %709, align 4
+  %711 = load float, float* %57, align 4
+  %712 = fmul float %710, %711
+  store float %712, float* %58, align 4
+  %713 = load float, float* %58, align 4
+  %714 = fpext float %713 to double
+  %715 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str.70, i64 0, i64 0), double %714)
+  %716 = bitcast float* %59 to i8*
+  call void @llvm.var.annotation(i8* %716, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 601, i8* null)
+  %717 = load float, float* %58, align 4
+  %718 = fadd float 1.000000e+00, %717
+  store float %718, float* %59, align 4
+  %719 = load float, float* %59, align 4
+  %720 = fpext float %719 to double
+  %721 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([11 x i8], [11 x i8]* @.str.71, i64 0, i64 0), double %720)
+  %722 = bitcast float* %60 to i8*
+  call void @llvm.var.annotation(i8* %722, i8* getelementptr inbounds ([26 x i8], [26 x i8]* @.str.9, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 604, i8* null)
+  %723 = load float, float* %17, align 4
+  %724 = load i8, i8* %26, align 1
+  %725 = sext i8 %724 to i64
+  %726 = getelementptr inbounds [4 x float], [4 x float]* %25, i64 0, i64 %725
+  %727 = load float, float* %726, align 4
+  %728 = fmul float %723, %727
+  store float %728, float* %60, align 4
+  %729 = load float, float* %60, align 4
+  %730 = fpext float %729 to double
+  %731 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([11 x i8], [11 x i8]* @.str.72, i64 0, i64 0), double %730)
+  %732 = load float, float* %60, align 4
+  %733 = load float, float* %59, align 4
+  %734 = fmul float %732, %733
+  store float %734, float* %61, align 4
+  %735 = load float, float* %61, align 4
+  %736 = fpext float %735 to double
+  %737 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([11 x i8], [11 x i8]* @.str.73, i64 0, i64 0), double %736)
+  %738 = bitcast float* %62 to i8*
+  call void @llvm.var.annotation(i8* %738, i8* getelementptr inbounds ([36 x i8], [36 x i8]* @.str.74, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 610, i8* null)
+  %739 = load float, float* %16, align 4
+  %740 = load float, float* %61, align 4
+  %741 = fdiv float %739, %740
+  store float %741, float* %62, align 4
+  %742 = load float, float* %62, align 4
+  %743 = fpext float %742 to double
+  %744 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([11 x i8], [11 x i8]* @.str.75, i64 0, i64 0), double %743)
+  %745 = bitcast float* %63 to i8*
+  call void @llvm.var.annotation(i8* %745, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 613, i8* null)
+  %746 = load float, float* %62, align 4
+  %747 = load float, float* %13, align 4
+  %748 = fadd float %746, %747
+  store float %748, float* %63, align 4
+  %749 = load float, float* %63, align 4
+  %750 = fpext float %749 to double
+  %751 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([11 x i8], [11 x i8]* @.str.76, i64 0, i64 0), double %750)
+  %752 = bitcast float* %64 to i8*
+  call void @llvm.var.annotation(i8* %752, i8* getelementptr inbounds ([30 x i8], [30 x i8]* @.str.18, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 616, i8* null)
+  %753 = load float, float* %63, align 4
+  %754 = call float @_ZSt4sqrtf(float %753)
+  %755 = call float @_ZSt4sqrtf(float %754)
+  %756 = fpext float %755 to double
+  %757 = fsub double %756, 2.731500e+02
+  %758 = fptrunc double %757 to float
+  store float %758, float* %64, align 4
+  %759 = load float, float* %64, align 4
+  %760 = fpext float %759 to double
+  %761 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([11 x i8], [11 x i8]* @.str.77, i64 0, i64 0), double %760)
   %762 = load i32, i32* %32, align 4
-  %763 = sext i32 %762 to i64
-  %764 = getelementptr inbounds float, float* %761, i64 %763
-  store float %760, float* %764, align 4
-  %765 = load i32, i32* %32, align 4
-  %766 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([18 x i8], [18 x i8]* @.str.80, i64 0, i64 0), i32 %765)
-  br label %767
+  %763 = icmp eq i32 %762, 658
+  br i1 %763, label %764, label %770
 
-767:                                              ; preds = %688, %359
-  br label %768
+764:                                              ; preds = %690
+  %765 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([39 x i8], [39 x i8]* @.str.78, i64 0, i64 0))
+  %766 = load float, float* %63, align 4
+  %767 = fpext float %766 to double
+  %768 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([11 x i8], [11 x i8]* @.str.76, i64 0, i64 0), double %767)
+  %769 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([39 x i8], [39 x i8]* @.str.78, i64 0, i64 0))
+  br label %770
 
-768:                                              ; preds = %767
-  %769 = load i32, i32* %32, align 4
-  %770 = add nsw i32 %769, 1
-  store i32 %770, i32* %32, align 4
+770:                                              ; preds = %764, %690
+  %771 = load float, float* %64, align 4
+  %772 = load float*, float** %8, align 8
+  %773 = load i32, i32* %32, align 4
+  %774 = sext i32 %773 to i64
+  %775 = getelementptr inbounds float, float* %772, i64 %774
+  store float %771, float* %775, align 4
+  %776 = load i32, i32* %32, align 4
+  %777 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([18 x i8], [18 x i8]* @.str.79, i64 0, i64 0), i32 %776)
+  br label %778
+
+778:                                              ; preds = %770, %359
+  br label %779
+
+779:                                              ; preds = %778
+  %780 = load i32, i32* %32, align 4
+  %781 = add nsw i32 %780, 1
+  store i32 %781, i32* %32, align 4
   br label %312, !llvm.loop !31
 
-771:                                              ; preds = %312
-  %772 = load float, float* %9, align 4
-  %773 = fpext float %772 to double
-  %774 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([8 x i8], [8 x i8]* @.str.81, i64 0, i64 0), double %773)
-  %775 = load float, float* %10, align 4
-  %776 = fpext float %775 to double
-  %777 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([8 x i8], [8 x i8]* @.str.82, i64 0, i64 0), double %776)
-  %778 = load float, float* %7, align 4
-  %779 = fpext float %778 to double
-  %780 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str.83, i64 0, i64 0), double %779)
-  %781 = load float, float* %13, align 4
-  %782 = fpext float %781 to double
-  %783 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([12 x i8], [12 x i8]* @.str.29, i64 0, i64 0), double %782)
+782:                                              ; preds = %312
+  %783 = load float, float* %9, align 4
+  %784 = fpext float %783 to double
+  %785 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([8 x i8], [8 x i8]* @.str.80, i64 0, i64 0), double %784)
+  %786 = load float, float* %10, align 4
+  %787 = fpext float %786 to double
+  %788 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([8 x i8], [8 x i8]* @.str.81, i64 0, i64 0), double %787)
+  %789 = load float, float* %7, align 4
+  %790 = fpext float %789 to double
+  %791 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str.82, i64 0, i64 0), double %790)
+  %792 = load float, float* %13, align 4
+  %793 = fpext float %792 to double
+  %794 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([12 x i8], [12 x i8]* @.str.83, i64 0, i64 0), double %793)
   ret void
 }
 
@@ -4122,9 +4138,9 @@ define dso_local float @_Z15MLX90640_GetVddPKt(i16* %0) #0 {
   %5 = alloca i32, align 4
   store i16* %0, i16** %2, align 8
   %6 = bitcast float* %3 to i8*
-  call void @llvm.var.annotation(i8* %6, i8* getelementptr inbounds ([34 x i8], [34 x i8]* @.str.76, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 729, i8* null)
+  call void @llvm.var.annotation(i8* %6, i8* getelementptr inbounds ([34 x i8], [34 x i8]* @.str.86, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 742, i8* null)
   %7 = bitcast float* %4 to i8*
-  call void @llvm.var.annotation(i8* %7, i8* getelementptr inbounds ([26 x i8], [26 x i8]* @.str.85, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 730, i8* null)
+  call void @llvm.var.annotation(i8* %7, i8* getelementptr inbounds ([26 x i8], [26 x i8]* @.str.87, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 748, i8* null)
   %8 = load i16*, i16** %2, align 8
   %9 = getelementptr inbounds i16, i16* %8, i64 810
   %10 = load i16, i16* %9, align 2
@@ -4141,57 +4157,39 @@ define dso_local float @_Z15MLX90640_GetVddPKt(i16* %0) #0 {
   br label %17
 
 17:                                               ; preds = %14, %1
-  %18 = load float, float* %3, align 4
-  %19 = fpext float %18 to double
-  %20 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.86, i64 0, i64 0), double %19)
-  %21 = load i16*, i16** %2, align 8
-  %22 = getelementptr inbounds i16, i16* %21, i64 832
-  %23 = load i16, i16* %22, align 2
-  %24 = zext i16 %23 to i32
-  %25 = and i32 %24, 3072
-  %26 = ashr i32 %25, 10
-  store i32 %26, i32* %5, align 4
-  %27 = load i32, i32* @params_resolutionEE, align 4
+  %18 = load i16*, i16** %2, align 8
+  %19 = getelementptr inbounds i16, i16* %18, i64 832
+  %20 = load i16, i16* %19, align 2
+  %21 = zext i16 %20 to i32
+  %22 = and i32 %21, 3072
+  %23 = ashr i32 %22, 10
+  store i32 %23, i32* %5, align 4
+  %24 = load i32, i32* @params_resolutionEE, align 4
+  %25 = sitofp i32 %24 to double
+  %26 = call double @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_(i32 2, double %25)
+  %27 = load i32, i32* %5, align 4
   %28 = sitofp i32 %27 to double
   %29 = call double @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_(i32 2, double %28)
-  %30 = load i32, i32* %5, align 4
-  %31 = sitofp i32 %30 to double
-  %32 = call double @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_(i32 2, double %31)
-  %33 = fdiv double %29, %32
-  %34 = fptrunc double %33 to float
-  store float %34, float* %4, align 4
-  %35 = load i32, i32* %5, align 4
-  %36 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.87, i64 0, i64 0), i32 %35)
-  %37 = load i32, i32* @params_resolutionEE, align 4
-  %38 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([18 x i8], [18 x i8]* @.str.88, i64 0, i64 0), i32 %37)
-  %39 = load float, float* %4, align 4
-  %40 = fpext float %39 to double
-  %41 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([29 x i8], [29 x i8]* @.str.89, i64 0, i64 0), double %40)
-  %42 = load i16, i16* @params_kVdd, align 2
-  %43 = sext i16 %42 to i32
-  %44 = load i16, i16* @params_vdd25, align 2
-  %45 = sext i16 %44 to i32
-  %46 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([21 x i8], [21 x i8]* @.str.90, i64 0, i64 0), i32 %43, i32 %45)
-  %47 = load float, float* %4, align 4
-  %48 = load float, float* %3, align 4
-  %49 = fmul float %47, %48
-  %50 = load i16, i16* @params_vdd25, align 2
-  %51 = sext i16 %50 to i32
-  %52 = sitofp i32 %51 to float
-  %53 = fsub float %49, %52
-  %54 = load i16, i16* @params_kVdd, align 2
-  %55 = sext i16 %54 to i32
-  %56 = sitofp i32 %55 to float
-  %57 = fdiv float %53, %56
-  %58 = fpext float %57 to double
-  %59 = fadd double %58, 3.300000e+00
-  %60 = fptrunc double %59 to float
-  store float %60, float* %3, align 4
-  %61 = load float, float* %3, align 4
-  %62 = fpext float %61 to double
-  %63 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.86, i64 0, i64 0), double %62)
-  %64 = load float, float* %3, align 4
-  ret float %64
+  %30 = fdiv double %26, %29
+  %31 = fptrunc double %30 to float
+  store float %31, float* %4, align 4
+  %32 = load float, float* %4, align 4
+  %33 = load float, float* %3, align 4
+  %34 = fmul float %32, %33
+  %35 = load i16, i16* @params_vdd25, align 2
+  %36 = sext i16 %35 to i32
+  %37 = sitofp i32 %36 to float
+  %38 = fsub float %34, %37
+  %39 = load i16, i16* @params_kVdd, align 2
+  %40 = sext i16 %39 to i32
+  %41 = sitofp i32 %40 to float
+  %42 = fdiv float %38, %41
+  %43 = fpext float %42 to double
+  %44 = fadd double %43, 3.300000e+00
+  %45 = fptrunc double %44 to float
+  store float %45, float* %3, align 4
+  %46 = load float, float* %3, align 4
+  ret float %46
 }
 
 ; Function Attrs: noinline uwtable mustprogress
@@ -4208,154 +4206,159 @@ define dso_local float @_Z14MLX90640_GetTaPKt(i16* %0) #0 {
   %11 = alloca float, align 4
   %12 = alloca float, align 4
   %13 = alloca float, align 4
+  %14 = alloca float, align 4
   store i16* %0, i16** %2, align 8
-  %14 = bitcast float* %3 to i8*
-  call void @llvm.var.annotation(i8* %14, i8* getelementptr inbounds ([35 x i8], [35 x i8]* @.str.91, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 756, i8* null)
-  %15 = bitcast float* %4 to i8*
-  call void @llvm.var.annotation(i8* %15, i8* getelementptr inbounds ([29 x i8], [29 x i8]* @.str.92, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 757, i8* null)
-  %16 = bitcast float* %5 to i8*
-  call void @llvm.var.annotation(i8* %16, i8* getelementptr inbounds ([29 x i8], [29 x i8]* @.str.92, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 758, i8* null)
-  %17 = bitcast float* %6 to i8*
-  call void @llvm.var.annotation(i8* %17, i8* getelementptr inbounds ([29 x i8], [29 x i8]* @.str.93, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 759, i8* null)
-  %18 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([11 x i8], [11 x i8]* @.str.94, i64 0, i64 0))
-  %19 = load i16*, i16** %2, align 8
-  %20 = call float @_Z15MLX90640_GetVddPKt(i16* %19)
-  store float %20, float* %5, align 4
-  %21 = load float, float* %5, align 4
-  %22 = fpext float %21 to double
-  %23 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str.95, i64 0, i64 0), double %22)
-  %24 = load i16*, i16** %2, align 8
-  %25 = getelementptr inbounds i16, i16* %24, i64 800
-  %26 = load i16, i16* %25, align 2
-  %27 = uitofp i16 %26 to float
-  store float %27, float* %3, align 4
-  %28 = load float, float* %3, align 4
-  %29 = fcmp ogt float %28, 3.276700e+04
-  br i1 %29, label %30, label %33
+  %15 = bitcast float* %3 to i8*
+  call void @llvm.var.annotation(i8* %15, i8* getelementptr inbounds ([35 x i8], [35 x i8]* @.str.88, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 788, i8* null)
+  %16 = bitcast float* %4 to i8*
+  call void @llvm.var.annotation(i8* %16, i8* getelementptr inbounds ([29 x i8], [29 x i8]* @.str.89, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 794, i8* null)
+  %17 = bitcast float* %5 to i8*
+  call void @llvm.var.annotation(i8* %17, i8* getelementptr inbounds ([29 x i8], [29 x i8]* @.str.90, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 801, i8* null)
+  %18 = bitcast float* %6 to i8*
+  call void @llvm.var.annotation(i8* %18, i8* getelementptr inbounds ([29 x i8], [29 x i8]* @.str.85, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 808, i8* null)
+  %19 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([11 x i8], [11 x i8]* @.str.91, i64 0, i64 0))
+  %20 = load i16*, i16** %2, align 8
+  %21 = call float @_Z15MLX90640_GetVddPKt(i16* %20)
+  store float %21, float* %5, align 4
+  %22 = load float, float* %5, align 4
+  %23 = fpext float %22 to double
+  %24 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str.92, i64 0, i64 0), double %23)
+  %25 = load i16*, i16** %2, align 8
+  %26 = getelementptr inbounds i16, i16* %25, i64 800
+  %27 = load i16, i16* %26, align 2
+  %28 = uitofp i16 %27 to float
+  store float %28, float* %3, align 4
+  %29 = load float, float* %3, align 4
+  %30 = fcmp ogt float %29, 3.276700e+04
+  br i1 %30, label %31, label %34
 
-30:                                               ; preds = %1
-  %31 = load float, float* %3, align 4
-  %32 = fsub float %31, 6.553600e+04
-  store float %32, float* %3, align 4
-  br label %33
+31:                                               ; preds = %1
+  %32 = load float, float* %3, align 4
+  %33 = fsub float %32, 6.553600e+04
+  store float %33, float* %3, align 4
+  br label %34
 
-33:                                               ; preds = %30, %1
-  %34 = load i16*, i16** %2, align 8
-  %35 = getelementptr inbounds i16, i16* %34, i64 768
-  %36 = load i16, i16* %35, align 2
-  %37 = uitofp i16 %36 to float
-  store float %37, float* %4, align 4
-  %38 = load float, float* %4, align 4
-  %39 = fcmp ogt float %38, 3.276700e+04
-  br i1 %39, label %40, label %43
+34:                                               ; preds = %31, %1
+  %35 = load i16*, i16** %2, align 8
+  %36 = getelementptr inbounds i16, i16* %35, i64 768
+  %37 = load i16, i16* %36, align 2
+  %38 = uitofp i16 %37 to float
+  store float %38, float* %4, align 4
+  %39 = load float, float* %4, align 4
+  %40 = fcmp ogt float %39, 3.276700e+04
+  br i1 %40, label %41, label %44
 
-40:                                               ; preds = %33
-  %41 = load float, float* %4, align 4
-  %42 = fsub float %41, 6.553600e+04
-  store float %42, float* %4, align 4
-  br label %43
+41:                                               ; preds = %34
+  %42 = load float, float* %4, align 4
+  %43 = fsub float %42, 6.553600e+04
+  store float %43, float* %4, align 4
+  br label %44
 
-43:                                               ; preds = %40, %33
-  %44 = bitcast float* %7 to i8*
-  call void @llvm.var.annotation(i8* %44, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 777, i8* null)
-  %45 = load float, float* %3, align 4
-  %46 = load float, float* @params_alphaPTAT, align 4
-  %47 = fmul float %45, %46
-  store float %47, float* %7, align 4
-  %48 = load float, float* %7, align 4
-  %49 = fpext float %48 to double
-  %50 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.96, i64 0, i64 0), double %49)
-  %51 = bitcast float* %8 to i8*
-  call void @llvm.var.annotation(i8* %51, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 779, i8* null)
-  %52 = load float, float* %7, align 4
-  %53 = load float, float* %4, align 4
-  %54 = fadd float %52, %53
-  store float %54, float* %8, align 4
-  %55 = load float, float* %8, align 4
-  %56 = fpext float %55 to double
-  %57 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.97, i64 0, i64 0), double %56)
-  %58 = bitcast float* %9 to i8*
-  call void @llvm.var.annotation(i8* %58, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 781, i8* null)
-  %59 = load float, float* %3, align 4
-  %60 = load float, float* %8, align 4
-  %61 = fdiv float %59, %60
-  store float %61, float* %9, align 4
-  %62 = load float, float* %9, align 4
-  %63 = fpext float %62 to double
-  %64 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.98, i64 0, i64 0), double %63)
-  %65 = load float, float* %9, align 4
-  %66 = fmul float %65, 2.621440e+05
-  store float %66, float* %4, align 4
-  %67 = load float, float* %3, align 4
-  %68 = fpext float %67 to double
-  %69 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([13 x i8], [13 x i8]* @.str.99, i64 0, i64 0), double %68)
-  %70 = load float, float* @params_alphaPTAT, align 4
-  %71 = fpext float %70 to double
-  %72 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([18 x i8], [18 x i8]* @.str.100, i64 0, i64 0), double %71)
-  %73 = load float, float* %4, align 4
-  %74 = fpext float %73 to double
-  %75 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([16 x i8], [16 x i8]* @.str.101, i64 0, i64 0), double %74)
-  %76 = bitcast float* %10 to i8*
-  call void @llvm.var.annotation(i8* %76, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 789, i8* null)
-  %77 = load float, float* %5, align 4
-  %78 = fpext float %77 to double
-  %79 = fsub double %78, 3.300000e+00
-  %80 = fptrunc double %79 to float
-  store float %80, float* %10, align 4
-  %81 = load float, float* %10, align 4
-  %82 = fpext float %81 to double
-  %83 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([12 x i8], [12 x i8]* @.str.102, i64 0, i64 0), double %82)
-  %84 = bitcast float* %11 to i8*
-  call void @llvm.var.annotation(i8* %84, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 792, i8* null)
-  %85 = load float, float* @params_KvPTAT, align 4
-  %86 = load float, float* %10, align 4
-  %87 = fmul float %85, %86
-  store float %87, float* %11, align 4
-  %88 = load float, float* @params_KvPTAT, align 4
-  %89 = fpext float %88 to double
-  %90 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([15 x i8], [15 x i8]* @.str.103, i64 0, i64 0), double %89)
-  %91 = load float, float* %5, align 4
-  %92 = fpext float %91 to double
-  %93 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([12 x i8], [12 x i8]* @.str.104, i64 0, i64 0), double %92)
-  %94 = load float, float* %11, align 4
-  %95 = fpext float %94 to double
-  %96 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([12 x i8], [12 x i8]* @.str.105, i64 0, i64 0), double %95)
-  %97 = bitcast float* %12 to i8*
-  call void @llvm.var.annotation(i8* %97, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 797, i8* null)
-  %98 = load float, float* %11, align 4
-  %99 = fadd float 1.000000e+00, %98
-  store float %99, float* %12, align 4
-  %100 = load float, float* %12, align 4
-  %101 = fpext float %100 to double
-  %102 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([12 x i8], [12 x i8]* @.str.106, i64 0, i64 0), double %101)
-  %103 = bitcast float* %13 to i8*
-  call void @llvm.var.annotation(i8* %103, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 799, i8* null)
-  %104 = load float, float* %4, align 4
-  %105 = load float, float* %12, align 4
-  %106 = fdiv float %104, %105
-  store float %106, float* %13, align 4
-  %107 = load float, float* %13, align 4
-  %108 = fpext float %107 to double
-  %109 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([12 x i8], [12 x i8]* @.str.107, i64 0, i64 0), double %108)
-  %110 = load float, float* %13, align 4
-  %111 = load i16, i16* @params_vPTAT25, align 2
-  %112 = zext i16 %111 to i32
-  %113 = sitofp i32 %112 to float
-  %114 = fsub float %110, %113
-  store float %114, float* %6, align 4
-  %115 = load float, float* %6, align 4
-  %116 = fpext float %115 to double
-  %117 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([15 x i8], [15 x i8]* @.str.108, i64 0, i64 0), double %116)
-  %118 = load float, float* %6, align 4
-  %119 = load float, float* @params_KtPTAT, align 4
-  %120 = fdiv float %118, %119
-  %121 = fadd float %120, 2.500000e+01
-  store float %121, float* %6, align 4
-  %122 = load float, float* %6, align 4
-  %123 = fpext float %122 to double
-  %124 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([15 x i8], [15 x i8]* @.str.109, i64 0, i64 0), double %123)
+44:                                               ; preds = %41, %34
+  %45 = bitcast float* %7 to i8*
+  call void @llvm.var.annotation(i8* %45, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 832, i8* null)
+  %46 = load float, float* %3, align 4
+  %47 = load float, float* @params_alphaPTAT, align 4
+  %48 = fmul float %46, %47
+  store float %48, float* %7, align 4
+  %49 = load float, float* %7, align 4
+  %50 = fpext float %49 to double
+  %51 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.93, i64 0, i64 0), double %50)
+  %52 = bitcast float* %8 to i8*
+  call void @llvm.var.annotation(i8* %52, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 834, i8* null)
+  %53 = load float, float* %7, align 4
+  %54 = load float, float* %4, align 4
+  %55 = fadd float %53, %54
+  store float %55, float* %8, align 4
+  %56 = load float, float* %8, align 4
+  %57 = fpext float %56 to double
+  %58 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.94, i64 0, i64 0), double %57)
+  %59 = bitcast float* %9 to i8*
+  call void @llvm.var.annotation(i8* %59, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 840, i8* null)
+  %60 = load float, float* %3, align 4
+  %61 = load float, float* %8, align 4
+  %62 = fdiv float %60, %61
+  store float %62, float* %9, align 4
+  %63 = load float, float* %9, align 4
+  %64 = fpext float %63 to double
+  %65 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.95, i64 0, i64 0), double %64)
+  %66 = load float, float* %9, align 4
+  %67 = fmul float %66, 2.621440e+05
+  store float %67, float* %4, align 4
+  %68 = load float, float* %3, align 4
+  %69 = fpext float %68 to double
+  %70 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([13 x i8], [13 x i8]* @.str.96, i64 0, i64 0), double %69)
+  %71 = load float, float* @params_alphaPTAT, align 4
+  %72 = fpext float %71 to double
+  %73 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([18 x i8], [18 x i8]* @.str.97, i64 0, i64 0), double %72)
+  %74 = load float, float* %4, align 4
+  %75 = fpext float %74 to double
+  %76 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([16 x i8], [16 x i8]* @.str.98, i64 0, i64 0), double %75)
+  %77 = bitcast float* %10 to i8*
+  call void @llvm.var.annotation(i8* %77, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 850, i8* null)
+  %78 = load float, float* %5, align 4
+  %79 = fpext float %78 to double
+  %80 = fsub double %79, 3.300000e+00
+  %81 = fptrunc double %80 to float
+  store float %81, float* %10, align 4
+  %82 = load float, float* %10, align 4
+  %83 = fpext float %82 to double
+  %84 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([12 x i8], [12 x i8]* @.str.99, i64 0, i64 0), double %83)
+  %85 = bitcast float* %11 to i8*
+  call void @llvm.var.annotation(i8* %85, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 853, i8* null)
+  %86 = load float, float* @params_KvPTAT, align 4
+  %87 = load float, float* %10, align 4
+  %88 = fmul float %86, %87
+  store float %88, float* %11, align 4
+  %89 = load float, float* @params_KvPTAT, align 4
+  %90 = fpext float %89 to double
+  %91 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([15 x i8], [15 x i8]* @.str.100, i64 0, i64 0), double %90)
+  %92 = load float, float* %5, align 4
+  %93 = fpext float %92 to double
+  %94 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([12 x i8], [12 x i8]* @.str.101, i64 0, i64 0), double %93)
+  %95 = load float, float* %11, align 4
+  %96 = fpext float %95 to double
+  %97 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([12 x i8], [12 x i8]* @.str.102, i64 0, i64 0), double %96)
+  %98 = bitcast float* %12 to i8*
+  call void @llvm.var.annotation(i8* %98, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 861, i8* null)
+  %99 = load float, float* %11, align 4
+  %100 = fadd float 1.000000e+00, %99
+  store float %100, float* %12, align 4
+  %101 = load float, float* %12, align 4
+  %102 = fpext float %101 to double
+  %103 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([12 x i8], [12 x i8]* @.str.103, i64 0, i64 0), double %102)
+  %104 = bitcast float* %13 to i8*
+  call void @llvm.var.annotation(i8* %104, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 867, i8* null)
+  %105 = load float, float* %4, align 4
+  %106 = load float, float* %12, align 4
+  %107 = fdiv float %105, %106
+  store float %107, float* %13, align 4
+  %108 = load float, float* %13, align 4
+  %109 = fpext float %108 to double
+  %110 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([12 x i8], [12 x i8]* @.str.104, i64 0, i64 0), double %109)
+  %111 = load float, float* %13, align 4
+  %112 = load i16, i16* @params_vPTAT25, align 2
+  %113 = zext i16 %112 to i32
+  %114 = sitofp i32 %113 to float
+  %115 = fsub float %111, %114
+  store float %115, float* %6, align 4
+  %116 = load float, float* %6, align 4
+  %117 = fpext float %116 to double
+  %118 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([15 x i8], [15 x i8]* @.str.105, i64 0, i64 0), double %117)
+  %119 = bitcast float* %14 to i8*
+  call void @llvm.var.annotation(i8* %119, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 877, i8* null)
+  %120 = load float, float* @params_KtPTAT, align 4
+  store float %120, float* %14, align 4
+  %121 = load float, float* %6, align 4
+  %122 = load float, float* %14, align 4
+  %123 = fdiv float %121, %122
+  %124 = fadd float %123, 2.500000e+01
+  store float %124, float* %6, align 4
   %125 = load float, float* %6, align 4
-  ret float %125
+  %126 = fpext float %125 to double
+  %127 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([15 x i8], [15 x i8]* @.str.106, i64 0, i64 0), double %126)
+  %128 = load float, float* %6, align 4
+  ret float %128
 }
 
 ; Function Attrs: noinline nounwind uwtable mustprogress
@@ -4402,21 +4405,21 @@ define dso_local void @_Z17MLX90640_GetImagePKtPf(i16* %0, float* %1) #0 {
   store i16* %0, i16** %3, align 8
   store float* %1, float** %4, align 8
   %20 = bitcast float** %4 to i8*
-  call void @llvm.var.annotation(i8* %20, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 631, i8* null)
+  call void @llvm.var.annotation(i8* %20, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 641, i8* null)
   %21 = bitcast float* %5 to i8*
-  call void @llvm.var.annotation(i8* %21, i8* getelementptr inbounds ([29 x i8], [29 x i8]* @.str.84, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 633, i8* null)
+  call void @llvm.var.annotation(i8* %21, i8* getelementptr inbounds ([34 x i8], [34 x i8]* @.str.84, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 643, i8* null)
   %22 = bitcast float* %6 to i8*
-  call void @llvm.var.annotation(i8* %22, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 634, i8* null)
+  call void @llvm.var.annotation(i8* %22, i8* getelementptr inbounds ([29 x i8], [29 x i8]* @.str.85, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 644, i8* null)
   %23 = bitcast float* %7 to i8*
-  call void @llvm.var.annotation(i8* %23, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 635, i8* null)
+  call void @llvm.var.annotation(i8* %23, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 645, i8* null)
   %24 = bitcast [2 x float]* %8 to i8*
-  call void @llvm.var.annotation(i8* %24, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 636, i8* null)
+  call void @llvm.var.annotation(i8* %24, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 646, i8* null)
   %25 = bitcast float* %9 to i8*
-  call void @llvm.var.annotation(i8* %25, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 637, i8* null)
+  call void @llvm.var.annotation(i8* %25, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 647, i8* null)
   %26 = bitcast float* %10 to i8*
-  call void @llvm.var.annotation(i8* %26, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 638, i8* null)
+  call void @llvm.var.annotation(i8* %26, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 648, i8* null)
   %27 = bitcast float* %16 to i8*
-  call void @llvm.var.annotation(i8* %27, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 644, i8* null)
+  call void @llvm.var.annotation(i8* %27, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 654, i8* null)
   %28 = load i16*, i16** %3, align 8
   %29 = getelementptr inbounds i16, i16* %28, i64 833
   %30 = load i16, i16* %29, align 2
@@ -4925,10 +4928,10 @@ define dso_local float @_Z5min_fff(float %0, float %1) #1 {
   %5 = alloca float, align 4
   store float %0, float* %4, align 4
   %6 = bitcast float* %4 to i8*
-  call void @llvm.var.annotation(i8* %6, i8* getelementptr inbounds ([29 x i8], [29 x i8]* @.str.21, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.116, i32 0, i32 0), i32 16, i8* null)
+  call void @llvm.var.annotation(i8* %6, i8* getelementptr inbounds ([29 x i8], [29 x i8]* @.str.21, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.113, i32 0, i32 0), i32 16, i8* null)
   store float %1, float* %5, align 4
   %7 = bitcast float* %5 to i8*
-  call void @llvm.var.annotation(i8* %7, i8* getelementptr inbounds ([29 x i8], [29 x i8]* @.str.21, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.116, i32 0, i32 0), i32 16, i8* null)
+  call void @llvm.var.annotation(i8* %7, i8* getelementptr inbounds ([29 x i8], [29 x i8]* @.str.21, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.113, i32 0, i32 0), i32 16, i8* null)
   %8 = load float, float* %4, align 4
   %9 = load float, float* %5, align 4
   %10 = fcmp olt float %8, %9
@@ -4956,10 +4959,10 @@ define dso_local float @_Z5max_fff(float %0, float %1) #1 {
   %5 = alloca float, align 4
   store float %0, float* %4, align 4
   %6 = bitcast float* %4 to i8*
-  call void @llvm.var.annotation(i8* %6, i8* getelementptr inbounds ([29 x i8], [29 x i8]* @.str.21, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.116, i32 0, i32 0), i32 24, i8* null)
+  call void @llvm.var.annotation(i8* %6, i8* getelementptr inbounds ([29 x i8], [29 x i8]* @.str.21, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.113, i32 0, i32 0), i32 24, i8* null)
   store float %1, float* %5, align 4
   %7 = bitcast float* %5 to i8*
-  call void @llvm.var.annotation(i8* %7, i8* getelementptr inbounds ([29 x i8], [29 x i8]* @.str.21, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.116, i32 0, i32 0), i32 24, i8* null)
+  call void @llvm.var.annotation(i8* %7, i8* getelementptr inbounds ([29 x i8], [29 x i8]* @.str.21, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.113, i32 0, i32 0), i32 24, i8* null)
   %8 = load float, float* %4, align 4
   %9 = load float, float* %5, align 4
   %10 = fcmp ogt float %8, %9
@@ -4998,23 +5001,23 @@ define dso_local void @_Z8printPPMP8_IO_FILEPfiiff(%struct._IO_FILE* %0, float* 
   store %struct._IO_FILE* %0, %struct._IO_FILE** %7, align 8
   store float* %1, float** %8, align 8
   %20 = bitcast float** %8 to i8*
-  call void @llvm.var.annotation(i8* %20, i8* getelementptr inbounds ([29 x i8], [29 x i8]* @.str.21, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.116, i32 0, i32 0), i32 33, i8* null)
+  call void @llvm.var.annotation(i8* %20, i8* getelementptr inbounds ([29 x i8], [29 x i8]* @.str.21, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.113, i32 0, i32 0), i32 33, i8* null)
   store i32 %2, i32* %9, align 4
   store i32 %3, i32* %10, align 4
   store float %4, float* %11, align 4
   %21 = bitcast float* %11 to i8*
-  call void @llvm.var.annotation(i8* %21, i8* getelementptr inbounds ([27 x i8], [27 x i8]* @.str.117, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.116, i32 0, i32 0), i32 33, i8* null)
+  call void @llvm.var.annotation(i8* %21, i8* getelementptr inbounds ([29 x i8], [29 x i8]* @.str.21, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.113, i32 0, i32 0), i32 33, i8* null)
   store float %5, float* %12, align 4
   %22 = bitcast float* %12 to i8*
-  call void @llvm.var.annotation(i8* %22, i8* getelementptr inbounds ([29 x i8], [29 x i8]* @.str.118, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.116, i32 0, i32 0), i32 33, i8* null)
+  call void @llvm.var.annotation(i8* %22, i8* getelementptr inbounds ([30 x i8], [30 x i8]* @.str.114, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.113, i32 0, i32 0), i32 33, i8* null)
   %23 = load %struct._IO_FILE*, %struct._IO_FILE** %7, align 8
-  %24 = call i32 (%struct._IO_FILE*, i8*, ...) @fprintf(%struct._IO_FILE* %23, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @.str.119, i64 0, i64 0))
+  %24 = call i32 (%struct._IO_FILE*, i8*, ...) @fprintf(%struct._IO_FILE* %23, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @.str.115, i64 0, i64 0))
   %25 = load %struct._IO_FILE*, %struct._IO_FILE** %7, align 8
   %26 = load i32, i32* %9, align 4
   %27 = load i32, i32* %10, align 4
-  %28 = call i32 (%struct._IO_FILE*, i8*, ...) @fprintf(%struct._IO_FILE* %25, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @.str.120, i64 0, i64 0), i32 %26, i32 %27)
+  %28 = call i32 (%struct._IO_FILE*, i8*, ...) @fprintf(%struct._IO_FILE* %25, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @.str.116, i64 0, i64 0), i32 %26, i32 %27)
   %29 = load %struct._IO_FILE*, %struct._IO_FILE** %7, align 8
-  %30 = call i32 (%struct._IO_FILE*, i8*, ...) @fprintf(%struct._IO_FILE* %29, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @.str.121, i64 0, i64 0))
+  %30 = call i32 (%struct._IO_FILE*, i8*, ...) @fprintf(%struct._IO_FILE* %29, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @.str.117, i64 0, i64 0))
   store i32 0, i32* %13, align 4
   br label %31
 
@@ -5036,7 +5039,7 @@ define dso_local void @_Z8printPPMP8_IO_FILEPfiiff(%struct._IO_FILE* %0, float* 
 
 40:                                               ; preds = %36
   %41 = bitcast float* %15 to i8*
-  call void @llvm.var.annotation(i8* %41, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.116, i32 0, i32 0), i32 45, i8* null)
+  call void @llvm.var.annotation(i8* %41, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.113, i32 0, i32 0), i32 46, i8* null)
   %42 = load float*, float** %8, align 8
   %43 = load i32, i32* %9, align 4
   %44 = sub nsw i32 %43, 1
@@ -5051,7 +5054,7 @@ define dso_local void @_Z8printPPMP8_IO_FILEPfiiff(%struct._IO_FILE* %0, float* 
   %53 = load float, float* %52, align 4
   store float %53, float* %15, align 4
   %54 = bitcast float* %16 to i8*
-  call void @llvm.var.annotation(i8* %54, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.116, i32 0, i32 0), i32 46, i8* null)
+  call void @llvm.var.annotation(i8* %54, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.113, i32 0, i32 0), i32 48, i8* null)
   %55 = load float, float* %15, align 4
   %56 = load float, float* %11, align 4
   %57 = fsub float %55, %56
@@ -5232,7 +5235,7 @@ define dso_local void @_Z8printPPMP8_IO_FILEPfiiff(%struct._IO_FILE* %0, float* 
   %160 = load i32, i32* %17, align 4
   %161 = load i32, i32* %18, align 4
   %162 = load i32, i32* %19, align 4
-  %163 = call i32 (%struct._IO_FILE*, i8*, ...) @fprintf(%struct._IO_FILE* %159, i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str.122, i64 0, i64 0), i32 %160, i32 %161, i32 %162)
+  %163 = call i32 (%struct._IO_FILE*, i8*, ...) @fprintf(%struct._IO_FILE* %159, i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str.118, i64 0, i64 0), i32 %160, i32 %161, i32 %162)
   br label %164
 
 164:                                              ; preds = %155
@@ -5243,7 +5246,7 @@ define dso_local void @_Z8printPPMP8_IO_FILEPfiiff(%struct._IO_FILE* %0, float* 
 
 167:                                              ; preds = %36
   %168 = load %struct._IO_FILE*, %struct._IO_FILE** %7, align 8
-  %169 = call i32 (%struct._IO_FILE*, i8*, ...) @fprintf(%struct._IO_FILE* %168, i8* getelementptr inbounds ([2 x i8], [2 x i8]* @.str.123, i64 0, i64 0))
+  %169 = call i32 (%struct._IO_FILE*, i8*, ...) @fprintf(%struct._IO_FILE* %168, i8* getelementptr inbounds ([2 x i8], [2 x i8]* @.str.119, i64 0, i64 0))
   br label %170
 
 170:                                              ; preds = %167
@@ -5285,41 +5288,41 @@ define dso_local i32 @main(i32 %0, i8** %1) #5 {
 
 21:                                               ; preds = %2
   store i32 1, i32* %3, align 4
-  br label %103
+  br label %124
 
 22:                                               ; preds = %2
   %23 = bitcast float* %6 to i8*
-  call void @llvm.var.annotation(i8* %23, i8* getelementptr inbounds ([28 x i8], [28 x i8]* @.str.124, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.116, i32 0, i32 0), i32 79, i8* null)
+  call void @llvm.var.annotation(i8* %23, i8* getelementptr inbounds ([28 x i8], [28 x i8]* @.str.120, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.113, i32 0, i32 0), i32 83, i8* null)
   store float 8.000000e+00, float* %6, align 4
   %24 = bitcast float* %7 to i8*
-  call void @llvm.var.annotation(i8* %24, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.116, i32 0, i32 0), i32 80, i8* null)
+  call void @llvm.var.annotation(i8* %24, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.113, i32 0, i32 0), i32 84, i8* null)
   store float 0x3FEE666660000000, float* %7, align 4
   %25 = bitcast float* %8 to i8*
-  call void @llvm.var.annotation(i8* %25, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.116, i32 0, i32 0), i32 81, i8* null)
+  call void @llvm.var.annotation(i8* %25, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.113, i32 0, i32 0), i32 85, i8* null)
   store float 1.500000e+01, float* %8, align 4
   store i32 32, i32* %9, align 4
   store i32 24, i32* %10, align 4
   %26 = bitcast [768 x float]* %11 to i8*
-  call void @llvm.var.annotation(i8* %26, i8* getelementptr inbounds ([29 x i8], [29 x i8]* @.str.21, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.116, i32 0, i32 0), i32 86, i8* null)
-  %27 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str.125, i64 0, i64 0))
+  call void @llvm.var.annotation(i8* %26, i8* getelementptr inbounds ([29 x i8], [29 x i8]* @.str.21, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.113, i32 0, i32 0), i32 93, i8* null)
+  %27 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str.121, i64 0, i64 0))
   %28 = bitcast float* %12 to i8*
-  call void @llvm.var.annotation(i8* %28, i8* getelementptr inbounds ([23 x i8], [23 x i8]* @.str.126, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.116, i32 0, i32 0), i32 89, i8* null)
+  call void @llvm.var.annotation(i8* %28, i8* getelementptr inbounds ([23 x i8], [23 x i8]* @.str.122, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.113, i32 0, i32 0), i32 100, i8* null)
   %29 = call float @_Z14MLX90640_GetTaPKt(i16* getelementptr inbounds ([834 x i16], [834 x i16]* @_ZL9subframe1, i64 0, i64 0))
   store float %29, float* %12, align 4
   %30 = load float, float* %12, align 4
   %31 = fpext float %30 to double
-  %32 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.127, i64 0, i64 0), double %31)
+  %32 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.123, i64 0, i64 0), double %31)
   %33 = bitcast float* %13 to i8*
-  call void @llvm.var.annotation(i8* %33, i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str.128, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.116, i32 0, i32 0), i32 91, i8* null)
+  call void @llvm.var.annotation(i8* %33, i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str.124, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.113, i32 0, i32 0), i32 104, i8* null)
   %34 = load float, float* %12, align 4
   %35 = fsub float %34, 8.000000e+00
   store float %35, float* %13, align 4
   %36 = load float, float* %12, align 4
   %37 = fpext float %36 to double
-  %38 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([16 x i8], [16 x i8]* @.str.129, i64 0, i64 0), double %37)
+  %38 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([16 x i8], [16 x i8]* @.str.125, i64 0, i64 0), double %37)
   %39 = load float, float* %13, align 4
   %40 = fpext float %39 to double
-  %41 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([16 x i8], [16 x i8]* @.str.130, i64 0, i64 0), double %40)
+  %41 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([16 x i8], [16 x i8]* @.str.126, i64 0, i64 0), double %40)
   %42 = load float, float* %13, align 4
   %43 = getelementptr inbounds [768 x float], [768 x float]* %11, i64 0, i64 0
   call void @_Z20MLX90640_CalculateToPKtffPf(i16* getelementptr inbounds ([834 x i16], [834 x i16]* @_ZL9subframe1, i64 0, i64 0), float 0x3FEE666660000000, float %42, float* %43)
@@ -5333,27 +5336,27 @@ define dso_local i32 @main(i32 %0, i8** %1) #5 {
   call void @_Z20MLX90640_CalculateToPKtffPf(i16* getelementptr inbounds ([834 x i16], [834 x i16]* @_ZL9subframe2, i64 0, i64 0), float 0x3FEE666660000000, float %47, float* %48)
   %49 = load float, float* %12, align 4
   %50 = fpext float %49 to double
-  %51 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([16 x i8], [16 x i8]* @.str.129, i64 0, i64 0), double %50)
+  %51 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([16 x i8], [16 x i8]* @.str.125, i64 0, i64 0), double %50)
   %52 = load float, float* %13, align 4
   %53 = fpext float %52 to double
-  %54 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([16 x i8], [16 x i8]* @.str.130, i64 0, i64 0), double %53)
+  %54 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([16 x i8], [16 x i8]* @.str.126, i64 0, i64 0), double %53)
   %55 = bitcast float* %14 to i8*
-  call void @llvm.var.annotation(i8* %55, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.116, i32 0, i32 0), i32 104, i8* null)
+  call void @llvm.var.annotation(i8* %55, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.113, i32 0, i32 0), i32 117, i8* null)
   %56 = getelementptr inbounds [768 x float], [768 x float]* %11, i64 0, i64 0
   %57 = load float, float* %56, align 16
   store float %57, float* %14, align 4
   %58 = bitcast float* %15 to i8*
-  call void @llvm.var.annotation(i8* %58, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.116, i32 0, i32 0), i32 104, i8* null)
+  call void @llvm.var.annotation(i8* %58, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.113, i32 0, i32 0), i32 117, i8* null)
   %59 = getelementptr inbounds [768 x float], [768 x float]* %11, i64 0, i64 0
   %60 = load float, float* %59, align 16
   store float %60, float* %15, align 4
   store i32 1, i32* %16, align 4
   br label %61
 
-61:                                               ; preds = %77, %22
+61:                                               ; preds = %84, %22
   %62 = load i32, i32* %16, align 4
   %63 = icmp slt i32 %62, 768
-  br i1 %63, label %64, label %80
+  br i1 %63, label %64, label %87
 
 64:                                               ; preds = %61
   %65 = load float, float* %14, align 4
@@ -5370,52 +5373,73 @@ define dso_local i32 @main(i32 %0, i8** %1) #5 {
   %75 = load float, float* %74, align 4
   %76 = call float @_Z5max_fff(float %71, float %75)
   store float %76, float* %15, align 4
-  br label %77
-
-77:                                               ; preds = %64
+  %77 = load i32, i32* %16, align 4
   %78 = load i32, i32* %16, align 4
-  %79 = add nsw i32 %78, 1
-  store i32 %79, i32* %16, align 4
+  %79 = sext i32 %78 to i64
+  %80 = getelementptr inbounds [768 x float], [768 x float]* %11, i64 0, i64 %79
+  %81 = load float, float* %80, align 4
+  %82 = fpext float %81 to double
+  %83 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([18 x i8], [18 x i8]* @.str.127, i64 0, i64 0), i32 %77, double %82)
+  br label %84
+
+84:                                               ; preds = %64
+  %85 = load i32, i32* %16, align 4
+  %86 = add nsw i32 %85, 1
+  store i32 %86, i32* %16, align 4
   br label %61, !llvm.loop !36
 
-80:                                               ; preds = %61
-  %81 = bitcast float* %17 to i8*
-  call void @llvm.var.annotation(i8* %81, i8* getelementptr inbounds ([30 x i8], [30 x i8]* @.str.131, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.116, i32 0, i32 0), i32 110, i8* null)
-  %82 = load float, float* %15, align 4
-  %83 = load float, float* %14, align 4
-  %84 = fsub float %82, %83
-  %85 = call float @_Z5max_fff(float 1.500000e+01, float %84)
-  store float %85, float* %17, align 4
-  %86 = call %struct._IO_FILE* @fopen(i8* getelementptr inbounds ([15 x i8], [15 x i8]* @.str.132, i64 0, i64 0), i8* getelementptr inbounds ([2 x i8], [2 x i8]* @.str.133, i64 0, i64 0))
-  store %struct._IO_FILE* %86, %struct._IO_FILE** %18, align 8
-  %87 = load %struct._IO_FILE*, %struct._IO_FILE** %18, align 8
-  %88 = icmp eq %struct._IO_FILE* %87, null
-  br i1 %88, label %89, label %90
+87:                                               ; preds = %61
+  %88 = bitcast float* %17 to i8*
+  call void @llvm.var.annotation(i8* %88, i8* getelementptr inbounds ([30 x i8], [30 x i8]* @.str.128, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.113, i32 0, i32 0), i32 124, i8* null)
+  %89 = load float, float* %15, align 4
+  %90 = load float, float* %14, align 4
+  %91 = fsub float %89, %90
+  %92 = call float @_Z5max_fff(float 1.500000e+01, float %91)
+  store float %92, float* %17, align 4
+  %93 = load float, float* %17, align 4
+  %94 = fpext float %93 to double
+  %95 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([15 x i8], [15 x i8]* @.str.129, i64 0, i64 0), double %94)
+  %96 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([18 x i8], [18 x i8]* @.str.130, i64 0, i64 0), double 1.500000e+01)
+  %97 = load float, float* %15, align 4
+  %98 = fpext float %97 to double
+  %99 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([16 x i8], [16 x i8]* @.str.131, i64 0, i64 0), double %98)
+  %100 = load float, float* %14, align 4
+  %101 = fpext float %100 to double
+  %102 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([16 x i8], [16 x i8]* @.str.132, i64 0, i64 0), double %101)
+  %103 = getelementptr inbounds [768 x float], [768 x float]* %11, i64 0, i64 658
+  %104 = load float, float* %103, align 8
+  %105 = fpext float %104 to double
+  %106 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([18 x i8], [18 x i8]* @.str.127, i64 0, i64 0), i32 658, double %105)
+  %107 = call %struct._IO_FILE* @fopen(i8* getelementptr inbounds ([15 x i8], [15 x i8]* @.str.133, i64 0, i64 0), i8* getelementptr inbounds ([2 x i8], [2 x i8]* @.str.134, i64 0, i64 0))
+  store %struct._IO_FILE* %107, %struct._IO_FILE** %18, align 8
+  %108 = load %struct._IO_FILE*, %struct._IO_FILE** %18, align 8
+  %109 = icmp eq %struct._IO_FILE* %108, null
+  br i1 %109, label %110, label %111
 
-89:                                               ; preds = %80
+110:                                              ; preds = %87
   store i32 1, i32* %3, align 4
-  br label %103
+  br label %124
 
-90:                                               ; preds = %80
-  %91 = load %struct._IO_FILE*, %struct._IO_FILE** %18, align 8
-  %92 = getelementptr inbounds [768 x float], [768 x float]* %11, i64 0, i64 0
-  %93 = load float, float* %14, align 4
-  %94 = load float, float* %17, align 4
-  call void @_Z8printPPMP8_IO_FILEPfiiff(%struct._IO_FILE* %91, float* %92, i32 32, i32 24, float %93, float %94)
-  %95 = load %struct._IO_FILE*, %struct._IO_FILE** %18, align 8
-  %96 = call i32 @fclose(%struct._IO_FILE* %95)
-  %97 = load %struct._IO_FILE*, %struct._IO_FILE** @stderr, align 8
-  %98 = load float, float* %14, align 4
-  %99 = fptosi float %98 to i32
-  %100 = load float, float* %15, align 4
-  %101 = fptosi float %100 to i32
-  %102 = call i32 (%struct._IO_FILE*, i8*, ...) @fprintf(%struct._IO_FILE* %97, i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.134, i64 0, i64 0), i32 %99, i32 %101)
+111:                                              ; preds = %87
+  %112 = load %struct._IO_FILE*, %struct._IO_FILE** %18, align 8
+  %113 = getelementptr inbounds [768 x float], [768 x float]* %11, i64 0, i64 0
+  %114 = load float, float* %14, align 4
+  %115 = load float, float* %17, align 4
+  call void @_Z8printPPMP8_IO_FILEPfiiff(%struct._IO_FILE* %112, float* %113, i32 32, i32 24, float %114, float %115)
+  %116 = load %struct._IO_FILE*, %struct._IO_FILE** %18, align 8
+  %117 = call i32 @fclose(%struct._IO_FILE* %116)
+  %118 = load %struct._IO_FILE*, %struct._IO_FILE** @stderr, align 8
+  %119 = load float, float* %14, align 4
+  %120 = fptosi float %119 to i32
+  %121 = load float, float* %15, align 4
+  %122 = fptosi float %121 to i32
+  %123 = call i32 (%struct._IO_FILE*, i8*, ...) @fprintf(%struct._IO_FILE* %118, i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.135, i64 0, i64 0), i32 %120, i32 %122)
   store i32 0, i32* %3, align 4
-  br label %103
+  br label %124
 
-103:                                              ; preds = %90, %89, %21
-  %104 = load i32, i32* %3, align 4
-  ret i32 %104
+124:                                              ; preds = %111, %110, %21
+  %125 = load i32, i32* %3, align 4
+  ret i32 %125
 }
 
 declare dso_local %struct._IO_FILE* @fopen(i8*, i8*) #2

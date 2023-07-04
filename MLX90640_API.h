@@ -33,7 +33,7 @@ float     __attribute__((annotate("scalar(range(0, 255) final)"))) params_cpKta;
 __attribute__((annotate("scalar(range(0,256) disabled)"))) int   params_resolutionEE; // was uint8__t
 __attribute__((annotate("scalar(range(0,256) disabled)"))) uint8_t   params_calibrationModeEE;
 float     __attribute__((annotate("scalar(range(-1,1) final)"))) params_KsTa;
-float     __attribute__((annotate("scalar(range(-256, 255))"))) params_ksTo[4];
+float     __attribute__((annotate("scalar(range(-256, 256) disabled)"))) params_ksTo[4];
 __attribute__((annotate("scalar(range(-32768,32767) disabled)"))) int16_t   params_ct[4];
 float     params_alpha[768];    
 __attribute__((annotate("scalar(range(-32768,32767) disabled)"))) int16_t   params_offset[768];    

@@ -5,7 +5,7 @@
 #include "MLX90640_API.cpp"
 #include "MLX90640_I2C_Driver.h"
 #include "MLX90640_I2C_Driver.cpp"
-#include "hand.h"
+#include "test/burner.h"
 
 using namespace std;
 
@@ -30,7 +30,7 @@ float max_f(float  __attribute__((annotate("scalar(range(-99,999) final)"))) a, 
 }
 
 
-void printPPM(FILE *fp, float __attribute__((annotate("scalar(range(-99,999) final)")))temperature[] , int nx, int ny, float  __attribute__((annotate("scalar(range(-99,999) final)"))) minVal, float __attribute__((annotate("scalar(range (15,999) final)"))) range)
+void printPPM(FILE *fp, float __attribute__((annotate("scalar(range(-99,999) final)")))temperature[] , int nx, int ny, float  __attribute__((annotate("scalar(range(-99,999) final)"))) minVal, float __attribute__((annotate("scalar(range (15,999) final) "))) range)
 {
     fprintf(fp, "P3\n");
     fprintf(fp, "%d %d\n", nx, ny);
@@ -42,8 +42,11 @@ void printPPM(FILE *fp, float __attribute__((annotate("scalar(range(-99,999) fin
     // Pixel : normalizes the value of the pixel temperature 
     for (int y = 0; y < ny; y++) {
         for (int x = 0; x < nx; x++) {
+            //printf("fp?\n");
             float  __attribute__((annotate("scalar()"))) t = temperature[(nx - 1 - x) + y * nx];
+            //printf("fp?\n");
             float  __attribute__((annotate("scalar()"))) pixel = ((t - minVal) / range);
+            //printf("fp?\n");
 
             
             // Value of the pixels is decided using ternary operators, depending on the temperature value the pixel is normalized
@@ -62,6 +65,7 @@ void printPPM(FILE *fp, float __attribute__((annotate("scalar(range(-99,999) fin
                       (0.375f <= pixel) && (pixel < 0.625f) ? (0.625f - pixel) / 0.25f : 0.0f);                
         
             fprintf(fp, "%d %d %d ", r, g, b);
+            
         }
         fprintf(fp, "\n");
     }
@@ -110,24 +114,31 @@ int main(int argc, char *argv[])
     MLX90640_CalculateTo(subframe2, emissivity, tr, temperature);
     printf("TaMain = %.10f\n",Ta);
     printf("TrMain = %.10f\n",tr);
-     __attribute__((annotate("scalar()"))) float  minVal = temperature[0], maxVal = temperature[0];
+    __attribute__((annotate("scalar()"))) float  minVal = temperature[0], maxVal = temperature[0];
+    
     for(int i = 1; i < nx * ny; i++) {
        minVal = min_f(minVal, temperature[i]);
        maxVal = max_f(maxVal, temperature[i]);
-       //printf("temp[%d] = %.10f\n", i, temperature[i]);
+       printf("temp[%d] = %.10f\n", i, temperature[i]);
     }
     float  __attribute__((annotate("scalar(range (-99,999) final)"))) range = max_f(minRange, maxVal - minVal);
-   
+    printf("Range = %.10f\n",range);
+    printf("minRange = %.10f\n",minRange);
+    printf("maxVal = %.10f\n",maxVal);
+    printf("minVal = %.10f\n",minVal);
+    printf("temp[%d] = %.10f\n", 658, temperature[658]);
     FILE *fp = fopen("thermalmap.ppm", "w");
     if (fp == NULL)
       return 1;
+
+     
     printPPM(fp, temperature, nx, ny, minVal, range);
     fclose(fp);
-    
+     
     fprintf(stderr, "min = %d max = %d\n",
            static_cast<int>(minVal),
            static_cast<int>(maxVal));
     
-           
+        
     return 0;
 }

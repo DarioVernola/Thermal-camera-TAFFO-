@@ -679,7 +679,14 @@ _Z21ExtractKsTaParametersPKt:           # @_Z21ExtractKsTaParametersPKt
 	.size	_Z21ExtractKsTaParametersPKt, .Lfunc_end11-_Z21ExtractKsTaParametersPKt
 	.cfi_endproc
                                         # -- End function
-	.globl	_Z21ExtractKsToParametersPKt    # -- Begin function _Z21ExtractKsToParametersPKt
+	.section	.rodata.cst4,"aM",@progbits,4
+	.p2align	2                               # -- Begin function _Z21ExtractKsToParametersPKt
+.LCPI12_0:
+	.long	0x42fe0000                      # float 127
+.LCPI12_1:
+	.long	0x43800000                      # float 256
+	.text
+	.globl	_Z21ExtractKsToParametersPKt
 	.p2align	4, 0x90
 	.type	_Z21ExtractKsToParametersPKt,@function
 _Z21ExtractKsToParametersPKt:           # @_Z21ExtractKsToParametersPKt
@@ -754,34 +761,28 @@ _Z21ExtractKsToParametersPKt:           # @_Z21ExtractKsToParametersPKt
 	jge	.LBB12_6
 # %bb.2:                                #   in Loop: Header=BB12_1 Depth=1
 	movl	-20(%rbp), %eax                 # 4-byte Reload
-	movslq	%eax, %rcx
-	movq	params_ksTo.fixp@GOTPCREL(%rip), %rax
-	cmpl	$133169152, (%rax,%rcx,4)       # imm = 0x7F00000
-	jle	.LBB12_4
+	cltq
+	movss	params_ksTo(,%rax,4), %xmm0     # xmm0 = mem[0],zero,zero,zero
+	movss	.LCPI12_0(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
+	ucomiss	%xmm1, %xmm0
+	jbe	.LBB12_4
 # %bb.3:                                #   in Loop: Header=BB12_1 Depth=1
 	movl	-20(%rbp), %eax                 # 4-byte Reload
-	movslq	%eax, %rdx
-	movq	params_ksTo.fixp@GOTPCREL(%rip), %rcx
-	movl	(%rcx,%rdx,4), %edx
-	subl	$268435456, %edx                # imm = 0x10000000
 	movslq	%eax, %rcx
-	movq	params_ksTo.fixp@GOTPCREL(%rip), %rax
-	movl	%edx, (%rax,%rcx,4)
+	movss	params_ksTo(,%rcx,4), %xmm0     # xmm0 = mem[0],zero,zero,zero
+	movss	.LCPI12_1(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
+	subss	%xmm1, %xmm0
+	cltq
+	movss	%xmm0, params_ksTo(,%rax,4)
 .LBB12_4:                               #   in Loop: Header=BB12_1 Depth=1
 	movl	-20(%rbp), %eax                 # 4-byte Reload
 	movl	-8(%rbp), %ecx                  # 4-byte Reload
 	movslq	%eax, %rdx
-	movq	params_ksTo.fixp@GOTPCREL(%rip), %rax
-	movslq	(%rax,%rdx,4), %rax
-	movslq	%ecx, %rcx
-	cqto
-	idivq	%rcx
-	movq	%rax, %rcx
-	movl	-20(%rbp), %eax                 # 4-byte Reload
-	movl	%ecx, %edx
-	movslq	%eax, %rcx
-	movq	params_ksTo.fixp@GOTPCREL(%rip), %rax
-	movl	%edx, (%rax,%rcx,4)
+	movss	params_ksTo(,%rdx,4), %xmm0     # xmm0 = mem[0],zero,zero,zero
+	cvtsi2ss	%ecx, %xmm1
+	divss	%xmm1, %xmm0
+	cltq
+	movss	%xmm0, params_ksTo(,%rax,4)
 # %bb.5:                                #   in Loop: Header=BB12_1 Depth=1
 	movl	-20(%rbp), %eax                 # 4-byte Reload
 	addl	$1, %eax
@@ -2938,53 +2939,57 @@ _Z19MLX90640_GetCurModeh:               # @_Z19MLX90640_GetCurModeh
 .LCPI27_0:
 	.long	0x46fffe00                      # float 32767
 .LCPI27_1:
-	.long	0x4c800000                      # float 67108864
+	.long	0x4e000000                      # float 536870912
 .LCPI27_2:
 	.long	0x46000000                      # float 8192
 .LCPI27_3:
 	.long	0x47800000                      # float 65536
 .LCPI27_7:
-	.long	0x4a800000                      # float 4194304
+	.long	0x42200000                      # float 40
 .LCPI27_8:
-	.long	0x47000000                      # float 32768
-.LCPI27_10:
-	.long	0x4b000000                      # float 8388608
-.LCPI27_13:
 	.long	0x3f800000                      # float 1
+.LCPI27_9:
+	.long	0x47000000                      # float 32768
+.LCPI27_11:
+	.long	0x4b000000                      # float 8388608
 .LCPI27_14:
 	.long	0x4d000000                      # float 134217728
-.LCPI27_18:
+.LCPI27_17:
+	.long	0x4a800000                      # float 4194304
+.LCPI27_19:
 	.long	0x4e800000                      # float 1.07374182E+9
+.LCPI27_21:
+	.long	0x5f000000                      # float 9.22337203E+18
 	.section	.rodata.cst8,"aM",@progbits,8
 	.p2align	3
 .LCPI27_4:
 	.quad	0x40f0000000000000              # double 65536
 .LCPI27_5:
-	.quad	0x4190000000000000              # double 67108864
+	.quad	0x41c0000000000000              # double 536870912
 .LCPI27_6:
 	.quad	0x4071126666666666              # double 273.14999999999998
-.LCPI27_9:
+.LCPI27_10:
 	.quad	0x40e0000000000000              # double 32768
-.LCPI27_11:
-	.quad	0x4160000000000000              # double 8388608
 .LCPI27_12:
+	.quad	0x4160000000000000              # double 8388608
+.LCPI27_13:
 	.quad	0x40c0000000000000              # double 8192
 .LCPI27_15:
 	.quad	0x41a0000000000000              # double 134217728
 .LCPI27_16:
-	.quad	0x4130000000000000              # double 1048576
-.LCPI27_17:
 	.quad	0x41d0000000000000              # double 1073741824
-.LCPI27_19:
-	.quad	0x4150000000000000              # double 4194304
+.LCPI27_18:
+	.quad	0x4130000000000000              # double 1048576
+.LCPI27_20:
+	.quad	0x4140000000000000              # double 2097152
 	.section	.rodata.cst16,"aM",@progbits,16
 	.p2align	4
-.LCPI27_20:
+.LCPI27_22:
 	.long	1127219200                      # 0x43300000
 	.long	1160773632                      # 0x45300000
 	.long	0                               # 0x0
 	.long	0                               # 0x0
-.LCPI27_21:
+.LCPI27_23:
 	.quad	0x4330000000000000              # double 4503599627370496
 	.quad	0x4530000000000000              # double 1.9342813113834067E+25
 	.text
@@ -2999,7 +3004,7 @@ _Z20MLX90640_CalculateToPKtffPf:        # @_Z20MLX90640_CalculateToPKtffPf
 	.cfi_offset %rbp, -16
 	movq	%rsp, %rbp
 	.cfi_def_cfa_register %rbp
-	subq	$576, %rsp                      # imm = 0x240
+	subq	$496, %rsp                      # imm = 0x1F0
 	movq	%rdi, -48(%rbp)                 # 8-byte Spill
 	movss	%xmm0, -108(%rbp)               # 4-byte Spill
 	movss	%xmm1, -176(%rbp)               # 4-byte Spill
@@ -3029,6 +3034,7 @@ _Z20MLX90640_CalculateToPKtffPf:        # @_Z20MLX90640_CalculateToPKtffPf
 	cvttps2dq	%xmm0, %xmm0
 	cvtdq2pd	%xmm0, %xmm0
 	movsd	.LCPI27_4(%rip), %xmm1          # xmm1 = mem[0],zero
+	movsd	%xmm1, -168(%rbp)               # 8-byte Spill
 	divsd	%xmm1, %xmm0
 	movl	$.L.str.22, %edi
 	movb	$1, %al
@@ -3043,35 +3049,38 @@ _Z20MLX90640_CalculateToPKtffPf:        # @_Z20MLX90640_CalculateToPKtffPf
 	movl	$.L.str.23, %edi
 	callq	printf
 	movl	-172(%rbp), %ecx                # 4-byte Reload
+	movsd	-168(%rbp), %xmm1               # 8-byte Reload
+                                        # xmm1 = mem[0],zero
                                         # kill: def $edx killed $eax
 	movb	-73(%rbp), %al                  # 1-byte Reload
 	addl	$17901158, %ecx                 # imm = 0x1112666
-	movslq	%ecx, %rcx
-	movq	%rcx, -168(%rbp)                # 8-byte Spill
-	shlq	$10, %rcx
-	cvtsi2sd	%rcx, %xmm0
-	movsd	.LCPI27_5(%rip), %xmm1          # xmm1 = mem[0],zero
-	movsd	%xmm1, -88(%rbp)                # 8-byte Spill
+	movl	%ecx, -156(%rbp)                # 4-byte Spill
+	cvtsi2sd	%ecx, %xmm0
 	divsd	%xmm1, %xmm0
 	movl	$.L.str.24, %edi
 	callq	printf
-	movq	-168(%rbp), %rcx                # 8-byte Reload
-	movsd	-88(%rbp), %xmm1                # 8-byte Reload
-                                        # xmm1 = mem[0],zero
-	movq	%rcx, %rax
-	imulq	%rax, %rax
-	sarq	$6, %rax
-	imulq	%rcx
-	movq	%rax, -160(%rbp)                # 8-byte Spill
-	movq	%rdx, %rax
-	movq	-160(%rbp), %rdx                # 8-byte Reload
-	shldq	$48, %rdx, %rax
-	imulq	%rcx
-	movq	%rax, %rcx
+	movl	-156(%rbp), %ecx                # 4-byte Reload
+                                        # kill: def $edx killed $eax
 	movb	-73(%rbp), %al                  # 1-byte Reload
-	shldq	$48, %rcx, %rdx
-	movq	%rdx, -136(%rbp)                # 8-byte Spill
-	cvtsi2sd	%rdx, %xmm0
+	movslq	%ecx, %rdx
+	movq	%rdx, %rcx
+	imulq	%rcx, %rcx
+	shrq	$16, %rcx
+                                        # kill: def $ecx killed $ecx killed $rcx
+	movslq	%ecx, %rcx
+	imulq	%rdx, %rcx
+	shrq	$16, %rcx
+                                        # kill: def $ecx killed $ecx killed $rcx
+	movslq	%ecx, %rcx
+	imulq	%rdx, %rcx
+	shrq	$16, %rcx
+                                        # kill: def $ecx killed $ecx killed $rcx
+	movslq	%ecx, %rcx
+	shlq	$13, %rcx
+	movq	%rcx, -136(%rbp)                # 8-byte Spill
+	cvtsi2sd	%rcx, %xmm0
+	movsd	.LCPI27_5(%rip), %xmm1          # xmm1 = mem[0],zero
+	movsd	%xmm1, -88(%rbp)                # 8-byte Spill
 	divsd	%xmm1, %xmm0
 	movl	$.L.str.25, %edi
 	callq	printf
@@ -3109,8 +3118,8 @@ _Z20MLX90640_CalculateToPKtffPf:        # @_Z20MLX90640_CalculateToPKtffPf
 	movq	-120(%rbp), %rdx                # 8-byte Reload
 	movq	%rdi, %rsi
 	sarq	$63, %rsi
-	shldq	$26, %rdi, %rsi
-	shlq	$26, %rdi
+	shldq	$29, %rdi, %rsi
+	shlq	$29, %rdi
 	movq	%rdx, %rcx
 	sarq	$63, %rcx
 	callq	__divti3@PLT
@@ -3141,64 +3150,35 @@ _Z20MLX90640_CalculateToPKtffPf:        # @_Z20MLX90640_CalculateToPKtffPf
 	movl	$.L.str.29, %edi
 	callq	printf
 	movq	-48(%rbp), %rdi                 # 8-byte Reload
-	movss	params_ksTo(%rip), %xmm0        # xmm0 = mem[0],zero,zero,zero
-	movss	.LCPI27_7(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
-	mulss	%xmm1, %xmm0
-	cvttss2si	%xmm0, %ecx
-                                        # implicit-def: $rax
-	movl	%ecx, %eax
-	leal	(%rax,%rax,4), %ecx
-                                        # implicit-def: $rax
-	movl	%ecx, %eax
-	leal	4194304(,%rax,8), %eax
-	movslq	%eax, %rcx
-	xorl	%eax, %eax
-	movl	%eax, %edx
-	movabsq	$9007199254740992, %rax         # imm = 0x20000000000000
-	idivq	%rcx
-	shrq	$9, %rax
-                                        # kill: def $eax killed $eax killed $rax
-	cvtsi2ss	%eax, %xmm0
+	movss	params_ksTo(%rip), %xmm1        # xmm1 = mem[0],zero,zero,zero
+	movss	.LCPI27_7(%rip), %xmm0          # xmm0 = mem[0],zero,zero,zero
+	mulss	%xmm0, %xmm1
+	movss	.LCPI27_8(%rip), %xmm2          # xmm2 = mem[0],zero,zero,zero
+	addss	%xmm2, %xmm1
+	movaps	%xmm2, %xmm0
 	divss	%xmm1, %xmm0
 	movss	%xmm0, -32(%rbp)
 	movl	$1065353216, -28(%rbp)          # imm = 0x3F800000
 	movss	params_ksTo+8(%rip), %xmm0      # xmm0 = mem[0],zero,zero,zero
+	movswl	params_ct+4(%rip), %eax
+	shll	$15, %eax
+	cvtsi2ss	%eax, %xmm1
+	movss	.LCPI27_9(%rip), %xmm4          # xmm4 = mem[0],zero,zero,zero
+	divss	%xmm4, %xmm1
 	mulss	%xmm1, %xmm0
-	cvttss2si	%xmm0, %eax
-	movswl	params_ct+4(%rip), %ecx
-	shll	$15, %ecx
-	cltq
-	movslq	%ecx, %rcx
-	imulq	%rcx, %rax
-	shrq	$15, %rax
-                                        # kill: def $eax killed $eax killed $rax
-	addl	$4194304, %eax                  # imm = 0x400000
-	cvtsi2ss	%eax, %xmm0
-	divss	%xmm1, %xmm0
+	addss	%xmm2, %xmm0
 	movss	%xmm0, -24(%rbp)
 	movss	-24(%rbp), %xmm0                # xmm0 = mem[0],zero,zero,zero
-	movss	params_ksTo+12(%rip), %xmm2     # xmm2 = mem[0],zero,zero,zero
-	mulss	%xmm1, %xmm2
-	cvttss2si	%xmm2, %eax
-	movswl	params_ct+6(%rip), %ecx
-	movswl	params_ct+4(%rip), %edx
-	subl	%edx, %ecx
-	shll	$15, %ecx
-	cltq
-	movslq	%ecx, %rcx
-	imulq	%rcx, %rax
-	shrq	$15, %rax
-	movl	%eax, %ecx
-	addl	$4194304, %ecx                  # imm = 0x400000
+	movss	params_ksTo+12(%rip), %xmm1     # xmm1 = mem[0],zero,zero,zero
+	movswl	params_ct+6(%rip), %eax
+	movswl	params_ct+4(%rip), %ecx
+	subl	%ecx, %eax
+	shll	$15, %eax
+	cvtsi2ss	%eax, %xmm3
+	divss	%xmm4, %xmm3
+	mulss	%xmm3, %xmm1
+	addss	%xmm2, %xmm1
 	mulss	%xmm1, %xmm0
-	cvttss2si	%xmm0, %eax
-	cltq
-	movslq	%ecx, %rcx
-	imulq	%rcx, %rax
-	shrq	$22, %rax
-                                        # kill: def $eax killed $eax killed $rax
-	cvtsi2ss	%eax, %xmm0
-	divss	%xmm1, %xmm0
 	movss	%xmm0, -20(%rbp)
 	movzwl	1556(%rdi), %eax
 	cvtsi2ss	%eax, %xmm0
@@ -3218,7 +3198,7 @@ _Z20MLX90640_CalculateToPKtffPf:        # @_Z20MLX90640_CalculateToPKtffPf
                                         # xmm0 = mem[0],zero,zero,zero
 	movswl	params_gainEE(%rip), %eax
 	shll	$15, %eax
-	movss	.LCPI27_8(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
+	movss	.LCPI27_9(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
 	mulss	%xmm1, %xmm0
 	cvttss2si	%xmm0, %ecx
 	cltq
@@ -3231,7 +3211,7 @@ _Z20MLX90640_CalculateToPKtffPf:        # @_Z20MLX90640_CalculateToPKtffPf
                                         # kill: def $ecx killed $ecx killed $rcx
 	movl	%ecx, -220(%rbp)                # 4-byte Spill
 	cvtsi2sd	%ecx, %xmm0
-	movsd	.LCPI27_9(%rip), %xmm1          # xmm1 = mem[0],zero
+	movsd	.LCPI27_10(%rip), %xmm1         # xmm1 = mem[0],zero
 	divsd	%xmm1, %xmm0
 	movsd	%xmm0, -216(%rbp)               # 8-byte Spill
 	movzwl	1664(%rax), %ecx
@@ -3271,7 +3251,7 @@ _Z20MLX90640_CalculateToPKtffPf:        # @_Z20MLX90640_CalculateToPKtffPf
 	movl	-224(%rbp), %eax                # 4-byte Reload
 	movl	-220(%rbp), %edx                # 4-byte Reload
 	movslq	%eax, %rcx
-	movss	.LCPI27_8(%rip), %xmm0          # xmm0 = mem[0],zero,zero,zero
+	movss	.LCPI27_9(%rip), %xmm0          # xmm0 = mem[0],zero,zero,zero
 	mulss	-8(%rbp,%rcx,4), %xmm0
 	cvttss2si	%xmm0, %ecx
 	movslq	%ecx, %rcx
@@ -3280,7 +3260,7 @@ _Z20MLX90640_CalculateToPKtffPf:        # @_Z20MLX90640_CalculateToPKtffPf
 	sarq	$15, %rcx
                                         # kill: def $ecx killed $ecx killed $rcx
 	cvtsi2ss	%ecx, %xmm0
-	movss	.LCPI27_8(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
+	movss	.LCPI27_9(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
 	divss	%xmm1, %xmm0
 	cltq
 	movss	%xmm0, -8(%rbp,%rax,4)
@@ -3336,12 +3316,12 @@ _Z20MLX90640_CalculateToPKtffPf:        # @_Z20MLX90640_CalculateToPKtffPf
 	imulq	%rdx, %rcx
 	sarq	$23, %rcx
 	movl	%ecx, %edx
-	movsd	.LCPI27_11(%rip), %xmm0         # xmm0 = mem[0],zero
+	movsd	.LCPI27_12(%rip), %xmm0         # xmm0 = mem[0],zero
 	mulsd	%xmm1, %xmm0
 	cvttsd2si	%xmm0, %ecx
 	subl	%edx, %ecx
 	cvtsi2ss	%ecx, %xmm0
-	movss	.LCPI27_10(%rip), %xmm1         # xmm1 = mem[0],zero,zero,zero
+	movss	.LCPI27_11(%rip), %xmm1         # xmm1 = mem[0],zero,zero,zero
 	divss	%xmm1, %xmm0
 	movss	%xmm0, -8(%rbp)
 	movzbl	%al, %eax
@@ -3394,12 +3374,12 @@ _Z20MLX90640_CalculateToPKtffPf:        # @_Z20MLX90640_CalculateToPKtffPf
 	imulq	%rcx, %rax
 	sarq	$23, %rax
 	movl	%eax, %ecx
-	movsd	.LCPI27_11(%rip), %xmm0         # xmm0 = mem[0],zero
+	movsd	.LCPI27_12(%rip), %xmm0         # xmm0 = mem[0],zero
 	mulsd	%xmm1, %xmm0
 	cvttsd2si	%xmm0, %eax
 	subl	%ecx, %eax
 	cvtsi2ss	%eax, %xmm0
-	movss	.LCPI27_10(%rip), %xmm1         # xmm1 = mem[0],zero,zero,zero
+	movss	.LCPI27_11(%rip), %xmm1         # xmm1 = mem[0],zero,zero,zero
 	divss	%xmm1, %xmm0
 	movss	%xmm0, -4(%rbp)
 	jmp	.LBB27_11
@@ -3412,7 +3392,7 @@ _Z20MLX90640_CalculateToPKtffPf:        # @_Z20MLX90640_CalculateToPKtffPf
 	cvtss2sd	%xmm0, %xmm1
 	movswl	params_cpOffset+2, %eax
 	shll	$15, %eax
-	movss	.LCPI27_8(%rip), %xmm0          # xmm0 = mem[0],zero,zero,zero
+	movss	.LCPI27_9(%rip), %xmm0          # xmm0 = mem[0],zero,zero,zero
 	mulss	params_ilChessC, %xmm0
 	cvttss2si	%xmm0, %ecx
 	addl	%ecx, %eax
@@ -3453,12 +3433,12 @@ _Z20MLX90640_CalculateToPKtffPf:        # @_Z20MLX90640_CalculateToPKtffPf
 	imulq	%rcx, %rax
 	sarq	$23, %rax
 	movl	%eax, %ecx
-	movsd	.LCPI27_11(%rip), %xmm0         # xmm0 = mem[0],zero
+	movsd	.LCPI27_12(%rip), %xmm0         # xmm0 = mem[0],zero
 	mulsd	%xmm1, %xmm0
 	cvttsd2si	%xmm0, %eax
 	subl	%ecx, %eax
 	cvtsi2ss	%eax, %xmm0
-	movss	.LCPI27_10(%rip), %xmm1         # xmm1 = mem[0],zero,zero,zero
+	movss	.LCPI27_11(%rip), %xmm1         # xmm1 = mem[0],zero,zero,zero
 	divss	%xmm1, %xmm0
 	movss	%xmm0, -4(%rbp)
 .LBB27_11:
@@ -3469,7 +3449,7 @@ _Z20MLX90640_CalculateToPKtffPf:        # @_Z20MLX90640_CalculateToPKtffPf
 	movl	-228(%rbp), %eax                # 4-byte Reload
 	movl	%eax, -232(%rbp)                # 4-byte Spill
 	cmpl	$768, %eax                      # imm = 0x300
-	jge	.LBB27_33
+	jge	.LBB27_35
 # %bb.13:                               #   in Loop: Header=BB27_12 Depth=1
 	movl	-232(%rbp), %eax                # 4-byte Reload
 	movl	$32, %ecx
@@ -3549,7 +3529,7 @@ _Z20MLX90640_CalculateToPKtffPf:        # @_Z20MLX90640_CalculateToPKtffPf
 	movsbl	%al, %eax
 	movzwl	1666(%rcx), %ecx
 	cmpl	%ecx, %eax
-	jne	.LBB27_31
+	jne	.LBB27_33
 # %bb.17:                               #   in Loop: Header=BB27_12 Depth=1
 	movq	-48(%rbp), %rax                 # 8-byte Reload
 	movl	-232(%rbp), %ecx                # 4-byte Reload
@@ -3632,7 +3612,7 @@ _Z20MLX90640_CalculateToPKtffPf:        # @_Z20MLX90640_CalculateToPKtffPf
                                         # kill: def $eax killed $eax killed $rax
 	movl	%eax, -284(%rbp)                # 4-byte Spill
 	cvtsi2sd	%eax, %xmm0
-	movsd	.LCPI27_12(%rip), %xmm1         # xmm1 = mem[0],zero
+	movsd	.LCPI27_13(%rip), %xmm1         # xmm1 = mem[0],zero
 	divsd	%xmm1, %xmm0
 	movabsq	$.L.str.34, %rdi
 	movb	$1, %al
@@ -3642,7 +3622,7 @@ _Z20MLX90640_CalculateToPKtffPf:        # @_Z20MLX90640_CalculateToPKtffPf
 	addl	$8192, %eax                     # imm = 0x2000
 	movl	%eax, -268(%rbp)                # 4-byte Spill
 	cvtsi2sd	%eax, %xmm0
-	movsd	.LCPI27_12(%rip), %xmm1         # xmm1 = mem[0],zero
+	movsd	.LCPI27_13(%rip), %xmm1         # xmm1 = mem[0],zero
 	divsd	%xmm1, %xmm0
 	movabsq	$.L.str.35, %rdi
 	movb	$1, %al
@@ -3659,7 +3639,7 @@ _Z20MLX90640_CalculateToPKtffPf:        # @_Z20MLX90640_CalculateToPKtffPf
 	sarq	$13, %rax
                                         # kill: def $eax killed $eax killed $rax
 	cvtsi2sd	%eax, %xmm0
-	movsd	.LCPI27_12(%rip), %xmm1         # xmm1 = mem[0],zero
+	movsd	.LCPI27_13(%rip), %xmm1         # xmm1 = mem[0],zero
 	divsd	%xmm1, %xmm0
 	movabsq	$.L.str.36, %rdi
 	movb	$1, %al
@@ -3709,7 +3689,7 @@ _Z20MLX90640_CalculateToPKtffPf:        # @_Z20MLX90640_CalculateToPKtffPf
 	callq	printf
 	movss	-276(%rbp), %xmm1               # 4-byte Reload
                                         # xmm1 = mem[0],zero,zero,zero
-	movss	.LCPI27_13(%rip), %xmm0         # xmm0 = mem[0],zero,zero,zero
+	movss	.LCPI27_8(%rip), %xmm0          # xmm0 = mem[0],zero,zero,zero
 	addss	%xmm1, %xmm0
 	movss	%xmm0, -272(%rbp)               # 4-byte Spill
 	cvtss2sd	%xmm0, %xmm0
@@ -3729,7 +3709,7 @@ _Z20MLX90640_CalculateToPKtffPf:        # @_Z20MLX90640_CalculateToPKtffPf
                                         # kill: def $eax killed $eax killed $rax
 	movl	%eax, -264(%rbp)                # 4-byte Spill
 	cvtsi2sd	%eax, %xmm0
-	movsd	.LCPI27_12(%rip), %xmm1         # xmm1 = mem[0],zero
+	movsd	.LCPI27_13(%rip), %xmm1         # xmm1 = mem[0],zero
 	divsd	%xmm1, %xmm0
 	movabsq	$.L.str.41, %rdi
 	movb	$1, %al
@@ -3747,7 +3727,7 @@ _Z20MLX90640_CalculateToPKtffPf:        # @_Z20MLX90640_CalculateToPKtffPf
                                         # kill: def $eax killed $eax killed $rax
 	movl	%eax, -260(%rbp)                # 4-byte Spill
 	cvtsi2sd	%eax, %xmm0
-	movsd	.LCPI27_12(%rip), %xmm1         # xmm1 = mem[0],zero
+	movsd	.LCPI27_13(%rip), %xmm1         # xmm1 = mem[0],zero
 	divsd	%xmm1, %xmm0
 	movabsq	$.L.str.42, %rdi
 	movb	$1, %al
@@ -3810,10 +3790,9 @@ _Z20MLX90640_CalculateToPKtffPf:        # @_Z20MLX90640_CalculateToPKtffPf
 	movl	%ecx, %eax
 	movzwl	%si, %esi
                                         # kill: def $rsi killed $esi
-	movq	%rsi, -520(%rbp)                # 8-byte Spill
+	movq	%rsi, -416(%rbp)                # 8-byte Spill
 	movss	-8(%rbp,%rsi,4), %xmm0          # xmm0 = mem[0],zero,zero,zero
 	movss	.LCPI27_14(%rip), %xmm1         # xmm1 = mem[0],zero,zero,zero
-	movss	%xmm1, -452(%rbp)               # 4-byte Spill
 	mulss	%xmm1, %xmm0
 	cvttss2si	%xmm0, %edi
 	movslq	%edi, %r8
@@ -3823,67 +3802,66 @@ _Z20MLX90640_CalculateToPKtffPf:        # @_Z20MLX90640_CalculateToPKtffPf
                                         # kill: def $edi killed $edi killed $rdi
 	shll	$14, %edx
 	subl	%edi, %edx
-	movl	%edx, -388(%rbp)                # 4-byte Spill
+	movl	%edx, -316(%rbp)                # 4-byte Spill
 	cvtsi2ss	%edx, %xmm0
 	divss	%xmm1, %xmm0
-	movss	%xmm0, -484(%rbp)               # 4-byte Spill
+	movss	%xmm0, -372(%rbp)               # 4-byte Spill
 	movq	params_cpAlpha.fixp@GOTPCREL(%rip), %rdx
-	movq	%rdx, -512(%rbp)                # 8-byte Spill
+	movq	%rdx, -408(%rbp)                # 8-byte Spill
 	movslq	(%rdx,%rsi,4), %rdx
 	imulq	%rdx, %rcx
 	shrq	$20, %rcx
                                         # kill: def $ecx killed $ecx killed $rcx
 	cvtsi2ss	%ecx, %xmm0
 	divss	%xmm1, %xmm0
-	movss	%xmm0, -500(%rbp)               # 4-byte Spill
+	movss	%xmm0, -400(%rbp)               # 4-byte Spill
 	cvtsi2sd	%eax, %xmm0
 	movsd	.LCPI27_15(%rip), %xmm1         # xmm1 = mem[0],zero
-	movsd	%xmm1, -376(%rbp)               # 8-byte Spill
 	divsd	%xmm1, %xmm0
 	movl	$.L.str.44, %edi
 	movb	$1, %al
-	movb	%al, -361(%rbp)                 # 1-byte Spill
+	movb	%al, -357(%rbp)                 # 1-byte Spill
 	callq	printf
-	movq	-520(%rbp), %rdx                # 8-byte Reload
-	movq	-512(%rbp), %rcx                # 8-byte Reload
+	movq	-416(%rbp), %rdx                # 8-byte Reload
+	movq	-408(%rbp), %rcx                # 8-byte Reload
                                         # kill: def $esi killed $eax
-	movb	-361(%rbp), %al                 # 1-byte Reload
+	movb	-357(%rbp), %al                 # 1-byte Reload
 	cvtsi2sdl	(%rcx,%rdx,4), %xmm0
-	movsd	.LCPI27_16(%rip), %xmm1         # xmm1 = mem[0],zero
+	movsd	.LCPI27_18(%rip), %xmm1         # xmm1 = mem[0],zero
 	divsd	%xmm1, %xmm0
 	movl	$.L.str.45, %edi
 	callq	printf
-	movss	-500(%rbp), %xmm0               # 4-byte Reload
+	movss	-400(%rbp), %xmm0               # 4-byte Reload
                                         # xmm0 = mem[0],zero,zero,zero
                                         # kill: def $ecx killed $eax
-	movb	-361(%rbp), %al                 # 1-byte Reload
+	movb	-357(%rbp), %al                 # 1-byte Reload
 	cvtss2sd	%xmm0, %xmm0
 	movl	$.L.str.46, %edi
 	callq	printf
 	movl	-232(%rbp), %ecx                # 4-byte Reload
-	movss	-500(%rbp), %xmm2               # 4-byte Reload
+	movss	-400(%rbp), %xmm2               # 4-byte Reload
                                         # xmm2 = mem[0],zero,zero,zero
                                         # kill: def $edx killed $eax
-	movb	-361(%rbp), %al                 # 1-byte Reload
+	movb	-357(%rbp), %al                 # 1-byte Reload
 	movslq	%ecx, %rcx
 	movss	params_alpha(,%rcx,4), %xmm0    # xmm0 = mem[0],zero,zero,zero
 	movaps	%xmm0, %xmm1
 	subss	%xmm2, %xmm1
-	movss	%xmm1, -492(%rbp)               # 4-byte Spill
+	movss	%xmm1, -392(%rbp)               # 4-byte Spill
 	cvtss2sd	%xmm0, %xmm0
 	movl	$.L.str.47, %edi
 	callq	printf
-	movss	-492(%rbp), %xmm0               # 4-byte Reload
+	movss	-392(%rbp), %xmm0               # 4-byte Reload
                                         # xmm0 = mem[0],zero,zero,zero
                                         # kill: def $ecx killed $eax
-	movb	-361(%rbp), %al                 # 1-byte Reload
+	movb	-357(%rbp), %al                 # 1-byte Reload
 	cvtss2sd	%xmm0, %xmm0
 	movl	$.L.str.48, %edi
 	callq	printf
 	movss	-180(%rbp), %xmm0               # 4-byte Reload
                                         # xmm0 = mem[0],zero,zero,zero
                                         # kill: def $ecx killed $eax
-	movb	-361(%rbp), %al                 # 1-byte Reload
+	movb	-357(%rbp), %al                 # 1-byte Reload
 	movq	params_KsTa.fixp@GOTPCREL(%rip), %rcx
 	movslq	(%rcx), %rcx
 	movss	.LCPI27_3(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
@@ -3894,34 +3872,34 @@ _Z20MLX90640_CalculateToPKtffPf:        # @_Z20MLX90640_CalculateToPKtffPf
 	imulq	%rdx, %rcx
 	shrq	$16, %rcx
                                         # kill: def $ecx killed $ecx killed $rcx
-	movl	%ecx, -496(%rbp)                # 4-byte Spill
+	movl	%ecx, -396(%rbp)                # 4-byte Spill
 	cvtsi2sd	%ecx, %xmm0
-	movsd	.LCPI27_17(%rip), %xmm1         # xmm1 = mem[0],zero
-	movsd	%xmm1, -400(%rbp)               # 8-byte Spill
+	movsd	.LCPI27_16(%rip), %xmm1         # xmm1 = mem[0],zero
+	movsd	%xmm1, -384(%rbp)               # 8-byte Spill
 	divsd	%xmm1, %xmm0
 	movl	$.L.str.49, %edi
 	callq	printf
-	movl	-496(%rbp), %ecx                # 4-byte Reload
-	movsd	-400(%rbp), %xmm1               # 8-byte Reload
+	movl	-396(%rbp), %ecx                # 4-byte Reload
+	movsd	-384(%rbp), %xmm1               # 8-byte Reload
                                         # xmm1 = mem[0],zero
                                         # kill: def $edx killed $eax
-	movb	-361(%rbp), %al                 # 1-byte Reload
+	movb	-357(%rbp), %al                 # 1-byte Reload
 	addl	$1073741824, %ecx               # imm = 0x40000000
-	movl	%ecx, -488(%rbp)                # 4-byte Spill
+	movl	%ecx, -388(%rbp)                # 4-byte Spill
 	cvtsi2sd	%ecx, %xmm0
 	divsd	%xmm1, %xmm0
 	movl	$.L.str.50, %edi
 	callq	printf
-	movss	-492(%rbp), %xmm1               # 4-byte Reload
+	movss	-392(%rbp), %xmm1               # 4-byte Reload
                                         # xmm1 = mem[0],zero,zero,zero
-	movl	-488(%rbp), %edx                # 4-byte Reload
-	movss	-484(%rbp), %xmm0               # 4-byte Reload
-                                        # xmm0 = mem[0],zero,zero,zero
-	movsd	-400(%rbp), %xmm2               # 8-byte Reload
+	movl	-388(%rbp), %edx                # 4-byte Reload
+	movsd	-384(%rbp), %xmm2               # 8-byte Reload
                                         # xmm2 = mem[0],zero
+	movss	-372(%rbp), %xmm0               # 4-byte Reload
+                                        # xmm0 = mem[0],zero,zero,zero
                                         # kill: def $ecx killed $eax
-	movb	-361(%rbp), %al                 # 1-byte Reload
-	movss	.LCPI27_18(%rip), %xmm3         # xmm3 = mem[0],zero,zero,zero
+	movb	-357(%rbp), %al                 # 1-byte Reload
+	movss	.LCPI27_19(%rip), %xmm3         # xmm3 = mem[0],zero,zero,zero
 	mulss	%xmm3, %xmm1
 	cvttss2si	%xmm1, %ecx
 	movslq	%ecx, %rcx
@@ -3929,395 +3907,390 @@ _Z20MLX90640_CalculateToPKtffPf:        # @_Z20MLX90640_CalculateToPKtffPf
 	imulq	%rdx, %rcx
 	sarq	$30, %rcx
                                         # kill: def $ecx killed $ecx killed $rcx
-	movl	%ecx, -472(%rbp)                # 4-byte Spill
+	movl	%ecx, -332(%rbp)                # 4-byte Spill
 	cvtsi2sd	%ecx, %xmm1
 	divsd	%xmm2, %xmm1
-	movsd	%xmm1, -480(%rbp)               # 8-byte Spill
+	movsd	%xmm1, -368(%rbp)               # 8-byte Spill
 	cvtss2sd	%xmm0, %xmm0
 	movl	$.L.str.51, %edi
 	callq	printf
 	movsd	-216(%rbp), %xmm0               # 8-byte Reload
                                         # xmm0 = mem[0],zero
                                         # kill: def $ecx killed $eax
-	movb	-361(%rbp), %al                 # 1-byte Reload
+	movb	-357(%rbp), %al                 # 1-byte Reload
 	movl	$.L.str.52, %edi
 	callq	printf
-	movsd	-480(%rbp), %xmm0               # 8-byte Reload
+	movsd	-368(%rbp), %xmm0               # 8-byte Reload
                                         # xmm0 = mem[0],zero
                                         # kill: def $ecx killed $eax
-	movb	-361(%rbp), %al                 # 1-byte Reload
+	movb	-357(%rbp), %al                 # 1-byte Reload
 	movl	$.L.str.53, %edi
 	callq	printf
-	movl	-472(%rbp), %ecx                # 4-byte Reload
-	movsd	-400(%rbp), %xmm1               # 8-byte Reload
-                                        # xmm1 = mem[0],zero
-	movq	-72(%rbp), %rdx                 # 8-byte Reload
-                                        # kill: def $esi killed $eax
-	movb	-361(%rbp), %al                 # 1-byte Reload
-	movslq	%ecx, %rcx
-	movq	%rcx, -424(%rbp)                # 8-byte Spill
-	imulq	%rdx, %rcx
-	shrq	$26, %rcx
-                                        # kill: def $ecx killed $ecx killed $rcx
-	movl	%ecx, -468(%rbp)                # 4-byte Spill
-	cvtsi2sd	%ecx, %xmm0
-	divsd	%xmm1, %xmm0
-	movl	$.L.str.54, %edi
-	callq	printf
-	movl	-468(%rbp), %edx                # 4-byte Reload
-	movl	-388(%rbp), %ecx                # 4-byte Reload
-	movsd	-376(%rbp), %xmm1               # 8-byte Reload
-                                        # xmm1 = mem[0],zero
-                                        # kill: def $esi killed $eax
-	movb	-361(%rbp), %al                 # 1-byte Reload
-	sarl	$3, %edx
-	addl	%edx, %ecx
-	movl	%ecx, -460(%rbp)                # 4-byte Spill
-	cvtsi2sd	%ecx, %xmm0
-	divsd	%xmm1, %xmm0
-	movl	$.L.str.55, %edi
-	callq	printf
-	movq	-424(%rbp), %rdx                # 8-byte Reload
-	movsd	-400(%rbp), %xmm1               # 8-byte Reload
-                                        # xmm1 = mem[0],zero
-                                        # kill: def $ecx killed $eax
-	movb	-361(%rbp), %al                 # 1-byte Reload
-	movq	%rdx, %rcx
-	imulq	%rcx, %rcx
-	shrq	$30, %rcx
-                                        # kill: def $ecx killed $ecx killed $rcx
-	movslq	%ecx, %rcx
-	imulq	%rdx, %rcx
-	sarq	$30, %rcx
-                                        # kill: def $ecx killed $ecx killed $rcx
-	movl	%ecx, -464(%rbp)                # 4-byte Spill
-	cvtsi2sd	%ecx, %xmm0
-	divsd	%xmm1, %xmm0
-	movl	$.L.str.56, %edi
-	callq	printf
-	movl	-464(%rbp), %ecx                # 4-byte Reload
-	movl	-460(%rbp), %edx                # 4-byte Reload
-	movss	-452(%rbp), %xmm2               # 4-byte Reload
-                                        # xmm2 = mem[0],zero,zero,zero
-	movsd	-376(%rbp), %xmm1               # 8-byte Reload
-                                        # xmm1 = mem[0],zero
-                                        # kill: def $esi killed $eax
-	movb	-361(%rbp), %al                 # 1-byte Reload
-	movslq	%ecx, %rcx
-	movslq	%edx, %rdx
-	imulq	%rdx, %rcx
-	shrq	$30, %rcx
-                                        # kill: def $ecx killed $ecx killed $rcx
-	cvtsi2sd	%ecx, %xmm0
-	divsd	%xmm1, %xmm0
-	cvtsi2ss	%ecx, %xmm1
-	divss	%xmm2, %xmm1
-	movss	%xmm1, -456(%rbp)               # 4-byte Spill
-	movl	$.L.str.57, %edi
-	callq	printf
-	movss	-456(%rbp), %xmm0               # 4-byte Reload
-                                        # xmm0 = mem[0],zero,zero,zero
-	callq	_ZSt4sqrtf.1_s5_27fixp
-	movss	-452(%rbp), %xmm1               # 4-byte Reload
-                                        # xmm1 = mem[0],zero,zero,zero
-	cvtsi2ss	%eax, %xmm0
-	divss	%xmm1, %xmm0
-	callq	_ZSt4sqrtf.1_s5_27fixp
-	movsd	-400(%rbp), %xmm1               # 8-byte Reload
-                                        # xmm1 = mem[0],zero
-	movl	%eax, %ecx
-	movb	-361(%rbp), %al                 # 1-byte Reload
-	movss	params_ksTo+4(%rip), %xmm0      # xmm0 = mem[0],zero,zero,zero
-	movss	.LCPI27_7(%rip), %xmm2          # xmm2 = mem[0],zero,zero,zero
-	movss	%xmm2, -448(%rbp)               # 4-byte Spill
-	mulss	%xmm2, %xmm0
-	cvttss2si	%xmm0, %edx
-	movslq	%ecx, %rcx
-	movslq	%edx, %rdx
-	imulq	%rdx, %rcx
-	shrq	$27, %rcx
-                                        # kill: def $ecx killed $ecx killed $rcx
-	shll	$8, %ecx
-	movl	%ecx, -412(%rbp)                # 4-byte Spill
-	cvtsi2sd	%ecx, %xmm0
-	divsd	%xmm1, %xmm0
-	movl	$.L.str.58, %edi
-	callq	printf
-	movss	-448(%rbp), %xmm1               # 4-byte Reload
-                                        # xmm1 = mem[0],zero,zero,zero
-                                        # kill: def $ecx killed $eax
-	movb	-361(%rbp), %al                 # 1-byte Reload
-	movss	params_ksTo+4(%rip), %xmm0      # xmm0 = mem[0],zero,zero,zero
-	mulss	%xmm1, %xmm0
-	cvttss2si	%xmm0, %ecx
-	movslq	%ecx, %rcx
-	movl	$2291348275, %edx               # imm = 0x88933333
-	imulq	%rdx, %rcx
-	shrq	$23, %rcx
-                                        # kill: def $ecx killed $ecx killed $rcx
-	movl	%ecx, -444(%rbp)                # 4-byte Spill
-	cvtsi2sd	%ecx, %xmm0
-	movsd	.LCPI27_19(%rip), %xmm1         # xmm1 = mem[0],zero
-	movsd	%xmm1, -440(%rbp)               # 8-byte Spill
-	divsd	%xmm1, %xmm0
-	movl	$.L.str.59, %edi
-	callq	printf
-	movl	-444(%rbp), %edx                # 4-byte Reload
-	movsd	-440(%rbp), %xmm1               # 8-byte Reload
-                                        # xmm1 = mem[0],zero
-                                        # kill: def $ecx killed $eax
-	movb	-361(%rbp), %al                 # 1-byte Reload
-	movl	$4194304, %ecx                  # imm = 0x400000
-	subl	%edx, %ecx
-	movl	%ecx, -428(%rbp)                # 4-byte Spill
-	cvtsi2sd	%ecx, %xmm0
-	divsd	%xmm1, %xmm0
-	movl	$.L.str.60, %edi
-	callq	printf
-	movl	-428(%rbp), %edx                # 4-byte Reload
-	movq	-424(%rbp), %rcx                # 8-byte Reload
-	movsd	-400(%rbp), %xmm1               # 8-byte Reload
-                                        # xmm1 = mem[0],zero
-                                        # kill: def $esi killed $eax
-	movb	-361(%rbp), %al                 # 1-byte Reload
-	movslq	%edx, %rdx
-	imulq	%rdx, %rcx
-	shrq	$22, %rcx
-                                        # kill: def $ecx killed $ecx killed $rcx
-	movl	%ecx, -416(%rbp)                # 4-byte Spill
-	cvtsi2sd	%ecx, %xmm0
-	divsd	%xmm1, %xmm0
-	movl	$.L.str.61, %edi
-	callq	printf
-	movl	-416(%rbp), %ecx                # 4-byte Reload
-	movl	-412(%rbp), %edx                # 4-byte Reload
-	movsd	-400(%rbp), %xmm1               # 8-byte Reload
-                                        # xmm1 = mem[0],zero
-                                        # kill: def $esi killed $eax
-	movb	-361(%rbp), %al                 # 1-byte Reload
-	addl	%edx, %ecx
-	movslq	%ecx, %rdx
-	movq	%rdx, -408(%rbp)                # 8-byte Spill
-	cvtsi2sd	%ecx, %xmm0
-	divsd	%xmm1, %xmm0
-	movl	$.L.str.63, %edi
-	callq	printf
-	movq	-408(%rbp), %rcx                # 8-byte Reload
-	movsd	-400(%rbp), %xmm1               # 8-byte Reload
-                                        # xmm1 = mem[0],zero
-                                        # kill: def $edx killed $eax
-	movl	-388(%rbp), %eax                # 4-byte Reload
-	cltq
-	shlq	$30, %rax
-	cqto
-	idivq	%rcx
-	movq	%rax, %rcx
-	movb	-361(%rbp), %al                 # 1-byte Reload
-	movq	%rcx, -384(%rbp)                # 8-byte Spill
-	shlq	$3, %rcx
-	cvtsi2sd	%rcx, %xmm0
-	divsd	%xmm1, %xmm0
-	movl	$.L.str.64, %edi
-	callq	printf
 	movq	-72(%rbp), %rcx                 # 8-byte Reload
-	movq	-384(%rbp), %rdx                # 8-byte Reload
-	movsd	-376(%rbp), %xmm1               # 8-byte Reload
-                                        # xmm1 = mem[0],zero
-                                        # kill: def $esi killed $eax
-	movb	-361(%rbp), %al                 # 1-byte Reload
-	shlq	$4, %rcx
-	leaq	(%rcx,%rdx,8), %rcx
-	sarq	$3, %rcx
-	movq	%rcx, -360(%rbp)                # 8-byte Spill
-	movq	%rcx, %xmm0
-	movaps	.LCPI27_20(%rip), %xmm2         # xmm2 = [1127219200,1160773632,0,0]
-	movaps	%xmm2, -352(%rbp)               # 16-byte Spill
-	punpckldq	%xmm2, %xmm0            # xmm0 = xmm0[0],xmm2[0],xmm0[1],xmm2[1]
-	movapd	.LCPI27_21(%rip), %xmm2         # xmm2 = [4.503599627370496E+15,1.9342813113834067E+25]
-	movaps	%xmm2, -336(%rbp)               # 16-byte Spill
-	subpd	%xmm2, %xmm0
-	movaps	%xmm0, %xmm2
-	unpckhpd	%xmm0, %xmm0                    # xmm0 = xmm0[1,1]
-	addsd	%xmm2, %xmm0
+                                        # kill: def $edx killed $eax
+	movl	-332(%rbp), %eax                # 4-byte Reload
+	cltq
+	imulq	%rcx, %rax
+	shrq	$29, %rax
+                                        # kill: def $eax killed $eax killed $rax
+	movl	%eax, -356(%rbp)                # 4-byte Spill
+	cvtsi2sd	%eax, %xmm0
+	movsd	.LCPI27_16(%rip), %xmm1         # xmm1 = mem[0],zero
 	divsd	%xmm1, %xmm0
-	movl	$.L.str.66, %edi
+	movabsq	$.L.str.54, %rdi
+	movb	$1, %al
 	callq	printf
-	movq	-360(%rbp), %rdi                # 8-byte Reload
-	callq	_ZSt4sqrtf.2_u37_27fixp
-	movq	%rax, %rdi
-	callq	_ZSt4sqrtf.2_u37_27fixp
-	movaps	-352(%rbp), %xmm2               # 16-byte Reload
-	movaps	-336(%rbp), %xmm1               # 16-byte Reload
-	movabsq	$-36661572403, %rcx             # imm = 0xFFFFFFF776CCCCCD
-	addq	%rcx, %rax
-	movq	%rax, -312(%rbp)                # 8-byte Spill
-	movq	%rax, %xmm0
-	punpckldq	%xmm2, %xmm0            # xmm0 = xmm0[0],xmm2[0],xmm0[1],xmm2[1]
-	subpd	%xmm1, %xmm0
-	movaps	%xmm0, %xmm1
-	unpckhpd	%xmm0, %xmm0                    # xmm0 = xmm0[1,1]
-	addsd	%xmm1, %xmm0
+	movl	-356(%rbp), %ecx                # 4-byte Reload
+                                        # kill: def $edx killed $eax
+	movl	-316(%rbp), %eax                # 4-byte Reload
+	sarl	$3, %ecx
+	addl	%ecx, %eax
+	movl	%eax, -352(%rbp)                # 4-byte Spill
+	cvtsi2sd	%eax, %xmm0
 	movsd	.LCPI27_15(%rip), %xmm1         # xmm1 = mem[0],zero
 	divsd	%xmm1, %xmm0
-	movabsq	$.L.str.67, %rdi
+	movabsq	$.L.str.55, %rdi
+	movb	$1, %al
+	callq	printf
+	movl	-332(%rbp), %ecx                # 4-byte Reload
+	movslq	%ecx, %rax
+	movslq	%ecx, %rdx
+	imulq	%rdx, %rax
+	sarq	$30, %rax
+                                        # kill: def $eax killed $eax killed $rax
+	cltq
+	movslq	%ecx, %rcx
+	imulq	%rcx, %rax
+	sarq	$30, %rax
+                                        # kill: def $eax killed $eax killed $rax
+	movl	%eax, -348(%rbp)                # 4-byte Spill
+	cvtsi2sd	%eax, %xmm0
+	movsd	.LCPI27_16(%rip), %xmm1         # xmm1 = mem[0],zero
+	divsd	%xmm1, %xmm0
+	movabsq	$.L.str.56, %rdi
+	movb	$1, %al
+	callq	printf
+	movl	-352(%rbp), %ecx                # 4-byte Reload
+                                        # kill: def $edx killed $eax
+	movl	-348(%rbp), %eax                # 4-byte Reload
+	cltq
+	movslq	%ecx, %rcx
+	imulq	%rcx, %rax
+	sarq	$30, %rax
+                                        # kill: def $eax killed $eax killed $rax
+	cvtsi2sd	%eax, %xmm0
+	movsd	.LCPI27_15(%rip), %xmm1         # xmm1 = mem[0],zero
+	divsd	%xmm1, %xmm0
+	cvtsi2ss	%eax, %xmm1
+	movss	.LCPI27_14(%rip), %xmm2         # xmm2 = mem[0],zero,zero,zero
+	divss	%xmm2, %xmm1
+	movss	%xmm1, -344(%rbp)               # 4-byte Spill
+	movabsq	$.L.str.57, %rdi
+	movb	$1, %al
+	callq	printf
+	movss	-344(%rbp), %xmm0               # 4-byte Reload
+                                        # xmm0 = mem[0],zero,zero,zero
+	callq	_ZSt4sqrtf.1_s5_27fixp
+	cvtsi2ss	%eax, %xmm0
+	movss	.LCPI27_14(%rip), %xmm1         # xmm1 = mem[0],zero,zero,zero
+	divss	%xmm1, %xmm0
+	callq	_ZSt4sqrtf.1_s5_27fixp
+	movss	.LCPI27_17(%rip), %xmm0         # xmm0 = mem[0],zero,zero,zero
+	mulss	params_ksTo+4, %xmm0
+	cvttss2si	%xmm0, %ecx
+	cltq
+	movslq	%ecx, %rcx
+	imulq	%rcx, %rax
+	sarq	$27, %rax
+                                        # kill: def $eax killed $eax killed $rax
+	movl	%eax, -328(%rbp)                # 4-byte Spill
+	shll	$8, %eax
+	cvtsi2sd	%eax, %xmm0
+	movsd	.LCPI27_16(%rip), %xmm1         # xmm1 = mem[0],zero
+	divsd	%xmm1, %xmm0
+	movabsq	$.L.str.58, %rdi
+	movb	$1, %al
+	callq	printf
+	movss	params_ksTo+4, %xmm0            # xmm0 = mem[0],zero,zero,zero
+	cvtss2sd	%xmm0, %xmm0
+	movsd	.LCPI27_6(%rip), %xmm1          # xmm1 = mem[0],zero
+	mulsd	%xmm1, %xmm0
+	cvtsd2ss	%xmm0, %xmm1
+	movss	%xmm1, -340(%rbp)               # 4-byte Spill
+	movss	.LCPI27_17(%rip), %xmm0         # xmm0 = mem[0],zero,zero,zero
+	mulss	%xmm1, %xmm0
+	cvttss2si	%xmm0, %eax
+	shll	$8, %eax
+	cvtsi2sd	%eax, %xmm0
+	movsd	.LCPI27_16(%rip), %xmm1         # xmm1 = mem[0],zero
+	divsd	%xmm1, %xmm0
+	movss	params_ksTo+4, %xmm1            # xmm1 = mem[0],zero,zero,zero
+	cvtss2sd	%xmm1, %xmm1
+	movabsq	$.L.str.60, %rdi
+	movb	$2, %al
+	callq	printf
+	movss	-340(%rbp), %xmm1               # 4-byte Reload
+                                        # xmm1 = mem[0],zero,zero,zero
+	movss	.LCPI27_17(%rip), %xmm0         # xmm0 = mem[0],zero,zero,zero
+	mulss	%xmm1, %xmm0
+	cvttss2si	%xmm0, %ecx
+	shll	$8, %ecx
+	movl	$1073741824, %eax               # imm = 0x40000000
+	subl	%ecx, %eax
+	movl	%eax, -336(%rbp)                # 4-byte Spill
+	cvtsi2sd	%eax, %xmm0
+	movsd	.LCPI27_16(%rip), %xmm1         # xmm1 = mem[0],zero
+	divsd	%xmm1, %xmm0
+	movabsq	$.L.str.61, %rdi
+	movb	$1, %al
+	callq	printf
+	movl	-336(%rbp), %ecx                # 4-byte Reload
+                                        # kill: def $edx killed $eax
+	movl	-332(%rbp), %eax                # 4-byte Reload
+	cltq
+	movslq	%ecx, %rcx
+	imulq	%rcx, %rax
+	sarq	$30, %rax
+                                        # kill: def $eax killed $eax killed $rax
+	movl	%eax, -324(%rbp)                # 4-byte Spill
+	cvtsi2sd	%eax, %xmm0
+	movsd	.LCPI27_16(%rip), %xmm1         # xmm1 = mem[0],zero
+	divsd	%xmm1, %xmm0
+	movabsq	$.L.str.62, %rdi
+	movb	$1, %al
+	callq	printf
+	movl	-328(%rbp), %ecx                # 4-byte Reload
+                                        # kill: def $edx killed $eax
+	movl	-324(%rbp), %eax                # 4-byte Reload
+	shll	$8, %ecx
+	addl	%ecx, %eax
+	movl	%eax, -320(%rbp)                # 4-byte Spill
+	cvtsi2sd	%eax, %xmm0
+	movsd	.LCPI27_16(%rip), %xmm1         # xmm1 = mem[0],zero
+	divsd	%xmm1, %xmm0
+	movabsq	$.L.str.63, %rdi
+	movb	$1, %al
+	callq	printf
+	movl	-320(%rbp), %ecx                # 4-byte Reload
+                                        # kill: def $edx killed $eax
+	movl	-316(%rbp), %eax                # 4-byte Reload
+	cltq
+	shlq	$30, %rax
+	movslq	%ecx, %rcx
+	cqto
+	idivq	%rcx
+                                        # kill: def $eax killed $eax killed $rax
+	movl	%eax, -312(%rbp)                # 4-byte Spill
+	cvtsi2sd	%eax, %xmm0
+	movsd	.LCPI27_15(%rip), %xmm1         # xmm1 = mem[0],zero
+	divsd	%xmm1, %xmm0
+	movabsq	$.L.str.64, %rdi
+	movb	$1, %al
+	callq	printf
+	movq	-72(%rbp), %rcx                 # 8-byte Reload
+                                        # kill: def $edx killed $eax
+	movl	-312(%rbp), %eax                # 4-byte Reload
+	sarq	$2, %rcx
+                                        # kill: def $ecx killed $ecx killed $rcx
+	addl	%ecx, %eax
+	cvtsi2sd	%eax, %xmm0
+	movsd	.LCPI27_15(%rip), %xmm1         # xmm1 = mem[0],zero
+	divsd	%xmm1, %xmm0
+	cvtsi2ss	%eax, %xmm1
+	movss	.LCPI27_14(%rip), %xmm2         # xmm2 = mem[0],zero,zero,zero
+	divss	%xmm2, %xmm1
+	movss	%xmm1, -308(%rbp)               # 4-byte Spill
+	movabsq	$.L.str.65, %rdi
+	movb	$1, %al
+	callq	printf
+	movss	-308(%rbp), %xmm0               # 4-byte Reload
+                                        # xmm0 = mem[0],zero,zero,zero
+	callq	_ZSt4sqrtf.1_s5_27fixp
+	cvtsi2ss	%eax, %xmm0
+	movss	.LCPI27_14(%rip), %xmm1         # xmm1 = mem[0],zero,zero,zero
+	divss	%xmm1, %xmm0
+	callq	_ZSt4sqrtf.1_s5_27fixp
+	subl	$-1993133264, %eax              # imm = 0x89333330
+	movl	%eax, -304(%rbp)                # 4-byte Spill
+	cvtsi2sd	%eax, %xmm0
+	movsd	.LCPI27_15(%rip), %xmm1         # xmm1 = mem[0],zero
+	divsd	%xmm1, %xmm0
+	movabsq	$.L.str.66, %rdi
 	movb	$1, %al
 	callq	printf
 	movsd	-56(%rbp), %xmm0                # 8-byte Reload
                                         # xmm0 = mem[0],zero
-	movabsq	$.L.str.68, %rdi
+	movabsq	$.L.str.67, %rdi
 	movb	$1, %al
 	callq	printf
                                         # kill: def $ecx killed $eax
-	movq	-312(%rbp), %rax                # 8-byte Reload
-	shrq	$27, %rax
-                                        # kill: def $eax killed $eax killed $rax
+	movl	-304(%rbp), %eax                # 4-byte Reload
+	sarl	$27, %eax
 	movswl	params_ct+2, %ecx
 	cmpl	%ecx, %eax
 	jge	.LBB27_23
 # %bb.22:                               #   in Loop: Header=BB27_12 Depth=1
 	xorl	%eax, %eax
                                         # kill: def $al killed $al killed $eax
-	movb	%al, -521(%rbp)                 # 1-byte Spill
+	movb	%al, -417(%rbp)                 # 1-byte Spill
 	jmp	.LBB27_30
 .LBB27_23:                              #   in Loop: Header=BB27_12 Depth=1
-	movq	-312(%rbp), %rax                # 8-byte Reload
-	shrq	$27, %rax
-                                        # kill: def $eax killed $eax killed $rax
+	movl	-304(%rbp), %eax                # 4-byte Reload
+	sarl	$27, %eax
 	movswl	params_ct+4, %ecx
 	cmpl	%ecx, %eax
 	jge	.LBB27_25
 # %bb.24:                               #   in Loop: Header=BB27_12 Depth=1
 	movb	$1, %al
-	movb	%al, -522(%rbp)                 # 1-byte Spill
+	movb	%al, -418(%rbp)                 # 1-byte Spill
 	jmp	.LBB27_29
 .LBB27_25:                              #   in Loop: Header=BB27_12 Depth=1
-	movq	-312(%rbp), %rax                # 8-byte Reload
-	shrq	$27, %rax
-                                        # kill: def $eax killed $eax killed $rax
+	movl	-304(%rbp), %eax                # 4-byte Reload
+	sarl	$27, %eax
 	movswl	params_ct+6, %ecx
 	cmpl	%ecx, %eax
 	jge	.LBB27_27
 # %bb.26:                               #   in Loop: Header=BB27_12 Depth=1
 	movb	$2, %al
-	movb	%al, -523(%rbp)                 # 1-byte Spill
+	movb	%al, -419(%rbp)                 # 1-byte Spill
 	jmp	.LBB27_28
 .LBB27_27:                              #   in Loop: Header=BB27_12 Depth=1
 	movb	$3, %al
-	movb	%al, -523(%rbp)                 # 1-byte Spill
+	movb	%al, -419(%rbp)                 # 1-byte Spill
 	jmp	.LBB27_28
 .LBB27_28:                              #   in Loop: Header=BB27_12 Depth=1
-	movb	-523(%rbp), %al                 # 1-byte Reload
-	movb	%al, -522(%rbp)                 # 1-byte Spill
+	movb	-419(%rbp), %al                 # 1-byte Reload
+	movb	%al, -418(%rbp)                 # 1-byte Spill
 .LBB27_29:                              #   in Loop: Header=BB27_12 Depth=1
-	movb	-522(%rbp), %al                 # 1-byte Reload
-	movb	%al, -521(%rbp)                 # 1-byte Spill
+	movb	-418(%rbp), %al                 # 1-byte Reload
+	movb	%al, -417(%rbp)                 # 1-byte Spill
 .LBB27_30:                              #   in Loop: Header=BB27_12 Depth=1
-	movb	-521(%rbp), %al                 # 1-byte Reload
-	movb	%al, -549(%rbp)                 # 1-byte Spill
+	movb	-417(%rbp), %al                 # 1-byte Reload
+	movb	%al, -489(%rbp)                 # 1-byte Spill
 	movsbl	%al, %esi
-	movl	$.L.str.69, %edi
+	movl	$.L.str.68, %edi
 	xorl	%eax, %eax
                                         # kill: def $al killed $al killed $eax
 	callq	printf
-	movb	-549(%rbp), %cl                 # 1-byte Reload
+	movb	-489(%rbp), %cl                 # 1-byte Reload
                                         # kill: def $edx killed $eax
-	movq	-312(%rbp), %rax                # 8-byte Reload
+	movl	-304(%rbp), %eax                # 4-byte Reload
 	movsbq	%cl, %rcx
-	movq	%rcx, -576(%rbp)                # 8-byte Spill
-	movswl	params_ct(%rcx,%rcx), %ecx
-	shll	$15, %ecx
-	movslq	%ecx, %rcx
-	shlq	$12, %rcx
-	subq	%rcx, %rax
-	movq	%rax, -568(%rbp)                # 8-byte Spill
-	shrq	$7, %rax
-                                        # kill: def $eax killed $eax killed $rax
+	movq	%rcx, -480(%rbp)                # 8-byte Spill
+	movzwl	params_ct(%rcx,%rcx), %ecx
+	shll	$27, %ecx
+	subl	%ecx, %eax
+	movl	%eax, -488(%rbp)                # 4-byte Spill
 	cvtsi2sd	%eax, %xmm0
+	movsd	.LCPI27_15(%rip), %xmm1         # xmm1 = mem[0],zero
+	divsd	%xmm1, %xmm0
+	movl	$.L.str.69, %edi
+	movb	$1, %al
+	movb	%al, -449(%rbp)                 # 1-byte Spill
+	callq	printf
+	movl	-488(%rbp), %edx                # 4-byte Reload
+	movq	-480(%rbp), %rcx                # 8-byte Reload
+                                        # kill: def $esi killed $eax
+	movb	-449(%rbp), %al                 # 1-byte Reload
+	movss	params_ksTo(,%rcx,4), %xmm0     # xmm0 = mem[0],zero,zero,zero
+	movss	.LCPI27_17(%rip), %xmm1         # xmm1 = mem[0],zero,zero,zero
+	mulss	%xmm1, %xmm0
+	cvttss2si	%xmm0, %ecx
+	movslq	%ecx, %rcx
+	movslq	%edx, %rdx
+	imulq	%rdx, %rcx
+	shrq	$22, %rcx
+                                        # kill: def $ecx killed $ecx killed $rcx
+	movl	%ecx, -484(%rbp)                # 4-byte Spill
+	shll	$3, %ecx
+	cvtsi2sd	%ecx, %xmm0
 	movsd	.LCPI27_16(%rip), %xmm1         # xmm1 = mem[0],zero
+	movsd	%xmm1, -472(%rbp)               # 8-byte Spill
+	divsd	%xmm1, %xmm0
+	movl	$.L.str.70, %edi
+	callq	printf
+	movl	-484(%rbp), %edx                # 4-byte Reload
+	movsd	-472(%rbp), %xmm1               # 8-byte Reload
+                                        # xmm1 = mem[0],zero
+                                        # kill: def $ecx killed $eax
+	movb	-449(%rbp), %al                 # 1-byte Reload
+                                        # implicit-def: $rcx
+	movl	%edx, %ecx
+	leal	1073741824(,%rcx,8), %ecx
+	movl	%ecx, -460(%rbp)                # 4-byte Spill
+	cvtsi2sd	%ecx, %xmm0
 	divsd	%xmm1, %xmm0
 	movl	$.L.str.71, %edi
-	movb	$1, %al
 	callq	printf
-	movq	-576(%rbp), %rdx                # 8-byte Reload
-	movq	-568(%rbp), %rcx                # 8-byte Reload
-	movq	params_ksTo.fixp@GOTPCREL(%rip), %rax
-	movslq	(%rax,%rdx,4), %rax
-	imulq	%rcx, %rax
-	shrq	$27, %rax
-                                        # kill: def $eax killed $eax killed $rax
-	movl	%eax, -556(%rbp)                # 4-byte Spill
-	shll	$10, %eax
-	cvtsi2sd	%eax, %xmm0
-	movsd	.LCPI27_17(%rip), %xmm1         # xmm1 = mem[0],zero
-	divsd	%xmm1, %xmm0
-	movabsq	$.L.str.72, %rdi
-	movb	$1, %al
-	callq	printf
-                                        # kill: def $ecx killed $eax
-	movl	-556(%rbp), %eax                # 4-byte Reload
-	shll	$10, %eax
-	addl	$1073741824, %eax               # imm = 0x40000000
-	movl	%eax, -548(%rbp)                # 4-byte Spill
-	cvtsi2sd	%eax, %xmm0
-	movsd	.LCPI27_17(%rip), %xmm1         # xmm1 = mem[0],zero
-	divsd	%xmm1, %xmm0
-	movabsq	$.L.str.73, %rdi
-	movb	$1, %al
-	callq	printf
-	movb	-549(%rbp), %cl                 # 1-byte Reload
-                                        # kill: def $edx killed $eax
-	movl	-472(%rbp), %eax                # 4-byte Reload
-	movsbq	%cl, %rcx
-	movss	.LCPI27_18(%rip), %xmm0         # xmm0 = mem[0],zero,zero,zero
-	mulss	-32(%rbp,%rcx,4), %xmm0
-	cvttss2si	%xmm0, %ecx
-	cltq
+	movq	-480(%rbp), %rdx                # 8-byte Reload
+	movl	-332(%rbp), %ecx                # 4-byte Reload
+	movsd	-472(%rbp), %xmm1               # 8-byte Reload
+                                        # xmm1 = mem[0],zero
+                                        # kill: def $esi killed $eax
+	movb	-449(%rbp), %al                 # 1-byte Reload
+	movss	-32(%rbp,%rdx,4), %xmm0         # xmm0 = mem[0],zero,zero,zero
+	movss	.LCPI27_19(%rip), %xmm2         # xmm2 = mem[0],zero,zero,zero
+	movss	%xmm2, -456(%rbp)               # 4-byte Spill
+	mulss	%xmm2, %xmm0
+	cvttss2si	%xmm0, %edx
 	movslq	%ecx, %rcx
-	imulq	%rcx, %rax
-	sarq	$30, %rax
-                                        # kill: def $eax killed $eax killed $rax
-	movl	%eax, -544(%rbp)                # 4-byte Spill
-	cvtsi2sd	%eax, %xmm0
-	movsd	.LCPI27_17(%rip), %xmm1         # xmm1 = mem[0],zero
+	movslq	%edx, %rdx
+	imulq	%rdx, %rcx
+	sarq	$30, %rcx
+                                        # kill: def $ecx killed $ecx killed $rcx
+	movl	%ecx, -464(%rbp)                # 4-byte Spill
+	cvtsi2sd	%ecx, %xmm0
 	divsd	%xmm1, %xmm0
-	movabsq	$.L.str.74, %rdi
-	movb	$1, %al
+	movl	$.L.str.72, %edi
 	callq	printf
-	movl	-548(%rbp), %ecx                # 4-byte Reload
-                                        # kill: def $edx killed $eax
-	movl	-544(%rbp), %eax                # 4-byte Reload
-	cltq
+	movl	-464(%rbp), %ecx                # 4-byte Reload
+	movl	-460(%rbp), %edx                # 4-byte Reload
+	movss	-456(%rbp), %xmm1               # 4-byte Reload
+                                        # xmm1 = mem[0],zero,zero,zero
+                                        # kill: def $esi killed $eax
+	movb	-449(%rbp), %al                 # 1-byte Reload
 	movslq	%ecx, %rcx
-	imulq	%rcx, %rax
-	sarq	$30, %rax
-                                        # kill: def $eax killed $eax killed $rax
-	cvtsi2ss	%eax, %xmm0
-	movss	.LCPI27_18(%rip), %xmm1         # xmm1 = mem[0],zero,zero,zero
+	movslq	%edx, %rdx
+	imulq	%rdx, %rcx
+	shrq	$30, %rcx
+                                        # kill: def $ecx killed $ecx killed $rcx
+	cvtsi2ss	%ecx, %xmm0
 	divss	%xmm1, %xmm0
-	cvtsi2ss	%eax, %xmm1
-	movss	.LCPI27_18(%rip), %xmm2         # xmm2 = mem[0],zero,zero,zero
-	divss	%xmm2, %xmm1
-	movss	%xmm1, -540(%rbp)               # 4-byte Spill
+	movss	%xmm0, -448(%rbp)               # 4-byte Spill
 	cvtss2sd	%xmm0, %xmm0
+	movl	$.L.str.73, %edi
+	callq	printf
+	movss	-372(%rbp), %xmm0               # 4-byte Reload
+                                        # xmm0 = mem[0],zero,zero,zero
+	movss	-448(%rbp), %xmm1               # 4-byte Reload
+                                        # xmm1 = mem[0],zero,zero,zero
+	divss	%xmm1, %xmm0
+	movss	%xmm0, -444(%rbp)               # 4-byte Spill
+	movss	.LCPI27_14(%rip), %xmm1         # xmm1 = mem[0],zero,zero,zero
+	mulss	%xmm1, %xmm0
+	movss	.LCPI27_21(%rip), %xmm1         # xmm1 = mem[0],zero,zero,zero
+	movaps	%xmm0, %xmm2
+	subss	%xmm1, %xmm2
+	cvttss2si	%xmm2, %rax
+	movabsq	$-9223372036854775808, %rcx     # imm = 0x8000000000000000
+	xorq	%rcx, %rax
+	cvttss2si	%xmm0, %rcx
+	ucomiss	%xmm1, %xmm0
+	cmovbq	%rcx, %rax
+	movq	%rax, %xmm0
+	movaps	.LCPI27_22(%rip), %xmm1         # xmm1 = [1127219200,1160773632,0,0]
+	punpckldq	%xmm1, %xmm0            # xmm0 = xmm0[0],xmm1[0],xmm0[1],xmm1[1]
+	movapd	.LCPI27_23(%rip), %xmm1         # xmm1 = [4.503599627370496E+15,1.9342813113834067E+25]
+	subpd	%xmm1, %xmm0
+	movaps	%xmm0, %xmm1
+	unpckhpd	%xmm0, %xmm0                    # xmm0 = xmm0[1,1]
+	addsd	%xmm1, %xmm0
+	movsd	.LCPI27_15(%rip), %xmm1         # xmm1 = mem[0],zero
+	divsd	%xmm1, %xmm0
 	movabsq	$.L.str.75, %rdi
 	movb	$1, %al
 	callq	printf
-	movss	-484(%rbp), %xmm1               # 4-byte Reload
-                                        # xmm1 = mem[0],zero,zero,zero
-	movss	-540(%rbp), %xmm0               # 4-byte Reload
-                                        # xmm0 = mem[0],zero,zero,zero
-	divss	%xmm0, %xmm1
-	movss	%xmm1, -536(%rbp)               # 4-byte Spill
-	movss	.LCPI27_3(%rip), %xmm0          # xmm0 = mem[0],zero,zero,zero
-	mulss	%xmm1, %xmm0
-	cvttss2si	%xmm0, %eax
-	cvtsi2sd	%eax, %xmm0
-	movsd	.LCPI27_4(%rip), %xmm1          # xmm1 = mem[0],zero
-	divsd	%xmm1, %xmm0
-	movabsq	$.L.str.77, %rdi
-	movb	$1, %al
-	callq	printf
-	movss	-536(%rbp), %xmm1               # 4-byte Reload
+	movss	-444(%rbp), %xmm1               # 4-byte Reload
                                         # xmm1 = mem[0],zero,zero,zero
 	movq	-72(%rbp), %rcx                 # 8-byte Reload
 	movss	.LCPI27_1(%rip), %xmm0          # xmm0 = mem[0],zero,zero,zero
@@ -4327,50 +4300,72 @@ _Z20MLX90640_CalculateToPKtffPf:        # @_Z20MLX90640_CalculateToPKtffPf
 	cvtsi2sd	%rax, %xmm0
 	movsd	.LCPI27_5(%rip), %xmm1          # xmm1 = mem[0],zero
 	divsd	%xmm1, %xmm0
+	cvtsi2sd	%rax, %xmm1
+	movsd	.LCPI27_5(%rip), %xmm2          # xmm2 = mem[0],zero
+	divsd	%xmm2, %xmm1
+	movsd	%xmm1, -440(%rbp)               # 8-byte Spill
 	cvtsi2ss	%rax, %xmm1
 	movss	.LCPI27_1(%rip), %xmm2          # xmm2 = mem[0],zero,zero,zero
 	divss	%xmm2, %xmm1
-	movss	%xmm1, -532(%rbp)               # 4-byte Spill
-	movabsq	$.L.str.78, %rdi
+	movss	%xmm1, -428(%rbp)               # 4-byte Spill
+	movabsq	$.L.str.76, %rdi
 	movb	$1, %al
 	callq	printf
-	movss	-532(%rbp), %xmm0               # 4-byte Reload
+	movss	-428(%rbp), %xmm0               # 4-byte Reload
                                         # xmm0 = mem[0],zero,zero,zero
-	callq	_ZSt4sqrtf.3_s38_26fixp
+	callq	_ZSt4sqrtf.3_s35_29fixp
 	cvtsi2ss	%rax, %xmm0
 	movss	.LCPI27_1(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
 	divss	%xmm1, %xmm0
-	callq	_ZSt4sqrtf.3_s38_26fixp
-	movabsq	$18330786201, %rcx              # imm = 0x444999999
+	callq	_ZSt4sqrtf.3_s35_29fixp
+	movabsq	$146646289612, %rcx             # imm = 0x2224CCCCCC
 	subq	%rcx, %rax
-	cvtsi2sd	%rax, %xmm0
-	movsd	.LCPI27_5(%rip), %xmm1          # xmm1 = mem[0],zero
+	cvtsi2ss	%rax, %xmm0
+	movss	.LCPI27_1(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
+	divss	%xmm1, %xmm0
+	movss	%xmm0, -424(%rbp)               # 4-byte Spill
+	sarq	$8, %rax
+                                        # kill: def $eax killed $eax killed $rax
+	cvtsi2sd	%eax, %xmm0
+	movsd	.LCPI27_20(%rip), %xmm1         # xmm1 = mem[0],zero
 	divsd	%xmm1, %xmm0
-	cvtsi2ss	%rax, %xmm1
-	movss	.LCPI27_1(%rip), %xmm2          # xmm2 = mem[0],zero,zero,zero
-	divss	%xmm2, %xmm1
-	movss	%xmm1, -528(%rbp)               # 4-byte Spill
-	movabsq	$.L.str.79, %rdi
+	movabsq	$.L.str.77, %rdi
 	movb	$1, %al
 	callq	printf
-	movss	-528(%rbp), %xmm0               # 4-byte Reload
-                                        # xmm0 = mem[0],zero,zero,zero
-	movl	-232(%rbp), %esi                # 4-byte Reload
                                         # kill: def $ecx killed $eax
-	movq	-200(%rbp), %rax                # 8-byte Reload
-	movslq	%esi, %rcx
-	movss	%xmm0, (%rax,%rcx,4)
-	movabsq	$.L.str.80, %rdi
+	movl	-232(%rbp), %eax                # 4-byte Reload
+	cmpl	$658, %eax                      # imm = 0x292
+	jne	.LBB27_32
+# %bb.31:                               #   in Loop: Header=BB27_12 Depth=1
+	movabsq	$.L.str.78, %rdi
 	movb	$0, %al
 	callq	printf
-.LBB27_31:                              #   in Loop: Header=BB27_12 Depth=1
-	jmp	.LBB27_32
+	movsd	-440(%rbp), %xmm0               # 8-byte Reload
+                                        # xmm0 = mem[0],zero
+	movabsq	$.L.str.76, %rdi
+	movb	$1, %al
+	callq	printf
+	movabsq	$.L.str.78, %rdi
+	movb	$0, %al
+	callq	printf
 .LBB27_32:                              #   in Loop: Header=BB27_12 Depth=1
+	movl	-232(%rbp), %esi                # 4-byte Reload
+	movq	-200(%rbp), %rax                # 8-byte Reload
+	movss	-424(%rbp), %xmm0               # 4-byte Reload
+                                        # xmm0 = mem[0],zero,zero,zero
+	movslq	%esi, %rcx
+	movss	%xmm0, (%rax,%rcx,4)
+	movabsq	$.L.str.79, %rdi
+	movb	$0, %al
+	callq	printf
+.LBB27_33:                              #   in Loop: Header=BB27_12 Depth=1
+	jmp	.LBB27_34
+.LBB27_34:                              #   in Loop: Header=BB27_12 Depth=1
 	movl	-232(%rbp), %eax                # 4-byte Reload
 	addl	$1, %eax
 	movl	%eax, -228(%rbp)                # 4-byte Spill
 	jmp	.LBB27_12
-.LBB27_33:
+.LBB27_35:
 	movss	-184(%rbp), %xmm1               # 4-byte Reload
                                         # xmm1 = mem[0],zero,zero,zero
 	movss	.LCPI27_3(%rip), %xmm0          # xmm0 = mem[0],zero,zero,zero
@@ -4379,7 +4374,7 @@ _Z20MLX90640_CalculateToPKtffPf:        # @_Z20MLX90640_CalculateToPKtffPf
 	cvtsi2sd	%eax, %xmm0
 	movsd	.LCPI27_4(%rip), %xmm1          # xmm1 = mem[0],zero
 	divsd	%xmm1, %xmm0
-	movabsq	$.L.str.81, %rdi
+	movabsq	$.L.str.80, %rdi
 	movb	$1, %al
 	callq	printf
 	movss	-180(%rbp), %xmm1               # 4-byte Reload
@@ -4390,21 +4385,21 @@ _Z20MLX90640_CalculateToPKtffPf:        # @_Z20MLX90640_CalculateToPKtffPf
 	cvtsi2sd	%eax, %xmm0
 	movsd	.LCPI27_4(%rip), %xmm1          # xmm1 = mem[0],zero
 	divsd	%xmm1, %xmm0
-	movabsq	$.L.str.82, %rdi
+	movabsq	$.L.str.81, %rdi
 	movb	$1, %al
 	callq	printf
 	movss	-176(%rbp), %xmm0               # 4-byte Reload
                                         # xmm0 = mem[0],zero,zero,zero
 	cvtss2sd	%xmm0, %xmm0
-	movabsq	$.L.str.83, %rdi
+	movabsq	$.L.str.82, %rdi
 	movb	$1, %al
 	callq	printf
 	movsd	-64(%rbp), %xmm0                # 8-byte Reload
                                         # xmm0 = mem[0],zero
-	movabsq	$.L.str.29, %rdi
+	movabsq	$.L.str.83, %rdi
 	movb	$1, %al
 	callq	printf
-	addq	$576, %rsp                      # imm = 0x240
+	addq	$496, %rsp                      # imm = 0x1F0
 	popq	%rbp
 	.cfi_def_cfa %rsp, 8
 	retq
@@ -4415,19 +4410,15 @@ _Z20MLX90640_CalculateToPKtffPf:        # @_Z20MLX90640_CalculateToPKtffPf
 	.section	.rodata.cst4,"aM",@progbits,4
 	.p2align	2                               # -- Begin function _Z15MLX90640_GetVddPKt
 .LCPI28_0:
-	.long	0x47800000                      # float 65536
-.LCPI28_2:
-	.long	0x49800000                      # float 1048576
-.LCPI28_4:
+	.long	0x46800000                      # float 16384
+.LCPI28_1:
+	.long	0x49000000                      # float 524288
+.LCPI28_3:
 	.long	0x4b000000                      # float 8388608
 	.section	.rodata.cst8,"aM",@progbits,8
 	.p2align	3
-.LCPI28_1:
-	.quad	0x40f0000000000000              # double 65536
-.LCPI28_3:
+.LCPI28_2:
 	.quad	0x4160000000000000              # double 8388608
-.LCPI28_5:
-	.quad	0x4120000000000000              # double 524288
 	.text
 	.globl	_Z15MLX90640_GetVddPKt
 	.p2align	4, 0x90
@@ -4440,100 +4431,58 @@ _Z15MLX90640_GetVddPKt:                 # @_Z15MLX90640_GetVddPKt
 	.cfi_offset %rbp, -16
 	movq	%rsp, %rbp
 	.cfi_def_cfa_register %rbp
-	subq	$64, %rsp
+	subq	$48, %rsp
 	movq	%rdi, -16(%rbp)                 # 8-byte Spill
 	movzwl	1620(%rdi), %eax
-	shll	$16, %eax
+	shll	$14, %eax
 	movl	%eax, -8(%rbp)                  # 4-byte Spill
 	cvtsi2ss	%eax, %xmm0
 	movss	.LCPI28_0(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
 	divss	%xmm1, %xmm0
-	cmpl	$2147418112, %eax               # imm = 0x7FFF0000
+	cmpl	$536854528, %eax                # imm = 0x1FFFC000
 	movss	%xmm0, -4(%rbp)                 # 4-byte Spill
 	jle	.LBB28_2
 # %bb.1:
 	movl	-8(%rbp), %eax                  # 4-byte Reload
-	subl	$0, %eax
+	subl	$1073741824, %eax               # imm = 0x40000000
 	cvtsi2ss	%eax, %xmm0
 	movss	.LCPI28_0(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
 	divss	%xmm1, %xmm0
 	movss	%xmm0, -4(%rbp)                 # 4-byte Spill
 .LBB28_2:
+	movq	-16(%rbp), %rax                 # 8-byte Reload
 	movss	-4(%rbp), %xmm0                 # 4-byte Reload
                                         # xmm0 = mem[0],zero,zero,zero
 	movss	%xmm0, -28(%rbp)                # 4-byte Spill
-	movss	.LCPI28_0(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
-	mulss	%xmm1, %xmm0
-	cvttps2dq	%xmm0, %xmm0
-	cvtdq2pd	%xmm0, %xmm0
-	movsd	.LCPI28_1(%rip), %xmm1          # xmm1 = mem[0],zero
-	divsd	%xmm1, %xmm0
-	movl	$.L.str.86, %edi
-	movb	$1, %al
-	movb	%al, -30(%rbp)                  # 1-byte Spill
-	callq	printf
-                                        # kill: def $ecx killed $eax
-	movq	-16(%rbp), %rax                 # 8-byte Reload
 	movzwl	1664(%rax), %eax
 	shrl	$10, %eax
 	andl	$3, %eax
-	movl	%eax, -52(%rbp)                 # 4-byte Spill
+	movl	%eax, -36(%rbp)                 # 4-byte Spill
 	movl	params_resolutionEE(%rip), %eax
 	shll	$23, %eax
                                         # kill: def $rax killed $eax
 	cvtsi2sd	%rax, %xmm0
-	movsd	.LCPI28_3(%rip), %xmm1          # xmm1 = mem[0],zero
+	movsd	.LCPI28_2(%rip), %xmm1          # xmm1 = mem[0],zero
 	divsd	%xmm1, %xmm0
 	movl	$2, %edi
-	movl	%edi, -56(%rbp)                 # 4-byte Spill
+	movl	%edi, -32(%rbp)                 # 4-byte Spill
 	callq	_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.7_u0_0fixp
-	movl	-56(%rbp), %edi                 # 4-byte Reload
-	movl	-52(%rbp), %eax                 # 4-byte Reload
-	movsd	%xmm0, -48(%rbp)                # 8-byte Spill
+	movl	-36(%rbp), %eax                 # 4-byte Reload
+	movl	-32(%rbp), %edi                 # 4-byte Reload
+	movsd	%xmm0, -24(%rbp)                # 8-byte Spill
 	cvtsi2sd	%eax, %xmm0
 	callq	_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_
-	movl	-52(%rbp), %esi                 # 4-byte Reload
-	movaps	%xmm0, %xmm1
-	movsd	-48(%rbp), %xmm0                # 8-byte Reload
-                                        # xmm0 = mem[0],zero
-	divsd	%xmm1, %xmm0
-	cvtsd2ss	%xmm0, %xmm0
-	movss	%xmm0, -36(%rbp)                # 4-byte Spill
-	movl	$.L.str.87, %edi
-	xorl	%eax, %eax
-                                        # kill: def $al killed $al killed $eax
-	movb	%al, -29(%rbp)                  # 1-byte Spill
-	callq	printf
-                                        # kill: def $ecx killed $eax
-	movb	-29(%rbp), %al                  # 1-byte Reload
-	movl	params_resolutionEE(%rip), %esi
-	movl	$.L.str.88, %edi
-	callq	printf
-	movss	-36(%rbp), %xmm0                # 4-byte Reload
-                                        # xmm0 = mem[0],zero,zero,zero
-                                        # kill: def $ecx killed $eax
-	movb	-30(%rbp), %al                  # 1-byte Reload
-	movss	.LCPI28_4(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
-	mulss	%xmm1, %xmm0
-	cvttss2si	%xmm0, %rcx
-                                        # kill: def $ecx killed $ecx killed $rcx
-	movl	%ecx, -24(%rbp)                 # 4-byte Spill
-	shrl	$4, %ecx
-	cvtsi2sd	%ecx, %xmm0
-	movsd	.LCPI28_5(%rip), %xmm1          # xmm1 = mem[0],zero
-	divsd	%xmm1, %xmm0
-	movl	$.L.str.89, %edi
-	callq	printf
-                                        # kill: def $ecx killed $eax
-	movb	-29(%rbp), %al                  # 1-byte Reload
-	movswl	params_kVdd(%rip), %esi
-	movswl	params_vdd25(%rip), %edx
-	movl	$.L.str.90, %edi
-	callq	printf
 	movss	-28(%rbp), %xmm1                # 4-byte Reload
                                         # xmm1 = mem[0],zero,zero,zero
-                                        # kill: def $ecx killed $eax
-	movl	-24(%rbp), %eax                 # 4-byte Reload
+	movaps	%xmm0, %xmm2
+	movsd	-24(%rbp), %xmm0                # 8-byte Reload
+                                        # xmm0 = mem[0],zero
+	divsd	%xmm2, %xmm0
+	cvtsd2ss	%xmm0, %xmm0
+	movss	.LCPI28_3(%rip), %xmm2          # xmm2 = mem[0],zero,zero,zero
+	mulss	%xmm2, %xmm0
+	cvttss2si	%xmm0, %rax
+                                        # kill: def $eax killed $eax killed $rax
 	movss	.LCPI28_0(%rip), %xmm0          # xmm0 = mem[0],zero,zero,zero
 	mulss	%xmm1, %xmm0
 	cvttss2si	%xmm0, %ecx
@@ -4541,10 +4490,10 @@ _Z15MLX90640_GetVddPKt:                 # @_Z15MLX90640_GetVddPKt
                                         # kill: def $rax killed $eax
 	movslq	%ecx, %rcx
 	imulq	%rcx, %rax
-	sarq	$24, %rax
+	sarq	$23, %rax
                                         # kill: def $eax killed $eax killed $rax
 	movswl	params_vdd25, %ecx
-	shll	$15, %ecx
+	shll	$14, %ecx
 	subl	%ecx, %eax
 	movswl	params_kVdd, %ecx
 	shll	$15, %ecx
@@ -4554,22 +4503,11 @@ _Z15MLX90640_GetVddPKt:                 # @_Z15MLX90640_GetVddPKt
 	cqto
 	idivq	%rcx
 	shlq	$5, %rax
-	addq	$3460300, %rax                  # imm = 0x34CCCC
+	addq	$1730150, %rax                  # imm = 0x1A6666
 	cvtsi2ss	%rax, %xmm0
-	movss	.LCPI28_2(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
+	movss	.LCPI28_1(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
 	divss	%xmm1, %xmm0
-	movss	%xmm0, -20(%rbp)                # 4-byte Spill
-	sarq	$4, %rax
-                                        # kill: def $eax killed $eax killed $rax
-	cvtsi2sd	%eax, %xmm0
-	movsd	.LCPI28_1(%rip), %xmm1          # xmm1 = mem[0],zero
-	divsd	%xmm1, %xmm0
-	movabsq	$.L.str.86, %rdi
-	movb	$1, %al
-	callq	printf
-	movss	-20(%rbp), %xmm0                # 4-byte Reload
-                                        # xmm0 = mem[0],zero,zero,zero
-	addq	$64, %rsp
+	addq	$48, %rsp
 	popq	%rbp
 	.cfi_def_cfa %rsp, 8
 	retq
@@ -4582,13 +4520,13 @@ _Z15MLX90640_GetVddPKt:                 # @_Z15MLX90640_GetVddPKt
 .LCPI29_0:
 	.long	0x47000000                      # float 32768
 .LCPI29_2:
-	.long	0x49800000                      # float 1048576
+	.long	0x49000000                      # float 524288
 .LCPI29_3:
 	.long	0x46800000                      # float 16384
 	.section	.rodata.cst8,"aM",@progbits,8
 	.p2align	3
 .LCPI29_1:
-	.quad	0x4130000000000000              # double 1048576
+	.quad	0x4120000000000000              # double 524288
 .LCPI29_4:
 	.quad	0x40a0000000000000              # double 2048
 .LCPI29_5:
@@ -4598,7 +4536,7 @@ _Z15MLX90640_GetVddPKt:                 # @_Z15MLX90640_GetVddPKt
 .LCPI29_7:
 	.quad	0x41b0000000000000              # double 268435456
 .LCPI29_8:
-	.quad	0x4190000000000000              # double 67108864
+	.quad	0x4180000000000000              # double 33554432
 .LCPI29_9:
 	.quad	0x41d0000000000000              # double 1073741824
 	.text
@@ -4615,7 +4553,7 @@ _Z14MLX90640_GetTaPKt:                  # @_Z14MLX90640_GetTaPKt
 	.cfi_def_cfa_register %rbp
 	subq	$208, %rsp
 	movq	%rdi, -16(%rbp)                 # 8-byte Spill
-	movabsq	$.L.str.94, %rdi
+	movabsq	$.L.str.91, %rdi
 	movb	$0, %al
 	callq	printf
 	movq	-16(%rbp), %rdi                 # 8-byte Reload
@@ -4628,7 +4566,7 @@ _Z14MLX90640_GetTaPKt:                  # @_Z14MLX90640_GetTaPKt
 	cvtsi2sd	%rax, %xmm0
 	movsd	.LCPI29_1(%rip), %xmm1          # xmm1 = mem[0],zero
 	divsd	%xmm1, %xmm0
-	movabsq	$.L.str.95, %rdi
+	movabsq	$.L.str.92, %rdi
 	movb	$1, %al
 	callq	printf
 	movq	-16(%rbp), %rdi                 # 8-byte Reload
@@ -4693,7 +4631,7 @@ _Z14MLX90640_GetTaPKt:                  # @_Z14MLX90640_GetTaPKt
 	movsd	.LCPI29_4(%rip), %xmm1          # xmm1 = mem[0],zero
 	movsd	%xmm1, -192(%rbp)               # 8-byte Spill
 	divsd	%xmm1, %xmm0
-	movl	$.L.str.96, %edi
+	movl	$.L.str.93, %edi
 	movb	$1, %al
 	movb	%al, -49(%rbp)                  # 1-byte Spill
 	callq	printf
@@ -4712,7 +4650,7 @@ _Z14MLX90640_GetTaPKt:                  # @_Z14MLX90640_GetTaPKt
 	movl	%ecx, -180(%rbp)                # 4-byte Spill
 	cvtsi2sd	%ecx, %xmm0
 	divsd	%xmm1, %xmm0
-	movl	$.L.str.97, %edi
+	movl	$.L.str.94, %edi
 	callq	printf
 	movl	-180(%rbp), %ecx                # 4-byte Reload
                                         # kill: def $edx killed $eax
@@ -4728,7 +4666,7 @@ _Z14MLX90640_GetTaPKt:                  # @_Z14MLX90640_GetTaPKt
 	movsd	.LCPI29_5(%rip), %xmm1          # xmm1 = mem[0],zero
 	movsd	%xmm1, -160(%rbp)               # 8-byte Spill
 	divsd	%xmm1, %xmm0
-	movl	$.L.str.98, %edi
+	movl	$.L.str.95, %edi
 	callq	printf
 	movss	-164(%rbp), %xmm0               # 4-byte Reload
                                         # xmm0 = mem[0],zero,zero,zero
@@ -4746,7 +4684,7 @@ _Z14MLX90640_GetTaPKt:                  # @_Z14MLX90640_GetTaPKt
 	cvttps2dq	%xmm0, %xmm0
 	cvtdq2pd	%xmm0, %xmm0
 	divsd	%xmm1, %xmm0
-	movl	$.L.str.99, %edi
+	movl	$.L.str.96, %edi
 	callq	printf
 	movq	-152(%rbp), %rcx                # 8-byte Reload
                                         # kill: def $edx killed $eax
@@ -4756,13 +4694,13 @@ _Z14MLX90640_GetTaPKt:                  # @_Z14MLX90640_GetTaPKt
 	cvtsi2sd	%rcx, %xmm0
 	movsd	.LCPI29_7(%rip), %xmm1          # xmm1 = mem[0],zero
 	divsd	%xmm1, %xmm0
-	movl	$.L.str.100, %edi
+	movl	$.L.str.97, %edi
 	callq	printf
 	movsd	-144(%rbp), %xmm0               # 8-byte Reload
                                         # xmm0 = mem[0],zero
                                         # kill: def $ecx killed $eax
 	movb	-49(%rbp), %al                  # 1-byte Reload
-	movl	$.L.str.101, %edi
+	movl	$.L.str.98, %edi
 	callq	printf
 	movss	-20(%rbp), %xmm0                # 4-byte Reload
                                         # xmm0 = mem[0],zero,zero,zero
@@ -4772,13 +4710,13 @@ _Z14MLX90640_GetTaPKt:                  # @_Z14MLX90640_GetTaPKt
 	mulss	%xmm1, %xmm0
 	cvttss2si	%xmm0, %rcx
 	movq	%rcx, -128(%rbp)                # 8-byte Spill
-	addq	$-3460300, %rcx                 # imm = 0xFFCB3334
+	addq	$-1730150, %rcx                 # imm = 0xFFE5999A
 	movq	%rcx, -136(%rbp)                # 8-byte Spill
 	cvtsi2sd	%rcx, %xmm0
 	movsd	.LCPI29_1(%rip), %xmm1          # xmm1 = mem[0],zero
 	movsd	%xmm1, -120(%rbp)               # 8-byte Spill
 	divsd	%xmm1, %xmm0
-	movl	$.L.str.102, %edi
+	movl	$.L.str.99, %edi
 	callq	printf
 	movq	-136(%rbp), %rdx                # 8-byte Reload
 	movq	params_KvPTAT.fixp@GOTPCREL(%rip), %rax
@@ -4797,7 +4735,7 @@ _Z14MLX90640_GetTaPKt:                  # @_Z14MLX90640_GetTaPKt
 	cvtsi2sd	%ecx, %xmm0
 	movsd	.LCPI29_9(%rip), %xmm1          # xmm1 = mem[0],zero
 	divsd	%xmm1, %xmm0
-	movl	$.L.str.103, %edi
+	movl	$.L.str.100, %edi
 	callq	printf
 	movq	-128(%rbp), %rcx                # 8-byte Reload
 	movsd	-120(%rbp), %xmm1               # 8-byte Reload
@@ -4806,24 +4744,24 @@ _Z14MLX90640_GetTaPKt:                  # @_Z14MLX90640_GetTaPKt
 	movb	-49(%rbp), %al                  # 1-byte Reload
 	cvtsi2sd	%rcx, %xmm0
 	divsd	%xmm1, %xmm0
-	movl	$.L.str.104, %edi
+	movl	$.L.str.101, %edi
 	callq	printf
 	movsd	-112(%rbp), %xmm0               # 8-byte Reload
                                         # xmm0 = mem[0],zero
                                         # kill: def $ecx killed $eax
 	movb	-49(%rbp), %al                  # 1-byte Reload
-	movl	$.L.str.105, %edi
+	movl	$.L.str.102, %edi
 	callq	printf
 	movq	-104(%rbp), %rcx                # 8-byte Reload
 	movsd	-96(%rbp), %xmm1                # 8-byte Reload
                                         # xmm1 = mem[0],zero
                                         # kill: def $edx killed $eax
 	movb	-49(%rbp), %al                  # 1-byte Reload
-	addq	$67108864, %rcx                 # imm = 0x4000000
+	addq	$33554432, %rcx                 # imm = 0x2000000
 	movq	%rcx, -80(%rbp)                 # 8-byte Spill
 	cvtsi2sd	%rcx, %xmm0
 	divsd	%xmm1, %xmm0
-	movl	$.L.str.106, %edi
+	movl	$.L.str.103, %edi
 	callq	printf
 	movq	-88(%rbp), %rdi                 # 8-byte Reload
 	movq	-80(%rbp), %rdx                 # 8-byte Reload
@@ -4831,8 +4769,8 @@ _Z14MLX90640_GetTaPKt:                  # @_Z14MLX90640_GetTaPKt
 	movq	-72(%rbp), %rax                 # 8-byte Reload
 	movq	%rax, %rsi
 	sarq	$63, %rsi
-	shldq	$26, %rax, %rsi
-	shlq	$58, %rdi
+	shldq	$25, %rax, %rsi
+	shlq	$57, %rdi
 	movq	%rdx, %rcx
 	sarq	$63, %rcx
 	callq	__divti3@PLT
@@ -4841,7 +4779,7 @@ _Z14MLX90640_GetTaPKt:                  # @_Z14MLX90640_GetTaPKt
 	shldq	$35, %rcx, %rdx
 	movq	%rdx, -64(%rbp)                 # 8-byte Spill
 	cvtsi2sd	%rdx, %xmm0
-	movl	$.L.str.107, %edi
+	movl	$.L.str.104, %edi
 	callq	printf
 	movq	-64(%rbp), %rcx                 # 8-byte Reload
                                         # kill: def $edx killed $eax
@@ -4851,7 +4789,7 @@ _Z14MLX90640_GetTaPKt:                  # @_Z14MLX90640_GetTaPKt
 	subq	%rdx, %rcx
 	movq	%rcx, -48(%rbp)                 # 8-byte Spill
 	cvtsi2sd	%rcx, %xmm0
-	movl	$.L.str.108, %edi
+	movl	$.L.str.105, %edi
 	callq	printf
 	movq	-48(%rbp), %rdi                 # 8-byte Reload
 	movq	params_KtPTAT.fixp@GOTPCREL(%rip), %rax
@@ -4867,7 +4805,7 @@ _Z14MLX90640_GetTaPKt:                  # @_Z14MLX90640_GetTaPKt
 	cvtsi2sd	%rax, %xmm0
 	cvtsi2ss	%rax, %xmm1
 	movss	%xmm1, -36(%rbp)                # 4-byte Spill
-	movabsq	$.L.str.109, %rdi
+	movabsq	$.L.str.106, %rdi
 	movb	$1, %al
 	callq	printf
 	movss	-36(%rbp), %xmm0                # 4-byte Reload
@@ -4891,19 +4829,7 @@ _Z14MLX90640_GetTaPKt:                  # @_Z14MLX90640_GetTaPKt
 .LCPI30_3:
 	.long	0x4b000000                      # float 8388608
 .LCPI30_5:
-	.long	0x46800000                      # float 16384
-.LCPI30_6:
-	.long	0xc1c80000                      # float -25
-.LCPI30_7:
-	.long	0x4b800000                      # float 16777216
-.LCPI30_8:
-	.long	0x46000000                      # float 8192
-.LCPI30_9:
-	.long	0x41c80000                      # float 25
-.LCPI30_10:
 	.long	0x4d000000                      # float 134217728
-.LCPI30_11:
-	.long	0x4e800000                      # float 1.07374182E+9
 	.section	.rodata.cst8,"aM",@progbits,8
 	.p2align	3
 .LCPI30_4:
@@ -5020,26 +4946,23 @@ _Z17MLX90640_GetImagePKtPf:             # @_Z17MLX90640_GetImagePKtPf
 	movb	-53(%rbp), %al                  # 1-byte Reload
 	movss	-36(%rbp), %xmm2                # 4-byte Reload
                                         # xmm2 = mem[0],zero,zero,zero
-	movss	-20(%rbp), %xmm0                # 4-byte Reload
-                                        # xmm0 = mem[0],zero,zero,zero
-	movss	-8(%rbp), %xmm1                 # xmm1 = mem[0],zero,zero,zero
-	cvtss2sd	%xmm1, %xmm1
-	movswl	params_cpOffset(%rip), %ecx
+	movss	-20(%rbp), %xmm3                # 4-byte Reload
+                                        # xmm3 = mem[0],zero,zero,zero
+	movss	-8(%rbp), %xmm0                 # xmm0 = mem[0],zero,zero,zero
+	cvtss2sd	%xmm0, %xmm1
+	movswl	params_cpOffset, %ecx
 	shll	$15, %ecx
 	movq	params_cpKta.fixp@GOTPCREL(%rip), %rdx
 	movl	(%rdx), %edx
-	movss	.LCPI30_6(%rip), %xmm3          # xmm3 = mem[0],zero,zero,zero
-	addss	%xmm3, %xmm0
-	movss	.LCPI30_7(%rip), %xmm3          # xmm3 = mem[0],zero,zero,zero
+	movss	.LCPI30_1(%rip), %xmm0          # xmm0 = mem[0],zero,zero,zero
 	mulss	%xmm3, %xmm0
-	cvttss2si	%xmm0, %rsi
-                                        # kill: def $esi killed $esi killed $rsi
+	cvttss2si	%xmm0, %esi
+	subl	$1638400, %esi                  # imm = 0x190000
 	movl	%edx, %edx
                                         # kill: def $rdx killed $edx
-	movl	%esi, %esi
-                                        # kill: def $rsi killed $esi
+	movslq	%esi, %rsi
 	imulq	%rsi, %rdx
-	shrq	$24, %rdx
+	shrq	$16, %rdx
                                         # kill: def $edx killed $edx killed $rdx
 	addl	$16777216, %edx                 # imm = 0x1000000
 	movslq	%ecx, %rcx
@@ -5051,14 +4974,14 @@ _Z17MLX90640_GetImagePKtPf:             # @_Z17MLX90640_GetImagePKtPf
 	shrl	$1, %ecx
 	movq	params_cpKv.fixp@GOTPCREL(%rip), %rdx
 	movl	(%rdx), %edx
-	movss	.LCPI30_5(%rip), %xmm0          # xmm0 = mem[0],zero,zero,zero
+	movss	.LCPI30_2(%rip), %xmm0          # xmm0 = mem[0],zero,zero,zero
 	mulss	%xmm2, %xmm0
 	cvttss2si	%xmm0, %esi
-	subl	$54067, %esi                    # imm = 0xD333
+	subl	$108134, %esi                   # imm = 0x1A666
 	movslq	%edx, %rdx
 	movslq	%esi, %rsi
 	imulq	%rsi, %rdx
-	sarq	$14, %rdx
+	sarq	$15, %rdx
                                         # kill: def $edx killed $edx killed $rdx
 	addl	$8388608, %edx                  # imm = 0x800000
 	movslq	%ecx, %rcx
@@ -5081,26 +5004,23 @@ _Z17MLX90640_GetImagePKtPf:             # @_Z17MLX90640_GetImagePKtPf
 # %bb.9:
 	movss	-36(%rbp), %xmm2                # 4-byte Reload
                                         # xmm2 = mem[0],zero,zero,zero
-	movss	-20(%rbp), %xmm0                # 4-byte Reload
-                                        # xmm0 = mem[0],zero,zero,zero
-	movss	-4(%rbp), %xmm1                 # xmm1 = mem[0],zero,zero,zero
-	cvtss2sd	%xmm1, %xmm1
-	movswl	params_cpOffset+2(%rip), %eax
+	movss	-20(%rbp), %xmm3                # 4-byte Reload
+                                        # xmm3 = mem[0],zero,zero,zero
+	movss	-4(%rbp), %xmm0                 # xmm0 = mem[0],zero,zero,zero
+	cvtss2sd	%xmm0, %xmm1
+	movswl	params_cpOffset+2, %eax
 	shll	$15, %eax
 	movq	params_cpKta.fixp@GOTPCREL(%rip), %rcx
 	movl	(%rcx), %ecx
-	movss	.LCPI30_6(%rip), %xmm3          # xmm3 = mem[0],zero,zero,zero
-	addss	%xmm3, %xmm0
-	movss	.LCPI30_7(%rip), %xmm3          # xmm3 = mem[0],zero,zero,zero
+	movss	.LCPI30_1(%rip), %xmm0          # xmm0 = mem[0],zero,zero,zero
 	mulss	%xmm3, %xmm0
-	cvttss2si	%xmm0, %rdx
-                                        # kill: def $edx killed $edx killed $rdx
+	cvttss2si	%xmm0, %edx
+	subl	$1638400, %edx                  # imm = 0x190000
 	movl	%ecx, %ecx
                                         # kill: def $rcx killed $ecx
-	movl	%edx, %edx
-                                        # kill: def $rdx killed $edx
+	movslq	%edx, %rdx
 	imulq	%rdx, %rcx
-	shrq	$24, %rcx
+	shrq	$16, %rcx
                                         # kill: def $ecx killed $ecx killed $rcx
 	addl	$16777216, %ecx                 # imm = 0x1000000
 	cltq
@@ -5112,14 +5032,14 @@ _Z17MLX90640_GetImagePKtPf:             # @_Z17MLX90640_GetImagePKtPf
 	shrl	$1, %eax
 	movq	params_cpKv.fixp@GOTPCREL(%rip), %rcx
 	movl	(%rcx), %ecx
-	movss	.LCPI30_5(%rip), %xmm0          # xmm0 = mem[0],zero,zero,zero
+	movss	.LCPI30_2(%rip), %xmm0          # xmm0 = mem[0],zero,zero,zero
 	mulss	%xmm2, %xmm0
 	cvttss2si	%xmm0, %edx
-	subl	$54067, %edx                    # imm = 0xD333
+	subl	$108134, %edx                   # imm = 0x1A666
 	movslq	%ecx, %rcx
 	movslq	%edx, %rdx
 	imulq	%rdx, %rcx
-	sarq	$14, %rcx
+	sarq	$15, %rcx
                                         # kill: def $ecx killed $ecx killed $rcx
 	addl	$8388608, %ecx                  # imm = 0x800000
 	cltq
@@ -5139,31 +5059,27 @@ _Z17MLX90640_GetImagePKtPf:             # @_Z17MLX90640_GetImagePKtPf
 .LBB30_10:
 	movss	-36(%rbp), %xmm2                # 4-byte Reload
                                         # xmm2 = mem[0],zero,zero,zero
-	movss	-20(%rbp), %xmm0                # 4-byte Reload
-                                        # xmm0 = mem[0],zero,zero,zero
-	movss	-4(%rbp), %xmm1                 # xmm1 = mem[0],zero,zero,zero
-	cvtss2sd	%xmm1, %xmm1
-	movswl	params_cpOffset+2(%rip), %eax
+	movss	-20(%rbp), %xmm3                # 4-byte Reload
+                                        # xmm3 = mem[0],zero,zero,zero
+	movss	-4(%rbp), %xmm0                 # xmm0 = mem[0],zero,zero,zero
+	cvtss2sd	%xmm0, %xmm1
+	movswl	params_cpOffset+2, %eax
 	shll	$15, %eax
-	movss	params_ilChessC(%rip), %xmm3    # xmm3 = mem[0],zero,zero,zero
-	movss	.LCPI30_2(%rip), %xmm4          # xmm4 = mem[0],zero,zero,zero
-	mulss	%xmm4, %xmm3
-	cvttss2si	%xmm3, %ecx
+	movss	.LCPI30_2(%rip), %xmm0          # xmm0 = mem[0],zero,zero,zero
+	mulss	params_ilChessC, %xmm0
+	cvttss2si	%xmm0, %ecx
 	addl	%ecx, %eax
 	movq	params_cpKta.fixp@GOTPCREL(%rip), %rcx
 	movl	(%rcx), %ecx
-	movss	.LCPI30_6(%rip), %xmm3          # xmm3 = mem[0],zero,zero,zero
-	addss	%xmm3, %xmm0
-	movss	.LCPI30_7(%rip), %xmm3          # xmm3 = mem[0],zero,zero,zero
+	movss	.LCPI30_1(%rip), %xmm0          # xmm0 = mem[0],zero,zero,zero
 	mulss	%xmm3, %xmm0
-	cvttss2si	%xmm0, %rdx
-                                        # kill: def $edx killed $edx killed $rdx
+	cvttss2si	%xmm0, %edx
+	subl	$1638400, %edx                  # imm = 0x190000
 	movl	%ecx, %ecx
                                         # kill: def $rcx killed $ecx
-	movl	%edx, %edx
-                                        # kill: def $rdx killed $edx
+	movslq	%edx, %rdx
 	imulq	%rdx, %rcx
-	shrq	$24, %rcx
+	shrq	$16, %rcx
                                         # kill: def $ecx killed $ecx killed $rcx
 	addl	$16777216, %ecx                 # imm = 0x1000000
 	cltq
@@ -5175,14 +5091,14 @@ _Z17MLX90640_GetImagePKtPf:             # @_Z17MLX90640_GetImagePKtPf
 	shrl	$1, %eax
 	movq	params_cpKv.fixp@GOTPCREL(%rip), %rcx
 	movl	(%rcx), %ecx
-	movss	.LCPI30_5(%rip), %xmm0          # xmm0 = mem[0],zero,zero,zero
+	movss	.LCPI30_2(%rip), %xmm0          # xmm0 = mem[0],zero,zero,zero
 	mulss	%xmm2, %xmm0
 	cvttss2si	%xmm0, %edx
-	subl	$54067, %edx                    # imm = 0xD333
+	subl	$108134, %edx                   # imm = 0x1A666
 	movslq	%ecx, %rcx
 	movslq	%edx, %rdx
 	imulq	%rdx, %rcx
-	sarq	$14, %rcx
+	sarq	$15, %rcx
                                         # kill: def $ecx killed $ecx killed $rcx
 	addl	$8388608, %ecx                  # imm = 0x800000
 	cltq
@@ -5328,15 +5244,14 @@ _Z17MLX90640_GetImagePKtPf:             # @_Z17MLX90640_GetImagePKtPf
 	movslq	%esi, %r8
 	movq	params_kta.fixp@GOTPCREL(%rip), %rdi
 	movl	(%rdi,%r8,4), %edi
-	movss	.LCPI30_9(%rip), %xmm0          # xmm0 = mem[0],zero,zero,zero
-	subss	%xmm0, %xmm2
-	movss	.LCPI30_8(%rip), %xmm0          # xmm0 = mem[0],zero,zero,zero
+	movss	.LCPI30_1(%rip), %xmm0          # xmm0 = mem[0],zero,zero,zero
 	mulss	%xmm2, %xmm0
 	cvttss2si	%xmm0, %r8d
+	subl	$1638400, %r8d                  # imm = 0x190000
 	movslq	%edi, %rdi
 	movslq	%r8d, %r8
 	imulq	%r8, %rdi
-	sarq	$13, %rdi
+	sarq	$16, %rdi
                                         # kill: def $edi killed $edi killed $rdi
 	addl	$8192, %edi                     # imm = 0x2000
 	movslq	%edx, %rdx
@@ -5348,14 +5263,14 @@ _Z17MLX90640_GetImagePKtPf:             # @_Z17MLX90640_GetImagePKtPf
 	movslq	%esi, %rdi
 	movq	params_kv.fixp@GOTPCREL(%rip), %rsi
 	movl	(%rsi,%rdi,4), %esi
-	movss	.LCPI30_5(%rip), %xmm0          # xmm0 = mem[0],zero,zero,zero
+	movss	.LCPI30_2(%rip), %xmm0          # xmm0 = mem[0],zero,zero,zero
 	mulss	%xmm1, %xmm0
 	cvttss2si	%xmm0, %edi
-	subl	$54067, %edi                    # imm = 0xD333
+	subl	$108134, %edi                   # imm = 0x1A666
 	movslq	%esi, %rsi
 	movslq	%edi, %rdi
 	imulq	%rdi, %rsi
-	sarq	$14, %rsi
+	sarq	$15, %rsi
                                         # kill: def $esi killed $esi killed $rsi
 	addl	$134217728, %esi                # imm = 0x8000000
 	movslq	%edx, %rdx
@@ -5381,7 +5296,7 @@ _Z17MLX90640_GetImagePKtPf:             # @_Z17MLX90640_GetImagePKtPf
 	subl	$1, %edx
 	cvtsi2ss	%edx, %xmm0
 	mulss	%xmm0, %xmm1
-	movss	.LCPI30_10(%rip), %xmm0         # xmm0 = mem[0],zero,zero,zero
+	movss	.LCPI30_5(%rip), %xmm0          # xmm0 = mem[0],zero,zero,zero
 	mulss	%xmm1, %xmm0
 	cvttss2si	%xmm0, %edx
 	addl	%edx, %eax
@@ -5389,7 +5304,7 @@ _Z17MLX90640_GetImagePKtPf:             # @_Z17MLX90640_GetImagePKtPf
 	movsbl	%cl, %ecx
 	cvtsi2ss	%ecx, %xmm0
 	mulss	%xmm0, %xmm1
-	movss	.LCPI30_10(%rip), %xmm0         # xmm0 = mem[0],zero,zero,zero
+	movss	.LCPI30_5(%rip), %xmm0          # xmm0 = mem[0],zero,zero,zero
 	mulss	%xmm1, %xmm0
 	cvttss2si	%xmm0, %ecx
 	subl	%ecx, %eax
@@ -5404,7 +5319,7 @@ _Z17MLX90640_GetImagePKtPf:             # @_Z17MLX90640_GetImagePKtPf
 	movl	(%rdx), %edx
 	movzwl	%si, %edi
                                         # kill: def $rdi killed $edi
-	movss	.LCPI30_10(%rip), %xmm0         # xmm0 = mem[0],zero,zero,zero
+	movss	.LCPI30_5(%rip), %xmm0          # xmm0 = mem[0],zero,zero,zero
 	mulss	-8(%rbp,%rdi,4), %xmm0
 	cvttss2si	%xmm0, %edi
 	movslq	%edx, %rdx
@@ -5426,21 +5341,20 @@ _Z17MLX90640_GetImagePKtPf:             # @_Z17MLX90640_GetImagePKtPf
 	imulq	%rsi, %rdx
 	sarq	$20, %rdx
 	movl	%edx, %esi
-	movss	.LCPI30_10(%rip), %xmm0         # xmm0 = mem[0],zero,zero,zero
+	movss	.LCPI30_5(%rip), %xmm0          # xmm0 = mem[0],zero,zero,zero
 	mulss	%xmm2, %xmm0
 	cvttss2si	%xmm0, %edx
 	subl	%esi, %edx
 	movq	params_KsTa.fixp@GOTPCREL(%rip), %rsi
 	movl	(%rsi), %esi
-	movss	.LCPI30_9(%rip), %xmm0          # xmm0 = mem[0],zero,zero,zero
-	subss	%xmm0, %xmm1
-	movss	.LCPI30_11(%rip), %xmm0         # xmm0 = mem[0],zero,zero,zero
+	movss	.LCPI30_1(%rip), %xmm0          # xmm0 = mem[0],zero,zero,zero
 	mulss	%xmm1, %xmm0
 	cvttss2si	%xmm0, %edi
+	subl	$1638400, %edi                  # imm = 0x190000
 	movslq	%esi, %rsi
 	movslq	%edi, %rdi
 	imulq	%rdi, %rsi
-	sarq	$30, %rsi
+	sarq	$16, %rsi
                                         # kill: def $esi killed $esi killed $rsi
 	addl	$1073741824, %esi               # imm = 0x40000000
 	movslq	%edx, %rdx
@@ -5457,7 +5371,7 @@ _Z17MLX90640_GetImagePKtPf:             # @_Z17MLX90640_GetImagePKtPf
 	movq	-48(%rbp), %rax                 # 8-byte Reload
                                         # kill: def $edx killed $edx killed $rdx
 	cvtsi2ss	%edx, %xmm0
-	movss	.LCPI30_10(%rip), %xmm1         # xmm1 = mem[0],zero,zero,zero
+	movss	.LCPI30_5(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
 	divss	%xmm1, %xmm0
 	movslq	%ecx, %rcx
 	movss	%xmm0, (%rax,%rcx,4)
@@ -5700,8 +5614,6 @@ _Z5max_fff:                             # @_Z5max_fff
 	.section	.rodata.cst4,"aM",@progbits,4
 	.p2align	2                               # -- Begin function _Z8printPPMP8_IO_FILEPfiiff
 .LCPI38_0:
-	.long	0x4b000000                      # float 8388608
-.LCPI38_1:
 	.long	0x4a000000                      # float 2097152
 	.text
 	.globl	_Z8printPPMP8_IO_FILEPfiiff
@@ -5717,30 +5629,30 @@ _Z8printPPMP8_IO_FILEPfiiff:            # @_Z8printPPMP8_IO_FILEPfiiff
 	.cfi_def_cfa_register %rbp
 	subq	$112, %rsp
 	movaps	%xmm1, %xmm2
+	movaps	%xmm0, %xmm1
 	movq	%rdi, -16(%rbp)                 # 8-byte Spill
 	movq	%rsi, -40(%rbp)                 # 8-byte Spill
 	movl	%edx, -24(%rbp)                 # 4-byte Spill
 	movl	%ecx, -20(%rbp)                 # 4-byte Spill
-	movss	.LCPI38_0(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
-	mulss	%xmm1, %xmm2
-	cvttss2si	%xmm2, %rax
-                                        # kill: def $eax killed $eax killed $rax
+	movss	.LCPI38_0(%rip), %xmm0          # xmm0 = mem[0],zero,zero,zero
+	mulss	%xmm2, %xmm0
+	cvttss2si	%xmm0, %eax
 	movl	%eax, -32(%rbp)                 # 4-byte Spill
+	movss	.LCPI38_0(%rip), %xmm0          # xmm0 = mem[0],zero,zero,zero
 	mulss	%xmm1, %xmm0
-	cvttss2si	%xmm0, %rax
-                                        # kill: def $eax killed $eax killed $rax
+	cvttss2si	%xmm0, %eax
 	movl	%eax, -28(%rbp)                 # 4-byte Spill
-	movabsq	$.L.str.119, %rsi
+	movabsq	$.L.str.115, %rsi
 	movb	$0, %al
 	callq	fprintf
 	movl	-24(%rbp), %edx                 # 4-byte Reload
 	movl	-20(%rbp), %ecx                 # 4-byte Reload
 	movq	-16(%rbp), %rdi                 # 8-byte Reload
-	movabsq	$.L.str.120, %rsi
+	movabsq	$.L.str.116, %rsi
 	movb	$0, %al
 	callq	fprintf
 	movq	-16(%rbp), %rdi                 # 8-byte Reload
-	movabsq	$.L.str.121, %rsi
+	movabsq	$.L.str.117, %rsi
 	movb	$0, %al
 	callq	fprintf
 	xorl	%eax, %eax
@@ -5767,48 +5679,37 @@ _Z8printPPMP8_IO_FILEPfiiff:            # @_Z8printPPMP8_IO_FILEPfiiff
 	movl	-32(%rbp), %ecx                 # 4-byte Reload
 	movl	-28(%rbp), %edx                 # 4-byte Reload
 	movq	-40(%rbp), %rax                 # 8-byte Reload
-	movl	-24(%rbp), %edi                 # 4-byte Reload
-	movl	-44(%rbp), %esi                 # 4-byte Reload
+	movl	-24(%rbp), %r8d                 # 4-byte Reload
+	movl	-44(%rbp), %edi                 # 4-byte Reload
 	movl	-52(%rbp), %r9d                 # 4-byte Reload
-	movl	%edi, %r8d
-	subl	%r9d, %r8d
-	imull	%edi, %esi
-                                        # implicit-def: $rdi
-	movl	%esi, %edi
-                                        # implicit-def: $rsi
 	movl	%r8d, %esi
-	leal	-1(%rsi,%rdi), %esi
+	subl	$1, %esi
+	subl	%r9d, %esi
+	imull	%r8d, %edi
+	addl	%edi, %esi
 	movslq	%esi, %rsi
-	movss	(%rax,%rsi,4), %xmm0            # xmm0 = mem[0],zero,zero,zero
-	movss	.LCPI38_1(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
-	mulss	%xmm1, %xmm0
+	movss	.LCPI38_0(%rip), %xmm0          # xmm0 = mem[0],zero,zero,zero
+	mulss	(%rax,%rsi,4), %xmm0
 	cvttss2si	%xmm0, %eax
-	shll	$2, %eax
 	subl	%edx, %eax
-                                        # kill: def $rax killed $eax
-	shlq	$23, %rax
-	movl	%ecx, %ecx
-                                        # kill: def $rcx killed $ecx
-	xorl	%edx, %edx
-                                        # kill: def $rdx killed $edx
-	divq	%rcx
-                                        # kill: def $eax killed $eax killed $rax
-	movl	%eax, -56(%rbp)                 # 4-byte Spill
-	movl	%eax, %eax
-                                        # kill: def $rax killed $eax
-	subq	$3145728, %rax                  # imm = 0x300000
-	jl	.LBB38_7
-	jmp	.LBB38_5
-.LBB38_5:                               #   in Loop: Header=BB38_3 Depth=2
-	movl	-56(%rbp), %eax                 # 4-byte Reload
-	movl	%eax, %eax
-                                        # kill: def $rax killed $eax
-	subq	$5242879, %rax                  # imm = 0x4FFFFF
+	cltq
+	shlq	$21, %rax
+	movslq	%ecx, %rcx
+	cqto
+	idivq	%rcx
+	movl	%eax, %ecx
+	movl	%ecx, -56(%rbp)                 # 4-byte Spill
+	movl	$786432, %eax                   # imm = 0xC0000
+	cmpl	%ecx, %eax
 	jg	.LBB38_7
-	jmp	.LBB38_6
-.LBB38_6:                               #   in Loop: Header=BB38_3 Depth=2
+# %bb.5:                                #   in Loop: Header=BB38_3 Depth=2
 	movl	-56(%rbp), %eax                 # 4-byte Reload
-	subl	$3145728, %eax                  # imm = 0x300000
+	cmpl	$1310720, %eax                  # imm = 0x140000
+	jge	.LBB38_7
+# %bb.6:                                #   in Loop: Header=BB38_3 Depth=2
+	movl	-56(%rbp), %eax                 # 4-byte Reload
+	shll	$1, %eax
+	subl	$1572864, %eax                  # imm = 0x180000
 	movl	%eax, %eax
                                         # kill: def $rax killed $eax
 	shlq	$2, %rax
@@ -5817,33 +5718,27 @@ _Z8printPPMP8_IO_FILEPfiiff:            # @_Z8printPPMP8_IO_FILEPfiiff
 	movl	%eax, -60(%rbp)                 # 4-byte Spill
 	jmp	.LBB38_15
 .LBB38_7:                               #   in Loop: Header=BB38_3 Depth=2
-	movl	-56(%rbp), %eax                 # 4-byte Reload
-	movl	%eax, %eax
-                                        # kill: def $rax killed $eax
-	subq	$5242880, %rax                  # imm = 0x500000
-	jl	.LBB38_10
-	jmp	.LBB38_8
-.LBB38_8:                               #   in Loop: Header=BB38_3 Depth=2
-	movl	-56(%rbp), %eax                 # 4-byte Reload
-	movl	%eax, %eax
-                                        # kill: def $rax killed $eax
-	subq	$7340031, %rax                  # imm = 0x6FFFFF
+	movl	-56(%rbp), %ecx                 # 4-byte Reload
+	movl	$1310720, %eax                  # imm = 0x140000
+	cmpl	%ecx, %eax
 	jg	.LBB38_10
-	jmp	.LBB38_9
-.LBB38_9:                               #   in Loop: Header=BB38_3 Depth=2
-	movl	$8388608, %eax                  # imm = 0x800000
+# %bb.8:                                #   in Loop: Header=BB38_3 Depth=2
+	movl	-56(%rbp), %eax                 # 4-byte Reload
+	cmpl	$1835008, %eax                  # imm = 0x1C0000
+	jge	.LBB38_10
+# %bb.9:                                #   in Loop: Header=BB38_3 Depth=2
+	movl	$4194304, %eax                  # imm = 0x400000
 	movl	%eax, -64(%rbp)                 # 4-byte Spill
 	jmp	.LBB38_14
 .LBB38_10:                              #   in Loop: Header=BB38_3 Depth=2
-	movl	-56(%rbp), %eax                 # 4-byte Reload
-	movl	%eax, %eax
-                                        # kill: def $rax killed $eax
-	subq	$7340032, %rax                  # imm = 0x700000
-	jl	.LBB38_12
-	jmp	.LBB38_11
-.LBB38_11:                              #   in Loop: Header=BB38_3 Depth=2
 	movl	-56(%rbp), %ecx                 # 4-byte Reload
-	movl	$9437184, %eax                  # imm = 0x900000
+	movl	$1835008, %eax                  # imm = 0x1C0000
+	cmpl	%ecx, %eax
+	jg	.LBB38_12
+# %bb.11:                               #   in Loop: Header=BB38_3 Depth=2
+	movl	-56(%rbp), %ecx                 # 4-byte Reload
+	shll	$1, %ecx
+	movl	$4718592, %eax                  # imm = 0x480000
 	subl	%ecx, %eax
 	movl	%eax, %eax
                                         # kill: def $rax killed $eax
@@ -5863,32 +5758,26 @@ _Z8printPPMP8_IO_FILEPfiiff:            # @_Z8printPPMP8_IO_FILEPfiiff
 	movl	-64(%rbp), %eax                 # 4-byte Reload
 	movl	%eax, -60(%rbp)                 # 4-byte Spill
 .LBB38_15:                              #   in Loop: Header=BB38_3 Depth=2
-	movl	-56(%rbp), %eax                 # 4-byte Reload
-	movl	-60(%rbp), %ecx                 # 4-byte Reload
-	movl	%ecx, %ecx
-	movl	%ecx, %edx
-	movq	%rdx, %rcx
-	shlq	$9, %rcx
-	subq	%rdx, %rcx
-	shrq	$24, %rcx
-                                        # kill: def $ecx killed $ecx killed $rcx
-	andl	$511, %ecx                      # imm = 0x1FF
-	movl	%ecx, -72(%rbp)                 # 4-byte Spill
+	movl	-56(%rbp), %ecx                 # 4-byte Reload
+	movl	-60(%rbp), %eax                 # 4-byte Reload
 	movl	%eax, %eax
                                         # kill: def $rax killed $eax
-	subq	$1048576, %rax                  # imm = 0x100000
-	jl	.LBB38_18
-	jmp	.LBB38_16
-.LBB38_16:                              #   in Loop: Header=BB38_3 Depth=2
-	movl	-56(%rbp), %eax                 # 4-byte Reload
-	movl	%eax, %eax
-                                        # kill: def $rax killed $eax
-	subq	$3145727, %rax                  # imm = 0x2FFFFF
+	imulq	$511, %rax, %rax                # imm = 0x1FF
+	shrq	$1, %rax
+                                        # kill: def $eax killed $eax killed $rax
+	shrl	$22, %eax
+	movl	%eax, -72(%rbp)                 # 4-byte Spill
+	movl	$262144, %eax                   # imm = 0x40000
+	cmpl	%ecx, %eax
 	jg	.LBB38_18
-	jmp	.LBB38_17
-.LBB38_17:                              #   in Loop: Header=BB38_3 Depth=2
+# %bb.16:                               #   in Loop: Header=BB38_3 Depth=2
 	movl	-56(%rbp), %eax                 # 4-byte Reload
-	subl	$1048576, %eax                  # imm = 0x100000
+	cmpl	$786432, %eax                   # imm = 0xC0000
+	jge	.LBB38_18
+# %bb.17:                               #   in Loop: Header=BB38_3 Depth=2
+	movl	-56(%rbp), %eax                 # 4-byte Reload
+	shll	$1, %eax
+	subl	$524288, %eax                   # imm = 0x80000
 	movl	%eax, %eax
                                         # kill: def $rax killed $eax
 	shlq	$2, %rax
@@ -5897,40 +5786,31 @@ _Z8printPPMP8_IO_FILEPfiiff:            # @_Z8printPPMP8_IO_FILEPfiiff
 	movl	%eax, -76(%rbp)                 # 4-byte Spill
 	jmp	.LBB38_27
 .LBB38_18:                              #   in Loop: Header=BB38_3 Depth=2
-	movl	-56(%rbp), %eax                 # 4-byte Reload
-	movl	%eax, %eax
-                                        # kill: def $rax killed $eax
-	subq	$3145728, %rax                  # imm = 0x300000
-	jl	.LBB38_21
-	jmp	.LBB38_19
-.LBB38_19:                              #   in Loop: Header=BB38_3 Depth=2
-	movl	-56(%rbp), %eax                 # 4-byte Reload
-	movl	%eax, %eax
-                                        # kill: def $rax killed $eax
-	subq	$5242879, %rax                  # imm = 0x4FFFFF
+	movl	-56(%rbp), %ecx                 # 4-byte Reload
+	movl	$786432, %eax                   # imm = 0xC0000
+	cmpl	%ecx, %eax
 	jg	.LBB38_21
-	jmp	.LBB38_20
-.LBB38_20:                              #   in Loop: Header=BB38_3 Depth=2
-	movl	$8388608, %eax                  # imm = 0x800000
+# %bb.19:                               #   in Loop: Header=BB38_3 Depth=2
+	movl	-56(%rbp), %eax                 # 4-byte Reload
+	cmpl	$1310720, %eax                  # imm = 0x140000
+	jge	.LBB38_21
+# %bb.20:                               #   in Loop: Header=BB38_3 Depth=2
+	movl	$4194304, %eax                  # imm = 0x400000
 	movl	%eax, -80(%rbp)                 # 4-byte Spill
 	jmp	.LBB38_26
 .LBB38_21:                              #   in Loop: Header=BB38_3 Depth=2
-	movl	-56(%rbp), %eax                 # 4-byte Reload
-	movl	%eax, %eax
-                                        # kill: def $rax killed $eax
-	subq	$5242880, %rax                  # imm = 0x500000
-	jl	.LBB38_24
-	jmp	.LBB38_22
-.LBB38_22:                              #   in Loop: Header=BB38_3 Depth=2
-	movl	-56(%rbp), %eax                 # 4-byte Reload
-	movl	%eax, %eax
-                                        # kill: def $rax killed $eax
-	subq	$7340031, %rax                  # imm = 0x6FFFFF
-	jg	.LBB38_24
-	jmp	.LBB38_23
-.LBB38_23:                              #   in Loop: Header=BB38_3 Depth=2
 	movl	-56(%rbp), %ecx                 # 4-byte Reload
-	movl	$7340032, %eax                  # imm = 0x700000
+	movl	$1310720, %eax                  # imm = 0x140000
+	cmpl	%ecx, %eax
+	jg	.LBB38_24
+# %bb.22:                               #   in Loop: Header=BB38_3 Depth=2
+	movl	-56(%rbp), %eax                 # 4-byte Reload
+	cmpl	$1835008, %eax                  # imm = 0x1C0000
+	jge	.LBB38_24
+# %bb.23:                               #   in Loop: Header=BB38_3 Depth=2
+	movl	-56(%rbp), %ecx                 # 4-byte Reload
+	shll	$1, %ecx
+	movl	$3670016, %eax                  # imm = 0x380000
 	subl	%ecx, %eax
 	movl	%eax, %eax
                                         # kill: def $rax killed $eax
@@ -5953,22 +5833,18 @@ _Z8printPPMP8_IO_FILEPfiiff:            # @_Z8printPPMP8_IO_FILEPfiiff
 	movl	-56(%rbp), %eax                 # 4-byte Reload
 	movl	-76(%rbp), %ecx                 # 4-byte Reload
 	movl	%ecx, %ecx
-	movl	%ecx, %edx
-	movq	%rdx, %rcx
-	shlq	$9, %rcx
-	subq	%rdx, %rcx
-	shrq	$24, %rcx
+                                        # kill: def $rcx killed $ecx
+	imulq	$511, %rcx, %rcx                # imm = 0x1FF
+	shrq	$1, %rcx
                                         # kill: def $ecx killed $ecx killed $rcx
-	andl	$511, %ecx                      # imm = 0x1FF
+	shrl	$22, %ecx
 	movl	%ecx, -88(%rbp)                 # 4-byte Spill
-	movl	%eax, %eax
-                                        # kill: def $rax killed $eax
-	subq	$1048575, %rax                  # imm = 0xFFFFF
-	jg	.LBB38_29
-	jmp	.LBB38_28
-.LBB38_28:                              #   in Loop: Header=BB38_3 Depth=2
+	cmpl	$262144, %eax                   # imm = 0x40000
+	jge	.LBB38_29
+# %bb.28:                               #   in Loop: Header=BB38_3 Depth=2
 	movl	-56(%rbp), %eax                 # 4-byte Reload
-	addl	$1048576, %eax                  # imm = 0x100000
+	shll	$1, %eax
+	addl	$524288, %eax                   # imm = 0x80000
 	movl	%eax, %eax
                                         # kill: def $rax killed $eax
 	shlq	$2, %rax
@@ -5977,40 +5853,31 @@ _Z8printPPMP8_IO_FILEPfiiff:            # @_Z8printPPMP8_IO_FILEPfiiff
 	movl	%eax, -92(%rbp)                 # 4-byte Spill
 	jmp	.LBB38_38
 .LBB38_29:                              #   in Loop: Header=BB38_3 Depth=2
-	movl	-56(%rbp), %eax                 # 4-byte Reload
-	movl	%eax, %eax
-                                        # kill: def $rax killed $eax
-	subq	$1048576, %rax                  # imm = 0x100000
-	jl	.LBB38_32
-	jmp	.LBB38_30
-.LBB38_30:                              #   in Loop: Header=BB38_3 Depth=2
-	movl	-56(%rbp), %eax                 # 4-byte Reload
-	movl	%eax, %eax
-                                        # kill: def $rax killed $eax
-	subq	$3145727, %rax                  # imm = 0x2FFFFF
+	movl	-56(%rbp), %ecx                 # 4-byte Reload
+	movl	$262144, %eax                   # imm = 0x40000
+	cmpl	%ecx, %eax
 	jg	.LBB38_32
-	jmp	.LBB38_31
-.LBB38_31:                              #   in Loop: Header=BB38_3 Depth=2
-	movl	$8388608, %eax                  # imm = 0x800000
+# %bb.30:                               #   in Loop: Header=BB38_3 Depth=2
+	movl	-56(%rbp), %eax                 # 4-byte Reload
+	cmpl	$786432, %eax                   # imm = 0xC0000
+	jge	.LBB38_32
+# %bb.31:                               #   in Loop: Header=BB38_3 Depth=2
+	movl	$4194304, %eax                  # imm = 0x400000
 	movl	%eax, -96(%rbp)                 # 4-byte Spill
 	jmp	.LBB38_37
 .LBB38_32:                              #   in Loop: Header=BB38_3 Depth=2
-	movl	-56(%rbp), %eax                 # 4-byte Reload
-	movl	%eax, %eax
-                                        # kill: def $rax killed $eax
-	subq	$3145728, %rax                  # imm = 0x300000
-	jl	.LBB38_35
-	jmp	.LBB38_33
-.LBB38_33:                              #   in Loop: Header=BB38_3 Depth=2
-	movl	-56(%rbp), %eax                 # 4-byte Reload
-	movl	%eax, %eax
-                                        # kill: def $rax killed $eax
-	subq	$5242879, %rax                  # imm = 0x4FFFFF
-	jg	.LBB38_35
-	jmp	.LBB38_34
-.LBB38_34:                              #   in Loop: Header=BB38_3 Depth=2
 	movl	-56(%rbp), %ecx                 # 4-byte Reload
-	movl	$5242880, %eax                  # imm = 0x500000
+	movl	$786432, %eax                   # imm = 0xC0000
+	cmpl	%ecx, %eax
+	jg	.LBB38_35
+# %bb.33:                               #   in Loop: Header=BB38_3 Depth=2
+	movl	-56(%rbp), %eax                 # 4-byte Reload
+	cmpl	$1310720, %eax                  # imm = 0x140000
+	jge	.LBB38_35
+# %bb.34:                               #   in Loop: Header=BB38_3 Depth=2
+	movl	-56(%rbp), %ecx                 # 4-byte Reload
+	shll	$1, %ecx
+	movl	$2621440, %eax                  # imm = 0x280000
 	subl	%ecx, %eax
 	movl	%eax, %eax
                                         # kill: def $rax killed $eax
@@ -6039,8 +5906,8 @@ _Z8printPPMP8_IO_FILEPfiiff:            # @_Z8printPPMP8_IO_FILEPfiiff
 	imulq	$511, %rax, %rax                # imm = 0x1FF
 	shrq	$1, %rax
 	movl	%eax, %r8d
-	shrl	$23, %r8d
-	movabsq	$.L.str.122, %rsi
+	shrl	$22, %r8d
+	movabsq	$.L.str.118, %rsi
 	movb	$0, %al
 	callq	fprintf
 # %bb.39:                               #   in Loop: Header=BB38_3 Depth=2
@@ -6050,7 +5917,7 @@ _Z8printPPMP8_IO_FILEPfiiff:            # @_Z8printPPMP8_IO_FILEPfiiff
 	jmp	.LBB38_3
 .LBB38_40:                              #   in Loop: Header=BB38_1 Depth=1
 	movq	-16(%rbp), %rdi                 # 8-byte Reload
-	movabsq	$.L.str.123, %rsi
+	movabsq	$.L.str.119, %rsi
 	movb	$0, %al
 	callq	fprintf
 # %bb.41:                               #   in Loop: Header=BB38_1 Depth=1
@@ -6071,6 +5938,10 @@ _Z8printPPMP8_IO_FILEPfiiff:            # @_Z8printPPMP8_IO_FILEPfiiff
 	.p2align	3                               # -- Begin function main
 .LCPI39_0:
 	.quad	0x4140000000000000              # double 2097152
+.LCPI39_4:
+	.quad	0x402e000000000000              # double 15
+.LCPI39_5:
+	.quad	0x4130000000000000              # double 1048576
 	.section	.rodata.cst4,"aM",@progbits,4
 	.p2align	2
 .LCPI39_1:
@@ -6079,7 +5950,7 @@ _Z8printPPMP8_IO_FILEPfiiff:            # @_Z8printPPMP8_IO_FILEPfiiff
 	.long	0x3f733333                      # float 0.949999988
 .LCPI39_3:
 	.long	0x3f800000                      # float 1
-.LCPI39_4:
+.LCPI39_6:
 	.long	0x41700000                      # float 15
 	.text
 	.globl	main
@@ -6103,7 +5974,7 @@ main:                                   # @main
 	movl	%eax, -3076(%rbp)               # 4-byte Spill
 	jmp	.LBB39_9
 .LBB39_2:
-	movabsq	$.L.str.125, %rdi
+	movabsq	$.L.str.121, %rdi
 	movb	$0, %al
 	callq	printf
 	movabsq	$_ZL9subframe1, %rdi
@@ -6114,7 +5985,7 @@ main:                                   # @main
 	mulss	%xmm1, %xmm0
 	cvttss2si	%xmm0, %rax
 	cvtsi2sd	%rax, %xmm0
-	movabsq	$.L.str.127, %rdi
+	movabsq	$.L.str.123, %rdi
 	movb	$1, %al
 	callq	printf
 	movss	-3124(%rbp), %xmm1              # 4-byte Reload
@@ -6130,12 +6001,12 @@ main:                                   # @main
 	mulss	%xmm1, %xmm0
 	cvttss2si	%xmm0, %rax
 	cvtsi2sd	%rax, %xmm0
-	movabsq	$.L.str.129, %rdi
+	movabsq	$.L.str.125, %rdi
 	movb	$1, %al
 	callq	printf
 	movsd	-3120(%rbp), %xmm0              # 8-byte Reload
                                         # xmm0 = mem[0],zero
-	movabsq	$.L.str.130, %rdi
+	movabsq	$.L.str.126, %rdi
 	movb	$1, %al
 	callq	printf
 	movq	-3112(%rbp), %rsi               # 8-byte Reload
@@ -6151,13 +6022,13 @@ main:                                   # @main
 	mulss	%xmm1, %xmm0
 	cvttss2si	%xmm0, %eax
 	subl	$16777216, %eax                 # imm = 0x1000000
-	cvtsi2sd	%eax, %xmm0
-	movsd	.LCPI39_0(%rip), %xmm1          # xmm1 = mem[0],zero
-	divsd	%xmm1, %xmm0
-	movsd	%xmm0, -3096(%rbp)              # 8-byte Spill
 	cvtsi2ss	%eax, %xmm1
 	movss	.LCPI39_1(%rip), %xmm0          # xmm0 = mem[0],zero,zero,zero
 	divss	%xmm0, %xmm1
+	cvtsi2sd	%eax, %xmm0
+	movsd	.LCPI39_0(%rip), %xmm2          # xmm2 = mem[0],zero
+	divsd	%xmm2, %xmm0
+	movsd	%xmm0, -3096(%rbp)              # 8-byte Spill
 	leaq	-3072(%rbp), %rsi
 	movabsq	$_ZL9subframe2, %rdi
 	movss	.LCPI39_2(%rip), %xmm0          # xmm0 = mem[0],zero,zero,zero
@@ -6170,12 +6041,12 @@ main:                                   # @main
 	cvtsi2sd	%eax, %xmm0
 	movsd	.LCPI39_0(%rip), %xmm1          # xmm1 = mem[0],zero
 	divsd	%xmm1, %xmm0
-	movabsq	$.L.str.129, %rdi
+	movabsq	$.L.str.125, %rdi
 	movb	$1, %al
 	callq	printf
 	movsd	-3096(%rbp), %xmm0              # 8-byte Reload
                                         # xmm0 = mem[0],zero
-	movabsq	$.L.str.130, %rdi
+	movabsq	$.L.str.126, %rdi
 	movb	$1, %al
 	callq	printf
 	movl	-3072(%rbp), %edx
@@ -6208,7 +6079,15 @@ main:                                   # @main
 	cltq
 	movl	-3072(%rbp,%rax,4), %esi
 	callq	_Z5max_fff.14_s11_21fixp
+	movl	-3136(%rbp), %esi               # 4-byte Reload
 	movl	%eax, -3140(%rbp)               # 4-byte Spill
+	movslq	%esi, %rax
+	cvtsi2sdl	-3072(%rbp,%rax,4), %xmm0
+	movsd	.LCPI39_0(%rip), %xmm1          # xmm1 = mem[0],zero
+	divsd	%xmm1, %xmm0
+	movabsq	$.L.str.127, %rdi
+	movb	$1, %al
+	callq	printf
 # %bb.5:                                #   in Loop: Header=BB39_3 Depth=1
 	movl	-3144(%rbp), %edx               # 4-byte Reload
 	movl	-3140(%rbp), %ecx               # 4-byte Reload
@@ -6224,11 +6103,46 @@ main:                                   # @main
 	movl	-3128(%rbp), %eax               # 4-byte Reload
 	movl	-3132(%rbp), %edi               # 4-byte Reload
 	subl	%eax, %edi
-	movss	.LCPI39_4(%rip), %xmm0          # xmm0 = mem[0],zero,zero,zero
+	movss	.LCPI39_6(%rip), %xmm0          # xmm0 = mem[0],zero,zero,zero
 	callq	_Z5max_fff.16_s12_20fixp
 	movl	%eax, -3156(%rbp)               # 4-byte Spill
+	cvtsi2sd	%eax, %xmm0
+	movsd	.LCPI39_5(%rip), %xmm1          # xmm1 = mem[0],zero
+	divsd	%xmm1, %xmm0
+	movabsq	$.L.str.129, %rdi
+	movb	$1, %al
+	callq	printf
+	movabsq	$.L.str.130, %rdi
+	movsd	.LCPI39_4(%rip), %xmm0          # xmm0 = mem[0],zero
+	movb	$1, %al
+	callq	printf
+                                        # kill: def $ecx killed $eax
+	movl	-3132(%rbp), %eax               # 4-byte Reload
+	shll	$1, %eax
+	cvtsi2sd	%eax, %xmm0
+	movsd	.LCPI39_0(%rip), %xmm1          # xmm1 = mem[0],zero
+	divsd	%xmm1, %xmm0
+	movabsq	$.L.str.131, %rdi
+	movb	$1, %al
+	callq	printf
+                                        # kill: def $ecx killed $eax
+	movl	-3128(%rbp), %eax               # 4-byte Reload
+	shll	$1, %eax
+	cvtsi2sd	%eax, %xmm0
+	movsd	.LCPI39_0(%rip), %xmm1          # xmm1 = mem[0],zero
+	divsd	%xmm1, %xmm0
 	movabsq	$.L.str.132, %rdi
-	movabsq	$.L.str.133, %rsi
+	movb	$1, %al
+	callq	printf
+	cvtsi2sdl	-440(%rbp), %xmm0
+	movsd	.LCPI39_0(%rip), %xmm1          # xmm1 = mem[0],zero
+	divsd	%xmm1, %xmm0
+	movabsq	$.L.str.127, %rdi
+	movl	$658, %esi                      # imm = 0x292
+	movb	$1, %al
+	callq	printf
+	movabsq	$.L.str.133, %rdi
+	movabsq	$.L.str.134, %rsi
 	callq	fopen
 	movq	%rax, -3152(%rbp)               # 8-byte Spill
 	cmpq	$0, %rax
@@ -6252,7 +6166,7 @@ main:                                   # @main
 	movq	stderr, %rdi
 	sarl	$20, %edx
 	sarl	$20, %ecx
-	movabsq	$.L.str.134, %rsi
+	movabsq	$.L.str.135, %rsi
 	movb	$0, %al
 	callq	fprintf
 	xorl	%eax, %eax
@@ -6349,9 +6263,61 @@ _ZSt3powIdiEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_intege
 	.size	_ZSt3powIdiEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.17, .Lfunc_end41-_ZSt3powIdiEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.17
 	.cfi_endproc
                                         # -- End function
+	.section	.rodata.cst4,"aM",@progbits,4
+	.p2align	2                               # -- Begin function _Z5max_fff.16_s12_20fixp
+.LCPI42_0:
+	.long	0x49800000                      # float 1048576
+.LCPI42_1:
+	.long	0x4d800000                      # float 268435456
+	.text
+	.p2align	4, 0x90
+	.type	_Z5max_fff.16_s12_20fixp,@function
+_Z5max_fff.16_s12_20fixp:               # @_Z5max_fff.16_s12_20fixp
+	.cfi_startproc
+# %bb.0:
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset %rbp, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register %rbp
+	movss	%xmm0, -8(%rbp)                 # 4-byte Spill
+	cvtsi2ss	%edi, %xmm1
+	movss	.LCPI42_0(%rip), %xmm2          # xmm2 = mem[0],zero,zero,zero
+	divss	%xmm2, %xmm1
+	movss	%xmm1, -4(%rbp)                 # 4-byte Spill
+	movss	.LCPI42_1(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
+	mulss	%xmm1, %xmm0
+	cvttss2si	%xmm0, %rax
+                                        # kill: def $eax killed $eax killed $rax
+	shrl	$8, %eax
+	cmpl	%edi, %eax
+	jle	.LBB42_2
+# %bb.1:
+	movss	-8(%rbp), %xmm0                 # 4-byte Reload
+                                        # xmm0 = mem[0],zero,zero,zero
+	movss	%xmm0, -12(%rbp)                # 4-byte Spill
+	jmp	.LBB42_3
+.LBB42_2:
+	movss	-4(%rbp), %xmm0                 # 4-byte Reload
+                                        # xmm0 = mem[0],zero,zero,zero
+	movss	%xmm0, -12(%rbp)                # 4-byte Spill
+	jmp	.LBB42_3
+.LBB42_3:
+	movss	-12(%rbp), %xmm1                # 4-byte Reload
+                                        # xmm1 = mem[0],zero,zero,zero
+	movss	.LCPI42_0(%rip), %xmm0          # xmm0 = mem[0],zero,zero,zero
+	mulss	%xmm1, %xmm0
+	cvttss2si	%xmm0, %eax
+	popq	%rbp
+	.cfi_def_cfa %rsp, 8
+	retq
+.Lfunc_end42:
+	.size	_Z5max_fff.16_s12_20fixp, .Lfunc_end42-_Z5max_fff.16_s12_20fixp
+	.cfi_endproc
+                                        # -- End function
 	.section	.rodata.cst8,"aM",@progbits,8
 	.p2align	3                               # -- Begin function _ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.7_u0_0fixp
-.LCPI42_0:
+.LCPI43_0:
 	.quad	0x41d0000000000000              # double 1073741824
 	.text
 	.p2align	4, 0x90
@@ -6368,26 +6334,19 @@ _ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_intege
 	shll	$30, %edi
 	movl	%edi, %eax
 	cvtsi2sd	%rax, %xmm0
-	movsd	.LCPI42_0(%rip), %xmm2          # xmm2 = mem[0],zero
+	movsd	.LCPI43_0(%rip), %xmm2          # xmm2 = mem[0],zero
 	divsd	%xmm2, %xmm0
 	callq	pow
 	popq	%rbp
 	.cfi_def_cfa %rsp, 8
 	retq
-.Lfunc_end42:
-	.size	_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.7_u0_0fixp, .Lfunc_end42-_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.7_u0_0fixp
+.Lfunc_end43:
+	.size	_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.7_u0_0fixp, .Lfunc_end43-_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.7_u0_0fixp
 	.cfi_endproc
                                         # -- End function
-	.section	.rodata.cst4,"aM",@progbits,4
-	.p2align	2                               # -- Begin function _Z5max_fff.16_s12_20fixp
-.LCPI43_0:
-	.long	0x49800000                      # float 1048576
-.LCPI43_1:
-	.long	0x4d800000                      # float 268435456
-	.text
-	.p2align	4, 0x90
-	.type	_Z5max_fff.16_s12_20fixp,@function
-_Z5max_fff.16_s12_20fixp:               # @_Z5max_fff.16_s12_20fixp
+	.p2align	4, 0x90                         # -- Begin function _Z8printPPMP8_IO_FILEPfiiff.6_fixp
+	.type	_Z8printPPMP8_IO_FILEPfiiff.6_fixp,@function
+_Z8printPPMP8_IO_FILEPfiiff.6_fixp:     # @_Z8printPPMP8_IO_FILEPfiiff.6_fixp
 	.cfi_startproc
 # %bb.0:
 	pushq	%rbp
@@ -6395,107 +6354,385 @@ _Z5max_fff.16_s12_20fixp:               # @_Z5max_fff.16_s12_20fixp
 	.cfi_offset %rbp, -16
 	movq	%rsp, %rbp
 	.cfi_def_cfa_register %rbp
-	movss	%xmm0, -8(%rbp)                 # 4-byte Spill
-	cvtsi2ss	%edi, %xmm1
-	movss	.LCPI43_0(%rip), %xmm2          # xmm2 = mem[0],zero,zero,zero
-	divss	%xmm2, %xmm1
-	movss	%xmm1, -4(%rbp)                 # 4-byte Spill
-	movss	.LCPI43_1(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
-	mulss	%xmm1, %xmm0
-	cvttss2si	%xmm0, %rax
+	subq	$112, %rsp
+	movq	%rdi, -16(%rbp)                 # 8-byte Spill
+	movq	%rsi, -40(%rbp)                 # 8-byte Spill
+	movl	%edx, -24(%rbp)                 # 4-byte Spill
+	movl	%ecx, -20(%rbp)                 # 4-byte Spill
+	movl	%r8d, -32(%rbp)                 # 4-byte Spill
+	movl	%r9d, -28(%rbp)                 # 4-byte Spill
+	movabsq	$.L.str.115, %rsi
+	movb	$0, %al
+	callq	fprintf
+	movl	-24(%rbp), %edx                 # 4-byte Reload
+	movl	-20(%rbp), %ecx                 # 4-byte Reload
+	movq	-16(%rbp), %rdi                 # 8-byte Reload
+	movabsq	$.L.str.116, %rsi
+	movb	$0, %al
+	callq	fprintf
+	movq	-16(%rbp), %rdi                 # 8-byte Reload
+	movabsq	$.L.str.117, %rsi
+	movb	$0, %al
+	callq	fprintf
+	xorl	%eax, %eax
+	movl	%eax, -4(%rbp)                  # 4-byte Spill
+.LBB44_1:                               # =>This Loop Header: Depth=1
+                                        #     Child Loop BB44_3 Depth 2
+	movl	-20(%rbp), %ecx                 # 4-byte Reload
+	movl	-4(%rbp), %eax                  # 4-byte Reload
+	movl	%eax, -44(%rbp)                 # 4-byte Spill
+	cmpl	%ecx, %eax
+	jge	.LBB44_42
+# %bb.2:                                #   in Loop: Header=BB44_1 Depth=1
+	xorl	%eax, %eax
+	movl	%eax, -48(%rbp)                 # 4-byte Spill
+	jmp	.LBB44_3
+.LBB44_3:                               #   Parent Loop BB44_1 Depth=1
+                                        # =>  This Inner Loop Header: Depth=2
+	movl	-24(%rbp), %ecx                 # 4-byte Reload
+	movl	-48(%rbp), %eax                 # 4-byte Reload
+	movl	%eax, -52(%rbp)                 # 4-byte Spill
+	cmpl	%ecx, %eax
+	jge	.LBB44_40
+# %bb.4:                                #   in Loop: Header=BB44_3 Depth=2
+	movl	-28(%rbp), %ecx                 # 4-byte Reload
+	movl	-32(%rbp), %edx                 # 4-byte Reload
+	movq	-40(%rbp), %rax                 # 8-byte Reload
+	movl	-24(%rbp), %r8d                 # 4-byte Reload
+	movl	-44(%rbp), %edi                 # 4-byte Reload
+	movl	-52(%rbp), %r9d                 # 4-byte Reload
+	movl	%r8d, %esi
+	subl	$1, %esi
+	subl	%r9d, %esi
+	imull	%r8d, %edi
+	addl	%edi, %esi
+	movslq	%esi, %rsi
+	movl	(%rax,%rsi,4), %eax
+	shll	$1, %edx
+	subl	%edx, %eax
+	cltq
+	shlq	$20, %rax
+	movslq	%ecx, %rcx
+	cqto
+	idivq	%rcx
+	movl	%eax, %ecx
+	movl	%ecx, -56(%rbp)                 # 4-byte Spill
+	movl	$786432, %eax                   # imm = 0xC0000
+	cmpl	%ecx, %eax
+	jg	.LBB44_7
+# %bb.5:                                #   in Loop: Header=BB44_3 Depth=2
+	movl	-56(%rbp), %eax                 # 4-byte Reload
+	cmpl	$1310720, %eax                  # imm = 0x140000
+	jge	.LBB44_7
+# %bb.6:                                #   in Loop: Header=BB44_3 Depth=2
+	movl	-56(%rbp), %eax                 # 4-byte Reload
+	sarl	$1, %eax
+	subl	$393216, %eax                   # imm = 0x60000
+	movl	%eax, %eax
+                                        # kill: def $rax killed $eax
+	shlq	$2, %rax
+	movl	$1, %ecx
+	cqto
+	idivq	%rcx
+	sarq	$1, %rax
                                         # kill: def $eax killed $eax killed $rax
-	shrl	$8, %eax
-	cmpl	%edi, %eax
-	jle	.LBB43_2
-# %bb.1:
-	movss	-8(%rbp), %xmm0                 # 4-byte Reload
-                                        # xmm0 = mem[0],zero,zero,zero
-	movss	%xmm0, -12(%rbp)                # 4-byte Spill
-	jmp	.LBB43_3
-.LBB43_2:
-	movss	-4(%rbp), %xmm0                 # 4-byte Reload
-                                        # xmm0 = mem[0],zero,zero,zero
-	movss	%xmm0, -12(%rbp)                # 4-byte Spill
-	jmp	.LBB43_3
-.LBB43_3:
-	movss	-12(%rbp), %xmm1                # 4-byte Reload
-                                        # xmm1 = mem[0],zero,zero,zero
-	movss	.LCPI43_0(%rip), %xmm0          # xmm0 = mem[0],zero,zero,zero
-	mulss	%xmm1, %xmm0
-	cvttss2si	%xmm0, %eax
+	movl	%eax, -60(%rbp)                 # 4-byte Spill
+	jmp	.LBB44_15
+.LBB44_7:                               #   in Loop: Header=BB44_3 Depth=2
+	movl	-56(%rbp), %ecx                 # 4-byte Reload
+	movl	$1310720, %eax                  # imm = 0x140000
+	cmpl	%ecx, %eax
+	jg	.LBB44_10
+# %bb.8:                                #   in Loop: Header=BB44_3 Depth=2
+	movl	-56(%rbp), %eax                 # 4-byte Reload
+	cmpl	$1835008, %eax                  # imm = 0x1C0000
+	jge	.LBB44_10
+# %bb.9:                                #   in Loop: Header=BB44_3 Depth=2
+	movl	$524288, %eax                   # imm = 0x80000
+	movl	%eax, -64(%rbp)                 # 4-byte Spill
+	jmp	.LBB44_14
+.LBB44_10:                              #   in Loop: Header=BB44_3 Depth=2
+	movl	-56(%rbp), %ecx                 # 4-byte Reload
+	movl	$1835008, %eax                  # imm = 0x1C0000
+	cmpl	%ecx, %eax
+	jg	.LBB44_12
+# %bb.11:                               #   in Loop: Header=BB44_3 Depth=2
+	movl	-56(%rbp), %ecx                 # 4-byte Reload
+	sarl	$2, %ecx
+	movl	$589824, %eax                   # imm = 0x90000
+	subl	%ecx, %eax
+	cltq
+	shlq	$2, %rax
+	movl	$1, %ecx
+	cqto
+	idivq	%rcx
+                                        # kill: def $eax killed $eax killed $rax
+	movl	%eax, -68(%rbp)                 # 4-byte Spill
+	jmp	.LBB44_13
+.LBB44_12:                              #   in Loop: Header=BB44_3 Depth=2
+	xorl	%eax, %eax
+	movl	%eax, -68(%rbp)                 # 4-byte Spill
+	jmp	.LBB44_13
+.LBB44_13:                              #   in Loop: Header=BB44_3 Depth=2
+	movl	-68(%rbp), %eax                 # 4-byte Reload
+	movl	%eax, -64(%rbp)                 # 4-byte Spill
+.LBB44_14:                              #   in Loop: Header=BB44_3 Depth=2
+	movl	-64(%rbp), %eax                 # 4-byte Reload
+	movl	%eax, -60(%rbp)                 # 4-byte Spill
+.LBB44_15:                              #   in Loop: Header=BB44_3 Depth=2
+	movl	-56(%rbp), %ecx                 # 4-byte Reload
+	movl	-60(%rbp), %eax                 # 4-byte Reload
+	cltq
+	imulq	$511, %rax, %rax                # imm = 0x1FF
+	sarq	$9, %rax
+                                        # kill: def $eax killed $eax killed $rax
+	sarl	$11, %eax
+	movl	%eax, -72(%rbp)                 # 4-byte Spill
+	movl	$262144, %eax                   # imm = 0x40000
+	cmpl	%ecx, %eax
+	jg	.LBB44_18
+# %bb.16:                               #   in Loop: Header=BB44_3 Depth=2
+	movl	-56(%rbp), %eax                 # 4-byte Reload
+	cmpl	$786432, %eax                   # imm = 0xC0000
+	jge	.LBB44_18
+# %bb.17:                               #   in Loop: Header=BB44_3 Depth=2
+	movl	-56(%rbp), %eax                 # 4-byte Reload
+	sarl	$1, %eax
+	subl	$131072, %eax                   # imm = 0x20000
+	movl	%eax, %eax
+                                        # kill: def $rax killed $eax
+	shlq	$2, %rax
+	movl	$1, %ecx
+	cqto
+	idivq	%rcx
+	sarq	$1, %rax
+                                        # kill: def $eax killed $eax killed $rax
+	movl	%eax, -76(%rbp)                 # 4-byte Spill
+	jmp	.LBB44_27
+.LBB44_18:                              #   in Loop: Header=BB44_3 Depth=2
+	movl	-56(%rbp), %ecx                 # 4-byte Reload
+	movl	$786432, %eax                   # imm = 0xC0000
+	cmpl	%ecx, %eax
+	jg	.LBB44_21
+# %bb.19:                               #   in Loop: Header=BB44_3 Depth=2
+	movl	-56(%rbp), %eax                 # 4-byte Reload
+	cmpl	$1310720, %eax                  # imm = 0x140000
+	jge	.LBB44_21
+# %bb.20:                               #   in Loop: Header=BB44_3 Depth=2
+	movl	$524288, %eax                   # imm = 0x80000
+	movl	%eax, -80(%rbp)                 # 4-byte Spill
+	jmp	.LBB44_26
+.LBB44_21:                              #   in Loop: Header=BB44_3 Depth=2
+	movl	-56(%rbp), %ecx                 # 4-byte Reload
+	movl	$1310720, %eax                  # imm = 0x140000
+	cmpl	%ecx, %eax
+	jg	.LBB44_24
+# %bb.22:                               #   in Loop: Header=BB44_3 Depth=2
+	movl	-56(%rbp), %eax                 # 4-byte Reload
+	cmpl	$1835008, %eax                  # imm = 0x1C0000
+	jge	.LBB44_24
+# %bb.23:                               #   in Loop: Header=BB44_3 Depth=2
+	movl	-56(%rbp), %ecx                 # 4-byte Reload
+	sarl	$2, %ecx
+	movl	$458752, %eax                   # imm = 0x70000
+	subl	%ecx, %eax
+	cltq
+	shlq	$2, %rax
+	movl	$1, %ecx
+	cqto
+	idivq	%rcx
+                                        # kill: def $eax killed $eax killed $rax
+	movl	%eax, -84(%rbp)                 # 4-byte Spill
+	jmp	.LBB44_25
+.LBB44_24:                              #   in Loop: Header=BB44_3 Depth=2
+	xorl	%eax, %eax
+	movl	%eax, -84(%rbp)                 # 4-byte Spill
+	jmp	.LBB44_25
+.LBB44_25:                              #   in Loop: Header=BB44_3 Depth=2
+	movl	-84(%rbp), %eax                 # 4-byte Reload
+	movl	%eax, -80(%rbp)                 # 4-byte Spill
+.LBB44_26:                              #   in Loop: Header=BB44_3 Depth=2
+	movl	-80(%rbp), %eax                 # 4-byte Reload
+	movl	%eax, -76(%rbp)                 # 4-byte Spill
+.LBB44_27:                              #   in Loop: Header=BB44_3 Depth=2
+	movl	-56(%rbp), %eax                 # 4-byte Reload
+	movl	-76(%rbp), %ecx                 # 4-byte Reload
+	movslq	%ecx, %rcx
+	imulq	$511, %rcx, %rcx                # imm = 0x1FF
+	sarq	$9, %rcx
+                                        # kill: def $ecx killed $ecx killed $rcx
+	sarl	$11, %ecx
+	movl	%ecx, -88(%rbp)                 # 4-byte Spill
+	cmpl	$262144, %eax                   # imm = 0x40000
+	jge	.LBB44_29
+# %bb.28:                               #   in Loop: Header=BB44_3 Depth=2
+	movl	-56(%rbp), %eax                 # 4-byte Reload
+	sarl	$1, %eax
+	addl	$131072, %eax                   # imm = 0x20000
+	movl	%eax, %eax
+                                        # kill: def $rax killed $eax
+	shlq	$2, %rax
+	movl	$1, %ecx
+	cqto
+	idivq	%rcx
+	sarq	$1, %rax
+                                        # kill: def $eax killed $eax killed $rax
+	movl	%eax, -92(%rbp)                 # 4-byte Spill
+	jmp	.LBB44_38
+.LBB44_29:                              #   in Loop: Header=BB44_3 Depth=2
+	movl	-56(%rbp), %ecx                 # 4-byte Reload
+	movl	$262144, %eax                   # imm = 0x40000
+	cmpl	%ecx, %eax
+	jg	.LBB44_32
+# %bb.30:                               #   in Loop: Header=BB44_3 Depth=2
+	movl	-56(%rbp), %eax                 # 4-byte Reload
+	cmpl	$786432, %eax                   # imm = 0xC0000
+	jge	.LBB44_32
+# %bb.31:                               #   in Loop: Header=BB44_3 Depth=2
+	movl	$524288, %eax                   # imm = 0x80000
+	movl	%eax, -96(%rbp)                 # 4-byte Spill
+	jmp	.LBB44_37
+.LBB44_32:                              #   in Loop: Header=BB44_3 Depth=2
+	movl	-56(%rbp), %ecx                 # 4-byte Reload
+	movl	$786432, %eax                   # imm = 0xC0000
+	cmpl	%ecx, %eax
+	jg	.LBB44_35
+# %bb.33:                               #   in Loop: Header=BB44_3 Depth=2
+	movl	-56(%rbp), %eax                 # 4-byte Reload
+	cmpl	$1310720, %eax                  # imm = 0x140000
+	jge	.LBB44_35
+# %bb.34:                               #   in Loop: Header=BB44_3 Depth=2
+	movl	-56(%rbp), %ecx                 # 4-byte Reload
+	sarl	$2, %ecx
+	movl	$327680, %eax                   # imm = 0x50000
+	subl	%ecx, %eax
+	cltq
+	shlq	$2, %rax
+	movl	$1, %ecx
+	cqto
+	idivq	%rcx
+                                        # kill: def $eax killed $eax killed $rax
+	movl	%eax, -100(%rbp)                # 4-byte Spill
+	jmp	.LBB44_36
+.LBB44_35:                              #   in Loop: Header=BB44_3 Depth=2
+	xorl	%eax, %eax
+	movl	%eax, -100(%rbp)                # 4-byte Spill
+	jmp	.LBB44_36
+.LBB44_36:                              #   in Loop: Header=BB44_3 Depth=2
+	movl	-100(%rbp), %eax                # 4-byte Reload
+	movl	%eax, -96(%rbp)                 # 4-byte Spill
+.LBB44_37:                              #   in Loop: Header=BB44_3 Depth=2
+	movl	-96(%rbp), %eax                 # 4-byte Reload
+	movl	%eax, -92(%rbp)                 # 4-byte Spill
+.LBB44_38:                              #   in Loop: Header=BB44_3 Depth=2
+	movl	-88(%rbp), %ecx                 # 4-byte Reload
+	movl	-72(%rbp), %edx                 # 4-byte Reload
+	movq	-16(%rbp), %rdi                 # 8-byte Reload
+	movl	-92(%rbp), %eax                 # 4-byte Reload
+	cltq
+	imulq	$511, %rax, %rax                # imm = 0x1FF
+	sarq	$9, %rax
+	movl	%eax, %r8d
+	sarl	$11, %r8d
+	movabsq	$.L.str.118, %rsi
+	movb	$0, %al
+	callq	fprintf
+# %bb.39:                               #   in Loop: Header=BB44_3 Depth=2
+	movl	-52(%rbp), %eax                 # 4-byte Reload
+	addl	$1, %eax
+	movl	%eax, -48(%rbp)                 # 4-byte Spill
+	jmp	.LBB44_3
+.LBB44_40:                              #   in Loop: Header=BB44_1 Depth=1
+	movq	-16(%rbp), %rdi                 # 8-byte Reload
+	movabsq	$.L.str.119, %rsi
+	movb	$0, %al
+	callq	fprintf
+# %bb.41:                               #   in Loop: Header=BB44_1 Depth=1
+	movl	-44(%rbp), %eax                 # 4-byte Reload
+	addl	$1, %eax
+	movl	%eax, -4(%rbp)                  # 4-byte Spill
+	jmp	.LBB44_1
+.LBB44_42:
+	addq	$112, %rsp
 	popq	%rbp
 	.cfi_def_cfa %rsp, 8
 	retq
-.Lfunc_end43:
-	.size	_Z5max_fff.16_s12_20fixp, .Lfunc_end43-_Z5max_fff.16_s12_20fixp
+.Lfunc_end44:
+	.size	_Z8printPPMP8_IO_FILEPfiiff.6_fixp, .Lfunc_end44-_Z8printPPMP8_IO_FILEPfiiff.6_fixp
 	.cfi_endproc
                                         # -- End function
 	.section	.rodata.cst4,"aM",@progbits,4
 	.p2align	2                               # -- Begin function _Z20MLX90640_CalculateToPKtffPf.4_fixp
-.LCPI44_0:
+.LCPI45_0:
 	.long	0x46800000                      # float 16384
-.LCPI44_1:
+.LCPI45_1:
 	.long	0x5f000000                      # float 9.22337203E+18
-.LCPI44_2:
+.LCPI45_2:
 	.long	0x4f000000                      # float 2.14748365E+9
-.LCPI44_4:
+.LCPI45_4:
 	.long	0x47800000                      # float 65536
-.LCPI44_6:
+.LCPI45_6:
 	.long	0x47000000                      # float 32768
-.LCPI44_9:
-	.long	0x4c800000                      # float 67108864
-.LCPI44_10:
-	.long	0x49800000                      # float 1048576
-.LCPI44_12:
-	.long	0x56800000                      # float 7.03687441E+13
-.LCPI44_13:
-	.long	0x4b000000                      # float 8388608
-.LCPI44_14:
-	.long	0x42000000                      # float 32
-.LCPI44_17:
-	.long	0x45800000                      # float 4096
-.LCPI44_18:
+.LCPI45_10:
+	.long	0x4e000000                      # float 536870912
+.LCPI45_11:
+	.long	0x42200000                      # float 40
+.LCPI45_12:
 	.long	0x3f800000                      # float 1
-.LCPI44_20:
+.LCPI45_13:
+	.long	0x44000000                      # float 512
+.LCPI45_14:
+	.long	0x51800000                      # float 6.87194767E+10
+.LCPI45_16:
+	.long	0x56800000                      # float 7.03687441E+13
+.LCPI45_17:
+	.long	0x4b000000                      # float 8388608
+.LCPI45_18:
+	.long	0x42000000                      # float 32
+.LCPI45_20:
+	.long	0x45800000                      # float 4096
+.LCPI45_22:
 	.long	0x55800000                      # float 1.7592186E+13
-.LCPI44_22:
+.LCPI45_23:
 	.long	0x48000000                      # float 131072
-.LCPI44_24:
+.LCPI45_26:
 	.long	0x57000000                      # float 1.40737488E+14
-.LCPI44_28:
+.LCPI45_28:
+	.long	0x49800000                      # float 1048576
+.LCPI45_29:
 	.long	0x4e800000                      # float 1.07374182E+9
 	.section	.rodata.cst8,"aM",@progbits,8
 	.p2align	3
-.LCPI44_3:
+.LCPI45_3:
 	.quad	0x41e0000000000000              # double 2147483648
-.LCPI44_5:
+.LCPI45_5:
 	.quad	0x40f0000000000000              # double 65536
-.LCPI44_7:
-	.quad	0x4190000000000000              # double 67108864
-.LCPI44_8:
-	.quad	0x4071126666666666              # double 273.14999999999998
-.LCPI44_11:
-	.quad	0x4140000000000000              # double 2097152
-.LCPI44_15:
-	.quad	0x41d0000000000000              # double 1073741824
-.LCPI44_16:
+.LCPI45_7:
 	.quad	0x40e0000000000000              # double 32768
-.LCPI44_19:
+.LCPI45_8:
+	.quad	0x41c0000000000000              # double 536870912
+.LCPI45_9:
+	.quad	0x4071126666666666              # double 273.14999999999998
+.LCPI45_15:
+	.quad	0x4140000000000000              # double 2097152
+.LCPI45_19:
+	.quad	0x41d0000000000000              # double 1073741824
+.LCPI45_21:
 	.quad	0x40b0000000000000              # double 4096
-.LCPI44_21:
+.LCPI45_24:
 	.quad	0x41a0000000000000              # double 134217728
-.LCPI44_23:
+.LCPI45_25:
 	.quad	0x4130000000000000              # double 1048576
-.LCPI44_25:
+.LCPI45_27:
 	.quad	0x41f0000000000000              # double 4294967296
 	.section	.rodata.cst16,"aM",@progbits,16
 	.p2align	4
-.LCPI44_26:
+.LCPI45_30:
 	.long	1127219200                      # 0x43300000
 	.long	1160773632                      # 0x45300000
 	.long	0                               # 0x0
 	.long	0                               # 0x0
-.LCPI44_27:
+.LCPI45_31:
 	.quad	0x4330000000000000              # double 4503599627370496
 	.quad	0x4530000000000000              # double 1.9342813113834067E+25
 	.text
@@ -6509,11 +6746,11 @@ _Z20MLX90640_CalculateToPKtffPf.4_fixp: # @_Z20MLX90640_CalculateToPKtffPf.4_fix
 	.cfi_offset %rbp, -16
 	movq	%rsp, %rbp
 	.cfi_def_cfa_register %rbp
-	subq	$720, %rsp                      # imm = 0x2D0
+	subq	$656, %rsp                      # imm = 0x290
 	movq	%rdi, -64(%rbp)                 # 8-byte Spill
-	movss	%xmm1, -200(%rbp)               # 4-byte Spill
-	movq	%rsi, -224(%rbp)                # 8-byte Spill
-	movss	.LCPI44_1(%rip), %xmm2          # xmm2 = mem[0],zero,zero,zero
+	movss	%xmm1, -208(%rbp)               # 4-byte Spill
+	movq	%rsi, -232(%rbp)                # 8-byte Spill
+	movss	.LCPI45_1(%rip), %xmm2          # xmm2 = mem[0],zero,zero,zero
 	movaps	%xmm0, %xmm1
 	mulss	%xmm2, %xmm1
 	movaps	%xmm1, %xmm3
@@ -6525,36 +6762,36 @@ _Z20MLX90640_CalculateToPKtffPf.4_fixp: # @_Z20MLX90640_CalculateToPKtffPf.4_fix
 	ucomiss	%xmm2, %xmm1
 	cmovbq	%rcx, %rax
 	movq	%rax, -144(%rbp)                # 8-byte Spill
-	movss	.LCPI44_2(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
+	movss	.LCPI45_2(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
 	mulss	%xmm1, %xmm0
 	cvttss2si	%xmm0, %rax
                                         # kill: def $eax killed $eax killed $rax
 	movl	%eax, %eax
                                         # kill: def $rax killed $eax
 	cvtsi2sd	%rax, %xmm0
-	movsd	.LCPI44_3(%rip), %xmm1          # xmm1 = mem[0],zero
+	movsd	.LCPI45_3(%rip), %xmm1          # xmm1 = mem[0],zero
 	divsd	%xmm1, %xmm0
 	movsd	%xmm0, -136(%rbp)               # 8-byte Spill
 	movw	1666(%rdi), %ax
-	movw	%ax, -210(%rbp)                 # 2-byte Spill
+	movw	%ax, -218(%rbp)                 # 2-byte Spill
 	callq	_Z15MLX90640_GetVddPKt
 	movq	-64(%rbp), %rdi                 # 8-byte Reload
-	movss	%xmm0, -208(%rbp)               # 4-byte Spill
+	movss	%xmm0, -216(%rbp)               # 4-byte Spill
 	callq	_Z14MLX90640_GetTaPKt
-	movss	%xmm0, -196(%rbp)               # 4-byte Spill
+	movss	%xmm0, -204(%rbp)               # 4-byte Spill
 	movaps	%xmm0, %xmm1
-	movss	%xmm1, -204(%rbp)               # 4-byte Spill
-	movss	.LCPI44_4(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
+	movss	%xmm1, -212(%rbp)               # 4-byte Spill
+	movss	.LCPI45_4(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
 	mulss	%xmm1, %xmm0
 	cvttps2dq	%xmm0, %xmm0
 	cvtdq2pd	%xmm0, %xmm0
-	movsd	.LCPI44_5(%rip), %xmm1          # xmm1 = mem[0],zero
+	movsd	.LCPI45_5(%rip), %xmm1          # xmm1 = mem[0],zero
 	divsd	%xmm1, %xmm0
 	movl	$.L.str.22, %edi
 	movb	$1, %al
 	movb	%al, -97(%rbp)                  # 1-byte Spill
 	callq	printf
-	movss	-200(%rbp), %xmm1               # 4-byte Reload
+	movss	-208(%rbp), %xmm1               # 4-byte Reload
                                         # xmm1 = mem[0],zero,zero,zero
                                         # kill: def $ecx killed $eax
 	movb	-97(%rbp), %al                  # 1-byte Reload
@@ -6562,46 +6799,62 @@ _Z20MLX90640_CalculateToPKtffPf.4_fixp: # @_Z20MLX90640_CalculateToPKtffPf.4_fix
 	movsd	%xmm0, -176(%rbp)               # 8-byte Spill
 	movl	$.L.str.23, %edi
 	callq	printf
-	movss	-196(%rbp), %xmm0               # 4-byte Reload
+	movss	-204(%rbp), %xmm0               # 4-byte Reload
                                         # xmm0 = mem[0],zero,zero,zero
                                         # kill: def $ecx killed $eax
 	movb	-97(%rbp), %al                  # 1-byte Reload
-	movss	.LCPI44_6(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
+	movss	.LCPI45_6(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
+	movss	%xmm1, -68(%rbp)                # 4-byte Spill
 	mulss	%xmm1, %xmm0
 	cvttss2si	%xmm0, %ecx
 	addl	$8950579, %ecx                  # imm = 0x889333
-	movslq	%ecx, %rcx
-	movq	%rcx, -192(%rbp)                # 8-byte Spill
-	shlq	$11, %rcx
-	cvtsi2sd	%rcx, %xmm0
-	movsd	.LCPI44_7(%rip), %xmm1          # xmm1 = mem[0],zero
-	movsd	%xmm1, -112(%rbp)               # 8-byte Spill
+	movl	%ecx, -200(%rbp)                # 4-byte Spill
+	cvtsi2sd	%ecx, %xmm0
+	movsd	.LCPI45_7(%rip), %xmm1          # xmm1 = mem[0],zero
 	divsd	%xmm1, %xmm0
 	movl	$.L.str.24, %edi
 	callq	printf
-	movq	-192(%rbp), %rcx                # 8-byte Reload
-	movsd	-112(%rbp), %xmm1               # 8-byte Reload
-                                        # xmm1 = mem[0],zero
+                                        # kill: def $ecx killed $eax
+	movl	-200(%rbp), %eax                # 4-byte Reload
+	movslq	%eax, %rcx
 	movq	%rcx, %rax
 	imulq	%rax, %rax
-	sarq	$4, %rax
-	imulq	%rcx
-	movq	%rax, -184(%rbp)                # 8-byte Spill
-	movq	%rdx, %rax
-	movq	-184(%rbp), %rdx                # 8-byte Reload
-	shldq	$49, %rdx, %rax
+	shlq	$3, %rax
+	movq	%rcx, %rdx
+	sarq	$63, %rdx
+	movl	%edx, %esi
+	movl	%eax, %edx
+	imull	%esi, %edx
+	movl	%edx, -196(%rbp)                # 4-byte Spill
+	mulq	%rcx
+	movq	%rax, %rsi
+	movl	-196(%rbp), %eax                # 4-byte Reload
+	movq	%rsi, -192(%rbp)                # 8-byte Spill
+	movq	%rdx, %rsi
+	movq	-192(%rbp), %rdx                # 8-byte Reload
+                                        # kill: def $esi killed $esi killed $rsi
+	addl	%eax, %esi
+                                        # implicit-def: $rax
+	movl	%esi, %eax
+	shldq	$33, %rdx, %rax
 	imulq	%rcx
 	movq	%rax, %rcx
 	movb	-97(%rbp), %al                  # 1-byte Reload
-	shldq	$49, %rcx, %rdx
-	movq	%rdx, -160(%rbp)                # 8-byte Spill
-	cvtsi2sd	%rdx, %xmm0
+	movq	%rcx, -184(%rbp)                # 8-byte Spill
+	movq	%rdx, %rcx
+	movq	-184(%rbp), %rdx                # 8-byte Reload
+	shldq	$32, %rdx, %rcx
+	shlq	$29, %rcx
+	movq	%rcx, -160(%rbp)                # 8-byte Spill
+	cvtsi2sd	%rcx, %xmm0
+	movsd	.LCPI45_8(%rip), %xmm1          # xmm1 = mem[0],zero
+	movsd	%xmm1, -112(%rbp)               # 8-byte Spill
 	divsd	%xmm1, %xmm0
 	movl	$.L.str.25, %edi
 	callq	printf
 	movsd	-176(%rbp), %xmm0               # 8-byte Reload
                                         # xmm0 = mem[0],zero
-	movsd	.LCPI44_8(%rip), %xmm1          # xmm1 = mem[0],zero
+	movsd	.LCPI45_9(%rip), %xmm1          # xmm1 = mem[0],zero
 	addsd	%xmm1, %xmm0
 	movl	$4, %edi
 	callq	_ZSt3powIdiEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.17
@@ -6618,7 +6871,7 @@ _Z20MLX90640_CalculateToPKtffPf.4_fixp: # @_Z20MLX90640_CalculateToPKtffPf.4_fix
                                         # xmm1 = mem[0],zero
                                         # kill: def $ecx killed $eax
 	movb	-97(%rbp), %al                  # 1-byte Reload
-	movss	.LCPI44_9(%rip), %xmm2          # xmm2 = mem[0],zero,zero,zero
+	movss	.LCPI45_10(%rip), %xmm2         # xmm2 = mem[0],zero,zero,zero
 	mulss	%xmm2, %xmm0
 	cvttss2si	%xmm0, %rcx
 	movq	%rcx, -128(%rbp)                # 8-byte Spill
@@ -6636,7 +6889,6 @@ _Z20MLX90640_CalculateToPKtffPf.4_fixp: # @_Z20MLX90640_CalculateToPKtffPf.4_fix
 	shlq	$63, %rdi
 	xorl	%eax, %eax
 	movl	%eax, %ecx
-	movq	%rcx, -72(%rbp)                 # 8-byte Spill
 	callq	__divti3@PLT
 	movsd	-136(%rbp), %xmm1               # 8-byte Reload
                                         # xmm1 = mem[0],zero
@@ -6663,1521 +6915,46 @@ _Z20MLX90640_CalculateToPKtffPf.4_fixp: # @_Z20MLX90640_CalculateToPKtffPf.4_fix
 	movsd	%xmm1, -80(%rbp)                # 8-byte Spill
 	movl	$.L.str.29, %edi
 	callq	printf
-	movq	-72(%rbp), %rdx                 # 8-byte Reload
+	movss	-68(%rbp), %xmm3                # 4-byte Reload
+                                        # xmm3 = mem[0],zero,zero,zero
 	movq	-64(%rbp), %rdi                 # 8-byte Reload
-	movss	params_ksTo(%rip), %xmm0        # xmm0 = mem[0],zero,zero,zero
-	movss	.LCPI44_10(%rip), %xmm1         # xmm1 = mem[0],zero,zero,zero
-	mulss	%xmm1, %xmm0
-	cvttss2si	%xmm0, %eax
-	cltq
-	shlq	$3, %rax
-	leaq	(%rax,%rax,4), %rax
-	shrq	$5, %rax
-                                        # kill: def $eax killed $eax killed $rax
-	addl	$32768, %eax                    # imm = 0x8000
-	movslq	%eax, %rcx
-	movabsq	$70368744177664, %rax           # imm = 0x400000000000
-	idivq	%rcx
-	shrq	$27, %rax
-                                        # kill: def $eax killed $eax killed $rax
-	cltq
-	shlq	$5, %rax
+	movss	params_ksTo(%rip), %xmm2        # xmm2 = mem[0],zero,zero,zero
+	movss	.LCPI45_11(%rip), %xmm0         # xmm0 = mem[0],zero,zero,zero
+	mulss	%xmm0, %xmm2
+	movss	.LCPI45_12(%rip), %xmm1         # xmm1 = mem[0],zero,zero,zero
+	addss	%xmm1, %xmm2
+	movaps	%xmm1, %xmm0
+	divss	%xmm2, %xmm0
+	movss	.LCPI45_13(%rip), %xmm2         # xmm2 = mem[0],zero,zero,zero
+	mulss	%xmm2, %xmm0
+	cvttss2si	%xmm0, %rax
 	movq	%rax, -48(%rbp)
 	movq	$512, -40(%rbp)                 # imm = 0x200
 	movss	params_ksTo+8(%rip), %xmm0      # xmm0 = mem[0],zero,zero,zero
-	mulss	%xmm1, %xmm0
-	cvttss2si	%xmm0, %eax
-	movswl	params_ct+4(%rip), %ecx
-	shll	$15, %ecx
-	cltq
-	movslq	%ecx, %rcx
-	imulq	%rcx, %rax
-	shrq	$30, %rax
-                                        # kill: def $eax killed $eax killed $rax
-	addl	$32, %eax
-	cltq
-	shlq	$4, %rax
+	movswl	params_ct+4(%rip), %eax
+	shll	$15, %eax
+	cvtsi2ss	%eax, %xmm4
+	divss	%xmm3, %xmm4
+	mulss	%xmm4, %xmm0
+	addss	%xmm1, %xmm0
+	mulss	%xmm2, %xmm0
+	cvttss2si	%xmm0, %rax
 	movq	%rax, -32(%rbp)
 	movq	-32(%rbp), %rax
 	movss	params_ksTo+12(%rip), %xmm0     # xmm0 = mem[0],zero,zero,zero
-	mulss	%xmm1, %xmm0
-	cvttss2si	%xmm0, %ecx
-	movswl	params_ct+6(%rip), %edx
-	movswl	params_ct+4(%rip), %esi
-	subl	%esi, %edx
-	shll	$15, %edx
-	movslq	%ecx, %rcx
-	movslq	%edx, %rdx
-	imulq	%rdx, %rcx
-	shrq	$31, %rcx
-                                        # kill: def $ecx killed $ecx killed $rcx
-	addl	$16, %ecx
-	movslq	%ecx, %rcx
-	imulq	%rcx
-	shldq	$60, %rax, %rdx
-	movq	%rdx, -24(%rbp)
-	movzwl	1556(%rdi), %eax
-	shll	$14, %eax
-	movl	%eax, -56(%rbp)                 # 4-byte Spill
-	cvtsi2ss	%eax, %xmm0
-	movss	.LCPI44_0(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
-	divss	%xmm1, %xmm0
-	cmpl	$536854528, %eax                # imm = 0x1FFFC000
-	movss	%xmm0, -52(%rbp)                # 4-byte Spill
-	jle	.LBB44_2
-# %bb.1:
-	movl	-56(%rbp), %eax                 # 4-byte Reload
-	subl	$1073741824, %eax               # imm = 0x40000000
-	cvtsi2ss	%eax, %xmm0
-	movss	.LCPI44_0(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
-	divss	%xmm1, %xmm0
-	movss	%xmm0, -52(%rbp)                # 4-byte Spill
-.LBB44_2:
-	movss	-52(%rbp), %xmm0                # 4-byte Reload
-                                        # xmm0 = mem[0],zero,zero,zero
-	movswl	params_gainEE(%rip), %eax
-	movl	%eax, %ecx
-	shll	$15, %ecx
-	movss	.LCPI44_12(%rip), %xmm1         # xmm1 = mem[0],zero,zero,zero
-	mulss	%xmm1, %xmm0
-	cvttss2si	%xmm0, %rdx
-	movslq	%ecx, %rsi
-                                        # implicit-def: $rdi
-	movl	%eax, %edi
-	shlq	$61, %rdi
-	sarq	$18, %rsi
-	movq	%rdx, %rcx
-	sarq	$63, %rcx
-	callq	__divti3@PLT
-	movq	%rax, %rcx
-	movq	-64(%rbp), %rax                 # 8-byte Reload
-	shlq	$6, %rcx
-	movq	%rcx, -248(%rbp)                # 8-byte Spill
-	cvtsi2sd	%rcx, %xmm0
-	movsd	.LCPI44_11(%rip), %xmm1         # xmm1 = mem[0],zero
-	divsd	%xmm1, %xmm0
-	movsd	%xmm0, -240(%rbp)               # 8-byte Spill
-	movzwl	1664(%rax), %ecx
-	andl	$4096, %ecx                     # imm = 0x1000
-	sarl	$5, %ecx
-                                        # kill: def $cl killed $cl killed $ecx
-	movb	%cl, -229(%rbp)                 # 1-byte Spill
-	movzwl	1552(%rax), %ecx
-	shll	$16, %ecx
-	sarl	$16, %ecx
-	movl	%ecx, -8(%rbp)
-	movzwl	1616(%rax), %eax
-	shll	$16, %eax
-	sarl	$16, %eax
-	movl	%eax, -4(%rbp)
-	xorl	%eax, %eax
-	movl	%eax, -228(%rbp)                # 4-byte Spill
-.LBB44_3:                               # =>This Inner Loop Header: Depth=1
-	movl	-228(%rbp), %eax                # 4-byte Reload
-	movl	%eax, -252(%rbp)                # 4-byte Spill
-	cmpl	$2, %eax
-	jge	.LBB44_8
-# %bb.4:                                #   in Loop: Header=BB44_3 Depth=1
-	movl	-252(%rbp), %eax                # 4-byte Reload
-	cltq
-	cmpl	$32767, -8(%rbp,%rax,4)         # imm = 0x7FFF
-	jle	.LBB44_6
-# %bb.5:                                #   in Loop: Header=BB44_3 Depth=1
-	movl	-252(%rbp), %eax                # 4-byte Reload
-	movslq	%eax, %rcx
-	movslq	-8(%rbp,%rcx,4), %rcx
-	subq	$65536, %rcx                    # imm = 0x10000
-	cltq
-                                        # kill: def $ecx killed $ecx killed $rcx
-	movl	%ecx, -8(%rbp,%rax,4)
-.LBB44_6:                               #   in Loop: Header=BB44_3 Depth=1
-	movl	-252(%rbp), %eax                # 4-byte Reload
-	movq	-248(%rbp), %rcx                # 8-byte Reload
-	cltq
-	movslq	-8(%rbp,%rax,4), %rax
-	imulq	%rcx
-	movq	%rax, %rcx
-	movl	-252(%rbp), %eax                # 4-byte Reload
-	shldq	$43, %rcx, %rdx
-	cltq
-	movl	%edx, %ecx
-	movl	%ecx, -8(%rbp,%rax,4)
-# %bb.7:                                #   in Loop: Header=BB44_3 Depth=1
-	movl	-252(%rbp), %eax                # 4-byte Reload
-	addl	$1, %eax
-	movl	%eax, -228(%rbp)                # 4-byte Spill
-	jmp	.LBB44_3
-.LBB44_8:
-	movss	-208(%rbp), %xmm0               # 4-byte Reload
-                                        # xmm0 = mem[0],zero,zero,zero
-	movss	-204(%rbp), %xmm1               # 4-byte Reload
-                                        # xmm1 = mem[0],zero,zero,zero
-	movslq	-8(%rbp), %rcx
-	movswl	params_cpOffset(%rip), %eax
-	shll	$15, %eax
-	movq	params_cpKta.fixp@GOTPCREL(%rip), %rdx
-	movl	(%rdx), %edx
-                                        # kill: def $rdx killed $edx
-	movss	.LCPI44_4(%rip), %xmm2          # xmm2 = mem[0],zero,zero,zero
-	mulss	%xmm2, %xmm1
-	cvttss2si	%xmm1, %esi
-	addl	$-1638400, %esi                 # imm = 0xFFE70000
-	movslq	%esi, %rsi
-	imulq	%rsi, %rdx
-	shrq	$32, %rdx
-                                        # kill: def $edx killed $edx killed $rdx
-	addl	$256, %edx                      # imm = 0x100
-	cltq
-	movslq	%edx, %rdx
-	imulq	%rdx, %rax
-	shlq	$2, %rax
-	movq	params_cpKv.fixp@GOTPCREL(%rip), %rdx
-	movslq	(%rdx), %rdx
-	movss	.LCPI44_6(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
-	mulss	%xmm1, %xmm0
-	cvttss2si	%xmm0, %esi
-	addl	$-108134, %esi                  # imm = 0xFFFE599A
-	movslq	%esi, %rsi
-	imulq	%rsi, %rdx
-	shrq	$30, %rdx
-                                        # kill: def $edx killed $edx killed $rdx
-	addl	$256, %edx                      # imm = 0x100
-	movslq	%edx, %rdx
-	imulq	%rdx
-	movq	%rax, %rsi
-	movb	-229(%rbp), %al                 # 1-byte Reload
-                                        # kill: def $edx killed $edx killed $rdx
-	movslq	%edx, %rdx
-	shldq	$31, %rsi, %rdx
-	subq	%rdx, %rcx
-                                        # kill: def $ecx killed $ecx killed $rcx
-	movl	%ecx, -8(%rbp)
-	movzbl	%al, %eax
-	movzbl	params_calibrationModeEE, %ecx
-	cmpl	%ecx, %eax
-	jne	.LBB44_10
-# %bb.9:
-	movss	-208(%rbp), %xmm0               # 4-byte Reload
-                                        # xmm0 = mem[0],zero,zero,zero
-	movss	-204(%rbp), %xmm1               # 4-byte Reload
-                                        # xmm1 = mem[0],zero,zero,zero
-	movl	-4(%rbp), %eax
-	movl	%eax, -268(%rbp)                # 4-byte Spill
-	movswl	params_cpOffset+2(%rip), %eax
-	shll	$15, %eax
-	movq	params_cpKta.fixp@GOTPCREL(%rip), %rcx
-	movl	(%rcx), %ecx
-                                        # kill: def $rcx killed $ecx
-	movss	.LCPI44_4(%rip), %xmm2          # xmm2 = mem[0],zero,zero,zero
-	mulss	%xmm2, %xmm1
-	cvttss2si	%xmm1, %edx
-	addl	$-1638400, %edx                 # imm = 0xFFE70000
-	movslq	%edx, %rdx
-	imulq	%rdx, %rcx
-	shrq	$32, %rcx
-                                        # kill: def $ecx killed $ecx killed $rcx
-	addl	$256, %ecx                      # imm = 0x100
-	cltq
-	movslq	%ecx, %rcx
-	imulq	%rcx, %rax
-	shlq	$2, %rax
-	movq	params_cpKv.fixp@GOTPCREL(%rip), %rcx
-	movslq	(%rcx), %rcx
-	movss	.LCPI44_6(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
-	mulss	%xmm1, %xmm0
-	cvttss2si	%xmm0, %edx
-	addl	$-108134, %edx                  # imm = 0xFFFE599A
-	movslq	%edx, %rdx
-	imulq	%rdx, %rcx
-	shrq	$30, %rcx
-                                        # kill: def $ecx killed $ecx killed $rcx
-	addl	$256, %ecx                      # imm = 0x100
-	movslq	%ecx, %rcx
-	imulq	%rcx
-	movq	%rax, %rcx
-	movl	-268(%rbp), %eax                # 4-byte Reload
-	movq	%rcx, -264(%rbp)                # 8-byte Spill
-	movq	%rdx, %rcx
-	movq	-264(%rbp), %rdx                # 8-byte Reload
-                                        # kill: def $ecx killed $ecx killed $rcx
-	movslq	%ecx, %rcx
-	shldq	$31, %rdx, %rcx
-                                        # kill: def $ecx killed $ecx killed $rcx
-	subl	%ecx, %eax
-	movl	%eax, -4(%rbp)
-	jmp	.LBB44_11
-.LBB44_10:
-	movss	-208(%rbp), %xmm0               # 4-byte Reload
-                                        # xmm0 = mem[0],zero,zero,zero
-	movss	-204(%rbp), %xmm1               # 4-byte Reload
-                                        # xmm1 = mem[0],zero,zero,zero
-	movl	-4(%rbp), %eax
-	movl	%eax, -272(%rbp)                # 4-byte Spill
-	movswl	params_cpOffset+2(%rip), %eax
-	shll	$15, %eax
-	movss	params_ilChessC(%rip), %xmm2    # xmm2 = mem[0],zero,zero,zero
-	movss	.LCPI44_13(%rip), %xmm3         # xmm3 = mem[0],zero,zero,zero
-	mulss	%xmm3, %xmm2
-	cvttss2si	%xmm2, %ecx
-	sarl	$8, %ecx
-	addl	%ecx, %eax
-	movq	params_cpKta.fixp@GOTPCREL(%rip), %rcx
-	movl	(%rcx), %ecx
-                                        # kill: def $rcx killed $ecx
-	movss	.LCPI44_4(%rip), %xmm2          # xmm2 = mem[0],zero,zero,zero
-	mulss	%xmm2, %xmm1
-	cvttss2si	%xmm1, %edx
-	addl	$-1638400, %edx                 # imm = 0xFFE70000
-	movslq	%edx, %rdx
-	imulq	%rdx, %rcx
-	shrq	$32, %rcx
-                                        # kill: def $ecx killed $ecx killed $rcx
-	addl	$256, %ecx                      # imm = 0x100
-	cltq
-	movslq	%ecx, %rcx
-	imulq	%rcx, %rax
-	addq	%rax, %rax
-	movq	params_cpKv.fixp@GOTPCREL(%rip), %rcx
-	movslq	(%rcx), %rcx
-	movss	.LCPI44_6(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
-	mulss	%xmm1, %xmm0
-	cvttss2si	%xmm0, %edx
-	addl	$-108134, %edx                  # imm = 0xFFFE599A
-	movslq	%edx, %rdx
-	imulq	%rdx, %rcx
-	shrq	$30, %rcx
-                                        # kill: def $ecx killed $ecx killed $rcx
-	addl	$256, %ecx                      # imm = 0x100
-	movslq	%ecx, %rcx
-	imulq	%rcx
-	movq	%rax, %rcx
-	movl	-272(%rbp), %eax                # 4-byte Reload
-	shldq	$32, %rcx, %rdx
-	movl	%edx, %ecx
-	subl	%ecx, %eax
-	movl	%eax, -4(%rbp)
-.LBB44_11:
-	xorl	%eax, %eax
-	movl	%eax, -276(%rbp)                # 4-byte Spill
-	jmp	.LBB44_12
-.LBB44_12:                              # =>This Inner Loop Header: Depth=1
-	movl	-276(%rbp), %eax                # 4-byte Reload
-	movl	%eax, -280(%rbp)                # 4-byte Spill
-	cmpl	$768, %eax                      # imm = 0x300
-	jge	.LBB44_33
-# %bb.13:                               #   in Loop: Header=BB44_12 Depth=1
-	movl	-280(%rbp), %eax                # 4-byte Reload
-	movl	$32, %ecx
-	cltd
-	idivl	%ecx
-	movl	%eax, %ecx
-	movl	-280(%rbp), %eax                # 4-byte Reload
-	movl	$64, %esi
-	cltd
-	idivl	%esi
-	movl	%eax, %edx
-	movl	-280(%rbp), %eax                # 4-byte Reload
-	shll	$1, %edx
+	movswl	params_ct+6(%rip), %ecx
+	movswl	params_ct+4(%rip), %edx
 	subl	%edx, %ecx
-                                        # kill: def $cl killed $cl killed $ecx
-	movb	%cl, -282(%rbp)                 # 1-byte Spill
-	movsbl	%cl, %ecx
-	movl	$2, %esi
-	cltd
-	idivl	%esi
-	movl	%eax, %esi
-	movl	-280(%rbp), %eax                # 4-byte Reload
-	shll	$1, %esi
-	movl	%eax, %edx
-	subl	%esi, %edx
-	xorl	%edx, %ecx
-                                        # kill: def $cl killed $cl killed $ecx
-	movb	%cl, -283(%rbp)                 # 1-byte Spill
-	addl	$2, %eax
-	movl	$4, %ecx
-	cltd
-	idivl	%ecx
-	movl	%eax, %ecx
-	movl	-280(%rbp), %eax                # 4-byte Reload
-	addl	$3, %eax
-	movl	$4, %esi
-	cltd
-	idivl	%esi
-	movl	%eax, %edx
-	movl	-280(%rbp), %eax                # 4-byte Reload
-	subl	%edx, %ecx
-	addl	$1, %eax
-	movl	$4, %esi
-	cltd
-	idivl	%esi
-	movl	%eax, %edx
-	movl	-280(%rbp), %eax                # 4-byte Reload
-	addl	%edx, %ecx
-	movl	$4, %esi
-	cltd
-	idivl	%esi
-	movb	-282(%rbp), %dl                 # 1-byte Reload
-	movl	%eax, %esi
-	movb	-229(%rbp), %al                 # 1-byte Reload
-	subl	%esi, %ecx
-	movsbl	%dl, %esi
-	shll	$1, %esi
-	movl	$1, %edx
-	subl	%esi, %edx
-	imull	%edx, %ecx
-                                        # kill: def $cl killed $cl killed $ecx
-	movb	%cl, -281(%rbp)                 # 1-byte Spill
-	movzbl	%al, %eax
-	cmpl	$0, %eax
-	jne	.LBB44_15
-# %bb.14:                               #   in Loop: Header=BB44_12 Depth=1
-	movb	-282(%rbp), %al                 # 1-byte Reload
-	movb	%al, -284(%rbp)                 # 1-byte Spill
-	jmp	.LBB44_16
-.LBB44_15:                              #   in Loop: Header=BB44_12 Depth=1
-	movb	-283(%rbp), %al                 # 1-byte Reload
-	movb	%al, -284(%rbp)                 # 1-byte Spill
-	jmp	.LBB44_16
-.LBB44_16:                              #   in Loop: Header=BB44_12 Depth=1
-	movq	-64(%rbp), %rcx                 # 8-byte Reload
-	movb	-284(%rbp), %al                 # 1-byte Reload
-	movsbl	%al, %eax
-	movzwl	1666(%rcx), %ecx
-	cmpl	%ecx, %eax
-	jne	.LBB44_31
-# %bb.17:                               #   in Loop: Header=BB44_12 Depth=1
-	movq	-64(%rbp), %rax                 # 8-byte Reload
-	movl	-280(%rbp), %ecx                # 4-byte Reload
-	movslq	%ecx, %rcx
-	movzwl	(%rax,%rcx,2), %eax
-	shll	$16, %eax
-	cvtsi2ss	%eax, %xmm0
-	movss	.LCPI44_4(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
-	divss	%xmm1, %xmm0
-	cvtsi2ss	%eax, %xmm1
-	movss	.LCPI44_4(%rip), %xmm2          # xmm2 = mem[0],zero,zero,zero
-	divss	%xmm2, %xmm1
-	movss	%xmm1, -292(%rbp)               # 4-byte Spill
-	cmpl	$2147418112, %eax               # imm = 0x7FFF0000
-	movss	%xmm0, -288(%rbp)               # 4-byte Spill
-	jle	.LBB44_19
-# %bb.18:                               #   in Loop: Header=BB44_12 Depth=1
-	movss	-292(%rbp), %xmm0               # 4-byte Reload
-                                        # xmm0 = mem[0],zero,zero,zero
-	movss	.LCPI44_4(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
-	subss	%xmm1, %xmm0
-	movss	%xmm0, -288(%rbp)               # 4-byte Spill
-.LBB44_19:                              #   in Loop: Header=BB44_12 Depth=1
-	movss	-288(%rbp), %xmm0               # 4-byte Reload
-                                        # xmm0 = mem[0],zero,zero,zero
-	movss	%xmm0, -420(%rbp)               # 4-byte Spill
-	cvtss2sd	%xmm0, %xmm0
-	movl	$.L.str.30, %edi
-	movb	$1, %al
-	movb	%al, -345(%rbp)                 # 1-byte Spill
-	callq	printf
-	movss	-420(%rbp), %xmm0               # 4-byte Reload
-                                        # xmm0 = mem[0],zero,zero,zero
-	movq	-248(%rbp), %rcx                # 8-byte Reload
-	movss	.LCPI44_12(%rip), %xmm1         # xmm1 = mem[0],zero,zero,zero
-	mulss	%xmm1, %xmm0
-	cvttss2si	%xmm0, %rax
-	imulq	%rcx
-	movq	%rax, %rcx
-	movb	-345(%rbp), %al                 # 1-byte Reload
-	shldq	$2, %rcx, %rdx
-	movq	%rdx, -320(%rbp)                # 8-byte Spill
-	cvtsi2ss	%rdx, %xmm0
-	movss	.LCPI44_14(%rip), %xmm1         # xmm1 = mem[0],zero,zero,zero
-	divss	%xmm1, %xmm0
-	cvtss2sd	%xmm0, %xmm0
-	movl	$.L.str.31, %edi
-	callq	printf
-	movss	-204(%rbp), %xmm0               # 4-byte Reload
-                                        # xmm0 = mem[0],zero,zero,zero
-                                        # kill: def $ecx killed $eax
-	movb	-345(%rbp), %al                 # 1-byte Reload
-	movss	.LCPI44_4(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
-	mulss	%xmm1, %xmm0
-	cvttss2si	%xmm0, %ecx
-	addl	$-1638400, %ecx                 # imm = 0xFFE70000
-	movl	%ecx, -404(%rbp)                # 4-byte Spill
-	cvtsi2sd	%ecx, %xmm2
-	movsd	.LCPI44_5(%rip), %xmm1          # xmm1 = mem[0],zero
-	divsd	%xmm1, %xmm2
-	movsd	%xmm2, -416(%rbp)               # 8-byte Spill
-	cvttps2dq	%xmm0, %xmm0
-	cvtdq2pd	%xmm0, %xmm0
-	divsd	%xmm1, %xmm0
-	movl	$.L.str.32, %edi
-	callq	printf
-	movsd	-416(%rbp), %xmm0               # 8-byte Reload
-                                        # xmm0 = mem[0],zero
-                                        # kill: def $ecx killed $eax
-	movb	-345(%rbp), %al                 # 1-byte Reload
-	movl	$.L.str.33, %edi
-	callq	printf
-	movl	-280(%rbp), %edx                # 4-byte Reload
-	movl	-404(%rbp), %ecx                # 4-byte Reload
-                                        # kill: def $esi killed $eax
-	movb	-345(%rbp), %al                 # 1-byte Reload
-	movslq	%edx, %rsi
-	movq	%rsi, -344(%rbp)                # 8-byte Spill
-	movq	params_kta.fixp@GOTPCREL(%rip), %rdx
-	movslq	(%rdx,%rsi,4), %rdx
-	movslq	%ecx, %rcx
-	imulq	%rdx, %rcx
-	movq	%rcx, -400(%rbp)                # 8-byte Spill
-	addq	%rcx, %rcx
-	cvtsi2sd	%rcx, %xmm0
-	movsd	.LCPI44_15(%rip), %xmm1         # xmm1 = mem[0],zero
-	movsd	%xmm1, -392(%rbp)               # 8-byte Spill
-	divsd	%xmm1, %xmm0
-	movl	$.L.str.34, %edi
-	callq	printf
-	movq	-400(%rbp), %rcx                # 8-byte Reload
-	movsd	-392(%rbp), %xmm1               # 8-byte Reload
-                                        # xmm1 = mem[0],zero
-                                        # kill: def $edx killed $eax
-	movb	-345(%rbp), %al                 # 1-byte Reload
-	leaq	1073741824(%rcx,%rcx), %rcx
-	movq	%rcx, -368(%rbp)                # 8-byte Spill
-	cvtsi2sd	%rcx, %xmm0
-	divsd	%xmm1, %xmm0
-	movl	$.L.str.35, %edi
-	callq	printf
-	movq	-344(%rbp), %rcx                # 8-byte Reload
-                                        # kill: def $edx killed $eax
-	movq	-368(%rbp), %rax                # 8-byte Reload
-	movswl	params_offset(%rcx,%rcx), %ecx
 	shll	$15, %ecx
-	movslq	%ecx, %rcx
-	imulq	%rcx
-	movq	%rax, %rcx
-	movb	-345(%rbp), %al                 # 1-byte Reload
-	shldq	$34, %rcx, %rdx
-	cvtsi2sd	%rdx, %xmm0
-	movsd	.LCPI44_16(%rip), %xmm1         # xmm1 = mem[0],zero
-	divsd	%xmm1, %xmm0
-	movl	$.L.str.36, %edi
-	callq	printf
-                                        # kill: def $ecx killed $eax
-	movq	-344(%rbp), %rax                # 8-byte Reload
-	movswl	params_offset(%rax,%rax), %esi
-	movl	$.L.str.37, %edi
-	xorl	%eax, %eax
-                                        # kill: def $al killed $al killed $eax
-	callq	printf
-	movss	-208(%rbp), %xmm0               # 4-byte Reload
-                                        # xmm0 = mem[0],zero,zero,zero
-                                        # kill: def $ecx killed $eax
-	movb	-345(%rbp), %al                 # 1-byte Reload
-	movss	.LCPI44_6(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
-	mulss	%xmm1, %xmm0
-	cvttss2si	%xmm0, %ecx
-	addl	$-108134, %ecx                  # imm = 0xFFFE599A
-	movl	%ecx, -384(%rbp)                # 4-byte Spill
-	cvtsi2ss	%ecx, %xmm0
-	divss	%xmm1, %xmm0
-	cvtss2sd	%xmm0, %xmm0
-	movl	$.L.str.38, %edi
-	callq	printf
-	movl	-384(%rbp), %ecx                # 4-byte Reload
-	movq	-344(%rbp), %rsi                # 8-byte Reload
-                                        # kill: def $edx killed $eax
-	movb	-345(%rbp), %al                 # 1-byte Reload
-	movq	params_kv.fixp@GOTPCREL(%rip), %rdx
-	movslq	(%rdx,%rsi,4), %rdx
-	movslq	%ecx, %rcx
-	imulq	%rdx, %rcx
-	shrq	$30, %rcx
-                                        # kill: def $ecx killed $ecx killed $rcx
-	cvtsi2ss	%ecx, %xmm0
-	movss	.LCPI44_17(%rip), %xmm1         # xmm1 = mem[0],zero,zero,zero
-	movss	%xmm1, -376(%rbp)               # 4-byte Spill
-	divss	%xmm1, %xmm0
-	movss	%xmm0, -380(%rbp)               # 4-byte Spill
-	cvtss2sd	%xmm0, %xmm0
-	movl	$.L.str.39, %edi
-	callq	printf
-	movss	-380(%rbp), %xmm0               # 4-byte Reload
-                                        # xmm0 = mem[0],zero,zero,zero
-	movss	-376(%rbp), %xmm1               # 4-byte Reload
-                                        # xmm1 = mem[0],zero,zero,zero
-                                        # kill: def $ecx killed $eax
-	movb	-345(%rbp), %al                 # 1-byte Reload
-	movss	.LCPI44_18(%rip), %xmm2         # xmm2 = mem[0],zero,zero,zero
-	addss	%xmm2, %xmm0
-	movss	%xmm0, -372(%rbp)               # 4-byte Spill
-	mulss	%xmm1, %xmm0
-	cvttps2dq	%xmm0, %xmm0
-	cvtdq2pd	%xmm0, %xmm0
-	movsd	.LCPI44_19(%rip), %xmm1         # xmm1 = mem[0],zero
-	movsd	%xmm1, -360(%rbp)               # 8-byte Spill
-	divsd	%xmm1, %xmm0
-	movl	$.L.str.40, %edi
-	callq	printf
-	movss	-372(%rbp), %xmm0               # 4-byte Reload
-                                        # xmm0 = mem[0],zero,zero,zero
-	movq	-368(%rbp), %rcx                # 8-byte Reload
-	movsd	-360(%rbp), %xmm1               # 8-byte Reload
-                                        # xmm1 = mem[0],zero
-	movss	.LCPI44_20(%rip), %xmm2         # xmm2 = mem[0],zero,zero,zero
+	cvtsi2ss	%ecx, %xmm2
+	divss	%xmm3, %xmm2
 	mulss	%xmm2, %xmm0
-	cvttss2si	%xmm0, %rax
+	addss	%xmm1, %xmm0
+	movss	.LCPI45_14(%rip), %xmm1         # xmm1 = mem[0],zero,zero,zero
+	mulss	%xmm1, %xmm0
+	cvttss2si	%xmm0, %rcx
 	imulq	%rcx
-	movq	%rax, %rcx
-	movb	-345(%rbp), %al                 # 1-byte Reload
-	shldq	$2, %rcx, %rdx
-	movq	%rdx, -336(%rbp)                # 8-byte Spill
-	cvtsi2sd	%rdx, %xmm0
-	divsd	%xmm1, %xmm0
-	movl	$.L.str.41, %edi
-	callq	printf
-	movq	-344(%rbp), %rcx                # 8-byte Reload
-                                        # kill: def $edx killed $eax
-	movq	-336(%rbp), %rax                # 8-byte Reload
-	movswl	params_offset(%rcx,%rcx), %ecx
-	shll	$15, %ecx
-	movslq	%ecx, %rcx
-	imulq	%rcx
-	shldq	$37, %rax, %rdx
-	movq	%rdx, -328(%rbp)                # 8-byte Spill
-	cvtsi2sd	%rdx, %xmm0
-	movabsq	$.L.str.42, %rdi
-	movb	$1, %al
-	callq	printf
-	movq	-328(%rbp), %rdx                # 8-byte Reload
-                                        # kill: def $ecx killed $eax
-	movq	-320(%rbp), %rax                # 8-byte Reload
-	sarq	$5, %rax
-	subq	%rdx, %rax
-	movq	%rax, -312(%rbp)                # 8-byte Spill
-	cvtsi2ss	%rax, %xmm0
-	cvtss2sd	%xmm0, %xmm0
-	movabsq	$.L.str.43, %rdi
-	movb	$1, %al
-	callq	printf
-	movb	-229(%rbp), %cl                 # 1-byte Reload
-                                        # kill: def $edx killed $eax
-	movq	-312(%rbp), %rax                # 8-byte Reload
-	movzbl	%cl, %ecx
-	movzbl	params_calibrationModeEE, %edx
-	cmpl	%edx, %ecx
-	movq	%rax, -304(%rbp)                # 8-byte Spill
-	je	.LBB44_21
-# %bb.20:                               #   in Loop: Header=BB44_12 Depth=1
-	movb	-281(%rbp), %dl                 # 1-byte Reload
-	movq	-312(%rbp), %rax                # 8-byte Reload
-	movb	-282(%rbp), %sil                # 1-byte Reload
-	movss	.LCPI44_13(%rip), %xmm0         # xmm0 = mem[0],zero,zero,zero
-	mulss	params_ilChessC+8, %xmm0
-	cvttss2si	%xmm0, %ecx
-	movsbl	%sil, %esi
-	shll	$1, %esi
-	subl	$1, %esi
-	shll	$27, %esi
-	movslq	%ecx, %rcx
-	movslq	%esi, %rsi
-	imulq	%rsi, %rcx
-	sarq	$31, %rcx
-                                        # kill: def $ecx killed $ecx killed $rcx
-	movslq	%ecx, %rcx
-	sarq	$19, %rcx
-	addq	%rcx, %rax
-	movss	.LCPI44_13(%rip), %xmm0         # xmm0 = mem[0],zero,zero,zero
-	mulss	params_ilChessC+4, %xmm0
-	cvttss2si	%xmm0, %ecx
-	movsbl	%dl, %edx
-	shll	$24, %edx
-	movslq	%ecx, %rcx
-	movl	%edx, %edx
-                                        # kill: def $rdx killed $edx
-	imulq	%rdx, %rcx
-	sarq	$32, %rcx
-                                        # kill: def $ecx killed $ecx killed $rcx
-	movslq	%ecx, %rcx
-	sarq	$15, %rcx
-	subq	%rcx, %rax
-	movq	%rax, -304(%rbp)                # 8-byte Spill
-.LBB44_21:                              #   in Loop: Header=BB44_12 Depth=1
-	movq	-144(%rbp), %rdx                # 8-byte Reload
-	movq	-304(%rbp), %rdi                # 8-byte Reload
-	movq	%rdi, %rsi
-	shrq	$63, %rsi
-	shldq	$63, %rdi, %rsi
-	shlq	$63, %rdi
-	xorl	%eax, %eax
-	movl	%eax, %ecx
-	callq	__divti3@PLT
-	movw	-210(%rbp), %si                 # 2-byte Reload
-	movq	%rax, %rdx
-	movq	params_tgc.fixp@GOTPCREL(%rip), %rax
-	movslq	(%rax), %rcx
-	movl	%ecx, %eax
-	movzwl	%si, %esi
-                                        # kill: def $rsi killed $esi
-	movq	%rsi, -632(%rbp)                # 8-byte Spill
-	movslq	-8(%rbp,%rsi,4), %r8
-	movq	%rcx, %rdi
-	imulq	%r8, %rdi
-	shrq	$27, %rdi
-                                        # kill: def $edi killed $edi killed $rdi
-                                        # kill: def $edx killed $edx killed $rdx
-	subl	%edi, %edx
-	movl	%edx, -500(%rbp)                # 4-byte Spill
-	cvtsi2ss	%edx, %xmm0
-	movss	%xmm0, -588(%rbp)               # 4-byte Spill
-	movq	params_cpAlpha.fixp@GOTPCREL(%rip), %rdx
-	movq	%rdx, -624(%rbp)                # 8-byte Spill
-	movslq	(%rdx,%rsi,4), %rdx
-	imulq	%rdx, %rcx
-	shrq	$30, %rcx
-                                        # kill: def $ecx killed $ecx killed $rcx
-	cvtsi2ss	%ecx, %xmm0
-	movss	.LCPI44_22(%rip), %xmm1         # xmm1 = mem[0],zero,zero,zero
-	divss	%xmm1, %xmm0
-	movss	%xmm0, -616(%rbp)               # 4-byte Spill
-	cvtsi2sd	%eax, %xmm0
-	movsd	.LCPI44_21(%rip), %xmm1         # xmm1 = mem[0],zero
-	movsd	%xmm1, -488(%rbp)               # 8-byte Spill
-	divsd	%xmm1, %xmm0
-	movl	$.L.str.44, %edi
-	movb	$1, %al
-	movb	%al, -473(%rbp)                 # 1-byte Spill
-	callq	printf
-	movq	-632(%rbp), %rdx                # 8-byte Reload
-	movq	-624(%rbp), %rcx                # 8-byte Reload
-                                        # kill: def $esi killed $eax
-	movb	-473(%rbp), %al                 # 1-byte Reload
-	cvtsi2sdl	(%rcx,%rdx,4), %xmm0
-	movsd	.LCPI44_23(%rip), %xmm1         # xmm1 = mem[0],zero
-	divsd	%xmm1, %xmm0
-	movl	$.L.str.45, %edi
-	callq	printf
-	movss	-616(%rbp), %xmm0               # 4-byte Reload
-                                        # xmm0 = mem[0],zero,zero,zero
-                                        # kill: def $ecx killed $eax
-	movb	-473(%rbp), %al                 # 1-byte Reload
-	cvtss2sd	%xmm0, %xmm0
-	movl	$.L.str.46, %edi
-	callq	printf
-	movl	-280(%rbp), %ecx                # 4-byte Reload
-	movss	-616(%rbp), %xmm2               # 4-byte Reload
-                                        # xmm2 = mem[0],zero,zero,zero
-                                        # kill: def $edx killed $eax
-	movb	-473(%rbp), %al                 # 1-byte Reload
-	movslq	%ecx, %rcx
-	movss	params_alpha(,%rcx,4), %xmm0    # xmm0 = mem[0],zero,zero,zero
-	movaps	%xmm0, %xmm1
-	subss	%xmm2, %xmm1
-	movss	%xmm1, -596(%rbp)               # 4-byte Spill
-	cvtss2sd	%xmm0, %xmm0
-	movl	$.L.str.47, %edi
-	callq	printf
-	movss	-596(%rbp), %xmm0               # 4-byte Reload
-                                        # xmm0 = mem[0],zero,zero,zero
-                                        # kill: def $ecx killed $eax
-	movb	-473(%rbp), %al                 # 1-byte Reload
-	movss	.LCPI44_6(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
-	mulss	%xmm1, %xmm0
-	cvttps2dq	%xmm0, %xmm0
-	cvtdq2pd	%xmm0, %xmm0
-	movsd	.LCPI44_16(%rip), %xmm1         # xmm1 = mem[0],zero
-	movsd	%xmm1, -608(%rbp)               # 8-byte Spill
-	divsd	%xmm1, %xmm0
-	movl	$.L.str.48, %edi
-	callq	printf
-	movss	-204(%rbp), %xmm0               # 4-byte Reload
-                                        # xmm0 = mem[0],zero,zero,zero
-                                        # kill: def $ecx killed $eax
-	movb	-473(%rbp), %al                 # 1-byte Reload
-	movq	params_KsTa.fixp@GOTPCREL(%rip), %rcx
-	movslq	(%rcx), %rcx
-	movss	.LCPI44_4(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
-	mulss	%xmm1, %xmm0
-	cvttss2si	%xmm0, %edx
-	addl	$-1638400, %edx                 # imm = 0xFFE70000
-	movslq	%edx, %rdx
-	imulq	%rdx, %rcx
-	shrq	$31, %rcx
-                                        # kill: def $ecx killed $ecx killed $rcx
-	movl	%ecx, -612(%rbp)                # 4-byte Spill
-	addl	%ecx, %ecx
-	cvtsi2sd	%ecx, %xmm0
-	movsd	.LCPI44_5(%rip), %xmm1          # xmm1 = mem[0],zero
-	divsd	%xmm1, %xmm0
-	movl	$.L.str.49, %edi
-	callq	printf
-	movl	-612(%rbp), %ecx                # 4-byte Reload
-	movsd	-608(%rbp), %xmm1               # 8-byte Reload
-                                        # xmm1 = mem[0],zero
-                                        # kill: def $edx killed $eax
-	movb	-473(%rbp), %al                 # 1-byte Reload
-	addl	$32768, %ecx                    # imm = 0x8000
-	movl	%ecx, -592(%rbp)                # 4-byte Spill
-	cvtsi2sd	%ecx, %xmm0
-	divsd	%xmm1, %xmm0
-	movl	$.L.str.50, %edi
-	callq	printf
-	movss	-596(%rbp), %xmm1               # 4-byte Reload
-                                        # xmm1 = mem[0],zero,zero,zero
-	movl	-592(%rbp), %ecx                # 4-byte Reload
-	movss	-588(%rbp), %xmm0               # 4-byte Reload
-                                        # xmm0 = mem[0],zero,zero,zero
-	movss	.LCPI44_24(%rip), %xmm2         # xmm2 = mem[0],zero,zero,zero
-	mulss	%xmm2, %xmm1
-	cvttss2si	%xmm1, %rax
-	movslq	%ecx, %rcx
-	imulq	%rcx
-	movq	%rax, %rcx
-	movb	-473(%rbp), %al                 # 1-byte Reload
-	shldq	$34, %rcx, %rdx
-	movq	%rdx, -536(%rbp)                # 8-byte Spill
-	cvtss2sd	%xmm0, %xmm0
-	movl	$.L.str.51, %edi
-	callq	printf
-	movsd	-240(%rbp), %xmm0               # 8-byte Reload
-                                        # xmm0 = mem[0],zero
-                                        # kill: def $ecx killed $eax
-	movb	-473(%rbp), %al                 # 1-byte Reload
-	movl	$.L.str.52, %edi
-	callq	printf
-	movq	-536(%rbp), %rcx                # 8-byte Reload
-                                        # kill: def $edx killed $eax
-	movb	-473(%rbp), %al                 # 1-byte Reload
-	shrq	$2, %rcx
-                                        # kill: def $ecx killed $ecx killed $rcx
-	cvtsi2sd	%ecx, %xmm0
-	movsd	.LCPI44_15(%rip), %xmm1         # xmm1 = mem[0],zero
-	movsd	%xmm1, -512(%rbp)               # 8-byte Spill
-	divsd	%xmm1, %xmm0
-	movl	$.L.str.53, %edi
-	callq	printf
-	movq	-96(%rbp), %rcx                 # 8-byte Reload
-                                        # kill: def $edx killed $eax
-	movq	-536(%rbp), %rax                # 8-byte Reload
-	imulq	%rcx
-	movq	%rax, %rcx
-	movb	-473(%rbp), %al                 # 1-byte Reload
-	shldq	$38, %rcx, %rdx
-	movq	%rdx, -584(%rbp)                # 8-byte Spill
-	cvtsi2sd	%rdx, %xmm0
-	movsd	.LCPI44_25(%rip), %xmm1         # xmm1 = mem[0],zero
-	divsd	%xmm1, %xmm0
-	movl	$.L.str.54, %edi
-	callq	printf
-	movq	-584(%rbp), %rdx                # 8-byte Reload
-	movl	-500(%rbp), %ecx                # 4-byte Reload
-                                        # kill: def $esi killed $eax
-	movb	-473(%rbp), %al                 # 1-byte Reload
-	shrq	$32, %rdx
-                                        # kill: def $edx killed $edx killed $rdx
-	addl	%edx, %ecx
-	movl	%ecx, -568(%rbp)                # 4-byte Spill
-	cvtsi2sd	%ecx, %xmm0
-	movl	$.L.str.55, %edi
-	callq	printf
-	movq	-536(%rbp), %rdx                # 8-byte Reload
-	movsd	-512(%rbp), %xmm1               # 8-byte Reload
-                                        # xmm1 = mem[0],zero
-	movq	%rdx, %rax
-	imulq	%rdx
-	movq	%rdx, %rcx
-	movq	-536(%rbp), %rdx                # 8-byte Reload
-                                        # kill: def $ecx killed $ecx killed $rcx
-	shll	$30, %ecx
-	shrq	$34, %rax
-                                        # kill: def $eax killed $eax killed $rax
-	orl	%ecx, %eax
-	cltq
-	imulq	%rdx
-	movq	%rax, %rcx
-	movb	-473(%rbp), %al                 # 1-byte Reload
-	shldq	$32, %rcx, %rdx
-	movq	%rdx, -576(%rbp)                # 8-byte Spill
-	shrq	$32, %rcx
-                                        # kill: def $ecx killed $ecx killed $rcx
-	cvtsi2sd	%ecx, %xmm0
-	divsd	%xmm1, %xmm0
-	movl	$.L.str.56, %edi
-	callq	printf
-	movq	-576(%rbp), %rcx                # 8-byte Reload
-	movl	-568(%rbp), %edx                # 4-byte Reload
-                                        # kill: def $esi killed $eax
-	movb	-473(%rbp), %al                 # 1-byte Reload
-                                        # kill: def $ecx killed $ecx killed $rcx
-	movslq	%ecx, %rcx
-	movslq	%edx, %rdx
-	imulq	%rdx, %rcx
-	shrq	$30, %rcx
-                                        # kill: def $ecx killed $ecx killed $rcx
-	cvtsi2sd	%ecx, %xmm0
-	cvtsi2ss	%ecx, %xmm1
-	movss	%xmm1, -564(%rbp)               # 4-byte Spill
-	movl	$.L.str.57, %edi
-	callq	printf
-	movss	-564(%rbp), %xmm0               # 4-byte Reload
-                                        # xmm0 = mem[0],zero,zero,zero
-	callq	_ZSt4sqrtf.1.19_s32_0fixp
-	cvtsi2ss	%eax, %xmm0
-	callq	_ZSt4sqrtf.20_s32_0fixp
-	movsd	-512(%rbp), %xmm1               # 8-byte Reload
-                                        # xmm1 = mem[0],zero
-	movl	%eax, %ecx
-	movb	-473(%rbp), %al                 # 1-byte Reload
-	movss	params_ksTo+4(%rip), %xmm0      # xmm0 = mem[0],zero,zero,zero
-	movss	.LCPI44_10(%rip), %xmm2         # xmm2 = mem[0],zero,zero,zero
-	movss	%xmm2, -560(%rbp)               # 4-byte Spill
-	mulss	%xmm2, %xmm0
-	cvttss2si	%xmm0, %edx
-	imull	%edx, %ecx
-	shll	$10, %ecx
-	movl	%ecx, -524(%rbp)                # 4-byte Spill
-	cvtsi2sd	%ecx, %xmm0
-	divsd	%xmm1, %xmm0
-	movl	$.L.str.58, %edi
-	callq	printf
-	movss	-560(%rbp), %xmm1               # 4-byte Reload
-                                        # xmm1 = mem[0],zero,zero,zero
-                                        # kill: def $ecx killed $eax
-	movb	-473(%rbp), %al                 # 1-byte Reload
-	movss	params_ksTo+4(%rip), %xmm0      # xmm0 = mem[0],zero,zero,zero
-	mulss	%xmm1, %xmm0
-	cvttss2si	%xmm0, %ecx
-	movslq	%ecx, %rcx
-	movl	$2291348275, %edx               # imm = 0x88933333
-	imulq	%rdx, %rcx
-	shrq	$31, %rcx
-                                        # kill: def $ecx killed $ecx killed $rcx
-	movl	%ecx, -556(%rbp)                # 4-byte Spill
-	cvtsi2sd	%ecx, %xmm0
-	movsd	.LCPI44_19(%rip), %xmm1         # xmm1 = mem[0],zero
-	movsd	%xmm1, -552(%rbp)               # 8-byte Spill
-	divsd	%xmm1, %xmm0
-	movl	$.L.str.59, %edi
-	callq	printf
-	movl	-556(%rbp), %edx                # 4-byte Reload
-	movsd	-552(%rbp), %xmm1               # 8-byte Reload
-                                        # xmm1 = mem[0],zero
-                                        # kill: def $ecx killed $eax
-	movb	-473(%rbp), %al                 # 1-byte Reload
-	movl	$4096, %ecx                     # imm = 0x1000
-	subl	%edx, %ecx
-	movl	%ecx, -540(%rbp)                # 4-byte Spill
-	cvtsi2sd	%ecx, %xmm0
-	divsd	%xmm1, %xmm0
-	movl	$.L.str.60, %edi
-	callq	printf
-	movl	-540(%rbp), %edx                # 4-byte Reload
-	movq	-536(%rbp), %rcx                # 8-byte Reload
-	movsd	-512(%rbp), %xmm1               # 8-byte Reload
-                                        # xmm1 = mem[0],zero
-                                        # kill: def $esi killed $eax
-	movb	-473(%rbp), %al                 # 1-byte Reload
-	movslq	%edx, %rdx
-	imulq	%rdx, %rcx
-	shrq	$14, %rcx
-                                        # kill: def $ecx killed $ecx killed $rcx
-	movl	%ecx, -528(%rbp)                # 4-byte Spill
-	cvtsi2sd	%ecx, %xmm0
-	divsd	%xmm1, %xmm0
-	movl	$.L.str.61, %edi
-	callq	printf
-	movl	-528(%rbp), %ecx                # 4-byte Reload
-	movl	-524(%rbp), %edx                # 4-byte Reload
-	movsd	-512(%rbp), %xmm1               # 8-byte Reload
-                                        # xmm1 = mem[0],zero
-                                        # kill: def $esi killed $eax
-	movb	-473(%rbp), %al                 # 1-byte Reload
-	addl	%edx, %ecx
-	movslq	%ecx, %rdx
-	movq	%rdx, -520(%rbp)                # 8-byte Spill
-	cvtsi2sd	%ecx, %xmm0
-	divsd	%xmm1, %xmm0
-	movl	$.L.str.63, %edi
-	callq	printf
-	movq	-520(%rbp), %rcx                # 8-byte Reload
-	movsd	-512(%rbp), %xmm1               # 8-byte Reload
-                                        # xmm1 = mem[0],zero
-                                        # kill: def $edx killed $eax
-	movl	-500(%rbp), %eax                # 4-byte Reload
-	cltq
-	shlq	$30, %rax
-	cqto
-	idivq	%rcx
-	movq	%rax, %rcx
-	movb	-473(%rbp), %al                 # 1-byte Reload
-	shlq	$30, %rcx
-	movq	%rcx, -496(%rbp)                # 8-byte Spill
-	cvtsi2sd	%rcx, %xmm0
-	divsd	%xmm1, %xmm0
-	movl	$.L.str.64, %edi
-	callq	printf
-	movq	-96(%rbp), %rdx                 # 8-byte Reload
-	movq	-496(%rbp), %rcx                # 8-byte Reload
-	movsd	-488(%rbp), %xmm1               # 8-byte Reload
-                                        # xmm1 = mem[0],zero
-                                        # kill: def $esi killed $eax
-	movb	-473(%rbp), %al                 # 1-byte Reload
-	shlq	$4, %rdx
-	addq	%rdx, %rcx
-	sarq	$3, %rcx
-	movq	%rcx, -472(%rbp)                # 8-byte Spill
-	movq	%rcx, %xmm0
-	movaps	.LCPI44_26(%rip), %xmm2         # xmm2 = [1127219200,1160773632,0,0]
-	movaps	%xmm2, -464(%rbp)               # 16-byte Spill
-	punpckldq	%xmm2, %xmm0            # xmm0 = xmm0[0],xmm2[0],xmm0[1],xmm2[1]
-	movapd	.LCPI44_27(%rip), %xmm2         # xmm2 = [4.503599627370496E+15,1.9342813113834067E+25]
-	movaps	%xmm2, -448(%rbp)               # 16-byte Spill
-	subpd	%xmm2, %xmm0
-	movaps	%xmm0, %xmm2
-	unpckhpd	%xmm0, %xmm0                    # xmm0 = xmm0[1,1]
-	addsd	%xmm2, %xmm0
-	divsd	%xmm1, %xmm0
-	movl	$.L.str.66, %edi
-	callq	printf
-	movq	-472(%rbp), %rdi                # 8-byte Reload
-	callq	_ZSt4sqrtf.2.21_u37_27fixp
-	movq	%rax, %rdi
-	callq	_ZSt4sqrtf.2_u37_27fixp
-	movaps	-464(%rbp), %xmm2               # 16-byte Reload
-	movaps	-448(%rbp), %xmm1               # 16-byte Reload
-	movabsq	$-36661572403, %rcx             # imm = 0xFFFFFFF776CCCCCD
-	addq	%rcx, %rax
-	movq	%rax, -432(%rbp)                # 8-byte Spill
-	movq	%rax, %xmm0
-	punpckldq	%xmm2, %xmm0            # xmm0 = xmm0[0],xmm2[0],xmm0[1],xmm2[1]
-	subpd	%xmm1, %xmm0
-	movaps	%xmm0, %xmm1
-	unpckhpd	%xmm0, %xmm0                    # xmm0 = xmm0[1,1]
-	addsd	%xmm1, %xmm0
-	movsd	.LCPI44_21(%rip), %xmm1         # xmm1 = mem[0],zero
-	divsd	%xmm1, %xmm0
-	movabsq	$.L.str.67, %rdi
-	movb	$1, %al
-	callq	printf
-	movsd	-80(%rbp), %xmm0                # 8-byte Reload
-                                        # xmm0 = mem[0],zero
-	movabsq	$.L.str.68, %rdi
-	movb	$1, %al
-	callq	printf
-                                        # kill: def $ecx killed $eax
-	movq	-432(%rbp), %rax                # 8-byte Reload
-	shrq	$27, %rax
-                                        # kill: def $eax killed $eax killed $rax
-	movswl	params_ct+2, %ecx
-	cmpl	%ecx, %eax
-	jge	.LBB44_23
-# %bb.22:                               #   in Loop: Header=BB44_12 Depth=1
-	xorl	%eax, %eax
-                                        # kill: def $al killed $al killed $eax
-	movb	%al, -633(%rbp)                 # 1-byte Spill
-	jmp	.LBB44_30
-.LBB44_23:                              #   in Loop: Header=BB44_12 Depth=1
-	movq	-432(%rbp), %rax                # 8-byte Reload
-	shrq	$27, %rax
-                                        # kill: def $eax killed $eax killed $rax
-	movswl	params_ct+4, %ecx
-	cmpl	%ecx, %eax
-	jge	.LBB44_25
-# %bb.24:                               #   in Loop: Header=BB44_12 Depth=1
-	movb	$1, %al
-	movb	%al, -634(%rbp)                 # 1-byte Spill
-	jmp	.LBB44_29
-.LBB44_25:                              #   in Loop: Header=BB44_12 Depth=1
-	movq	-432(%rbp), %rax                # 8-byte Reload
-	shrq	$27, %rax
-                                        # kill: def $eax killed $eax killed $rax
-	movswl	params_ct+6, %ecx
-	cmpl	%ecx, %eax
-	jge	.LBB44_27
-# %bb.26:                               #   in Loop: Header=BB44_12 Depth=1
-	movb	$2, %al
-	movb	%al, -635(%rbp)                 # 1-byte Spill
-	jmp	.LBB44_28
-.LBB44_27:                              #   in Loop: Header=BB44_12 Depth=1
-	movb	$3, %al
-	movb	%al, -635(%rbp)                 # 1-byte Spill
-	jmp	.LBB44_28
-.LBB44_28:                              #   in Loop: Header=BB44_12 Depth=1
-	movb	-635(%rbp), %al                 # 1-byte Reload
-	movb	%al, -634(%rbp)                 # 1-byte Spill
-.LBB44_29:                              #   in Loop: Header=BB44_12 Depth=1
-	movb	-634(%rbp), %al                 # 1-byte Reload
-	movb	%al, -633(%rbp)                 # 1-byte Spill
-.LBB44_30:                              #   in Loop: Header=BB44_12 Depth=1
-	movb	-633(%rbp), %al                 # 1-byte Reload
-	movb	%al, -713(%rbp)                 # 1-byte Spill
-	movsbl	%al, %esi
-	movl	$.L.str.69, %edi
-	xorl	%eax, %eax
-                                        # kill: def $al killed $al killed $eax
-	callq	printf
-	movb	-713(%rbp), %cl                 # 1-byte Reload
-                                        # kill: def $edx killed $eax
-	movq	-432(%rbp), %rax                # 8-byte Reload
-	movsbq	%cl, %rcx
-	movq	%rcx, -680(%rbp)                # 8-byte Spill
-	movswl	params_ct(%rcx,%rcx), %ecx
-	shll	$15, %ecx
-	movslq	%ecx, %rcx
-	shlq	$12, %rcx
-	subq	%rcx, %rax
-	movq	%rax, -712(%rbp)                # 8-byte Spill
-	shrq	$7, %rax
-                                        # kill: def $eax killed $eax killed $rax
-	cvtsi2sd	%eax, %xmm0
-	movsd	.LCPI44_23(%rip), %xmm1         # xmm1 = mem[0],zero
-	divsd	%xmm1, %xmm0
-	movl	$.L.str.71, %edi
-	movb	$1, %al
-	movb	%al, -681(%rbp)                 # 1-byte Spill
-	callq	printf
-	movq	-712(%rbp), %rdx                # 8-byte Reload
-	movq	-680(%rbp), %rsi                # 8-byte Reload
-                                        # kill: def $ecx killed $eax
-	movb	-681(%rbp), %al                 # 1-byte Reload
-	movq	params_ksTo.fixp@GOTPCREL(%rip), %rcx
-	movslq	(%rcx,%rsi,4), %rcx
-	imulq	%rdx, %rcx
-	shrq	$27, %rcx
-                                        # kill: def $ecx killed $ecx killed $rcx
-	shll	$10, %ecx
-	movl	%ecx, -700(%rbp)                # 4-byte Spill
-	cvtsi2sd	%ecx, %xmm0
-	movsd	.LCPI44_15(%rip), %xmm1         # xmm1 = mem[0],zero
-	movsd	%xmm1, -696(%rbp)               # 8-byte Spill
-	divsd	%xmm1, %xmm0
-	movl	$.L.str.72, %edi
-	callq	printf
-	movl	-700(%rbp), %ecx                # 4-byte Reload
-	movsd	-696(%rbp), %xmm1               # 8-byte Reload
-                                        # xmm1 = mem[0],zero
-                                        # kill: def $edx killed $eax
-	movb	-681(%rbp), %al                 # 1-byte Reload
-	addl	$1073741824, %ecx               # imm = 0x40000000
-	movl	%ecx, -668(%rbp)                # 4-byte Spill
-	cvtsi2sd	%ecx, %xmm0
-	divsd	%xmm1, %xmm0
-	movl	$.L.str.73, %edi
-	callq	printf
-	movq	-680(%rbp), %rcx                # 8-byte Reload
-                                        # kill: def $edx killed $eax
-	movq	-536(%rbp), %rax                # 8-byte Reload
-	movq	-48(%rbp,%rcx,8), %rcx
-	imulq	%rcx, %rax
-	shrq	$11, %rax
-                                        # kill: def $eax killed $eax killed $rax
-	movl	%eax, -664(%rbp)                # 4-byte Spill
-	cvtsi2sd	%eax, %xmm0
-	movsd	.LCPI44_15(%rip), %xmm1         # xmm1 = mem[0],zero
-	divsd	%xmm1, %xmm0
-	movabsq	$.L.str.74, %rdi
-	movb	$1, %al
-	callq	printf
-	movl	-668(%rbp), %ecx                # 4-byte Reload
-                                        # kill: def $edx killed $eax
-	movl	-664(%rbp), %eax                # 4-byte Reload
-	cltq
-	movslq	%ecx, %rcx
-	imulq	%rcx, %rax
-	sarq	$30, %rax
-                                        # kill: def $eax killed $eax killed $rax
-	cvtsi2ss	%eax, %xmm0
-	movss	.LCPI44_28(%rip), %xmm1         # xmm1 = mem[0],zero,zero,zero
-	divss	%xmm1, %xmm0
-	cvtsi2ss	%eax, %xmm1
-	movss	.LCPI44_28(%rip), %xmm2         # xmm2 = mem[0],zero,zero,zero
-	divss	%xmm2, %xmm1
-	movss	%xmm1, -660(%rbp)               # 4-byte Spill
-	cvtss2sd	%xmm0, %xmm0
-	movabsq	$.L.str.75, %rdi
-	movb	$1, %al
-	callq	printf
-	movss	-588(%rbp), %xmm1               # 4-byte Reload
-                                        # xmm1 = mem[0],zero,zero,zero
-	movss	-660(%rbp), %xmm0               # 4-byte Reload
-                                        # xmm0 = mem[0],zero,zero,zero
-	divss	%xmm0, %xmm1
-	movss	%xmm1, -656(%rbp)               # 4-byte Spill
-	movss	.LCPI44_18(%rip), %xmm0         # xmm0 = mem[0],zero,zero,zero
-	mulss	%xmm1, %xmm0
-	cvttss2si	%xmm0, %eax
-	shll	$16, %eax
-	cvtsi2sd	%eax, %xmm0
-	movsd	.LCPI44_5(%rip), %xmm1          # xmm1 = mem[0],zero
-	divsd	%xmm1, %xmm0
-	movabsq	$.L.str.77, %rdi
-	movb	$1, %al
-	callq	printf
-	movss	-656(%rbp), %xmm1               # 4-byte Reload
-                                        # xmm1 = mem[0],zero,zero,zero
-	movq	-96(%rbp), %rcx                 # 8-byte Reload
-	movss	.LCPI44_18(%rip), %xmm0         # xmm0 = mem[0],zero,zero,zero
-	mulss	%xmm1, %xmm0
-	cvttss2si	%xmm0, %rax
-	shlq	$26, %rax
-	addq	%rcx, %rax
-	cvtsi2sd	%rax, %xmm0
-	movsd	.LCPI44_7(%rip), %xmm1          # xmm1 = mem[0],zero
-	divsd	%xmm1, %xmm0
-	cvtsi2ss	%rax, %xmm1
-	movss	.LCPI44_9(%rip), %xmm2          # xmm2 = mem[0],zero,zero,zero
-	divss	%xmm2, %xmm1
-	movss	%xmm1, -652(%rbp)               # 4-byte Spill
-	movabsq	$.L.str.78, %rdi
-	movb	$1, %al
-	callq	printf
-	movss	-652(%rbp), %xmm0               # 4-byte Reload
-                                        # xmm0 = mem[0],zero,zero,zero
-	callq	_ZSt4sqrtf.3.23_s38_26fixp
-	cvtsi2ss	%rax, %xmm0
-	movss	.LCPI44_9(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
-	divss	%xmm1, %xmm0
-	callq	_ZSt4sqrtf.3_s38_26fixp
-	movabsq	$18330786201, %rcx              # imm = 0x444999999
-	subq	%rcx, %rax
-	movq	%rax, -648(%rbp)                # 8-byte Spill
-	cvtsi2sd	%rax, %xmm0
-	movsd	.LCPI44_7(%rip), %xmm1          # xmm1 = mem[0],zero
-	divsd	%xmm1, %xmm0
-	movabsq	$.L.str.79, %rdi
-	movb	$1, %al
-	callq	printf
-	movq	-648(%rbp), %rdx                # 8-byte Reload
-	movl	-280(%rbp), %esi                # 4-byte Reload
-                                        # kill: def $ecx killed $eax
-	movq	-224(%rbp), %rax                # 8-byte Reload
-	movslq	%esi, %rcx
-	sarq	$5, %rdx
-                                        # kill: def $edx killed $edx killed $rdx
-	movl	%edx, (%rax,%rcx,4)
-	movabsq	$.L.str.80, %rdi
-	movb	$0, %al
-	callq	printf
-.LBB44_31:                              #   in Loop: Header=BB44_12 Depth=1
-	jmp	.LBB44_32
-.LBB44_32:                              #   in Loop: Header=BB44_12 Depth=1
-	movl	-280(%rbp), %eax                # 4-byte Reload
-	addl	$1, %eax
-	movl	%eax, -276(%rbp)                # 4-byte Spill
-	jmp	.LBB44_12
-.LBB44_33:
-	movss	-208(%rbp), %xmm1               # 4-byte Reload
-                                        # xmm1 = mem[0],zero,zero,zero
-	movss	.LCPI44_4(%rip), %xmm0          # xmm0 = mem[0],zero,zero,zero
-	mulss	%xmm1, %xmm0
-	cvttss2si	%xmm0, %eax
-	cvtsi2sd	%eax, %xmm0
-	movsd	.LCPI44_5(%rip), %xmm1          # xmm1 = mem[0],zero
-	divsd	%xmm1, %xmm0
-	movabsq	$.L.str.81, %rdi
-	movb	$1, %al
-	callq	printf
-	movss	-204(%rbp), %xmm1               # 4-byte Reload
-                                        # xmm1 = mem[0],zero,zero,zero
-	movss	.LCPI44_4(%rip), %xmm0          # xmm0 = mem[0],zero,zero,zero
-	mulss	%xmm1, %xmm0
-	cvttss2si	%xmm0, %eax
-	cvtsi2sd	%eax, %xmm0
-	movsd	.LCPI44_5(%rip), %xmm1          # xmm1 = mem[0],zero
-	divsd	%xmm1, %xmm0
-	movabsq	$.L.str.82, %rdi
-	movb	$1, %al
-	callq	printf
-	movss	-200(%rbp), %xmm0               # 4-byte Reload
-                                        # xmm0 = mem[0],zero,zero,zero
-	cvtss2sd	%xmm0, %xmm0
-	movabsq	$.L.str.83, %rdi
-	movb	$1, %al
-	callq	printf
-	movsd	-88(%rbp), %xmm0                # 8-byte Reload
-                                        # xmm0 = mem[0],zero
-	movabsq	$.L.str.29, %rdi
-	movb	$1, %al
-	callq	printf
-	addq	$720, %rsp                      # imm = 0x2D0
-	popq	%rbp
-	.cfi_def_cfa %rsp, 8
-	retq
-.Lfunc_end44:
-	.size	_Z20MLX90640_CalculateToPKtffPf.4_fixp, .Lfunc_end44-_Z20MLX90640_CalculateToPKtffPf.4_fixp
-	.cfi_endproc
-                                        # -- End function
-	.section	.rodata.cst4,"aM",@progbits,4
-	.p2align	2                               # -- Begin function _Z20MLX90640_CalculateToPKtffPf.5_fixp
-.LCPI45_0:
-	.long	0x46800000                      # float 16384
-.LCPI45_1:
-	.long	0x5f000000                      # float 9.22337203E+18
-.LCPI45_2:
-	.long	0x4f000000                      # float 2.14748365E+9
-.LCPI45_4:
-	.long	0x47800000                      # float 65536
-.LCPI45_6:
-	.long	0x47000000                      # float 32768
-.LCPI45_8:
-	.long	0x49800000                      # float 1048576
-.LCPI45_10:
-	.long	0x56800000                      # float 7.03687441E+13
-.LCPI45_11:
-	.long	0x4b000000                      # float 8388608
-.LCPI45_12:
-	.long	0x42000000                      # float 32
-.LCPI45_15:
-	.long	0x45800000                      # float 4096
-.LCPI45_16:
-	.long	0x3f800000                      # float 1
-.LCPI45_18:
-	.long	0x55800000                      # float 1.7592186E+13
-.LCPI45_20:
-	.long	0x48000000                      # float 131072
-.LCPI45_22:
-	.long	0x57000000                      # float 1.40737488E+14
-.LCPI45_26:
-	.long	0x4e800000                      # float 1.07374182E+9
-	.section	.rodata.cst8,"aM",@progbits,8
-	.p2align	3
-.LCPI45_3:
-	.quad	0x41e0000000000000              # double 2147483648
-.LCPI45_5:
-	.quad	0x40f0000000000000              # double 65536
-.LCPI45_7:
-	.quad	0x4190000000000000              # double 67108864
-.LCPI45_9:
-	.quad	0x4140000000000000              # double 2097152
-.LCPI45_13:
-	.quad	0x41d0000000000000              # double 1073741824
-.LCPI45_14:
-	.quad	0x40e0000000000000              # double 32768
-.LCPI45_17:
-	.quad	0x40b0000000000000              # double 4096
-.LCPI45_19:
-	.quad	0x41a0000000000000              # double 134217728
-.LCPI45_21:
-	.quad	0x4130000000000000              # double 1048576
-.LCPI45_23:
-	.quad	0x41f0000000000000              # double 4294967296
-	.section	.rodata.cst16,"aM",@progbits,16
-	.p2align	4
-.LCPI45_24:
-	.long	1127219200                      # 0x43300000
-	.long	1160773632                      # 0x45300000
-	.long	0                               # 0x0
-	.long	0                               # 0x0
-.LCPI45_25:
-	.quad	0x4330000000000000              # double 4503599627370496
-	.quad	0x4530000000000000              # double 1.9342813113834067E+25
-	.text
-	.p2align	4, 0x90
-	.type	_Z20MLX90640_CalculateToPKtffPf.5_fixp,@function
-_Z20MLX90640_CalculateToPKtffPf.5_fixp: # @_Z20MLX90640_CalculateToPKtffPf.5_fixp
-	.cfi_startproc
-# %bb.0:
-	pushq	%rbp
-	.cfi_def_cfa_offset 16
-	.cfi_offset %rbp, -16
-	movq	%rsp, %rbp
-	.cfi_def_cfa_register %rbp
-	subq	$720, %rsp                      # imm = 0x2D0
-	movq	%rdi, -64(%rbp)                 # 8-byte Spill
-	movq	%rsi, -168(%rbp)                # 8-byte Spill
-	movq	%rdx, -224(%rbp)                # 8-byte Spill
-	movss	.LCPI45_1(%rip), %xmm2          # xmm2 = mem[0],zero,zero,zero
-	movaps	%xmm0, %xmm1
-	mulss	%xmm2, %xmm1
-	movaps	%xmm1, %xmm3
-	subss	%xmm2, %xmm3
-	cvttss2si	%xmm3, %rax
-	movabsq	$-9223372036854775808, %rcx     # imm = 0x8000000000000000
-	xorq	%rcx, %rax
-	cvttss2si	%xmm1, %rcx
-	ucomiss	%xmm2, %xmm1
-	cmovbq	%rcx, %rax
-	movq	%rax, -144(%rbp)                # 8-byte Spill
-	cvtsi2sd	%rsi, %xmm1
-	movsd	%xmm1, -200(%rbp)               # 8-byte Spill
-	movss	.LCPI45_2(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
-	mulss	%xmm1, %xmm0
-	cvttss2si	%xmm0, %rax
-                                        # kill: def $eax killed $eax killed $rax
-	movl	%eax, %eax
-                                        # kill: def $rax killed $eax
-	cvtsi2sd	%rax, %xmm0
-	movsd	.LCPI45_3(%rip), %xmm1          # xmm1 = mem[0],zero
-	divsd	%xmm1, %xmm0
-	movsd	%xmm0, -128(%rbp)               # 8-byte Spill
-	movw	1666(%rdi), %ax
-	movw	%ax, -210(%rbp)                 # 2-byte Spill
-	callq	_Z15MLX90640_GetVddPKt
-	movq	-64(%rbp), %rdi                 # 8-byte Reload
-	movss	%xmm0, -208(%rbp)               # 4-byte Spill
-	callq	_Z14MLX90640_GetTaPKt
-	movss	%xmm0, -188(%rbp)               # 4-byte Spill
-	movaps	%xmm0, %xmm1
-	movss	%xmm1, -204(%rbp)               # 4-byte Spill
-	movss	.LCPI45_4(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
-	mulss	%xmm1, %xmm0
-	cvttps2dq	%xmm0, %xmm0
-	cvtdq2pd	%xmm0, %xmm0
-	movsd	.LCPI45_5(%rip), %xmm1          # xmm1 = mem[0],zero
-	divsd	%xmm1, %xmm0
-	movl	$.L.str.22, %edi
-	movb	$1, %al
-	movb	%al, -97(%rbp)                  # 1-byte Spill
-	callq	printf
-	movsd	-200(%rbp), %xmm0               # 8-byte Reload
-                                        # xmm0 = mem[0],zero
-                                        # kill: def $ecx killed $eax
-	movb	-97(%rbp), %al                  # 1-byte Reload
-	movl	$.L.str.23, %edi
-	callq	printf
-	movss	-188(%rbp), %xmm0               # 4-byte Reload
-                                        # xmm0 = mem[0],zero,zero,zero
-                                        # kill: def $ecx killed $eax
-	movb	-97(%rbp), %al                  # 1-byte Reload
-	movss	.LCPI45_6(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
-	mulss	%xmm1, %xmm0
-	cvttss2si	%xmm0, %ecx
-	addl	$8950579, %ecx                  # imm = 0x889333
-	movslq	%ecx, %rcx
-	movq	%rcx, -184(%rbp)                # 8-byte Spill
-	shlq	$11, %rcx
-	cvtsi2sd	%rcx, %xmm0
-	movsd	.LCPI45_7(%rip), %xmm1          # xmm1 = mem[0],zero
-	movsd	%xmm1, -136(%rbp)               # 8-byte Spill
-	divsd	%xmm1, %xmm0
-	movl	$.L.str.24, %edi
-	callq	printf
-	movq	-184(%rbp), %rcx                # 8-byte Reload
-	movsd	-136(%rbp), %xmm1               # 8-byte Reload
-                                        # xmm1 = mem[0],zero
-	movq	%rcx, %rax
-	imulq	%rax, %rax
-	sarq	$4, %rax
-	imulq	%rcx
-	movq	%rax, -176(%rbp)                # 8-byte Spill
-	movq	%rdx, %rax
-	movq	-176(%rbp), %rdx                # 8-byte Reload
-	shldq	$49, %rdx, %rax
-	imulq	%rcx
-	movq	%rax, %rcx
-	movb	-97(%rbp), %al                  # 1-byte Reload
-	shldq	$49, %rcx, %rdx
-	movq	%rdx, -160(%rbp)                # 8-byte Spill
-	cvtsi2sd	%rdx, %xmm0
-	divsd	%xmm1, %xmm0
-	movl	$.L.str.25, %edi
-	callq	printf
-	movq	-168(%rbp), %rdi                # 8-byte Reload
-	addq	$273, %rdi                      # imm = 0x111
-	movl	$4, %esi
-	callq	_ZSt3powIdiEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.25_s64_0fixp
-	movq	%rax, %rcx
-	movb	-97(%rbp), %al                  # 1-byte Reload
-	movq	%rcx, -112(%rbp)                # 8-byte Spill
-	cvtsi2sd	%rcx, %xmm0
-	movl	$.L.str.26, %edi
-	callq	printf
-	movq	-160(%rbp), %rdx                # 8-byte Reload
-	movsd	-136(%rbp), %xmm1               # 8-byte Reload
-                                        # xmm1 = mem[0],zero
-	movq	-112(%rbp), %rcx                # 8-byte Reload
-                                        # kill: def $esi killed $eax
-	movb	-97(%rbp), %al                  # 1-byte Reload
-	shlq	$26, %rcx
-	subq	%rdx, %rcx
-	movq	%rcx, -152(%rbp)                # 8-byte Spill
-	cvtsi2sd	%rcx, %xmm0
-	divsd	%xmm1, %xmm0
-	movl	$.L.str.27, %edi
-	callq	printf
-	movq	-152(%rbp), %rdi                # 8-byte Reload
-	movq	-144(%rbp), %rdx                # 8-byte Reload
-	movq	%rdi, %rsi
-	shrq	$63, %rsi
-	shldq	$63, %rdi, %rsi
-	shlq	$63, %rdi
-	xorl	%eax, %eax
-	movl	%eax, %ecx
-	movq	%rcx, -72(%rbp)                 # 8-byte Spill
-	callq	__divti3@PLT
-	movsd	-136(%rbp), %xmm2               # 8-byte Reload
-                                        # xmm2 = mem[0],zero
-	movsd	-128(%rbp), %xmm1               # 8-byte Reload
-                                        # xmm1 = mem[0],zero
-	movq	%rax, -120(%rbp)                # 8-byte Spill
-	cvtsi2sd	%rax, %xmm0
-	divsd	%xmm2, %xmm0
-	movl	$.L.str.28, %edi
-	movb	$2, %al
-	callq	printf
-	movq	-120(%rbp), %rdx                # 8-byte Reload
-	movq	-112(%rbp), %rcx                # 8-byte Reload
-                                        # kill: def $esi killed $eax
-	movb	-97(%rbp), %al                  # 1-byte Reload
-	sarq	$26, %rdx
-	subq	%rdx, %rcx
-	movq	%rcx, -96(%rbp)                 # 8-byte Spill
-	cvtsi2sd	%rcx, %xmm0
-	movsd	%xmm0, -88(%rbp)                # 8-byte Spill
-	movaps	%xmm0, %xmm1
-	movsd	%xmm1, -80(%rbp)                # 8-byte Spill
-	movl	$.L.str.29, %edi
-	callq	printf
-	movq	-72(%rbp), %rdx                 # 8-byte Reload
-	movq	-64(%rbp), %rdi                 # 8-byte Reload
-	movss	params_ksTo(%rip), %xmm0        # xmm0 = mem[0],zero,zero,zero
-	movss	.LCPI45_8(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
-	mulss	%xmm1, %xmm0
-	cvttss2si	%xmm0, %eax
-	cltq
-	shlq	$3, %rax
-	leaq	(%rax,%rax,4), %rax
-	shrq	$5, %rax
-                                        # kill: def $eax killed $eax killed $rax
-	addl	$32768, %eax                    # imm = 0x8000
-	movslq	%eax, %rcx
-	movabsq	$70368744177664, %rax           # imm = 0x400000000000
-	idivq	%rcx
-	shrq	$27, %rax
-                                        # kill: def $eax killed $eax killed $rax
-	cltq
-	shlq	$5, %rax
-	movq	%rax, -48(%rbp)
-	movq	$512, -40(%rbp)                 # imm = 0x200
-	movss	params_ksTo+8(%rip), %xmm0      # xmm0 = mem[0],zero,zero,zero
-	mulss	%xmm1, %xmm0
-	cvttss2si	%xmm0, %eax
-	movswl	params_ct+4(%rip), %ecx
-	shll	$15, %ecx
-	cltq
-	movslq	%ecx, %rcx
-	imulq	%rcx, %rax
-	shrq	$30, %rax
-                                        # kill: def $eax killed $eax killed $rax
-	addl	$32, %eax
-	cltq
-	shlq	$4, %rax
-	movq	%rax, -32(%rbp)
-	movq	-32(%rbp), %rax
-	movss	params_ksTo+12(%rip), %xmm0     # xmm0 = mem[0],zero,zero,zero
-	mulss	%xmm1, %xmm0
-	cvttss2si	%xmm0, %ecx
-	movswl	params_ct+6(%rip), %edx
-	movswl	params_ct+4(%rip), %esi
-	subl	%esi, %edx
-	shll	$15, %edx
-	movslq	%ecx, %rcx
-	movslq	%edx, %rdx
-	imulq	%rdx, %rcx
-	shrq	$31, %rcx
-                                        # kill: def $ecx killed $ecx killed $rcx
-	addl	$16, %ecx
-	movslq	%ecx, %rcx
-	imulq	%rcx
-	shldq	$60, %rax, %rdx
+	shldq	$28, %rax, %rdx
 	movq	%rdx, -24(%rbp)
 	movzwl	1556(%rdi), %eax
 	shll	$14, %eax
@@ -8201,7 +6978,7 @@ _Z20MLX90640_CalculateToPKtffPf.5_fixp: # @_Z20MLX90640_CalculateToPKtffPf.5_fix
 	movswl	params_gainEE(%rip), %eax
 	movl	%eax, %ecx
 	shll	$15, %ecx
-	movss	.LCPI45_10(%rip), %xmm1         # xmm1 = mem[0],zero,zero,zero
+	movss	.LCPI45_16(%rip), %xmm1         # xmm1 = mem[0],zero,zero,zero
 	mulss	%xmm1, %xmm0
 	cvttss2si	%xmm0, %rdx
 	movslq	%ecx, %rsi
@@ -8215,16 +6992,16 @@ _Z20MLX90640_CalculateToPKtffPf.5_fixp: # @_Z20MLX90640_CalculateToPKtffPf.5_fix
 	movq	%rax, %rcx
 	movq	-64(%rbp), %rax                 # 8-byte Reload
 	shlq	$6, %rcx
-	movq	%rcx, -248(%rbp)                # 8-byte Spill
+	movq	%rcx, -256(%rbp)                # 8-byte Spill
 	cvtsi2sd	%rcx, %xmm0
-	movsd	.LCPI45_9(%rip), %xmm1          # xmm1 = mem[0],zero
+	movsd	.LCPI45_15(%rip), %xmm1         # xmm1 = mem[0],zero
 	divsd	%xmm1, %xmm0
-	movsd	%xmm0, -240(%rbp)               # 8-byte Spill
+	movsd	%xmm0, -248(%rbp)               # 8-byte Spill
 	movzwl	1664(%rax), %ecx
 	andl	$4096, %ecx                     # imm = 0x1000
 	sarl	$5, %ecx
                                         # kill: def $cl killed $cl killed $ecx
-	movb	%cl, -229(%rbp)                 # 1-byte Spill
+	movb	%cl, -237(%rbp)                 # 1-byte Spill
 	movzwl	1552(%rax), %ecx
 	shll	$16, %ecx
 	sarl	$16, %ecx
@@ -8234,19 +7011,19 @@ _Z20MLX90640_CalculateToPKtffPf.5_fixp: # @_Z20MLX90640_CalculateToPKtffPf.5_fix
 	sarl	$16, %eax
 	movl	%eax, -4(%rbp)
 	xorl	%eax, %eax
-	movl	%eax, -228(%rbp)                # 4-byte Spill
+	movl	%eax, -236(%rbp)                # 4-byte Spill
 .LBB45_3:                               # =>This Inner Loop Header: Depth=1
-	movl	-228(%rbp), %eax                # 4-byte Reload
-	movl	%eax, -252(%rbp)                # 4-byte Spill
+	movl	-236(%rbp), %eax                # 4-byte Reload
+	movl	%eax, -260(%rbp)                # 4-byte Spill
 	cmpl	$2, %eax
 	jge	.LBB45_8
 # %bb.4:                                #   in Loop: Header=BB45_3 Depth=1
-	movl	-252(%rbp), %eax                # 4-byte Reload
+	movl	-260(%rbp), %eax                # 4-byte Reload
 	cltq
 	cmpl	$32767, -8(%rbp,%rax,4)         # imm = 0x7FFF
 	jle	.LBB45_6
 # %bb.5:                                #   in Loop: Header=BB45_3 Depth=1
-	movl	-252(%rbp), %eax                # 4-byte Reload
+	movl	-260(%rbp), %eax                # 4-byte Reload
 	movslq	%eax, %rcx
 	movslq	-8(%rbp,%rcx,4), %rcx
 	subq	$65536, %rcx                    # imm = 0x10000
@@ -8254,26 +7031,26 @@ _Z20MLX90640_CalculateToPKtffPf.5_fixp: # @_Z20MLX90640_CalculateToPKtffPf.5_fix
                                         # kill: def $ecx killed $ecx killed $rcx
 	movl	%ecx, -8(%rbp,%rax,4)
 .LBB45_6:                               #   in Loop: Header=BB45_3 Depth=1
-	movl	-252(%rbp), %eax                # 4-byte Reload
-	movq	-248(%rbp), %rcx                # 8-byte Reload
+	movl	-260(%rbp), %eax                # 4-byte Reload
+	movq	-256(%rbp), %rcx                # 8-byte Reload
 	cltq
 	movslq	-8(%rbp,%rax,4), %rax
 	imulq	%rcx
 	movq	%rax, %rcx
-	movl	-252(%rbp), %eax                # 4-byte Reload
+	movl	-260(%rbp), %eax                # 4-byte Reload
 	shldq	$43, %rcx, %rdx
 	cltq
 	movl	%edx, %ecx
 	movl	%ecx, -8(%rbp,%rax,4)
 # %bb.7:                                #   in Loop: Header=BB45_3 Depth=1
-	movl	-252(%rbp), %eax                # 4-byte Reload
+	movl	-260(%rbp), %eax                # 4-byte Reload
 	addl	$1, %eax
-	movl	%eax, -228(%rbp)                # 4-byte Spill
+	movl	%eax, -236(%rbp)                # 4-byte Spill
 	jmp	.LBB45_3
 .LBB45_8:
-	movss	-208(%rbp), %xmm0               # 4-byte Reload
+	movss	-216(%rbp), %xmm0               # 4-byte Reload
                                         # xmm0 = mem[0],zero,zero,zero
-	movss	-204(%rbp), %xmm1               # 4-byte Reload
+	movss	-212(%rbp), %xmm1               # 4-byte Reload
                                         # xmm1 = mem[0],zero,zero,zero
 	movslq	-8(%rbp), %rcx
 	movswl	params_cpOffset(%rip), %eax
@@ -8308,7 +7085,7 @@ _Z20MLX90640_CalculateToPKtffPf.5_fixp: # @_Z20MLX90640_CalculateToPKtffPf.5_fix
 	movslq	%edx, %rdx
 	imulq	%rdx
 	movq	%rax, %rsi
-	movb	-229(%rbp), %al                 # 1-byte Reload
+	movb	-237(%rbp), %al                 # 1-byte Reload
                                         # kill: def $edx killed $edx killed $rdx
 	movslq	%edx, %rdx
 	shldq	$31, %rsi, %rdx
@@ -8320,12 +7097,12 @@ _Z20MLX90640_CalculateToPKtffPf.5_fixp: # @_Z20MLX90640_CalculateToPKtffPf.5_fix
 	cmpl	%ecx, %eax
 	jne	.LBB45_10
 # %bb.9:
-	movss	-208(%rbp), %xmm0               # 4-byte Reload
+	movss	-216(%rbp), %xmm0               # 4-byte Reload
                                         # xmm0 = mem[0],zero,zero,zero
-	movss	-204(%rbp), %xmm1               # 4-byte Reload
+	movss	-212(%rbp), %xmm1               # 4-byte Reload
                                         # xmm1 = mem[0],zero,zero,zero
 	movl	-4(%rbp), %eax
-	movl	%eax, -268(%rbp)                # 4-byte Spill
+	movl	%eax, -276(%rbp)                # 4-byte Spill
 	movswl	params_cpOffset+2(%rip), %eax
 	shll	$15, %eax
 	movq	params_cpKta.fixp@GOTPCREL(%rip), %rcx
@@ -8358,10 +7135,10 @@ _Z20MLX90640_CalculateToPKtffPf.5_fixp: # @_Z20MLX90640_CalculateToPKtffPf.5_fix
 	movslq	%ecx, %rcx
 	imulq	%rcx
 	movq	%rax, %rcx
-	movl	-268(%rbp), %eax                # 4-byte Reload
-	movq	%rcx, -264(%rbp)                # 8-byte Spill
+	movl	-276(%rbp), %eax                # 4-byte Reload
+	movq	%rcx, -272(%rbp)                # 8-byte Spill
 	movq	%rdx, %rcx
-	movq	-264(%rbp), %rdx                # 8-byte Reload
+	movq	-272(%rbp), %rdx                # 8-byte Reload
                                         # kill: def $ecx killed $ecx killed $rcx
 	movslq	%ecx, %rcx
 	shldq	$31, %rdx, %rcx
@@ -8370,16 +7147,16 @@ _Z20MLX90640_CalculateToPKtffPf.5_fixp: # @_Z20MLX90640_CalculateToPKtffPf.5_fix
 	movl	%eax, -4(%rbp)
 	jmp	.LBB45_11
 .LBB45_10:
-	movss	-208(%rbp), %xmm0               # 4-byte Reload
+	movss	-216(%rbp), %xmm0               # 4-byte Reload
                                         # xmm0 = mem[0],zero,zero,zero
-	movss	-204(%rbp), %xmm1               # 4-byte Reload
+	movss	-212(%rbp), %xmm1               # 4-byte Reload
                                         # xmm1 = mem[0],zero,zero,zero
 	movl	-4(%rbp), %eax
-	movl	%eax, -272(%rbp)                # 4-byte Spill
+	movl	%eax, -280(%rbp)                # 4-byte Spill
 	movswl	params_cpOffset+2(%rip), %eax
 	shll	$15, %eax
 	movss	params_ilChessC(%rip), %xmm2    # xmm2 = mem[0],zero,zero,zero
-	movss	.LCPI45_11(%rip), %xmm3         # xmm3 = mem[0],zero,zero,zero
+	movss	.LCPI45_17(%rip), %xmm3         # xmm3 = mem[0],zero,zero,zero
 	mulss	%xmm3, %xmm2
 	cvttss2si	%xmm2, %ecx
 	sarl	$8, %ecx
@@ -8414,74 +7191,74 @@ _Z20MLX90640_CalculateToPKtffPf.5_fixp: # @_Z20MLX90640_CalculateToPKtffPf.5_fix
 	movslq	%ecx, %rcx
 	imulq	%rcx
 	movq	%rax, %rcx
-	movl	-272(%rbp), %eax                # 4-byte Reload
+	movl	-280(%rbp), %eax                # 4-byte Reload
 	shldq	$32, %rcx, %rdx
 	movl	%edx, %ecx
 	subl	%ecx, %eax
 	movl	%eax, -4(%rbp)
 .LBB45_11:
 	xorl	%eax, %eax
-	movl	%eax, -276(%rbp)                # 4-byte Spill
+	movl	%eax, -284(%rbp)                # 4-byte Spill
 	jmp	.LBB45_12
 .LBB45_12:                              # =>This Inner Loop Header: Depth=1
-	movl	-276(%rbp), %eax                # 4-byte Reload
-	movl	%eax, -280(%rbp)                # 4-byte Spill
+	movl	-284(%rbp), %eax                # 4-byte Reload
+	movl	%eax, -288(%rbp)                # 4-byte Spill
 	cmpl	$768, %eax                      # imm = 0x300
-	jge	.LBB45_33
+	jge	.LBB45_35
 # %bb.13:                               #   in Loop: Header=BB45_12 Depth=1
-	movl	-280(%rbp), %eax                # 4-byte Reload
+	movl	-288(%rbp), %eax                # 4-byte Reload
 	movl	$32, %ecx
 	cltd
 	idivl	%ecx
 	movl	%eax, %ecx
-	movl	-280(%rbp), %eax                # 4-byte Reload
+	movl	-288(%rbp), %eax                # 4-byte Reload
 	movl	$64, %esi
 	cltd
 	idivl	%esi
 	movl	%eax, %edx
-	movl	-280(%rbp), %eax                # 4-byte Reload
+	movl	-288(%rbp), %eax                # 4-byte Reload
 	shll	$1, %edx
 	subl	%edx, %ecx
                                         # kill: def $cl killed $cl killed $ecx
-	movb	%cl, -282(%rbp)                 # 1-byte Spill
+	movb	%cl, -290(%rbp)                 # 1-byte Spill
 	movsbl	%cl, %ecx
 	movl	$2, %esi
 	cltd
 	idivl	%esi
 	movl	%eax, %esi
-	movl	-280(%rbp), %eax                # 4-byte Reload
+	movl	-288(%rbp), %eax                # 4-byte Reload
 	shll	$1, %esi
 	movl	%eax, %edx
 	subl	%esi, %edx
 	xorl	%edx, %ecx
                                         # kill: def $cl killed $cl killed $ecx
-	movb	%cl, -283(%rbp)                 # 1-byte Spill
+	movb	%cl, -291(%rbp)                 # 1-byte Spill
 	addl	$2, %eax
 	movl	$4, %ecx
 	cltd
 	idivl	%ecx
 	movl	%eax, %ecx
-	movl	-280(%rbp), %eax                # 4-byte Reload
+	movl	-288(%rbp), %eax                # 4-byte Reload
 	addl	$3, %eax
 	movl	$4, %esi
 	cltd
 	idivl	%esi
 	movl	%eax, %edx
-	movl	-280(%rbp), %eax                # 4-byte Reload
+	movl	-288(%rbp), %eax                # 4-byte Reload
 	subl	%edx, %ecx
 	addl	$1, %eax
 	movl	$4, %esi
 	cltd
 	idivl	%esi
 	movl	%eax, %edx
-	movl	-280(%rbp), %eax                # 4-byte Reload
+	movl	-288(%rbp), %eax                # 4-byte Reload
 	addl	%edx, %ecx
 	movl	$4, %esi
 	cltd
 	idivl	%esi
-	movb	-282(%rbp), %dl                 # 1-byte Reload
+	movb	-290(%rbp), %dl                 # 1-byte Reload
 	movl	%eax, %esi
-	movb	-229(%rbp), %al                 # 1-byte Reload
+	movb	-237(%rbp), %al                 # 1-byte Reload
 	subl	%esi, %ecx
 	movsbl	%dl, %esi
 	shll	$1, %esi
@@ -8489,28 +7266,28 @@ _Z20MLX90640_CalculateToPKtffPf.5_fixp: # @_Z20MLX90640_CalculateToPKtffPf.5_fix
 	subl	%esi, %edx
 	imull	%edx, %ecx
                                         # kill: def $cl killed $cl killed $ecx
-	movb	%cl, -281(%rbp)                 # 1-byte Spill
+	movb	%cl, -289(%rbp)                 # 1-byte Spill
 	movzbl	%al, %eax
 	cmpl	$0, %eax
 	jne	.LBB45_15
 # %bb.14:                               #   in Loop: Header=BB45_12 Depth=1
-	movb	-282(%rbp), %al                 # 1-byte Reload
-	movb	%al, -284(%rbp)                 # 1-byte Spill
+	movb	-290(%rbp), %al                 # 1-byte Reload
+	movb	%al, -292(%rbp)                 # 1-byte Spill
 	jmp	.LBB45_16
 .LBB45_15:                              #   in Loop: Header=BB45_12 Depth=1
-	movb	-283(%rbp), %al                 # 1-byte Reload
-	movb	%al, -284(%rbp)                 # 1-byte Spill
+	movb	-291(%rbp), %al                 # 1-byte Reload
+	movb	%al, -292(%rbp)                 # 1-byte Spill
 	jmp	.LBB45_16
 .LBB45_16:                              #   in Loop: Header=BB45_12 Depth=1
 	movq	-64(%rbp), %rcx                 # 8-byte Reload
-	movb	-284(%rbp), %al                 # 1-byte Reload
+	movb	-292(%rbp), %al                 # 1-byte Reload
 	movsbl	%al, %eax
 	movzwl	1666(%rcx), %ecx
 	cmpl	%ecx, %eax
-	jne	.LBB45_31
+	jne	.LBB45_33
 # %bb.17:                               #   in Loop: Header=BB45_12 Depth=1
 	movq	-64(%rbp), %rax                 # 8-byte Reload
-	movl	-280(%rbp), %ecx                # 4-byte Reload
+	movl	-288(%rbp), %ecx                # 4-byte Reload
 	movslq	%ecx, %rcx
 	movzwl	(%rax,%rcx,2), %eax
 	shll	$16, %eax
@@ -8520,135 +7297,135 @@ _Z20MLX90640_CalculateToPKtffPf.5_fixp: # @_Z20MLX90640_CalculateToPKtffPf.5_fix
 	cvtsi2ss	%eax, %xmm1
 	movss	.LCPI45_4(%rip), %xmm2          # xmm2 = mem[0],zero,zero,zero
 	divss	%xmm2, %xmm1
-	movss	%xmm1, -292(%rbp)               # 4-byte Spill
+	movss	%xmm1, -300(%rbp)               # 4-byte Spill
 	cmpl	$2147418112, %eax               # imm = 0x7FFF0000
-	movss	%xmm0, -288(%rbp)               # 4-byte Spill
+	movss	%xmm0, -296(%rbp)               # 4-byte Spill
 	jle	.LBB45_19
 # %bb.18:                               #   in Loop: Header=BB45_12 Depth=1
-	movss	-292(%rbp), %xmm0               # 4-byte Reload
+	movss	-300(%rbp), %xmm0               # 4-byte Reload
                                         # xmm0 = mem[0],zero,zero,zero
 	movss	.LCPI45_4(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
 	subss	%xmm1, %xmm0
-	movss	%xmm0, -288(%rbp)               # 4-byte Spill
+	movss	%xmm0, -296(%rbp)               # 4-byte Spill
 .LBB45_19:                              #   in Loop: Header=BB45_12 Depth=1
-	movss	-288(%rbp), %xmm0               # 4-byte Reload
+	movss	-296(%rbp), %xmm0               # 4-byte Reload
                                         # xmm0 = mem[0],zero,zero,zero
-	movss	%xmm0, -420(%rbp)               # 4-byte Spill
+	movss	%xmm0, -428(%rbp)               # 4-byte Spill
 	cvtss2sd	%xmm0, %xmm0
 	movl	$.L.str.30, %edi
 	movb	$1, %al
-	movb	%al, -345(%rbp)                 # 1-byte Spill
+	movb	%al, -353(%rbp)                 # 1-byte Spill
 	callq	printf
-	movss	-420(%rbp), %xmm0               # 4-byte Reload
+	movss	-428(%rbp), %xmm0               # 4-byte Reload
                                         # xmm0 = mem[0],zero,zero,zero
-	movq	-248(%rbp), %rcx                # 8-byte Reload
-	movss	.LCPI45_10(%rip), %xmm1         # xmm1 = mem[0],zero,zero,zero
+	movq	-256(%rbp), %rcx                # 8-byte Reload
+	movss	.LCPI45_16(%rip), %xmm1         # xmm1 = mem[0],zero,zero,zero
 	mulss	%xmm1, %xmm0
 	cvttss2si	%xmm0, %rax
 	imulq	%rcx
 	movq	%rax, %rcx
-	movb	-345(%rbp), %al                 # 1-byte Reload
+	movb	-353(%rbp), %al                 # 1-byte Reload
 	shldq	$2, %rcx, %rdx
-	movq	%rdx, -320(%rbp)                # 8-byte Spill
+	movq	%rdx, -328(%rbp)                # 8-byte Spill
 	cvtsi2ss	%rdx, %xmm0
-	movss	.LCPI45_12(%rip), %xmm1         # xmm1 = mem[0],zero,zero,zero
+	movss	.LCPI45_18(%rip), %xmm1         # xmm1 = mem[0],zero,zero,zero
 	divss	%xmm1, %xmm0
 	cvtss2sd	%xmm0, %xmm0
 	movl	$.L.str.31, %edi
 	callq	printf
-	movss	-204(%rbp), %xmm0               # 4-byte Reload
+	movss	-212(%rbp), %xmm0               # 4-byte Reload
                                         # xmm0 = mem[0],zero,zero,zero
                                         # kill: def $ecx killed $eax
-	movb	-345(%rbp), %al                 # 1-byte Reload
+	movb	-353(%rbp), %al                 # 1-byte Reload
 	movss	.LCPI45_4(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
 	mulss	%xmm1, %xmm0
 	cvttss2si	%xmm0, %ecx
 	addl	$-1638400, %ecx                 # imm = 0xFFE70000
-	movl	%ecx, -404(%rbp)                # 4-byte Spill
+	movl	%ecx, -412(%rbp)                # 4-byte Spill
 	cvtsi2sd	%ecx, %xmm2
 	movsd	.LCPI45_5(%rip), %xmm1          # xmm1 = mem[0],zero
 	divsd	%xmm1, %xmm2
-	movsd	%xmm2, -416(%rbp)               # 8-byte Spill
+	movsd	%xmm2, -424(%rbp)               # 8-byte Spill
 	cvttps2dq	%xmm0, %xmm0
 	cvtdq2pd	%xmm0, %xmm0
 	divsd	%xmm1, %xmm0
 	movl	$.L.str.32, %edi
 	callq	printf
-	movsd	-416(%rbp), %xmm0               # 8-byte Reload
+	movsd	-424(%rbp), %xmm0               # 8-byte Reload
                                         # xmm0 = mem[0],zero
                                         # kill: def $ecx killed $eax
-	movb	-345(%rbp), %al                 # 1-byte Reload
+	movb	-353(%rbp), %al                 # 1-byte Reload
 	movl	$.L.str.33, %edi
 	callq	printf
-	movl	-280(%rbp), %edx                # 4-byte Reload
-	movl	-404(%rbp), %ecx                # 4-byte Reload
+	movl	-288(%rbp), %edx                # 4-byte Reload
+	movl	-412(%rbp), %ecx                # 4-byte Reload
                                         # kill: def $esi killed $eax
-	movb	-345(%rbp), %al                 # 1-byte Reload
+	movb	-353(%rbp), %al                 # 1-byte Reload
 	movslq	%edx, %rsi
-	movq	%rsi, -344(%rbp)                # 8-byte Spill
+	movq	%rsi, -352(%rbp)                # 8-byte Spill
 	movq	params_kta.fixp@GOTPCREL(%rip), %rdx
 	movslq	(%rdx,%rsi,4), %rdx
 	movslq	%ecx, %rcx
 	imulq	%rdx, %rcx
-	movq	%rcx, -400(%rbp)                # 8-byte Spill
+	movq	%rcx, -408(%rbp)                # 8-byte Spill
 	addq	%rcx, %rcx
 	cvtsi2sd	%rcx, %xmm0
-	movsd	.LCPI45_13(%rip), %xmm1         # xmm1 = mem[0],zero
-	movsd	%xmm1, -392(%rbp)               # 8-byte Spill
+	movsd	.LCPI45_19(%rip), %xmm1         # xmm1 = mem[0],zero
+	movsd	%xmm1, -400(%rbp)               # 8-byte Spill
 	divsd	%xmm1, %xmm0
 	movl	$.L.str.34, %edi
 	callq	printf
-	movq	-400(%rbp), %rcx                # 8-byte Reload
-	movsd	-392(%rbp), %xmm1               # 8-byte Reload
+	movq	-408(%rbp), %rcx                # 8-byte Reload
+	movsd	-400(%rbp), %xmm1               # 8-byte Reload
                                         # xmm1 = mem[0],zero
                                         # kill: def $edx killed $eax
-	movb	-345(%rbp), %al                 # 1-byte Reload
+	movb	-353(%rbp), %al                 # 1-byte Reload
 	leaq	1073741824(%rcx,%rcx), %rcx
-	movq	%rcx, -368(%rbp)                # 8-byte Spill
+	movq	%rcx, -376(%rbp)                # 8-byte Spill
 	cvtsi2sd	%rcx, %xmm0
 	divsd	%xmm1, %xmm0
 	movl	$.L.str.35, %edi
 	callq	printf
-	movq	-344(%rbp), %rcx                # 8-byte Reload
+	movq	-352(%rbp), %rcx                # 8-byte Reload
                                         # kill: def $edx killed $eax
-	movq	-368(%rbp), %rax                # 8-byte Reload
+	movq	-376(%rbp), %rax                # 8-byte Reload
 	movswl	params_offset(%rcx,%rcx), %ecx
 	shll	$15, %ecx
 	movslq	%ecx, %rcx
 	imulq	%rcx
 	movq	%rax, %rcx
-	movb	-345(%rbp), %al                 # 1-byte Reload
+	movb	-353(%rbp), %al                 # 1-byte Reload
 	shldq	$34, %rcx, %rdx
 	cvtsi2sd	%rdx, %xmm0
-	movsd	.LCPI45_14(%rip), %xmm1         # xmm1 = mem[0],zero
+	movsd	.LCPI45_7(%rip), %xmm1          # xmm1 = mem[0],zero
 	divsd	%xmm1, %xmm0
 	movl	$.L.str.36, %edi
 	callq	printf
                                         # kill: def $ecx killed $eax
-	movq	-344(%rbp), %rax                # 8-byte Reload
+	movq	-352(%rbp), %rax                # 8-byte Reload
 	movswl	params_offset(%rax,%rax), %esi
 	movl	$.L.str.37, %edi
 	xorl	%eax, %eax
                                         # kill: def $al killed $al killed $eax
 	callq	printf
-	movss	-208(%rbp), %xmm0               # 4-byte Reload
+	movss	-216(%rbp), %xmm0               # 4-byte Reload
                                         # xmm0 = mem[0],zero,zero,zero
                                         # kill: def $ecx killed $eax
-	movb	-345(%rbp), %al                 # 1-byte Reload
+	movb	-353(%rbp), %al                 # 1-byte Reload
 	movss	.LCPI45_6(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
 	mulss	%xmm1, %xmm0
 	cvttss2si	%xmm0, %ecx
 	addl	$-108134, %ecx                  # imm = 0xFFFE599A
-	movl	%ecx, -384(%rbp)                # 4-byte Spill
+	movl	%ecx, -392(%rbp)                # 4-byte Spill
 	cvtsi2ss	%ecx, %xmm0
 	divss	%xmm1, %xmm0
 	cvtss2sd	%xmm0, %xmm0
 	movl	$.L.str.38, %edi
 	callq	printf
-	movl	-384(%rbp), %ecx                # 4-byte Reload
-	movq	-344(%rbp), %rsi                # 8-byte Reload
+	movl	-392(%rbp), %ecx                # 4-byte Reload
+	movq	-352(%rbp), %rsi                # 8-byte Reload
                                         # kill: def $edx killed $eax
-	movb	-345(%rbp), %al                 # 1-byte Reload
+	movb	-353(%rbp), %al                 # 1-byte Reload
 	movq	params_kv.fixp@GOTPCREL(%rip), %rdx
 	movslq	(%rdx,%rsi,4), %rdx
 	movslq	%ecx, %rcx
@@ -8656,84 +7433,84 @@ _Z20MLX90640_CalculateToPKtffPf.5_fixp: # @_Z20MLX90640_CalculateToPKtffPf.5_fix
 	shrq	$30, %rcx
                                         # kill: def $ecx killed $ecx killed $rcx
 	cvtsi2ss	%ecx, %xmm0
-	movss	.LCPI45_15(%rip), %xmm1         # xmm1 = mem[0],zero,zero,zero
-	movss	%xmm1, -376(%rbp)               # 4-byte Spill
+	movss	.LCPI45_20(%rip), %xmm1         # xmm1 = mem[0],zero,zero,zero
+	movss	%xmm1, -384(%rbp)               # 4-byte Spill
 	divss	%xmm1, %xmm0
-	movss	%xmm0, -380(%rbp)               # 4-byte Spill
+	movss	%xmm0, -388(%rbp)               # 4-byte Spill
 	cvtss2sd	%xmm0, %xmm0
 	movl	$.L.str.39, %edi
 	callq	printf
-	movss	-380(%rbp), %xmm0               # 4-byte Reload
+	movss	-388(%rbp), %xmm0               # 4-byte Reload
                                         # xmm0 = mem[0],zero,zero,zero
-	movss	-376(%rbp), %xmm1               # 4-byte Reload
+	movss	-384(%rbp), %xmm1               # 4-byte Reload
                                         # xmm1 = mem[0],zero,zero,zero
                                         # kill: def $ecx killed $eax
-	movb	-345(%rbp), %al                 # 1-byte Reload
-	movss	.LCPI45_16(%rip), %xmm2         # xmm2 = mem[0],zero,zero,zero
+	movb	-353(%rbp), %al                 # 1-byte Reload
+	movss	.LCPI45_12(%rip), %xmm2         # xmm2 = mem[0],zero,zero,zero
 	addss	%xmm2, %xmm0
-	movss	%xmm0, -372(%rbp)               # 4-byte Spill
+	movss	%xmm0, -380(%rbp)               # 4-byte Spill
 	mulss	%xmm1, %xmm0
 	cvttps2dq	%xmm0, %xmm0
 	cvtdq2pd	%xmm0, %xmm0
-	movsd	.LCPI45_17(%rip), %xmm1         # xmm1 = mem[0],zero
-	movsd	%xmm1, -360(%rbp)               # 8-byte Spill
+	movsd	.LCPI45_21(%rip), %xmm1         # xmm1 = mem[0],zero
+	movsd	%xmm1, -368(%rbp)               # 8-byte Spill
 	divsd	%xmm1, %xmm0
 	movl	$.L.str.40, %edi
 	callq	printf
-	movss	-372(%rbp), %xmm0               # 4-byte Reload
+	movss	-380(%rbp), %xmm0               # 4-byte Reload
                                         # xmm0 = mem[0],zero,zero,zero
-	movq	-368(%rbp), %rcx                # 8-byte Reload
-	movsd	-360(%rbp), %xmm1               # 8-byte Reload
+	movq	-376(%rbp), %rcx                # 8-byte Reload
+	movsd	-368(%rbp), %xmm1               # 8-byte Reload
                                         # xmm1 = mem[0],zero
-	movss	.LCPI45_18(%rip), %xmm2         # xmm2 = mem[0],zero,zero,zero
+	movss	.LCPI45_22(%rip), %xmm2         # xmm2 = mem[0],zero,zero,zero
 	mulss	%xmm2, %xmm0
 	cvttss2si	%xmm0, %rax
 	imulq	%rcx
 	movq	%rax, %rcx
-	movb	-345(%rbp), %al                 # 1-byte Reload
+	movb	-353(%rbp), %al                 # 1-byte Reload
 	shldq	$2, %rcx, %rdx
-	movq	%rdx, -336(%rbp)                # 8-byte Spill
+	movq	%rdx, -344(%rbp)                # 8-byte Spill
 	cvtsi2sd	%rdx, %xmm0
 	divsd	%xmm1, %xmm0
 	movl	$.L.str.41, %edi
 	callq	printf
-	movq	-344(%rbp), %rcx                # 8-byte Reload
+	movq	-352(%rbp), %rcx                # 8-byte Reload
                                         # kill: def $edx killed $eax
-	movq	-336(%rbp), %rax                # 8-byte Reload
+	movq	-344(%rbp), %rax                # 8-byte Reload
 	movswl	params_offset(%rcx,%rcx), %ecx
 	shll	$15, %ecx
 	movslq	%ecx, %rcx
 	imulq	%rcx
 	shldq	$37, %rax, %rdx
-	movq	%rdx, -328(%rbp)                # 8-byte Spill
+	movq	%rdx, -336(%rbp)                # 8-byte Spill
 	cvtsi2sd	%rdx, %xmm0
 	movabsq	$.L.str.42, %rdi
 	movb	$1, %al
 	callq	printf
-	movq	-328(%rbp), %rdx                # 8-byte Reload
+	movq	-336(%rbp), %rdx                # 8-byte Reload
                                         # kill: def $ecx killed $eax
-	movq	-320(%rbp), %rax                # 8-byte Reload
+	movq	-328(%rbp), %rax                # 8-byte Reload
 	sarq	$5, %rax
 	subq	%rdx, %rax
-	movq	%rax, -312(%rbp)                # 8-byte Spill
+	movq	%rax, -320(%rbp)                # 8-byte Spill
 	cvtsi2ss	%rax, %xmm0
 	cvtss2sd	%xmm0, %xmm0
 	movabsq	$.L.str.43, %rdi
 	movb	$1, %al
 	callq	printf
-	movb	-229(%rbp), %cl                 # 1-byte Reload
+	movb	-237(%rbp), %cl                 # 1-byte Reload
                                         # kill: def $edx killed $eax
-	movq	-312(%rbp), %rax                # 8-byte Reload
+	movq	-320(%rbp), %rax                # 8-byte Reload
 	movzbl	%cl, %ecx
 	movzbl	params_calibrationModeEE, %edx
 	cmpl	%edx, %ecx
-	movq	%rax, -304(%rbp)                # 8-byte Spill
+	movq	%rax, -312(%rbp)                # 8-byte Spill
 	je	.LBB45_21
 # %bb.20:                               #   in Loop: Header=BB45_12 Depth=1
-	movb	-281(%rbp), %dl                 # 1-byte Reload
-	movq	-312(%rbp), %rax                # 8-byte Reload
-	movb	-282(%rbp), %sil                # 1-byte Reload
-	movss	.LCPI45_11(%rip), %xmm0         # xmm0 = mem[0],zero,zero,zero
+	movb	-289(%rbp), %dl                 # 1-byte Reload
+	movq	-320(%rbp), %rax                # 8-byte Reload
+	movb	-290(%rbp), %sil                # 1-byte Reload
+	movss	.LCPI45_17(%rip), %xmm0         # xmm0 = mem[0],zero,zero,zero
 	mulss	params_ilChessC+8, %xmm0
 	cvttss2si	%xmm0, %ecx
 	movsbl	%sil, %esi
@@ -8748,7 +7525,7 @@ _Z20MLX90640_CalculateToPKtffPf.5_fixp: # @_Z20MLX90640_CalculateToPKtffPf.5_fix
 	movslq	%ecx, %rcx
 	sarq	$19, %rcx
 	addq	%rcx, %rax
-	movss	.LCPI45_11(%rip), %xmm0         # xmm0 = mem[0],zero,zero,zero
+	movss	.LCPI45_17(%rip), %xmm0         # xmm0 = mem[0],zero,zero,zero
 	mulss	params_ilChessC+4, %xmm0
 	cvttss2si	%xmm0, %ecx
 	movsbl	%dl, %edx
@@ -8762,10 +7539,10 @@ _Z20MLX90640_CalculateToPKtffPf.5_fixp: # @_Z20MLX90640_CalculateToPKtffPf.5_fix
 	movslq	%ecx, %rcx
 	sarq	$15, %rcx
 	subq	%rcx, %rax
-	movq	%rax, -304(%rbp)                # 8-byte Spill
+	movq	%rax, -312(%rbp)                # 8-byte Spill
 .LBB45_21:                              #   in Loop: Header=BB45_12 Depth=1
 	movq	-144(%rbp), %rdx                # 8-byte Reload
-	movq	-304(%rbp), %rdi                # 8-byte Reload
+	movq	-312(%rbp), %rdi                # 8-byte Reload
 	movq	%rdi, %rsi
 	shrq	$63, %rsi
 	shldq	$63, %rdi, %rsi
@@ -8773,14 +7550,14 @@ _Z20MLX90640_CalculateToPKtffPf.5_fixp: # @_Z20MLX90640_CalculateToPKtffPf.5_fix
 	xorl	%eax, %eax
 	movl	%eax, %ecx
 	callq	__divti3@PLT
-	movw	-210(%rbp), %si                 # 2-byte Reload
+	movw	-218(%rbp), %si                 # 2-byte Reload
 	movq	%rax, %rdx
 	movq	params_tgc.fixp@GOTPCREL(%rip), %rax
 	movslq	(%rax), %rcx
 	movl	%ecx, %eax
 	movzwl	%si, %esi
                                         # kill: def $rsi killed $esi
-	movq	%rsi, -632(%rbp)                # 8-byte Spill
+	movq	%rsi, -560(%rbp)                # 8-byte Spill
 	movslq	-8(%rbp,%rsi,4), %r8
 	movq	%rcx, %rdi
 	imulq	%r8, %rdi
@@ -8788,73 +7565,72 @@ _Z20MLX90640_CalculateToPKtffPf.5_fixp: # @_Z20MLX90640_CalculateToPKtffPf.5_fix
                                         # kill: def $edi killed $edi killed $rdi
                                         # kill: def $edx killed $edx killed $rdx
 	subl	%edi, %edx
-	movl	%edx, -500(%rbp)                # 4-byte Spill
+	movl	%edx, -444(%rbp)                # 4-byte Spill
 	cvtsi2ss	%edx, %xmm0
-	movss	%xmm0, -588(%rbp)               # 4-byte Spill
+	movss	%xmm0, -516(%rbp)               # 4-byte Spill
 	movq	params_cpAlpha.fixp@GOTPCREL(%rip), %rdx
-	movq	%rdx, -624(%rbp)                # 8-byte Spill
+	movq	%rdx, -552(%rbp)                # 8-byte Spill
 	movslq	(%rdx,%rsi,4), %rdx
 	imulq	%rdx, %rcx
 	shrq	$30, %rcx
                                         # kill: def $ecx killed $ecx killed $rcx
 	cvtsi2ss	%ecx, %xmm0
-	movss	.LCPI45_20(%rip), %xmm1         # xmm1 = mem[0],zero,zero,zero
+	movss	.LCPI45_23(%rip), %xmm1         # xmm1 = mem[0],zero,zero,zero
 	divss	%xmm1, %xmm0
-	movss	%xmm0, -616(%rbp)               # 4-byte Spill
+	movss	%xmm0, -544(%rbp)               # 4-byte Spill
 	cvtsi2sd	%eax, %xmm0
-	movsd	.LCPI45_19(%rip), %xmm1         # xmm1 = mem[0],zero
-	movsd	%xmm1, -488(%rbp)               # 8-byte Spill
+	movsd	.LCPI45_24(%rip), %xmm1         # xmm1 = mem[0],zero
 	divsd	%xmm1, %xmm0
 	movl	$.L.str.44, %edi
 	movb	$1, %al
-	movb	%al, -473(%rbp)                 # 1-byte Spill
+	movb	%al, -469(%rbp)                 # 1-byte Spill
 	callq	printf
-	movq	-632(%rbp), %rdx                # 8-byte Reload
-	movq	-624(%rbp), %rcx                # 8-byte Reload
+	movq	-560(%rbp), %rdx                # 8-byte Reload
+	movq	-552(%rbp), %rcx                # 8-byte Reload
                                         # kill: def $esi killed $eax
-	movb	-473(%rbp), %al                 # 1-byte Reload
+	movb	-469(%rbp), %al                 # 1-byte Reload
 	cvtsi2sdl	(%rcx,%rdx,4), %xmm0
-	movsd	.LCPI45_21(%rip), %xmm1         # xmm1 = mem[0],zero
+	movsd	.LCPI45_25(%rip), %xmm1         # xmm1 = mem[0],zero
 	divsd	%xmm1, %xmm0
 	movl	$.L.str.45, %edi
 	callq	printf
-	movss	-616(%rbp), %xmm0               # 4-byte Reload
+	movss	-544(%rbp), %xmm0               # 4-byte Reload
                                         # xmm0 = mem[0],zero,zero,zero
                                         # kill: def $ecx killed $eax
-	movb	-473(%rbp), %al                 # 1-byte Reload
+	movb	-469(%rbp), %al                 # 1-byte Reload
 	cvtss2sd	%xmm0, %xmm0
 	movl	$.L.str.46, %edi
 	callq	printf
-	movl	-280(%rbp), %ecx                # 4-byte Reload
-	movss	-616(%rbp), %xmm2               # 4-byte Reload
+	movl	-288(%rbp), %ecx                # 4-byte Reload
+	movss	-544(%rbp), %xmm2               # 4-byte Reload
                                         # xmm2 = mem[0],zero,zero,zero
                                         # kill: def $edx killed $eax
-	movb	-473(%rbp), %al                 # 1-byte Reload
+	movb	-469(%rbp), %al                 # 1-byte Reload
 	movslq	%ecx, %rcx
 	movss	params_alpha(,%rcx,4), %xmm0    # xmm0 = mem[0],zero,zero,zero
 	movaps	%xmm0, %xmm1
 	subss	%xmm2, %xmm1
-	movss	%xmm1, -596(%rbp)               # 4-byte Spill
+	movss	%xmm1, -524(%rbp)               # 4-byte Spill
 	cvtss2sd	%xmm0, %xmm0
 	movl	$.L.str.47, %edi
 	callq	printf
-	movss	-596(%rbp), %xmm0               # 4-byte Reload
+	movss	-524(%rbp), %xmm0               # 4-byte Reload
                                         # xmm0 = mem[0],zero,zero,zero
                                         # kill: def $ecx killed $eax
-	movb	-473(%rbp), %al                 # 1-byte Reload
+	movb	-469(%rbp), %al                 # 1-byte Reload
 	movss	.LCPI45_6(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
 	mulss	%xmm1, %xmm0
 	cvttps2dq	%xmm0, %xmm0
 	cvtdq2pd	%xmm0, %xmm0
-	movsd	.LCPI45_14(%rip), %xmm1         # xmm1 = mem[0],zero
-	movsd	%xmm1, -608(%rbp)               # 8-byte Spill
+	movsd	.LCPI45_7(%rip), %xmm1          # xmm1 = mem[0],zero
+	movsd	%xmm1, -536(%rbp)               # 8-byte Spill
 	divsd	%xmm1, %xmm0
 	movl	$.L.str.48, %edi
 	callq	printf
-	movss	-204(%rbp), %xmm0               # 4-byte Reload
+	movss	-212(%rbp), %xmm0               # 4-byte Reload
                                         # xmm0 = mem[0],zero,zero,zero
                                         # kill: def $ecx killed $eax
-	movb	-473(%rbp), %al                 # 1-byte Reload
+	movb	-469(%rbp), %al                 # 1-byte Reload
 	movq	params_KsTa.fixp@GOTPCREL(%rip), %rcx
 	movslq	(%rcx), %rcx
 	movss	.LCPI45_4(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
@@ -8865,87 +7641,89 @@ _Z20MLX90640_CalculateToPKtffPf.5_fixp: # @_Z20MLX90640_CalculateToPKtffPf.5_fix
 	imulq	%rdx, %rcx
 	shrq	$31, %rcx
                                         # kill: def $ecx killed $ecx killed $rcx
-	movl	%ecx, -612(%rbp)                # 4-byte Spill
+	movl	%ecx, -540(%rbp)                # 4-byte Spill
 	addl	%ecx, %ecx
 	cvtsi2sd	%ecx, %xmm0
 	movsd	.LCPI45_5(%rip), %xmm1          # xmm1 = mem[0],zero
 	divsd	%xmm1, %xmm0
 	movl	$.L.str.49, %edi
 	callq	printf
-	movl	-612(%rbp), %ecx                # 4-byte Reload
-	movsd	-608(%rbp), %xmm1               # 8-byte Reload
+	movl	-540(%rbp), %ecx                # 4-byte Reload
+	movsd	-536(%rbp), %xmm1               # 8-byte Reload
                                         # xmm1 = mem[0],zero
                                         # kill: def $edx killed $eax
-	movb	-473(%rbp), %al                 # 1-byte Reload
+	movb	-469(%rbp), %al                 # 1-byte Reload
 	addl	$32768, %ecx                    # imm = 0x8000
-	movl	%ecx, -592(%rbp)                # 4-byte Spill
+	movl	%ecx, -520(%rbp)                # 4-byte Spill
 	cvtsi2sd	%ecx, %xmm0
 	divsd	%xmm1, %xmm0
 	movl	$.L.str.50, %edi
 	callq	printf
-	movss	-596(%rbp), %xmm1               # 4-byte Reload
+	movss	-524(%rbp), %xmm1               # 4-byte Reload
                                         # xmm1 = mem[0],zero,zero,zero
-	movl	-592(%rbp), %ecx                # 4-byte Reload
-	movss	-588(%rbp), %xmm0               # 4-byte Reload
+	movl	-520(%rbp), %ecx                # 4-byte Reload
+	movss	-516(%rbp), %xmm0               # 4-byte Reload
                                         # xmm0 = mem[0],zero,zero,zero
-	movss	.LCPI45_22(%rip), %xmm2         # xmm2 = mem[0],zero,zero,zero
+	movss	.LCPI45_26(%rip), %xmm2         # xmm2 = mem[0],zero,zero,zero
 	mulss	%xmm2, %xmm1
 	cvttss2si	%xmm1, %rax
 	movslq	%ecx, %rcx
 	imulq	%rcx
 	movq	%rax, %rcx
-	movb	-473(%rbp), %al                 # 1-byte Reload
+	movb	-469(%rbp), %al                 # 1-byte Reload
 	shldq	$34, %rcx, %rdx
-	movq	%rdx, -536(%rbp)                # 8-byte Spill
+	movq	%rdx, -464(%rbp)                # 8-byte Spill
 	cvtss2sd	%xmm0, %xmm0
 	movl	$.L.str.51, %edi
 	callq	printf
-	movsd	-240(%rbp), %xmm0               # 8-byte Reload
+	movsd	-248(%rbp), %xmm0               # 8-byte Reload
                                         # xmm0 = mem[0],zero
                                         # kill: def $ecx killed $eax
-	movb	-473(%rbp), %al                 # 1-byte Reload
+	movb	-469(%rbp), %al                 # 1-byte Reload
 	movl	$.L.str.52, %edi
 	callq	printf
-	movq	-536(%rbp), %rcx                # 8-byte Reload
+	movq	-464(%rbp), %rcx                # 8-byte Reload
                                         # kill: def $edx killed $eax
-	movb	-473(%rbp), %al                 # 1-byte Reload
+	movb	-469(%rbp), %al                 # 1-byte Reload
 	shrq	$2, %rcx
                                         # kill: def $ecx killed $ecx killed $rcx
 	cvtsi2sd	%ecx, %xmm0
-	movsd	.LCPI45_13(%rip), %xmm1         # xmm1 = mem[0],zero
-	movsd	%xmm1, -512(%rbp)               # 8-byte Spill
+	movsd	.LCPI45_19(%rip), %xmm1         # xmm1 = mem[0],zero
+	movsd	%xmm1, -480(%rbp)               # 8-byte Spill
 	divsd	%xmm1, %xmm0
 	movl	$.L.str.53, %edi
 	callq	printf
-	movq	-536(%rbp), %rcx                # 8-byte Reload
-	movq	-96(%rbp), %rdx                 # 8-byte Reload
-                                        # kill: def $esi killed $eax
-	movb	-473(%rbp), %al                 # 1-byte Reload
-	imulq	%rdx, %rcx
-	movq	%rcx, -584(%rbp)                # 8-byte Spill
-	cvtsi2sd	%rcx, %xmm0
-	movsd	.LCPI45_23(%rip), %xmm1         # xmm1 = mem[0],zero
+	movq	-96(%rbp), %rcx                 # 8-byte Reload
+                                        # kill: def $edx killed $eax
+	movq	-464(%rbp), %rax                # 8-byte Reload
+	imulq	%rcx
+	movq	%rax, %rcx
+	movb	-469(%rbp), %al                 # 1-byte Reload
+	shldq	$35, %rcx, %rdx
+	movq	%rdx, -512(%rbp)                # 8-byte Spill
+	cvtsi2sd	%rdx, %xmm0
+	movsd	.LCPI45_27(%rip), %xmm1         # xmm1 = mem[0],zero
 	divsd	%xmm1, %xmm0
 	movl	$.L.str.54, %edi
 	callq	printf
-	movq	-584(%rbp), %rdx                # 8-byte Reload
-	movl	-500(%rbp), %ecx                # 4-byte Reload
+	movq	-512(%rbp), %rdx                # 8-byte Reload
+	movl	-444(%rbp), %ecx                # 4-byte Reload
                                         # kill: def $esi killed $eax
-	movb	-473(%rbp), %al                 # 1-byte Reload
+	movb	-469(%rbp), %al                 # 1-byte Reload
 	shrq	$32, %rdx
                                         # kill: def $edx killed $edx killed $rdx
 	addl	%edx, %ecx
-	movl	%ecx, -568(%rbp)                # 4-byte Spill
+	movl	%ecx, -492(%rbp)                # 4-byte Spill
 	cvtsi2sd	%ecx, %xmm0
 	movl	$.L.str.55, %edi
 	callq	printf
-	movq	-536(%rbp), %rdx                # 8-byte Reload
-	movsd	-512(%rbp), %xmm1               # 8-byte Reload
+	movsd	-480(%rbp), %xmm1               # 8-byte Reload
                                         # xmm1 = mem[0],zero
+	movq	-464(%rbp), %rdx                # 8-byte Reload
 	movq	%rdx, %rax
 	imulq	%rdx
 	movq	%rdx, %rcx
-	movq	-536(%rbp), %rdx                # 8-byte Reload
+	movq	-464(%rbp), %rdx                # 8-byte Reload
                                         # kill: def $ecx killed $ecx killed $rcx
 	shll	$30, %ecx
 	shrq	$34, %rax
@@ -8954,19 +7732,19 @@ _Z20MLX90640_CalculateToPKtffPf.5_fixp: # @_Z20MLX90640_CalculateToPKtffPf.5_fix
 	cltq
 	imulq	%rdx
 	movq	%rax, %rcx
-	movb	-473(%rbp), %al                 # 1-byte Reload
+	movb	-469(%rbp), %al                 # 1-byte Reload
 	shldq	$32, %rcx, %rdx
-	movq	%rdx, -576(%rbp)                # 8-byte Spill
+	movq	%rdx, -504(%rbp)                # 8-byte Spill
 	shrq	$32, %rcx
                                         # kill: def $ecx killed $ecx killed $rcx
 	cvtsi2sd	%ecx, %xmm0
 	divsd	%xmm1, %xmm0
 	movl	$.L.str.56, %edi
 	callq	printf
-	movq	-576(%rbp), %rcx                # 8-byte Reload
-	movl	-568(%rbp), %edx                # 4-byte Reload
+	movq	-504(%rbp), %rcx                # 8-byte Reload
+	movl	-492(%rbp), %edx                # 4-byte Reload
                                         # kill: def $esi killed $eax
-	movb	-473(%rbp), %al                 # 1-byte Reload
+	movb	-469(%rbp), %al                 # 1-byte Reload
                                         # kill: def $ecx killed $ecx killed $rcx
 	movslq	%ecx, %rcx
 	movslq	%edx, %rdx
@@ -8975,347 +7753,359 @@ _Z20MLX90640_CalculateToPKtffPf.5_fixp: # @_Z20MLX90640_CalculateToPKtffPf.5_fix
                                         # kill: def $ecx killed $ecx killed $rcx
 	cvtsi2sd	%ecx, %xmm0
 	cvtsi2ss	%ecx, %xmm1
-	movss	%xmm1, -564(%rbp)               # 4-byte Spill
+	movss	%xmm1, -488(%rbp)               # 4-byte Spill
 	movl	$.L.str.57, %edi
 	callq	printf
-	movss	-564(%rbp), %xmm0               # 4-byte Reload
+	movss	-488(%rbp), %xmm0               # 4-byte Reload
                                         # xmm0 = mem[0],zero,zero,zero
 	callq	_ZSt4sqrtf.1.19_s32_0fixp
 	cvtsi2ss	%eax, %xmm0
 	callq	_ZSt4sqrtf.20_s32_0fixp
-	movsd	-512(%rbp), %xmm1               # 8-byte Reload
+	movsd	-480(%rbp), %xmm1               # 8-byte Reload
                                         # xmm1 = mem[0],zero
 	movl	%eax, %ecx
-	movb	-473(%rbp), %al                 # 1-byte Reload
+	movb	-469(%rbp), %al                 # 1-byte Reload
 	movss	params_ksTo+4(%rip), %xmm0      # xmm0 = mem[0],zero,zero,zero
-	movss	.LCPI45_8(%rip), %xmm2          # xmm2 = mem[0],zero,zero,zero
-	movss	%xmm2, -560(%rbp)               # 4-byte Spill
+	movss	.LCPI45_28(%rip), %xmm2         # xmm2 = mem[0],zero,zero,zero
 	mulss	%xmm2, %xmm0
 	cvttss2si	%xmm0, %edx
 	imull	%edx, %ecx
+	movl	%ecx, %edx
+	shll	$2, %edx
+	movl	%edx, -456(%rbp)                # 4-byte Spill
 	shll	$10, %ecx
-	movl	%ecx, -524(%rbp)                # 4-byte Spill
 	cvtsi2sd	%ecx, %xmm0
 	divsd	%xmm1, %xmm0
 	movl	$.L.str.58, %edi
 	callq	printf
-	movss	-560(%rbp), %xmm1               # 4-byte Reload
-                                        # xmm1 = mem[0],zero,zero,zero
-                                        # kill: def $ecx killed $eax
-	movb	-473(%rbp), %al                 # 1-byte Reload
+	movsd	-480(%rbp), %xmm2               # 8-byte Reload
+                                        # xmm2 = mem[0],zero
 	movss	params_ksTo+4(%rip), %xmm0      # xmm0 = mem[0],zero,zero,zero
-	mulss	%xmm1, %xmm0
-	cvttss2si	%xmm0, %ecx
-	movslq	%ecx, %rcx
-	movl	$2291348275, %edx               # imm = 0x88933333
-	imulq	%rdx, %rcx
-	shrq	$31, %rcx
-                                        # kill: def $ecx killed $ecx killed $rcx
-	movl	%ecx, -556(%rbp)                # 4-byte Spill
-	cvtsi2sd	%ecx, %xmm0
-	movsd	.LCPI45_17(%rip), %xmm1         # xmm1 = mem[0],zero
-	movsd	%xmm1, -552(%rbp)               # 8-byte Spill
-	divsd	%xmm1, %xmm0
-	movl	$.L.str.59, %edi
+	cvtss2sd	%xmm0, %xmm1
+	movsd	.LCPI45_9(%rip), %xmm3          # xmm3 = mem[0],zero
+	movaps	%xmm1, %xmm0
+	mulsd	%xmm3, %xmm0
+	cvtsd2ss	%xmm0, %xmm0
+	movss	.LCPI45_20(%rip), %xmm3         # xmm3 = mem[0],zero,zero,zero
+	mulss	%xmm3, %xmm0
+	cvttss2si	%xmm0, %eax
+	shll	$18, %eax
+	movl	%eax, -484(%rbp)                # 4-byte Spill
+	cvtsi2sd	%eax, %xmm0
+	divsd	%xmm2, %xmm0
+	movl	$.L.str.60, %edi
+	movb	$2, %al
 	callq	printf
-	movl	-556(%rbp), %edx                # 4-byte Reload
-	movsd	-552(%rbp), %xmm1               # 8-byte Reload
+	movl	-484(%rbp), %edx                # 4-byte Reload
+	movsd	-480(%rbp), %xmm1               # 8-byte Reload
                                         # xmm1 = mem[0],zero
                                         # kill: def $ecx killed $eax
-	movb	-473(%rbp), %al                 # 1-byte Reload
-	movl	$4096, %ecx                     # imm = 0x1000
+	movb	-469(%rbp), %al                 # 1-byte Reload
+	movl	$1073741824, %ecx               # imm = 0x40000000
 	subl	%edx, %ecx
-	movl	%ecx, -540(%rbp)                # 4-byte Spill
-	cvtsi2sd	%ecx, %xmm0
-	divsd	%xmm1, %xmm0
-	movl	$.L.str.60, %edi
-	callq	printf
-	movl	-540(%rbp), %edx                # 4-byte Reload
-	movq	-536(%rbp), %rcx                # 8-byte Reload
-	movsd	-512(%rbp), %xmm1               # 8-byte Reload
-                                        # xmm1 = mem[0],zero
-                                        # kill: def $esi killed $eax
-	movb	-473(%rbp), %al                 # 1-byte Reload
-	movslq	%edx, %rdx
-	imulq	%rdx, %rcx
-	shrq	$14, %rcx
-                                        # kill: def $ecx killed $ecx killed $rcx
-	movl	%ecx, -528(%rbp)                # 4-byte Spill
+	movl	%ecx, -468(%rbp)                # 4-byte Spill
 	cvtsi2sd	%ecx, %xmm0
 	divsd	%xmm1, %xmm0
 	movl	$.L.str.61, %edi
 	callq	printf
-	movl	-528(%rbp), %ecx                # 4-byte Reload
-	movl	-524(%rbp), %edx                # 4-byte Reload
-	movsd	-512(%rbp), %xmm1               # 8-byte Reload
-                                        # xmm1 = mem[0],zero
-                                        # kill: def $esi killed $eax
-	movb	-473(%rbp), %al                 # 1-byte Reload
-	addl	%edx, %ecx
-	movslq	%ecx, %rdx
-	movq	%rdx, -520(%rbp)                # 8-byte Spill
-	cvtsi2sd	%ecx, %xmm0
-	divsd	%xmm1, %xmm0
-	movl	$.L.str.63, %edi
-	callq	printf
-	movq	-520(%rbp), %rcx                # 8-byte Reload
-	movsd	-512(%rbp), %xmm1               # 8-byte Reload
-                                        # xmm1 = mem[0],zero
+	movl	-468(%rbp), %ecx                # 4-byte Reload
                                         # kill: def $edx killed $eax
-	movl	-500(%rbp), %eax                # 4-byte Reload
-	cltq
-	shlq	$30, %rax
-	cqto
-	idivq	%rcx
-	movq	%rax, %rcx
-	movb	-473(%rbp), %al                 # 1-byte Reload
-	shlq	$30, %rcx
-	movq	%rcx, -496(%rbp)                # 8-byte Spill
-	cvtsi2sd	%rcx, %xmm0
-	divsd	%xmm1, %xmm0
-	movl	$.L.str.64, %edi
-	callq	printf
-	movq	-96(%rbp), %rdx                 # 8-byte Reload
-	movq	-496(%rbp), %rcx                # 8-byte Reload
-	movsd	-488(%rbp), %xmm1               # 8-byte Reload
-                                        # xmm1 = mem[0],zero
-                                        # kill: def $esi killed $eax
-	movb	-473(%rbp), %al                 # 1-byte Reload
-	shlq	$30, %rdx
-	addq	%rdx, %rcx
-	sarq	$3, %rcx
-	movq	%rcx, -472(%rbp)                # 8-byte Spill
-	movq	%rcx, %xmm0
-	movaps	.LCPI45_24(%rip), %xmm2         # xmm2 = [1127219200,1160773632,0,0]
-	movaps	%xmm2, -464(%rbp)               # 16-byte Spill
-	punpckldq	%xmm2, %xmm0            # xmm0 = xmm0[0],xmm2[0],xmm0[1],xmm2[1]
-	movapd	.LCPI45_25(%rip), %xmm2         # xmm2 = [4.503599627370496E+15,1.9342813113834067E+25]
-	movaps	%xmm2, -448(%rbp)               # 16-byte Spill
-	subpd	%xmm2, %xmm0
-	movaps	%xmm0, %xmm2
-	unpckhpd	%xmm0, %xmm0                    # xmm0 = xmm0[1,1]
-	addsd	%xmm2, %xmm0
-	divsd	%xmm1, %xmm0
-	movl	$.L.str.66, %edi
-	callq	printf
-	movq	-472(%rbp), %rdi                # 8-byte Reload
-	callq	_ZSt4sqrtf.2.21_u37_27fixp
-	movq	%rax, %rdi
-	callq	_ZSt4sqrtf.2_u37_27fixp
-	movaps	-464(%rbp), %xmm2               # 16-byte Reload
-	movaps	-448(%rbp), %xmm1               # 16-byte Reload
-	movabsq	$-36661572403, %rcx             # imm = 0xFFFFFFF776CCCCCD
-	addq	%rcx, %rax
-	movq	%rax, -432(%rbp)                # 8-byte Spill
-	movq	%rax, %xmm0
-	punpckldq	%xmm2, %xmm0            # xmm0 = xmm0[0],xmm2[0],xmm0[1],xmm2[1]
-	subpd	%xmm1, %xmm0
-	movaps	%xmm0, %xmm1
-	unpckhpd	%xmm0, %xmm0                    # xmm0 = xmm0[1,1]
-	addsd	%xmm1, %xmm0
+	movq	-464(%rbp), %rax                # 8-byte Reload
+	movslq	%ecx, %rcx
+	imulq	%rcx, %rax
+	shrq	$32, %rax
+                                        # kill: def $eax killed $eax killed $rax
+	movl	%eax, -452(%rbp)                # 4-byte Spill
+	cvtsi2sd	%eax, %xmm0
 	movsd	.LCPI45_19(%rip), %xmm1         # xmm1 = mem[0],zero
 	divsd	%xmm1, %xmm0
-	movabsq	$.L.str.67, %rdi
+	movabsq	$.L.str.62, %rdi
+	movb	$1, %al
+	callq	printf
+	movl	-456(%rbp), %ecx                # 4-byte Reload
+                                        # kill: def $edx killed $eax
+	movl	-452(%rbp), %eax                # 4-byte Reload
+	shll	$8, %ecx
+	addl	%ecx, %eax
+	movl	%eax, -448(%rbp)                # 4-byte Spill
+	cvtsi2sd	%eax, %xmm0
+	movsd	.LCPI45_19(%rip), %xmm1         # xmm1 = mem[0],zero
+	divsd	%xmm1, %xmm0
+	movabsq	$.L.str.63, %rdi
+	movb	$1, %al
+	callq	printf
+	movl	-448(%rbp), %ecx                # 4-byte Reload
+                                        # kill: def $edx killed $eax
+	movl	-444(%rbp), %eax                # 4-byte Reload
+	cltq
+	shlq	$30, %rax
+	movslq	%ecx, %rcx
+	cqto
+	idivq	%rcx
+                                        # kill: def $eax killed $eax killed $rax
+	movl	%eax, -440(%rbp)                # 4-byte Spill
+	cvtsi2sd	%eax, %xmm0
+	movabsq	$.L.str.64, %rdi
+	movb	$1, %al
+	callq	printf
+	movq	-96(%rbp), %rcx                 # 8-byte Reload
+                                        # kill: def $edx killed $eax
+	movl	-440(%rbp), %eax                # 4-byte Reload
+	sarq	$29, %rcx
+                                        # kill: def $ecx killed $ecx killed $rcx
+	addl	%ecx, %eax
+	cvtsi2sd	%eax, %xmm0
+	cvtsi2ss	%eax, %xmm1
+	movss	%xmm1, -436(%rbp)               # 4-byte Spill
+	movabsq	$.L.str.65, %rdi
+	movb	$1, %al
+	callq	printf
+	movss	-436(%rbp), %xmm0               # 4-byte Reload
+                                        # xmm0 = mem[0],zero,zero,zero
+	callq	_ZSt4sqrtf.2.21_s32_0fixp
+	cvtsi2ss	%eax, %xmm0
+	callq	_ZSt4sqrtf.20_s32_0fixp
+	subl	$273, %eax                      # imm = 0x111
+	movl	%eax, -432(%rbp)                # 4-byte Spill
+	cvtsi2sd	%eax, %xmm0
+	movabsq	$.L.str.66, %rdi
 	movb	$1, %al
 	callq	printf
 	movsd	-80(%rbp), %xmm0                # 8-byte Reload
                                         # xmm0 = mem[0],zero
-	movabsq	$.L.str.68, %rdi
+	movabsq	$.L.str.67, %rdi
 	movb	$1, %al
 	callq	printf
                                         # kill: def $ecx killed $eax
-	movq	-432(%rbp), %rax                # 8-byte Reload
-	shrq	$27, %rax
-                                        # kill: def $eax killed $eax killed $rax
+	movl	-432(%rbp), %eax                # 4-byte Reload
 	movswl	params_ct+2, %ecx
 	cmpl	%ecx, %eax
 	jge	.LBB45_23
 # %bb.22:                               #   in Loop: Header=BB45_12 Depth=1
 	xorl	%eax, %eax
                                         # kill: def $al killed $al killed $eax
-	movb	%al, -633(%rbp)                 # 1-byte Spill
+	movb	%al, -561(%rbp)                 # 1-byte Spill
 	jmp	.LBB45_30
 .LBB45_23:                              #   in Loop: Header=BB45_12 Depth=1
-	movq	-432(%rbp), %rax                # 8-byte Reload
-	shrq	$27, %rax
-                                        # kill: def $eax killed $eax killed $rax
+	movl	-432(%rbp), %eax                # 4-byte Reload
 	movswl	params_ct+4, %ecx
 	cmpl	%ecx, %eax
 	jge	.LBB45_25
 # %bb.24:                               #   in Loop: Header=BB45_12 Depth=1
 	movb	$1, %al
-	movb	%al, -634(%rbp)                 # 1-byte Spill
+	movb	%al, -562(%rbp)                 # 1-byte Spill
 	jmp	.LBB45_29
 .LBB45_25:                              #   in Loop: Header=BB45_12 Depth=1
-	movq	-432(%rbp), %rax                # 8-byte Reload
-	shrq	$27, %rax
-                                        # kill: def $eax killed $eax killed $rax
+	movl	-432(%rbp), %eax                # 4-byte Reload
 	movswl	params_ct+6, %ecx
 	cmpl	%ecx, %eax
 	jge	.LBB45_27
 # %bb.26:                               #   in Loop: Header=BB45_12 Depth=1
 	movb	$2, %al
-	movb	%al, -635(%rbp)                 # 1-byte Spill
+	movb	%al, -563(%rbp)                 # 1-byte Spill
 	jmp	.LBB45_28
 .LBB45_27:                              #   in Loop: Header=BB45_12 Depth=1
 	movb	$3, %al
-	movb	%al, -635(%rbp)                 # 1-byte Spill
+	movb	%al, -563(%rbp)                 # 1-byte Spill
 	jmp	.LBB45_28
 .LBB45_28:                              #   in Loop: Header=BB45_12 Depth=1
-	movb	-635(%rbp), %al                 # 1-byte Reload
-	movb	%al, -634(%rbp)                 # 1-byte Spill
+	movb	-563(%rbp), %al                 # 1-byte Reload
+	movb	%al, -562(%rbp)                 # 1-byte Spill
 .LBB45_29:                              #   in Loop: Header=BB45_12 Depth=1
-	movb	-634(%rbp), %al                 # 1-byte Reload
-	movb	%al, -633(%rbp)                 # 1-byte Spill
+	movb	-562(%rbp), %al                 # 1-byte Reload
+	movb	%al, -561(%rbp)                 # 1-byte Spill
 .LBB45_30:                              #   in Loop: Header=BB45_12 Depth=1
-	movb	-633(%rbp), %al                 # 1-byte Reload
-	movb	%al, -713(%rbp)                 # 1-byte Spill
+	movb	-561(%rbp), %al                 # 1-byte Reload
+	movb	%al, -641(%rbp)                 # 1-byte Spill
 	movsbl	%al, %esi
-	movl	$.L.str.69, %edi
+	movl	$.L.str.68, %edi
 	xorl	%eax, %eax
                                         # kill: def $al killed $al killed $eax
 	callq	printf
-	movb	-713(%rbp), %cl                 # 1-byte Reload
+	movb	-641(%rbp), %cl                 # 1-byte Reload
                                         # kill: def $edx killed $eax
-	movq	-432(%rbp), %rax                # 8-byte Reload
+	movl	-432(%rbp), %eax                # 4-byte Reload
 	movsbq	%cl, %rcx
-	movq	%rcx, -680(%rbp)                # 8-byte Spill
+	movq	%rcx, -632(%rbp)                # 8-byte Spill
 	movswl	params_ct(%rcx,%rcx), %ecx
-	shll	$15, %ecx
-	movslq	%ecx, %rcx
-	shlq	$12, %rcx
-	subq	%rcx, %rax
-	movq	%rax, -712(%rbp)                # 8-byte Spill
-	shrq	$7, %rax
-                                        # kill: def $eax killed $eax killed $rax
+	subl	%ecx, %eax
+	movl	%eax, -640(%rbp)                # 4-byte Spill
 	cvtsi2sd	%eax, %xmm0
-	movsd	.LCPI45_21(%rip), %xmm1         # xmm1 = mem[0],zero
+	movl	$.L.str.69, %edi
+	movb	$1, %al
+	movb	%al, -601(%rbp)                 # 1-byte Spill
+	callq	printf
+	movl	-640(%rbp), %edx                # 4-byte Reload
+	movq	-632(%rbp), %rcx                # 8-byte Reload
+                                        # kill: def $esi killed $eax
+	movb	-601(%rbp), %al                 # 1-byte Reload
+	movss	params_ksTo(,%rcx,4), %xmm0     # xmm0 = mem[0],zero,zero,zero
+	movss	.LCPI45_28(%rip), %xmm1         # xmm1 = mem[0],zero,zero,zero
+	mulss	%xmm1, %xmm0
+	cvttss2si	%xmm0, %ecx
+	imull	%edx, %ecx
+	shll	$10, %ecx
+	andl	$-1073741824, %ecx              # imm = 0xC0000000
+	movl	%ecx, -636(%rbp)                # 4-byte Spill
+	cvtsi2sd	%ecx, %xmm0
+	movsd	.LCPI45_19(%rip), %xmm1         # xmm1 = mem[0],zero
+	movsd	%xmm1, -624(%rbp)               # 8-byte Spill
+	divsd	%xmm1, %xmm0
+	movl	$.L.str.70, %edi
+	callq	printf
+	movl	-636(%rbp), %ecx                # 4-byte Reload
+	movsd	-624(%rbp), %xmm1               # 8-byte Reload
+                                        # xmm1 = mem[0],zero
+                                        # kill: def $edx killed $eax
+	movb	-601(%rbp), %al                 # 1-byte Reload
+	addl	$1073741824, %ecx               # imm = 0x40000000
+	movl	%ecx, -608(%rbp)                # 4-byte Spill
+	cvtsi2sd	%ecx, %xmm0
 	divsd	%xmm1, %xmm0
 	movl	$.L.str.71, %edi
-	movb	$1, %al
-	movb	%al, -681(%rbp)                 # 1-byte Spill
 	callq	printf
-	movq	-712(%rbp), %rdx                # 8-byte Reload
-	movq	-680(%rbp), %rsi                # 8-byte Reload
-                                        # kill: def $ecx killed $eax
-	movb	-681(%rbp), %al                 # 1-byte Reload
-	movq	params_ksTo.fixp@GOTPCREL(%rip), %rcx
-	movslq	(%rcx,%rsi,4), %rcx
-	imulq	%rdx, %rcx
-	shrq	$27, %rcx
+	movq	-632(%rbp), %rcx                # 8-byte Reload
+	movsd	-624(%rbp), %xmm1               # 8-byte Reload
+                                        # xmm1 = mem[0],zero
+                                        # kill: def $edx killed $eax
+	movq	-464(%rbp), %rax                # 8-byte Reload
+	movq	-48(%rbp,%rcx,8), %rcx
+	imulq	%rcx
+	movq	%rax, %rcx
+	movb	-601(%rbp), %al                 # 1-byte Reload
+	shldq	$53, %rcx, %rdx
+	movq	%rdx, -616(%rbp)                # 8-byte Spill
+	shrq	$11, %rcx
                                         # kill: def $ecx killed $ecx killed $rcx
-	shll	$10, %ecx
-	movl	%ecx, -700(%rbp)                # 4-byte Spill
 	cvtsi2sd	%ecx, %xmm0
-	movsd	.LCPI45_13(%rip), %xmm1         # xmm1 = mem[0],zero
-	movsd	%xmm1, -696(%rbp)               # 8-byte Spill
 	divsd	%xmm1, %xmm0
 	movl	$.L.str.72, %edi
 	callq	printf
-	movl	-700(%rbp), %ecx                # 4-byte Reload
-	movsd	-696(%rbp), %xmm1               # 8-byte Reload
-                                        # xmm1 = mem[0],zero
-                                        # kill: def $edx killed $eax
-	movb	-681(%rbp), %al                 # 1-byte Reload
-	addl	$1073741824, %ecx               # imm = 0x40000000
-	movl	%ecx, -668(%rbp)                # 4-byte Spill
-	cvtsi2sd	%ecx, %xmm0
-	divsd	%xmm1, %xmm0
+	movq	-616(%rbp), %rcx                # 8-byte Reload
+	movl	-608(%rbp), %edx                # 4-byte Reload
+                                        # kill: def $esi killed $eax
+	movb	-601(%rbp), %al                 # 1-byte Reload
+                                        # kill: def $ecx killed $ecx killed $rcx
+	movslq	%ecx, %rcx
+	movslq	%edx, %rdx
+	imulq	%rdx, %rcx
+	shrq	$30, %rcx
+                                        # kill: def $ecx killed $ecx killed $rcx
+	cvtsi2ss	%ecx, %xmm0
+	movss	.LCPI45_29(%rip), %xmm1         # xmm1 = mem[0],zero,zero,zero
+	divss	%xmm1, %xmm0
+	movss	%xmm0, -600(%rbp)               # 4-byte Spill
+	cvtss2sd	%xmm0, %xmm0
 	movl	$.L.str.73, %edi
 	callq	printf
-	movq	-680(%rbp), %rcx                # 8-byte Reload
-                                        # kill: def $edx killed $eax
-	movq	-536(%rbp), %rax                # 8-byte Reload
-	movq	-48(%rbp,%rcx,8), %rcx
-	imulq	%rcx, %rax
-	shrq	$11, %rax
-                                        # kill: def $eax killed $eax killed $rax
-	movl	%eax, -664(%rbp)                # 4-byte Spill
-	cvtsi2sd	%eax, %xmm0
-	movsd	.LCPI45_13(%rip), %xmm1         # xmm1 = mem[0],zero
-	divsd	%xmm1, %xmm0
-	movabsq	$.L.str.74, %rdi
-	movb	$1, %al
-	callq	printf
-	movl	-668(%rbp), %ecx                # 4-byte Reload
-                                        # kill: def $edx killed $eax
-	movl	-664(%rbp), %eax                # 4-byte Reload
-	cltq
-	movslq	%ecx, %rcx
-	imulq	%rcx, %rax
-	sarq	$30, %rax
-                                        # kill: def $eax killed $eax killed $rax
-	cvtsi2ss	%eax, %xmm0
-	movss	.LCPI45_26(%rip), %xmm1         # xmm1 = mem[0],zero,zero,zero
+	movss	-516(%rbp), %xmm0               # 4-byte Reload
+                                        # xmm0 = mem[0],zero,zero,zero
+	movss	-600(%rbp), %xmm1               # 4-byte Reload
+                                        # xmm1 = mem[0],zero,zero,zero
 	divss	%xmm1, %xmm0
-	cvtsi2ss	%eax, %xmm1
-	movss	.LCPI45_26(%rip), %xmm2         # xmm2 = mem[0],zero,zero,zero
-	divss	%xmm2, %xmm1
-	movss	%xmm1, -660(%rbp)               # 4-byte Spill
-	cvtss2sd	%xmm0, %xmm0
+	movss	%xmm0, -596(%rbp)               # 4-byte Spill
+	cvttss2si	%xmm0, %rax
+	shlq	$27, %rax
+	movq	%rax, %xmm0
+	movaps	.LCPI45_30(%rip), %xmm1         # xmm1 = [1127219200,1160773632,0,0]
+	punpckldq	%xmm1, %xmm0            # xmm0 = xmm0[0],xmm1[0],xmm0[1],xmm1[1]
+	movapd	.LCPI45_31(%rip), %xmm1         # xmm1 = [4.503599627370496E+15,1.9342813113834067E+25]
+	subpd	%xmm1, %xmm0
+	movaps	%xmm0, %xmm1
+	unpckhpd	%xmm0, %xmm0                    # xmm0 = xmm0[1,1]
+	addsd	%xmm1, %xmm0
+	movsd	.LCPI45_24(%rip), %xmm1         # xmm1 = mem[0],zero
+	divsd	%xmm1, %xmm0
 	movabsq	$.L.str.75, %rdi
 	movb	$1, %al
 	callq	printf
-	movss	-588(%rbp), %xmm1               # 4-byte Reload
+	movss	-596(%rbp), %xmm1               # 4-byte Reload
                                         # xmm1 = mem[0],zero,zero,zero
-	movss	-660(%rbp), %xmm0               # 4-byte Reload
-                                        # xmm0 = mem[0],zero,zero,zero
-	divss	%xmm0, %xmm1
-	movss	%xmm1, -656(%rbp)               # 4-byte Spill
-	movss	.LCPI45_16(%rip), %xmm0         # xmm0 = mem[0],zero,zero,zero
+	movq	-96(%rbp), %rcx                 # 8-byte Reload
+	movss	.LCPI45_12(%rip), %xmm0         # xmm0 = mem[0],zero,zero,zero
 	mulss	%xmm1, %xmm0
-	cvttss2si	%xmm0, %eax
-	shll	$16, %eax
+	cvttss2si	%xmm0, %rax
+	shlq	$29, %rax
+	addq	%rcx, %rax
+	cvtsi2sd	%rax, %xmm0
+	movsd	.LCPI45_8(%rip), %xmm1          # xmm1 = mem[0],zero
+	divsd	%xmm1, %xmm0
+	cvtsi2sd	%rax, %xmm1
+	movsd	.LCPI45_8(%rip), %xmm2          # xmm2 = mem[0],zero
+	divsd	%xmm2, %xmm1
+	movsd	%xmm1, -592(%rbp)               # 8-byte Spill
+	cvtsi2ss	%rax, %xmm1
+	movss	.LCPI45_10(%rip), %xmm2         # xmm2 = mem[0],zero,zero,zero
+	divss	%xmm2, %xmm1
+	movss	%xmm1, -580(%rbp)               # 4-byte Spill
+	movabsq	$.L.str.76, %rdi
+	movb	$1, %al
+	callq	printf
+	movss	-580(%rbp), %xmm0               # 4-byte Reload
+                                        # xmm0 = mem[0],zero,zero,zero
+	callq	_ZSt4sqrtf.3.23_s35_29fixp
+	cvtsi2ss	%rax, %xmm0
+	movss	.LCPI45_10(%rip), %xmm1         # xmm1 = mem[0],zero,zero,zero
+	divss	%xmm1, %xmm0
+	callq	_ZSt4sqrtf.3_s35_29fixp
+	movabsq	$146646289612, %rcx             # imm = 0x2224CCCCCC
+	subq	%rcx, %rax
+	movq	%rax, -576(%rbp)                # 8-byte Spill
+	sarq	$8, %rax
+                                        # kill: def $eax killed $eax killed $rax
 	cvtsi2sd	%eax, %xmm0
-	movsd	.LCPI45_5(%rip), %xmm1          # xmm1 = mem[0],zero
+	movsd	.LCPI45_15(%rip), %xmm1         # xmm1 = mem[0],zero
 	divsd	%xmm1, %xmm0
 	movabsq	$.L.str.77, %rdi
 	movb	$1, %al
 	callq	printf
-	movss	-656(%rbp), %xmm1               # 4-byte Reload
-                                        # xmm1 = mem[0],zero,zero,zero
-	movq	-96(%rbp), %rcx                 # 8-byte Reload
-	movss	.LCPI45_16(%rip), %xmm0         # xmm0 = mem[0],zero,zero,zero
-	mulss	%xmm1, %xmm0
-	cvttss2si	%xmm0, %rax
-	addq	%rcx, %rax
-	cvtsi2sd	%rax, %xmm0
-	cvtsi2ss	%rax, %xmm1
-	movss	%xmm1, -652(%rbp)               # 4-byte Spill
-	movabsq	$.L.str.78, %rdi
-	movb	$1, %al
-	callq	printf
-	movss	-652(%rbp), %xmm0               # 4-byte Reload
-                                        # xmm0 = mem[0],zero,zero,zero
-	callq	_ZSt4sqrtf.3.30_s64_0fixp
-	cvtsi2ss	%rax, %xmm0
-	callq	_ZSt4sqrtf.31_s64_0fixp
-	subq	$273, %rax                      # imm = 0x111
-	movq	%rax, -648(%rbp)                # 8-byte Spill
-	cvtsi2sd	%rax, %xmm0
-	movabsq	$.L.str.79, %rdi
-	movb	$1, %al
-	callq	printf
-	movq	-648(%rbp), %rdx                # 8-byte Reload
-	movl	-280(%rbp), %esi                # 4-byte Reload
                                         # kill: def $ecx killed $eax
-	movq	-224(%rbp), %rax                # 8-byte Reload
-	movslq	%esi, %rcx
-	shlq	$21, %rdx
-                                        # kill: def $edx killed $edx killed $rdx
-	movl	%edx, (%rax,%rcx,4)
-	movabsq	$.L.str.80, %rdi
+	movl	-288(%rbp), %eax                # 4-byte Reload
+	cmpl	$658, %eax                      # imm = 0x292
+	jne	.LBB45_32
+# %bb.31:                               #   in Loop: Header=BB45_12 Depth=1
+	movabsq	$.L.str.78, %rdi
 	movb	$0, %al
 	callq	printf
-.LBB45_31:                              #   in Loop: Header=BB45_12 Depth=1
-	jmp	.LBB45_32
+	movsd	-592(%rbp), %xmm0               # 8-byte Reload
+                                        # xmm0 = mem[0],zero
+	movabsq	$.L.str.76, %rdi
+	movb	$1, %al
+	callq	printf
+	movabsq	$.L.str.78, %rdi
+	movb	$0, %al
+	callq	printf
 .LBB45_32:                              #   in Loop: Header=BB45_12 Depth=1
-	movl	-280(%rbp), %eax                # 4-byte Reload
+	movl	-288(%rbp), %esi                # 4-byte Reload
+	movq	-232(%rbp), %rax                # 8-byte Reload
+	movq	-576(%rbp), %rdx                # 8-byte Reload
+	movslq	%esi, %rcx
+	sarq	$8, %rdx
+                                        # kill: def $edx killed $edx killed $rdx
+	movl	%edx, (%rax,%rcx,4)
+	movabsq	$.L.str.79, %rdi
+	movb	$0, %al
+	callq	printf
+.LBB45_33:                              #   in Loop: Header=BB45_12 Depth=1
+	jmp	.LBB45_34
+.LBB45_34:                              #   in Loop: Header=BB45_12 Depth=1
+	movl	-288(%rbp), %eax                # 4-byte Reload
 	addl	$1, %eax
-	movl	%eax, -276(%rbp)                # 4-byte Spill
+	movl	%eax, -284(%rbp)                # 4-byte Spill
 	jmp	.LBB45_12
-.LBB45_33:
-	movss	-208(%rbp), %xmm1               # 4-byte Reload
+.LBB45_35:
+	movss	-216(%rbp), %xmm1               # 4-byte Reload
+                                        # xmm1 = mem[0],zero,zero,zero
+	movss	.LCPI45_4(%rip), %xmm0          # xmm0 = mem[0],zero,zero,zero
+	mulss	%xmm1, %xmm0
+	cvttss2si	%xmm0, %eax
+	cvtsi2sd	%eax, %xmm0
+	movsd	.LCPI45_5(%rip), %xmm1          # xmm1 = mem[0],zero
+	divsd	%xmm1, %xmm0
+	movabsq	$.L.str.80, %rdi
+	movb	$1, %al
+	callq	printf
+	movss	-212(%rbp), %xmm1               # 4-byte Reload
                                         # xmm1 = mem[0],zero,zero,zero
 	movss	.LCPI45_4(%rip), %xmm0          # xmm0 = mem[0],zero,zero,zero
 	mulss	%xmm1, %xmm0
@@ -9326,38 +8116,101 @@ _Z20MLX90640_CalculateToPKtffPf.5_fixp: # @_Z20MLX90640_CalculateToPKtffPf.5_fix
 	movabsq	$.L.str.81, %rdi
 	movb	$1, %al
 	callq	printf
-	movss	-204(%rbp), %xmm1               # 4-byte Reload
-                                        # xmm1 = mem[0],zero,zero,zero
-	movss	.LCPI45_4(%rip), %xmm0          # xmm0 = mem[0],zero,zero,zero
-	mulss	%xmm1, %xmm0
-	cvttss2si	%xmm0, %eax
-	cvtsi2sd	%eax, %xmm0
-	movsd	.LCPI45_5(%rip), %xmm1          # xmm1 = mem[0],zero
-	divsd	%xmm1, %xmm0
+	movss	-208(%rbp), %xmm0               # 4-byte Reload
+                                        # xmm0 = mem[0],zero,zero,zero
+	cvtss2sd	%xmm0, %xmm0
 	movabsq	$.L.str.82, %rdi
-	movb	$1, %al
-	callq	printf
-	movsd	-200(%rbp), %xmm0               # 8-byte Reload
-                                        # xmm0 = mem[0],zero
-	movabsq	$.L.str.83, %rdi
 	movb	$1, %al
 	callq	printf
 	movsd	-88(%rbp), %xmm0                # 8-byte Reload
                                         # xmm0 = mem[0],zero
-	movabsq	$.L.str.29, %rdi
+	movabsq	$.L.str.83, %rdi
 	movb	$1, %al
 	callq	printf
-	addq	$720, %rsp                      # imm = 0x2D0
+	addq	$656, %rsp                      # imm = 0x290
 	popq	%rbp
 	.cfi_def_cfa %rsp, 8
 	retq
 .Lfunc_end45:
-	.size	_Z20MLX90640_CalculateToPKtffPf.5_fixp, .Lfunc_end45-_Z20MLX90640_CalculateToPKtffPf.5_fixp
+	.size	_Z20MLX90640_CalculateToPKtffPf.4_fixp, .Lfunc_end45-_Z20MLX90640_CalculateToPKtffPf.4_fixp
 	.cfi_endproc
                                         # -- End function
-	.p2align	4, 0x90                         # -- Begin function _Z8printPPMP8_IO_FILEPfiiff.6_fixp
-	.type	_Z8printPPMP8_IO_FILEPfiiff.6_fixp,@function
-_Z8printPPMP8_IO_FILEPfiiff.6_fixp:     # @_Z8printPPMP8_IO_FILEPfiiff.6_fixp
+	.section	.rodata.cst4,"aM",@progbits,4
+	.p2align	2                               # -- Begin function _Z20MLX90640_CalculateToPKtffPf.5_fixp
+.LCPI46_0:
+	.long	0x46800000                      # float 16384
+.LCPI46_1:
+	.long	0x5f000000                      # float 9.22337203E+18
+.LCPI46_2:
+	.long	0x4f000000                      # float 2.14748365E+9
+.LCPI46_4:
+	.long	0x47800000                      # float 65536
+.LCPI46_6:
+	.long	0x47000000                      # float 32768
+.LCPI46_9:
+	.long	0x42200000                      # float 40
+.LCPI46_10:
+	.long	0x3f800000                      # float 1
+.LCPI46_11:
+	.long	0x44000000                      # float 512
+.LCPI46_12:
+	.long	0x51800000                      # float 6.87194767E+10
+.LCPI46_14:
+	.long	0x56800000                      # float 7.03687441E+13
+.LCPI46_15:
+	.long	0x4b000000                      # float 8388608
+.LCPI46_16:
+	.long	0x42000000                      # float 32
+.LCPI46_18:
+	.long	0x45800000                      # float 4096
+.LCPI46_20:
+	.long	0x55800000                      # float 1.7592186E+13
+.LCPI46_21:
+	.long	0x48000000                      # float 131072
+.LCPI46_24:
+	.long	0x57000000                      # float 1.40737488E+14
+.LCPI46_26:
+	.long	0x49800000                      # float 1048576
+.LCPI46_28:
+	.long	0x4e800000                      # float 1.07374182E+9
+	.section	.rodata.cst8,"aM",@progbits,8
+	.p2align	3
+.LCPI46_3:
+	.quad	0x41e0000000000000              # double 2147483648
+.LCPI46_5:
+	.quad	0x40f0000000000000              # double 65536
+.LCPI46_7:
+	.quad	0x40e0000000000000              # double 32768
+.LCPI46_8:
+	.quad	0x41c0000000000000              # double 536870912
+.LCPI46_13:
+	.quad	0x4140000000000000              # double 2097152
+.LCPI46_17:
+	.quad	0x41d0000000000000              # double 1073741824
+.LCPI46_19:
+	.quad	0x40b0000000000000              # double 4096
+.LCPI46_22:
+	.quad	0x41a0000000000000              # double 134217728
+.LCPI46_23:
+	.quad	0x4130000000000000              # double 1048576
+.LCPI46_25:
+	.quad	0x41f0000000000000              # double 4294967296
+.LCPI46_27:
+	.quad	0x4071126666666666              # double 273.14999999999998
+	.section	.rodata.cst16,"aM",@progbits,16
+	.p2align	4
+.LCPI46_29:
+	.long	1127219200                      # 0x43300000
+	.long	1160773632                      # 0x45300000
+	.long	0                               # 0x0
+	.long	0                               # 0x0
+.LCPI46_30:
+	.quad	0x4330000000000000              # double 4503599627370496
+	.quad	0x4530000000000000              # double 1.9342813113834067E+25
+	.text
+	.p2align	4, 0x90
+	.type	_Z20MLX90640_CalculateToPKtffPf.5_fixp,@function
+_Z20MLX90640_CalculateToPKtffPf.5_fixp: # @_Z20MLX90640_CalculateToPKtffPf.5_fixp
 	.cfi_startproc
 # %bb.0:
 	pushq	%rbp
@@ -9365,315 +8218,1371 @@ _Z8printPPMP8_IO_FILEPfiiff.6_fixp:     # @_Z8printPPMP8_IO_FILEPfiiff.6_fixp
 	.cfi_offset %rbp, -16
 	movq	%rsp, %rbp
 	.cfi_def_cfa_register %rbp
-	subq	$112, %rsp
-	movq	%rdi, -16(%rbp)                 # 8-byte Spill
-	movq	%rsi, -40(%rbp)                 # 8-byte Spill
-	movl	%edx, -24(%rbp)                 # 4-byte Spill
-	movl	%ecx, -20(%rbp)                 # 4-byte Spill
-	movl	%r8d, -32(%rbp)                 # 4-byte Spill
-	movl	%r9d, -28(%rbp)                 # 4-byte Spill
-	movabsq	$.L.str.119, %rsi
-	movb	$0, %al
-	callq	fprintf
-	movl	-24(%rbp), %edx                 # 4-byte Reload
-	movl	-20(%rbp), %ecx                 # 4-byte Reload
-	movq	-16(%rbp), %rdi                 # 8-byte Reload
-	movabsq	$.L.str.120, %rsi
-	movb	$0, %al
-	callq	fprintf
-	movq	-16(%rbp), %rdi                 # 8-byte Reload
-	movabsq	$.L.str.121, %rsi
-	movb	$0, %al
-	callq	fprintf
-	xorl	%eax, %eax
-	movl	%eax, -4(%rbp)                  # 4-byte Spill
-.LBB46_1:                               # =>This Loop Header: Depth=1
-                                        #     Child Loop BB46_3 Depth 2
-	movl	-20(%rbp), %ecx                 # 4-byte Reload
-	movl	-4(%rbp), %eax                  # 4-byte Reload
-	movl	%eax, -44(%rbp)                 # 4-byte Spill
-	cmpl	%ecx, %eax
-	jge	.LBB46_42
-# %bb.2:                                #   in Loop: Header=BB46_1 Depth=1
-	xorl	%eax, %eax
-	movl	%eax, -48(%rbp)                 # 4-byte Spill
-	jmp	.LBB46_3
-.LBB46_3:                               #   Parent Loop BB46_1 Depth=1
-                                        # =>  This Inner Loop Header: Depth=2
-	movl	-24(%rbp), %ecx                 # 4-byte Reload
-	movl	-48(%rbp), %eax                 # 4-byte Reload
-	movl	%eax, -52(%rbp)                 # 4-byte Spill
-	cmpl	%ecx, %eax
-	jge	.LBB46_40
-# %bb.4:                                #   in Loop: Header=BB46_3 Depth=2
-	movl	-28(%rbp), %ecx                 # 4-byte Reload
-	movl	-32(%rbp), %edx                 # 4-byte Reload
-	movq	-40(%rbp), %rax                 # 8-byte Reload
-	movl	-24(%rbp), %r8d                 # 4-byte Reload
-	movl	-44(%rbp), %edi                 # 4-byte Reload
-	movl	-52(%rbp), %r9d                 # 4-byte Reload
-	movl	%r8d, %esi
-	subl	$1, %esi
-	subl	%r9d, %esi
-	imull	%r8d, %edi
-	addl	%edi, %esi
-	movslq	%esi, %rsi
-	movl	(%rax,%rsi,4), %eax
-	shll	$2, %eax
-	shll	$3, %edx
-	subl	%edx, %eax
+	subq	$656, %rsp                      # imm = 0x290
+	movq	%rdi, -64(%rbp)                 # 8-byte Spill
+	movq	%rsi, -168(%rbp)                # 8-byte Spill
+	movq	%rdx, -232(%rbp)                # 8-byte Spill
+	movss	.LCPI46_1(%rip), %xmm2          # xmm2 = mem[0],zero,zero,zero
+	movaps	%xmm0, %xmm1
+	mulss	%xmm2, %xmm1
+	movaps	%xmm1, %xmm3
+	subss	%xmm2, %xmm3
+	cvttss2si	%xmm3, %rax
+	movabsq	$-9223372036854775808, %rcx     # imm = 0x8000000000000000
+	xorq	%rcx, %rax
+	cvttss2si	%xmm1, %rcx
+	ucomiss	%xmm2, %xmm1
+	cmovbq	%rcx, %rax
+	movq	%rax, -152(%rbp)                # 8-byte Spill
+	cvtsi2sd	%rsi, %xmm1
+	movsd	%xmm1, -208(%rbp)               # 8-byte Spill
+	movss	.LCPI46_2(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
+	mulss	%xmm1, %xmm0
+	cvttss2si	%xmm0, %rax
+                                        # kill: def $eax killed $eax killed $rax
 	movl	%eax, %eax
                                         # kill: def $rax killed $eax
-	shlq	$20, %rax
-	movslq	%ecx, %rcx
-	cqto
-	idivq	%rcx
-	sarq	$1, %rax
+	cvtsi2sd	%rax, %xmm0
+	movsd	.LCPI46_3(%rip), %xmm1          # xmm1 = mem[0],zero
+	divsd	%xmm1, %xmm0
+	movsd	%xmm0, -128(%rbp)               # 8-byte Spill
+	movw	1666(%rdi), %ax
+	movw	%ax, -218(%rbp)                 # 2-byte Spill
+	callq	_Z15MLX90640_GetVddPKt
+	movq	-64(%rbp), %rdi                 # 8-byte Reload
+	movss	%xmm0, -216(%rbp)               # 4-byte Spill
+	callq	_Z14MLX90640_GetTaPKt
+	movss	%xmm0, -196(%rbp)               # 4-byte Spill
+	movaps	%xmm0, %xmm1
+	movss	%xmm1, -212(%rbp)               # 4-byte Spill
+	movss	.LCPI46_4(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
+	mulss	%xmm1, %xmm0
+	cvttps2dq	%xmm0, %xmm0
+	cvtdq2pd	%xmm0, %xmm0
+	movsd	.LCPI46_5(%rip), %xmm1          # xmm1 = mem[0],zero
+	divsd	%xmm1, %xmm0
+	movl	$.L.str.22, %edi
+	movb	$1, %al
+	movb	%al, -97(%rbp)                  # 1-byte Spill
+	callq	printf
+	movsd	-208(%rbp), %xmm0               # 8-byte Reload
+                                        # xmm0 = mem[0],zero
+                                        # kill: def $ecx killed $eax
+	movb	-97(%rbp), %al                  # 1-byte Reload
+	movl	$.L.str.23, %edi
+	callq	printf
+	movss	-196(%rbp), %xmm0               # 4-byte Reload
+                                        # xmm0 = mem[0],zero,zero,zero
+                                        # kill: def $ecx killed $eax
+	movb	-97(%rbp), %al                  # 1-byte Reload
+	movss	.LCPI46_6(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
+	movss	%xmm1, -68(%rbp)                # 4-byte Spill
+	mulss	%xmm1, %xmm0
+	cvttss2si	%xmm0, %ecx
+	addl	$8950579, %ecx                  # imm = 0x889333
+	movl	%ecx, -192(%rbp)                # 4-byte Spill
+	cvtsi2sd	%ecx, %xmm0
+	movsd	.LCPI46_7(%rip), %xmm1          # xmm1 = mem[0],zero
+	divsd	%xmm1, %xmm0
+	movl	$.L.str.24, %edi
+	callq	printf
+                                        # kill: def $ecx killed $eax
+	movl	-192(%rbp), %eax                # 4-byte Reload
+	movslq	%eax, %rcx
+	movq	%rcx, %rax
+	imulq	%rax, %rax
+	shlq	$3, %rax
+	movq	%rcx, %rdx
+	sarq	$63, %rdx
+	movl	%edx, %esi
+	movl	%eax, %edx
+	imull	%esi, %edx
+	movl	%edx, -188(%rbp)                # 4-byte Spill
+	mulq	%rcx
+	movq	%rax, %rsi
+	movl	-188(%rbp), %eax                # 4-byte Reload
+	movq	%rsi, -184(%rbp)                # 8-byte Spill
+	movq	%rdx, %rsi
+	movq	-184(%rbp), %rdx                # 8-byte Reload
+                                        # kill: def $esi killed $esi killed $rsi
+	addl	%eax, %esi
+                                        # implicit-def: $rax
+	movl	%esi, %eax
+	shldq	$33, %rdx, %rax
+	imulq	%rcx
+	movq	%rax, %rcx
+	movb	-97(%rbp), %al                  # 1-byte Reload
+	movq	%rcx, -176(%rbp)                # 8-byte Spill
+	movq	%rdx, %rcx
+	movq	-176(%rbp), %rdx                # 8-byte Reload
+	shldq	$32, %rdx, %rcx
+	shlq	$29, %rcx
+	movq	%rcx, -160(%rbp)                # 8-byte Spill
+	cvtsi2sd	%rcx, %xmm0
+	movsd	.LCPI46_8(%rip), %xmm1          # xmm1 = mem[0],zero
+	movsd	%xmm1, -136(%rbp)               # 8-byte Spill
+	divsd	%xmm1, %xmm0
+	movl	$.L.str.25, %edi
+	callq	printf
+	movq	-168(%rbp), %rdi                # 8-byte Reload
+	addq	$273, %rdi                      # imm = 0x111
+	movl	$4, %esi
+	callq	_ZSt3powIdiEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.25_s64_0fixp
+	movq	%rax, %rcx
+	movb	-97(%rbp), %al                  # 1-byte Reload
+	movq	%rcx, -112(%rbp)                # 8-byte Spill
+	cvtsi2sd	%rcx, %xmm0
+	movl	$.L.str.26, %edi
+	callq	printf
+	movq	-160(%rbp), %rdx                # 8-byte Reload
+	movsd	-136(%rbp), %xmm1               # 8-byte Reload
+                                        # xmm1 = mem[0],zero
+	movq	-112(%rbp), %rcx                # 8-byte Reload
+                                        # kill: def $esi killed $eax
+	movb	-97(%rbp), %al                  # 1-byte Reload
+	shlq	$29, %rcx
+	subq	%rdx, %rcx
+	movq	%rcx, -144(%rbp)                # 8-byte Spill
+	cvtsi2sd	%rcx, %xmm0
+	divsd	%xmm1, %xmm0
+	movl	$.L.str.27, %edi
+	callq	printf
+	movq	-152(%rbp), %rdx                # 8-byte Reload
+                                        # kill: def $ecx killed $eax
+	movq	-144(%rbp), %rax                # 8-byte Reload
+	movq	%rax, %rsi
+	shrq	$63, %rsi
+	shldq	$63, %rax, %rsi
+	xorl	%eax, %eax
 	movl	%eax, %ecx
-	movl	%ecx, -56(%rbp)                 # 4-byte Spill
-	movl	$1572864, %eax                  # imm = 0x180000
-	cmpl	%ecx, %eax
-	jg	.LBB46_7
-# %bb.5:                                #   in Loop: Header=BB46_3 Depth=2
+	movq	%rcx, %rdi
+	callq	__divti3@PLT
+	movsd	-136(%rbp), %xmm2               # 8-byte Reload
+                                        # xmm2 = mem[0],zero
+	movsd	-128(%rbp), %xmm1               # 8-byte Reload
+                                        # xmm1 = mem[0],zero
+	movq	%rax, -120(%rbp)                # 8-byte Spill
+	cvtsi2sd	%rax, %xmm0
+	divsd	%xmm2, %xmm0
+	movl	$.L.str.28, %edi
+	movb	$2, %al
+	callq	printf
+	movq	-120(%rbp), %rdx                # 8-byte Reload
+	movq	-112(%rbp), %rcx                # 8-byte Reload
+                                        # kill: def $esi killed $eax
+	movb	-97(%rbp), %al                  # 1-byte Reload
+	sarq	$29, %rdx
+	subq	%rdx, %rcx
+	movq	%rcx, -96(%rbp)                 # 8-byte Spill
+	cvtsi2sd	%rcx, %xmm0
+	movsd	%xmm0, -88(%rbp)                # 8-byte Spill
+	movaps	%xmm0, %xmm1
+	movsd	%xmm1, -80(%rbp)                # 8-byte Spill
+	movl	$.L.str.29, %edi
+	callq	printf
+	movss	-68(%rbp), %xmm3                # 4-byte Reload
+                                        # xmm3 = mem[0],zero,zero,zero
+	movq	-64(%rbp), %rdi                 # 8-byte Reload
+	movss	params_ksTo(%rip), %xmm2        # xmm2 = mem[0],zero,zero,zero
+	movss	.LCPI46_9(%rip), %xmm0          # xmm0 = mem[0],zero,zero,zero
+	mulss	%xmm0, %xmm2
+	movss	.LCPI46_10(%rip), %xmm1         # xmm1 = mem[0],zero,zero,zero
+	addss	%xmm1, %xmm2
+	movaps	%xmm1, %xmm0
+	divss	%xmm2, %xmm0
+	movss	.LCPI46_11(%rip), %xmm2         # xmm2 = mem[0],zero,zero,zero
+	mulss	%xmm2, %xmm0
+	cvttss2si	%xmm0, %rax
+	movq	%rax, -48(%rbp)
+	movq	$512, -40(%rbp)                 # imm = 0x200
+	movss	params_ksTo+8(%rip), %xmm0      # xmm0 = mem[0],zero,zero,zero
+	movswl	params_ct+4(%rip), %eax
+	shll	$15, %eax
+	cvtsi2ss	%eax, %xmm4
+	divss	%xmm3, %xmm4
+	mulss	%xmm4, %xmm0
+	addss	%xmm1, %xmm0
+	mulss	%xmm2, %xmm0
+	cvttss2si	%xmm0, %rax
+	movq	%rax, -32(%rbp)
+	movq	-32(%rbp), %rax
+	movss	params_ksTo+12(%rip), %xmm0     # xmm0 = mem[0],zero,zero,zero
+	movswl	params_ct+6(%rip), %ecx
+	movswl	params_ct+4(%rip), %edx
+	subl	%edx, %ecx
+	shll	$15, %ecx
+	cvtsi2ss	%ecx, %xmm2
+	divss	%xmm3, %xmm2
+	mulss	%xmm2, %xmm0
+	addss	%xmm1, %xmm0
+	movss	.LCPI46_12(%rip), %xmm1         # xmm1 = mem[0],zero,zero,zero
+	mulss	%xmm1, %xmm0
+	cvttss2si	%xmm0, %rcx
+	imulq	%rcx
+	shldq	$28, %rax, %rdx
+	movq	%rdx, -24(%rbp)
+	movzwl	1556(%rdi), %eax
+	shll	$14, %eax
+	movl	%eax, -56(%rbp)                 # 4-byte Spill
+	cvtsi2ss	%eax, %xmm0
+	movss	.LCPI46_0(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
+	divss	%xmm1, %xmm0
+	cmpl	$536854528, %eax                # imm = 0x1FFFC000
+	movss	%xmm0, -52(%rbp)                # 4-byte Spill
+	jle	.LBB46_2
+# %bb.1:
 	movl	-56(%rbp), %eax                 # 4-byte Reload
-	cmpl	$2621440, %eax                  # imm = 0x280000
-	jge	.LBB46_7
-# %bb.6:                                #   in Loop: Header=BB46_3 Depth=2
-	movl	-56(%rbp), %eax                 # 4-byte Reload
-	subl	$1572864, %eax                  # imm = 0x180000
-	movl	%eax, %eax
-                                        # kill: def $rax killed $eax
-	shlq	$2, %rax
-	movl	$1, %ecx
-	cqto
-	idivq	%rcx
-	sarq	$1, %rax
-                                        # kill: def $eax killed $eax killed $rax
-	movl	%eax, -60(%rbp)                 # 4-byte Spill
-	jmp	.LBB46_15
-.LBB46_7:                               #   in Loop: Header=BB46_3 Depth=2
-	movl	-56(%rbp), %ecx                 # 4-byte Reload
-	movl	$2621440, %eax                  # imm = 0x280000
-	cmpl	%ecx, %eax
-	jg	.LBB46_10
-# %bb.8:                                #   in Loop: Header=BB46_3 Depth=2
-	movl	-56(%rbp), %eax                 # 4-byte Reload
-	cmpl	$3670016, %eax                  # imm = 0x380000
-	jge	.LBB46_10
-# %bb.9:                                #   in Loop: Header=BB46_3 Depth=2
-	movl	$2097152, %eax                  # imm = 0x200000
-	movl	%eax, -64(%rbp)                 # 4-byte Spill
-	jmp	.LBB46_14
-.LBB46_10:                              #   in Loop: Header=BB46_3 Depth=2
-	movl	-56(%rbp), %ecx                 # 4-byte Reload
-	movl	$3670016, %eax                  # imm = 0x380000
-	cmpl	%ecx, %eax
-	jg	.LBB46_12
-# %bb.11:                               #   in Loop: Header=BB46_3 Depth=2
-	movl	-56(%rbp), %ecx                 # 4-byte Reload
-	sarl	$1, %ecx
-	movl	$2359296, %eax                  # imm = 0x240000
-	subl	%ecx, %eax
-	cltq
-	shlq	$2, %rax
-	movl	$1, %ecx
-	cqto
-	idivq	%rcx
-                                        # kill: def $eax killed $eax killed $rax
-	movl	%eax, -68(%rbp)                 # 4-byte Spill
-	jmp	.LBB46_13
-.LBB46_12:                              #   in Loop: Header=BB46_3 Depth=2
+	subl	$1073741824, %eax               # imm = 0x40000000
+	cvtsi2ss	%eax, %xmm0
+	movss	.LCPI46_0(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
+	divss	%xmm1, %xmm0
+	movss	%xmm0, -52(%rbp)                # 4-byte Spill
+.LBB46_2:
+	movss	-52(%rbp), %xmm0                # 4-byte Reload
+                                        # xmm0 = mem[0],zero,zero,zero
+	movswl	params_gainEE(%rip), %eax
+	movl	%eax, %ecx
+	shll	$15, %ecx
+	movss	.LCPI46_14(%rip), %xmm1         # xmm1 = mem[0],zero,zero,zero
+	mulss	%xmm1, %xmm0
+	cvttss2si	%xmm0, %rdx
+	movslq	%ecx, %rsi
+                                        # implicit-def: $rdi
+	movl	%eax, %edi
+	shlq	$61, %rdi
+	sarq	$18, %rsi
+	movq	%rdx, %rcx
+	sarq	$63, %rcx
+	callq	__divti3@PLT
+	movq	%rax, %rcx
+	movq	-64(%rbp), %rax                 # 8-byte Reload
+	shlq	$6, %rcx
+	movq	%rcx, -256(%rbp)                # 8-byte Spill
+	cvtsi2sd	%rcx, %xmm0
+	movsd	.LCPI46_13(%rip), %xmm1         # xmm1 = mem[0],zero
+	divsd	%xmm1, %xmm0
+	movsd	%xmm0, -248(%rbp)               # 8-byte Spill
+	movzwl	1664(%rax), %ecx
+	andl	$4096, %ecx                     # imm = 0x1000
+	sarl	$5, %ecx
+                                        # kill: def $cl killed $cl killed $ecx
+	movb	%cl, -237(%rbp)                 # 1-byte Spill
+	movzwl	1552(%rax), %ecx
+	shll	$16, %ecx
+	sarl	$16, %ecx
+	movl	%ecx, -8(%rbp)
+	movzwl	1616(%rax), %eax
+	shll	$16, %eax
+	sarl	$16, %eax
+	movl	%eax, -4(%rbp)
 	xorl	%eax, %eax
-	movl	%eax, -68(%rbp)                 # 4-byte Spill
-	jmp	.LBB46_13
-.LBB46_13:                              #   in Loop: Header=BB46_3 Depth=2
-	movl	-68(%rbp), %eax                 # 4-byte Reload
-	movl	%eax, -64(%rbp)                 # 4-byte Spill
-.LBB46_14:                              #   in Loop: Header=BB46_3 Depth=2
-	movl	-64(%rbp), %eax                 # 4-byte Reload
-	movl	%eax, -60(%rbp)                 # 4-byte Spill
-.LBB46_15:                              #   in Loop: Header=BB46_3 Depth=2
-	movl	-56(%rbp), %ecx                 # 4-byte Reload
-	movl	-60(%rbp), %eax                 # 4-byte Reload
+	movl	%eax, -236(%rbp)                # 4-byte Spill
+.LBB46_3:                               # =>This Inner Loop Header: Depth=1
+	movl	-236(%rbp), %eax                # 4-byte Reload
+	movl	%eax, -260(%rbp)                # 4-byte Spill
+	cmpl	$2, %eax
+	jge	.LBB46_8
+# %bb.4:                                #   in Loop: Header=BB46_3 Depth=1
+	movl	-260(%rbp), %eax                # 4-byte Reload
 	cltq
-	imulq	$511, %rax, %rax                # imm = 0x1FF
-	sarq	$9, %rax
-                                        # kill: def $eax killed $eax killed $rax
-	sarl	$13, %eax
-	movl	%eax, -72(%rbp)                 # 4-byte Spill
-	movl	$524288, %eax                   # imm = 0x80000
-	cmpl	%ecx, %eax
-	jg	.LBB46_18
-# %bb.16:                               #   in Loop: Header=BB46_3 Depth=2
-	movl	-56(%rbp), %eax                 # 4-byte Reload
-	cmpl	$1572864, %eax                  # imm = 0x180000
-	jge	.LBB46_18
-# %bb.17:                               #   in Loop: Header=BB46_3 Depth=2
-	movl	-56(%rbp), %eax                 # 4-byte Reload
-	sarl	$1, %eax
-	subl	$262144, %eax                   # imm = 0x40000
-	movl	%eax, %eax
-                                        # kill: def $rax killed $eax
-	shlq	$2, %rax
-	movl	$1, %ecx
-	cqto
-	idivq	%rcx
-	sarq	$1, %rax
-                                        # kill: def $eax killed $eax killed $rax
-	movl	%eax, -76(%rbp)                 # 4-byte Spill
-	jmp	.LBB46_27
-.LBB46_18:                              #   in Loop: Header=BB46_3 Depth=2
-	movl	-56(%rbp), %ecx                 # 4-byte Reload
-	movl	$1572864, %eax                  # imm = 0x180000
-	cmpl	%ecx, %eax
-	jg	.LBB46_21
-# %bb.19:                               #   in Loop: Header=BB46_3 Depth=2
-	movl	-56(%rbp), %eax                 # 4-byte Reload
-	cmpl	$2621440, %eax                  # imm = 0x280000
-	jge	.LBB46_21
-# %bb.20:                               #   in Loop: Header=BB46_3 Depth=2
-	movl	$1048576, %eax                  # imm = 0x100000
-	movl	%eax, -80(%rbp)                 # 4-byte Spill
-	jmp	.LBB46_26
-.LBB46_21:                              #   in Loop: Header=BB46_3 Depth=2
-	movl	-56(%rbp), %ecx                 # 4-byte Reload
-	movl	$2621440, %eax                  # imm = 0x280000
-	cmpl	%ecx, %eax
-	jg	.LBB46_24
-# %bb.22:                               #   in Loop: Header=BB46_3 Depth=2
-	movl	-56(%rbp), %eax                 # 4-byte Reload
-	cmpl	$3670016, %eax                  # imm = 0x380000
-	jge	.LBB46_24
-# %bb.23:                               #   in Loop: Header=BB46_3 Depth=2
-	movl	-56(%rbp), %ecx                 # 4-byte Reload
-	sarl	$1, %ecx
-	movl	$1835008, %eax                  # imm = 0x1C0000
-	subl	%ecx, %eax
+	cmpl	$32767, -8(%rbp,%rax,4)         # imm = 0x7FFF
+	jle	.LBB46_6
+# %bb.5:                                #   in Loop: Header=BB46_3 Depth=1
+	movl	-260(%rbp), %eax                # 4-byte Reload
+	movslq	%eax, %rcx
+	movslq	-8(%rbp,%rcx,4), %rcx
+	subq	$65536, %rcx                    # imm = 0x10000
 	cltq
-	shlq	$2, %rax
-	movl	$1, %ecx
-	cqto
-	idivq	%rcx
-                                        # kill: def $eax killed $eax killed $rax
-	movl	%eax, -84(%rbp)                 # 4-byte Spill
-	jmp	.LBB46_25
-.LBB46_24:                              #   in Loop: Header=BB46_3 Depth=2
-	xorl	%eax, %eax
-	movl	%eax, -84(%rbp)                 # 4-byte Spill
-	jmp	.LBB46_25
-.LBB46_25:                              #   in Loop: Header=BB46_3 Depth=2
-	movl	-84(%rbp), %eax                 # 4-byte Reload
-	sarl	$1, %eax
-	movl	%eax, -80(%rbp)                 # 4-byte Spill
-.LBB46_26:                              #   in Loop: Header=BB46_3 Depth=2
-	movl	-80(%rbp), %eax                 # 4-byte Reload
-	movl	%eax, -76(%rbp)                 # 4-byte Spill
-.LBB46_27:                              #   in Loop: Header=BB46_3 Depth=2
-	movl	-56(%rbp), %eax                 # 4-byte Reload
-	movl	-76(%rbp), %ecx                 # 4-byte Reload
-	movslq	%ecx, %rcx
-	imulq	$511, %rcx, %rcx                # imm = 0x1FF
-	sarq	$8, %rcx
                                         # kill: def $ecx killed $ecx killed $rcx
-	sarl	$13, %ecx
-	movl	%ecx, -88(%rbp)                 # 4-byte Spill
-	cmpl	$524288, %eax                   # imm = 0x80000
-	jge	.LBB46_29
-# %bb.28:                               #   in Loop: Header=BB46_3 Depth=2
-	movl	-56(%rbp), %eax                 # 4-byte Reload
-	sarl	$1, %eax
-	addl	$262144, %eax                   # imm = 0x40000
-	movl	%eax, %eax
-                                        # kill: def $rax killed $eax
-	shlq	$2, %rax
-	movl	$1, %ecx
-	cqto
-	idivq	%rcx
-	sarq	$1, %rax
-                                        # kill: def $eax killed $eax killed $rax
-	movl	%eax, -92(%rbp)                 # 4-byte Spill
-	jmp	.LBB46_38
-.LBB46_29:                              #   in Loop: Header=BB46_3 Depth=2
-	movl	-56(%rbp), %ecx                 # 4-byte Reload
-	movl	$524288, %eax                   # imm = 0x80000
-	cmpl	%ecx, %eax
-	jg	.LBB46_32
-# %bb.30:                               #   in Loop: Header=BB46_3 Depth=2
-	movl	-56(%rbp), %eax                 # 4-byte Reload
-	cmpl	$1572864, %eax                  # imm = 0x180000
-	jge	.LBB46_32
-# %bb.31:                               #   in Loop: Header=BB46_3 Depth=2
-	movl	$1048576, %eax                  # imm = 0x100000
-	movl	%eax, -96(%rbp)                 # 4-byte Spill
-	jmp	.LBB46_37
-.LBB46_32:                              #   in Loop: Header=BB46_3 Depth=2
-	movl	-56(%rbp), %ecx                 # 4-byte Reload
-	movl	$1572864, %eax                  # imm = 0x180000
-	cmpl	%ecx, %eax
-	jg	.LBB46_35
-# %bb.33:                               #   in Loop: Header=BB46_3 Depth=2
-	movl	-56(%rbp), %eax                 # 4-byte Reload
-	cmpl	$2621440, %eax                  # imm = 0x280000
-	jge	.LBB46_35
-# %bb.34:                               #   in Loop: Header=BB46_3 Depth=2
-	movl	-56(%rbp), %ecx                 # 4-byte Reload
-	sarl	$1, %ecx
-	movl	$1310720, %eax                  # imm = 0x140000
-	subl	%ecx, %eax
+	movl	%ecx, -8(%rbp,%rax,4)
+.LBB46_6:                               #   in Loop: Header=BB46_3 Depth=1
+	movl	-260(%rbp), %eax                # 4-byte Reload
+	movq	-256(%rbp), %rcx                # 8-byte Reload
 	cltq
-	shlq	$2, %rax
-	movl	$1, %ecx
-	cqto
-	idivq	%rcx
-                                        # kill: def $eax killed $eax killed $rax
-	movl	%eax, -100(%rbp)                # 4-byte Spill
-	jmp	.LBB46_36
-.LBB46_35:                              #   in Loop: Header=BB46_3 Depth=2
-	xorl	%eax, %eax
-	movl	%eax, -100(%rbp)                # 4-byte Spill
-	jmp	.LBB46_36
-.LBB46_36:                              #   in Loop: Header=BB46_3 Depth=2
-	movl	-100(%rbp), %eax                # 4-byte Reload
-	sarl	$1, %eax
-	movl	%eax, -96(%rbp)                 # 4-byte Spill
-.LBB46_37:                              #   in Loop: Header=BB46_3 Depth=2
-	movl	-96(%rbp), %eax                 # 4-byte Reload
-	movl	%eax, -92(%rbp)                 # 4-byte Spill
-.LBB46_38:                              #   in Loop: Header=BB46_3 Depth=2
-	movl	-88(%rbp), %ecx                 # 4-byte Reload
-	movl	-72(%rbp), %edx                 # 4-byte Reload
-	movq	-16(%rbp), %rdi                 # 8-byte Reload
-	movl	-92(%rbp), %eax                 # 4-byte Reload
+	movslq	-8(%rbp,%rax,4), %rax
+	imulq	%rcx
+	movq	%rax, %rcx
+	movl	-260(%rbp), %eax                # 4-byte Reload
+	shldq	$43, %rcx, %rdx
 	cltq
-	imulq	$511, %rax, %rax                # imm = 0x1FF
-	sarq	$8, %rax
-	movl	%eax, %r8d
-	sarl	$13, %r8d
-	movabsq	$.L.str.122, %rsi
-	movb	$0, %al
-	callq	fprintf
-# %bb.39:                               #   in Loop: Header=BB46_3 Depth=2
-	movl	-52(%rbp), %eax                 # 4-byte Reload
+	movl	%edx, %ecx
+	movl	%ecx, -8(%rbp,%rax,4)
+# %bb.7:                                #   in Loop: Header=BB46_3 Depth=1
+	movl	-260(%rbp), %eax                # 4-byte Reload
 	addl	$1, %eax
-	movl	%eax, -48(%rbp)                 # 4-byte Spill
+	movl	%eax, -236(%rbp)                # 4-byte Spill
 	jmp	.LBB46_3
-.LBB46_40:                              #   in Loop: Header=BB46_1 Depth=1
-	movq	-16(%rbp), %rdi                 # 8-byte Reload
-	movabsq	$.L.str.123, %rsi
-	movb	$0, %al
-	callq	fprintf
-# %bb.41:                               #   in Loop: Header=BB46_1 Depth=1
-	movl	-44(%rbp), %eax                 # 4-byte Reload
+.LBB46_8:
+	movss	-216(%rbp), %xmm0               # 4-byte Reload
+                                        # xmm0 = mem[0],zero,zero,zero
+	movss	-212(%rbp), %xmm1               # 4-byte Reload
+                                        # xmm1 = mem[0],zero,zero,zero
+	movslq	-8(%rbp), %rcx
+	movswl	params_cpOffset(%rip), %eax
+	shll	$15, %eax
+	movq	params_cpKta.fixp@GOTPCREL(%rip), %rdx
+	movl	(%rdx), %edx
+                                        # kill: def $rdx killed $edx
+	movss	.LCPI46_4(%rip), %xmm2          # xmm2 = mem[0],zero,zero,zero
+	mulss	%xmm2, %xmm1
+	cvttss2si	%xmm1, %esi
+	addl	$-1638400, %esi                 # imm = 0xFFE70000
+	movslq	%esi, %rsi
+	imulq	%rsi, %rdx
+	shrq	$32, %rdx
+                                        # kill: def $edx killed $edx killed $rdx
+	addl	$256, %edx                      # imm = 0x100
+	cltq
+	movslq	%edx, %rdx
+	imulq	%rdx, %rax
+	shlq	$2, %rax
+	movq	params_cpKv.fixp@GOTPCREL(%rip), %rdx
+	movslq	(%rdx), %rdx
+	movss	.LCPI46_6(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
+	mulss	%xmm1, %xmm0
+	cvttss2si	%xmm0, %esi
+	addl	$-108134, %esi                  # imm = 0xFFFE599A
+	movslq	%esi, %rsi
+	imulq	%rsi, %rdx
+	shrq	$30, %rdx
+                                        # kill: def $edx killed $edx killed $rdx
+	addl	$256, %edx                      # imm = 0x100
+	movslq	%edx, %rdx
+	imulq	%rdx
+	movq	%rax, %rsi
+	movb	-237(%rbp), %al                 # 1-byte Reload
+                                        # kill: def $edx killed $edx killed $rdx
+	movslq	%edx, %rdx
+	shldq	$31, %rsi, %rdx
+	subq	%rdx, %rcx
+                                        # kill: def $ecx killed $ecx killed $rcx
+	movl	%ecx, -8(%rbp)
+	movzbl	%al, %eax
+	movzbl	params_calibrationModeEE, %ecx
+	cmpl	%ecx, %eax
+	jne	.LBB46_10
+# %bb.9:
+	movss	-216(%rbp), %xmm0               # 4-byte Reload
+                                        # xmm0 = mem[0],zero,zero,zero
+	movss	-212(%rbp), %xmm1               # 4-byte Reload
+                                        # xmm1 = mem[0],zero,zero,zero
+	movl	-4(%rbp), %eax
+	movl	%eax, -276(%rbp)                # 4-byte Spill
+	movswl	params_cpOffset+2(%rip), %eax
+	shll	$15, %eax
+	movq	params_cpKta.fixp@GOTPCREL(%rip), %rcx
+	movl	(%rcx), %ecx
+                                        # kill: def $rcx killed $ecx
+	movss	.LCPI46_4(%rip), %xmm2          # xmm2 = mem[0],zero,zero,zero
+	mulss	%xmm2, %xmm1
+	cvttss2si	%xmm1, %edx
+	addl	$-1638400, %edx                 # imm = 0xFFE70000
+	movslq	%edx, %rdx
+	imulq	%rdx, %rcx
+	shrq	$32, %rcx
+                                        # kill: def $ecx killed $ecx killed $rcx
+	addl	$256, %ecx                      # imm = 0x100
+	cltq
+	movslq	%ecx, %rcx
+	imulq	%rcx, %rax
+	shlq	$2, %rax
+	movq	params_cpKv.fixp@GOTPCREL(%rip), %rcx
+	movslq	(%rcx), %rcx
+	movss	.LCPI46_6(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
+	mulss	%xmm1, %xmm0
+	cvttss2si	%xmm0, %edx
+	addl	$-108134, %edx                  # imm = 0xFFFE599A
+	movslq	%edx, %rdx
+	imulq	%rdx, %rcx
+	shrq	$30, %rcx
+                                        # kill: def $ecx killed $ecx killed $rcx
+	addl	$256, %ecx                      # imm = 0x100
+	movslq	%ecx, %rcx
+	imulq	%rcx
+	movq	%rax, %rcx
+	movl	-276(%rbp), %eax                # 4-byte Reload
+	movq	%rcx, -272(%rbp)                # 8-byte Spill
+	movq	%rdx, %rcx
+	movq	-272(%rbp), %rdx                # 8-byte Reload
+                                        # kill: def $ecx killed $ecx killed $rcx
+	movslq	%ecx, %rcx
+	shldq	$31, %rdx, %rcx
+                                        # kill: def $ecx killed $ecx killed $rcx
+	subl	%ecx, %eax
+	movl	%eax, -4(%rbp)
+	jmp	.LBB46_11
+.LBB46_10:
+	movss	-216(%rbp), %xmm0               # 4-byte Reload
+                                        # xmm0 = mem[0],zero,zero,zero
+	movss	-212(%rbp), %xmm1               # 4-byte Reload
+                                        # xmm1 = mem[0],zero,zero,zero
+	movl	-4(%rbp), %eax
+	movl	%eax, -280(%rbp)                # 4-byte Spill
+	movswl	params_cpOffset+2(%rip), %eax
+	shll	$15, %eax
+	movss	params_ilChessC(%rip), %xmm2    # xmm2 = mem[0],zero,zero,zero
+	movss	.LCPI46_15(%rip), %xmm3         # xmm3 = mem[0],zero,zero,zero
+	mulss	%xmm3, %xmm2
+	cvttss2si	%xmm2, %ecx
+	sarl	$8, %ecx
+	addl	%ecx, %eax
+	movq	params_cpKta.fixp@GOTPCREL(%rip), %rcx
+	movl	(%rcx), %ecx
+                                        # kill: def $rcx killed $ecx
+	movss	.LCPI46_4(%rip), %xmm2          # xmm2 = mem[0],zero,zero,zero
+	mulss	%xmm2, %xmm1
+	cvttss2si	%xmm1, %edx
+	addl	$-1638400, %edx                 # imm = 0xFFE70000
+	movslq	%edx, %rdx
+	imulq	%rdx, %rcx
+	shrq	$32, %rcx
+                                        # kill: def $ecx killed $ecx killed $rcx
+	addl	$256, %ecx                      # imm = 0x100
+	cltq
+	movslq	%ecx, %rcx
+	imulq	%rcx, %rax
+	addq	%rax, %rax
+	movq	params_cpKv.fixp@GOTPCREL(%rip), %rcx
+	movslq	(%rcx), %rcx
+	movss	.LCPI46_6(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
+	mulss	%xmm1, %xmm0
+	cvttss2si	%xmm0, %edx
+	addl	$-108134, %edx                  # imm = 0xFFFE599A
+	movslq	%edx, %rdx
+	imulq	%rdx, %rcx
+	shrq	$30, %rcx
+                                        # kill: def $ecx killed $ecx killed $rcx
+	addl	$256, %ecx                      # imm = 0x100
+	movslq	%ecx, %rcx
+	imulq	%rcx
+	movq	%rax, %rcx
+	movl	-280(%rbp), %eax                # 4-byte Reload
+	shldq	$32, %rcx, %rdx
+	movl	%edx, %ecx
+	subl	%ecx, %eax
+	movl	%eax, -4(%rbp)
+.LBB46_11:
+	xorl	%eax, %eax
+	movl	%eax, -284(%rbp)                # 4-byte Spill
+	jmp	.LBB46_12
+.LBB46_12:                              # =>This Inner Loop Header: Depth=1
+	movl	-284(%rbp), %eax                # 4-byte Reload
+	movl	%eax, -288(%rbp)                # 4-byte Spill
+	cmpl	$768, %eax                      # imm = 0x300
+	jge	.LBB46_35
+# %bb.13:                               #   in Loop: Header=BB46_12 Depth=1
+	movl	-288(%rbp), %eax                # 4-byte Reload
+	movl	$32, %ecx
+	cltd
+	idivl	%ecx
+	movl	%eax, %ecx
+	movl	-288(%rbp), %eax                # 4-byte Reload
+	movl	$64, %esi
+	cltd
+	idivl	%esi
+	movl	%eax, %edx
+	movl	-288(%rbp), %eax                # 4-byte Reload
+	shll	$1, %edx
+	subl	%edx, %ecx
+                                        # kill: def $cl killed $cl killed $ecx
+	movb	%cl, -290(%rbp)                 # 1-byte Spill
+	movsbl	%cl, %ecx
+	movl	$2, %esi
+	cltd
+	idivl	%esi
+	movl	%eax, %esi
+	movl	-288(%rbp), %eax                # 4-byte Reload
+	shll	$1, %esi
+	movl	%eax, %edx
+	subl	%esi, %edx
+	xorl	%edx, %ecx
+                                        # kill: def $cl killed $cl killed $ecx
+	movb	%cl, -291(%rbp)                 # 1-byte Spill
+	addl	$2, %eax
+	movl	$4, %ecx
+	cltd
+	idivl	%ecx
+	movl	%eax, %ecx
+	movl	-288(%rbp), %eax                # 4-byte Reload
+	addl	$3, %eax
+	movl	$4, %esi
+	cltd
+	idivl	%esi
+	movl	%eax, %edx
+	movl	-288(%rbp), %eax                # 4-byte Reload
+	subl	%edx, %ecx
 	addl	$1, %eax
-	movl	%eax, -4(%rbp)                  # 4-byte Spill
-	jmp	.LBB46_1
-.LBB46_42:
-	addq	$112, %rsp
+	movl	$4, %esi
+	cltd
+	idivl	%esi
+	movl	%eax, %edx
+	movl	-288(%rbp), %eax                # 4-byte Reload
+	addl	%edx, %ecx
+	movl	$4, %esi
+	cltd
+	idivl	%esi
+	movb	-290(%rbp), %dl                 # 1-byte Reload
+	movl	%eax, %esi
+	movb	-237(%rbp), %al                 # 1-byte Reload
+	subl	%esi, %ecx
+	movsbl	%dl, %esi
+	shll	$1, %esi
+	movl	$1, %edx
+	subl	%esi, %edx
+	imull	%edx, %ecx
+                                        # kill: def $cl killed $cl killed $ecx
+	movb	%cl, -289(%rbp)                 # 1-byte Spill
+	movzbl	%al, %eax
+	cmpl	$0, %eax
+	jne	.LBB46_15
+# %bb.14:                               #   in Loop: Header=BB46_12 Depth=1
+	movb	-290(%rbp), %al                 # 1-byte Reload
+	movb	%al, -292(%rbp)                 # 1-byte Spill
+	jmp	.LBB46_16
+.LBB46_15:                              #   in Loop: Header=BB46_12 Depth=1
+	movb	-291(%rbp), %al                 # 1-byte Reload
+	movb	%al, -292(%rbp)                 # 1-byte Spill
+	jmp	.LBB46_16
+.LBB46_16:                              #   in Loop: Header=BB46_12 Depth=1
+	movq	-64(%rbp), %rcx                 # 8-byte Reload
+	movb	-292(%rbp), %al                 # 1-byte Reload
+	movsbl	%al, %eax
+	movzwl	1666(%rcx), %ecx
+	cmpl	%ecx, %eax
+	jne	.LBB46_33
+# %bb.17:                               #   in Loop: Header=BB46_12 Depth=1
+	movq	-64(%rbp), %rax                 # 8-byte Reload
+	movl	-288(%rbp), %ecx                # 4-byte Reload
+	movslq	%ecx, %rcx
+	movzwl	(%rax,%rcx,2), %eax
+	shll	$16, %eax
+	cvtsi2ss	%eax, %xmm0
+	movss	.LCPI46_4(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
+	divss	%xmm1, %xmm0
+	cvtsi2ss	%eax, %xmm1
+	movss	.LCPI46_4(%rip), %xmm2          # xmm2 = mem[0],zero,zero,zero
+	divss	%xmm2, %xmm1
+	movss	%xmm1, -300(%rbp)               # 4-byte Spill
+	cmpl	$2147418112, %eax               # imm = 0x7FFF0000
+	movss	%xmm0, -296(%rbp)               # 4-byte Spill
+	jle	.LBB46_19
+# %bb.18:                               #   in Loop: Header=BB46_12 Depth=1
+	movss	-300(%rbp), %xmm0               # 4-byte Reload
+                                        # xmm0 = mem[0],zero,zero,zero
+	movss	.LCPI46_4(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
+	subss	%xmm1, %xmm0
+	movss	%xmm0, -296(%rbp)               # 4-byte Spill
+.LBB46_19:                              #   in Loop: Header=BB46_12 Depth=1
+	movss	-296(%rbp), %xmm0               # 4-byte Reload
+                                        # xmm0 = mem[0],zero,zero,zero
+	movss	%xmm0, -428(%rbp)               # 4-byte Spill
+	cvtss2sd	%xmm0, %xmm0
+	movl	$.L.str.30, %edi
+	movb	$1, %al
+	movb	%al, -353(%rbp)                 # 1-byte Spill
+	callq	printf
+	movss	-428(%rbp), %xmm0               # 4-byte Reload
+                                        # xmm0 = mem[0],zero,zero,zero
+	movq	-256(%rbp), %rcx                # 8-byte Reload
+	movss	.LCPI46_14(%rip), %xmm1         # xmm1 = mem[0],zero,zero,zero
+	mulss	%xmm1, %xmm0
+	cvttss2si	%xmm0, %rax
+	imulq	%rcx
+	movq	%rax, %rcx
+	movb	-353(%rbp), %al                 # 1-byte Reload
+	shldq	$2, %rcx, %rdx
+	movq	%rdx, -328(%rbp)                # 8-byte Spill
+	cvtsi2ss	%rdx, %xmm0
+	movss	.LCPI46_16(%rip), %xmm1         # xmm1 = mem[0],zero,zero,zero
+	divss	%xmm1, %xmm0
+	cvtss2sd	%xmm0, %xmm0
+	movl	$.L.str.31, %edi
+	callq	printf
+	movss	-212(%rbp), %xmm0               # 4-byte Reload
+                                        # xmm0 = mem[0],zero,zero,zero
+                                        # kill: def $ecx killed $eax
+	movb	-353(%rbp), %al                 # 1-byte Reload
+	movss	.LCPI46_4(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
+	mulss	%xmm1, %xmm0
+	cvttss2si	%xmm0, %ecx
+	addl	$-1638400, %ecx                 # imm = 0xFFE70000
+	movl	%ecx, -412(%rbp)                # 4-byte Spill
+	cvtsi2sd	%ecx, %xmm2
+	movsd	.LCPI46_5(%rip), %xmm1          # xmm1 = mem[0],zero
+	divsd	%xmm1, %xmm2
+	movsd	%xmm2, -424(%rbp)               # 8-byte Spill
+	cvttps2dq	%xmm0, %xmm0
+	cvtdq2pd	%xmm0, %xmm0
+	divsd	%xmm1, %xmm0
+	movl	$.L.str.32, %edi
+	callq	printf
+	movsd	-424(%rbp), %xmm0               # 8-byte Reload
+                                        # xmm0 = mem[0],zero
+                                        # kill: def $ecx killed $eax
+	movb	-353(%rbp), %al                 # 1-byte Reload
+	movl	$.L.str.33, %edi
+	callq	printf
+	movl	-288(%rbp), %edx                # 4-byte Reload
+	movl	-412(%rbp), %ecx                # 4-byte Reload
+                                        # kill: def $esi killed $eax
+	movb	-353(%rbp), %al                 # 1-byte Reload
+	movslq	%edx, %rsi
+	movq	%rsi, -352(%rbp)                # 8-byte Spill
+	movq	params_kta.fixp@GOTPCREL(%rip), %rdx
+	movslq	(%rdx,%rsi,4), %rdx
+	movslq	%ecx, %rcx
+	imulq	%rdx, %rcx
+	movq	%rcx, -408(%rbp)                # 8-byte Spill
+	addq	%rcx, %rcx
+	cvtsi2sd	%rcx, %xmm0
+	movsd	.LCPI46_17(%rip), %xmm1         # xmm1 = mem[0],zero
+	movsd	%xmm1, -400(%rbp)               # 8-byte Spill
+	divsd	%xmm1, %xmm0
+	movl	$.L.str.34, %edi
+	callq	printf
+	movq	-408(%rbp), %rcx                # 8-byte Reload
+	movsd	-400(%rbp), %xmm1               # 8-byte Reload
+                                        # xmm1 = mem[0],zero
+                                        # kill: def $edx killed $eax
+	movb	-353(%rbp), %al                 # 1-byte Reload
+	leaq	1073741824(%rcx,%rcx), %rcx
+	movq	%rcx, -376(%rbp)                # 8-byte Spill
+	cvtsi2sd	%rcx, %xmm0
+	divsd	%xmm1, %xmm0
+	movl	$.L.str.35, %edi
+	callq	printf
+	movq	-352(%rbp), %rcx                # 8-byte Reload
+                                        # kill: def $edx killed $eax
+	movq	-376(%rbp), %rax                # 8-byte Reload
+	movswl	params_offset(%rcx,%rcx), %ecx
+	shll	$15, %ecx
+	movslq	%ecx, %rcx
+	imulq	%rcx
+	movq	%rax, %rcx
+	movb	-353(%rbp), %al                 # 1-byte Reload
+	shldq	$34, %rcx, %rdx
+	cvtsi2sd	%rdx, %xmm0
+	movsd	.LCPI46_7(%rip), %xmm1          # xmm1 = mem[0],zero
+	divsd	%xmm1, %xmm0
+	movl	$.L.str.36, %edi
+	callq	printf
+                                        # kill: def $ecx killed $eax
+	movq	-352(%rbp), %rax                # 8-byte Reload
+	movswl	params_offset(%rax,%rax), %esi
+	movl	$.L.str.37, %edi
+	xorl	%eax, %eax
+                                        # kill: def $al killed $al killed $eax
+	callq	printf
+	movss	-216(%rbp), %xmm0               # 4-byte Reload
+                                        # xmm0 = mem[0],zero,zero,zero
+                                        # kill: def $ecx killed $eax
+	movb	-353(%rbp), %al                 # 1-byte Reload
+	movss	.LCPI46_6(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
+	mulss	%xmm1, %xmm0
+	cvttss2si	%xmm0, %ecx
+	addl	$-108134, %ecx                  # imm = 0xFFFE599A
+	movl	%ecx, -392(%rbp)                # 4-byte Spill
+	cvtsi2ss	%ecx, %xmm0
+	divss	%xmm1, %xmm0
+	cvtss2sd	%xmm0, %xmm0
+	movl	$.L.str.38, %edi
+	callq	printf
+	movl	-392(%rbp), %ecx                # 4-byte Reload
+	movq	-352(%rbp), %rsi                # 8-byte Reload
+                                        # kill: def $edx killed $eax
+	movb	-353(%rbp), %al                 # 1-byte Reload
+	movq	params_kv.fixp@GOTPCREL(%rip), %rdx
+	movslq	(%rdx,%rsi,4), %rdx
+	movslq	%ecx, %rcx
+	imulq	%rdx, %rcx
+	shrq	$30, %rcx
+                                        # kill: def $ecx killed $ecx killed $rcx
+	cvtsi2ss	%ecx, %xmm0
+	movss	.LCPI46_18(%rip), %xmm1         # xmm1 = mem[0],zero,zero,zero
+	movss	%xmm1, -384(%rbp)               # 4-byte Spill
+	divss	%xmm1, %xmm0
+	movss	%xmm0, -388(%rbp)               # 4-byte Spill
+	cvtss2sd	%xmm0, %xmm0
+	movl	$.L.str.39, %edi
+	callq	printf
+	movss	-388(%rbp), %xmm0               # 4-byte Reload
+                                        # xmm0 = mem[0],zero,zero,zero
+	movss	-384(%rbp), %xmm1               # 4-byte Reload
+                                        # xmm1 = mem[0],zero,zero,zero
+                                        # kill: def $ecx killed $eax
+	movb	-353(%rbp), %al                 # 1-byte Reload
+	movss	.LCPI46_10(%rip), %xmm2         # xmm2 = mem[0],zero,zero,zero
+	addss	%xmm2, %xmm0
+	movss	%xmm0, -380(%rbp)               # 4-byte Spill
+	mulss	%xmm1, %xmm0
+	cvttps2dq	%xmm0, %xmm0
+	cvtdq2pd	%xmm0, %xmm0
+	movsd	.LCPI46_19(%rip), %xmm1         # xmm1 = mem[0],zero
+	movsd	%xmm1, -368(%rbp)               # 8-byte Spill
+	divsd	%xmm1, %xmm0
+	movl	$.L.str.40, %edi
+	callq	printf
+	movss	-380(%rbp), %xmm0               # 4-byte Reload
+                                        # xmm0 = mem[0],zero,zero,zero
+	movq	-376(%rbp), %rcx                # 8-byte Reload
+	movsd	-368(%rbp), %xmm1               # 8-byte Reload
+                                        # xmm1 = mem[0],zero
+	movss	.LCPI46_20(%rip), %xmm2         # xmm2 = mem[0],zero,zero,zero
+	mulss	%xmm2, %xmm0
+	cvttss2si	%xmm0, %rax
+	imulq	%rcx
+	movq	%rax, %rcx
+	movb	-353(%rbp), %al                 # 1-byte Reload
+	shldq	$2, %rcx, %rdx
+	movq	%rdx, -344(%rbp)                # 8-byte Spill
+	cvtsi2sd	%rdx, %xmm0
+	divsd	%xmm1, %xmm0
+	movl	$.L.str.41, %edi
+	callq	printf
+	movq	-352(%rbp), %rcx                # 8-byte Reload
+                                        # kill: def $edx killed $eax
+	movq	-344(%rbp), %rax                # 8-byte Reload
+	movswl	params_offset(%rcx,%rcx), %ecx
+	shll	$15, %ecx
+	movslq	%ecx, %rcx
+	imulq	%rcx
+	shldq	$37, %rax, %rdx
+	movq	%rdx, -336(%rbp)                # 8-byte Spill
+	cvtsi2sd	%rdx, %xmm0
+	movabsq	$.L.str.42, %rdi
+	movb	$1, %al
+	callq	printf
+	movq	-336(%rbp), %rdx                # 8-byte Reload
+                                        # kill: def $ecx killed $eax
+	movq	-328(%rbp), %rax                # 8-byte Reload
+	sarq	$5, %rax
+	subq	%rdx, %rax
+	movq	%rax, -320(%rbp)                # 8-byte Spill
+	cvtsi2ss	%rax, %xmm0
+	cvtss2sd	%xmm0, %xmm0
+	movabsq	$.L.str.43, %rdi
+	movb	$1, %al
+	callq	printf
+	movb	-237(%rbp), %cl                 # 1-byte Reload
+                                        # kill: def $edx killed $eax
+	movq	-320(%rbp), %rax                # 8-byte Reload
+	movzbl	%cl, %ecx
+	movzbl	params_calibrationModeEE, %edx
+	cmpl	%edx, %ecx
+	movq	%rax, -312(%rbp)                # 8-byte Spill
+	je	.LBB46_21
+# %bb.20:                               #   in Loop: Header=BB46_12 Depth=1
+	movb	-289(%rbp), %dl                 # 1-byte Reload
+	movq	-320(%rbp), %rax                # 8-byte Reload
+	movb	-290(%rbp), %sil                # 1-byte Reload
+	movss	.LCPI46_15(%rip), %xmm0         # xmm0 = mem[0],zero,zero,zero
+	mulss	params_ilChessC+8, %xmm0
+	cvttss2si	%xmm0, %ecx
+	movsbl	%sil, %esi
+	shll	$1, %esi
+	subl	$1, %esi
+	shll	$27, %esi
+	movslq	%ecx, %rcx
+	movslq	%esi, %rsi
+	imulq	%rsi, %rcx
+	sarq	$31, %rcx
+                                        # kill: def $ecx killed $ecx killed $rcx
+	movslq	%ecx, %rcx
+	sarq	$19, %rcx
+	addq	%rcx, %rax
+	movss	.LCPI46_15(%rip), %xmm0         # xmm0 = mem[0],zero,zero,zero
+	mulss	params_ilChessC+4, %xmm0
+	cvttss2si	%xmm0, %ecx
+	movsbl	%dl, %edx
+	shll	$24, %edx
+	movslq	%ecx, %rcx
+	movl	%edx, %edx
+                                        # kill: def $rdx killed $edx
+	imulq	%rdx, %rcx
+	sarq	$32, %rcx
+                                        # kill: def $ecx killed $ecx killed $rcx
+	movslq	%ecx, %rcx
+	sarq	$15, %rcx
+	subq	%rcx, %rax
+	movq	%rax, -312(%rbp)                # 8-byte Spill
+.LBB46_21:                              #   in Loop: Header=BB46_12 Depth=1
+	movq	-152(%rbp), %rdx                # 8-byte Reload
+	movq	-312(%rbp), %rdi                # 8-byte Reload
+	movq	%rdi, %rsi
+	shrq	$63, %rsi
+	shldq	$63, %rdi, %rsi
+	shlq	$63, %rdi
+	xorl	%eax, %eax
+	movl	%eax, %ecx
+	callq	__divti3@PLT
+	movw	-218(%rbp), %si                 # 2-byte Reload
+	movq	%rax, %rdx
+	movq	params_tgc.fixp@GOTPCREL(%rip), %rax
+	movslq	(%rax), %rcx
+	movl	%ecx, %eax
+	movzwl	%si, %esi
+                                        # kill: def $rsi killed $esi
+	movq	%rsi, -560(%rbp)                # 8-byte Spill
+	movslq	-8(%rbp,%rsi,4), %r8
+	movq	%rcx, %rdi
+	imulq	%r8, %rdi
+	shrq	$27, %rdi
+                                        # kill: def $edi killed $edi killed $rdi
+                                        # kill: def $edx killed $edx killed $rdx
+	subl	%edi, %edx
+	movl	%edx, -444(%rbp)                # 4-byte Spill
+	cvtsi2ss	%edx, %xmm0
+	movss	%xmm0, -516(%rbp)               # 4-byte Spill
+	movq	params_cpAlpha.fixp@GOTPCREL(%rip), %rdx
+	movq	%rdx, -552(%rbp)                # 8-byte Spill
+	movslq	(%rdx,%rsi,4), %rdx
+	imulq	%rdx, %rcx
+	shrq	$30, %rcx
+                                        # kill: def $ecx killed $ecx killed $rcx
+	cvtsi2ss	%ecx, %xmm0
+	movss	.LCPI46_21(%rip), %xmm1         # xmm1 = mem[0],zero,zero,zero
+	divss	%xmm1, %xmm0
+	movss	%xmm0, -544(%rbp)               # 4-byte Spill
+	cvtsi2sd	%eax, %xmm0
+	movsd	.LCPI46_22(%rip), %xmm1         # xmm1 = mem[0],zero
+	divsd	%xmm1, %xmm0
+	movl	$.L.str.44, %edi
+	movb	$1, %al
+	movb	%al, -469(%rbp)                 # 1-byte Spill
+	callq	printf
+	movq	-560(%rbp), %rdx                # 8-byte Reload
+	movq	-552(%rbp), %rcx                # 8-byte Reload
+                                        # kill: def $esi killed $eax
+	movb	-469(%rbp), %al                 # 1-byte Reload
+	cvtsi2sdl	(%rcx,%rdx,4), %xmm0
+	movsd	.LCPI46_23(%rip), %xmm1         # xmm1 = mem[0],zero
+	divsd	%xmm1, %xmm0
+	movl	$.L.str.45, %edi
+	callq	printf
+	movss	-544(%rbp), %xmm0               # 4-byte Reload
+                                        # xmm0 = mem[0],zero,zero,zero
+                                        # kill: def $ecx killed $eax
+	movb	-469(%rbp), %al                 # 1-byte Reload
+	cvtss2sd	%xmm0, %xmm0
+	movl	$.L.str.46, %edi
+	callq	printf
+	movl	-288(%rbp), %ecx                # 4-byte Reload
+	movss	-544(%rbp), %xmm2               # 4-byte Reload
+                                        # xmm2 = mem[0],zero,zero,zero
+                                        # kill: def $edx killed $eax
+	movb	-469(%rbp), %al                 # 1-byte Reload
+	movslq	%ecx, %rcx
+	movss	params_alpha(,%rcx,4), %xmm0    # xmm0 = mem[0],zero,zero,zero
+	movaps	%xmm0, %xmm1
+	subss	%xmm2, %xmm1
+	movss	%xmm1, -524(%rbp)               # 4-byte Spill
+	cvtss2sd	%xmm0, %xmm0
+	movl	$.L.str.47, %edi
+	callq	printf
+	movss	-524(%rbp), %xmm0               # 4-byte Reload
+                                        # xmm0 = mem[0],zero,zero,zero
+                                        # kill: def $ecx killed $eax
+	movb	-469(%rbp), %al                 # 1-byte Reload
+	movss	.LCPI46_6(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
+	mulss	%xmm1, %xmm0
+	cvttps2dq	%xmm0, %xmm0
+	cvtdq2pd	%xmm0, %xmm0
+	movsd	.LCPI46_7(%rip), %xmm1          # xmm1 = mem[0],zero
+	movsd	%xmm1, -536(%rbp)               # 8-byte Spill
+	divsd	%xmm1, %xmm0
+	movl	$.L.str.48, %edi
+	callq	printf
+	movss	-212(%rbp), %xmm0               # 4-byte Reload
+                                        # xmm0 = mem[0],zero,zero,zero
+                                        # kill: def $ecx killed $eax
+	movb	-469(%rbp), %al                 # 1-byte Reload
+	movq	params_KsTa.fixp@GOTPCREL(%rip), %rcx
+	movslq	(%rcx), %rcx
+	movss	.LCPI46_4(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
+	mulss	%xmm1, %xmm0
+	cvttss2si	%xmm0, %edx
+	addl	$-1638400, %edx                 # imm = 0xFFE70000
+	movslq	%edx, %rdx
+	imulq	%rdx, %rcx
+	shrq	$31, %rcx
+                                        # kill: def $ecx killed $ecx killed $rcx
+	movl	%ecx, -540(%rbp)                # 4-byte Spill
+	addl	%ecx, %ecx
+	cvtsi2sd	%ecx, %xmm0
+	movsd	.LCPI46_5(%rip), %xmm1          # xmm1 = mem[0],zero
+	divsd	%xmm1, %xmm0
+	movl	$.L.str.49, %edi
+	callq	printf
+	movl	-540(%rbp), %ecx                # 4-byte Reload
+	movsd	-536(%rbp), %xmm1               # 8-byte Reload
+                                        # xmm1 = mem[0],zero
+                                        # kill: def $edx killed $eax
+	movb	-469(%rbp), %al                 # 1-byte Reload
+	addl	$32768, %ecx                    # imm = 0x8000
+	movl	%ecx, -520(%rbp)                # 4-byte Spill
+	cvtsi2sd	%ecx, %xmm0
+	divsd	%xmm1, %xmm0
+	movl	$.L.str.50, %edi
+	callq	printf
+	movss	-524(%rbp), %xmm1               # 4-byte Reload
+                                        # xmm1 = mem[0],zero,zero,zero
+	movl	-520(%rbp), %ecx                # 4-byte Reload
+	movss	-516(%rbp), %xmm0               # 4-byte Reload
+                                        # xmm0 = mem[0],zero,zero,zero
+	movss	.LCPI46_24(%rip), %xmm2         # xmm2 = mem[0],zero,zero,zero
+	mulss	%xmm2, %xmm1
+	cvttss2si	%xmm1, %rax
+	movslq	%ecx, %rcx
+	imulq	%rcx
+	movq	%rax, %rcx
+	movb	-469(%rbp), %al                 # 1-byte Reload
+	shldq	$34, %rcx, %rdx
+	movq	%rdx, -464(%rbp)                # 8-byte Spill
+	cvtss2sd	%xmm0, %xmm0
+	movl	$.L.str.51, %edi
+	callq	printf
+	movsd	-248(%rbp), %xmm0               # 8-byte Reload
+                                        # xmm0 = mem[0],zero
+                                        # kill: def $ecx killed $eax
+	movb	-469(%rbp), %al                 # 1-byte Reload
+	movl	$.L.str.52, %edi
+	callq	printf
+	movq	-464(%rbp), %rcx                # 8-byte Reload
+                                        # kill: def $edx killed $eax
+	movb	-469(%rbp), %al                 # 1-byte Reload
+	shrq	$2, %rcx
+                                        # kill: def $ecx killed $ecx killed $rcx
+	cvtsi2sd	%ecx, %xmm0
+	movsd	.LCPI46_17(%rip), %xmm1         # xmm1 = mem[0],zero
+	movsd	%xmm1, -480(%rbp)               # 8-byte Spill
+	divsd	%xmm1, %xmm0
+	movl	$.L.str.53, %edi
+	callq	printf
+	movq	-464(%rbp), %rcx                # 8-byte Reload
+	movq	-96(%rbp), %rdx                 # 8-byte Reload
+                                        # kill: def $esi killed $eax
+	movb	-469(%rbp), %al                 # 1-byte Reload
+	imulq	%rdx, %rcx
+	movq	%rcx, -512(%rbp)                # 8-byte Spill
+	cvtsi2sd	%rcx, %xmm0
+	movsd	.LCPI46_25(%rip), %xmm1         # xmm1 = mem[0],zero
+	divsd	%xmm1, %xmm0
+	movl	$.L.str.54, %edi
+	callq	printf
+	movq	-512(%rbp), %rdx                # 8-byte Reload
+	movl	-444(%rbp), %ecx                # 4-byte Reload
+                                        # kill: def $esi killed $eax
+	movb	-469(%rbp), %al                 # 1-byte Reload
+	shrq	$32, %rdx
+                                        # kill: def $edx killed $edx killed $rdx
+	addl	%edx, %ecx
+	movl	%ecx, -492(%rbp)                # 4-byte Spill
+	cvtsi2sd	%ecx, %xmm0
+	movl	$.L.str.55, %edi
+	callq	printf
+	movsd	-480(%rbp), %xmm1               # 8-byte Reload
+                                        # xmm1 = mem[0],zero
+	movq	-464(%rbp), %rdx                # 8-byte Reload
+	movq	%rdx, %rax
+	imulq	%rdx
+	movq	%rdx, %rcx
+	movq	-464(%rbp), %rdx                # 8-byte Reload
+                                        # kill: def $ecx killed $ecx killed $rcx
+	shll	$30, %ecx
+	shrq	$34, %rax
+                                        # kill: def $eax killed $eax killed $rax
+	orl	%ecx, %eax
+	cltq
+	imulq	%rdx
+	movq	%rax, %rcx
+	movb	-469(%rbp), %al                 # 1-byte Reload
+	shldq	$32, %rcx, %rdx
+	movq	%rdx, -504(%rbp)                # 8-byte Spill
+	shrq	$32, %rcx
+                                        # kill: def $ecx killed $ecx killed $rcx
+	cvtsi2sd	%ecx, %xmm0
+	divsd	%xmm1, %xmm0
+	movl	$.L.str.56, %edi
+	callq	printf
+	movq	-504(%rbp), %rcx                # 8-byte Reload
+	movl	-492(%rbp), %edx                # 4-byte Reload
+                                        # kill: def $esi killed $eax
+	movb	-469(%rbp), %al                 # 1-byte Reload
+                                        # kill: def $ecx killed $ecx killed $rcx
+	movslq	%ecx, %rcx
+	movslq	%edx, %rdx
+	imulq	%rdx, %rcx
+	shrq	$30, %rcx
+                                        # kill: def $ecx killed $ecx killed $rcx
+	cvtsi2sd	%ecx, %xmm0
+	cvtsi2ss	%ecx, %xmm1
+	movss	%xmm1, -488(%rbp)               # 4-byte Spill
+	movl	$.L.str.57, %edi
+	callq	printf
+	movss	-488(%rbp), %xmm0               # 4-byte Reload
+                                        # xmm0 = mem[0],zero,zero,zero
+	callq	_ZSt4sqrtf.1.19_s32_0fixp
+	cvtsi2ss	%eax, %xmm0
+	callq	_ZSt4sqrtf.20_s32_0fixp
+	movsd	-480(%rbp), %xmm1               # 8-byte Reload
+                                        # xmm1 = mem[0],zero
+	movl	%eax, %ecx
+	movb	-469(%rbp), %al                 # 1-byte Reload
+	movss	params_ksTo+4(%rip), %xmm0      # xmm0 = mem[0],zero,zero,zero
+	movss	.LCPI46_26(%rip), %xmm2         # xmm2 = mem[0],zero,zero,zero
+	mulss	%xmm2, %xmm0
+	cvttss2si	%xmm0, %edx
+	imull	%edx, %ecx
+	movl	%ecx, %edx
+	shll	$2, %edx
+	movl	%edx, -456(%rbp)                # 4-byte Spill
+	shll	$10, %ecx
+	cvtsi2sd	%ecx, %xmm0
+	divsd	%xmm1, %xmm0
+	movl	$.L.str.58, %edi
+	callq	printf
+	movsd	-480(%rbp), %xmm2               # 8-byte Reload
+                                        # xmm2 = mem[0],zero
+	movss	params_ksTo+4(%rip), %xmm0      # xmm0 = mem[0],zero,zero,zero
+	cvtss2sd	%xmm0, %xmm1
+	movsd	.LCPI46_27(%rip), %xmm3         # xmm3 = mem[0],zero
+	movaps	%xmm1, %xmm0
+	mulsd	%xmm3, %xmm0
+	cvtsd2ss	%xmm0, %xmm0
+	movss	.LCPI46_18(%rip), %xmm3         # xmm3 = mem[0],zero,zero,zero
+	mulss	%xmm3, %xmm0
+	cvttss2si	%xmm0, %eax
+	shll	$18, %eax
+	movl	%eax, -484(%rbp)                # 4-byte Spill
+	cvtsi2sd	%eax, %xmm0
+	divsd	%xmm2, %xmm0
+	movl	$.L.str.60, %edi
+	movb	$2, %al
+	callq	printf
+	movl	-484(%rbp), %edx                # 4-byte Reload
+	movsd	-480(%rbp), %xmm1               # 8-byte Reload
+                                        # xmm1 = mem[0],zero
+                                        # kill: def $ecx killed $eax
+	movb	-469(%rbp), %al                 # 1-byte Reload
+	movl	$1073741824, %ecx               # imm = 0x40000000
+	subl	%edx, %ecx
+	movl	%ecx, -468(%rbp)                # 4-byte Spill
+	cvtsi2sd	%ecx, %xmm0
+	divsd	%xmm1, %xmm0
+	movl	$.L.str.61, %edi
+	callq	printf
+	movl	-468(%rbp), %ecx                # 4-byte Reload
+                                        # kill: def $edx killed $eax
+	movq	-464(%rbp), %rax                # 8-byte Reload
+	movslq	%ecx, %rcx
+	imulq	%rcx, %rax
+	shrq	$32, %rax
+                                        # kill: def $eax killed $eax killed $rax
+	movl	%eax, -452(%rbp)                # 4-byte Spill
+	cvtsi2sd	%eax, %xmm0
+	movsd	.LCPI46_17(%rip), %xmm1         # xmm1 = mem[0],zero
+	divsd	%xmm1, %xmm0
+	movabsq	$.L.str.62, %rdi
+	movb	$1, %al
+	callq	printf
+	movl	-456(%rbp), %ecx                # 4-byte Reload
+                                        # kill: def $edx killed $eax
+	movl	-452(%rbp), %eax                # 4-byte Reload
+	shll	$8, %ecx
+	addl	%ecx, %eax
+	movl	%eax, -448(%rbp)                # 4-byte Spill
+	cvtsi2sd	%eax, %xmm0
+	movsd	.LCPI46_17(%rip), %xmm1         # xmm1 = mem[0],zero
+	divsd	%xmm1, %xmm0
+	movabsq	$.L.str.63, %rdi
+	movb	$1, %al
+	callq	printf
+	movl	-448(%rbp), %ecx                # 4-byte Reload
+                                        # kill: def $edx killed $eax
+	movl	-444(%rbp), %eax                # 4-byte Reload
+	cltq
+	shlq	$30, %rax
+	movslq	%ecx, %rcx
+	cqto
+	idivq	%rcx
+                                        # kill: def $eax killed $eax killed $rax
+	movl	%eax, -440(%rbp)                # 4-byte Spill
+	cvtsi2sd	%eax, %xmm0
+	movabsq	$.L.str.64, %rdi
+	movb	$1, %al
+	callq	printf
+	movq	-96(%rbp), %rcx                 # 8-byte Reload
+                                        # kill: def $edx killed $eax
+	movl	-440(%rbp), %eax                # 4-byte Reload
+	addl	%ecx, %eax
+	cvtsi2sd	%eax, %xmm0
+	cvtsi2ss	%eax, %xmm1
+	movss	%xmm1, -436(%rbp)               # 4-byte Spill
+	movabsq	$.L.str.65, %rdi
+	movb	$1, %al
+	callq	printf
+	movss	-436(%rbp), %xmm0               # 4-byte Reload
+                                        # xmm0 = mem[0],zero,zero,zero
+	callq	_ZSt4sqrtf.2.28_s32_0fixp
+	cvtsi2ss	%eax, %xmm0
+	callq	_ZSt4sqrtf.20_s32_0fixp
+	subl	$273, %eax                      # imm = 0x111
+	movl	%eax, -432(%rbp)                # 4-byte Spill
+	cvtsi2sd	%eax, %xmm0
+	movabsq	$.L.str.66, %rdi
+	movb	$1, %al
+	callq	printf
+	movsd	-80(%rbp), %xmm0                # 8-byte Reload
+                                        # xmm0 = mem[0],zero
+	movabsq	$.L.str.67, %rdi
+	movb	$1, %al
+	callq	printf
+                                        # kill: def $ecx killed $eax
+	movl	-432(%rbp), %eax                # 4-byte Reload
+	movswl	params_ct+2, %ecx
+	cmpl	%ecx, %eax
+	jge	.LBB46_23
+# %bb.22:                               #   in Loop: Header=BB46_12 Depth=1
+	xorl	%eax, %eax
+                                        # kill: def $al killed $al killed $eax
+	movb	%al, -561(%rbp)                 # 1-byte Spill
+	jmp	.LBB46_30
+.LBB46_23:                              #   in Loop: Header=BB46_12 Depth=1
+	movl	-432(%rbp), %eax                # 4-byte Reload
+	movswl	params_ct+4, %ecx
+	cmpl	%ecx, %eax
+	jge	.LBB46_25
+# %bb.24:                               #   in Loop: Header=BB46_12 Depth=1
+	movb	$1, %al
+	movb	%al, -562(%rbp)                 # 1-byte Spill
+	jmp	.LBB46_29
+.LBB46_25:                              #   in Loop: Header=BB46_12 Depth=1
+	movl	-432(%rbp), %eax                # 4-byte Reload
+	movswl	params_ct+6, %ecx
+	cmpl	%ecx, %eax
+	jge	.LBB46_27
+# %bb.26:                               #   in Loop: Header=BB46_12 Depth=1
+	movb	$2, %al
+	movb	%al, -563(%rbp)                 # 1-byte Spill
+	jmp	.LBB46_28
+.LBB46_27:                              #   in Loop: Header=BB46_12 Depth=1
+	movb	$3, %al
+	movb	%al, -563(%rbp)                 # 1-byte Spill
+	jmp	.LBB46_28
+.LBB46_28:                              #   in Loop: Header=BB46_12 Depth=1
+	movb	-563(%rbp), %al                 # 1-byte Reload
+	movb	%al, -562(%rbp)                 # 1-byte Spill
+.LBB46_29:                              #   in Loop: Header=BB46_12 Depth=1
+	movb	-562(%rbp), %al                 # 1-byte Reload
+	movb	%al, -561(%rbp)                 # 1-byte Spill
+.LBB46_30:                              #   in Loop: Header=BB46_12 Depth=1
+	movb	-561(%rbp), %al                 # 1-byte Reload
+	movb	%al, -641(%rbp)                 # 1-byte Spill
+	movsbl	%al, %esi
+	movl	$.L.str.68, %edi
+	xorl	%eax, %eax
+                                        # kill: def $al killed $al killed $eax
+	callq	printf
+	movb	-641(%rbp), %cl                 # 1-byte Reload
+                                        # kill: def $edx killed $eax
+	movl	-432(%rbp), %eax                # 4-byte Reload
+	movsbq	%cl, %rcx
+	movq	%rcx, -632(%rbp)                # 8-byte Spill
+	movswl	params_ct(%rcx,%rcx), %ecx
+	subl	%ecx, %eax
+	movl	%eax, -640(%rbp)                # 4-byte Spill
+	cvtsi2sd	%eax, %xmm0
+	movl	$.L.str.69, %edi
+	movb	$1, %al
+	movb	%al, -601(%rbp)                 # 1-byte Spill
+	callq	printf
+	movl	-640(%rbp), %edx                # 4-byte Reload
+	movq	-632(%rbp), %rcx                # 8-byte Reload
+                                        # kill: def $esi killed $eax
+	movb	-601(%rbp), %al                 # 1-byte Reload
+	movss	params_ksTo(,%rcx,4), %xmm0     # xmm0 = mem[0],zero,zero,zero
+	movss	.LCPI46_26(%rip), %xmm1         # xmm1 = mem[0],zero,zero,zero
+	mulss	%xmm1, %xmm0
+	cvttss2si	%xmm0, %ecx
+	imull	%edx, %ecx
+	shll	$10, %ecx
+	andl	$-1073741824, %ecx              # imm = 0xC0000000
+	movl	%ecx, -636(%rbp)                # 4-byte Spill
+	cvtsi2sd	%ecx, %xmm0
+	movsd	.LCPI46_17(%rip), %xmm1         # xmm1 = mem[0],zero
+	movsd	%xmm1, -624(%rbp)               # 8-byte Spill
+	divsd	%xmm1, %xmm0
+	movl	$.L.str.70, %edi
+	callq	printf
+	movl	-636(%rbp), %ecx                # 4-byte Reload
+	movsd	-624(%rbp), %xmm1               # 8-byte Reload
+                                        # xmm1 = mem[0],zero
+                                        # kill: def $edx killed $eax
+	movb	-601(%rbp), %al                 # 1-byte Reload
+	addl	$1073741824, %ecx               # imm = 0x40000000
+	movl	%ecx, -608(%rbp)                # 4-byte Spill
+	cvtsi2sd	%ecx, %xmm0
+	divsd	%xmm1, %xmm0
+	movl	$.L.str.71, %edi
+	callq	printf
+	movq	-632(%rbp), %rcx                # 8-byte Reload
+	movsd	-624(%rbp), %xmm1               # 8-byte Reload
+                                        # xmm1 = mem[0],zero
+                                        # kill: def $edx killed $eax
+	movq	-464(%rbp), %rax                # 8-byte Reload
+	movq	-48(%rbp,%rcx,8), %rcx
+	imulq	%rcx
+	movq	%rax, %rcx
+	movb	-601(%rbp), %al                 # 1-byte Reload
+	shldq	$53, %rcx, %rdx
+	movq	%rdx, -616(%rbp)                # 8-byte Spill
+	shrq	$11, %rcx
+                                        # kill: def $ecx killed $ecx killed $rcx
+	cvtsi2sd	%ecx, %xmm0
+	divsd	%xmm1, %xmm0
+	movl	$.L.str.72, %edi
+	callq	printf
+	movq	-616(%rbp), %rcx                # 8-byte Reload
+	movl	-608(%rbp), %edx                # 4-byte Reload
+                                        # kill: def $esi killed $eax
+	movb	-601(%rbp), %al                 # 1-byte Reload
+                                        # kill: def $ecx killed $ecx killed $rcx
+	movslq	%ecx, %rcx
+	movslq	%edx, %rdx
+	imulq	%rdx, %rcx
+	shrq	$30, %rcx
+                                        # kill: def $ecx killed $ecx killed $rcx
+	cvtsi2ss	%ecx, %xmm0
+	movss	.LCPI46_28(%rip), %xmm1         # xmm1 = mem[0],zero,zero,zero
+	divss	%xmm1, %xmm0
+	movss	%xmm0, -600(%rbp)               # 4-byte Spill
+	cvtss2sd	%xmm0, %xmm0
+	movl	$.L.str.73, %edi
+	callq	printf
+	movss	-516(%rbp), %xmm0               # 4-byte Reload
+                                        # xmm0 = mem[0],zero,zero,zero
+	movss	-600(%rbp), %xmm1               # 4-byte Reload
+                                        # xmm1 = mem[0],zero,zero,zero
+	divss	%xmm1, %xmm0
+	movss	%xmm0, -596(%rbp)               # 4-byte Spill
+	cvttss2si	%xmm0, %rax
+	shlq	$27, %rax
+	movq	%rax, %xmm0
+	movaps	.LCPI46_29(%rip), %xmm1         # xmm1 = [1127219200,1160773632,0,0]
+	punpckldq	%xmm1, %xmm0            # xmm0 = xmm0[0],xmm1[0],xmm0[1],xmm1[1]
+	movapd	.LCPI46_30(%rip), %xmm1         # xmm1 = [4.503599627370496E+15,1.9342813113834067E+25]
+	subpd	%xmm1, %xmm0
+	movaps	%xmm0, %xmm1
+	unpckhpd	%xmm0, %xmm0                    # xmm0 = xmm0[1,1]
+	addsd	%xmm1, %xmm0
+	movsd	.LCPI46_22(%rip), %xmm1         # xmm1 = mem[0],zero
+	divsd	%xmm1, %xmm0
+	movabsq	$.L.str.75, %rdi
+	movb	$1, %al
+	callq	printf
+	movss	-596(%rbp), %xmm1               # 4-byte Reload
+                                        # xmm1 = mem[0],zero,zero,zero
+	movq	-96(%rbp), %rcx                 # 8-byte Reload
+	movss	.LCPI46_10(%rip), %xmm0         # xmm0 = mem[0],zero,zero,zero
+	mulss	%xmm1, %xmm0
+	cvttss2si	%xmm0, %rax
+	addq	%rcx, %rax
+	cvtsi2sd	%rax, %xmm0
+	cvtsi2sd	%rax, %xmm1
+	movsd	%xmm1, -592(%rbp)               # 8-byte Spill
+	cvtsi2ss	%rax, %xmm1
+	movss	%xmm1, -580(%rbp)               # 4-byte Spill
+	movabsq	$.L.str.76, %rdi
+	movb	$1, %al
+	callq	printf
+	movss	-580(%rbp), %xmm0               # 4-byte Reload
+                                        # xmm0 = mem[0],zero,zero,zero
+	callq	_ZSt4sqrtf.3.30_s64_0fixp
+	cvtsi2ss	%rax, %xmm0
+	callq	_ZSt4sqrtf.31_s64_0fixp
+	subq	$273, %rax                      # imm = 0x111
+	movq	%rax, -576(%rbp)                # 8-byte Spill
+	shlq	$21, %rax
+                                        # kill: def $eax killed $eax killed $rax
+	cvtsi2sd	%eax, %xmm0
+	movsd	.LCPI46_13(%rip), %xmm1         # xmm1 = mem[0],zero
+	divsd	%xmm1, %xmm0
+	movabsq	$.L.str.77, %rdi
+	movb	$1, %al
+	callq	printf
+                                        # kill: def $ecx killed $eax
+	movl	-288(%rbp), %eax                # 4-byte Reload
+	cmpl	$658, %eax                      # imm = 0x292
+	jne	.LBB46_32
+# %bb.31:                               #   in Loop: Header=BB46_12 Depth=1
+	movabsq	$.L.str.78, %rdi
+	movb	$0, %al
+	callq	printf
+	movsd	-592(%rbp), %xmm0               # 8-byte Reload
+                                        # xmm0 = mem[0],zero
+	movabsq	$.L.str.76, %rdi
+	movb	$1, %al
+	callq	printf
+	movabsq	$.L.str.78, %rdi
+	movb	$0, %al
+	callq	printf
+.LBB46_32:                              #   in Loop: Header=BB46_12 Depth=1
+	movl	-288(%rbp), %esi                # 4-byte Reload
+	movq	-232(%rbp), %rax                # 8-byte Reload
+	movq	-576(%rbp), %rdx                # 8-byte Reload
+	movslq	%esi, %rcx
+	shlq	$21, %rdx
+                                        # kill: def $edx killed $edx killed $rdx
+	movl	%edx, (%rax,%rcx,4)
+	movabsq	$.L.str.79, %rdi
+	movb	$0, %al
+	callq	printf
+.LBB46_33:                              #   in Loop: Header=BB46_12 Depth=1
+	jmp	.LBB46_34
+.LBB46_34:                              #   in Loop: Header=BB46_12 Depth=1
+	movl	-288(%rbp), %eax                # 4-byte Reload
+	addl	$1, %eax
+	movl	%eax, -284(%rbp)                # 4-byte Spill
+	jmp	.LBB46_12
+.LBB46_35:
+	movss	-216(%rbp), %xmm1               # 4-byte Reload
+                                        # xmm1 = mem[0],zero,zero,zero
+	movss	.LCPI46_4(%rip), %xmm0          # xmm0 = mem[0],zero,zero,zero
+	mulss	%xmm1, %xmm0
+	cvttss2si	%xmm0, %eax
+	cvtsi2sd	%eax, %xmm0
+	movsd	.LCPI46_5(%rip), %xmm1          # xmm1 = mem[0],zero
+	divsd	%xmm1, %xmm0
+	movabsq	$.L.str.80, %rdi
+	movb	$1, %al
+	callq	printf
+	movss	-212(%rbp), %xmm1               # 4-byte Reload
+                                        # xmm1 = mem[0],zero,zero,zero
+	movss	.LCPI46_4(%rip), %xmm0          # xmm0 = mem[0],zero,zero,zero
+	mulss	%xmm1, %xmm0
+	cvttss2si	%xmm0, %eax
+	cvtsi2sd	%eax, %xmm0
+	movsd	.LCPI46_5(%rip), %xmm1          # xmm1 = mem[0],zero
+	divsd	%xmm1, %xmm0
+	movabsq	$.L.str.81, %rdi
+	movb	$1, %al
+	callq	printf
+	movsd	-208(%rbp), %xmm0               # 8-byte Reload
+                                        # xmm0 = mem[0],zero
+	movabsq	$.L.str.82, %rdi
+	movb	$1, %al
+	callq	printf
+	movsd	-88(%rbp), %xmm0                # 8-byte Reload
+                                        # xmm0 = mem[0],zero
+	movabsq	$.L.str.83, %rdi
+	movb	$1, %al
+	callq	printf
+	addq	$656, %rsp                      # imm = 0x290
 	popq	%rbp
 	.cfi_def_cfa %rsp, 8
 	retq
 .Lfunc_end46:
-	.size	_Z8printPPMP8_IO_FILEPfiiff.6_fixp, .Lfunc_end46-_Z8printPPMP8_IO_FILEPfiiff.6_fixp
+	.size	_Z20MLX90640_CalculateToPKtffPf.5_fixp, .Lfunc_end46-_Z20MLX90640_CalculateToPKtffPf.5_fixp
 	.cfi_endproc
                                         # -- End function
 	.p2align	4, 0x90                         # -- Begin function _Z5max_fff.14_s11_21fixp
@@ -9776,15 +9685,13 @@ _ZSt4sqrtf.1_s5_27fixp:                 # @_ZSt4sqrtf.1_s5_27fixp
 	.cfi_endproc
                                         # -- End function
 	.section	.rodata.cst4,"aM",@progbits,4
-	.p2align	2                               # -- Begin function _ZSt4sqrtf.2_u37_27fixp
+	.p2align	2                               # -- Begin function _ZSt4sqrtf.3_s35_29fixp
 .LCPI50_0:
-	.long	0x4d000000                      # float 134217728
-.LCPI50_1:
-	.long	0x5f000000                      # float 9.22337203E+18
+	.long	0x4e000000                      # float 536870912
 	.text
 	.p2align	4, 0x90
-	.type	_ZSt4sqrtf.2_u37_27fixp,@function
-_ZSt4sqrtf.2_u37_27fixp:                # @_ZSt4sqrtf.2_u37_27fixp
+	.type	_ZSt4sqrtf.3_s35_29fixp,@function
+_ZSt4sqrtf.3_s35_29fixp:                # @_ZSt4sqrtf.3_s35_29fixp
 	.cfi_startproc
 # %bb.0:
 	pushq	%rbp
@@ -9792,59 +9699,26 @@ _ZSt4sqrtf.2_u37_27fixp:                # @_ZSt4sqrtf.2_u37_27fixp
 	.cfi_offset %rbp, -16
 	movq	%rsp, %rbp
 	.cfi_def_cfa_register %rbp
-	subq	$16, %rsp
-	movq	%rdi, %rcx
-	shrq	%rcx
-	movl	%edi, %eax
-	andl	$1, %eax
-                                        # kill: def $rax killed $eax
-	orq	%rcx, %rax
-	cvtsi2ss	%rax, %xmm0
-	addss	%xmm0, %xmm0
-	cvtsi2ss	%rdi, %xmm1
-	movss	%xmm1, -8(%rbp)                 # 4-byte Spill
-	testq	%rdi, %rdi
-	movss	%xmm0, -4(%rbp)                 # 4-byte Spill
-	js	.LBB50_2
-# %bb.1:
-	movss	-8(%rbp), %xmm0                 # 4-byte Reload
-                                        # xmm0 = mem[0],zero,zero,zero
-	movss	%xmm0, -4(%rbp)                 # 4-byte Spill
-.LBB50_2:
-	movss	-4(%rbp), %xmm0                 # 4-byte Reload
-                                        # xmm0 = mem[0],zero,zero,zero
-	movss	.LCPI50_0(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
-	movss	%xmm1, -12(%rbp)                # 4-byte Spill
-	divss	%xmm1, %xmm0
 	callq	sqrtf
-	movss	-12(%rbp), %xmm1                # 4-byte Reload
-                                        # xmm1 = mem[0],zero,zero,zero
+	movaps	%xmm0, %xmm1
+	movss	.LCPI50_0(%rip), %xmm0          # xmm0 = mem[0],zero,zero,zero
 	mulss	%xmm1, %xmm0
-	movss	.LCPI50_1(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
-	movaps	%xmm0, %xmm2
-	subss	%xmm1, %xmm2
-	cvttss2si	%xmm2, %rax
-	movabsq	$-9223372036854775808, %rcx     # imm = 0x8000000000000000
-	xorq	%rcx, %rax
-	cvttss2si	%xmm0, %rcx
-	ucomiss	%xmm1, %xmm0
-	cmovbq	%rcx, %rax
-	addq	$16, %rsp
+	cvttss2si	%xmm0, %rax
 	popq	%rbp
 	.cfi_def_cfa %rsp, 8
 	retq
 .Lfunc_end50:
-	.size	_ZSt4sqrtf.2_u37_27fixp, .Lfunc_end50-_ZSt4sqrtf.2_u37_27fixp
+	.size	_ZSt4sqrtf.3_s35_29fixp, .Lfunc_end50-_ZSt4sqrtf.3_s35_29fixp
 	.cfi_endproc
                                         # -- End function
 	.section	.rodata.cst4,"aM",@progbits,4
-	.p2align	2                               # -- Begin function _ZSt4sqrtf.3_s38_26fixp
+	.p2align	2                               # -- Begin function _ZSt4sqrtf.1.19_s32_0fixp
 .LCPI51_0:
-	.long	0x4c800000                      # float 67108864
+	.long	0x3f800000                      # float 1
 	.text
 	.p2align	4, 0x90
-	.type	_ZSt4sqrtf.3_s38_26fixp,@function
-_ZSt4sqrtf.3_s38_26fixp:                # @_ZSt4sqrtf.3_s38_26fixp
+	.type	_ZSt4sqrtf.1.19_s32_0fixp,@function
+_ZSt4sqrtf.1.19_s32_0fixp:              # @_ZSt4sqrtf.1.19_s32_0fixp
 	.cfi_startproc
 # %bb.0:
 	pushq	%rbp
@@ -9856,22 +9730,22 @@ _ZSt4sqrtf.3_s38_26fixp:                # @_ZSt4sqrtf.3_s38_26fixp
 	movaps	%xmm0, %xmm1
 	movss	.LCPI51_0(%rip), %xmm0          # xmm0 = mem[0],zero,zero,zero
 	mulss	%xmm1, %xmm0
-	cvttss2si	%xmm0, %rax
+	cvttss2si	%xmm0, %eax
 	popq	%rbp
 	.cfi_def_cfa %rsp, 8
 	retq
 .Lfunc_end51:
-	.size	_ZSt4sqrtf.3_s38_26fixp, .Lfunc_end51-_ZSt4sqrtf.3_s38_26fixp
+	.size	_ZSt4sqrtf.1.19_s32_0fixp, .Lfunc_end51-_ZSt4sqrtf.1.19_s32_0fixp
 	.cfi_endproc
                                         # -- End function
 	.section	.rodata.cst4,"aM",@progbits,4
-	.p2align	2                               # -- Begin function _ZSt4sqrtf.1.19_s32_0fixp
+	.p2align	2                               # -- Begin function _ZSt4sqrtf.20_s32_0fixp
 .LCPI52_0:
 	.long	0x3f800000                      # float 1
 	.text
 	.p2align	4, 0x90
-	.type	_ZSt4sqrtf.1.19_s32_0fixp,@function
-_ZSt4sqrtf.1.19_s32_0fixp:              # @_ZSt4sqrtf.1.19_s32_0fixp
+	.type	_ZSt4sqrtf.20_s32_0fixp,@function
+_ZSt4sqrtf.20_s32_0fixp:                # @_ZSt4sqrtf.20_s32_0fixp
 	.cfi_startproc
 # %bb.0:
 	pushq	%rbp
@@ -9888,17 +9762,17 @@ _ZSt4sqrtf.1.19_s32_0fixp:              # @_ZSt4sqrtf.1.19_s32_0fixp
 	.cfi_def_cfa %rsp, 8
 	retq
 .Lfunc_end52:
-	.size	_ZSt4sqrtf.1.19_s32_0fixp, .Lfunc_end52-_ZSt4sqrtf.1.19_s32_0fixp
+	.size	_ZSt4sqrtf.20_s32_0fixp, .Lfunc_end52-_ZSt4sqrtf.20_s32_0fixp
 	.cfi_endproc
                                         # -- End function
 	.section	.rodata.cst4,"aM",@progbits,4
-	.p2align	2                               # -- Begin function _ZSt4sqrtf.20_s32_0fixp
+	.p2align	2                               # -- Begin function _ZSt4sqrtf.2.21_s32_0fixp
 .LCPI53_0:
 	.long	0x3f800000                      # float 1
 	.text
 	.p2align	4, 0x90
-	.type	_ZSt4sqrtf.20_s32_0fixp,@function
-_ZSt4sqrtf.20_s32_0fixp:                # @_ZSt4sqrtf.20_s32_0fixp
+	.type	_ZSt4sqrtf.2.21_s32_0fixp,@function
+_ZSt4sqrtf.2.21_s32_0fixp:              # @_ZSt4sqrtf.2.21_s32_0fixp
 	.cfi_startproc
 # %bb.0:
 	pushq	%rbp
@@ -9915,79 +9789,17 @@ _ZSt4sqrtf.20_s32_0fixp:                # @_ZSt4sqrtf.20_s32_0fixp
 	.cfi_def_cfa %rsp, 8
 	retq
 .Lfunc_end53:
-	.size	_ZSt4sqrtf.20_s32_0fixp, .Lfunc_end53-_ZSt4sqrtf.20_s32_0fixp
+	.size	_ZSt4sqrtf.2.21_s32_0fixp, .Lfunc_end53-_ZSt4sqrtf.2.21_s32_0fixp
 	.cfi_endproc
                                         # -- End function
 	.section	.rodata.cst4,"aM",@progbits,4
-	.p2align	2                               # -- Begin function _ZSt4sqrtf.2.21_u37_27fixp
+	.p2align	2                               # -- Begin function _ZSt4sqrtf.3.23_s35_29fixp
 .LCPI54_0:
-	.long	0x4d000000                      # float 134217728
-.LCPI54_1:
-	.long	0x5f000000                      # float 9.22337203E+18
+	.long	0x4e000000                      # float 536870912
 	.text
 	.p2align	4, 0x90
-	.type	_ZSt4sqrtf.2.21_u37_27fixp,@function
-_ZSt4sqrtf.2.21_u37_27fixp:             # @_ZSt4sqrtf.2.21_u37_27fixp
-	.cfi_startproc
-# %bb.0:
-	pushq	%rbp
-	.cfi_def_cfa_offset 16
-	.cfi_offset %rbp, -16
-	movq	%rsp, %rbp
-	.cfi_def_cfa_register %rbp
-	subq	$16, %rsp
-	movq	%rdi, %rcx
-	shrq	%rcx
-	movl	%edi, %eax
-	andl	$1, %eax
-                                        # kill: def $rax killed $eax
-	orq	%rcx, %rax
-	cvtsi2ss	%rax, %xmm0
-	addss	%xmm0, %xmm0
-	cvtsi2ss	%rdi, %xmm1
-	movss	%xmm1, -8(%rbp)                 # 4-byte Spill
-	testq	%rdi, %rdi
-	movss	%xmm0, -4(%rbp)                 # 4-byte Spill
-	js	.LBB54_2
-# %bb.1:
-	movss	-8(%rbp), %xmm0                 # 4-byte Reload
-                                        # xmm0 = mem[0],zero,zero,zero
-	movss	%xmm0, -4(%rbp)                 # 4-byte Spill
-.LBB54_2:
-	movss	-4(%rbp), %xmm0                 # 4-byte Reload
-                                        # xmm0 = mem[0],zero,zero,zero
-	movss	.LCPI54_0(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
-	movss	%xmm1, -12(%rbp)                # 4-byte Spill
-	divss	%xmm1, %xmm0
-	callq	sqrtf
-	movss	-12(%rbp), %xmm1                # 4-byte Reload
-                                        # xmm1 = mem[0],zero,zero,zero
-	mulss	%xmm1, %xmm0
-	movss	.LCPI54_1(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
-	movaps	%xmm0, %xmm2
-	subss	%xmm1, %xmm2
-	cvttss2si	%xmm2, %rax
-	movabsq	$-9223372036854775808, %rcx     # imm = 0x8000000000000000
-	xorq	%rcx, %rax
-	cvttss2si	%xmm0, %rcx
-	ucomiss	%xmm1, %xmm0
-	cmovbq	%rcx, %rax
-	addq	$16, %rsp
-	popq	%rbp
-	.cfi_def_cfa %rsp, 8
-	retq
-.Lfunc_end54:
-	.size	_ZSt4sqrtf.2.21_u37_27fixp, .Lfunc_end54-_ZSt4sqrtf.2.21_u37_27fixp
-	.cfi_endproc
-                                        # -- End function
-	.section	.rodata.cst4,"aM",@progbits,4
-	.p2align	2                               # -- Begin function _ZSt4sqrtf.3.23_s38_26fixp
-.LCPI55_0:
-	.long	0x4c800000                      # float 67108864
-	.text
-	.p2align	4, 0x90
-	.type	_ZSt4sqrtf.3.23_s38_26fixp,@function
-_ZSt4sqrtf.3.23_s38_26fixp:             # @_ZSt4sqrtf.3.23_s38_26fixp
+	.type	_ZSt4sqrtf.3.23_s35_29fixp,@function
+_ZSt4sqrtf.3.23_s35_29fixp:             # @_ZSt4sqrtf.3.23_s35_29fixp
 	.cfi_startproc
 # %bb.0:
 	pushq	%rbp
@@ -9997,21 +9809,21 @@ _ZSt4sqrtf.3.23_s38_26fixp:             # @_ZSt4sqrtf.3.23_s38_26fixp
 	.cfi_def_cfa_register %rbp
 	callq	sqrtf
 	movaps	%xmm0, %xmm1
-	movss	.LCPI55_0(%rip), %xmm0          # xmm0 = mem[0],zero,zero,zero
+	movss	.LCPI54_0(%rip), %xmm0          # xmm0 = mem[0],zero,zero,zero
 	mulss	%xmm1, %xmm0
 	cvttss2si	%xmm0, %rax
 	popq	%rbp
 	.cfi_def_cfa %rsp, 8
 	retq
-.Lfunc_end55:
-	.size	_ZSt4sqrtf.3.23_s38_26fixp, .Lfunc_end55-_ZSt4sqrtf.3.23_s38_26fixp
+.Lfunc_end54:
+	.size	_ZSt4sqrtf.3.23_s35_29fixp, .Lfunc_end54-_ZSt4sqrtf.3.23_s35_29fixp
 	.cfi_endproc
                                         # -- End function
 	.section	.rodata.cst8,"aM",@progbits,8
 	.p2align	3                               # -- Begin function _ZSt3powIdiEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.25_s64_0fixp
-.LCPI56_0:
+.LCPI55_0:
 	.quad	0x3ff0000000000000              # double 1
-.LCPI56_1:
+.LCPI55_1:
 	.quad	0x41c0000000000000              # double 536870912
 	.text
 	.p2align	4, 0x90
@@ -10028,18 +9840,45 @@ _ZSt3powIdiEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_intege
 	shll	$29, %esi
 	movl	%esi, %eax
 	cvtsi2sd	%rax, %xmm1
-	movsd	.LCPI56_1(%rip), %xmm2          # xmm2 = mem[0],zero
+	movsd	.LCPI55_1(%rip), %xmm2          # xmm2 = mem[0],zero
 	divsd	%xmm2, %xmm1
 	callq	pow
 	movaps	%xmm0, %xmm1
-	movsd	.LCPI56_0(%rip), %xmm0          # xmm0 = mem[0],zero
+	movsd	.LCPI55_0(%rip), %xmm0          # xmm0 = mem[0],zero
 	mulsd	%xmm1, %xmm0
 	cvttsd2si	%xmm0, %rax
 	popq	%rbp
 	.cfi_def_cfa %rsp, 8
 	retq
+.Lfunc_end55:
+	.size	_ZSt3powIdiEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.25_s64_0fixp, .Lfunc_end55-_ZSt3powIdiEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.25_s64_0fixp
+	.cfi_endproc
+                                        # -- End function
+	.section	.rodata.cst4,"aM",@progbits,4
+	.p2align	2                               # -- Begin function _ZSt4sqrtf.2.28_s32_0fixp
+.LCPI56_0:
+	.long	0x3f800000                      # float 1
+	.text
+	.p2align	4, 0x90
+	.type	_ZSt4sqrtf.2.28_s32_0fixp,@function
+_ZSt4sqrtf.2.28_s32_0fixp:              # @_ZSt4sqrtf.2.28_s32_0fixp
+	.cfi_startproc
+# %bb.0:
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset %rbp, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register %rbp
+	callq	sqrtf
+	movaps	%xmm0, %xmm1
+	movss	.LCPI56_0(%rip), %xmm0          # xmm0 = mem[0],zero,zero,zero
+	mulss	%xmm1, %xmm0
+	cvttss2si	%xmm0, %eax
+	popq	%rbp
+	.cfi_def_cfa %rsp, 8
+	retq
 .Lfunc_end56:
-	.size	_ZSt3powIdiEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.25_s64_0fixp, .Lfunc_end56-_ZSt3powIdiEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.25_s64_0fixp
+	.size	_ZSt4sqrtf.2.28_s32_0fixp, .Lfunc_end56-_ZSt4sqrtf.2.28_s32_0fixp
 	.cfi_endproc
                                         # -- End function
 	.section	.rodata.cst4,"aM",@progbits,4
@@ -10307,8 +10146,8 @@ params_outlierPixels:
 
 	.type	.L.str.29,@object               # @.str.29
 .L.str.29:
-	.asciz	"taTr %.10f\n"
-	.size	.L.str.29, 12
+	.asciz	"taTr %e\n"
+	.size	.L.str.29, 9
 
 	.type	.L.str.30,@object               # @.str.30
 .L.str.30:
@@ -10455,20 +10294,20 @@ params_outlierPixels:
 	.asciz	"Sx %.10f\n"
 	.size	.L.str.58, 10
 
-	.type	.L.str.59,@object               # @.str.59
-.L.str.59:
-	.asciz	"t1 %.10f\n"
-	.size	.L.str.59, 10
-
 	.type	.L.str.60,@object               # @.str.60
 .L.str.60:
-	.asciz	"t2 %.10f\n"
-	.size	.L.str.60, 10
+	.asciz	"t1 %.10f, ksTo %.10f\n"
+	.size	.L.str.60, 22
 
 	.type	.L.str.61,@object               # @.str.61
 .L.str.61:
-	.asciz	"t3 %.10f\n"
+	.asciz	"t2 %.10f\n"
 	.size	.L.str.61, 10
+
+	.type	.L.str.62,@object               # @.str.62
+.L.str.62:
+	.asciz	"t3 %.10f\n"
+	.size	.L.str.62, 10
 
 	.type	.L.str.63,@object               # @.str.63
 .L.str.63:
@@ -10480,2771 +10319,2781 @@ params_outlierPixels:
 	.asciz	"t5 %.10f\n"
 	.size	.L.str.64, 10
 
+	.type	.L.str.65,@object               # @.str.65
+.L.str.65:
+	.asciz	"t6 %.10f\n"
+	.size	.L.str.65, 10
+
 	.type	.L.str.66,@object               # @.str.66
 .L.str.66:
-	.asciz	"t6 %.10f\n"
+	.asciz	"To %.10f\n"
 	.size	.L.str.66, 10
 
 	.type	.L.str.67,@object               # @.str.67
 .L.str.67:
-	.asciz	"To %.10f\n"
-	.size	.L.str.67, 10
+	.asciz	"taTr %.10f \n"
+	.size	.L.str.67, 13
 
 	.type	.L.str.68,@object               # @.str.68
 .L.str.68:
-	.asciz	"taTr %.10f \n"
-	.size	.L.str.68, 13
+	.asciz	"range %d \n"
+	.size	.L.str.68, 11
 
 	.type	.L.str.69,@object               # @.str.69
 .L.str.69:
-	.asciz	"range %d \n"
-	.size	.L.str.69, 11
+	.asciz	"t8 %.10f\n"
+	.size	.L.str.69, 10
+
+	.type	.L.str.70,@object               # @.str.70
+.L.str.70:
+	.asciz	"t9 %.10f\n"
+	.size	.L.str.70, 10
 
 	.type	.L.str.71,@object               # @.str.71
 .L.str.71:
-	.asciz	"t8 %.10f\n"
-	.size	.L.str.71, 10
+	.asciz	"t10 %.10f\n"
+	.size	.L.str.71, 11
 
 	.type	.L.str.72,@object               # @.str.72
 .L.str.72:
-	.asciz	"t9 %.10f\n"
-	.size	.L.str.72, 10
+	.asciz	"t11 %.10f\n"
+	.size	.L.str.72, 11
 
 	.type	.L.str.73,@object               # @.str.73
 .L.str.73:
-	.asciz	"t10 %.10f\n"
+	.asciz	"t12 %.10f\n"
 	.size	.L.str.73, 11
-
-	.type	.L.str.74,@object               # @.str.74
-.L.str.74:
-	.asciz	"t11 %.10f\n"
-	.size	.L.str.74, 11
 
 	.type	.L.str.75,@object               # @.str.75
 .L.str.75:
-	.asciz	"t12 %.10f\n"
+	.asciz	"t13 %.10f\n"
 	.size	.L.str.75, 11
+
+	.type	.L.str.76,@object               # @.str.76
+.L.str.76:
+	.asciz	"t14 %.10f\n"
+	.size	.L.str.76, 11
 
 	.type	.L.str.77,@object               # @.str.77
 .L.str.77:
-	.asciz	"t13 %.10f\n"
+	.asciz	"ToF %.10f\n"
 	.size	.L.str.77, 11
 
 	.type	.L.str.78,@object               # @.str.78
 .L.str.78:
-	.asciz	"t14 %.10f\n"
-	.size	.L.str.78, 11
+	.asciz	"-------------------------------------\n"
+	.size	.L.str.78, 39
 
 	.type	.L.str.79,@object               # @.str.79
 .L.str.79:
-	.asciz	"ToF %.10f\n"
-	.size	.L.str.79, 11
+	.asciz	"pixel Number %d \n"
+	.size	.L.str.79, 18
 
 	.type	.L.str.80,@object               # @.str.80
 .L.str.80:
-	.asciz	"pixel Number %d \n"
-	.size	.L.str.80, 18
+	.asciz	"vdd %f\n"
+	.size	.L.str.80, 8
 
 	.type	.L.str.81,@object               # @.str.81
 .L.str.81:
-	.asciz	"vdd %f\n"
+	.asciz	"ta %f \n"
 	.size	.L.str.81, 8
 
 	.type	.L.str.82,@object               # @.str.82
 .L.str.82:
-	.asciz	"ta %f \n"
-	.size	.L.str.82, 8
+	.asciz	"tr %.10f\n"
+	.size	.L.str.82, 10
 
 	.type	.L.str.83,@object               # @.str.83
 .L.str.83:
-	.asciz	"tr %.10f\n"
-	.size	.L.str.83, 10
+	.asciz	"taTr %.10f\n"
+	.size	.L.str.83, 12
 
-	.type	.L.str.86,@object               # @.str.86
-.L.str.86:
-	.asciz	"vdd: %f\n"
-	.size	.L.str.86, 9
+	.type	.L.str.91,@object               # @.str.91
+.L.str.91:
+	.asciz	"getVdd...\n"
+	.size	.L.str.91, 11
 
-	.type	.L.str.87,@object               # @.str.87
-.L.str.87:
-	.asciz	"resolutionRAM: %d\n"
-	.size	.L.str.87, 19
+	.type	.L.str.92,@object               # @.str.92
+.L.str.92:
+	.asciz	"vdd = %e\n"
+	.size	.L.str.92, 10
 
-	.type	.L.str.88,@object               # @.str.88
-.L.str.88:
-	.asciz	"resolutionEE: %d\n"
-	.size	.L.str.88, 18
-
-	.type	.L.str.89,@object               # @.str.89
-.L.str.89:
-	.asciz	"resolutionCorrection: %.10f\n"
-	.size	.L.str.89, 29
-
-	.type	.L.str.90,@object               # @.str.90
-.L.str.90:
-	.asciz	"kVdd: %d, vdd25: %d\n"
-	.size	.L.str.90, 21
+	.type	.L.str.93,@object               # @.str.93
+.L.str.93:
+	.asciz	"ptatArt1= %.10f\n"
+	.size	.L.str.93, 17
 
 	.type	.L.str.94,@object               # @.str.94
 .L.str.94:
-	.asciz	"getVdd...\n"
-	.size	.L.str.94, 11
+	.asciz	"ptatArt2= %.10f\n"
+	.size	.L.str.94, 17
 
 	.type	.L.str.95,@object               # @.str.95
 .L.str.95:
-	.asciz	"vdd = %e\n"
-	.size	.L.str.95, 10
+	.asciz	"ptatArt3= %.10f\n"
+	.size	.L.str.95, 17
 
 	.type	.L.str.96,@object               # @.str.96
 .L.str.96:
-	.asciz	"ptatArt1= %.10f\n"
-	.size	.L.str.96, 17
+	.asciz	"ptat= %.10f\n"
+	.size	.L.str.96, 13
 
 	.type	.L.str.97,@object               # @.str.97
 .L.str.97:
-	.asciz	"ptatArt2= %.10f\n"
-	.size	.L.str.97, 17
+	.asciz	"alphaptat= %.10f\n"
+	.size	.L.str.97, 18
 
 	.type	.L.str.98,@object               # @.str.98
 .L.str.98:
-	.asciz	"ptatArt3= %.10f\n"
-	.size	.L.str.98, 17
+	.asciz	"ptatArt= %.10f\n"
+	.size	.L.str.98, 16
 
 	.type	.L.str.99,@object               # @.str.99
 .L.str.99:
-	.asciz	"ptat= %.10f\n"
-	.size	.L.str.99, 13
+	.asciz	"vd1= %.10f\n"
+	.size	.L.str.99, 12
 
 	.type	.L.str.100,@object              # @.str.100
 .L.str.100:
-	.asciz	"alphaptat= %.10f\n"
-	.size	.L.str.100, 18
+	.asciz	"kvPTAT= %.10f\n"
+	.size	.L.str.100, 15
 
 	.type	.L.str.101,@object              # @.str.101
 .L.str.101:
-	.asciz	"ptatArt= %.10f\n"
-	.size	.L.str.101, 16
+	.asciz	"vdd= %.10f\n"
+	.size	.L.str.101, 12
 
 	.type	.L.str.102,@object              # @.str.102
 .L.str.102:
-	.asciz	"vd1= %.10f\n"
+	.asciz	"ta1= %.10f\n"
 	.size	.L.str.102, 12
 
 	.type	.L.str.103,@object              # @.str.103
 .L.str.103:
-	.asciz	"kvPTAT= %.10f\n"
-	.size	.L.str.103, 15
+	.asciz	"ta2= %.10f\n"
+	.size	.L.str.103, 12
 
 	.type	.L.str.104,@object              # @.str.104
 .L.str.104:
-	.asciz	"vdd= %.10f\n"
+	.asciz	"ta3= %.10f\n"
 	.size	.L.str.104, 12
 
 	.type	.L.str.105,@object              # @.str.105
 .L.str.105:
-	.asciz	"ta1= %.10f\n"
-	.size	.L.str.105, 12
+	.asciz	"taBDiv= %.10f\n"
+	.size	.L.str.105, 15
 
 	.type	.L.str.106,@object              # @.str.106
 .L.str.106:
-	.asciz	"ta2= %.10f\n"
-	.size	.L.str.106, 12
-
-	.type	.L.str.107,@object              # @.str.107
-.L.str.107:
-	.asciz	"ta3= %.10f\n"
-	.size	.L.str.107, 12
-
-	.type	.L.str.108,@object              # @.str.108
-.L.str.108:
-	.asciz	"taBDiv= %.10f\n"
-	.size	.L.str.108, 15
-
-	.type	.L.str.109,@object              # @.str.109
-.L.str.109:
 	.asciz	"taADiv= %.10f\n"
-	.size	.L.str.109, 15
+	.size	.L.str.106, 15
+
+	.type	.L.str.115,@object              # @.str.115
+.L.str.115:
+	.asciz	"P3\n"
+	.size	.L.str.115, 4
+
+	.type	.L.str.116,@object              # @.str.116
+.L.str.116:
+	.asciz	"%d %d\n"
+	.size	.L.str.116, 7
+
+	.type	.L.str.117,@object              # @.str.117
+.L.str.117:
+	.asciz	"255\n"
+	.size	.L.str.117, 5
+
+	.type	.L.str.118,@object              # @.str.118
+.L.str.118:
+	.asciz	"%d %d %d "
+	.size	.L.str.118, 10
 
 	.type	.L.str.119,@object              # @.str.119
 .L.str.119:
-	.asciz	"P3\n"
-	.size	.L.str.119, 4
-
-	.type	.L.str.120,@object              # @.str.120
-.L.str.120:
-	.asciz	"%d %d\n"
-	.size	.L.str.120, 7
-
-	.type	.L.str.121,@object              # @.str.121
-.L.str.121:
-	.asciz	"255\n"
-	.size	.L.str.121, 5
-
-	.type	.L.str.122,@object              # @.str.122
-.L.str.122:
-	.asciz	"%d %d %d "
-	.size	.L.str.122, 10
-
-	.type	.L.str.123,@object              # @.str.123
-.L.str.123:
 	.asciz	"\n"
-	.size	.L.str.123, 2
+	.size	.L.str.119, 2
 
 	.type	_ZL6eeprom,@object              # @_ZL6eeprom
 	.section	.rodata,"a",@progbits
 	.p2align	4
 _ZL6eeprom:
-	.short	165                             # 0xa5
-	.short	35231                           # 0x899f
+	.short	195                             # 0xc3
+	.short	14751                           # 0x399f
 	.short	0                               # 0x0
 	.short	8289                            # 0x2061
 	.short	5                               # 0x5
 	.short	800                             # 0x320
 	.short	992                             # 0x3e0
-	.short	2347                            # 0x92b
-	.short	45605                           # 0xb225
-	.short	24966                           # 0x6186
+	.short	5919                            # 0x171f
+	.short	52023                           # 0xcb37
+	.short	393                             # 0x189
 	.short	1177                            # 0x499
 	.short	0                               # 0x0
 	.short	6401                            # 0x1901
 	.short	0                               # 0x0
 	.short	0                               # 0x0
 	.short	48691                           # 0xbe33
-	.short	17184                           # 0x4320
-	.short	65455                           # 0xffaf
+	.short	16928                           # 0x4220
+	.short	65478                           # 0xffc6
+	.short	530                             # 0x212
+	.short	514                             # 0x202
+	.short	61954                           # 0xf202
+	.short	57842                           # 0xe1f2
+	.short	53729                           # 0xd1e1
+	.short	40896                           # 0x9fc0
 	.short	257                             # 0x101
-	.short	257                             # 0x101
-	.short	257                             # 0x101
-	.short	61937                           # 0xf1f1
-	.short	57585                           # 0xe0f1
-	.short	49360                           # 0xc0d0
-	.short	273                             # 0x111
-	.short	274                             # 0x112
 	.short	258                             # 0x102
 	.short	61698                           # 0xf102
-	.short	61939                           # 0xf1f3
+	.short	61698                           # 0xf102
+	.short	61938                           # 0xf1f2
 	.short	57842                           # 0xe1f2
-	.short	53474                           # 0xd0e2
-	.short	45265                           # 0xb0d1
+	.short	57570                           # 0xe0e2
+	.short	49377                           # 0xc0e1
 	.short	34965                           # 0x8895
-	.short	14876                           # 0x3a1c
+	.short	15246                           # 0x3b8e
 	.short	60858                           # 0xedba
 	.short	4607                            # 0x11ff
-	.short	13090                           # 0x3322
+	.short	13106                           # 0x3332
 	.short	13107                           # 0x3333
-	.short	34                              # 0x22
-	.short	52463                           # 0xccef
-	.short	56507                           # 0xdcbb
-	.short	254                             # 0xfe
+	.short	290                             # 0x122
+	.short	52479                           # 0xccff
+	.short	56780                           # 0xddcc
+	.short	255                             # 0xff
 	.short	8465                            # 0x2111
-	.short	8754                            # 0x2232
+	.short	8755                            # 0x2233
 	.short	8755                            # 0x2233
 	.short	4386                            # 0x1122
-	.short	65297                           # 0xff11
-	.short	52462                           # 0xccee
-	.short	6118                            # 0x17e6
-	.short	12203                           # 0x2fab
-	.short	6486                            # 0x1956
-	.short	40827                           # 0x9f7b
-	.short	30310                           # 0x7666
-	.short	63939                           # 0xf9c3
-	.short	14391                           # 0x3837
-	.short	13876                           # 0x3634
-	.short	9298                            # 0x2452
-	.short	2187                            # 0x88b
-	.short	6059                            # 0x17ab
-	.short	1577                            # 0x629
-	.short	60416                           # 0xec00
-	.short	38807                           # 0x9797
-	.short	38807                           # 0x9797
-	.short	11003                           # 0x2afb
-	.short	3262                            # 0xcbe
-	.short	2176                            # 0x880
-	.short	8398                            # 0x20ce
-	.short	1054                            # 0x41e
-	.short	3246                            # 0xcae
-	.short	48                              # 0x30
-	.short	7214                            # 0x1c2e
-	.short	1006                            # 0x3ee
-	.short	3182                            # 0xc6e
-	.short	2160                            # 0x870
-	.short	9358                            # 0x248e
-	.short	64460                           # 0xfbcc
-	.short	4158                            # 0x103e
-	.short	944                             # 0x3b0
-	.short	8302                            # 0x206e
-	.short	64652                           # 0xfc8c
-	.short	513                             # 0x201
-	.short	2944                            # 0xb80
-	.short	8192                            # 0x2000
-	.short	59566                           # 0xe8ae
-	.short	6656                            # 0x1a00
-	.short	64512                           # 0xfc00
-	.short	3232                            # 0xca0
-	.short	64462                           # 0xfbce
-	.short	64528                           # 0xfc10
-	.short	65360                           # 0xff50
-	.short	6192                            # 0x1830
-	.short	62478                           # 0xf40e
-	.short	61582                           # 0xf08e
-	.short	63472                           # 0xf7f0
-	.short	4176                            # 0x1050
-	.short	59486                           # 0xe85e
-	.short	3200                            # 0xc80
-	.short	62                              # 0x3e
-	.short	63644                           # 0xf89c
-	.short	5120                            # 0x1400
-	.short	2192                            # 0x890
-	.short	63518                           # 0xf81e
-	.short	63500                           # 0xf80c
-	.short	6096                            # 0x17d0
-	.short	2112                            # 0x840
-	.short	1102                            # 0x44e
-	.short	76                              # 0x4c
-	.short	3984                            # 0xf90
-	.short	6128                            # 0x17f0
-	.short	862                             # 0x35e
-	.short	44                              # 0x2c
-	.short	5200                            # 0x1450
-	.short	3874                            # 0xf22
-	.short	1998                            # 0x7ce
-	.short	972                             # 0x3cc
-	.short	2128                            # 0x850
-	.short	2098                            # 0x832
-	.short	64542                           # 0xfc1e
-	.short	62590                           # 0xf47e
-	.short	5024                            # 0x13a0
-	.short	994                             # 0x3e2
-	.short	800                             # 0x320
-	.short	65534                           # 0xfffe
-	.short	4064                            # 0xfe0
-	.short	63584                           # 0xf860
-	.short	65472                           # 0xffc0
-	.short	62510                           # 0xf42e
-	.short	32                              # 0x20
-	.short	4110                            # 0x100e
-	.short	1152                            # 0x480
-	.short	8318                            # 0x207e
-	.short	2030                            # 0x7ee
-	.short	2238                            # 0x8be
-	.short	48                              # 0x30
-	.short	9166                            # 0x23ce
-	.short	1022                            # 0x3fe
-	.short	3086                            # 0xc0e
-	.short	3136                            # 0xc40
-	.short	8334                            # 0x208e
-	.short	65358                           # 0xff4e
-	.short	5120                            # 0x1400
-	.short	1856                            # 0x740
-	.short	8254                            # 0x203e
-	.short	64654                           # 0xfc8e
-	.short	65488                           # 0xffd0
-	.short	2992                            # 0xbb0
-	.short	6192                            # 0x1830
-	.short	61470                           # 0xf01e
-	.short	1136                            # 0x470
-	.short	63632                           # 0xf890
-	.short	4176                            # 0x1050
-	.short	63486                           # 0xf7fe
-	.short	1904                            # 0x770
-	.short	64480                           # 0xfbe0
-	.short	5216                            # 0x1460
-	.short	62478                           # 0xf40e
-	.short	62560                           # 0xf460
-	.short	61552                           # 0xf070
-	.short	4130                            # 0x1022
-	.short	62398                           # 0xf3be
-	.short	5104                            # 0x13f0
-	.short	64606                           # 0xfc5e
-	.short	64604                           # 0xfc5c
-	.short	6080                            # 0x17c0
-	.short	1168                            # 0x490
-	.short	63518                           # 0xf81e
-	.short	65436                           # 0xff9c
-	.short	6080                            # 0x17c0
-	.short	5074                            # 0x13d2
-	.short	2078                            # 0x81e
-	.short	92                              # 0x5c
-	.short	4864                            # 0x1300
-	.short	6098                            # 0x17d2
-	.short	782                             # 0x30e
-	.short	14                              # 0xe
-	.short	5184                            # 0x1440
-	.short	914                             # 0x392
-	.short	2926                            # 0xb6e
-	.short	64526                           # 0xfc0e
-	.short	4064                            # 0xfe0
-	.short	2098                            # 0x832
-	.short	63566                           # 0xf84e
-	.short	63518                           # 0xf81e
-	.short	5040                            # 0x13b0
-	.short	3922                            # 0xf52
-	.short	65440                           # 0xffa0
-	.short	64558                           # 0xfc2e
-	.short	5088                            # 0x13e0
-	.short	64560                           # 0xfc30
-	.short	62528                           # 0xf440
-	.short	64480                           # 0xfbe0
-	.short	2944                            # 0xb80
-	.short	7200                            # 0x1c20
-	.short	2144                            # 0x860
-	.short	8272                            # 0x2050
-	.short	4014                            # 0xfae
-	.short	5296                            # 0x14b0
-	.short	3008                            # 0xbc0
-	.short	10112                           # 0x2780
-	.short	1038                            # 0x40e
-	.short	7152                            # 0x1bf0
-	.short	4160                            # 0x1040
-	.short	9280                            # 0x2440
-	.short	65438                           # 0xff9e
-	.short	5248                            # 0x1480
-	.short	2880                            # 0xb40
-	.short	10224                           # 0x27f0
-	.short	1118                            # 0x45e
-	.short	3040                            # 0xbe0
-	.short	4016                            # 0xfb0
-	.short	7184                            # 0x1c10
-	.short	63504                           # 0xf810
-	.short	3152                            # 0xc50
-	.short	64                              # 0x40
-	.short	6208                            # 0x1840
-	.short	62606                           # 0xf48e
-	.short	1040                            # 0x410
-	.short	912                             # 0x390
-	.short	6240                            # 0x1860
-	.short	63502                           # 0xf80e
-	.short	63648                           # 0xf8a0
-	.short	64576                           # 0xfc40
-	.short	5170                            # 0x1432
-	.short	63456                           # 0xf7e0
-	.short	5232                            # 0x1470
-	.short	64672                           # 0xfca0
-	.short	64686                           # 0xfcae
-	.short	7136                            # 0x1be0
-	.short	3330                            # 0xd02
-	.short	16                              # 0x10
-	.short	990                             # 0x3de
-	.short	4176                            # 0x1050
-	.short	5154                            # 0x1422
-	.short	2158                            # 0x86e
-	.short	142                             # 0x8e
-	.short	4048                            # 0xfd0
-	.short	4290                            # 0x10c2
-	.short	1934                            # 0x78e
-	.short	76                              # 0x4c
-	.short	5248                            # 0x1480
-	.short	1074                            # 0x432
-	.short	3070                            # 0xbfe
-	.short	78                              # 0x4e
-	.short	3136                            # 0xc40
-	.short	3218                            # 0xc92
-	.short	64624                           # 0xfc70
-	.short	63598                           # 0xf86e
-	.short	2240                            # 0x8c0
-	.short	2116                            # 0x844
-	.short	960                             # 0x3c0
-	.short	158                             # 0x9e
-	.short	4160                            # 0x1040
-	.short	64738                           # 0xfce2
-	.short	63600                           # 0xf870
-	.short	62576                           # 0xf470
-	.short	2080                            # 0x820
-	.short	4110                            # 0x100e
-	.short	2080                            # 0x820
-	.short	7438                            # 0x1d0e
-	.short	3022                            # 0xbce
-	.short	2224                            # 0x8b0
-	.short	1072                            # 0x430
-	.short	10176                           # 0x27c0
-	.short	2046                            # 0x7fe
-	.short	5088                            # 0x13e0
-	.short	6112                            # 0x17e0
-	.short	9216                            # 0x2400
-	.short	65406                           # 0xff7e
-	.short	2142                            # 0x85e
-	.short	2928                            # 0xb70
-	.short	7344                            # 0x1cb0
-	.short	94                              # 0x5e
-	.short	65472                           # 0xffc0
-	.short	3056                            # 0xbf0
-	.short	9104                            # 0x2390
-	.short	65486                           # 0xffce
-	.short	112                             # 0x70
-	.short	64624                           # 0xfc70
-	.short	6160                            # 0x1810
-	.short	63534                           # 0xf82e
-	.short	2034                            # 0x7f2
-	.short	928                             # 0x3a0
-	.short	7218                            # 0x1c32
-	.short	63502                           # 0xf80e
-	.short	32                              # 0x20
-	.short	992                             # 0x3e0
-	.short	5154                            # 0x1422
-	.short	61456                           # 0xf010
-	.short	1072                            # 0x430
-	.short	62558                           # 0xf45e
-	.short	60734                           # 0xed3e
-	.short	4096                            # 0x1000
-	.short	64752                           # 0xfcf0
-	.short	62560                           # 0xf460
-	.short	64510                           # 0xfbfe
-	.short	3104                            # 0xc20
-	.short	2080                            # 0x820
-	.short	1024                            # 0x400
-	.short	64574                           # 0xfc3e
-	.short	2992                            # 0xbb0
-	.short	160                             # 0xa0
-	.short	65440                           # 0xffa0
-	.short	62702                           # 0xf4ee
-	.short	3200                            # 0xc80
-	.short	63490                           # 0xf802
-	.short	1024                            # 0x400
-	.short	65470                           # 0xffbe
-	.short	3040                            # 0xbe0
-	.short	162                             # 0xa2
-	.short	62640                           # 0xf4b0
-	.short	62526                           # 0xf43e
-	.short	2128                            # 0x850
-	.short	66                              # 0x42
-	.short	64432                           # 0xfbb0
-	.short	63598                           # 0xf86e
-	.short	3136                            # 0xc40
-	.short	82                              # 0x52
-	.short	63536                           # 0xf830
-	.short	61536                           # 0xf060
-	.short	80                              # 0x50
-	.short	6032                            # 0x1790
-	.short	2162                            # 0x872
-	.short	7344                            # 0x1cb0
-	.short	1102                            # 0x44e
-	.short	2288                            # 0x8f0
-	.short	2048                            # 0x800
-	.short	7184                            # 0x1c10
-	.short	14                              # 0xe
-	.short	5086                            # 0x13de
-	.short	3200                            # 0xc80
-	.short	8320                            # 0x2080
-	.short	65374                           # 0xff5e
-	.short	3136                            # 0xc40
-	.short	2944                            # 0xb80
-	.short	8192                            # 0x2000
-	.short	1054                            # 0x41e
-	.short	960                             # 0x3c0
-	.short	2048                            # 0x800
-	.short	6178                            # 0x1822
-	.short	65408                           # 0xff80
-	.short	2128                            # 0x850
-	.short	1026                            # 0x402
-	.short	5152                            # 0x1420
-	.short	62574                           # 0xf46e
-	.short	50                              # 0x32
-	.short	914                             # 0x392
-	.short	4306                            # 0x10d2
-	.short	61584                           # 0xf090
-	.short	64592                           # 0xfc50
-	.short	63586                           # 0xf862
-	.short	4194                            # 0x1062
-	.short	61440                           # 0xf000
-	.short	3010                            # 0xbc2
-	.short	59520                           # 0xe880
-	.short	59630                           # 0xe8ee
-	.short	1152                            # 0x480
-	.short	63778                           # 0xf922
-	.short	60464                           # 0xec30
-	.short	60478                           # 0xec3e
-	.short	2080                            # 0x820
-	.short	18                              # 0x12
-	.short	63648                           # 0xf8a0
-	.short	61614                           # 0xf0ae
-	.short	1904                            # 0x770
-	.short	114                             # 0x72
-	.short	63392                           # 0xf7a0
-	.short	61534                           # 0xf05e
-	.short	3136                            # 0xc40
-	.short	64498                           # 0xfbf2
-	.short	64528                           # 0xfc10
-	.short	61518                           # 0xf04e
-	.short	3008                            # 0xbc0
-	.short	114                             # 0x72
-	.short	62496                           # 0xf420
-	.short	60510                           # 0xec5e
-	.short	1152                            # 0x480
-	.short	64610                           # 0xfc62
-	.short	63408                           # 0xf7b0
-	.short	61646                           # 0xf0ce
-	.short	1200                            # 0x4b0
-	.short	64658                           # 0xfc92
-	.short	62608                           # 0xf490
-	.short	60544                           # 0xec80
-	.short	50                              # 0x32
-	.short	8098                            # 0x1fa2
-	.short	3058                            # 0xbf2
-	.short	6192                            # 0x1830
-	.short	3022                            # 0xbce
-	.short	4224                            # 0x1080
-	.short	1056                            # 0x420
-	.short	7152                            # 0x1bf0
-	.short	1920                            # 0x780
-	.short	6096                            # 0x17d0
-	.short	5024                            # 0x13a0
-	.short	6272                            # 0x1880
-	.short	64352                           # 0xfb60
-	.short	6096                            # 0x17d0
-	.short	2898                            # 0xb52
-	.short	5200                            # 0x1450
-	.short	96                              # 0x60
-	.short	1922                            # 0x782
-	.short	4864                            # 0x1300
-	.short	7138                            # 0x1be2
-	.short	62494                           # 0xf41e
-	.short	1120                            # 0x460
-	.short	64578                           # 0xfc42
-	.short	4130                            # 0x1022
-	.short	63504                           # 0xf810
-	.short	930                             # 0x3a2
-	.short	866                             # 0x362
-	.short	4112                            # 0x1010
-	.short	63456                           # 0xf7e0
-	.short	62592                           # 0xf480
-	.short	65522                           # 0xfff2
-	.short	1170                            # 0x492
-	.short	60448                           # 0xec20
-	.short	1970                            # 0x7b2
-	.short	60400                           # 0xebf0
-	.short	58430                           # 0xe43e
-	.short	2016                            # 0x7e0
-	.short	63666                           # 0xf8b2
-	.short	59440                           # 0xe830
-	.short	58398                           # 0xe41e
-	.short	1952                            # 0x7a0
-	.short	2                               # 0x2
-	.short	64448                           # 0xfbc0
-	.short	59550                           # 0xe89e
-	.short	64384                           # 0xfb80
-	.short	2034                            # 0x7f2
-	.short	62304                           # 0xf360
-	.short	60542                           # 0xec7e
-	.short	1136                            # 0x470
-	.short	64418                           # 0xfba2
-	.short	784                             # 0x310
-	.short	60430                           # 0xec0e
-	.short	64576                           # 0xfc40
-	.short	64626                           # 0xfc72
-	.short	60496                           # 0xec50
-	.short	59454                           # 0xe83e
-	.short	32                              # 0x20
-	.short	65506                           # 0xffe2
-	.short	62320                           # 0xf370
-	.short	61488                           # 0xf030
-	.short	34                              # 0x22
-	.short	61602                           # 0xf0a2
-	.short	61456                           # 0xf010
-	.short	58544                           # 0xe4b0
-	.short	63552                           # 0xf840
-	.short	976                             # 0x3d0
-	.short	1042                            # 0x412
-	.short	5120                            # 0x1400
-	.short	64576                           # 0xfc40
-	.short	63696                           # 0xf8d0
-	.short	50                              # 0x32
-	.short	5104                            # 0x13f0
-	.short	63582                           # 0xf85e
-	.short	1968                            # 0x7b0
-	.short	2064                            # 0x810
-	.short	5202                            # 0x1452
-	.short	62382                           # 0xf3ae
-	.short	64672                           # 0xfca0
-	.short	912                             # 0x390
-	.short	5152                            # 0x1420
-	.short	63630                           # 0xf88e
-	.short	61456                           # 0xf010
-	.short	3026                            # 0xbd2
-	.short	4162                            # 0x1042
-	.short	61470                           # 0xf01e
-	.short	64642                           # 0xfc82
-	.short	57554                           # 0xe0d2
-	.short	1186                            # 0x4a2
-	.short	62464                           # 0xf400
-	.short	65474                           # 0xffc2
-	.short	864                             # 0x360
-	.short	4130                            # 0x1022
-	.short	61488                           # 0xf030
-	.short	61602                           # 0xf0a2
-	.short	63538                           # 0xf832
-	.short	2082                            # 0x822
-	.short	61424                           # 0xeff0
-	.short	2018                            # 0x7e2
-	.short	63504                           # 0xf810
-	.short	63518                           # 0xf81e
-	.short	4160                            # 0x1040
-	.short	208                             # 0xd0
-	.short	63552                           # 0xf840
-	.short	64510                           # 0xfbfe
-	.short	4208                            # 0x1070
-	.short	5058                            # 0x13c2
-	.short	3088                            # 0xc10
-	.short	94                              # 0x5e
-	.short	5040                            # 0x13b0
-	.short	2224                            # 0x8b0
-	.short	1952                            # 0x7a0
-	.short	78                              # 0x4e
-	.short	6290                            # 0x1892
-	.short	66                              # 0x42
-	.short	5088                            # 0x13e0
-	.short	64622                           # 0xfc6e
-	.short	5152                            # 0x1420
-	.short	4226                            # 0x1082
-	.short	1088                            # 0x440
-	.short	63678                           # 0xf8be
-	.short	7200                            # 0x1c20
-	.short	6132                            # 0x17f4
-	.short	3952                            # 0xf70
-	.short	2096                            # 0x830
-	.short	7234                            # 0x1c42
-	.short	2258                            # 0x8d2
-	.short	3152                            # 0xc50
-	.short	1088                            # 0x440
-	.short	6178                            # 0x1822
-	.short	61360                           # 0xefb0
-	.short	64546                           # 0xfc22
-	.short	144                             # 0x90
-	.short	64400                           # 0xfb90
-	.short	62512                           # 0xf430
-	.short	65490                           # 0xffd2
-	.short	2992                            # 0xbb0
-	.short	64368                           # 0xfb70
-	.short	62464                           # 0xf400
-	.short	98                              # 0x62
-	.short	2160                            # 0x870
-	.short	61310                           # 0xef7e
-	.short	62560                           # 0xf460
-	.short	65408                           # 0xff80
-	.short	3120                            # 0xc30
-	.short	62542                           # 0xf44e
-	.short	62320                           # 0xf370
-	.short	2930                            # 0xb72
-	.short	2082                            # 0x822
-	.short	59486                           # 0xe85e
-	.short	62544                           # 0xf450
-	.short	63506                           # 0xf812
-	.short	96                              # 0x60
-	.short	62448                           # 0xf3f0
-	.short	64354                           # 0xfb62
-	.short	65410                           # 0xff82
-	.short	1106                            # 0x452
-	.short	60416                           # 0xec00
-	.short	60496                           # 0xec50
-	.short	61586                           # 0xf092
-	.short	1058                            # 0x422
-	.short	60400                           # 0xebf0
-	.short	62368                           # 0xf3a0
-	.short	59408                           # 0xe810
-	.short	56462                           # 0xdc8e
-	.short	2944                            # 0xb80
-	.short	63554                           # 0xf842
-	.short	62416                           # 0xf3d0
-	.short	60382                           # 0xebde
-	.short	3968                            # 0xf80
-	.short	64530                           # 0xfc12
-	.short	64592                           # 0xfc50
-	.short	61566                           # 0xf07e
-	.short	1920                            # 0x780
-	.short	64642                           # 0xfc82
-	.short	64384                           # 0xfb80
-	.short	61518                           # 0xf04e
-	.short	4178                            # 0x1052
-	.short	65394                           # 0xff72
-	.short	2912                            # 0xb60
-	.short	61502                           # 0xf03e
-	.short	2128                            # 0x850
-	.short	1138                            # 0x472
-	.short	64560                           # 0xfc30
-	.short	60542                           # 0xec7e
-	.short	4114                            # 0x1012
-	.short	3940                            # 0xf64
-	.short	896                             # 0x380
-	.short	63568                           # 0xf850
-	.short	5122                            # 0x1402
-	.short	1106                            # 0x452
-	.short	64624                           # 0xfc70
-	.short	63520                           # 0xf820
-	.short	4082                            # 0xff2
-	.short	64368                           # 0xfb70
-	.short	63490                           # 0xf802
-	.short	64544                           # 0xfc20
-	.short	63392                           # 0xf7a0
-	.short	62464                           # 0xf400
-	.short	64354                           # 0xfb62
-	.short	864                             # 0x360
-	.short	61408                           # 0xefe0
-	.short	63472                           # 0xf7f0
-	.short	64530                           # 0xfc12
-	.short	63648                           # 0xf8a0
-	.short	59296                           # 0xe7a0
-	.short	63520                           # 0xf820
-	.short	63442                           # 0xf7d2
-	.short	2032                            # 0x7f0
-	.short	61584                           # 0xf090
-	.short	59426                           # 0xe822
-	.short	930                             # 0x3a2
-	.short	66                              # 0x42
-	.short	58432                           # 0xe440
-	.short	63456                           # 0xf7e0
-	.short	64498                           # 0xfbf2
-	.short	64562                           # 0xfc32
-	.short	59440                           # 0xe830
-	.short	60402                           # 0xebf2
-	.short	62432                           # 0xf3e0
-	.short	962                             # 0x3c2
-	.short	58542                           # 0xe4ae
-	.short	58384                           # 0xe410
-	.short	61506                           # 0xf042
-	.short	61506                           # 0xf042
-	.short	57344                           # 0xe000
-	.short	62322                           # 0xf372
-	.short	58352                           # 0xe3f0
-	.short	54286                           # 0xd40e
-	.short	65426                           # 0xff92
-	.short	62450                           # 0xf3f2
-	.short	60240                           # 0xeb50
-	.short	57198                           # 0xdf6e
-	.short	65472                           # 0xffc0
-	.short	62482                           # 0xf412
-	.short	62464                           # 0xf400
-	.short	57518                           # 0xe0ae
-	.short	63392                           # 0xf7a0
-	.short	64562                           # 0xfc32
-	.short	61392                           # 0xefd0
-	.short	61438                           # 0xeffe
-	.short	144                             # 0x90
-	.short	61490                           # 0xf032
-	.short	65472                           # 0xffc0
-	.short	58446                           # 0xe44e
-	.short	80                              # 0x50
-	.short	2                               # 0x2
-	.short	62464                           # 0xf400
-	.short	59438                           # 0xe82e
-	.short	2112                            # 0x840
-	.short	63506                           # 0xf812
-	.short	63456                           # 0xf7e0
-	.short	63440                           # 0xf7d0
-	.short	64672                           # 0xfca0
-	.short	63506                           # 0xf812
-	.short	62512                           # 0xf430
-	.short	59440                           # 0xe830
-	.short	65504                           # 0xffe0
-	.short	64416                           # 0xfba0
-	.short	3138                            # 0xc42
-	.short	4112                            # 0x1010
-	.short	3008                            # 0xbc0
-	.short	64608                           # 0xfc60
-	.short	3074                            # 0xc02
-	.short	4144                            # 0x1030
-	.short	80                              # 0x50
-	.short	80                              # 0x50
-	.short	4306                            # 0x10d2
-	.short	5346                            # 0x14e2
-	.short	65520                           # 0xfff0
-	.short	176                             # 0xb0
-	.short	5058                            # 0x13c2
-	.short	6272                            # 0x1880
-	.short	2176                            # 0x880
-	.short	65504                           # 0xffe0
-	.short	5184                            # 0x1440
-	.short	5298                            # 0x14b2
-	.short	64638                           # 0xfc7e
-	.short	176                             # 0xb0
-	.short	2224                            # 0x8b0
-	.short	3216                            # 0xc90
-	.short	64672                           # 0xfca0
-	.short	2034                            # 0x7f2
-	.short	4098                            # 0x1002
-	.short	6274                            # 0x1882
-	.short	1120                            # 0x460
-	.short	64640                           # 0xfc80
-	.short	3138                            # 0xc42
-	.short	2194                            # 0x892
-	.short	65520                           # 0xfff0
-	.short	62354                           # 0xf392
-	.short	61456                           # 0xf010
-	.short	59390                           # 0xe7fe
-	.short	3986                            # 0xf92
-	.short	63570                           # 0xf852
-	.short	63424                           # 0xf7c0
-	.short	59406                           # 0xe80e
-	.short	3106                            # 0xc22
-	.short	66                              # 0x42
-	.short	176                             # 0xb0
-	.short	61662                           # 0xf0de
-	.short	4048                            # 0xfd0
-	.short	162                             # 0xa2
-	.short	1984                            # 0x7c0
-	.short	63598                           # 0xf86e
-	.short	6290                            # 0x1892
-	.short	994                             # 0x3e2
-	.short	2096                            # 0x830
-	.short	62654                           # 0xf4be
-	.short	5248                            # 0x1480
-	.short	2210                            # 0x8a2
-	.short	128                             # 0x80
-	.short	61550                           # 0xf06e
-	.short	5264                            # 0x1490
-	.short	5106                            # 0x13f2
-	.short	4064                            # 0xfe0
-	.short	1134                            # 0x46e
-	.short	8272                            # 0x2050
-	.short	2146                            # 0x862
-	.short	3072                            # 0xc00
-	.short	62574                           # 0xf46e
-	.short	7152                            # 0x1bf0
-	.short	59200                           # 0xe740
-	.short	930                             # 0x3a2
-	.short	63504                           # 0xf810
-	.short	65344                           # 0xff40
-	.short	63312                           # 0xf750
-	.short	850                             # 0x352
-	.short	832                             # 0x340
-	.short	63360                           # 0xf780
-	.short	63376                           # 0xf790
-	.short	2066                            # 0x812
-	.short	192                             # 0xc0
-	.short	61376                           # 0xefc0
-	.short	60624                           # 0xecd0
-	.short	65522                           # 0xfff2
-	.short	1186                            # 0x4a2
-	.short	62670                           # 0xf4ce
-	.short	61328                           # 0xef90
-	.short	2048                            # 0x800
-	.short	1088                            # 0x440
-	.short	60592                           # 0xecb0
-	.short	62560                           # 0xf460
-	.short	16                              # 0x10
-	.short	64592                           # 0xfc50
-	.short	64496                           # 0xfbf0
-	.short	63424                           # 0xf7c0
-	.short	1906                            # 0x772
-	.short	2066                            # 0x812
-	.short	62464                           # 0xf400
-	.short	62384                           # 0xf3b0
-	.short	1938                            # 0x792
-	.short	65488                           # 0xffd0
-	.short	62352                           # 0xf390
-	.short	63392                           # 0xf7a0
-	.short	65504                           # 0xffe0
-	.short	58462                           # 0xe45e
-	.short	7042                            # 0x1b82
-	.short	4002                            # 0xfa2
-	.short	928                             # 0x3a0
-	.short	63374                           # 0xf78e
-	.short	7122                            # 0x1bd2
-	.short	4066                            # 0xfe2
-	.short	3168                            # 0xc60
-	.short	62734                           # 0xf50e
-	.short	5168                            # 0x1430
-	.short	1328                            # 0x530
-	.short	3152                            # 0xc50
-	.short	64798                           # 0xfd1e
-	.short	8496                            # 0x2130
-	.short	2082                            # 0x822
-	.short	6240                            # 0x1860
-	.short	1198                            # 0x4ae
-	.short	7456                            # 0x1d20
-	.short	5362                            # 0x14f2
-	.short	4288                            # 0x10c0
-	.short	64750                           # 0xfcee
-	.short	10338                           # 0x2862
-	.short	7186                            # 0x1c12
-	.short	8112                            # 0x1fb0
-	.short	3166                            # 0xc5e
-	.short	11344                           # 0x2c50
-	.short	8178                            # 0x1ff2
-	.short	8160                            # 0x1fe0
-	.short	2078                            # 0x81e
-	.short	11218                           # 0x2bd2
-	.short	58256                           # 0xe390
-	.short	62466                           # 0xf402
-	.short	63424                           # 0xf7c0
-	.short	62320                           # 0xf370
-	.short	57376                           # 0xe020
-	.short	63362                           # 0xf782
-	.short	62272                           # 0xf340
-	.short	60272                           # 0xeb70
-	.short	57360                           # 0xe010
-	.short	63584                           # 0xf860
-	.short	61568                           # 0xf080
-	.short	58350                           # 0xe3ee
-	.short	59520                           # 0xe880
-	.short	65378                           # 0xff62
-	.short	60720                           # 0xed30
-	.short	61584                           # 0xf090
-	.short	56448                           # 0xdc80
-	.short	50                              # 0x32
-	.short	64674                           # 0xfca2
-	.short	59552                           # 0xe8a0
-	.short	60592                           # 0xecb0
-	.short	63648                           # 0xf8a0
-	.short	62608                           # 0xf490
-	.short	60528                           # 0xec70
-	.short	59312                           # 0xe7b0
-	.short	65458                           # 0xffb2
-	.short	61488                           # 0xf030
-	.short	62382                           # 0xf3ae
-	.short	58288                           # 0xe3b0
-	.short	866                             # 0x362
-	.short	57344                           # 0xe000
-	.short	63264                           # 0xf720
-	.short	59264                           # 0xe780
-	.short	60352                           # 0xebc0
-	.short	56222                           # 0xdb9e
-	.short	1840                            # 0x730
-	.short	58368                           # 0xe400
-	.short	61248                           # 0xef40
-	.short	56110                           # 0xdb2e
-	.short	1888                            # 0x760
-	.short	62432                           # 0xf3e0
-	.short	62512                           # 0xf430
-	.short	57454                           # 0xe06e
-	.short	64432                           # 0xfbb0
-	.short	64608                           # 0xfc60
-	.short	816                             # 0x330
-	.short	58638                           # 0xe50e
-	.short	5232                            # 0x1470
-	.short	62576                           # 0xf470
-	.short	2080                            # 0x820
-	.short	61566                           # 0xf07e
-	.short	4226                            # 0x1082
-	.short	2226                            # 0x8b2
-	.short	1136                            # 0x470
-	.short	60542                           # 0xec7e
+	.short	61185                           # 0xef01
+	.short	48094                           # 0xbbde
 	.short	6224                            # 0x1850
+	.short	12195                           # 0x2fa3
+	.short	5461                            # 0x1555
+	.short	42372                           # 0xa584
+	.short	26197                           # 0x6655
+	.short	2512                            # 0x9d0
+	.short	14646                           # 0x3936
+	.short	13363                           # 0x3433
+	.short	9298                            # 0x2452
+	.short	4262                            # 0x10a6
+	.short	6079                            # 0x17bf
+	.short	1572                            # 0x624
+	.short	62976                           # 0xf600
+	.short	50636                           # 0xc5cc
+	.short	38833                           # 0x97b1
+	.short	9833                            # 0x2669
+	.short	4126                            # 0x101e
+	.short	4240                            # 0x1090
+	.short	7246                            # 0x1c4e
+	.short	222                             # 0xde
+	.short	1070                            # 0x42e
+	.short	4224                            # 0x1080
+	.short	9118                            # 0x239e
+	.short	64526                           # 0xfc0e
+	.short	3072                            # 0xc00
+	.short	1216                            # 0x4c0
+	.short	6382                            # 0x18ee
+	.short	1022                            # 0x3fe
+	.short	1950                            # 0x79e
+	.short	65518                           # 0xffee
+	.short	6238                            # 0x185e
+	.short	63614                           # 0xf87e
+	.short	5056                            # 0x13c0
+	.short	2016                            # 0x7e0
+	.short	5246                            # 0x147e
+	.short	61598                           # 0xf09e
+	.short	2048                            # 0x800
+	.short	64608                           # 0xfc60
+	.short	4128                            # 0x1020
+	.short	62494                           # 0xf41e
+	.short	1938                            # 0x792
+	.short	992                             # 0x3e0
+	.short	7120                            # 0x1bd0
+	.short	59488                           # 0xe860
+	.short	65472                           # 0xffc0
+	.short	60482                           # 0xec42
+	.short	4288                            # 0x10c0
+	.short	57456                           # 0xe070
+	.short	2032                            # 0x7f0
+	.short	110                             # 0x6e
+	.short	60460                           # 0xec2c
+	.short	1198                            # 0x4ae
+	.short	62496                           # 0xf420
+	.short	64590                           # 0xfc4e
+	.short	62332                           # 0xf37c
+	.short	944                             # 0x3b0
+	.short	65504                           # 0xffe0
+	.short	61582                           # 0xf08e
+	.short	60620                           # 0xeccc
+	.short	3008                            # 0xbc0
+	.short	64370                           # 0xfb72
+	.short	61358                           # 0xefae
+	.short	60476                           # 0xec3c
+	.short	1088                            # 0x440
+	.short	1936                            # 0x790
+	.short	64430                           # 0xfbae
+	.short	60492                           # 0xec4c
+	.short	64592                           # 0xfc50
+	.short	980                             # 0x3d4
+	.short	61488                           # 0xf030
+	.short	60412                           # 0xebfc
+	.short	2                               # 0x2
+	.short	884                             # 0x374
+	.short	64448                           # 0xfbc0
+	.short	63438                           # 0xf7ce
+	.short	63554                           # 0xf842
+	.short	64434                           # 0xfbb2
+	.short	59424                           # 0xe820
+	.short	60560                           # 0xec90
+	.short	62530                           # 0xf442
+	.short	5008                            # 0x1390
+	.short	4160                            # 0x1040
+	.short	6190                            # 0x182e
+	.short	64670                           # 0xfc9e
+	.short	64558                           # 0xfc2e
+	.short	3184                            # 0xc70
+	.short	8060                            # 0x1f7c
+	.short	64494                           # 0xfbee
+	.short	126                             # 0x7e
+	.short	1104                            # 0x450
+	.short	6222                            # 0x184e
+	.short	878                             # 0x36e
+	.short	1870                            # 0x74e
+	.short	65440                           # 0xffa0
+	.short	6158                            # 0x180e
+	.short	63566                           # 0xf84e
+	.short	3070                            # 0xbfe
+	.short	2032                            # 0x7f0
+	.short	6112                            # 0x17e0
+	.short	62414                           # 0xf3ce
+	.short	64640                           # 0xfc80
+	.short	65520                           # 0xfff0
+	.short	5106                            # 0x13f2
+	.short	63440                           # 0xf7d0
+	.short	1968                            # 0x7b0
+	.short	64624                           # 0xfc70
+	.short	7120                            # 0x1bd0
+	.short	59536                           # 0xe890
+	.short	65504                           # 0xffe0
+	.short	60576                           # 0xeca0
+	.short	5282                            # 0x14a2
+	.short	57392                           # 0xe030
+	.short	7008                            # 0x1b60
+	.short	3102                            # 0xc1e
+	.short	63516                           # 0xf81c
+	.short	5216                            # 0x1460
+	.short	2                               # 0x2
+	.short	2126                            # 0x84e
+	.short	65356                           # 0xff4c
+	.short	5008                            # 0x1390
+	.short	1088                            # 0x440
+	.short	1054                            # 0x41e
+	.short	64556                           # 0xfc2c
+	.short	6928                            # 0x1b10
+	.short	2850                            # 0xb22
+	.short	65390                           # 0xff6e
+	.short	65500                           # 0xffdc
+	.short	5136                            # 0x1410
+	.short	4018                            # 0xfb2
+	.short	2976                            # 0xba0
+	.short	65470                           # 0xffbe
+	.short	3984                            # 0xf90
+	.short	1106                            # 0x452
+	.short	960                             # 0x3c0
+	.short	64462                           # 0xfbce
+	.short	6064                            # 0x17b0
+	.short	3972                            # 0xf84
+	.short	1104                            # 0x450
+	.short	1998                            # 0x7ce
+	.short	2144                            # 0x860
+	.short	3010                            # 0xbc2
+	.short	62576                           # 0xf470
+	.short	64656                           # 0xfc90
+	.short	18                              # 0x12
+	.short	8992                            # 0x2320
+	.short	3152                            # 0xc50
+	.short	5150                            # 0x141e
+	.short	64654                           # 0xfc8e
+	.short	3072                            # 0xc00
+	.short	4128                            # 0x1020
+	.short	8062                            # 0x1f7e
+	.short	64462                           # 0xfbce
+	.short	3134                            # 0xc3e
+	.short	1104                            # 0x450
+	.short	6208                            # 0x1840
+	.short	974                             # 0x3ce
+	.short	2926                            # 0xb6e
+	.short	65456                           # 0xffb0
+	.short	7134                            # 0x1bde
+	.short	63566                           # 0xf84e
+	.short	5040                            # 0x13b0
+	.short	2944                            # 0xb80
+	.short	6128                            # 0x17f0
+	.short	62494                           # 0xf41e
+	.short	2160                            # 0x870
+	.short	2                               # 0x2
+	.short	3198                            # 0xc7e
+	.short	62496                           # 0xf420
+	.short	2000                            # 0x7d0
+	.short	64720                           # 0xfcd0
+	.short	7136                            # 0x1be0
+	.short	60560                           # 0xec90
+	.short	65520                           # 0xfff0
+	.short	61618                           # 0xf0b2
+	.short	6226                            # 0x1852
+	.short	58464                           # 0xe460
+	.short	9058                            # 0x2362
+	.short	1182                            # 0x49e
+	.short	62572                           # 0xf46c
+	.short	4272                            # 0x10b0
+	.short	3170                            # 0xc62
+	.short	2142                            # 0x85e
+	.short	65454                           # 0xffae
+	.short	4080                            # 0xff0
+	.short	2176                            # 0x880
+	.short	142                             # 0x8e
+	.short	63644                           # 0xf89c
+	.short	6112                            # 0x17e0
+	.short	2976                            # 0xba0
+	.short	65518                           # 0xffee
+	.short	64558                           # 0xfc2e
+	.short	4238                            # 0x108e
+	.short	6130                            # 0x17f2
+	.short	3022                            # 0xbce
+	.short	63566                           # 0xf84e
+	.short	3136                            # 0xc40
+	.short	3268                            # 0xcc4
+	.short	62                              # 0x3e
+	.short	62654                           # 0xf4be
+	.short	5234                            # 0x1472
+	.short	3092                            # 0xc14
+	.short	1296                            # 0x510
+	.short	1072                            # 0x430
+	.short	1218                            # 0x4c2
+	.short	2130                            # 0x852
+	.short	62704                           # 0xf4f0
+	.short	160                             # 0xa0
+	.short	162                             # 0xa2
+	.short	2990                            # 0xbae
+	.short	3152                            # 0xc50
+	.short	5150                            # 0x141e
+	.short	64654                           # 0xfc8e
+	.short	46                              # 0x2e
+	.short	3168                            # 0xc60
+	.short	7040                            # 0x1b80
+	.short	64446                           # 0xfbbe
+	.short	3038                            # 0xbde
+	.short	1056                            # 0x420
+	.short	6176                            # 0x1820
+	.short	1790                            # 0x6fe
+	.short	1808                            # 0x710
+	.short	880                             # 0x370
+	.short	5152                            # 0x1420
+	.short	63502                           # 0xf80e
+	.short	3040                            # 0xbe0
+	.short	2896                            # 0xb50
+	.short	4112                            # 0x1010
+	.short	61456                           # 0xf010
+	.short	82                              # 0x52
+	.short	64562                           # 0xfc32
+	.short	5106                            # 0x13f2
+	.short	62464                           # 0xf400
+	.short	2852                            # 0xb24
+	.short	98                              # 0x62
+	.short	7106                            # 0x1bc2
+	.short	59536                           # 0xe890
+	.short	978                             # 0x3d2
+	.short	62498                           # 0xf422
+	.short	6210                            # 0x1842
+	.short	58448                           # 0xe450
+	.short	3040                            # 0xbe0
+	.short	142                             # 0x8e
+	.short	61532                           # 0xf05c
+	.short	2208                            # 0x8a0
+	.short	64592                           # 0xfc50
+	.short	128                             # 0x80
+	.short	63436                           # 0xf7cc
+	.short	3024                            # 0xbd0
+	.short	1026                            # 0x402
+	.short	64590                           # 0xfc4e
+	.short	62574                           # 0xf46e
+	.short	5904                            # 0x1710
+	.short	1890                            # 0x762
+	.short	64430                           # 0xfbae
+	.short	61548                           # 0xf06c
+	.short	4144                            # 0x1030
+	.short	2084                            # 0x824
+	.short	1888                            # 0x760
+	.short	61518                           # 0xf04e
+	.short	2096                            # 0x830
+	.short	1154                            # 0x482
+	.short	64592                           # 0xfc50
+	.short	61486                           # 0xf02e
+	.short	3122                            # 0xc32
+	.short	4934                            # 0x1346
+	.short	128                             # 0x80
+	.short	1022                            # 0x3fe
+	.short	1202                            # 0x4b2
+	.short	1026                            # 0x402
+	.short	63552                           # 0xf840
+	.short	64640                           # 0xfc80
+	.short	130                             # 0x82
+	.short	3038                            # 0xbde
+	.short	2128                            # 0x850
+	.short	5150                            # 0x141e
+	.short	63630                           # 0xf88e
+	.short	30                              # 0x1e
+	.short	3072                            # 0xc00
+	.short	7008                            # 0x1b60
+	.short	63470                           # 0xf7ee
+	.short	3008                            # 0xbc0
+	.short	160                             # 0xa0
+	.short	5168                            # 0x1430
+	.short	65456                           # 0xffb0
+	.short	64480                           # 0xfbe0
+	.short	64480                           # 0xfbe0
+	.short	3280                            # 0xcd0
+	.short	62640                           # 0xf4b0
+	.short	3024                            # 0xbd0
+	.short	1024                            # 0x400
+	.short	3168                            # 0xc60
+	.short	61456                           # 0xf010
+	.short	64672                           # 0xfca0
+	.short	64626                           # 0xfc72
+	.short	2144                            # 0x860
+	.short	61520                           # 0xf050
+	.short	1972                            # 0x7b4
+	.short	194                             # 0xc2
+	.short	5186                            # 0x1442
+	.short	58656                           # 0xe520
+	.short	64528                           # 0xfc10
+	.short	61570                           # 0xf082
+	.short	6162                            # 0x1812
+	.short	58496                           # 0xe480
+	.short	880                             # 0x370
+	.short	64494                           # 0xfbee
+	.short	60366                           # 0xebce
+	.short	1056                            # 0x420
+	.short	63442                           # 0xf7d2
+	.short	912                             # 0x390
+	.short	62222                           # 0xf30e
+	.short	880                             # 0x370
+	.short	882                             # 0x372
+	.short	62558                           # 0xf45e
+	.short	61372                           # 0xefbc
+	.short	3906                            # 0xf42
+	.short	63376                           # 0xf790
+	.short	62336                           # 0xf380
+	.short	59532                           # 0xe88c
+	.short	1104                            # 0x450
+	.short	1906                            # 0x772
+	.short	65438                           # 0xff9e
+	.short	59436                           # 0xe82c
+	.short	1968                            # 0x7b0
+	.short	64578                           # 0xfc42
+	.short	62480                           # 0xf410
+	.short	59438                           # 0xe82e
+	.short	3040                            # 0xbe0
+	.short	1894                            # 0x766
+	.short	64592                           # 0xfc50
+	.short	64480                           # 0xfbe0
+	.short	64722                           # 0xfcd2
+	.short	946                             # 0x3b2
+	.short	62496                           # 0xf420
+	.short	65472                           # 0xffc0
+	.short	63522                           # 0xf822
+	.short	5906                            # 0x1712
+	.short	2066                            # 0x812
+	.short	5038                            # 0x13ae
+	.short	63536                           # 0xf830
+	.short	2960                            # 0xb90
+	.short	4050                            # 0xfd2
+	.short	4960                            # 0x1360
+	.short	63344                           # 0xf770
+	.short	2046                            # 0x7fe
+	.short	96                              # 0x60
+	.short	2222                            # 0x8ae
+	.short	65376                           # 0xff60
+	.short	1856                            # 0x740
+	.short	65360                           # 0xff50
+	.short	4078                            # 0xfee
+	.short	62480                           # 0xf410
+	.short	3970                            # 0xf82
+	.short	1936                            # 0x790
+	.short	3072                            # 0xc00
+	.short	60432                           # 0xec10
+	.short	1010                            # 0x3f2
+	.short	64530                           # 0xfc12
+	.short	3026                            # 0xbd2
+	.short	64384                           # 0xfb80
+	.short	64466                           # 0xfbd2
+	.short	64642                           # 0xfc82
+	.short	4066                            # 0xfe2
+	.short	59568                           # 0xe8b0
+	.short	64498                           # 0xfbf2
+	.short	62482                           # 0xf412
+	.short	3202                            # 0xc82
+	.short	58400                           # 0xe420
+	.short	6962                            # 0x1b32
+	.short	1056                            # 0x420
+	.short	63438                           # 0xf7ce
+	.short	3138                            # 0xc42
+	.short	4018                            # 0xfb2
+	.short	3038                            # 0xbde
+	.short	64396                           # 0xfb8c
+	.short	4994                            # 0x1382
+	.short	3074                            # 0xc02
+	.short	64608                           # 0xfc60
+	.short	62668                           # 0xf4cc
+	.short	6000                            # 0x1770
+	.short	3938                            # 0xf62
+	.short	848                             # 0x350
+	.short	64510                           # 0xfbfe
+	.short	4112                            # 0x1010
+	.short	6068                            # 0x17b4
+	.short	2974                            # 0xb9e
+	.short	63534                           # 0xf82e
+	.short	4146                            # 0x1032
+	.short	3108                            # 0xc24
+	.short	1072                            # 0x430
+	.short	64510                           # 0xfbfe
+	.short	7058                            # 0x1b92
+	.short	4084                            # 0xff4
+	.short	2192                            # 0x890
+	.short	14                              # 0xe
+	.short	2240                            # 0x8c0
+	.short	2052                            # 0x804
+	.short	32                              # 0x20
+	.short	160                             # 0xa0
+	.short	2082                            # 0x822
+	.short	65456                           # 0xffb0
+	.short	2082                            # 0x822
+	.short	3056                            # 0xbf0
+	.short	62592                           # 0xf480
+	.short	63470                           # 0xf7ee
+	.short	1072                            # 0x430
+	.short	4014                            # 0xfae
+	.short	62416                           # 0xf3d0
+	.short	64464                           # 0xfbd0
+	.short	64672                           # 0xfca0
+	.short	2128                            # 0x850
+	.short	63486                           # 0xf7fe
+	.short	64320                           # 0xfb40
+	.short	64448                           # 0xfbc0
+	.short	4064                            # 0xfe0
+	.short	61472                           # 0xf020
+	.short	64546                           # 0xfc22
+	.short	64544                           # 0xfc20
+	.short	1152                            # 0x480
+	.short	58464                           # 0xe460
+	.short	63522                           # 0xf822
+	.short	63602                           # 0xf872
+	.short	98                              # 0x62
+	.short	62432                           # 0xf3e0
+	.short	65394                           # 0xff72
+	.short	34                              # 0x22
+	.short	2096                            # 0x830
+	.short	58512                           # 0xe490
+	.short	64418                           # 0xfba2
+	.short	60578                           # 0xeca2
+	.short	3122                            # 0xc32
+	.short	58384                           # 0xe410
+	.short	65474                           # 0xffc2
+	.short	63534                           # 0xf82e
+	.short	58382                           # 0xe40e
+	.short	1136                            # 0x470
+	.short	64498                           # 0xfbf2
+	.short	64574                           # 0xfc3e
+	.short	60364                           # 0xebcc
+	.short	978                             # 0x3d2
+	.short	65520                           # 0xfff0
+	.short	62638                           # 0xf4ae
+	.short	60526                           # 0xec6e
+	.short	4080                            # 0xff0
+	.short	65376                           # 0xff60
+	.short	64432                           # 0xfbb0
+	.short	62462                           # 0xf3fe
+	.short	3120                            # 0xc30
+	.short	1076                            # 0x434
+	.short	64544                           # 0xfc20
+	.short	59566                           # 0xe8ae
+	.short	1106                            # 0x452
+	.short	1090                            # 0x442
+	.short	63600                           # 0xf870
+	.short	59534                           # 0xe88e
+	.short	4098                            # 0x1002
+	.short	3972                            # 0xf84
+	.short	1056                            # 0x420
+	.short	63582                           # 0xf85e
+	.short	2178                            # 0x882
+	.short	1986                            # 0x7c2
+	.short	63648                           # 0xf8a0
+	.short	64592                           # 0xfc50
+	.short	1026                            # 0x402
+	.short	1822                            # 0x71e
+	.short	5122                            # 0x1402
+	.short	4064                            # 0xfe0
+	.short	80                              # 0x50
+	.short	912                             # 0x390
+	.short	4130                            # 0x1022
+	.short	5920                            # 0x1720
+	.short	65424                           # 0xff90
+	.short	1968                            # 0x7b0
+	.short	2130                            # 0x852
+	.short	4222                            # 0x107e
+	.short	894                             # 0x37e
+	.short	64462                           # 0xfbce
+	.short	1922                            # 0x782
+	.short	4208                            # 0x1070
+	.short	63584                           # 0xf860
+	.short	3008                            # 0xbc0
+	.short	4000                            # 0xfa0
+	.short	3168                            # 0xc60
+	.short	61552                           # 0xf070
+	.short	992                             # 0x3e0
+	.short	1104                            # 0x450
+	.short	3090                            # 0xc12
+	.short	65456                           # 0xffb0
+	.short	2850                            # 0xb22
+	.short	2160                            # 0x870
+	.short	5122                            # 0x1402
+	.short	61552                           # 0xf070
+	.short	1872                            # 0x750
+	.short	64594                           # 0xfc52
+	.short	7154                            # 0x1bf2
+	.short	60416                           # 0xec00
+	.short	1826                            # 0x722
+	.short	64526                           # 0xfc0e
+	.short	61356                           # 0xefac
+	.short	3136                            # 0xc40
+	.short	65442                           # 0xffa2
+	.short	16                              # 0x10
+	.short	62270                           # 0xf33e
+	.short	2978                            # 0xba2
+	.short	1970                            # 0x7b2
+	.short	64608                           # 0xfc60
+	.short	61566                           # 0xf07e
+	.short	7026                            # 0x1b72
+	.short	65490                           # 0xffd2
+	.short	65392                           # 0xff70
+	.short	60572                           # 0xec9c
+	.short	4176                            # 0x1050
+	.short	4036                            # 0xfc4
+	.short	1952                            # 0x7a0
+	.short	61566                           # 0xf07e
+	.short	3168                            # 0xc60
+	.short	3060                            # 0xbf4
+	.short	80                              # 0x50
+	.short	61486                           # 0xf02e
+	.short	7090                            # 0x1bb2
+	.short	5940                            # 0x1734
+	.short	2160                            # 0x870
+	.short	1022                            # 0x3fe
+	.short	3186                            # 0xc72
+	.short	4930                            # 0x1342
+	.short	64                              # 0x40
+	.short	2016                            # 0x7e0
+	.short	4082                            # 0xff2
+	.short	928                             # 0x3a0
+	.short	5104                            # 0x13f0
+	.short	2976                            # 0xba0
+	.short	64592                           # 0xfc50
+	.short	63504                           # 0xf810
+	.short	5042                            # 0x13b2
+	.short	2912                            # 0xb60
+	.short	61486                           # 0xf02e
+	.short	992                             # 0x3e0
+	.short	1122                            # 0x462
+	.short	1120                            # 0x460
+	.short	64478                           # 0xfbde
+	.short	848                             # 0x350
+	.short	834                             # 0x342
+	.short	1104                            # 0x450
+	.short	62608                           # 0xf490
+	.short	96                              # 0x60
+	.short	1138                            # 0x472
+	.short	2128                            # 0x850
+	.short	61520                           # 0xf050
+	.short	1042                            # 0x412
+	.short	50                              # 0x32
+	.short	2080                            # 0x820
+	.short	64448                           # 0xfbc0
+	.short	64450                           # 0xfbc2
+	.short	2130                            # 0x852
+	.short	4016                            # 0xfb0
+	.short	60496                           # 0xec50
+	.short	64416                           # 0xfba0
+	.short	63554                           # 0xf842
+	.short	2096                            # 0x830
+	.short	61376                           # 0xefc0
+	.short	63378                           # 0xf792
+	.short	64464                           # 0xfbd0
+	.short	57246                           # 0xdf9e
+	.short	64576                           # 0xfc40
+	.short	60416                           # 0xec00
+	.short	65424                           # 0xff90
+	.short	58222                           # 0xe36e
+	.short	64528                           # 0xfc10
+	.short	65490                           # 0xffd2
+	.short	61534                           # 0xf05e
+	.short	58492                           # 0xe47c
+	.short	1968                            # 0x7b0
+	.short	65346                           # 0xff42
+	.short	63312                           # 0xf750
+	.short	58478                           # 0xe46e
+	.short	144                             # 0x90
+	.short	82                              # 0x52
+	.short	63598                           # 0xf86e
+	.short	59502                           # 0xe86e
+	.short	64                              # 0x40
+	.short	1042                            # 0x412
+	.short	64544                           # 0xfc20
+	.short	59422                           # 0xe81e
+	.short	5072                            # 0x13d0
+	.short	962                             # 0x3c2
+	.short	64                              # 0x40
+	.short	64430                           # 0xfbae
+	.short	48                              # 0x30
+	.short	914                             # 0x392
+	.short	63520                           # 0xf820
+	.short	63504                           # 0xf810
+	.short	1954                            # 0x7a2
+	.short	61182                           # 0xeefe
+	.short	3026                            # 0xbd2
+	.short	63504                           # 0xf810
+	.short	61536                           # 0xf060
+	.short	60336                           # 0xebb0
+	.short	2066                            # 0x812
+	.short	65472                           # 0xffc0
+	.short	61392                           # 0xefd0
+	.short	61422                           # 0xefee
+	.short	64610                           # 0xfc62
+	.short	128                             # 0x80
+	.short	63374                           # 0xf78e
+	.short	60302                           # 0xeb8e
+	.short	64370                           # 0xfb72
+	.short	64670                           # 0xfc9e
+	.short	61488                           # 0xf030
+	.short	64400                           # 0xfb90
+	.short	992                             # 0x3e0
+	.short	64656                           # 0xfc90
+	.short	59472                           # 0xe850
+	.short	62530                           # 0xf442
+	.short	64514                           # 0xfc02
+	.short	2                               # 0x2
+	.short	62416                           # 0xf3d0
+	.short	63328                           # 0xf760
+	.short	1058                            # 0x422
+	.short	3906                            # 0xf42
+	.short	58480                           # 0xe470
+	.short	63218                           # 0xf6f2
+	.short	64498                           # 0xfbf2
+	.short	2016                            # 0x7e0
+	.short	61264                           # 0xef50
+	.short	62336                           # 0xf380
+	.short	62512                           # 0xf430
+	.short	54398                           # 0xd47e
+	.short	64706                           # 0xfcc2
+	.short	61474                           # 0xf022
+	.short	63600                           # 0xf870
+	.short	57422                           # 0xe04e
+	.short	66                              # 0x42
+	.short	62578                           # 0xf472
+	.short	62656                           # 0xf4c0
+	.short	58622                           # 0xe4fe
+	.short	4080                            # 0xff0
+	.short	63472                           # 0xf7f0
+	.short	63456                           # 0xf7e0
+	.short	58654                           # 0xe51e
+	.short	3232                            # 0xca0
+	.short	1026                            # 0x402
+	.short	96                              # 0x60
+	.short	58654                           # 0xe51e
+	.short	1216                            # 0x4c0
+	.short	178                             # 0xb2
+	.short	112                             # 0x70
+	.short	60542                           # 0xec7e
+	.short	5186                            # 0x1442
+	.short	3010                            # 0xbc2
+	.short	2176                            # 0x880
+	.short	65470                           # 0xffbe
+	.short	2226                            # 0x8b2
+	.short	3922                            # 0xf52
+	.short	64                              # 0x40
+	.short	64592                           # 0xfc50
+	.short	5042                            # 0x13b2
+	.short	60382                           # 0xebde
+	.short	3074                            # 0xc02
+	.short	63504                           # 0xf810
+	.short	65488                           # 0xffd0
+	.short	61342                           # 0xef9e
+	.short	3106                            # 0xc22
+	.short	1968                            # 0x7b0
+	.short	61552                           # 0xf070
+	.short	61488                           # 0xf030
+	.short	1138                            # 0x472
+	.short	1166                            # 0x48e
+	.short	65456                           # 0xffb0
+	.short	63376                           # 0xf790
+	.short	1874                            # 0x752
+	.short	2160                            # 0x870
+	.short	62688                           # 0xf4e0
+	.short	65520                           # 0xfff0
+	.short	2080                            # 0x820
+	.short	2112                            # 0x840
+	.short	61488                           # 0xf030
+	.short	64512                           # 0xfc00
+	.short	2050                            # 0x802
+	.short	96                              # 0x60
+	.short	63520                           # 0xf820
+	.short	64384                           # 0xfb80
+	.short	5074                            # 0x13d2
+	.short	3954                            # 0xf72
+	.short	61490                           # 0xf032
+	.short	64320                           # 0xfb40
+	.short	1970                            # 0x7b2
+	.short	2066                            # 0x812
+	.short	64320                           # 0xfb40
+	.short	58288                           # 0xe3b0
+	.short	63440                           # 0xf7d0
+	.short	55294                           # 0xd7fe
+	.short	1952                            # 0x7a0
+	.short	61298                           # 0xef72
+	.short	64496                           # 0xfbf0
+	.short	58286                           # 0xe3ae
+	.short	64578                           # 0xfc42
+	.short	62496                           # 0xf420
+	.short	63568                           # 0xf850
+	.short	58494                           # 0xe47e
+	.short	5008                            # 0x1390
+	.short	64384                           # 0xfb80
+	.short	64320                           # 0xfb40
+	.short	59502                           # 0xe86e
+	.short	3248                            # 0xcb0
+	.short	2018                            # 0x7e2
+	.short	1024                            # 0x400
+	.short	60478                           # 0xec3e
+	.short	2064                            # 0x810
+	.short	3058                            # 0xbf2
+	.short	976                             # 0x3d0
+	.short	59470                           # 0xe84e
+	.short	6130                            # 0x17f2
+	.short	1892                            # 0x764
+	.short	4000                            # 0xfa0
+	.short	64334                           # 0xfb4e
+	.short	3074                            # 0xc02
+	.short	2834                            # 0xb12
+	.short	1920                            # 0x780
+	.short	65504                           # 0xffe0
+	.short	6930                            # 0x1b12
+	.short	65488                           # 0xffd0
+	.short	6242                            # 0x1862
+	.short	48                              # 0x30
+	.short	64                              # 0x40
+	.short	62510                           # 0xf42e
+	.short	6194                            # 0x1832
+	.short	2992                            # 0xbb0
+	.short	64544                           # 0xfc20
+	.short	64                              # 0x40
+	.short	3312                            # 0xcf0
+	.short	2224                            # 0x8b0
+	.short	1056                            # 0x420
+	.short	64542                           # 0xfc1e
+	.short	2144                            # 0x860
+	.short	2206                            # 0x89e
+	.short	64832                           # 0xfd40
+	.short	2128                            # 0x850
+	.short	7138                            # 0x1be2
+	.short	4160                            # 0x1040
+	.short	64624                           # 0xfc70
+	.short	1138                            # 0x472
+	.short	4178                            # 0x1052
+	.short	3104                            # 0xc20
+	.short	1072                            # 0x430
+	.short	64478                           # 0xfbde
+	.short	6162                            # 0x1812
+	.short	3984                            # 0xf90
+	.short	64560                           # 0xfc30
+	.short	64416                           # 0xfba0
+	.short	5074                            # 0x13d2
+	.short	2064                            # 0x810
+	.short	2992                            # 0xbb0
+	.short	62384                           # 0xf3b0
+	.short	62512                           # 0xf430
+	.short	54302                           # 0xd41e
+	.short	1042                            # 0x412
+	.short	61424                           # 0xeff0
+	.short	16                              # 0x10
+	.short	58270                           # 0xe39e
+	.short	994                             # 0x3e2
+	.short	64560                           # 0xfc30
+	.short	62656                           # 0xf4c0
+	.short	58526                           # 0xe49e
+	.short	2048                            # 0x800
+	.short	64496                           # 0xfbf0
+	.short	62512                           # 0xf430
+	.short	60558                           # 0xec8e
+	.short	1312                            # 0x520
+	.short	2112                            # 0x840
+	.short	4016                            # 0xfb0
+	.short	61486                           # 0xf02e
+	.short	4160                            # 0x1040
+	.short	2130                            # 0x852
+	.short	2080                            # 0x820
+	.short	62462                           # 0xf3fe
+	.short	6146                            # 0x1802
+	.short	1954                            # 0x7a2
+	.short	4064                            # 0xfe0
+	.short	65390                           # 0xff6e
+	.short	3104                            # 0xc20
 	.short	2946                            # 0xb82
-	.short	2928                            # 0xb70
-	.short	63518                           # 0xf81e
-	.short	7056                            # 0x1b90
-	.short	3986                            # 0xf92
-	.short	4912                            # 0x1330
-	.short	63454                           # 0xf7de
-	.short	8976                            # 0x2310
+	.short	3968                            # 0xf80
+	.short	14                              # 0xe
+	.short	8082                            # 0x1f92
 	.size	_ZL6eeprom, 1664
 
-	.type	.L.str.125,@object              # @.str.125
+	.type	.L.str.121,@object              # @.str.121
 	.section	.rodata.str1.1,"aMS",@progbits,1
-.L.str.125:
+.L.str.121:
 	.asciz	"getTa...\n"
-	.size	.L.str.125, 10
+	.size	.L.str.121, 10
 
 	.type	_ZL9subframe1,@object           # @_ZL9subframe1
 	.section	.rodata,"a",@progbits
 	.p2align	4
 _ZL9subframe1:
-	.short	65446                           # 0xffa6
-	.short	65442                           # 0xffa2
-	.short	65448                           # 0xffa8
-	.short	65436                           # 0xff9c
-	.short	65446                           # 0xffa6
-	.short	65435                           # 0xff9b
-	.short	65446                           # 0xffa6
-	.short	65433                           # 0xff99
-	.short	65460                           # 0xffb4
-	.short	65464                           # 0xffb8
-	.short	65484                           # 0xffcc
-	.short	65446                           # 0xffa6
-	.short	65448                           # 0xffa8
-	.short	65430                           # 0xff96
-	.short	65464                           # 0xffb8
-	.short	65465                           # 0xffb9
-	.short	65482                           # 0xffca
-	.short	65446                           # 0xffa6
-	.short	65444                           # 0xffa4
-	.short	65417                           # 0xff89
-	.short	65469                           # 0xffbd
-	.short	65460                           # 0xffb4
-	.short	65475                           # 0xffc3
-	.short	65434                           # 0xff9a
-	.short	65444                           # 0xffa4
-	.short	65420                           # 0xff8c
-	.short	65437                           # 0xff9d
-	.short	65410                           # 0xff82
-	.short	65432                           # 0xff98
-	.short	65414                           # 0xff86
-	.short	65436                           # 0xff9c
-	.short	65404                           # 0xff7c
-	.short	65432                           # 0xff98
-	.short	65436                           # 0xff9c
-	.short	65429                           # 0xff95
-	.short	65433                           # 0xff99
-	.short	65433                           # 0xff99
-	.short	65431                           # 0xff97
-	.short	65426                           # 0xff92
-	.short	65436                           # 0xff9c
-	.short	65449                           # 0xffa9
-	.short	65460                           # 0xffb4
-	.short	65463                           # 0xffb7
-	.short	65453                           # 0xffad
-	.short	65433                           # 0xff99
-	.short	65426                           # 0xff92
-	.short	65454                           # 0xffae
-	.short	65467                           # 0xffbb
-	.short	65468                           # 0xffbc
-	.short	65445                           # 0xffa5
-	.short	65423                           # 0xff8f
-	.short	65422                           # 0xff8e
-	.short	65461                           # 0xffb5
-	.short	65457                           # 0xffb1
-	.short	65454                           # 0xffae
-	.short	65441                           # 0xffa1
-	.short	65431                           # 0xff97
-	.short	65419                           # 0xff8b
-	.short	65420                           # 0xff8c
-	.short	65415                           # 0xff87
-	.short	65421                           # 0xff8d
-	.short	65412                           # 0xff84
-	.short	65417                           # 0xff89
-	.short	65405                           # 0xff7d
-	.short	65444                           # 0xffa4
-	.short	65438                           # 0xff9e
-	.short	65449                           # 0xffa9
-	.short	65433                           # 0xff99
-	.short	65446                           # 0xffa6
-	.short	65434                           # 0xff9a
-	.short	65448                           # 0xffa8
-	.short	65433                           # 0xff99
-	.short	65465                           # 0xffb9
-	.short	65474                           # 0xffc2
-	.short	65489                           # 0xffd1
-	.short	65446                           # 0xffa6
-	.short	65447                           # 0xffa7
-	.short	65434                           # 0xff9a
-	.short	65481                           # 0xffc9
-	.short	65468                           # 0xffbc
-	.short	65481                           # 0xffc9
-	.short	65435                           # 0xff9b
-	.short	65443                           # 0xffa3
-	.short	65427                           # 0xff93
-	.short	65481                           # 0xffc9
-	.short	65465                           # 0xffb9
-	.short	65471                           # 0xffbf
-	.short	65426                           # 0xff92
-	.short	65442                           # 0xffa2
-	.short	65414                           # 0xff86
-	.short	65436                           # 0xff9c
-	.short	65411                           # 0xff83
-	.short	65434                           # 0xff9a
-	.short	65411                           # 0xff83
-	.short	65436                           # 0xff9c
-	.short	65404                           # 0xff7c
-	.short	65433                           # 0xff99
-	.short	65433                           # 0xff99
-	.short	65427                           # 0xff93
-	.short	65432                           # 0xff98
-	.short	65432                           # 0xff98
-	.short	65429                           # 0xff95
-	.short	65424                           # 0xff90
-	.short	65434                           # 0xff9a
-	.short	65458                           # 0xffb2
-	.short	65470                           # 0xffbe
-	.short	65465                           # 0xffb9
-	.short	65453                           # 0xffad
-	.short	65436                           # 0xff9c
-	.short	65431                           # 0xff97
-	.short	65467                           # 0xffbb
-	.short	65473                           # 0xffc1
-	.short	65458                           # 0xffb2
-	.short	65438                           # 0xff9e
-	.short	65424                           # 0xff90
-	.short	65431                           # 0xff97
-	.short	65474                           # 0xffc2
-	.short	65464                           # 0xffb8
-	.short	65439                           # 0xff9f
-	.short	65428                           # 0xff94
-	.short	65428                           # 0xff94
-	.short	65414                           # 0xff86
-	.short	65417                           # 0xff89
-	.short	65415                           # 0xff87
-	.short	65421                           # 0xff8d
-	.short	65409                           # 0xff81
-	.short	65417                           # 0xff89
-	.short	65408                           # 0xff80
-	.short	65449                           # 0xffa9
-	.short	65437                           # 0xff9d
-	.short	65450                           # 0xffaa
-	.short	65436                           # 0xff9c
-	.short	65450                           # 0xffaa
-	.short	65436                           # 0xff9c
-	.short	65447                           # 0xffa7
-	.short	65433                           # 0xff99
-	.short	65468                           # 0xffbc
-	.short	65479                           # 0xffc7
-	.short	65492                           # 0xffd4
-	.short	65451                           # 0xffab
-	.short	65448                           # 0xffa8
-	.short	65445                           # 0xffa5
-	.short	65492                           # 0xffd4
-	.short	65471                           # 0xffbf
-	.short	65476                           # 0xffc4
-	.short	65432                           # 0xff98
-	.short	65451                           # 0xffab
-	.short	65449                           # 0xffa9
-	.short	65489                           # 0xffd1
-	.short	65465                           # 0xffb9
-	.short	65455                           # 0xffaf
-	.short	65416                           # 0xff88
-	.short	65441                           # 0xffa1
-	.short	65416                           # 0xff88
-	.short	65436                           # 0xff9c
-	.short	65412                           # 0xff84
-	.short	65434                           # 0xff9a
-	.short	65411                           # 0xff83
-	.short	65436                           # 0xff9c
-	.short	65402                           # 0xff7a
-	.short	65434                           # 0xff9a
-	.short	65434                           # 0xff9a
-	.short	65430                           # 0xff96
-	.short	65437                           # 0xff9d
-	.short	65435                           # 0xff9b
-	.short	65430                           # 0xff96
-	.short	65427                           # 0xff93
-	.short	65433                           # 0xff99
-	.short	65460                           # 0xffb4
-	.short	65469                           # 0xffbd
-	.short	65469                           # 0xffbd
-	.short	65461                           # 0xffb5
-	.short	65436                           # 0xff9c
-	.short	65442                           # 0xffa2
-	.short	65473                           # 0xffc1
-	.short	65474                           # 0xffc2
-	.short	65455                           # 0xffaf
-	.short	65431                           # 0xff97
-	.short	65440                           # 0xffa0
-	.short	65456                           # 0xffb0
-	.short	65474                           # 0xffc2
-	.short	65465                           # 0xffb9
-	.short	65427                           # 0xff93
-	.short	65419                           # 0xff8b
-	.short	65425                           # 0xff91
-	.short	65413                           # 0xff85
-	.short	65415                           # 0xff87
-	.short	65415                           # 0xff87
-	.short	65420                           # 0xff8c
-	.short	65410                           # 0xff82
-	.short	65415                           # 0xff87
-	.short	65404                           # 0xff7c
-	.short	65447                           # 0xffa7
-	.short	65445                           # 0xffa5
-	.short	65455                           # 0xffaf
-	.short	65454                           # 0xffae
-	.short	65469                           # 0xffbd
-	.short	65439                           # 0xff9f
-	.short	65446                           # 0xffa6
-	.short	65431                           # 0xff97
-	.short	65467                           # 0xffbb
-	.short	65480                           # 0xffc8
-	.short	65499                           # 0xffdb
-	.short	65464                           # 0xffb8
-	.short	65452                           # 0xffac
-	.short	65460                           # 0xffb4
-	.short	65491                           # 0xffd3
-	.short	65471                           # 0xffbf
-	.short	65470                           # 0xffbe
-	.short	65431                           # 0xff97
-	.short	65472                           # 0xffc0
-	.short	65464                           # 0xffb8
-	.short	65484                           # 0xffcc
-	.short	65457                           # 0xffb1
-	.short	65445                           # 0xffa5
-	.short	65414                           # 0xff86
-	.short	65439                           # 0xff9f
-	.short	65414                           # 0xff86
-	.short	65435                           # 0xff9b
-	.short	65410                           # 0xff82
-	.short	65434                           # 0xff9a
-	.short	65412                           # 0xff84
-	.short	65435                           # 0xff9b
-	.short	65400                           # 0xff78
-	.short	65432                           # 0xff98
-	.short	65434                           # 0xff9a
-	.short	65436                           # 0xff9c
-	.short	65455                           # 0xffaf
-	.short	65458                           # 0xffb2
-	.short	65442                           # 0xffa2
-	.short	65422                           # 0xff8e
-	.short	65430                           # 0xff96
-	.short	65454                           # 0xffae
-	.short	65470                           # 0xffbe
-	.short	65475                           # 0xffc3
-	.short	65473                           # 0xffc1
-	.short	65442                           # 0xffa2
-	.short	65453                           # 0xffad
-	.short	65470                           # 0xffbe
-	.short	65472                           # 0xffc0
-	.short	65444                           # 0xffa4
-	.short	65428                           # 0xff94
-	.short	65463                           # 0xffb7
-	.short	65467                           # 0xffbb
-	.short	65467                           # 0xffbb
-	.short	65453                           # 0xffad
-	.short	65419                           # 0xff8b
-	.short	65415                           # 0xff87
-	.short	65424                           # 0xff90
-	.short	65411                           # 0xff83
-	.short	65413                           # 0xff85
-	.short	65410                           # 0xff82
-	.short	65417                           # 0xff89
-	.short	65408                           # 0xff80
-	.short	65411                           # 0xff83
-	.short	65403                           # 0xff7b
-	.short	65448                           # 0xffa8
-	.short	65442                           # 0xffa2
-	.short	65454                           # 0xffae
-	.short	65454                           # 0xffae
-	.short	65487                           # 0xffcf
-	.short	65466                           # 0xffba
-	.short	65444                           # 0xffa4
-	.short	65430                           # 0xff96
-	.short	65465                           # 0xffb9
-	.short	65476                           # 0xffc4
-	.short	65498                           # 0xffda
-	.short	65472                           # 0xffc0
-	.short	65463                           # 0xffb7
-	.short	65470                           # 0xffbe
-	.short	65493                           # 0xffd5
-	.short	65472                           # 0xffc0
-	.short	65463                           # 0xffb7
-	.short	65440                           # 0xffa0
-	.short	65487                           # 0xffcf
-	.short	65467                           # 0xffbb
-	.short	65481                           # 0xffc9
-	.short	65441                           # 0xffa1
-	.short	65436                           # 0xff9c
-	.short	65411                           # 0xff83
-	.short	65435                           # 0xff9b
-	.short	65414                           # 0xff86
-	.short	65429                           # 0xff95
-	.short	65404                           # 0xff7c
-	.short	65434                           # 0xff9a
-	.short	65408                           # 0xff80
-	.short	65434                           # 0xff9a
-	.short	65400                           # 0xff78
-	.short	65431                           # 0xff97
-	.short	65428                           # 0xff94
-	.short	65428                           # 0xff94
-	.short	65442                           # 0xffa2
-	.short	65471                           # 0xffbf
-	.short	65468                           # 0xffbc
-	.short	65421                           # 0xff8d
-	.short	65430                           # 0xff96
-	.short	65449                           # 0xffa9
-	.short	65464                           # 0xffb8
-	.short	65472                           # 0xffc0
-	.short	65473                           # 0xffc1
-	.short	65456                           # 0xffb0
-	.short	65465                           # 0xffb9
-	.short	65469                           # 0xffbd
-	.short	65473                           # 0xffc1
-	.short	65444                           # 0xffa4
-	.short	65437                           # 0xff9d
-	.short	65463                           # 0xffb7
-	.short	65468                           # 0xffbc
-	.short	65454                           # 0xffae
-	.short	65431                           # 0xff97
-	.short	65412                           # 0xff84
-	.short	65411                           # 0xff83
-	.short	65418                           # 0xff8a
-	.short	65408                           # 0xff80
-	.short	65408                           # 0xff80
-	.short	65406                           # 0xff7e
-	.short	65417                           # 0xff89
-	.short	65406                           # 0xff7e
-	.short	65411                           # 0xff83
-	.short	65403                           # 0xff7b
-	.short	65449                           # 0xffa9
-	.short	65439                           # 0xff9f
-	.short	65449                           # 0xffa9
-	.short	65442                           # 0xffa2
-	.short	65492                           # 0xffd4
-	.short	65483                           # 0xffcb
-	.short	65465                           # 0xffb9
-	.short	65434                           # 0xff9a
-	.short	65463                           # 0xffb7
-	.short	65476                           # 0xffc4
-	.short	65495                           # 0xffd7
-	.short	65477                           # 0xffc5
-	.short	65491                           # 0xffd3
-	.short	65479                           # 0xffc7
-	.short	65494                           # 0xffd6
-	.short	65468                           # 0xffbc
-	.short	65468                           # 0xffbc
-	.short	65460                           # 0xffb4
-	.short	65488                           # 0xffd0
-	.short	65466                           # 0xffba
-	.short	65464                           # 0xffb8
-	.short	65422                           # 0xff8e
-	.short	65435                           # 0xff9b
-	.short	65409                           # 0xff81
-	.short	65437                           # 0xff9d
-	.short	65414                           # 0xff86
-	.short	65433                           # 0xff99
-	.short	65408                           # 0xff80
-	.short	65430                           # 0xff96
-	.short	65410                           # 0xff82
-	.short	65431                           # 0xff97
-	.short	65398                           # 0xff76
-	.short	65430                           # 0xff96
-	.short	65430                           # 0xff96
-	.short	65424                           # 0xff90
-	.short	65435                           # 0xff9b
-	.short	65470                           # 0xffbe
-	.short	65473                           # 0xffc1
-	.short	65448                           # 0xffa8
-	.short	65440                           # 0xffa0
-	.short	65447                           # 0xffa7
-	.short	65464                           # 0xffb8
-	.short	65473                           # 0xffc1
-	.short	65475                           # 0xffc3
-	.short	65478                           # 0xffc6
-	.short	65473                           # 0xffc1
-	.short	65469                           # 0xffbd
-	.short	65472                           # 0xffc0
-	.short	65464                           # 0xffb8
-	.short	65458                           # 0xffb2
-	.short	65462                           # 0xffb6
-	.short	65464                           # 0xffb8
-	.short	65436                           # 0xff9c
-	.short	65417                           # 0xff89
-	.short	65410                           # 0xff82
-	.short	65411                           # 0xff83
-	.short	65421                           # 0xff8d
-	.short	65408                           # 0xff80
-	.short	65411                           # 0xff83
-	.short	65409                           # 0xff81
-	.short	65414                           # 0xff86
-	.short	65406                           # 0xff7e
-	.short	65409                           # 0xff81
-	.short	65401                           # 0xff79
-	.short	65440                           # 0xffa0
-	.short	65438                           # 0xff9e
-	.short	65446                           # 0xffa6
-	.short	65434                           # 0xff9a
-	.short	65464                           # 0xffb8
-	.short	65477                           # 0xffc5
-	.short	65490                           # 0xffd2
-	.short	65459                           # 0xffb3
-	.short	65476                           # 0xffc4
-	.short	65481                           # 0xffc9
-	.short	65494                           # 0xffd6
-	.short	65475                           # 0xffc3
-	.short	65490                           # 0xffd2
-	.short	65478                           # 0xffc6
-	.short	65491                           # 0xffd3
-	.short	65470                           # 0xffbe
-	.short	65489                           # 0xffd1
-	.short	65469                           # 0xffbd
-	.short	65484                           # 0xffcc
-	.short	65458                           # 0xffb2
-	.short	65448                           # 0xffa8
-	.short	65410                           # 0xff82
-	.short	65433                           # 0xff99
-	.short	65410                           # 0xff82
-	.short	65437                           # 0xff9d
-	.short	65414                           # 0xff86
-	.short	65432                           # 0xff98
-	.short	65407                           # 0xff7f
-	.short	65432                           # 0xff98
-	.short	65413                           # 0xff85
-	.short	65435                           # 0xff9b
-	.short	65402                           # 0xff7a
-	.short	65421                           # 0xff8d
-	.short	65423                           # 0xff8f
-	.short	65417                           # 0xff89
-	.short	65425                           # 0xff91
-	.short	65440                           # 0xffa0
-	.short	65457                           # 0xffb1
-	.short	65464                           # 0xffb8
-	.short	65473                           # 0xffc1
-	.short	65472                           # 0xffc0
-	.short	65472                           # 0xffc0
-	.short	65468                           # 0xffbc
-	.short	65474                           # 0xffc2
-	.short	65471                           # 0xffbf
-	.short	65471                           # 0xffbf
-	.short	65464                           # 0xffb8
-	.short	65468                           # 0xffbc
-	.short	65469                           # 0xffbd
-	.short	65463                           # 0xffb7
-	.short	65457                           # 0xffb1
-	.short	65456                           # 0xffb0
-	.short	65423                           # 0xff8f
-	.short	65413                           # 0xff85
-	.short	65408                           # 0xff80
-	.short	65413                           # 0xff85
-	.short	65419                           # 0xff8b
-	.short	65412                           # 0xff84
-	.short	65410                           # 0xff82
-	.short	65412                           # 0xff84
-	.short	65427                           # 0xff93
-	.short	65419                           # 0xff8b
-	.short	65413                           # 0xff85
-	.short	65406                           # 0xff7e
-	.short	65438                           # 0xff9e
-	.short	65436                           # 0xff9c
-	.short	65438                           # 0xff9e
-	.short	65430                           # 0xff96
-	.short	65448                           # 0xffa8
-	.short	65454                           # 0xffae
-	.short	65491                           # 0xffd3
-	.short	65479                           # 0xffc7
-	.short	65490                           # 0xffd2
-	.short	65479                           # 0xffc7
-	.short	65497                           # 0xffd9
-	.short	65478                           # 0xffc6
-	.short	65495                           # 0xffd7
-	.short	65478                           # 0xffc6
-	.short	65489                           # 0xffd1
-	.short	65471                           # 0xffbf
-	.short	65490                           # 0xffd2
-	.short	65469                           # 0xffbd
-	.short	65480                           # 0xffc8
-	.short	65447                           # 0xffa7
-	.short	65439                           # 0xff9f
-	.short	65419                           # 0xff8b
-	.short	65432                           # 0xff98
-	.short	65412                           # 0xff84
-	.short	65438                           # 0xff9e
-	.short	65420                           # 0xff8c
-	.short	65457                           # 0xffb1
-	.short	65441                           # 0xffa1
-	.short	65473                           # 0xffc1
-	.short	65450                           # 0xffaa
-	.short	65454                           # 0xffae
-	.short	65412                           # 0xff84
-	.short	65418                           # 0xff8a
-	.short	65420                           # 0xff8c
-	.short	65408                           # 0xff80
-	.short	65422                           # 0xff8e
-	.short	65427                           # 0xff93
-	.short	65431                           # 0xff97
-	.short	65461                           # 0xffb5
-	.short	65472                           # 0xffc0
-	.short	65470                           # 0xffbe
-	.short	65470                           # 0xffbe
-	.short	65470                           # 0xffbe
-	.short	65478                           # 0xffc6
-	.short	65475                           # 0xffc3
-	.short	65471                           # 0xffbf
-	.short	65462                           # 0xffb6
-	.short	65468                           # 0xffbc
-	.short	65470                           # 0xffbe
-	.short	65463                           # 0xffb7
-	.short	65452                           # 0xffac
-	.short	65448                           # 0xffa8
-	.short	65418                           # 0xff8a
-	.short	65408                           # 0xff80
-	.short	65408                           # 0xff80
-	.short	65410                           # 0xff82
-	.short	65426                           # 0xff92
-	.short	65423                           # 0xff8f
-	.short	65444                           # 0xffa4
-	.short	65447                           # 0xffa7
-	.short	65457                           # 0xffb1
-	.short	65447                           # 0xffa7
-	.short	65422                           # 0xff8e
-	.short	65410                           # 0xff82
-	.short	65442                           # 0xffa2
-	.short	65435                           # 0xff9b
-	.short	65439                           # 0xff9f
-	.short	65427                           # 0xff93
-	.short	65446                           # 0xffa6
-	.short	65442                           # 0xffa2
-	.short	65486                           # 0xffce
-	.short	65474                           # 0xffc2
-	.short	65495                           # 0xffd7
-	.short	65485                           # 0xffcd
-	.short	65499                           # 0xffdb
-	.short	65483                           # 0xffcb
-	.short	65499                           # 0xffdb
-	.short	65482                           # 0xffca
-	.short	65492                           # 0xffd4
-	.short	65473                           # 0xffc1
-	.short	65490                           # 0xffd2
-	.short	65468                           # 0xffbc
-	.short	65479                           # 0xffc7
-	.short	65446                           # 0xffa6
-	.short	65440                           # 0xffa0
-	.short	65418                           # 0xff8a
-	.short	65435                           # 0xff9b
-	.short	65413                           # 0xff85
-	.short	65465                           # 0xffb9
-	.short	65455                           # 0xffaf
-	.short	65474                           # 0xffc2
-	.short	65452                           # 0xffac
-	.short	65456                           # 0xffb0
-	.short	65424                           # 0xff90
-	.short	65436                           # 0xff9c
-	.short	65401                           # 0xff79
-	.short	65418                           # 0xff8a
-	.short	65419                           # 0xff8b
-	.short	65408                           # 0xff80
-	.short	65421                           # 0xff8d
-	.short	65423                           # 0xff8f
-	.short	65426                           # 0xff92
-	.short	65459                           # 0xffb3
-	.short	65468                           # 0xffbc
-	.short	65474                           # 0xffc2
-	.short	65473                           # 0xffc1
-	.short	65469                           # 0xffbd
-	.short	65476                           # 0xffc4
-	.short	65478                           # 0xffc6
-	.short	65473                           # 0xffc1
-	.short	65464                           # 0xffb8
-	.short	65468                           # 0xffbc
-	.short	65466                           # 0xffba
-	.short	65461                           # 0xffb5
-	.short	65451                           # 0xffab
-	.short	65449                           # 0xffa9
-	.short	65419                           # 0xff8b
-	.short	65411                           # 0xff83
-	.short	65408                           # 0xff80
-	.short	65419                           # 0xff8b
-	.short	65458                           # 0xffb2
-	.short	65449                           # 0xffa9
-	.short	65453                           # 0xffad
-	.short	65447                           # 0xffa7
-	.short	65425                           # 0xff91
-	.short	65413                           # 0xff85
-	.short	65407                           # 0xff7f
-	.short	65400                           # 0xff78
-	.short	65437                           # 0xff9d
-	.short	65432                           # 0xff98
-	.short	65438                           # 0xff9e
-	.short	65427                           # 0xff93
-	.short	65439                           # 0xff9f
-	.short	65435                           # 0xff9b
-	.short	65479                           # 0xffc7
-	.short	65474                           # 0xffc2
-	.short	65491                           # 0xffd3
-	.short	65484                           # 0xffcc
-	.short	65497                           # 0xffd9
-	.short	65482                           # 0xffca
-	.short	65497                           # 0xffd9
-	.short	65485                           # 0xffcd
-	.short	65492                           # 0xffd4
-	.short	65471                           # 0xffbf
-	.short	65489                           # 0xffd1
-	.short	65468                           # 0xffbc
-	.short	65479                           # 0xffc7
-	.short	65457                           # 0xffb1
-	.short	65444                           # 0xffa4
-	.short	65419                           # 0xff8b
-	.short	65455                           # 0xffaf
-	.short	65449                           # 0xffa9
-	.short	65479                           # 0xffc7
-	.short	65461                           # 0xffb5
-	.short	65466                           # 0xffba
-	.short	65423                           # 0xff8f
-	.short	65436                           # 0xff9c
-	.short	65412                           # 0xff84
-	.short	65429                           # 0xff95
-	.short	65397                           # 0xff75
-	.short	65411                           # 0xff83
-	.short	65416                           # 0xff88
-	.short	65405                           # 0xff7d
-	.short	65416                           # 0xff88
-	.short	65416                           # 0xff88
-	.short	65420                           # 0xff8c
-	.short	65448                           # 0xffa8
-	.short	65465                           # 0xffb9
-	.short	65467                           # 0xffbb
-	.short	65471                           # 0xffbf
-	.short	65468                           # 0xffbc
-	.short	65476                           # 0xffc4
-	.short	65472                           # 0xffc0
-	.short	65473                           # 0xffc1
-	.short	65462                           # 0xffb6
-	.short	65468                           # 0xffbc
-	.short	65467                           # 0xffbb
-	.short	65460                           # 0xffb4
-	.short	65453                           # 0xffad
-	.short	65460                           # 0xffb4
-	.short	65436                           # 0xff9c
-	.short	65425                           # 0xff91
-	.short	65442                           # 0xffa2
-	.short	65448                           # 0xffa8
-	.short	65462                           # 0xffb6
-	.short	65451                           # 0xffab
-	.short	65420                           # 0xff8c
-	.short	65418                           # 0xff8a
-	.short	65412                           # 0xff84
-	.short	65403                           # 0xff7b
-	.short	65402                           # 0xff7a
-	.short	65396                           # 0xff74
-	.short	65429                           # 0xff95
-	.short	65430                           # 0xff96
-	.short	65433                           # 0xff99
-	.short	65423                           # 0xff8f
-	.short	65439                           # 0xff9f
-	.short	65435                           # 0xff9b
-	.short	65475                           # 0xffc3
-	.short	65468                           # 0xffbc
-	.short	65488                           # 0xffd0
-	.short	65482                           # 0xffca
-	.short	65495                           # 0xffd7
-	.short	65481                           # 0xffc9
-	.short	65496                           # 0xffd8
-	.short	65482                           # 0xffca
-	.short	65492                           # 0xffd4
-	.short	65471                           # 0xffbf
-	.short	65485                           # 0xffcd
-	.short	65469                           # 0xffbd
-	.short	65483                           # 0xffcb
-	.short	65461                           # 0xffb5
-	.short	65479                           # 0xffc7
-	.short	65461                           # 0xffb5
-	.short	65473                           # 0xffc1
-	.short	65453                           # 0xffad
-	.short	65474                           # 0xffc2
-	.short	65441                           # 0xffa1
-	.short	65438                           # 0xff9e
-	.short	65409                           # 0xff81
-	.short	65430                           # 0xff96
-	.short	65411                           # 0xff83
-	.short	65425                           # 0xff91
-	.short	65397                           # 0xff75
-	.short	65404                           # 0xff7c
-	.short	65411                           # 0xff83
-	.short	65398                           # 0xff76
-	.short	65413                           # 0xff85
-	.short	65416                           # 0xff88
-	.short	65417                           # 0xff89
-	.short	65442                           # 0xffa2
-	.short	65459                           # 0xffb3
-	.short	65462                           # 0xffb6
-	.short	65465                           # 0xffb9
-	.short	65462                           # 0xffb6
-	.short	65473                           # 0xffc1
-	.short	65469                           # 0xffbd
-	.short	65470                           # 0xffbe
-	.short	65457                           # 0xffb1
-	.short	65463                           # 0xffb7
-	.short	65461                           # 0xffb5
-	.short	65454                           # 0xffae
-	.short	65450                           # 0xffaa
-	.short	65456                           # 0xffb0
-	.short	65457                           # 0xffb1
-	.short	65451                           # 0xffab
-	.short	65443                           # 0xffa3
-	.short	65449                           # 0xffa9
-	.short	65440                           # 0xffa0
-	.short	65421                           # 0xff8d
-	.short	65405                           # 0xff7d
-	.short	65404                           # 0xff7c
-	.short	65406                           # 0xff7e
-	.short	65396                           # 0xff74
-	.short	65398                           # 0xff76
-	.short	65394                           # 0xff72
-	.short	65430                           # 0xff96
-	.short	65429                           # 0xff95
-	.short	65432                           # 0xff98
-	.short	65423                           # 0xff8f
-	.short	65435                           # 0xff9b
-	.short	65433                           # 0xff99
-	.short	65469                           # 0xffbd
-	.short	65462                           # 0xffb6
-	.short	65483                           # 0xffcb
-	.short	65475                           # 0xffc3
-	.short	65488                           # 0xffd0
-	.short	65475                           # 0xffc3
-	.short	65491                           # 0xffd3
-	.short	65478                           # 0xffc6
-	.short	65481                           # 0xffc9
-	.short	65465                           # 0xffb9
-	.short	65481                           # 0xffc9
-	.short	65465                           # 0xffb9
-	.short	65479                           # 0xffc7
-	.short	65459                           # 0xffb3
-	.short	65478                           # 0xffc6
-	.short	65459                           # 0xffb3
-	.short	65469                           # 0xffbd
-	.short	65447                           # 0xffa7
-	.short	65442                           # 0xffa2
-	.short	65417                           # 0xff89
-	.short	65425                           # 0xff91
-	.short	65406                           # 0xff7e
-	.short	65424                           # 0xff90
-	.short	65408                           # 0xff80
-	.short	65420                           # 0xff8c
-	.short	65399                           # 0xff77
-	.short	65393                           # 0xff71
-	.short	65400                           # 0xff78
-	.short	65389                           # 0xff6d
-	.short	65399                           # 0xff77
-	.short	65400                           # 0xff78
-	.short	65410                           # 0xff82
-	.short	65427                           # 0xff93
-	.short	65441                           # 0xffa1
-	.short	65446                           # 0xffa6
-	.short	65448                           # 0xffa8
-	.short	65446                           # 0xffa6
-	.short	65454                           # 0xffae
-	.short	65454                           # 0xffae
-	.short	65451                           # 0xffab
-	.short	65439                           # 0xff9f
-	.short	65446                           # 0xffa6
-	.short	65445                           # 0xffa5
-	.short	65443                           # 0xffa3
-	.short	65437                           # 0xff9d
-	.short	65442                           # 0xffa2
-	.short	65444                           # 0xffa4
-	.short	65437                           # 0xff9d
-	.short	65426                           # 0xff92
-	.short	65428                           # 0xff94
-	.short	65404                           # 0xff7c
-	.short	65394                           # 0xff72
-	.short	65387                           # 0xff6b
-	.short	65391                           # 0xff6f
-	.short	65393                           # 0xff71
-	.short	65388                           # 0xff6c
-	.short	65386                           # 0xff6a
-	.short	65384                           # 0xff68
-	.short	20276                           # 0x4f34
-	.short	6436                            # 0x1924
-	.short	32767                           # 0x7fff
-	.short	6436                            # 0x1924
-	.short	32767                           # 0x7fff
-	.short	6434                            # 0x1922
-	.short	32767                           # 0x7fff
-	.short	6434                            # 0x1922
-	.short	65446                           # 0xffa6
-	.short	52748                           # 0xce0c
-	.short	6240                            # 0x1860
-	.short	55062                           # 0xd716
-	.short	65528                           # 0xfff8
-	.short	8                               # 0x8
-	.short	65535                           # 0xffff
-	.short	65534                           # 0xfffe
-	.short	6161                            # 0x1811
-	.short	973                             # 0x3cd
-	.short	608                             # 0x260
-	.short	32767                           # 0x7fff
-	.short	6161                            # 0x1811
-	.short	973                             # 0x3cd
-	.short	608                             # 0x260
-	.short	32767                           # 0x7fff
-	.short	1                               # 0x1
-	.short	1                               # 0x1
-	.short	1                               # 0x1
-	.short	1                               # 0x1
-	.short	1                               # 0x1
-	.short	1                               # 0x1
-	.short	1                               # 0x1
-	.short	1                               # 0x1
-	.short	1609                            # 0x649
-	.short	32767                           # 0x7fff
-	.short	6436                            # 0x1924
-	.short	32767                           # 0x7fff
-	.short	6436                            # 0x1924
-	.short	32767                           # 0x7fff
-	.short	6434                            # 0x1922
-	.short	32767                           # 0x7fff
-	.short	65448                           # 0xffa8
-	.short	62737                           # 0xf511
-	.short	53152                           # 0xcfa0
-	.short	55126                           # 0xd756
-	.short	6                               # 0x6
-	.short	65533                           # 0xfffd
-	.short	65532                           # 0xfffc
-	.short	65535                           # 0xffff
-	.short	230                             # 0xe6
+	.short	64                              # 0x40
+	.short	70                              # 0x46
+	.short	75                              # 0x4b
+	.short	92                              # 0x5c
+	.short	151                             # 0x97
+	.short	186                             # 0xba
+	.short	214                             # 0xd6
+	.short	244                             # 0xf4
+	.short	405                             # 0x195
+	.short	490                             # 0x1ea
+	.short	645                             # 0x285
+	.short	859                             # 0x35b
+	.short	1012                            # 0x3f4
+	.short	1263                            # 0x4ef
+	.short	1328                            # 0x530
+	.short	1261                            # 0x4ed
+	.short	1132                            # 0x46c
+	.short	1068                            # 0x42c
+	.short	690                             # 0x2b2
+	.short	563                             # 0x233
+	.short	435                             # 0x1b3
+	.short	261                             # 0x105
+	.short	277                             # 0x115
+	.short	78                              # 0x4e
+	.short	182                             # 0xb6
+	.short	34                              # 0x22
+	.short	82                              # 0x52
+	.short	2                               # 0x2
+	.short	63                              # 0x3f
+	.short	20                              # 0x14
+	.short	19                              # 0x13
+	.short	65512                           # 0xffe8
+	.short	62                              # 0x3e
+	.short	62                              # 0x3e
+	.short	70                              # 0x46
+	.short	78                              # 0x4e
+	.short	175                             # 0xaf
+	.short	156                             # 0x9c
+	.short	231                             # 0xe7
+	.short	227                             # 0xe3
+	.short	412                             # 0x19c
+	.short	459                             # 0x1cb
+	.short	770                             # 0x302
+	.short	752                             # 0x2f0
+	.short	1256                            # 0x4e8
+	.short	1169                            # 0x491
+	.short	1379                            # 0x563
+	.short	1398                            # 0x576
+	.short	1248                            # 0x4e0
+	.short	1038                            # 0x40e
+	.short	721                             # 0x2d1
+	.short	618                             # 0x26a
+	.short	331                             # 0x14b
+	.short	408                             # 0x198
+	.short	118                             # 0x76
+	.short	235                             # 0xeb
+	.short	61                              # 0x3d
+	.short	135                             # 0x87
+	.short	7                               # 0x7
+	.short	53                              # 0x35
+	.short	33                              # 0x21
+	.short	35                              # 0x23
+	.short	65531                           # 0xfffb
+	.short	65522                           # 0xfff2
+	.short	61                              # 0x3d
+	.short	62                              # 0x3e
+	.short	85                              # 0x55
 	.short	95                              # 0x5f
-	.short	9921                            # 0x26c1
-	.short	55                              # 0x37
-	.short	230                             # 0xe6
-	.short	95                              # 0x5f
-	.short	9921                            # 0x26c1
-	.short	55                              # 0x37
-	.short	1                               # 0x1
-	.short	1                               # 0x1
-	.short	1                               # 0x1
-	.short	1                               # 0x1
-	.short	1                               # 0x1
-	.short	1                               # 0x1
-	.short	1                               # 0x1
-	.short	1                               # 0x1
-	.short	6401                            # 0x1901
+	.short	167                             # 0xa7
+	.short	239                             # 0xef
+	.short	219                             # 0xdb
+	.short	307                             # 0x133
+	.short	439                             # 0x1b7
+	.short	544                             # 0x220
+	.short	743                             # 0x2e7
+	.short	1035                            # 0x40b
+	.short	1324                            # 0x52c
+	.short	1660                            # 0x67c
+	.short	1691                            # 0x69b
+	.short	1611                            # 0x64b
+	.short	1418                            # 0x58a
+	.short	1386                            # 0x56a
+	.short	890                             # 0x37a
+	.short	633                             # 0x279
+	.short	545                             # 0x221
+	.short	301                             # 0x12d
+	.short	339                             # 0x153
+	.short	92                              # 0x5c
+	.short	211                             # 0xd3
+	.short	47                              # 0x2f
+	.short	92                              # 0x5c
 	.short	0                               # 0x0
+	.short	59                              # 0x3b
+	.short	12                              # 0xc
+	.short	19                              # 0x13
+	.short	65509                           # 0xffe5
+	.short	47                              # 0x2f
+	.short	54                              # 0x36
+	.short	74                              # 0x4a
+	.short	92                              # 0x5c
+	.short	208                             # 0xd0
+	.short	172                             # 0xac
+	.short	302                             # 0x12e
+	.short	237                             # 0xed
+	.short	468                             # 0x1d4
+	.short	484                             # 0x1e4
+	.short	889                             # 0x379
+	.short	917                             # 0x395
+	.short	1687                            # 0x697
+	.short	1610                            # 0x64a
+	.short	1757                            # 0x6dd
+	.short	1806                            # 0x70e
+	.short	1646                            # 0x66e
+	.short	1300                            # 0x514
+	.short	868                             # 0x364
+	.short	809                             # 0x329
+	.short	402                             # 0x192
+	.short	495                             # 0x1ef
+	.short	125                             # 0x7d
+	.short	282                             # 0x11a
+	.short	71                              # 0x47
+	.short	171                             # 0xab
+	.short	11                              # 0xb
+	.short	54                              # 0x36
+	.short	23                              # 0x17
+	.short	33                              # 0x21
+	.short	65526                           # 0xfff6
+	.short	65530                           # 0xfffa
+	.short	60                              # 0x3c
+	.short	56                              # 0x38
+	.short	93                              # 0x5d
+	.short	100                             # 0x64
+	.short	200                             # 0xc8
+	.short	264                             # 0x108
+	.short	252                             # 0xfc
+	.short	397                             # 0x18d
+	.short	456                             # 0x1c8
+	.short	606                             # 0x25e
+	.short	921                             # 0x399
+	.short	1277                            # 0x4fd
+	.short	1980                            # 0x7bc
+	.short	2292                            # 0x8f4
+	.short	2320                            # 0x910
+	.short	2172                            # 0x87c
+	.short	1776                            # 0x6f0
+	.short	1836                            # 0x72c
+	.short	1338                            # 0x53a
+	.short	967                             # 0x3c7
+	.short	711                             # 0x2c7
+	.short	346                             # 0x15a
+	.short	423                             # 0x1a7
+	.short	104                             # 0x68
+	.short	259                             # 0x103
+	.short	65                              # 0x41
+	.short	111                             # 0x6f
+	.short	10                              # 0xa
+	.short	82                              # 0x52
+	.short	17                              # 0x11
+	.short	38                              # 0x26
+	.short	65516                           # 0xffec
+	.short	44                              # 0x2c
+	.short	45                              # 0x2d
+	.short	70                              # 0x46
+	.short	100                             # 0x64
+	.short	223                             # 0xdf
+	.short	205                             # 0xcd
+	.short	387                             # 0x183
+	.short	285                             # 0x11d
+	.short	571                             # 0x23b
+	.short	512                             # 0x200
+	.short	1080                            # 0x438
+	.short	1264                            # 0x4f0
+	.short	2427                            # 0x97b
+	.short	2613                            # 0xa35
+	.short	2483                            # 0x9b3
+	.short	2444                            # 0x98c
+	.short	2242                            # 0x8c2
+	.short	1967                            # 0x7af
+	.short	1525                            # 0x5f5
+	.short	1308                            # 0x51c
+	.short	530                             # 0x212
+	.short	660                             # 0x294
+	.short	158                             # 0x9e
+	.short	387                             # 0x183
+	.short	90                              # 0x5a
+	.short	210                             # 0xd2
+	.short	23                              # 0x17
+	.short	88                              # 0x58
+	.short	26                              # 0x1a
+	.short	68                              # 0x44
+	.short	65530                           # 0xfffa
+	.short	14                              # 0xe
+	.short	42                              # 0x2a
+	.short	53                              # 0x35
+	.short	70                              # 0x46
+	.short	105                             # 0x69
+	.short	205                             # 0xcd
+	.short	278                             # 0x116
+	.short	348                             # 0x15c
+	.short	499                             # 0x1f3
+	.short	529                             # 0x211
+	.short	820                             # 0x334
+	.short	1344                            # 0x540
+	.short	2058                            # 0x80a
+	.short	4073                            # 0xfe9
+	.short	4406                            # 0x1136
+	.short	4128                            # 0x1020
+	.short	3380                            # 0xd34
+	.short	3650                            # 0xe42
+	.short	4246                            # 0x1096
+	.short	3658                            # 0xe4a
+	.short	2540                            # 0x9ec
+	.short	1152                            # 0x480
+	.short	530                             # 0x212
+	.short	590                             # 0x24e
+	.short	146                             # 0x92
+	.short	324                             # 0x144
+	.short	76                              # 0x4c
+	.short	162                             # 0xa2
+	.short	12                              # 0xc
+	.short	122                             # 0x7a
+	.short	21                              # 0x15
+	.short	70                              # 0x46
+	.short	65518                           # 0xffee
+	.short	35                              # 0x23
+	.short	34                              # 0x22
+	.short	74                              # 0x4a
+	.short	65                              # 0x41
+	.short	235                             # 0xeb
+	.short	215                             # 0xd7
+	.short	434                             # 0x1b2
+	.short	389                             # 0x185
+	.short	819                             # 0x333
+	.short	695                             # 0x2b7
+	.short	1926                            # 0x786
+	.short	2511                            # 0x9cf
+	.short	5561                            # 0x15b9
+	.short	6537                            # 0x1989
+	.short	5440                            # 0x1540
+	.short	4374                            # 0x1116
+	.short	5785                            # 0x1699
+	.short	6292                            # 0x1894
+	.short	5305                            # 0x14b9
+	.short	4151                            # 0x1037
+	.short	955                             # 0x3bb
+	.short	1065                            # 0x429
+	.short	223                             # 0xdf
+	.short	557                             # 0x22d
+	.short	110                             # 0x6e
+	.short	272                             # 0x110
+	.short	31                              # 0x1f
+	.short	126                             # 0x7e
+	.short	33                              # 0x21
+	.short	96                              # 0x60
+	.short	65534                           # 0xfffe
+	.short	37                              # 0x25
+	.short	45                              # 0x2d
+	.short	49                              # 0x31
+	.short	59                              # 0x3b
+	.short	109                             # 0x6d
+	.short	162                             # 0xa2
+	.short	308                             # 0x134
+	.short	392                             # 0x188
+	.short	572                             # 0x23c
+	.short	832                             # 0x340
+	.short	1383                            # 0x567
+	.short	3556                            # 0xde4
+	.short	6000                            # 0x1770
+	.short	7453                            # 0x1d1d
+	.short	7504                            # 0x1d50
+	.short	4862                            # 0x12fe
+	.short	4630                            # 0x1216
+	.short	5474                            # 0x1562
+	.short	6661                            # 0x1a05
+	.short	6244                            # 0x1864
+	.short	6027                            # 0x178b
+	.short	3074                            # 0xc02
+	.short	1378                            # 0x562
+	.short	764                             # 0x2fc
+	.short	223                             # 0xdf
+	.short	433                             # 0x1b1
+	.short	89                              # 0x59
+	.short	173                             # 0xad
+	.short	22                              # 0x16
+	.short	122                             # 0x7a
+	.short	24                              # 0x18
+	.short	72                              # 0x48
+	.short	65521                           # 0xfff1
+	.short	33                              # 0x21
+	.short	37                              # 0x25
+	.short	61                              # 0x3d
+	.short	58                              # 0x3a
+	.short	241                             # 0xf1
+	.short	173                             # 0xad
+	.short	492                             # 0x1ec
+	.short	455                             # 0x1c7
+	.short	1186                            # 0x4a2
+	.short	1273                            # 0x4f9
+	.short	5250                            # 0x1482
+	.short	6399                            # 0x18ff
+	.short	6391                            # 0x18f7
+	.short	4915                            # 0x1333
+	.short	4152                            # 0x1038
+	.short	3442                            # 0xd72
+	.short	4982                            # 0x1376
+	.short	4750                            # 0x128e
+	.short	5558                            # 0x15b6
+	.short	5675                            # 0x162b
+	.short	3712                            # 0xe80
+	.short	2605                            # 0xa2d
+	.short	371                             # 0x173
+	.short	582                             # 0x246
+	.short	129                             # 0x81
+	.short	313                             # 0x139
+	.short	40                              # 0x28
+	.short	118                             # 0x76
+	.short	35                              # 0x23
+	.short	84                              # 0x54
+	.short	65533                           # 0xfffd
+	.short	30                              # 0x1e
+	.short	47                              # 0x2f
+	.short	41                              # 0x29
+	.short	61                              # 0x3d
+	.short	70                              # 0x46
+	.short	141                             # 0x8d
+	.short	248                             # 0xf8
+	.short	342                             # 0x156
+	.short	611                             # 0x263
+	.short	1161                            # 0x489
+	.short	2199                            # 0x897
+	.short	5690                            # 0x163a
+	.short	5733                            # 0x1665
+	.short	3687                            # 0xe67
+	.short	2943                            # 0xb7f
+	.short	2550                            # 0x9f6
+	.short	2883                            # 0xb43
+	.short	3122                            # 0xc32
+	.short	3589                            # 0xe05
+	.short	3717                            # 0xe85
+	.short	4264                            # 0x10a8
+	.short	4198                            # 0x1066
+	.short	2904                            # 0xb58
+	.short	697                             # 0x2b9
+	.short	305                             # 0x131
+	.short	292                             # 0x124
+	.short	115                             # 0x73
+	.short	128                             # 0x80
+	.short	29                              # 0x1d
+	.short	94                              # 0x5e
+	.short	20                              # 0x14
+	.short	50                              # 0x32
+	.short	65519                           # 0xffef
+	.short	30                              # 0x1e
+	.short	34                              # 0x22
+	.short	33                              # 0x21
+	.short	53                              # 0x35
+	.short	158                             # 0x9e
+	.short	146                             # 0x92
+	.short	434                             # 0x1b2
+	.short	398                             # 0x18e
+	.short	1438                            # 0x59e
+	.short	1773                            # 0x6ed
+	.short	5272                            # 0x1498
+	.short	4908                            # 0x132c
+	.short	2736                            # 0xab0
+	.short	2914                            # 0xb62
+	.short	2412                            # 0x96c
+	.short	2334                            # 0x91e
+	.short	2736                            # 0xab0
+	.short	2999                            # 0xbb7
+	.short	3961                            # 0xf79
+	.short	3672                            # 0xe58
+	.short	3548                            # 0xddc
+	.short	2941                            # 0xb7d
+	.short	581                             # 0x245
+	.short	512                             # 0x200
+	.short	170                             # 0xaa
+	.short	204                             # 0xcc
+	.short	45                              # 0x2d
+	.short	75                              # 0x4b
+	.short	31                              # 0x1f
+	.short	58                              # 0x3a
+	.short	65528                           # 0xfff8
+	.short	11                              # 0xb
+	.short	34                              # 0x22
+	.short	34                              # 0x22
+	.short	42                              # 0x2a
+	.short	50                              # 0x32
+	.short	106                             # 0x6a
+	.short	178                             # 0xb2
+	.short	273                             # 0x111
+	.short	520                             # 0x208
+	.short	1094                            # 0x446
+	.short	2434                            # 0x982
+	.short	4131                            # 0x1023
+	.short	3548                            # 0xddc
+	.short	3074                            # 0xc02
+	.short	2153                            # 0x869
+	.short	1830                            # 0x726
+	.short	1691                            # 0x69b
+	.short	2276                            # 0x8e4
+	.short	2664                            # 0xa68
+	.short	3824                            # 0xef0
+	.short	4401                            # 0x1131
+	.short	5338                            # 0x14da
+	.short	4773                            # 0x12a5
+	.short	1509                            # 0x5e5
+	.short	730                             # 0x2da
+	.short	263                             # 0x107
+	.short	146                             # 0x92
+	.short	87                              # 0x57
+	.short	32                              # 0x20
+	.short	67                              # 0x43
+	.short	20                              # 0x14
+	.short	27                              # 0x1b
+	.short	65511                           # 0xffe7
+	.short	18                              # 0x12
+	.short	17                              # 0x11
+	.short	21                              # 0x15
+	.short	22                              # 0x16
+	.short	116                             # 0x74
+	.short	106                             # 0x6a
+	.short	330                             # 0x14a
+	.short	310                             # 0x136
+	.short	1613                            # 0x64d
+	.short	1960                            # 0x7a8
+	.short	4551                            # 0x11c7
+	.short	4384                            # 0x1120
+	.short	2495                            # 0x9bf
+	.short	2580                            # 0xa14
+	.short	1573                            # 0x625
+	.short	1529                            # 0x5f9
+	.short	2061                            # 0x80d
+	.short	2619                            # 0xa3b
+	.short	3580                            # 0xdfc
+	.short	3925                            # 0xf55
+	.short	6124                            # 0x17ec
+	.short	6833                            # 0x1ab1
+	.short	2080                            # 0x820
+	.short	1006                            # 0x3ee
+	.short	240                             # 0xf0
+	.short	172                             # 0xac
+	.short	48                              # 0x30
+	.short	55                              # 0x37
+	.short	28                              # 0x1c
+	.short	31                              # 0x1f
+	.short	65526                           # 0xfff6
+	.short	65523                           # 0xfff3
+	.short	30                              # 0x1e
+	.short	32                              # 0x20
+	.short	26                              # 0x1a
+	.short	27                              # 0x1b
+	.short	82                              # 0x52
+	.short	119                             # 0x77
+	.short	196                             # 0xc4
+	.short	391                             # 0x187
+	.short	1023                            # 0x3ff
+	.short	2974                            # 0xb9e
+	.short	6014                            # 0x177e
+	.short	4455                            # 0x1167
+	.short	3093                            # 0xc15
+	.short	2497                            # 0x9c1
+	.short	1861                            # 0x745
+	.short	1346                            # 0x542
+	.short	1825                            # 0x721
+	.short	2703                            # 0xa8f
+	.short	3528                            # 0xdc8
+	.short	3477                            # 0xd95
+	.short	5243                            # 0x147b
+	.short	6289                            # 0x1891
+	.short	2899                            # 0xb53
+	.short	1399                            # 0x577
+	.short	312                             # 0x138
+	.short	210                             # 0xd2
+	.short	85                              # 0x55
+	.short	45                              # 0x2d
+	.short	48                              # 0x30
+	.short	22                              # 0x16
+	.short	7                               # 0x7
+	.short	65514                           # 0xffea
+	.short	15                              # 0xf
+	.short	10                              # 0xa
+	.short	10                              # 0xa
+	.short	14                              # 0xe
+	.short	81                              # 0x51
+	.short	87                              # 0x57
+	.short	228                             # 0xe4
+	.short	227                             # 0xe3
+	.short	1365                            # 0x555
+	.short	1587                            # 0x633
+	.short	6060                            # 0x17ac
+	.short	5603                            # 0x15e3
+	.short	2994                            # 0xbb2
+	.short	2765                            # 0xacd
+	.short	1843                            # 0x733
+	.short	1599                            # 0x63f
+	.short	1903                            # 0x76f
+	.short	2519                            # 0x9d7
+	.short	3975                            # 0xf87
+	.short	3812                            # 0xee4
+	.short	5231                            # 0x146f
+	.short	5529                            # 0x1599
+	.short	2760                            # 0xac8
+	.short	1566                            # 0x61e
+	.short	342                             # 0x156
+	.short	212                             # 0xd4
+	.short	67                              # 0x43
+	.short	49                              # 0x31
+	.short	32                              # 0x20
+	.short	14                              # 0xe
+	.short	65524                           # 0xfff4
+	.short	65510                           # 0xffe6
+	.short	31                              # 0x1f
+	.short	28                              # 0x1c
+	.short	27                              # 0x1b
+	.short	26                              # 0x1a
+	.short	86                              # 0x56
+	.short	112                             # 0x70
+	.short	151                             # 0x97
+	.short	241                             # 0xf1
+	.short	548                             # 0x224
+	.short	1097                            # 0x449
+	.short	3195                            # 0xc7b
+	.short	5306                            # 0x14ba
+	.short	4717                            # 0x126d
+	.short	3717                            # 0xe85
+	.short	3162                            # 0xc5a
+	.short	2159                            # 0x86f
+	.short	2046                            # 0x7fe
+	.short	3563                            # 0xdeb
+	.short	5343                            # 0x14df
+	.short	5595                            # 0x15db
+	.short	3692                            # 0xe6c
+	.short	2226                            # 0x8b2
+	.short	947                             # 0x3b3
+	.short	802                             # 0x322
+	.short	312                             # 0x138
+	.short	200                             # 0xc8
+	.short	82                              # 0x52
+	.short	51                              # 0x33
+	.short	46                              # 0x2e
+	.short	24                              # 0x18
+	.short	65535                           # 0xffff
+	.short	65514                           # 0xffea
+	.short	15                              # 0xf
+	.short	12                              # 0xc
+	.short	6                               # 0x6
+	.short	11                              # 0xb
+	.short	81                              # 0x51
+	.short	85                              # 0x55
+	.short	145                             # 0x91
+	.short	151                             # 0x97
+	.short	563                             # 0x233
+	.short	549                             # 0x225
+	.short	2496                            # 0x9c0
+	.short	3109                            # 0xc25
+	.short	5173                            # 0x1435
+	.short	5066                            # 0x13ca
+	.short	3852                            # 0xf0c
+	.short	3211                            # 0xc8b
+	.short	2679                            # 0xa77
+	.short	3809                            # 0xee1
+	.short	5414                            # 0x1526
+	.short	4995                            # 0x1383
+	.short	1997                            # 0x7cd
+	.short	1231                            # 0x4cf
+	.short	539                             # 0x21b
+	.short	464                             # 0x1d0
+	.short	252                             # 0xfc
+	.short	170                             # 0xaa
+	.short	66                              # 0x42
+	.short	43                              # 0x2b
+	.short	35                              # 0x23
+	.short	12                              # 0xc
+	.short	65523                           # 0xfff3
+	.short	65506                           # 0xffe2
+	.short	24                              # 0x18
+	.short	28                              # 0x1c
+	.short	23                              # 0x17
+	.short	21                              # 0x15
+	.short	78                              # 0x4e
+	.short	99                              # 0x63
+	.short	114                             # 0x72
+	.short	142                             # 0x8e
+	.short	278                             # 0x116
+	.short	414                             # 0x19e
+	.short	549                             # 0x225
+	.short	1027                            # 0x403
+	.short	1371                            # 0x55b
+	.short	1933                            # 0x78d
+	.short	2150                            # 0x866
+	.short	2011                            # 0x7db
+	.short	1460                            # 0x5b4
+	.short	1860                            # 0x744
+	.short	1444                            # 0x5a4
+	.short	1059                            # 0x423
+	.short	660                             # 0x294
+	.short	531                             # 0x213
+	.short	312                             # 0x138
+	.short	291                             # 0x123
+	.short	196                             # 0xc4
+	.short	137                             # 0x89
+	.short	77                              # 0x4d
+	.short	47                              # 0x2f
+	.short	46                              # 0x2e
+	.short	25                              # 0x19
+	.short	1                               # 0x1
+	.short	65512                           # 0xffe8
+	.short	10                              # 0xa
+	.short	5                               # 0x5
+	.short	2                               # 0x2
+	.short	4                               # 0x4
+	.short	65                              # 0x41
+	.short	69                              # 0x45
+	.short	97                              # 0x61
+	.short	98                              # 0x62
+	.short	265                             # 0x109
+	.short	257                             # 0x101
+	.short	485                             # 0x1e5
+	.short	451                             # 0x1c3
+	.short	886                             # 0x376
+	.short	728                             # 0x2d8
+	.short	875                             # 0x36b
+	.short	726                             # 0x2d6
+	.short	737                             # 0x2e1
+	.short	663                             # 0x297
+	.short	709                             # 0x2c5
+	.short	692                             # 0x2b4
+	.short	489                             # 0x1e9
+	.short	407                             # 0x197
+	.short	299                             # 0x12b
+	.short	245                             # 0xf5
+	.short	160                             # 0xa0
+	.short	119                             # 0x77
+	.short	55                              # 0x37
+	.short	37                              # 0x25
+	.short	37                              # 0x25
+	.short	13                              # 0xd
+	.short	65519                           # 0xffef
+	.short	65506                           # 0xffe2
+	.short	18                              # 0x12
+	.short	25                              # 0x19
+	.short	17                              # 0x11
+	.short	13                              # 0xd
+	.short	65                              # 0x41
+	.short	76                              # 0x4c
+	.short	81                              # 0x51
+	.short	92                              # 0x5c
+	.short	167                             # 0xa7
+	.short	204                             # 0xcc
+	.short	263                             # 0x107
+	.short	354                             # 0x162
+	.short	455                             # 0x1c7
+	.short	475                             # 0x1db
+	.short	452                             # 0x1c4
+	.short	420                             # 0x1a4
+	.short	372                             # 0x174
+	.short	443                             # 0x1bb
+	.short	460                             # 0x1cc
+	.short	467                             # 0x1d3
+	.short	450                             # 0x1c2
+	.short	386                             # 0x182
+	.short	222                             # 0xde
+	.short	170                             # 0xaa
+	.short	132                             # 0x84
+	.short	94                              # 0x5e
+	.short	56                              # 0x38
+	.short	32                              # 0x20
+	.short	42                              # 0x2a
+	.short	20                              # 0x14
+	.short	65531                           # 0xfffb
+	.short	65509                           # 0xffe5
+	.short	1                               # 0x1
+	.short	1                               # 0x1
+	.short	65528                           # 0xfff8
+	.short	65534                           # 0xfffe
+	.short	47                              # 0x2f
+	.short	50                              # 0x32
+	.short	58                              # 0x3a
+	.short	61                              # 0x3d
+	.short	148                             # 0x94
+	.short	141                             # 0x8d
+	.short	228                             # 0xe4
+	.short	236                             # 0xec
+	.short	423                             # 0x1a7
+	.short	397                             # 0x18d
+	.short	388                             # 0x184
+	.short	378                             # 0x17a
+	.short	329                             # 0x149
+	.short	377                             # 0x179
+	.short	424                             # 0x1a8
+	.short	401                             # 0x191
+	.short	338                             # 0x152
+	.short	278                             # 0x116
+	.short	153                             # 0x99
+	.short	128                             # 0x80
+	.short	98                              # 0x62
+	.short	69                              # 0x45
+	.short	35                              # 0x23
+	.short	17                              # 0x11
+	.short	29                              # 0x1d
+	.short	7                               # 0x7
+	.short	65512                           # 0xffe8
+	.short	65502                           # 0xffde
+	.short	17                              # 0x11
+	.short	21                              # 0x15
+	.short	9                               # 0x9
+	.short	5                               # 0x5
+	.short	47                              # 0x2f
+	.short	52                              # 0x34
+	.short	53                              # 0x35
+	.short	53                              # 0x35
+	.short	99                              # 0x63
+	.short	109                             # 0x6d
+	.short	121                             # 0x79
+	.short	136                             # 0x88
+	.short	191                             # 0xbf
+	.short	202                             # 0xca
+	.short	183                             # 0xb7
+	.short	172                             # 0xac
+	.short	168                             # 0xa8
+	.short	191                             # 0xbf
+	.short	180                             # 0xb4
+	.short	170                             # 0xaa
+	.short	172                             # 0xac
+	.short	153                             # 0x99
+	.short	101                             # 0x65
+	.short	79                              # 0x4f
+	.short	79                              # 0x4f
+	.short	63                              # 0x3f
+	.short	25                              # 0x19
+	.short	15                              # 0xf
+	.short	31                              # 0x1f
+	.short	14                              # 0xe
+	.short	65520                           # 0xfff0
+	.short	65509                           # 0xffe5
+	.short	65523                           # 0xfff3
+	.short	65522                           # 0xfff2
+	.short	65507                           # 0xffe3
+	.short	65516                           # 0xffec
+	.short	16                              # 0x10
+	.short	15                              # 0xf
+	.short	13                              # 0xd
+	.short	17                              # 0x11
+	.short	68                              # 0x44
+	.short	64                              # 0x40
+	.short	77                              # 0x4d
+	.short	79                              # 0x4f
+	.short	146                             # 0x92
+	.short	137                             # 0x89
+	.short	131                             # 0x83
+	.short	120                             # 0x78
+	.short	127                             # 0x7f
+	.short	131                             # 0x83
+	.short	125                             # 0x7d
+	.short	117                             # 0x75
+	.short	122                             # 0x7a
+	.short	96                              # 0x60
+	.short	40                              # 0x28
+	.short	29                              # 0x1d
+	.short	40                              # 0x28
+	.short	20                              # 0x14
+	.short	65532                           # 0xfffc
+	.short	65526                           # 0xfff6
+	.short	7                               # 0x7
+	.short	65526                           # 0xfff6
+	.short	65496                           # 0xffd8
+	.short	65488                           # 0xffd0
+	.short	19521                           # 0x4c41
+	.short	6481                            # 0x1951
+	.short	32767                           # 0x7fff
+	.short	6481                            # 0x1951
+	.short	32767                           # 0x7fff
+	.short	6479                            # 0x194f
+	.short	32767                           # 0x7fff
+	.short	6479                            # 0x194f
+	.short	65512                           # 0xffe8
+	.short	52801                           # 0xce41
+	.short	6189                            # 0x182d
+	.short	55034                           # 0xd6fa
+	.short	12                              # 0xc
+	.short	26                              # 0x1a
+	.short	65534                           # 0xfffe
+	.short	65531                           # 0xfffb
+	.short	5771                            # 0x168b
+	.short	961                             # 0x3c1
+	.short	622                             # 0x26e
+	.short	32767                           # 0x7fff
+	.short	5772                            # 0x168c
+	.short	960                             # 0x3c0
+	.short	622                             # 0x26e
+	.short	32767                           # 0x7fff
+	.short	3                               # 0x3
+	.short	3                               # 0x3
+	.short	3                               # 0x3
+	.short	3                               # 0x3
+	.short	3                               # 0x3
+	.short	3                               # 0x3
+	.short	3                               # 0x3
+	.short	3                               # 0x3
+	.short	1620                            # 0x654
+	.short	32767                           # 0x7fff
+	.short	6481                            # 0x1951
+	.short	32767                           # 0x7fff
+	.short	6481                            # 0x1951
+	.short	32767                           # 0x7fff
+	.short	6479                            # 0x194f
+	.short	32767                           # 0x7fff
+	.short	65519                           # 0xffef
+	.short	62677                           # 0xf4d5
+	.short	53300                           # 0xd034
+	.short	55079                           # 0xd727
+	.short	27                              # 0x1b
+	.short	14                              # 0xe
+	.short	65531                           # 0xfffb
+	.short	65533                           # 0xfffd
+	.short	246                             # 0xf6
+	.short	73                              # 0x49
+	.short	10643                           # 0x2993
+	.short	53                              # 0x35
+	.short	246                             # 0xf6
+	.short	72                              # 0x48
+	.short	10643                           # 0x2993
+	.short	53                              # 0x35
+	.short	3                               # 0x3
+	.short	3                               # 0x3
+	.short	3                               # 0x3
+	.short	3                               # 0x3
+	.short	3                               # 0x3
+	.short	3                               # 0x3
+	.short	3                               # 0x3
+	.short	3                               # 0x3
+	.short	6529                            # 0x1981
+	.short	1                               # 0x1
 	.size	_ZL9subframe1, 1668
 
-	.type	.L.str.127,@object              # @.str.127
+	.type	.L.str.123,@object              # @.str.123
 	.section	.rodata.str1.1,"aMS",@progbits,1
-.L.str.127:
+.L.str.123:
 	.asciz	"ta = %e\n"
-	.size	.L.str.127, 9
+	.size	.L.str.123, 9
 
-	.type	.L.str.129,@object              # @.str.129
-.L.str.129:
+	.type	.L.str.125,@object              # @.str.125
+.L.str.125:
 	.asciz	"TaMain = %.10f\n"
-	.size	.L.str.129, 16
+	.size	.L.str.125, 16
 
-	.type	.L.str.130,@object              # @.str.130
-.L.str.130:
+	.type	.L.str.126,@object              # @.str.126
+.L.str.126:
 	.asciz	"TrMain = %.10f\n"
-	.size	.L.str.130, 16
+	.size	.L.str.126, 16
 
 	.type	_ZL9subframe2,@object           # @_ZL9subframe2
 	.section	.rodata,"a",@progbits
 	.p2align	4
 _ZL9subframe2:
-	.short	65446                           # 0xffa6
-	.short	65444                           # 0xffa4
-	.short	65448                           # 0xffa8
-	.short	65439                           # 0xff9f
-	.short	65446                           # 0xffa6
-	.short	65440                           # 0xffa0
-	.short	65446                           # 0xffa6
-	.short	65436                           # 0xff9c
-	.short	65460                           # 0xffb4
-	.short	65467                           # 0xffbb
-	.short	65484                           # 0xffcc
-	.short	65454                           # 0xffae
-	.short	65448                           # 0xffa8
-	.short	65435                           # 0xff9b
-	.short	65464                           # 0xffb8
-	.short	65468                           # 0xffbc
-	.short	65482                           # 0xffca
-	.short	65456                           # 0xffb0
-	.short	65444                           # 0xffa4
-	.short	65424                           # 0xff90
-	.short	65469                           # 0xffbd
-	.short	65462                           # 0xffb6
-	.short	65475                           # 0xffc3
-	.short	65443                           # 0xffa3
-	.short	65444                           # 0xffa4
-	.short	65427                           # 0xff93
-	.short	65437                           # 0xff9d
-	.short	65419                           # 0xff8b
-	.short	65432                           # 0xff98
-	.short	65420                           # 0xff8c
-	.short	65436                           # 0xff9c
-	.short	65408                           # 0xff80
-	.short	65439                           # 0xff9f
-	.short	65436                           # 0xff9c
-	.short	65432                           # 0xff98
-	.short	65433                           # 0xff99
-	.short	65438                           # 0xff9e
-	.short	65431                           # 0xff97
-	.short	65430                           # 0xff96
-	.short	65436                           # 0xff9c
-	.short	65453                           # 0xffad
-	.short	65460                           # 0xffb4
-	.short	65470                           # 0xffbe
-	.short	65453                           # 0xffad
-	.short	65439                           # 0xff9f
-	.short	65426                           # 0xff92
-	.short	65455                           # 0xffaf
-	.short	65467                           # 0xffbb
-	.short	65477                           # 0xffc5
-	.short	65445                           # 0xffa5
-	.short	65428                           # 0xff94
-	.short	65422                           # 0xff8e
-	.short	65466                           # 0xffba
-	.short	65457                           # 0xffb1
-	.short	65461                           # 0xffb5
-	.short	65441                           # 0xffa1
-	.short	65435                           # 0xff9b
-	.short	65419                           # 0xff8b
-	.short	65423                           # 0xff8f
-	.short	65415                           # 0xff87
-	.short	65427                           # 0xff93
-	.short	65412                           # 0xff84
-	.short	65423                           # 0xff8f
-	.short	65405                           # 0xff7d
-	.short	65444                           # 0xffa4
-	.short	65443                           # 0xffa3
-	.short	65449                           # 0xffa9
-	.short	65438                           # 0xff9e
-	.short	65446                           # 0xffa6
-	.short	65440                           # 0xffa0
-	.short	65448                           # 0xffa8
-	.short	65438                           # 0xff9e
-	.short	65465                           # 0xffb9
-	.short	65479                           # 0xffc7
-	.short	65489                           # 0xffd1
-	.short	65455                           # 0xffaf
-	.short	65447                           # 0xffa7
-	.short	65438                           # 0xff9e
-	.short	65481                           # 0xffc9
-	.short	65475                           # 0xffc3
-	.short	65481                           # 0xffc9
-	.short	65445                           # 0xffa5
-	.short	65443                           # 0xffa3
-	.short	65429                           # 0xff95
-	.short	65481                           # 0xffc9
-	.short	65471                           # 0xffbf
-	.short	65471                           # 0xffbf
-	.short	65433                           # 0xff99
-	.short	65442                           # 0xffa2
-	.short	65422                           # 0xff8e
-	.short	65436                           # 0xff9c
-	.short	65416                           # 0xff88
-	.short	65434                           # 0xff9a
-	.short	65416                           # 0xff88
-	.short	65436                           # 0xff9c
-	.short	65409                           # 0xff81
-	.short	65438                           # 0xff9e
-	.short	65433                           # 0xff99
-	.short	65431                           # 0xff97
-	.short	65432                           # 0xff98
-	.short	65437                           # 0xff9d
-	.short	65429                           # 0xff95
-	.short	65431                           # 0xff97
-	.short	65434                           # 0xff9a
-	.short	65458                           # 0xffb2
-	.short	65470                           # 0xffbe
-	.short	65471                           # 0xffbf
-	.short	65453                           # 0xffad
-	.short	65440                           # 0xffa0
-	.short	65431                           # 0xff97
-	.short	65473                           # 0xffc1
-	.short	65473                           # 0xffc1
-	.short	65469                           # 0xffbd
-	.short	65438                           # 0xff9e
-	.short	65427                           # 0xff93
-	.short	65431                           # 0xff97
-	.short	65479                           # 0xffc7
-	.short	65464                           # 0xffb8
-	.short	65448                           # 0xffa8
-	.short	65428                           # 0xff94
-	.short	65435                           # 0xff9b
-	.short	65414                           # 0xff86
-	.short	65422                           # 0xff8e
-	.short	65415                           # 0xff87
-	.short	65427                           # 0xff93
-	.short	65409                           # 0xff81
-	.short	65420                           # 0xff8c
-	.short	65408                           # 0xff80
-	.short	65449                           # 0xffa9
-	.short	65444                           # 0xffa4
-	.short	65450                           # 0xffaa
-	.short	65440                           # 0xffa0
-	.short	65450                           # 0xffaa
-	.short	65441                           # 0xffa1
-	.short	65447                           # 0xffa7
-	.short	65438                           # 0xff9e
-	.short	65468                           # 0xffbc
-	.short	65481                           # 0xffc9
-	.short	65492                           # 0xffd4
-	.short	65462                           # 0xffb6
-	.short	65448                           # 0xffa8
-	.short	65446                           # 0xffa6
-	.short	65492                           # 0xffd4
-	.short	65478                           # 0xffc6
-	.short	65476                           # 0xffc4
-	.short	65441                           # 0xffa1
-	.short	65451                           # 0xffab
-	.short	65454                           # 0xffae
-	.short	65489                           # 0xffd1
-	.short	65473                           # 0xffc1
-	.short	65455                           # 0xffaf
-	.short	65423                           # 0xff8f
-	.short	65441                           # 0xffa1
-	.short	65423                           # 0xff8f
-	.short	65436                           # 0xff9c
-	.short	65417                           # 0xff89
-	.short	65434                           # 0xff9a
-	.short	65419                           # 0xff8b
-	.short	65436                           # 0xff9c
-	.short	65410                           # 0xff82
-	.short	65440                           # 0xffa0
-	.short	65434                           # 0xff9a
-	.short	65435                           # 0xff9b
-	.short	65437                           # 0xff9d
-	.short	65438                           # 0xff9e
-	.short	65430                           # 0xff96
-	.short	65432                           # 0xff98
-	.short	65433                           # 0xff99
-	.short	65462                           # 0xffb6
-	.short	65469                           # 0xffbd
-	.short	65477                           # 0xffc5
-	.short	65461                           # 0xffb5
-	.short	65441                           # 0xffa1
-	.short	65442                           # 0xffa2
-	.short	65478                           # 0xffc6
-	.short	65474                           # 0xffc2
-	.short	65465                           # 0xffb9
-	.short	65431                           # 0xff97
-	.short	65444                           # 0xffa4
-	.short	65456                           # 0xffb0
-	.short	65482                           # 0xffca
-	.short	65465                           # 0xffb9
-	.short	65434                           # 0xff9a
-	.short	65419                           # 0xff8b
-	.short	65432                           # 0xff98
-	.short	65413                           # 0xff85
-	.short	65421                           # 0xff8d
-	.short	65415                           # 0xff87
-	.short	65426                           # 0xff92
-	.short	65410                           # 0xff82
-	.short	65420                           # 0xff8c
-	.short	65404                           # 0xff7c
-	.short	65447                           # 0xffa7
-	.short	65446                           # 0xffa6
-	.short	65455                           # 0xffaf
-	.short	65457                           # 0xffb1
-	.short	65469                           # 0xffbd
-	.short	65448                           # 0xffa8
-	.short	65446                           # 0xffa6
-	.short	65436                           # 0xff9c
-	.short	65467                           # 0xffbb
-	.short	65483                           # 0xffcb
-	.short	65499                           # 0xffdb
-	.short	65474                           # 0xffc2
-	.short	65452                           # 0xffac
-	.short	65463                           # 0xffb7
-	.short	65491                           # 0xffd3
-	.short	65478                           # 0xffc6
-	.short	65470                           # 0xffbe
-	.short	65438                           # 0xff9e
-	.short	65472                           # 0xffc0
-	.short	65470                           # 0xffbe
-	.short	65484                           # 0xffcc
-	.short	65466                           # 0xffba
-	.short	65445                           # 0xffa5
-	.short	65420                           # 0xff8c
-	.short	65439                           # 0xff9f
-	.short	65421                           # 0xff8d
-	.short	65435                           # 0xff9b
-	.short	65415                           # 0xff87
-	.short	65434                           # 0xff9a
-	.short	65418                           # 0xff8a
-	.short	65435                           # 0xff9b
-	.short	65408                           # 0xff80
-	.short	65438                           # 0xff9e
-	.short	65434                           # 0xff9a
-	.short	65437                           # 0xff9d
-	.short	65455                           # 0xffaf
-	.short	65465                           # 0xffb9
-	.short	65442                           # 0xffa2
-	.short	65427                           # 0xff93
-	.short	65430                           # 0xff96
-	.short	65456                           # 0xffb0
-	.short	65470                           # 0xffbe
-	.short	65483                           # 0xffcb
-	.short	65473                           # 0xffc1
-	.short	65446                           # 0xffa6
-	.short	65453                           # 0xffad
-	.short	65476                           # 0xffc4
-	.short	65472                           # 0xffc0
-	.short	65456                           # 0xffb0
-	.short	65428                           # 0xff94
-	.short	65466                           # 0xffba
-	.short	65467                           # 0xffbb
-	.short	65475                           # 0xffc3
-	.short	65453                           # 0xffad
-	.short	65426                           # 0xff92
-	.short	65415                           # 0xff87
-	.short	65429                           # 0xff95
-	.short	65411                           # 0xff83
-	.short	65419                           # 0xff8b
-	.short	65410                           # 0xff82
-	.short	65426                           # 0xff92
-	.short	65408                           # 0xff80
-	.short	65418                           # 0xff8a
-	.short	65403                           # 0xff7b
-	.short	65448                           # 0xffa8
-	.short	65447                           # 0xffa7
-	.short	65454                           # 0xffae
-	.short	65455                           # 0xffaf
-	.short	65487                           # 0xffcf
-	.short	65476                           # 0xffc4
-	.short	65444                           # 0xffa4
-	.short	65435                           # 0xff9b
-	.short	65465                           # 0xffb9
-	.short	65480                           # 0xffc8
-	.short	65498                           # 0xffda
-	.short	65480                           # 0xffc8
-	.short	65463                           # 0xffb7
-	.short	65473                           # 0xffc1
-	.short	65493                           # 0xffd5
-	.short	65478                           # 0xffc6
-	.short	65463                           # 0xffb7
-	.short	65445                           # 0xffa5
-	.short	65487                           # 0xffcf
-	.short	65473                           # 0xffc1
-	.short	65481                           # 0xffc9
-	.short	65448                           # 0xffa8
-	.short	65436                           # 0xff9c
-	.short	65416                           # 0xff88
-	.short	65435                           # 0xff9b
-	.short	65421                           # 0xff8d
-	.short	65429                           # 0xff95
-	.short	65412                           # 0xff84
-	.short	65434                           # 0xff9a
-	.short	65416                           # 0xff88
-	.short	65434                           # 0xff9a
-	.short	65408                           # 0xff80
-	.short	65437                           # 0xff9d
-	.short	65428                           # 0xff94
-	.short	65434                           # 0xff9a
-	.short	65442                           # 0xffa2
-	.short	65476                           # 0xffc4
-	.short	65468                           # 0xffbc
-	.short	65426                           # 0xff92
-	.short	65430                           # 0xff96
-	.short	65454                           # 0xffae
-	.short	65464                           # 0xffb8
-	.short	65477                           # 0xffc5
-	.short	65473                           # 0xffc1
-	.short	65460                           # 0xffb4
-	.short	65465                           # 0xffb9
-	.short	65475                           # 0xffc3
-	.short	65473                           # 0xffc1
-	.short	65451                           # 0xffab
-	.short	65437                           # 0xff9d
-	.short	65471                           # 0xffbf
-	.short	65468                           # 0xffbc
-	.short	65464                           # 0xffb8
-	.short	65431                           # 0xff97
-	.short	65417                           # 0xff89
-	.short	65411                           # 0xff83
-	.short	65425                           # 0xff91
-	.short	65408                           # 0xff80
-	.short	65415                           # 0xff87
-	.short	65406                           # 0xff7e
-	.short	65425                           # 0xff91
-	.short	65406                           # 0xff7e
-	.short	65417                           # 0xff89
-	.short	65403                           # 0xff7b
-	.short	65449                           # 0xffa9
-	.short	65446                           # 0xffa6
-	.short	65449                           # 0xffa9
-	.short	65447                           # 0xffa7
-	.short	65492                           # 0xffd4
-	.short	65487                           # 0xffcf
-	.short	65465                           # 0xffb9
-	.short	65442                           # 0xffa2
-	.short	65463                           # 0xffb7
-	.short	65478                           # 0xffc6
-	.short	65495                           # 0xffd7
-	.short	65483                           # 0xffcb
-	.short	65491                           # 0xffd3
-	.short	65485                           # 0xffcd
-	.short	65494                           # 0xffd6
-	.short	65477                           # 0xffc5
-	.short	65468                           # 0xffbc
-	.short	65466                           # 0xffba
-	.short	65488                           # 0xffd0
-	.short	65471                           # 0xffbf
-	.short	65464                           # 0xffb8
-	.short	65434                           # 0xff9a
-	.short	65435                           # 0xff9b
-	.short	65416                           # 0xff88
-	.short	65437                           # 0xff9d
-	.short	65420                           # 0xff8c
-	.short	65433                           # 0xff99
-	.short	65415                           # 0xff87
-	.short	65430                           # 0xff96
-	.short	65418                           # 0xff8a
-	.short	65431                           # 0xff97
-	.short	65407                           # 0xff7f
-	.short	65436                           # 0xff9c
-	.short	65430                           # 0xff96
-	.short	65430                           # 0xff96
-	.short	65435                           # 0xff9b
-	.short	65470                           # 0xffbe
-	.short	65473                           # 0xffc1
-	.short	65456                           # 0xffb0
-	.short	65440                           # 0xffa0
-	.short	65452                           # 0xffac
-	.short	65464                           # 0xffb8
-	.short	65477                           # 0xffc5
-	.short	65475                           # 0xffc3
-	.short	65484                           # 0xffcc
-	.short	65473                           # 0xffc1
-	.short	65475                           # 0xffc3
-	.short	65472                           # 0xffc0
-	.short	65469                           # 0xffbd
-	.short	65458                           # 0xffb2
-	.short	65470                           # 0xffbe
-	.short	65464                           # 0xffb8
-	.short	65446                           # 0xffa6
-	.short	65417                           # 0xff89
-	.short	65417                           # 0xff89
-	.short	65411                           # 0xff83
-	.short	65427                           # 0xff93
-	.short	65408                           # 0xff80
-	.short	65418                           # 0xff8a
-	.short	65409                           # 0xff81
-	.short	65423                           # 0xff8f
-	.short	65406                           # 0xff7e
-	.short	65414                           # 0xff86
-	.short	65401                           # 0xff79
-	.short	65440                           # 0xffa0
-	.short	65443                           # 0xffa3
-	.short	65446                           # 0xffa6
-	.short	65439                           # 0xff9f
-	.short	65464                           # 0xffb8
-	.short	65483                           # 0xffcb
-	.short	65490                           # 0xffd2
-	.short	65470                           # 0xffbe
-	.short	65476                           # 0xffc4
-	.short	65486                           # 0xffce
-	.short	65494                           # 0xffd6
-	.short	65482                           # 0xffca
-	.short	65490                           # 0xffd2
-	.short	65485                           # 0xffcd
-	.short	65491                           # 0xffd3
-	.short	65477                           # 0xffc5
-	.short	65489                           # 0xffd1
-	.short	65476                           # 0xffc4
-	.short	65484                           # 0xffcc
-	.short	65466                           # 0xffba
-	.short	65448                           # 0xffa8
-	.short	65419                           # 0xff8b
-	.short	65433                           # 0xff99
-	.short	65417                           # 0xff89
-	.short	65437                           # 0xff9d
-	.short	65421                           # 0xff8d
-	.short	65432                           # 0xff98
-	.short	65413                           # 0xff85
-	.short	65432                           # 0xff98
-	.short	65420                           # 0xff8c
-	.short	65435                           # 0xff9b
-	.short	65409                           # 0xff81
-	.short	65427                           # 0xff93
-	.short	65423                           # 0xff8f
-	.short	65424                           # 0xff90
-	.short	65425                           # 0xff91
-	.short	65444                           # 0xffa4
-	.short	65457                           # 0xffb1
-	.short	65471                           # 0xffbf
-	.short	65473                           # 0xffc1
-	.short	65482                           # 0xffca
-	.short	65472                           # 0xffc0
-	.short	65474                           # 0xffc2
-	.short	65474                           # 0xffc2
-	.short	65478                           # 0xffc6
-	.short	65471                           # 0xffbf
-	.short	65470                           # 0xffbe
-	.short	65468                           # 0xffbc
-	.short	65478                           # 0xffc6
-	.short	65463                           # 0xffb7
-	.short	65464                           # 0xffb8
-	.short	65456                           # 0xffb0
-	.short	65433                           # 0xff99
-	.short	65413                           # 0xff85
-	.short	65415                           # 0xff87
-	.short	65413                           # 0xff85
-	.short	65427                           # 0xff93
-	.short	65412                           # 0xff84
-	.short	65419                           # 0xff8b
-	.short	65412                           # 0xff84
-	.short	65432                           # 0xff98
-	.short	65419                           # 0xff8b
-	.short	65422                           # 0xff8e
-	.short	65406                           # 0xff7e
-	.short	65438                           # 0xff9e
-	.short	65442                           # 0xffa2
-	.short	65438                           # 0xff9e
-	.short	65436                           # 0xff9c
-	.short	65448                           # 0xffa8
-	.short	65457                           # 0xffb1
-	.short	65491                           # 0xffd3
-	.short	65485                           # 0xffcd
-	.short	65490                           # 0xffd2
-	.short	65487                           # 0xffcf
-	.short	65497                           # 0xffd9
-	.short	65486                           # 0xffce
-	.short	65495                           # 0xffd7
-	.short	65487                           # 0xffcf
-	.short	65489                           # 0xffd1
-	.short	65477                           # 0xffc5
-	.short	65490                           # 0xffd2
-	.short	65477                           # 0xffc5
-	.short	65480                           # 0xffc8
-	.short	65460                           # 0xffb4
-	.short	65439                           # 0xff9f
-	.short	65427                           # 0xff93
-	.short	65432                           # 0xff98
-	.short	65420                           # 0xff8c
-	.short	65438                           # 0xff9e
-	.short	65427                           # 0xff93
-	.short	65457                           # 0xffb1
-	.short	65450                           # 0xffaa
-	.short	65473                           # 0xffc1
-	.short	65458                           # 0xffb2
-	.short	65454                           # 0xffae
-	.short	65418                           # 0xff8a
-	.short	65424                           # 0xff90
-	.short	65420                           # 0xff8c
-	.short	65415                           # 0xff87
-	.short	65422                           # 0xff8e
-	.short	65434                           # 0xff9a
-	.short	65431                           # 0xff97
-	.short	65467                           # 0xffbb
-	.short	65472                           # 0xffc0
-	.short	65477                           # 0xffc5
-	.short	65470                           # 0xffbe
-	.short	65477                           # 0xffc5
-	.short	65478                           # 0xffc6
-	.short	65482                           # 0xffca
-	.short	65471                           # 0xffbf
-	.short	65470                           # 0xffbe
-	.short	65468                           # 0xffbc
-	.short	65478                           # 0xffc6
-	.short	65463                           # 0xffb7
-	.short	65460                           # 0xffb4
-	.short	65448                           # 0xffa8
-	.short	65426                           # 0xff92
-	.short	65408                           # 0xff80
-	.short	65413                           # 0xff85
-	.short	65410                           # 0xff82
-	.short	65431                           # 0xff97
-	.short	65423                           # 0xff8f
-	.short	65453                           # 0xffad
-	.short	65447                           # 0xffa7
-	.short	65465                           # 0xffb9
-	.short	65447                           # 0xffa7
-	.short	65430                           # 0xff96
-	.short	65410                           # 0xff82
-	.short	65442                           # 0xffa2
-	.short	65441                           # 0xffa1
-	.short	65439                           # 0xff9f
-	.short	65434                           # 0xff9a
-	.short	65446                           # 0xffa6
-	.short	65446                           # 0xffa6
-	.short	65486                           # 0xffce
-	.short	65481                           # 0xffc9
-	.short	65495                           # 0xffd7
-	.short	65490                           # 0xffd2
-	.short	65499                           # 0xffdb
-	.short	65489                           # 0xffd1
-	.short	65499                           # 0xffdb
-	.short	65491                           # 0xffd3
-	.short	65492                           # 0xffd4
-	.short	65478                           # 0xffc6
-	.short	65490                           # 0xffd2
-	.short	65477                           # 0xffc5
-	.short	65479                           # 0xffc7
-	.short	65456                           # 0xffb0
-	.short	65440                           # 0xffa0
-	.short	65428                           # 0xff94
-	.short	65435                           # 0xff9b
-	.short	65420                           # 0xff8c
-	.short	65465                           # 0xffb9
-	.short	65462                           # 0xffb6
-	.short	65474                           # 0xffc2
-	.short	65457                           # 0xffb1
-	.short	65456                           # 0xffb0
-	.short	65432                           # 0xff98
-	.short	65436                           # 0xff9c
-	.short	65409                           # 0xff81
-	.short	65422                           # 0xff8e
-	.short	65419                           # 0xff8b
-	.short	65414                           # 0xff86
-	.short	65421                           # 0xff8d
-	.short	65428                           # 0xff94
-	.short	65426                           # 0xff92
-	.short	65461                           # 0xffb5
-	.short	65468                           # 0xffbc
-	.short	65479                           # 0xffc7
-	.short	65473                           # 0xffc1
-	.short	65476                           # 0xffc4
-	.short	65476                           # 0xffc4
-	.short	65487                           # 0xffcf
-	.short	65473                           # 0xffc1
-	.short	65474                           # 0xffc2
-	.short	65468                           # 0xffbc
-	.short	65476                           # 0xffc4
-	.short	65461                           # 0xffb5
-	.short	65459                           # 0xffb3
-	.short	65449                           # 0xffa9
-	.short	65430                           # 0xff96
-	.short	65411                           # 0xff83
-	.short	65415                           # 0xff87
-	.short	65419                           # 0xff8b
-	.short	65463                           # 0xffb7
-	.short	65449                           # 0xffa9
-	.short	65459                           # 0xffb3
-	.short	65447                           # 0xffa7
-	.short	65433                           # 0xff99
-	.short	65413                           # 0xff85
-	.short	65415                           # 0xff87
-	.short	65400                           # 0xff78
-	.short	65437                           # 0xff9d
-	.short	65439                           # 0xff9f
-	.short	65438                           # 0xff9e
-	.short	65433                           # 0xff99
-	.short	65439                           # 0xff9f
-	.short	65442                           # 0xffa2
-	.short	65479                           # 0xffc7
-	.short	65479                           # 0xffc7
-	.short	65491                           # 0xffd3
-	.short	65491                           # 0xffd3
-	.short	65497                           # 0xffd9
-	.short	65491                           # 0xffd3
-	.short	65497                           # 0xffd9
-	.short	65491                           # 0xffd3
-	.short	65492                           # 0xffd4
-	.short	65478                           # 0xffc6
-	.short	65489                           # 0xffd1
-	.short	65475                           # 0xffc3
-	.short	65479                           # 0xffc7
-	.short	65467                           # 0xffbb
-	.short	65444                           # 0xffa4
-	.short	65425                           # 0xff91
-	.short	65455                           # 0xffaf
-	.short	65454                           # 0xffae
-	.short	65479                           # 0xffc7
-	.short	65468                           # 0xffbc
-	.short	65466                           # 0xffba
-	.short	65434                           # 0xff9a
-	.short	65436                           # 0xff9c
-	.short	65422                           # 0xff8e
-	.short	65429                           # 0xff95
-	.short	65405                           # 0xff7d
-	.short	65418                           # 0xff8a
-	.short	65416                           # 0xff88
-	.short	65410                           # 0xff82
-	.short	65416                           # 0xff88
-	.short	65422                           # 0xff8e
-	.short	65420                           # 0xff8c
-	.short	65456                           # 0xffb0
-	.short	65465                           # 0xffb9
-	.short	65476                           # 0xffc4
-	.short	65471                           # 0xffbf
-	.short	65473                           # 0xffc1
-	.short	65476                           # 0xffc4
-	.short	65481                           # 0xffc9
-	.short	65473                           # 0xffc1
-	.short	65469                           # 0xffbd
-	.short	65468                           # 0xffbc
-	.short	65475                           # 0xffc3
-	.short	65460                           # 0xffb4
-	.short	65461                           # 0xffb5
-	.short	65460                           # 0xffb4
-	.short	65443                           # 0xffa3
-	.short	65425                           # 0xff91
-	.short	65449                           # 0xffa9
-	.short	65448                           # 0xffa8
-	.short	65470                           # 0xffbe
-	.short	65451                           # 0xffab
-	.short	65429                           # 0xff95
-	.short	65418                           # 0xff8a
-	.short	65421                           # 0xff8d
-	.short	65403                           # 0xff7b
-	.short	65408                           # 0xff80
-	.short	65396                           # 0xff74
-	.short	65429                           # 0xff95
-	.short	65436                           # 0xff9c
-	.short	65433                           # 0xff99
-	.short	65430                           # 0xff96
-	.short	65439                           # 0xff9f
-	.short	65441                           # 0xffa1
-	.short	65475                           # 0xffc3
-	.short	65474                           # 0xffc2
-	.short	65488                           # 0xffd0
-	.short	65487                           # 0xffcf
-	.short	65495                           # 0xffd7
-	.short	65487                           # 0xffcf
+	.short	125                             # 0x7d
+	.short	70                              # 0x46
+	.short	194                             # 0xc2
+	.short	92                              # 0x5c
+	.short	286                             # 0x11e
+	.short	186                             # 0xba
+	.short	344                             # 0x158
+	.short	244                             # 0xf4
+	.short	487                             # 0x1e7
+	.short	490                             # 0x1ea
+	.short	759                             # 0x2f7
+	.short	859                             # 0x35b
+	.short	940                             # 0x3ac
+	.short	1263                            # 0x4ef
+	.short	1019                            # 0x3fb
+	.short	1261                            # 0x4ed
+	.short	847                             # 0x34f
+	.short	1068                            # 0x42c
+	.short	613                             # 0x265
+	.short	563                             # 0x233
+	.short	326                             # 0x146
+	.short	261                             # 0x105
+	.short	136                             # 0x88
+	.short	78                              # 0x4e
+	.short	73                              # 0x49
+	.short	34                              # 0x22
+	.short	23                              # 0x17
+	.short	2                               # 0x2
+	.short	36                              # 0x24
+	.short	20                              # 0x14
+	.short	3                               # 0x3
+	.short	65512                           # 0xffe8
+	.short	62                              # 0x3e
+	.short	134                             # 0x86
+	.short	70                              # 0x46
+	.short	202                             # 0xca
+	.short	175                             # 0xaf
+	.short	292                             # 0x124
+	.short	231                             # 0xe7
+	.short	363                             # 0x16b
+	.short	412                             # 0x19c
+	.short	563                             # 0x233
+	.short	770                             # 0x302
+	.short	865                             # 0x361
+	.short	1256                            # 0x4e8
+	.short	1034                            # 0x40a
+	.short	1379                            # 0x563
+	.short	1048                            # 0x418
+	.short	1248                            # 0x4e0
+	.short	856                             # 0x358
+	.short	721                             # 0x2d1
+	.short	524                             # 0x20c
+	.short	331                             # 0x14b
+	.short	264                             # 0x108
+	.short	118                             # 0x76
+	.short	88                              # 0x58
+	.short	61                              # 0x3d
+	.short	39                              # 0x27
+	.short	7                               # 0x7
+	.short	65535                           # 0xffff
+	.short	33                              # 0x21
+	.short	8                               # 0x8
+	.short	65531                           # 0xfffb
+	.short	65506                           # 0xffe2
+	.short	131                             # 0x83
+	.short	62                              # 0x3e
+	.short	198                             # 0xc6
+	.short	95                              # 0x5f
+	.short	317                             # 0x13d
+	.short	239                             # 0xef
+	.short	412                             # 0x19c
+	.short	307                             # 0x133
+	.short	611                             # 0x263
+	.short	544                             # 0x220
+	.short	970                             # 0x3ca
+	.short	1035                            # 0x40b
+	.short	1349                            # 0x545
+	.short	1660                            # 0x67c
+	.short	1363                            # 0x553
+	.short	1611                            # 0x64b
+	.short	1205                            # 0x4b5
+	.short	1386                            # 0x56a
+	.short	758                             # 0x2f6
+	.short	633                             # 0x279
+	.short	416                             # 0x1a0
+	.short	301                             # 0x12d
+	.short	145                             # 0x91
+	.short	92                              # 0x5c
+	.short	81                              # 0x51
+	.short	47                              # 0x2f
+	.short	26                              # 0x1a
+	.short	0                               # 0x0
+	.short	24                              # 0x18
+	.short	12                              # 0xc
+	.short	65535                           # 0xffff
+	.short	65509                           # 0xffe5
+	.short	47                              # 0x2f
+	.short	139                             # 0x8b
+	.short	74                              # 0x4a
+	.short	202                             # 0xca
+	.short	208                             # 0xd0
+	.short	329                             # 0x149
+	.short	302                             # 0x12e
+	.short	453                             # 0x1c5
+	.short	468                             # 0x1d4
+	.short	691                             # 0x2b3
+	.short	889                             # 0x379
+	.short	1210                            # 0x4ba
+	.short	1687                            # 0x697
+	.short	1540                            # 0x604
+	.short	1757                            # 0x6dd
+	.short	1419                            # 0x58b
+	.short	1646                            # 0x66e
+	.short	1201                            # 0x4b1
+	.short	868                             # 0x364
+	.short	713                             # 0x2c9
+	.short	402                             # 0x192
+	.short	314                             # 0x13a
+	.short	125                             # 0x7d
+	.short	105                             # 0x69
+	.short	71                              # 0x47
+	.short	55                              # 0x37
+	.short	11                              # 0xb
+	.short	5                               # 0x5
+	.short	23                              # 0x17
+	.short	2                               # 0x2
+	.short	65526                           # 0xfff6
+	.short	65505                           # 0xffe1
+	.short	133                             # 0x85
+	.short	56                              # 0x38
+	.short	201                             # 0xc9
+	.short	100                             # 0x64
+	.short	318                             # 0x13e
+	.short	264                             # 0x108
+	.short	458                             # 0x1ca
+	.short	397                             # 0x18d
+	.short	760                             # 0x2f8
+	.short	606                             # 0x25e
+	.short	1299                            # 0x513
+	.short	1277                            # 0x4fd
+	.short	2174                            # 0x87e
+	.short	2292                            # 0x8f4
+	.short	1929                            # 0x789
+	.short	2172                            # 0x87c
+	.short	1863                            # 0x747
+	.short	1836                            # 0x72c
+	.short	1324                            # 0x52c
+	.short	967                             # 0x3c7
+	.short	549                             # 0x225
+	.short	346                             # 0x15a
+	.short	200                             # 0xc8
+	.short	104                             # 0x68
+	.short	111                             # 0x6f
+	.short	65                              # 0x41
+	.short	42                              # 0x2a
+	.short	10                              # 0xa
+	.short	30                              # 0x1e
+	.short	17                              # 0x11
+	.short	0                               # 0x0
+	.short	65516                           # 0xffec
+	.short	44                              # 0x2c
+	.short	149                             # 0x95
+	.short	70                              # 0x46
+	.short	203                             # 0xcb
+	.short	223                             # 0xdf
+	.short	324                             # 0x144
+	.short	387                             # 0x183
+	.short	522                             # 0x20a
+	.short	571                             # 0x23b
+	.short	888                             # 0x378
+	.short	1080                            # 0x438
+	.short	1801                            # 0x709
+	.short	2427                            # 0x97b
+	.short	2703                            # 0xa8f
+	.short	2483                            # 0x9b3
+	.short	2117                            # 0x845
+	.short	2242                            # 0x8c2
+	.short	2162                            # 0x872
+	.short	1525                            # 0x5f5
+	.short	1406                            # 0x57e
+	.short	530                             # 0x212
+	.short	425                             # 0x1a9
+	.short	158                             # 0x9e
+	.short	159                             # 0x9f
+	.short	90                              # 0x5a
+	.short	83                              # 0x53
+	.short	23                              # 0x17
+	.short	13                              # 0xd
+	.short	26                              # 0x1a
+	.short	5                               # 0x5
+	.short	65530                           # 0xfffa
+	.short	65508                           # 0xffe4
+	.short	137                             # 0x89
+	.short	53                              # 0x35
+	.short	215                             # 0xd7
+	.short	105                             # 0x69
+	.short	323                             # 0x143
+	.short	278                             # 0x116
+	.short	496                             # 0x1f0
+	.short	499                             # 0x1f3
+	.short	963                             # 0x3c3
+	.short	820                             # 0x334
+	.short	2147                            # 0x863
+	.short	2058                            # 0x80a
+	.short	4553                            # 0x11c9
+	.short	4406                            # 0x1136
+	.short	4105                            # 0x1009
+	.short	3380                            # 0xd34
+	.short	4373                            # 0x1115
+	.short	4246                            # 0x1096
+	.short	4189                            # 0x105d
+	.short	2540                            # 0x9ec
+	.short	870                             # 0x366
+	.short	530                             # 0x212
+	.short	300                             # 0x12c
+	.short	146                             # 0x92
+	.short	142                             # 0x8e
+	.short	76                              # 0x4c
+	.short	52                              # 0x34
+	.short	12                              # 0xc
+	.short	34                              # 0x22
+	.short	21                              # 0x15
+	.short	2                               # 0x2
+	.short	65518                           # 0xffee
+	.short	35                              # 0x23
+	.short	142                             # 0x8e
+	.short	74                              # 0x4a
+	.short	221                             # 0xdd
+	.short	235                             # 0xeb
+	.short	349                             # 0x15d
+	.short	434                             # 0x1b2
+	.short	549                             # 0x225
+	.short	819                             # 0x333
+	.short	1264                            # 0x4f0
+	.short	1926                            # 0x786
+	.short	3731                            # 0xe93
+	.short	5561                            # 0x15b9
+	.short	6647                            # 0x19f7
+	.short	5440                            # 0x1540
+	.short	4483                            # 0x1183
+	.short	5785                            # 0x1699
+	.short	6684                            # 0x1a1c
+	.short	5305                            # 0x14b9
+	.short	4202                            # 0x106a
+	.short	955                             # 0x3bb
+	.short	746                             # 0x2ea
+	.short	223                             # 0xdf
+	.short	239                             # 0xef
+	.short	110                             # 0x6e
+	.short	108                             # 0x6c
+	.short	31                              # 0x1f
+	.short	19                              # 0x13
+	.short	33                              # 0x21
+	.short	7                               # 0x7
+	.short	65534                           # 0xfffe
+	.short	65510                           # 0xffe6
+	.short	100                             # 0x64
+	.short	49                              # 0x31
+	.short	189                             # 0xbd
+	.short	109                             # 0x6d
+	.short	334                             # 0x14e
+	.short	308                             # 0x134
+	.short	530                             # 0x212
+	.short	572                             # 0x23c
+	.short	1256                            # 0x4e8
+	.short	1383                            # 0x567
+	.short	5041                            # 0x13b1
+	.short	6000                            # 0x1770
+	.short	6602                            # 0x19ca
+	.short	7504                            # 0x1d50
+	.short	4590                            # 0x11ee
+	.short	4630                            # 0x1216
+	.short	5386                            # 0x150a
+	.short	6661                            # 0x1a05
+	.short	5946                            # 0x173a
+	.short	6027                            # 0x178b
+	.short	2620                            # 0xa3c
+	.short	1378                            # 0x562
+	.short	549                             # 0x225
+	.short	223                             # 0xdf
+	.short	225                             # 0xe1
+	.short	89                              # 0x59
+	.short	70                              # 0x46
+	.short	22                              # 0x16
+	.short	34                              # 0x22
+	.short	24                              # 0x18
+	.short	7                               # 0x7
+	.short	65521                           # 0xfff1
+	.short	33                              # 0x21
+	.short	96                              # 0x60
+	.short	61                              # 0x3d
+	.short	183                             # 0xb7
+	.short	241                             # 0xf1
+	.short	344                             # 0x158
+	.short	492                             # 0x1ec
+	.short	597                             # 0x255
+	.short	1186                            # 0x4a2
+	.short	1993                            # 0x7c9
+	.short	5250                            # 0x1482
+	.short	6450                            # 0x1932
+	.short	6391                            # 0x18f7
+	.short	4392                            # 0x1128
+	.short	4152                            # 0x1038
+	.short	3648                            # 0xe40
+	.short	4982                            # 0x1376
+	.short	4658                            # 0x1232
+	.short	5558                            # 0x15b6
+	.short	5234                            # 0x1472
+	.short	3712                            # 0xe80
+	.short	1978                            # 0x7ba
+	.short	371                             # 0x173
+	.short	475                             # 0x1db
+	.short	129                             # 0x81
+	.short	164                             # 0xa4
+	.short	40                              # 0x28
+	.short	26                              # 0x1a
+	.short	35                              # 0x23
+	.short	8                               # 0x8
+	.short	65533                           # 0xfffd
+	.short	65509                           # 0xffe5
+	.short	57                              # 0x39
+	.short	41                              # 0x29
+	.short	118                             # 0x76
+	.short	70                              # 0x46
+	.short	273                             # 0x111
+	.short	248                             # 0xf8
+	.short	504                             # 0x1f8
+	.short	611                             # 0x263
+	.short	1527                            # 0x5f7
+	.short	2199                            # 0x897
+	.short	5634                            # 0x1602
+	.short	5733                            # 0x1665
+	.short	3140                            # 0xc44
+	.short	2943                            # 0xb7f
+	.short	2650                            # 0xa5a
+	.short	2883                            # 0xb43
+	.short	3401                            # 0xd49
+	.short	3589                            # 0xe05
+	.short	3457                            # 0xd81
+	.short	4264                            # 0x10a8
+	.short	3672                            # 0xe58
+	.short	2904                            # 0xb58
+	.short	702                             # 0x2be
+	.short	305                             # 0x131
+	.short	285                             # 0x11d
+	.short	115                             # 0x73
+	.short	76                              # 0x4c
+	.short	29                              # 0x1d
+	.short	34                              # 0x22
+	.short	20                              # 0x14
+	.short	6                               # 0x6
+	.short	65519                           # 0xffef
+	.short	30                              # 0x1e
+	.short	41                              # 0x29
+	.short	33                              # 0x21
+	.short	105                             # 0x69
+	.short	158                             # 0x9e
+	.short	294                             # 0x126
+	.short	434                             # 0x1b2
+	.short	597                             # 0x255
+	.short	1438                            # 0x59e
+	.short	2534                            # 0x9e6
+	.short	5272                            # 0x1498
+	.short	3985                            # 0xf91
+	.short	2736                            # 0xab0
+	.short	2526                            # 0x9de
+	.short	2412                            # 0x96c
+	.short	2407                            # 0x967
+	.short	2736                            # 0xab0
+	.short	3323                            # 0xcfb
+	.short	3961                            # 0xf79
+	.short	3481                            # 0xd99
+	.short	3548                            # 0xddc
+	.short	2451                            # 0x993
+	.short	581                             # 0x245
+	.short	570                             # 0x23a
+	.short	170                             # 0xaa
+	.short	187                             # 0xbb
+	.short	45                              # 0x2d
+	.short	31                              # 0x1f
+	.short	31                              # 0x1f
+	.short	10                              # 0xa
+	.short	65528                           # 0xfff8
+	.short	65509                           # 0xffe5
+	.short	35                              # 0x23
+	.short	34                              # 0x22
+	.short	64                              # 0x40
+	.short	50                              # 0x32
+	.short	201                             # 0xc9
+	.short	178                             # 0xb2
+	.short	532                             # 0x214
+	.short	520                             # 0x208
+	.short	1666                            # 0x682
+	.short	2434                            # 0x982
+	.short	3955                            # 0xf73
+	.short	3548                            # 0xddc
+	.short	2698                            # 0xa8a
+	.short	2153                            # 0x869
+	.short	1801                            # 0x709
+	.short	1691                            # 0x69b
+	.short	2508                            # 0x9cc
+	.short	2664                            # 0xa68
+	.short	4763                            # 0x129b
+	.short	4401                            # 0x1131
+	.short	5581                            # 0x15cd
+	.short	4773                            # 0x12a5
+	.short	1341                            # 0x53d
+	.short	730                             # 0x2da
+	.short	257                             # 0x101
+	.short	146                             # 0x92
+	.short	66                              # 0x42
+	.short	32                              # 0x20
+	.short	33                              # 0x21
+	.short	20                              # 0x14
+	.short	6                               # 0x6
+	.short	65511                           # 0xffe7
+	.short	18                              # 0x12
+	.short	18                              # 0x12
+	.short	21                              # 0x15
+	.short	49                              # 0x31
+	.short	116                             # 0x74
+	.short	225                             # 0xe1
+	.short	330                             # 0x14a
+	.short	640                             # 0x280
+	.short	1613                            # 0x64d
+	.short	3210                            # 0xc8a
+	.short	4551                            # 0x11c7
+	.short	3961                            # 0xf79
+	.short	2495                            # 0x9bf
+	.short	2420                            # 0x974
+	.short	1573                            # 0x625
+	.short	1609                            # 0x649
+	.short	2061                            # 0x80d
+	.short	2928                            # 0xb70
+	.short	3580                            # 0xdfc
+	.short	5057                            # 0x13c1
+	.short	6124                            # 0x17ec
+	.short	6396                            # 0x18fc
+	.short	2080                            # 0x820
+	.short	864                             # 0x360
+	.short	240                             # 0xf0
+	.short	152                             # 0x98
+	.short	48                              # 0x30
+	.short	32                              # 0x20
+	.short	28                              # 0x1c
+	.short	9                               # 0x9
+	.short	65526                           # 0xfff6
+	.short	65509                           # 0xffe5
+	.short	28                              # 0x1c
+	.short	32                              # 0x20
+	.short	43                              # 0x2b
+	.short	27                              # 0x1b
+	.short	136                             # 0x88
+	.short	119                             # 0x77
+	.short	436                             # 0x1b4
+	.short	391                             # 0x187
+	.short	1900                            # 0x76c
+	.short	2974                            # 0xb9e
+	.short	5803                            # 0x16ab
+	.short	4455                            # 0x1167
+	.short	2996                            # 0xbb4
+	.short	2497                            # 0x9c1
+	.short	1835                            # 0x72b
+	.short	1346                            # 0x542
+	.short	2183                            # 0x887
+	.short	2703                            # 0xa8f
+	.short	4270                            # 0x10ae
+	.short	3477                            # 0xd95
+	.short	5745                            # 0x1671
+	.short	6289                            # 0x1891
+	.short	2038                            # 0x7f6
+	.short	1399                            # 0x577
+	.short	257                             # 0x101
+	.short	210                             # 0xd2
+	.short	71                              # 0x47
+	.short	45                              # 0x2d
+	.short	35                              # 0x23
+	.short	22                              # 0x16
+	.short	4                               # 0x4
+	.short	65514                           # 0xffea
+	.short	15                              # 0xf
+	.short	14                              # 0xe
+	.short	10                              # 0xa
+	.short	28                              # 0x1c
+	.short	81                              # 0x51
+	.short	160                             # 0xa0
+	.short	228                             # 0xe4
+	.short	496                             # 0x1f0
+	.short	1365                            # 0x555
+	.short	2617                            # 0xa39
+	.short	6060                            # 0x17ac
+	.short	5252                            # 0x1484
+	.short	2994                            # 0xbb2
+	.short	2883                            # 0xb43
+	.short	1843                            # 0x733
+	.short	1582                            # 0x62e
+	.short	1903                            # 0x76f
+	.short	3108                            # 0xc24
+	.short	3975                            # 0xf87
+	.short	4854                            # 0x12f6
+	.short	5231                            # 0x146f
+	.short	4710                            # 0x1266
+	.short	2760                            # 0xac8
+	.short	1101                            # 0x44d
+	.short	342                             # 0x156
+	.short	175                             # 0xaf
+	.short	67                              # 0x43
+	.short	41                              # 0x29
+	.short	32                              # 0x20
+	.short	10                              # 0xa
+	.short	65524                           # 0xfff4
+	.short	65511                           # 0xffe7
+	.short	32                              # 0x20
+	.short	28                              # 0x1c
+	.short	37                              # 0x25
+	.short	26                              # 0x1a
+	.short	114                             # 0x72
+	.short	112                             # 0x70
+	.short	229                             # 0xe5
+	.short	241                             # 0xf1
+	.short	805                             # 0x325
+	.short	1097                            # 0x449
+	.short	3857                            # 0xf11
+	.short	5306                            # 0x14ba
+	.short	5023                            # 0x139f
+	.short	3717                            # 0xe85
+	.short	2998                            # 0xbb6
+	.short	2159                            # 0x86f
+	.short	2953                            # 0xb89
+	.short	3563                            # 0xdeb
+	.short	5550                            # 0x15ae
+	.short	5595                            # 0x15db
+	.short	2537                            # 0x9e9
+	.short	2226                            # 0x8b2
+	.short	708                             # 0x2c4
+	.short	802                             # 0x322
+	.short	246                             # 0xf6
+	.short	200                             # 0xc8
+	.short	72                              # 0x48
+	.short	51                              # 0x33
+	.short	41                              # 0x29
+	.short	24                              # 0x18
+	.short	1                               # 0x1
+	.short	65514                           # 0xffea
+	.short	15                              # 0xf
+	.short	12                              # 0xc
+	.short	6                               # 0x6
+	.short	18                              # 0x12
+	.short	81                              # 0x51
+	.short	102                             # 0x66
+	.short	145                             # 0x91
+	.short	224                             # 0xe0
+	.short	563                             # 0x233
+	.short	794                             # 0x31a
+	.short	2496                            # 0x9c0
+	.short	3496                            # 0xda8
+	.short	5173                            # 0x1435
+	.short	4944                            # 0x1350
+	.short	3852                            # 0xf0c
+	.short	2766                            # 0xace
+	.short	2679                            # 0xa77
+	.short	4555                            # 0x11cb
+	.short	5414                            # 0x1526
+	.short	3765                            # 0xeb5
+	.short	1997                            # 0x7cd
+	.short	839                             # 0x347
+	.short	539                             # 0x21b
+	.short	387                             # 0x183
+	.short	252                             # 0xfc
+	.short	142                             # 0x8e
+	.short	66                              # 0x42
+	.short	40                              # 0x28
+	.short	35                              # 0x23
+	.short	9                               # 0x9
+	.short	65523                           # 0xfff3
+	.short	65508                           # 0xffe4
+	.short	24                              # 0x18
+	.short	28                              # 0x1c
+	.short	27                              # 0x1b
+	.short	21                              # 0x15
+	.short	91                              # 0x5b
+	.short	99                              # 0x63
+	.short	136                             # 0x88
+	.short	142                             # 0x8e
+	.short	348                             # 0x15c
+	.short	414                             # 0x19e
+	.short	649                             # 0x289
+	.short	1027                            # 0x403
+	.short	1218                            # 0x4c2
+	.short	1933                            # 0x78d
+	.short	1532                            # 0x5fc
+	.short	2011                            # 0x7db
+	.short	1240                            # 0x4d8
+	.short	1860                            # 0x744
+	.short	909                             # 0x38d
+	.short	1059                            # 0x423
+	.short	540                             # 0x21c
+	.short	531                             # 0x213
+	.short	304                             # 0x130
+	.short	291                             # 0x123
+	.short	170                             # 0xaa
+	.short	137                             # 0x89
+	.short	73                              # 0x49
+	.short	47                              # 0x2f
+	.short	39                              # 0x27
+	.short	25                              # 0x19
+	.short	1                               # 0x1
+	.short	65512                           # 0xffe8
+	.short	10                              # 0xa
+	.short	7                               # 0x7
+	.short	2                               # 0x2
+	.short	6                               # 0x6
+	.short	65                              # 0x41
+	.short	75                              # 0x4b
+	.short	97                              # 0x61
+	.short	127                             # 0x7f
+	.short	265                             # 0x109
+	.short	305                             # 0x131
+	.short	485                             # 0x1e5
+	.short	499                             # 0x1f3
+	.short	886                             # 0x376
+	.short	677                             # 0x2a5
+	.short	875                             # 0x36b
+	.short	571                             # 0x23b
+	.short	737                             # 0x2e1
+	.short	590                             # 0x24e
+	.short	709                             # 0x2c5
+	.short	585                             # 0x249
+	.short	489                             # 0x1e9
+	.short	373                             # 0x175
+	.short	299                             # 0x12b
+	.short	216                             # 0xd8
+	.short	160                             # 0xa0
+	.short	102                             # 0x66
+	.short	55                              # 0x37
+	.short	36                              # 0x24
+	.short	37                              # 0x25
+	.short	9                               # 0x9
+	.short	65519                           # 0xffef
+	.short	65506                           # 0xffe2
+	.short	20                              # 0x14
+	.short	25                              # 0x19
+	.short	19                              # 0x13
+	.short	13                              # 0xd
+	.short	70                              # 0x46
+	.short	76                              # 0x4c
+	.short	88                              # 0x58
+	.short	92                              # 0x5c
+	.short	183                             # 0xb7
+	.short	204                             # 0xcc
+	.short	306                             # 0x132
+	.short	354                             # 0x162
+	.short	462                             # 0x1ce
+	.short	475                             # 0x1db
+	.short	418                             # 0x1a2
+	.short	420                             # 0x1a4
+	.short	383                             # 0x17f
+	.short	443                             # 0x1bb
+	.short	475                             # 0x1db
+	.short	467                             # 0x1d3
+	.short	400                             # 0x190
+	.short	386                             # 0x182
+	.short	195                             # 0xc3
+	.short	170                             # 0xaa
+	.short	118                             # 0x76
+	.short	94                              # 0x5e
+	.short	54                              # 0x36
+	.short	32                              # 0x20
+	.short	37                              # 0x25
+	.short	20                              # 0x14
+	.short	65533                           # 0xfffd
+	.short	65509                           # 0xffe5
+	.short	1                               # 0x1
+	.short	1                               # 0x1
+	.short	65528                           # 0xfff8
+	.short	65534                           # 0xfffe
+	.short	47                              # 0x2f
+	.short	51                              # 0x33
+	.short	58                              # 0x3a
+	.short	67                              # 0x43
+	.short	148                             # 0x94
+	.short	154                             # 0x9a
+	.short	228                             # 0xe4
+	.short	260                             # 0x104
+	.short	423                             # 0x1a7
+	.short	378                             # 0x17a
+	.short	388                             # 0x184
+	.short	325                             # 0x145
+	.short	329                             # 0x149
+	.short	383                             # 0x17f
+	.short	424                             # 0x1a8
+	.short	350                             # 0x15e
+	.short	338                             # 0x152
+	.short	228                             # 0xe4
+	.short	153                             # 0x99
+	.short	110                             # 0x6e
+	.short	98                              # 0x62
+	.short	65                              # 0x41
+	.short	35                              # 0x23
+	.short	20                              # 0x14
+	.short	29                              # 0x1d
+	.short	5                               # 0x5
+	.short	65512                           # 0xffe8
+	.short	65503                           # 0xffdf
+	.short	15                              # 0xf
+	.short	21                              # 0x15
+	.short	7                               # 0x7
+	.short	5                               # 0x5
+	.short	48                              # 0x30
+	.short	52                              # 0x34
+	.short	56                              # 0x38
+	.short	53                              # 0x35
+	.short	102                             # 0x66
+	.short	109                             # 0x6d
+	.short	123                             # 0x7b
+	.short	136                             # 0x88
+	.short	187                             # 0xbb
+	.short	202                             # 0xca
+	.short	167                             # 0xa7
+	.short	172                             # 0xac
+	.short	171                             # 0xab
+	.short	191                             # 0xbf
+	.short	175                             # 0xaf
+	.short	170                             # 0xaa
+	.short	159                             # 0x9f
+	.short	153                             # 0x99
+	.short	92                              # 0x5c
+	.short	79                              # 0x4f
+	.short	72                              # 0x48
+	.short	63                              # 0x3f
+	.short	23                              # 0x17
+	.short	15                              # 0xf
+	.short	25                              # 0x19
+	.short	14                              # 0xe
+	.short	65525                           # 0xfff5
+	.short	65509                           # 0xffe5
+	.short	65523                           # 0xfff3
+	.short	65519                           # 0xffef
+	.short	65507                           # 0xffe3
+	.short	65516                           # 0xffec
+	.short	16                              # 0x10
+	.short	16                              # 0x10
+	.short	13                              # 0xd
+	.short	17                              # 0x11
+	.short	68                              # 0x44
+	.short	62                              # 0x3e
+	.short	77                              # 0x4d
+	.short	84                              # 0x54
+	.short	146                             # 0x92
+	.short	129                             # 0x81
+	.short	131                             # 0x83
+	.short	100                             # 0x64
+	.short	127                             # 0x7f
+	.short	124                             # 0x7c
+	.short	125                             # 0x7d
+	.short	104                             # 0x68
+	.short	122                             # 0x7a
+	.short	80                              # 0x50
+	.short	40                              # 0x28
+	.short	24                              # 0x18
+	.short	40                              # 0x28
+	.short	21                              # 0x15
+	.short	65532                           # 0xfffc
+	.short	65525                           # 0xfff5
+	.short	7                               # 0x7
+	.short	65524                           # 0xfff4
 	.short	65496                           # 0xffd8
 	.short	65490                           # 0xffd2
-	.short	65492                           # 0xffd4
-	.short	65480                           # 0xffc8
-	.short	65485                           # 0xffcd
-	.short	65475                           # 0xffc3
-	.short	65483                           # 0xffcb
-	.short	65470                           # 0xffbe
-	.short	65479                           # 0xffc7
-	.short	65469                           # 0xffbd
-	.short	65473                           # 0xffc1
-	.short	65463                           # 0xffb7
-	.short	65474                           # 0xffc2
-	.short	65451                           # 0xffab
-	.short	65438                           # 0xff9e
-	.short	65417                           # 0xff89
-	.short	65430                           # 0xff96
-	.short	65417                           # 0xff89
-	.short	65425                           # 0xff91
-	.short	65403                           # 0xff7b
-	.short	65410                           # 0xff82
-	.short	65411                           # 0xff83
-	.short	65406                           # 0xff7e
-	.short	65413                           # 0xff85
-	.short	65421                           # 0xff8d
-	.short	65417                           # 0xff89
-	.short	65450                           # 0xffaa
-	.short	65459                           # 0xffb3
-	.short	65470                           # 0xffbe
-	.short	65465                           # 0xffb9
-	.short	65468                           # 0xffbc
-	.short	65473                           # 0xffc1
-	.short	65479                           # 0xffc7
-	.short	65470                           # 0xffbe
-	.short	65465                           # 0xffb9
-	.short	65463                           # 0xffb7
-	.short	65469                           # 0xffbd
-	.short	65454                           # 0xffae
-	.short	65456                           # 0xffb0
-	.short	65456                           # 0xffb0
-	.short	65467                           # 0xffbb
-	.short	65451                           # 0xffab
-	.short	65449                           # 0xffa9
-	.short	65449                           # 0xffa9
-	.short	65451                           # 0xffab
-	.short	65421                           # 0xff8d
-	.short	65412                           # 0xff84
-	.short	65404                           # 0xff7c
-	.short	65417                           # 0xff89
-	.short	65396                           # 0xff74
-	.short	65405                           # 0xff7d
-	.short	65394                           # 0xff72
-	.short	65430                           # 0xff96
-	.short	65435                           # 0xff9b
-	.short	65432                           # 0xff98
-	.short	65429                           # 0xff95
-	.short	65435                           # 0xff9b
-	.short	65439                           # 0xff9f
-	.short	65469                           # 0xffbd
-	.short	65470                           # 0xffbe
-	.short	65483                           # 0xffcb
-	.short	65482                           # 0xffca
-	.short	65488                           # 0xffd0
-	.short	65483                           # 0xffcb
-	.short	65491                           # 0xffd3
-	.short	65488                           # 0xffd0
-	.short	65481                           # 0xffc9
-	.short	65473                           # 0xffc1
-	.short	65481                           # 0xffc9
-	.short	65472                           # 0xffc0
-	.short	65479                           # 0xffc7
-	.short	65467                           # 0xffbb
-	.short	65478                           # 0xffc6
-	.short	65465                           # 0xffb9
-	.short	65469                           # 0xffbd
-	.short	65457                           # 0xffb1
-	.short	65442                           # 0xffa2
-	.short	65425                           # 0xff91
-	.short	65425                           # 0xff91
-	.short	65413                           # 0xff85
-	.short	65424                           # 0xff90
-	.short	65416                           # 0xff88
-	.short	65420                           # 0xff8c
-	.short	65406                           # 0xff7e
-	.short	65401                           # 0xff79
-	.short	65400                           # 0xff78
-	.short	65397                           # 0xff75
-	.short	65399                           # 0xff77
-	.short	65406                           # 0xff7e
-	.short	65410                           # 0xff82
-	.short	65433                           # 0xff99
-	.short	65441                           # 0xffa1
-	.short	65452                           # 0xffac
-	.short	65448                           # 0xffa8
-	.short	65452                           # 0xffac
-	.short	65454                           # 0xffae
-	.short	65461                           # 0xffb5
-	.short	65451                           # 0xffab
-	.short	65443                           # 0xffa3
-	.short	65446                           # 0xffa6
-	.short	65454                           # 0xffae
-	.short	65443                           # 0xffa3
-	.short	65444                           # 0xffa4
-	.short	65442                           # 0xffa2
-	.short	65452                           # 0xffac
-	.short	65437                           # 0xff9d
-	.short	65436                           # 0xff9c
-	.short	65428                           # 0xff94
-	.short	65413                           # 0xff85
-	.short	65394                           # 0xff72
-	.short	65395                           # 0xff73
-	.short	65391                           # 0xff6f
-	.short	65402                           # 0xff7a
-	.short	65388                           # 0xff6c
-	.short	65394                           # 0xff72
-	.short	65384                           # 0xff68
-	.short	20276                           # 0x4f34
-	.short	6437                            # 0x1925
+	.short	19522                           # 0x4c42
+	.short	6481                            # 0x1951
 	.short	32767                           # 0x7fff
-	.short	6437                            # 0x1925
+	.short	6481                            # 0x1951
 	.short	32767                           # 0x7fff
-	.short	6436                            # 0x1924
+	.short	6479                            # 0x194f
 	.short	32767                           # 0x7fff
-	.short	6436                            # 0x1924
-	.short	65446                           # 0xffa6
-	.short	52746                           # 0xce0a
-	.short	6240                            # 0x1860
-	.short	55062                           # 0xd716
-	.short	65528                           # 0xfff8
+	.short	6479                            # 0x194f
+	.short	65513                           # 0xffe9
+	.short	52801                           # 0xce41
+	.short	6189                            # 0x182d
+	.short	55034                           # 0xd6fa
 	.short	8                               # 0x8
-	.short	65535                           # 0xffff
-	.short	65535                           # 0xffff
-	.short	6161                            # 0x1811
-	.short	974                             # 0x3ce
-	.short	608                             # 0x260
+	.short	26                              # 0x1a
+	.short	65534                           # 0xfffe
+	.short	65531                           # 0xfffb
+	.short	5775                            # 0x168f
+	.short	961                             # 0x3c1
+	.short	623                             # 0x26f
 	.short	32767                           # 0x7fff
-	.short	6161                            # 0x1811
-	.short	974                             # 0x3ce
-	.short	608                             # 0x260
+	.short	5776                            # 0x1690
+	.short	960                             # 0x3c0
+	.short	623                             # 0x26f
 	.short	32767                           # 0x7fff
-	.short	1                               # 0x1
-	.short	1                               # 0x1
-	.short	1                               # 0x1
-	.short	1                               # 0x1
-	.short	1                               # 0x1
-	.short	1                               # 0x1
-	.short	1                               # 0x1
-	.short	1                               # 0x1
-	.short	1609                            # 0x649
+	.short	3                               # 0x3
+	.short	3                               # 0x3
+	.short	3                               # 0x3
+	.short	3                               # 0x3
+	.short	3                               # 0x3
+	.short	3                               # 0x3
+	.short	3                               # 0x3
+	.short	3                               # 0x3
+	.short	1620                            # 0x654
 	.short	32767                           # 0x7fff
-	.short	6437                            # 0x1925
+	.short	6481                            # 0x1951
 	.short	32767                           # 0x7fff
-	.short	6437                            # 0x1925
+	.short	6481                            # 0x1951
 	.short	32767                           # 0x7fff
-	.short	6436                            # 0x1924
+	.short	6479                            # 0x194f
 	.short	32767                           # 0x7fff
-	.short	65452                           # 0xffac
-	.short	62737                           # 0xf511
-	.short	53151                           # 0xcf9f
-	.short	55126                           # 0xd756
-	.short	7                               # 0x7
+	.short	65519                           # 0xffef
+	.short	62677                           # 0xf4d5
+	.short	53300                           # 0xd034
+	.short	55078                           # 0xd726
+	.short	27                              # 0x1b
+	.short	13                              # 0xd
+	.short	65531                           # 0xfffb
 	.short	65533                           # 0xfffd
-	.short	65532                           # 0xfffc
-	.short	65535                           # 0xffff
-	.short	236                             # 0xec
-	.short	95                              # 0x5f
-	.short	9927                            # 0x26c7
-	.short	55                              # 0x37
-	.short	236                             # 0xec
-	.short	95                              # 0x5f
-	.short	9927                            # 0x26c7
-	.short	55                              # 0x37
-	.short	1                               # 0x1
-	.short	1                               # 0x1
-	.short	1                               # 0x1
-	.short	1                               # 0x1
-	.short	1                               # 0x1
-	.short	1                               # 0x1
-	.short	1                               # 0x1
-	.short	1                               # 0x1
-	.short	6401                            # 0x1901
-	.short	1                               # 0x1
+	.short	246                             # 0xf6
+	.short	71                              # 0x47
+	.short	10643                           # 0x2993
+	.short	56                              # 0x38
+	.short	246                             # 0xf6
+	.short	71                              # 0x47
+	.short	10643                           # 0x2993
+	.short	56                              # 0x38
+	.short	3                               # 0x3
+	.short	3                               # 0x3
+	.short	3                               # 0x3
+	.short	3                               # 0x3
+	.short	3                               # 0x3
+	.short	3                               # 0x3
+	.short	3                               # 0x3
+	.short	3                               # 0x3
+	.short	6529                            # 0x1981
+	.short	0                               # 0x0
 	.size	_ZL9subframe2, 1668
 
-	.type	.L.str.132,@object              # @.str.132
+	.type	.L.str.127,@object              # @.str.127
 	.section	.rodata.str1.1,"aMS",@progbits,1
+.L.str.127:
+	.asciz	"temp[%d] = %.10f\n"
+	.size	.L.str.127, 18
+
+	.type	.L.str.129,@object              # @.str.129
+.L.str.129:
+	.asciz	"Range = %.10f\n"
+	.size	.L.str.129, 15
+
+	.type	.L.str.130,@object              # @.str.130
+.L.str.130:
+	.asciz	"minRange = %.10f\n"
+	.size	.L.str.130, 18
+
+	.type	.L.str.131,@object              # @.str.131
+.L.str.131:
+	.asciz	"maxVal = %.10f\n"
+	.size	.L.str.131, 16
+
+	.type	.L.str.132,@object              # @.str.132
 .L.str.132:
-	.asciz	"thermalmap.ppm"
-	.size	.L.str.132, 15
+	.asciz	"minVal = %.10f\n"
+	.size	.L.str.132, 16
 
 	.type	.L.str.133,@object              # @.str.133
 .L.str.133:
-	.asciz	"w"
-	.size	.L.str.133, 2
+	.asciz	"thermalmap.ppm"
+	.size	.L.str.133, 15
 
 	.type	.L.str.134,@object              # @.str.134
 .L.str.134:
+	.asciz	"w"
+	.size	.L.str.134, 2
+
+	.type	.L.str.135,@object              # @.str.135
+.L.str.135:
 	.asciz	"min = %d max = %d\n"
-	.size	.L.str.134, 19
+	.size	.L.str.135, 19
 
 	.type	params_KvPTAT.fixp,@object      # @params_KvPTAT.fixp
 	.bss
@@ -13295,13 +13144,6 @@ params_cpKta.fixp:
 params_KsTa.fixp:
 	.long	0                               # 0x0
 	.size	params_KsTa.fixp, 4
-
-	.type	params_ksTo.fixp,@object        # @params_ksTo.fixp
-	.globl	params_ksTo.fixp
-	.p2align	4
-params_ksTo.fixp:
-	.zero	16
-	.size	params_ksTo.fixp, 16
 
 	.type	params_kta.fixp,@object         # @params_kta.fixp
 	.globl	params_kta.fixp
@@ -13364,21 +13206,21 @@ params_ilChessC.fixp:
 	.addrsig_sym sqrtf
 	.addrsig_sym _Z19CheckAdjacentPixelstt.8
 	.addrsig_sym _ZSt3powIdiEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.17
-	.addrsig_sym _ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.7_u0_0fixp
 	.addrsig_sym _Z5max_fff.16_s12_20fixp
+	.addrsig_sym _ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.7_u0_0fixp
+	.addrsig_sym _Z8printPPMP8_IO_FILEPfiiff.6_fixp
 	.addrsig_sym _Z20MLX90640_CalculateToPKtffPf.4_fixp
 	.addrsig_sym _Z20MLX90640_CalculateToPKtffPf.5_fixp
-	.addrsig_sym _Z8printPPMP8_IO_FILEPfiiff.6_fixp
 	.addrsig_sym _Z5max_fff.14_s11_21fixp
 	.addrsig_sym _Z5min_fff.15_s11_21fixp
 	.addrsig_sym _ZSt4sqrtf.1_s5_27fixp
-	.addrsig_sym _ZSt4sqrtf.2_u37_27fixp
-	.addrsig_sym _ZSt4sqrtf.3_s38_26fixp
+	.addrsig_sym _ZSt4sqrtf.3_s35_29fixp
 	.addrsig_sym _ZSt4sqrtf.1.19_s32_0fixp
 	.addrsig_sym _ZSt4sqrtf.20_s32_0fixp
-	.addrsig_sym _ZSt4sqrtf.2.21_u37_27fixp
-	.addrsig_sym _ZSt4sqrtf.3.23_s38_26fixp
+	.addrsig_sym _ZSt4sqrtf.2.21_s32_0fixp
+	.addrsig_sym _ZSt4sqrtf.3.23_s35_29fixp
 	.addrsig_sym _ZSt3powIdiEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.25_s64_0fixp
+	.addrsig_sym _ZSt4sqrtf.2.28_s32_0fixp
 	.addrsig_sym _ZSt4sqrtf.3.30_s64_0fixp
 	.addrsig_sym _ZSt4sqrtf.31_s64_0fixp
 	.addrsig_sym params_kVdd
@@ -13416,7 +13258,6 @@ params_ilChessC.fixp:
 	.addrsig_sym params_cpKv.fixp
 	.addrsig_sym params_cpKta.fixp
 	.addrsig_sym params_KsTa.fixp
-	.addrsig_sym params_ksTo.fixp
 	.addrsig_sym params_kta.fixp
 	.addrsig_sym params_kv.fixp
 	.addrsig_sym params_cpAlpha.fixp
