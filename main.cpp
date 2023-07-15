@@ -5,7 +5,7 @@
 #include "MLX90640_API.cpp"
 #include "MLX90640_I2C_Driver.h"
 #include "MLX90640_I2C_Driver.cpp"
-#include "test/burner.h"
+#include "test/thinFlame.h"
 
 using namespace std;
 
@@ -121,12 +121,16 @@ int main(int argc, char *argv[])
        maxVal = max_f(maxVal, temperature[i]);
        printf("temp[%d] = %.10f\n", i, temperature[i]);
     }
+    printf("maximum t13 %.10f\n", maximum2);
+    printf("maximum t14 %.10f\n", maximum);
+    printf("mint5 = %.10f\n", mint5);
+    printf("max5 = %.10f\n", maxt5);
     float  __attribute__((annotate("scalar(range (-99,999) final)"))) range = max_f(minRange, maxVal - minVal);
     printf("Range = %.10f\n",range);
     printf("minRange = %.10f\n",minRange);
     printf("maxVal = %.10f\n",maxVal);
     printf("minVal = %.10f\n",minVal);
-    printf("temp[%d] = %.10f\n", 658, temperature[658]);
+
     FILE *fp = fopen("thermalmap.ppm", "w");
     if (fp == NULL)
       return 1;

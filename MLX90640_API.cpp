@@ -40,8 +40,9 @@ void ExtractCILCParameters(const uint16_t *eeData);
 int ExtractDeviatingPixels(const uint16_t *eeData);
 int CheckAdjacentPixels(uint16_t pix1, uint16_t pix2);
 int CheckEEPROMValid(const uint16_t *eeData);  
-
-  
+float maximum = 0;
+float maximum2 = 0;
+float mint5,maxt5=0;
 int MLX90640_DumpEE(uint8_t slaveAddr, uint16_t *eeData)
 {
      return MLX90640_I2CRead(slaveAddr, 0x2400, 832, eeData);
@@ -553,8 +554,23 @@ void MLX90640_CalculateTo(const uint16_t *frameData, float __attribute__((annota
 
             float  __attribute__((annotate("scalar()"))) t4 = t3 + Sx; // was range(-1,1000000000) final 
             printf("t4 %.10f\n",t4);
-
-            float __attribute__((annotate("scalar()"))) t5 = irData / t4;
+            printf("irData %.10f\n",irData);
+            float __attribute__((annotate("scalar(range(-779971200,  29350096896) final)"))) t5 = irData / t4;
+            if(pixelNumber == 0)
+            {
+                mint5 = t5;
+            }
+            if(t5<mint5)
+            {
+                mint5 =t5;
+                printf("mint5: %.10f\n",t5);
+                
+            }
+            if(t5>maxt5)
+            {
+                maxt5 = t5;
+                printf("maxt5: %.10f\n",t5);
+            }
             printf("t5 %.10f\n",t5);
 
             float __attribute__((annotate("scalar()"))) t6 = t5 + taTr; // 2as range(0,5000000000) final
@@ -607,21 +623,22 @@ void MLX90640_CalculateTo(const uint16_t *frameData, float __attribute__((annota
             float  t12 = t11*t10;
             printf("t12 %.10f\n",t12);
 
-            float  __attribute__((annotate("scalar(range(0,100000000000) final)"))) t13 = irData/t12; // controllare github
+            float  __attribute__((annotate("scalar(range(0,169577873408) final)"))) t13 = irData/t12; // controllare github
             printf("t13 %.10f\n",t13);
-
-            float __attribute__((annotate("scalar()"))) t14 = t13 + taTr; 
+            if(t13 > maximum2)
+            {
+                maximum2 = t13;
+                printf("maximum2%.10f\n",maximum2);
+            }
+                
+            float __attribute__((annotate("scalar(range(0, 178186977280) final)"))) t14 = t13 + taTr; 
             printf("t14 %.10f\n",t14);
-
-            float __attribute__((annotate("scalar(range(-99, 999) final)"))) ToF = sqrt(sqrt(t14)) - 273.15;
+            if(t14 > maximum)
+                maximum = t14;
+            float __attribute__((annotate("scalar(range(-99,999) final)"))) ToF = sqrt(sqrt(t14)) - 273.15;
             printf("ToF %.10f\n", ToF);
 
-            if(pixelNumber == 658)
-            {
-                printf("-------------------------------------\n");
-                printf("t14 %.10f\n",t14);
-                printf("-------------------------------------\n");
-            }
+          
 
             result[pixelNumber] = ToF;
             printf("pixel Number %d \n",pixelNumber);
