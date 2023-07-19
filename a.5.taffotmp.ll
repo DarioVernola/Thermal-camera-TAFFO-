@@ -1829,8 +1829,8 @@ define dso_local void @_Z19ExtractCPParametersPKt(i16* %0) #0 !taffo.initweight 
 
 99:                                               ; preds = %85
   %100 = shl i32 %96, 23, !taffo.constinfo !92
-  %s9_23fixp = sub i32 %100, -2147483648, !taffo.info !150, !taffo.constinfo !151
-  %101 = sitofp i32 %s9_23fixp to float, !taffo.info !150
+  %s9_23fixp4 = sub i32 %100, -2147483648, !taffo.info !150, !taffo.constinfo !151
+  %101 = sitofp i32 %s9_23fixp4 to float, !taffo.info !150
   %102 = fdiv float %101, 0x4160000000000000, !taffo.info !150, !taffo.constinfo !151
   br label %103
 
@@ -1844,12 +1844,12 @@ define dso_local void @_Z19ExtractCPParametersPKt(i16* %0) #0 !taffo.initweight 
   %109 = add nsw i32 %108, 8, !taffo.constinfo !92
   %110 = trunc i32 %109 to i8
   %111 = fmul float 0x4160000000000000, %.0, !taffo.info !150
-  %s9_23fixp2 = fptosi float %111 to i32, !taffo.info !150
+  %s9_23fixp = fptosi float %111 to i32, !taffo.info !150
   %112 = uitofp i8 %110 to double
   %113 = call double @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_(i32 2, double %112), !taffo.constinfo !97
   %114 = fmul double 0x4160000000000000, %113, !taffo.info !150
   %115 = fptosi double %114 to i32, !taffo.info !150
-  %116 = sext i32 %s9_23fixp2 to i64, !taffo.info !150
+  %116 = sext i32 %s9_23fixp to i64, !taffo.info !150
   %117 = shl i64 %116, 23, !taffo.info !150
   %118 = sext i32 %115 to i64, !taffo.info !150
   %119 = sdiv i64 %117, %118, !taffo.info !154
@@ -1867,8 +1867,8 @@ define dso_local void @_Z19ExtractCPParametersPKt(i16* %0) #0 !taffo.initweight 
 
 128:                                              ; preds = %103
   %129 = shl i32 %125, 23, !taffo.constinfo !92
-  %s9_23fixp3 = sub i32 %129, -2147483648, !taffo.info !150, !taffo.constinfo !151
-  %130 = sitofp i32 %s9_23fixp3 to float, !taffo.info !150
+  %s9_23fixp2 = sub i32 %129, -2147483648, !taffo.info !150, !taffo.constinfo !151
+  %130 = sitofp i32 %s9_23fixp2 to float, !taffo.info !150
   %131 = fdiv float %130, 0x4160000000000000, !taffo.info !150, !taffo.constinfo !151
   br label %132
 
@@ -1881,12 +1881,12 @@ define dso_local void @_Z19ExtractCPParametersPKt(i16* %0) #0 !taffo.initweight 
   %137 = ashr i32 %136, 8, !taffo.constinfo !92
   %138 = trunc i32 %137 to i8
   %139 = fmul float 0x4160000000000000, %.01, !taffo.info !150
-  %s9_23fixp4 = fptosi float %139 to i32, !taffo.info !150
+  %s9_23fixp3 = fptosi float %139 to i32, !taffo.info !150
   %140 = uitofp i8 %138 to double
   %141 = call double @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_(i32 2, double %140), !taffo.constinfo !97
   %142 = fmul double 0x4160000000000000, %141, !taffo.info !150
   %143 = fptosi double %142 to i32, !taffo.info !150
-  %144 = sext i32 %s9_23fixp4 to i64, !taffo.info !150
+  %144 = sext i32 %s9_23fixp3 to i64, !taffo.info !150
   %145 = shl i64 %144, 23, !taffo.info !150
   %146 = sext i32 %143 to i64, !taffo.info !150
   %147 = sdiv i64 %145, %146, !taffo.info !154
@@ -2500,7 +2500,7 @@ define dso_local void @_Z20MLX90640_CalculateToPKtffPf(i16* %0, float %1, float 
   %s16_16fixp9 = fptosi float %15 to i32, !taffo.info !363
   %16 = sitofp i32 %s16_16fixp9 to double, !taffo.info !363
   %17 = fdiv double %16, 6.553600e+04, !taffo.info !363
-  %.flt37 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([12 x i8], [12 x i8]* @.str.22, i64 0, i64 0), double %17), !taffo.initweight !112, !taffo.info !365, !taffo.constinfo !97
+  %.flt36 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([12 x i8], [12 x i8]* @.str.22, i64 0, i64 0), double %17), !taffo.initweight !112, !taffo.info !365, !taffo.constinfo !97
   %18 = fpext float %2 to double, !taffo.initweight !110, !taffo.info !343
   %19 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([12 x i8], [12 x i8]* @.str.23, i64 0, i64 0), double %18), !taffo.initweight !112, !taffo.info !343, !taffo.constinfo !97
   %20 = fmul float 6.553600e+04, %14, !taffo.info !363, !taffo.constinfo !92
@@ -2573,8 +2573,8 @@ define dso_local void @_Z20MLX90640_CalculateToPKtffPf(i16* %0, float %1, float 
   %71 = load float, float* getelementptr inbounds ([4 x float], [4 x float]* @params_ksTo, i64 0, i64 2), align 8, !taffo.initweight !110, !taffo.info !169
   %72 = load i16, i16* getelementptr inbounds ([4 x i16], [4 x i16]* @params_ct, i64 0, i64 2), align 2, !taffo.initweight !110, !taffo.info !1
   %73 = sext i16 %72 to i32, !taffo.initweight !112, !taffo.info !1
-  %s17_15fixp20 = shl i32 %73, 15, !taffo.info !381
-  %74 = sitofp i32 %s17_15fixp20 to float, !taffo.info !381
+  %s17_15fixp11 = shl i32 %73, 15, !taffo.info !381
+  %74 = sitofp i32 %s17_15fixp11 to float, !taffo.info !381
   %75 = fdiv float %74, 3.276800e+04, !taffo.info !381
   %76 = fmul float %71, %75, !taffo.initweight !112, !taffo.info !169
   %77 = fadd float 1.000000e+00, %76, !taffo.initweight !167, !taffo.info !169, !taffo.constinfo !300
@@ -2617,8 +2617,8 @@ define dso_local void @_Z20MLX90640_CalculateToPKtffPf(i16* %0, float %1, float 
   %105 = shl i64 %104, 15, !taffo.info !381
   %106 = sext i32 %103 to i64, !taffo.info !386
   %107 = sdiv i64 %105, %106, !taffo.info !387
-  %s17_15fixp36 = trunc i64 %107 to i32, !taffo.info !386
-  %108 = sitofp i32 %s17_15fixp36 to double, !taffo.info !386
+  %s17_15fixp35 = trunc i64 %107 to i32, !taffo.info !386
+  %108 = sitofp i32 %s17_15fixp35 to double, !taffo.info !386
   %109 = fdiv double %108, 3.276800e+04, !taffo.info !386
   %110 = getelementptr inbounds i16, i16* %0, i64 832
   %111 = load i16, i16* %110, align 2
@@ -2667,7 +2667,7 @@ define dso_local void @_Z20MLX90640_CalculateToPKtffPf(i16* %0, float %1, float 
   %142 = fmul float 3.276800e+04, %141, !taffo.info !343
   %143 = fptosi float %142 to i32, !taffo.info !343
   %144 = sext i32 %143 to i64, !taffo.info !343
-  %145 = sext i32 %s17_15fixp36 to i64, !taffo.info !386
+  %145 = sext i32 %s17_15fixp35 to i64, !taffo.info !386
   %146 = mul i64 %144, %145, !taffo.info !389
   %147 = ashr i64 %146, 15, !taffo.info !389
   %s17_15fixp54 = trunc i64 %147 to i32, !taffo.info !386
@@ -2707,10 +2707,10 @@ define dso_local void @_Z20MLX90640_CalculateToPKtffPf(i16* %0, float %1, float 
   %s9_23fixp83 = lshr i32 %u8_24fixp75, 1, !taffo.info !399
   %s9_23fixp26 = load i32, i32* @params_cpKv.fixp, align 4, !taffo.info !19
   %170 = fmul float 6.553600e+04, %13, !taffo.info !363, !taffo.constinfo !92
-  %s16_16fixp21 = fptosi float %170 to i32, !taffo.info !363
-  %s16_16fixp42 = sub i32 %s16_16fixp21, 216268, !taffo.info !363, !taffo.constinfo !400
+  %s16_16fixp18 = fptosi float %170 to i32, !taffo.info !363
+  %s16_16fixp40 = sub i32 %s16_16fixp18, 216268, !taffo.info !363, !taffo.constinfo !400
   %171 = sext i32 %s9_23fixp26 to i64, !taffo.info !19
-  %172 = sext i32 %s16_16fixp42 to i64, !taffo.info !363
+  %172 = sext i32 %s16_16fixp40 to i64, !taffo.info !363
   %173 = mul i64 %171, %172, !taffo.info !403
   %174 = ashr i64 %173, 16, !taffo.info !403
   %s9_23fixp60 = trunc i64 %174 to i32, !taffo.info !19
@@ -2786,17 +2786,17 @@ define dso_local void @_Z20MLX90640_CalculateToPKtffPf(i16* %0, float %1, float 
   %221 = fpext float %220 to double, !taffo.initweight !112, !taffo.info !343
   %222 = load i16, i16* getelementptr inbounds ([2 x i16], [2 x i16]* @params_cpOffset, i64 0, i64 1), align 2, !taffo.initweight !110, !taffo.info !1
   %223 = sext i16 %222 to i32, !taffo.initweight !112, !taffo.info !1
-  %s17_15fixp22 = shl i32 %223, 15, !taffo.info !381
+  %s17_15fixp21 = shl i32 %223, 15, !taffo.info !381
   %224 = load float, float* getelementptr inbounds ([3 x float], [3 x float]* @params_ilChessC, i64 0, i64 0), align 4, !taffo.initweight !110, !taffo.info !343
   %225 = fmul float 3.276800e+04, %224, !taffo.info !343
   %226 = fptosi float %225 to i32, !taffo.info !343
-  %s17_15fixp67 = add i32 %s17_15fixp22, %226, !taffo.info !386
+  %s17_15fixp67 = add i32 %s17_15fixp21, %226, !taffo.info !386
   %u8_24fixp = load i32, i32* @params_cpKta.fixp, align 4, !taffo.info !21
   %227 = fmul float 6.553600e+04, %14, !taffo.info !363, !taffo.constinfo !92
   %228 = fptosi float %227 to i32, !taffo.info !363
-  %s16_16fixp16 = sub i32 %228, 1638400, !taffo.info !363, !taffo.constinfo !392
+  %s16_16fixp17 = sub i32 %228, 1638400, !taffo.info !363, !taffo.constinfo !392
   %229 = zext i32 %u8_24fixp to i64, !taffo.info !21
-  %230 = sext i32 %s16_16fixp16 to i64, !taffo.info !363
+  %230 = sext i32 %s16_16fixp17 to i64, !taffo.info !363
   %231 = mul i64 %229, %230, !taffo.info !395
   %232 = lshr i64 %231, 16, !taffo.info !395
   %u8_24fixp44 = trunc i64 %232 to i32, !taffo.info !21
@@ -2809,10 +2809,10 @@ define dso_local void @_Z20MLX90640_CalculateToPKtffPf(i16* %0, float %1, float 
   %s9_23fixp88 = lshr i32 %u8_24fixp79, 1, !taffo.info !399
   %s9_23fixp = load i32, i32* @params_cpKv.fixp, align 4, !taffo.info !19
   %237 = fmul float 6.553600e+04, %13, !taffo.info !363, !taffo.constinfo !92
-  %s16_16fixp17 = fptosi float %237 to i32, !taffo.info !363
-  %s16_16fixp41 = sub i32 %s16_16fixp17, 216268, !taffo.info !363, !taffo.constinfo !400
+  %s16_16fixp12 = fptosi float %237 to i32, !taffo.info !363
+  %s16_16fixp37 = sub i32 %s16_16fixp12, 216268, !taffo.info !363, !taffo.constinfo !400
   %238 = sext i32 %s9_23fixp to i64, !taffo.info !19
-  %239 = sext i32 %s16_16fixp41 to i64, !taffo.info !363
+  %239 = sext i32 %s16_16fixp37 to i64, !taffo.info !363
   %240 = mul i64 %238, %239, !taffo.info !403
   %241 = ashr i64 %240, 16, !taffo.info !403
   %s9_23fixp58 = trunc i64 %241 to i32, !taffo.info !19
@@ -2904,7 +2904,7 @@ define dso_local void @_Z20MLX90640_CalculateToPKtffPf(i16* %0, float %1, float 
   %302 = fmul float 8.192000e+03, %.04, !taffo.info !408
   %303 = fptosi float %302 to i32, !taffo.info !408
   %304 = sext i32 %303 to i64, !taffo.info !408
-  %305 = sext i32 %s17_15fixp36 to i64, !taffo.info !386
+  %305 = sext i32 %s17_15fixp35 to i64, !taffo.info !386
   %306 = mul i64 %304, %305, !taffo.info !409
   %307 = ashr i64 %306, 15, !taffo.info !409
   %s19_13fixp53 = trunc i64 %307 to i32, !taffo.info !408
@@ -2942,9 +2942,9 @@ define dso_local void @_Z20MLX90640_CalculateToPKtffPf(i16* %0, float %1, float 
   %329 = getelementptr inbounds [768 x i16], [768 x i16]* @params_offset, i64 0, i64 %328, !taffo.initweight !109, !taffo.info !1
   %330 = load i16, i16* %329, align 2, !taffo.initweight !110, !taffo.info !1
   %331 = sext i16 %330 to i32, !taffo.initweight !112, !taffo.info !1
-  %s19_13fixp18 = shl i32 %331, 13, !taffo.info !411
+  %s19_13fixp20 = shl i32 %331, 13, !taffo.info !411
   %332 = sext i32 %s19_13fixp77 to i64, !taffo.info !263
-  %333 = sext i32 %s19_13fixp18 to i64, !taffo.info !411
+  %333 = sext i32 %s19_13fixp20 to i64, !taffo.info !411
   %334 = mul i64 %332, %333, !taffo.info !412
   %335 = ashr i64 %334, 13, !taffo.info !412
   %s19_13fixp85 = trunc i64 %335 to i32, !taffo.info !263
@@ -2957,16 +2957,16 @@ define dso_local void @_Z20MLX90640_CalculateToPKtffPf(i16* %0, float %1, float 
   %341 = sext i16 %340 to i32, !taffo.initweight !112, !taffo.info !1
   %342 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([18 x i8], [18 x i8]* @.str.37, i64 0, i64 0), i32 %341), !taffo.initweight !167, !taffo.info !1, !taffo.constinfo !97
   %343 = fmul float 6.553600e+04, %13, !taffo.info !363, !taffo.constinfo !92
-  %s16_16fixp13 = fptosi float %343 to i32, !taffo.info !363
-  %s16_16fixp39 = sub i32 %s16_16fixp13, 216268, !taffo.info !363, !taffo.constinfo !400
-  %344 = sitofp i32 %s16_16fixp39 to float, !taffo.info !363
+  %s16_16fixp19 = fptosi float %343 to i32, !taffo.info !363
+  %s16_16fixp41 = sub i32 %s16_16fixp19, 216268, !taffo.info !363, !taffo.constinfo !400
+  %344 = sitofp i32 %s16_16fixp41 to float, !taffo.info !363
   %345 = fdiv float %344, 6.553600e+04, !taffo.info !363, !taffo.constinfo !400
   %346 = fpext float %345 to double
   %347 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([11 x i8], [11 x i8]* @.str.38, i64 0, i64 0), double %346), !taffo.constinfo !97
   %348 = sext i32 %.0 to i64
   %s5_27fixp31 = getelementptr inbounds [768 x i32], [768 x i32]* @params_kv.fixp, i64 0, i64 %348, !taffo.info !37
   %s5_27fixp49 = load i32, i32* %s5_27fixp31, align 4, !taffo.info !37
-  %349 = sext i32 %s16_16fixp39 to i64, !taffo.info !363
+  %349 = sext i32 %s16_16fixp41 to i64, !taffo.info !363
   %350 = sext i32 %s5_27fixp49 to i64, !taffo.info !37
   %351 = mul i64 %349, %350, !taffo.info !414
   %352 = ashr i64 %351, 16, !taffo.info !414
@@ -2994,9 +2994,9 @@ define dso_local void @_Z20MLX90640_CalculateToPKtffPf(i16* %0, float %1, float 
   %371 = getelementptr inbounds [768 x i16], [768 x i16]* @params_offset, i64 0, i64 %370, !taffo.initweight !109, !taffo.info !1
   %372 = load i16, i16* %371, align 2, !taffo.initweight !110, !taffo.info !1
   %373 = sext i16 %372 to i32, !taffo.initweight !112, !taffo.info !1
-  %s19_13fixp19 = shl i32 %373, 13, !taffo.info !411
+  %s19_13fixp = shl i32 %373, 13, !taffo.info !411
   %374 = sext i32 %s19_13fixp90 to i64, !taffo.info !263
-  %375 = sext i32 %s19_13fixp19 to i64, !taffo.info !411
+  %375 = sext i32 %s19_13fixp to i64, !taffo.info !411
   %376 = mul i64 %374, %375, !taffo.info !412
   %377 = ashr i64 %376, 13, !taffo.info !412
   %s19_13fixp99 = trunc i64 %377 to i32, !taffo.info !263
@@ -3039,7 +3039,7 @@ define dso_local void @_Z20MLX90640_CalculateToPKtffPf(i16* %0, float %1, float 
   %405 = shl i64 %404, 13, !taffo.info !263
   %406 = sext i32 %8 to i64, !taffo.info !343
   %407 = sdiv i64 %405, %406, !taffo.info !415
-  %s19_13fixp = trunc i64 %407 to i32, !taffo.info !263
+  %s19_13fixp16 = trunc i64 %407 to i32, !taffo.info !263
   %s5_27fixp24 = load i32, i32* @params_tgc.fixp, align 4, !taffo.info !16
   %408 = zext i16 %12 to i64
   %409 = getelementptr inbounds [2 x float], [2 x float]* %9, i64 0, i64 %408, !taffo.initweight !109, !taffo.info !343
@@ -3051,7 +3051,7 @@ define dso_local void @_Z20MLX90640_CalculateToPKtffPf(i16* %0, float %1, float 
   %415 = mul i64 %413, %414, !taffo.info !416
   %416 = ashr i64 %415, 27, !taffo.info !416
   %s5_27fixp43 = trunc i64 %416 to i32, !taffo.info !16
-  %417 = shl i32 %s19_13fixp, 14, !taffo.info !263
+  %417 = shl i32 %s19_13fixp16, 14, !taffo.info !263
   %s5_27fixp57 = sub i32 %417, %s5_27fixp43, !taffo.info !16
   %418 = sitofp i32 %s5_27fixp57 to float, !taffo.info !16
   %419 = fdiv float %418, 0x41A0000000000000, !taffo.info !16
@@ -3098,9 +3098,9 @@ define dso_local void @_Z20MLX90640_CalculateToPKtffPf(i16* %0, float %1, float 
   %s2_30fixp29 = load i32, i32* @params_KsTa.fixp, align 4, !taffo.info !28
   %451 = fmul float 6.553600e+04, %14, !taffo.info !363, !taffo.constinfo !92
   %452 = fptosi float %451 to i32, !taffo.info !363
-  %s16_16fixp15 = sub i32 %452, 1638400, !taffo.info !363, !taffo.constinfo !392
+  %s16_16fixp14 = sub i32 %452, 1638400, !taffo.info !363, !taffo.constinfo !392
   %453 = sext i32 %s2_30fixp29 to i64, !taffo.info !28
-  %454 = sext i32 %s16_16fixp15 to i64, !taffo.info !363
+  %454 = sext i32 %s16_16fixp14 to i64, !taffo.info !363
   %455 = mul i64 %453, %454, !taffo.info !422
   %456 = ashr i64 %455, 16, !taffo.info !422
   %s2_30fixp47 = trunc i64 %456 to i32, !taffo.info !423
@@ -3182,21 +3182,21 @@ define dso_local void @_Z20MLX90640_CalculateToPKtffPf(i16* %0, float %1, float 
   %512 = fptrunc double %511 to float, !taffo.initweight !168, !taffo.info !169
   %513 = fmul float 0x4150000000000000, %512, !taffo.info !169
   %514 = fptosi float %513 to i32, !taffo.info !169
-  %s2_30fixp = shl i32 %514, 8, !taffo.info !28
-  %515 = sitofp i32 %s2_30fixp to double, !taffo.info !28
+  %s2_30fixp22 = shl i32 %514, 8, !taffo.info !28
+  %515 = sitofp i32 %s2_30fixp22 to double, !taffo.info !28
   %516 = fdiv double %515, 0x41D0000000000000, !taffo.info !28
   %517 = load float, float* getelementptr inbounds ([4 x float], [4 x float]* @params_ksTo, i64 0, i64 1), align 4, !taffo.initweight !110, !taffo.info !169
   %518 = fpext float %517 to double, !taffo.initweight !112, !taffo.info !169
-  %.flt35 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([22 x i8], [22 x i8]* @.str.60, i64 0, i64 0), double %516, double %518), !taffo.initweight !112, !taffo.info !423, !taffo.constinfo !95
+  %.flt42 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([22 x i8], [22 x i8]* @.str.60, i64 0, i64 0), double %516, double %518), !taffo.initweight !112, !taffo.info !423, !taffo.constinfo !95
   %519 = fmul float 0x4150000000000000, %512, !taffo.info !169
   %520 = fptosi float %519 to i32, !taffo.info !169
   %521 = shl i32 %520, 8, !taffo.info !169
-  %s2_30fixp12 = sub i32 1073741824, %521, !taffo.info !423, !taffo.constinfo !300
-  %522 = sitofp i32 %s2_30fixp12 to double, !taffo.info !423
+  %s2_30fixp = sub i32 1073741824, %521, !taffo.info !423, !taffo.constinfo !300
+  %522 = sitofp i32 %s2_30fixp to double, !taffo.info !423
   %523 = fdiv double %522, 0x41D0000000000000, !taffo.info !423, !taffo.constinfo !300
   %.flt55 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str.61, i64 0, i64 0), double %523), !taffo.initweight !112, !taffo.info !423, !taffo.constinfo !97
   %524 = sext i32 %s2_30fixp87 to i64, !taffo.info !423
-  %525 = sext i32 %s2_30fixp12 to i64, !taffo.info !423
+  %525 = sext i32 %s2_30fixp to i64, !taffo.info !423
   %526 = mul i64 %524, %525, !taffo.info !428
   %527 = ashr i64 %526, 30, !taffo.info !428
   %s2_30fixp95 = trunc i64 %527 to i32, !taffo.info !423
@@ -3448,15 +3448,15 @@ define dso_local void @_Z20MLX90640_CalculateToPKtffPf(i16* %0, float %1, float 
 
 678:                                              ; preds = %252
   %679 = fmul float 6.553600e+04, %13, !taffo.info !363, !taffo.constinfo !92
-  %s16_16fixp14 = fptosi float %679 to i32, !taffo.info !363
-  %680 = sitofp i32 %s16_16fixp14 to double, !taffo.info !363
+  %s16_16fixp13 = fptosi float %679 to i32, !taffo.info !363
+  %680 = sitofp i32 %s16_16fixp13 to double, !taffo.info !363
   %681 = fdiv double %680, 6.553600e+04, !taffo.info !363
-  %.flt40 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([8 x i8], [8 x i8]* @.str.84, i64 0, i64 0), double %681), !taffo.initweight !112, !taffo.info !365, !taffo.constinfo !97
+  %.flt38 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([8 x i8], [8 x i8]* @.str.84, i64 0, i64 0), double %681), !taffo.initweight !112, !taffo.info !365, !taffo.constinfo !97
   %682 = fmul float 6.553600e+04, %14, !taffo.info !363, !taffo.constinfo !92
-  %s16_16fixp11 = fptosi float %682 to i32, !taffo.info !363
-  %683 = sitofp i32 %s16_16fixp11 to double, !taffo.info !363
+  %s16_16fixp15 = fptosi float %682 to i32, !taffo.info !363
+  %683 = sitofp i32 %s16_16fixp15 to double, !taffo.info !363
   %684 = fdiv double %683, 6.553600e+04, !taffo.info !363
-  %.flt38 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([8 x i8], [8 x i8]* @.str.85, i64 0, i64 0), double %684), !taffo.initweight !112, !taffo.info !365, !taffo.constinfo !97
+  %.flt39 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([8 x i8], [8 x i8]* @.str.85, i64 0, i64 0), double %684), !taffo.initweight !112, !taffo.info !365, !taffo.constinfo !97
   %685 = fpext float %2 to double, !taffo.initweight !110, !taffo.info !343
   %686 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str.86, i64 0, i64 0), double %685), !taffo.initweight !112, !taffo.info !343, !taffo.constinfo !97
   %.flt120 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([12 x i8], [12 x i8]* @.str.87, i64 0, i64 0), double %64), !taffo.initweight !112, !taffo.info !374, !taffo.constinfo !97
@@ -3528,22 +3528,22 @@ define dso_local float @_Z14MLX90640_GetTaPKt(i16* %0) #0 !taffo.initweight !100
   %2 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([11 x i8], [11 x i8]* @.str.95, i64 0, i64 0)), !taffo.constinfo !92
   %3 = call float @_Z15MLX90640_GetVddPKt(i16* %0), !taffo.info !474, !taffo.constinfo !92
   %4 = fmul float 5.242880e+05, %3, !taffo.info !474, !taffo.constinfo !92
-  %s45_19fixp5 = fptosi float %4 to i64, !taffo.info !472
-  %5 = sitofp i64 %s45_19fixp5 to double, !taffo.info !472
+  %s45_19fixp3 = fptosi float %4 to i64, !taffo.info !472
+  %5 = sitofp i64 %s45_19fixp3 to double, !taffo.info !472
   %6 = fdiv double %5, 5.242880e+05, !taffo.info !472
-  %.flt12 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str.96, i64 0, i64 0), double %6), !taffo.initweight !112, !taffo.info !475, !taffo.constinfo !97
+  %.flt11 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str.96, i64 0, i64 0), double %6), !taffo.initweight !112, !taffo.info !475, !taffo.constinfo !97
   %7 = getelementptr inbounds i16, i16* %0, i64 800, !taffo.info !80
   %8 = load i16, i16* %7, align 2, !taffo.info !80
   %9 = zext i16 %8 to i32, !taffo.info !80
-  %s17_15fixp = shl i32 %9, 15, !taffo.info !476
-  %10 = sitofp i32 %s17_15fixp to float, !taffo.info !476
+  %s17_15fixp2 = shl i32 %9, 15, !taffo.info !476
+  %10 = sitofp i32 %s17_15fixp2 to float, !taffo.info !476
   %11 = fdiv float %10, 3.276800e+04, !taffo.info !476
-  %12 = icmp sgt i32 %s17_15fixp, 1073709056, !taffo.info !365
+  %12 = icmp sgt i32 %s17_15fixp2, 1073709056, !taffo.info !365
   br i1 %12, label %13, label %16, !taffo.initweight !112, !taffo.info !477
 
 13:                                               ; preds = %1
-  %s17_15fixp9 = sub i32 %s17_15fixp, -2147483648, !taffo.info !479, !taffo.constinfo !383
-  %14 = sitofp i32 %s17_15fixp9 to float, !taffo.info !479
+  %s17_15fixp10 = sub i32 %s17_15fixp2, -2147483648, !taffo.info !479, !taffo.constinfo !383
+  %14 = sitofp i32 %s17_15fixp10 to float, !taffo.info !479
   %15 = fdiv float %14, 3.276800e+04, !taffo.info !479, !taffo.constinfo !383
   br label %16
 
@@ -3601,24 +3601,24 @@ define dso_local float @_Z14MLX90640_GetTaPKt(i16* %0) #0 !taffo.initweight !100
   %51 = sitofp i64 %s35_29fixp to double, !taffo.info !502
   %52 = fdiv double %51, 0x41C0000000000000, !taffo.info !502
   %53 = fmul float 3.276800e+04, %.01, !taffo.info !480
-  %s17_15fixp2 = fptosi float %53 to i32, !taffo.info !479
-  %54 = sitofp i32 %s17_15fixp2 to double, !taffo.info !479
+  %s17_15fixp = fptosi float %53 to i32, !taffo.info !479
+  %54 = sitofp i32 %s17_15fixp to double, !taffo.info !479
   %55 = fdiv double %54, 3.276800e+04, !taffo.info !479
-  %.flt10 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([13 x i8], [13 x i8]* @.str.100, i64 0, i64 0), double %55), !taffo.initweight !112, !taffo.info !503, !taffo.constinfo !97
+  %.flt9 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([13 x i8], [13 x i8]* @.str.100, i64 0, i64 0), double %55), !taffo.initweight !112, !taffo.info !503, !taffo.constinfo !97
   %u4_28fixp = load i32, i32* @params_alphaPTAT.fixp, align 4, !taffo.info !13
   %56 = uitofp i32 %u4_28fixp to double, !taffo.info !13
   %57 = fdiv double %56, 0x41B0000000000000, !taffo.info !13
   %.flt14 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([18 x i8], [18 x i8]* @.str.101, i64 0, i64 0), double %57), !taffo.initweight !112, !taffo.info !504, !taffo.constinfo !97
   %.flt25 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([16 x i8], [16 x i8]* @.str.102, i64 0, i64 0), double %52), !taffo.initweight !112, !taffo.info !505, !taffo.constinfo !97
   %58 = fmul float 5.242880e+05, %3, !taffo.info !474, !taffo.constinfo !92
-  %s45_19fixp3 = fptosi float %58 to i64, !taffo.info !472
-  %s45_19fixp11 = sub i64 %s45_19fixp3, 1730150, !taffo.info !506, !taffo.constinfo !400
-  %59 = sitofp i64 %s45_19fixp11 to double, !taffo.info !506
+  %s45_19fixp4 = fptosi float %58 to i64, !taffo.info !472
+  %s45_19fixp12 = sub i64 %s45_19fixp4, 1730150, !taffo.info !506, !taffo.constinfo !400
+  %59 = sitofp i64 %s45_19fixp12 to double, !taffo.info !506
   %60 = fdiv double %59, 5.242880e+05, !taffo.info !506, !taffo.constinfo !400
   %.flt19 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([12 x i8], [12 x i8]* @.str.103, i64 0, i64 0), double %60), !taffo.initweight !112, !taffo.info !475, !taffo.constinfo !97
   %s2_30fixp6 = load i32, i32* @params_KvPTAT.fixp, align 4, !taffo.info !7
   %61 = sext i32 %s2_30fixp6 to i96, !taffo.info !7
-  %62 = sext i64 %s45_19fixp11 to i96, !taffo.info !506
+  %62 = sext i64 %s45_19fixp12 to i96, !taffo.info !506
   %63 = mul i96 %61, %62, !taffo.info !508
   %64 = ashr i96 %63, 24, !taffo.info !508
   %s39_25fixp = trunc i96 %64 to i64, !taffo.info !511
@@ -3648,8 +3648,8 @@ define dso_local float @_Z14MLX90640_GetTaPKt(i16* %0) #0 !taffo.initweight !100
   %.flt27 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([12 x i8], [12 x i8]* @.str.108, i64 0, i64 0), double %79), !taffo.initweight !112, !taffo.info !519, !taffo.constinfo !97
   %80 = load i16, i16* @params_vPTAT25, align 2, !taffo.initweight !109, !taffo.info !1
   %81 = zext i16 %80 to i32, !taffo.initweight !110, !taffo.info !1
-  %s17_15fixp4 = shl i32 %81, 15, !taffo.info !381
-  %82 = sext i32 %s17_15fixp4 to i64, !taffo.info !381
+  %s17_15fixp5 = shl i32 %81, 15, !taffo.info !381
+  %82 = sext i32 %s17_15fixp5 to i64, !taffo.info !381
   %83 = ashr i64 %82, 15, !taffo.info !381
   %s64_0fixp24 = sub i64 %s64_0fixp, %83, !taffo.info !520
   %84 = sitofp i64 %s64_0fixp24 to double, !taffo.info !520
@@ -3688,14 +3688,14 @@ define dso_local void @_Z17MLX90640_GetImagePKtPf(i16* %0, float* %1) #0 !taffo.
   %.04 = phi float [ %13, %12 ], [ %10, %2 ]
   %15 = load i16, i16* @params_gainEE, align 2, !taffo.initweight !109, !taffo.info !1
   %16 = sext i16 %15 to i32, !taffo.initweight !110, !taffo.info !1
-  %s17_15fixp10 = shl i32 %16, 15, !taffo.info !381
+  %s17_15fixp8 = shl i32 %16, 15, !taffo.info !381
   %17 = fmul float 3.276800e+04, %.04, !taffo.info !386
   %18 = fptosi float %17 to i32, !taffo.info !386
-  %19 = sext i32 %s17_15fixp10 to i64, !taffo.info !381
+  %19 = sext i32 %s17_15fixp8 to i64, !taffo.info !381
   %20 = shl i64 %19, 15, !taffo.info !381
   %21 = sext i32 %18 to i64, !taffo.info !386
   %22 = sdiv i64 %20, %21, !taffo.info !387
-  %s17_15fixp23 = trunc i64 %22 to i32, !taffo.info !386
+  %s17_15fixp22 = trunc i64 %22 to i32, !taffo.info !386
   %23 = getelementptr inbounds i16, i16* %0, i64 832
   %24 = load i16, i16* %23, align 2
   %25 = zext i16 %24 to i32
@@ -3743,7 +3743,7 @@ define dso_local void @_Z17MLX90640_GetImagePKtPf(i16* %0, float* %1) #0 !taffo.
   %55 = fmul float 3.276800e+04, %54, !taffo.info !343
   %56 = fptosi float %55 to i32, !taffo.info !343
   %57 = sext i32 %56 to i64, !taffo.info !343
-  %58 = sext i32 %s17_15fixp23 to i64, !taffo.info !386
+  %58 = sext i32 %s17_15fixp22 to i64, !taffo.info !386
   %59 = mul i64 %57, %58, !taffo.info !389
   %60 = ashr i64 %59, 15, !taffo.info !389
   %s17_15fixp33 = trunc i64 %60 to i32, !taffo.info !386
@@ -3764,18 +3764,18 @@ define dso_local void @_Z17MLX90640_GetImagePKtPf(i16* %0, float* %1) #0 !taffo.
   %70 = fpext float %69 to double, !taffo.initweight !112, !taffo.info !343
   %71 = load i16, i16* getelementptr inbounds ([2 x i16], [2 x i16]* @params_cpOffset, i64 0, i64 0), align 2, !taffo.initweight !110, !taffo.info !1
   %72 = sext i16 %71 to i32, !taffo.initweight !112, !taffo.info !1
-  %s17_15fixp8 = shl i32 %72, 15, !taffo.info !381
+  %s17_15fixp6 = shl i32 %72, 15, !taffo.info !381
   %u8_24fixp17 = load i32, i32* @params_cpKta.fixp, align 4, !taffo.info !21
   %73 = fmul float 6.553600e+04, %7, !taffo.info !363, !taffo.constinfo !92
   %74 = fptosi float %73 to i32, !taffo.info !363
-  %s16_16fixp5 = sub i32 %74, 1638400, !taffo.info !363, !taffo.constinfo !392
+  %s16_16fixp1 = sub i32 %74, 1638400, !taffo.info !363, !taffo.constinfo !392
   %75 = zext i32 %u8_24fixp17 to i64, !taffo.info !21
-  %76 = sext i32 %s16_16fixp5 to i64, !taffo.info !363
+  %76 = sext i32 %s16_16fixp1 to i64, !taffo.info !363
   %77 = mul i64 %75, %76, !taffo.info !395
   %78 = lshr i64 %77, 16, !taffo.info !395
   %u8_24fixp27 = trunc i64 %78 to i32, !taffo.info !21
   %u8_24fixp40 = add i32 16777216, %u8_24fixp27, !taffo.info !21, !taffo.constinfo !300
-  %79 = sext i32 %s17_15fixp8 to i64, !taffo.info !381
+  %79 = sext i32 %s17_15fixp6 to i64, !taffo.info !381
   %80 = zext i32 %u8_24fixp40 to i64, !taffo.info !21
   %81 = mul i64 %79, %80, !taffo.info !397
   %82 = lshr i64 %81, 15, !taffo.info !397
@@ -3783,10 +3783,10 @@ define dso_local void @_Z17MLX90640_GetImagePKtPf(i16* %0, float* %1) #0 !taffo.
   %s9_23fixp55 = lshr i32 %u8_24fixp49, 1, !taffo.info !399
   %s9_23fixp15 = load i32, i32* @params_cpKv.fixp, align 4, !taffo.info !19
   %83 = fmul float 3.276800e+04, %6, !taffo.info !528, !taffo.constinfo !92
-  %s17_15fixp6 = fptosi float %83 to i32, !taffo.info !528
-  %s17_15fixp21 = sub i32 %s17_15fixp6, 108134, !taffo.info !528, !taffo.constinfo !400
+  %s17_15fixp5 = fptosi float %83 to i32, !taffo.info !528
+  %s17_15fixp20 = sub i32 %s17_15fixp5, 108134, !taffo.info !528, !taffo.constinfo !400
   %84 = sext i32 %s9_23fixp15 to i64, !taffo.info !19
-  %85 = sext i32 %s17_15fixp21 to i64, !taffo.info !528
+  %85 = sext i32 %s17_15fixp20 to i64, !taffo.info !528
   %86 = mul i64 %84, %85, !taffo.info !529
   %87 = ashr i64 %86, 15, !taffo.info !529
   %s9_23fixp37 = trunc i64 %87 to i32, !taffo.info !19
@@ -3815,18 +3815,18 @@ define dso_local void @_Z17MLX90640_GetImagePKtPf(i16* %0, float* %1) #0 !taffo.
   %104 = fpext float %103 to double, !taffo.initweight !112, !taffo.info !343
   %105 = load i16, i16* getelementptr inbounds ([2 x i16], [2 x i16]* @params_cpOffset, i64 0, i64 1), align 2, !taffo.initweight !110, !taffo.info !1
   %106 = sext i16 %105 to i32, !taffo.initweight !112, !taffo.info !1
-  %s17_15fixp2 = shl i32 %106, 15, !taffo.info !381
+  %s17_15fixp11 = shl i32 %106, 15, !taffo.info !381
   %u8_24fixp16 = load i32, i32* @params_cpKta.fixp, align 4, !taffo.info !21
   %107 = fmul float 6.553600e+04, %7, !taffo.info !363, !taffo.constinfo !92
   %108 = fptosi float %107 to i32, !taffo.info !363
-  %s16_16fixp = sub i32 %108, 1638400, !taffo.info !363, !taffo.constinfo !392
+  %s16_16fixp12 = sub i32 %108, 1638400, !taffo.info !363, !taffo.constinfo !392
   %109 = zext i32 %u8_24fixp16 to i64, !taffo.info !21
-  %110 = sext i32 %s16_16fixp to i64, !taffo.info !363
+  %110 = sext i32 %s16_16fixp12 to i64, !taffo.info !363
   %111 = mul i64 %109, %110, !taffo.info !395
   %112 = lshr i64 %111, 16, !taffo.info !395
   %u8_24fixp26 = trunc i64 %112 to i32, !taffo.info !21
   %u8_24fixp39 = add i32 16777216, %u8_24fixp26, !taffo.info !21, !taffo.constinfo !300
-  %113 = sext i32 %s17_15fixp2 to i64, !taffo.info !381
+  %113 = sext i32 %s17_15fixp11 to i64, !taffo.info !381
   %114 = zext i32 %u8_24fixp39 to i64, !taffo.info !21
   %115 = mul i64 %113, %114, !taffo.info !397
   %116 = lshr i64 %115, 15, !taffo.info !397
@@ -3834,10 +3834,10 @@ define dso_local void @_Z17MLX90640_GetImagePKtPf(i16* %0, float* %1) #0 !taffo.
   %s9_23fixp54 = lshr i32 %u8_24fixp48, 1, !taffo.info !399
   %s9_23fixp14 = load i32, i32* @params_cpKv.fixp, align 4, !taffo.info !19
   %117 = fmul float 3.276800e+04, %6, !taffo.info !528, !taffo.constinfo !92
-  %s17_15fixp = fptosi float %117 to i32, !taffo.info !528
-  %s17_15fixp19 = sub i32 %s17_15fixp, 108134, !taffo.info !528, !taffo.constinfo !400
+  %s17_15fixp9 = fptosi float %117 to i32, !taffo.info !528
+  %s17_15fixp23 = sub i32 %s17_15fixp9, 108134, !taffo.info !528, !taffo.constinfo !400
   %118 = sext i32 %s9_23fixp14 to i64, !taffo.info !19
-  %119 = sext i32 %s17_15fixp19 to i64, !taffo.info !528
+  %119 = sext i32 %s17_15fixp23 to i64, !taffo.info !528
   %120 = mul i64 %118, %119, !taffo.info !529
   %121 = ashr i64 %120, 15, !taffo.info !529
   %s9_23fixp36 = trunc i64 %121 to i32, !taffo.info !19
@@ -3862,17 +3862,17 @@ define dso_local void @_Z17MLX90640_GetImagePKtPf(i16* %0, float* %1) #0 !taffo.
   %134 = fpext float %133 to double, !taffo.initweight !112, !taffo.info !343
   %135 = load i16, i16* getelementptr inbounds ([2 x i16], [2 x i16]* @params_cpOffset, i64 0, i64 1), align 2, !taffo.initweight !110, !taffo.info !1
   %136 = sext i16 %135 to i32, !taffo.initweight !112, !taffo.info !1
-  %s17_15fixp12 = shl i32 %136, 15, !taffo.info !381
+  %s17_15fixp4 = shl i32 %136, 15, !taffo.info !381
   %137 = load float, float* getelementptr inbounds ([3 x float], [3 x float]* @params_ilChessC, i64 0, i64 0), align 4, !taffo.initweight !110, !taffo.info !343
   %138 = fmul float 3.276800e+04, %137, !taffo.info !343
   %139 = fptosi float %138 to i32, !taffo.info !343
-  %s17_15fixp44 = add i32 %s17_15fixp12, %139, !taffo.info !386
+  %s17_15fixp44 = add i32 %s17_15fixp4, %139, !taffo.info !386
   %u8_24fixp = load i32, i32* @params_cpKta.fixp, align 4, !taffo.info !21
   %140 = fmul float 6.553600e+04, %7, !taffo.info !363, !taffo.constinfo !92
   %141 = fptosi float %140 to i32, !taffo.info !363
-  %s16_16fixp11 = sub i32 %141, 1638400, !taffo.info !363, !taffo.constinfo !392
+  %s16_16fixp = sub i32 %141, 1638400, !taffo.info !363, !taffo.constinfo !392
   %142 = zext i32 %u8_24fixp to i64, !taffo.info !21
-  %143 = sext i32 %s16_16fixp11 to i64, !taffo.info !363
+  %143 = sext i32 %s16_16fixp to i64, !taffo.info !363
   %144 = mul i64 %142, %143, !taffo.info !395
   %145 = lshr i64 %144, 16, !taffo.info !395
   %u8_24fixp25 = trunc i64 %145 to i32, !taffo.info !21
@@ -3885,10 +3885,10 @@ define dso_local void @_Z17MLX90640_GetImagePKtPf(i16* %0, float* %1) #0 !taffo.
   %s9_23fixp59 = lshr i32 %u8_24fixp53, 1, !taffo.info !399
   %s9_23fixp = load i32, i32* @params_cpKv.fixp, align 4, !taffo.info !19
   %150 = fmul float 3.276800e+04, %6, !taffo.info !528, !taffo.constinfo !92
-  %s17_15fixp1 = fptosi float %150 to i32, !taffo.info !528
-  %s17_15fixp20 = sub i32 %s17_15fixp1, 108134, !taffo.info !528, !taffo.constinfo !400
+  %s17_15fixp = fptosi float %150 to i32, !taffo.info !528
+  %s17_15fixp19 = sub i32 %s17_15fixp, 108134, !taffo.info !528, !taffo.constinfo !400
   %151 = sext i32 %s9_23fixp to i64, !taffo.info !19
-  %152 = sext i32 %s17_15fixp20 to i64, !taffo.info !528
+  %152 = sext i32 %s17_15fixp19 to i64, !taffo.info !528
   %153 = mul i64 %151, %152, !taffo.info !529
   %154 = ashr i64 %153, 15, !taffo.info !529
   %s9_23fixp35 = trunc i64 %154 to i32, !taffo.info !19
@@ -3978,7 +3978,7 @@ define dso_local void @_Z17MLX90640_GetImagePKtPf(i16* %0, float* %1) #0 !taffo.
   %213 = fmul float 3.276800e+04, %.03, !taffo.info !386
   %214 = fptosi float %213 to i32, !taffo.info !386
   %215 = sext i32 %214 to i64, !taffo.info !386
-  %216 = sext i32 %s17_15fixp23 to i64, !taffo.info !386
+  %216 = sext i32 %s17_15fixp22 to i64, !taffo.info !386
   %217 = mul i64 %215, %216, !taffo.info !389
   %218 = ashr i64 %217, 15, !taffo.info !389
   %s17_15fixp32 = trunc i64 %218 to i32, !taffo.info !386
@@ -3986,20 +3986,20 @@ define dso_local void @_Z17MLX90640_GetImagePKtPf(i16* %0, float* %1) #0 !taffo.
   %220 = getelementptr inbounds [768 x i16], [768 x i16]* @params_offset, i64 0, i64 %219, !taffo.initweight !109, !taffo.info !1
   %221 = load i16, i16* %220, align 2, !taffo.initweight !110, !taffo.info !1
   %222 = sext i16 %221 to i32, !taffo.initweight !112, !taffo.info !1
-  %s17_15fixp7 = shl i32 %222, 15, !taffo.info !381
+  %s17_15fixp3 = shl i32 %222, 15, !taffo.info !381
   %223 = sext i32 %.0 to i64
   %s19_13fixp = getelementptr inbounds [768 x i32], [768 x i32]* @params_kta.fixp, i64 0, i64 %223, !taffo.info !34
   %s19_13fixp29 = load i32, i32* %s19_13fixp, align 4, !taffo.info !34
   %224 = fmul float 6.553600e+04, %7, !taffo.info !363, !taffo.constinfo !92
   %225 = fptosi float %224 to i32, !taffo.info !363
-  %s16_16fixp4 = sub i32 %225, 1638400, !taffo.info !363, !taffo.constinfo !392
+  %s16_16fixp2 = sub i32 %225, 1638400, !taffo.info !363, !taffo.constinfo !392
   %226 = sext i32 %s19_13fixp29 to i64, !taffo.info !34
-  %227 = sext i32 %s16_16fixp4 to i64, !taffo.info !363
+  %227 = sext i32 %s16_16fixp2 to i64, !taffo.info !363
   %228 = mul i64 %226, %227, !taffo.info !531
   %229 = ashr i64 %228, 16, !taffo.info !531
   %s19_13fixp42 = trunc i64 %229 to i32, !taffo.info !34
   %s19_13fixp50 = add i32 8192, %s19_13fixp42, !taffo.info !34, !taffo.constinfo !300
-  %230 = sext i32 %s17_15fixp7 to i64, !taffo.info !381
+  %230 = sext i32 %s17_15fixp3 to i64, !taffo.info !381
   %231 = sext i32 %s19_13fixp50 to i64, !taffo.info !34
   %232 = mul i64 %230, %231, !taffo.info !532
   %233 = ashr i64 %232, 15, !taffo.info !532
@@ -4009,10 +4009,10 @@ define dso_local void @_Z17MLX90640_GetImagePKtPf(i16* %0, float* %1) #0 !taffo.
   %s5_27fixp18 = getelementptr inbounds [768 x i32], [768 x i32]* @params_kv.fixp, i64 0, i64 %234, !taffo.info !37
   %s5_27fixp30 = load i32, i32* %s5_27fixp18, align 4, !taffo.info !37
   %235 = fmul float 3.276800e+04, %6, !taffo.info !528, !taffo.constinfo !92
-  %s17_15fixp9 = fptosi float %235 to i32, !taffo.info !528
-  %s17_15fixp22 = sub i32 %s17_15fixp9, 108134, !taffo.info !528, !taffo.constinfo !400
+  %s17_15fixp7 = fptosi float %235 to i32, !taffo.info !528
+  %s17_15fixp21 = sub i32 %s17_15fixp7, 108134, !taffo.info !528, !taffo.constinfo !400
   %236 = sext i32 %s5_27fixp30 to i64, !taffo.info !37
-  %237 = sext i32 %s17_15fixp22 to i64, !taffo.info !528
+  %237 = sext i32 %s17_15fixp21 to i64, !taffo.info !528
   %238 = mul i64 %236, %237, !taffo.info !533
   %239 = ashr i64 %238, 15, !taffo.info !533
   %s5_27fixp51 = trunc i64 %239 to i32, !taffo.info !37
@@ -4081,9 +4081,9 @@ define dso_local void @_Z17MLX90640_GetImagePKtPf(i16* %0, float* %1) #0 !taffo.
   %s2_30fixp = load i32, i32* @params_KsTa.fixp, align 4, !taffo.info !28
   %284 = fmul float 6.553600e+04, %7, !taffo.info !363, !taffo.constinfo !92
   %285 = fptosi float %284 to i32, !taffo.info !363
-  %s16_16fixp3 = sub i32 %285, 1638400, !taffo.info !363, !taffo.constinfo !392
+  %s16_16fixp10 = sub i32 %285, 1638400, !taffo.info !363, !taffo.constinfo !392
   %286 = sext i32 %s2_30fixp to i64, !taffo.info !28
-  %287 = sext i32 %s16_16fixp3 to i64, !taffo.info !363
+  %287 = sext i32 %s16_16fixp10 to i64, !taffo.info !363
   %288 = mul i64 %286, %287, !taffo.info !422
   %289 = ashr i64 %288, 16, !taffo.info !422
   %s2_30fixp28 = trunc i64 %289 to i32, !taffo.info !28
@@ -4311,16 +4311,16 @@ define dso_local void @_Z8printPPMP8_IO_FILEPfiiff(%struct._IO_FILE* %0, float* 
   br label %52
 
 52:                                               ; preds = %51, %42
-  %u10_22fixp18 = phi i32 [ 4194304, %42 ], [ %u10_22fixp39, %51 ], !taffo.info !551
+  %u10_22fixp = phi i32 [ 4194304, %42 ], [ %u10_22fixp39, %51 ], !taffo.info !551
   br label %53
 
 53:                                               ; preds = %52, %33
-  %u10_22fixp40 = phi i32 [ %u10_22fixp34, %33 ], [ %u10_22fixp18, %52 ], !taffo.info !551
+  %u10_22fixp40 = phi i32 [ %u10_22fixp34, %33 ], [ %u10_22fixp, %52 ], !taffo.info !551
   %54 = zext i32 %u10_22fixp40 to i64, !taffo.info !551
   %55 = mul i64 511, %54, !taffo.info !565, !taffo.constinfo !567
   %56 = lshr i64 %55, 1, !taffo.info !565, !taffo.constinfo !567
-  %u10_22fixp20 = trunc i64 %56 to i32, !taffo.info !551
-  %57 = lshr i32 %u10_22fixp20, 22, !taffo.info !551
+  %u10_22fixp17 = trunc i64 %56 to i32, !taffo.info !551
+  %57 = lshr i32 %u10_22fixp17, 22, !taffo.info !551
   %58 = icmp sle i32 262144, %s11_21fixp22, !taffo.info !551
   br i1 %58, label %59, label %66, !taffo.initweight !112, !taffo.info !343
 
@@ -4373,11 +4373,11 @@ define dso_local void @_Z8printPPMP8_IO_FILEPfiiff(%struct._IO_FILE* %0, float* 
   br label %82
 
 82:                                               ; preds = %81, %70
-  %u10_22fixp19 = phi i32 [ 4194304, %70 ], [ %u10_22fixp37, %81 ], !taffo.info !551
+  %u10_22fixp20 = phi i32 [ 4194304, %70 ], [ %u10_22fixp37, %81 ], !taffo.info !551
   br label %83
 
 83:                                               ; preds = %82, %61
-  %u10_22fixp38 = phi i32 [ %u10_22fixp32, %61 ], [ %u10_22fixp19, %82 ], !taffo.info !551
+  %u10_22fixp38 = phi i32 [ %u10_22fixp32, %61 ], [ %u10_22fixp20, %82 ], !taffo.info !551
   %84 = zext i32 %u10_22fixp38 to i64, !taffo.info !551
   %85 = mul i64 511, %84, !taffo.info !565, !taffo.constinfo !567
   %86 = lshr i64 %85, 1, !taffo.info !565, !taffo.constinfo !567
@@ -4431,16 +4431,16 @@ define dso_local void @_Z8printPPMP8_IO_FILEPfiiff(%struct._IO_FILE* %0, float* 
   br label %110
 
 110:                                              ; preds = %109, %98
-  %u10_22fixp17 = phi i32 [ 4194304, %98 ], [ %u10_22fixp35, %109 ], !taffo.info !551
+  %u10_22fixp18 = phi i32 [ 4194304, %98 ], [ %u10_22fixp35, %109 ], !taffo.info !551
   br label %111
 
 111:                                              ; preds = %110, %89
-  %u10_22fixp36 = phi i32 [ %u10_22fixp30, %89 ], [ %u10_22fixp17, %110 ], !taffo.info !551
+  %u10_22fixp36 = phi i32 [ %u10_22fixp30, %89 ], [ %u10_22fixp18, %110 ], !taffo.info !551
   %112 = zext i32 %u10_22fixp36 to i64, !taffo.info !551
   %113 = mul i64 511, %112, !taffo.info !565, !taffo.constinfo !567
   %114 = lshr i64 %113, 1, !taffo.info !565, !taffo.constinfo !567
-  %u10_22fixp = trunc i64 %114 to i32, !taffo.info !551
-  %115 = lshr i32 %u10_22fixp, 22, !taffo.info !551
+  %u10_22fixp19 = trunc i64 %114 to i32, !taffo.info !551
+  %115 = lshr i32 %u10_22fixp19, 22, !taffo.info !551
   %116 = call i32 (%struct._IO_FILE*, i8*, ...) @fprintf(%struct._IO_FILE* %0, i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str.122, i64 0, i64 0), i32 %57, i32 %87, i32 %115), !taffo.constinfo !580
   br label %117
 
@@ -4464,7 +4464,7 @@ declare !taffo.initweight !86 !taffo.funinfo !87 dso_local i32 @fprintf(%struct.
 
 ; Function Attrs: noinline norecurse uwtable mustprogress
 define dso_local i32 @main(i32 %0, i8** %1) #4 !taffo.initweight !86 !taffo.funinfo !87 !taffo.start !583 {
-  %s11_21fixp = alloca [768 x i32], align 16, !taffo.info !448
+  %s11_21fixp3 = alloca [768 x i32], align 16, !taffo.info !448
   %3 = call i32 @_Z26MLX90640_ExtractParametersPKt(i16* getelementptr inbounds ([832 x i16], [832 x i16]* @_ZL6eeprom, i64 0, i64 0)), !taffo.info !103, !taffo.constinfo !92
   %4 = icmp ne i32 %3, 0, !taffo.info !105
   br i1 %4, label %5, label %6
@@ -4476,20 +4476,20 @@ define dso_local i32 @main(i32 %0, i8** %1) #4 !taffo.initweight !86 !taffo.funi
   %7 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str.125, i64 0, i64 0)), !taffo.constinfo !92
   %8 = call float @_Z14MLX90640_GetTaPKt(i16* getelementptr inbounds ([834 x i16], [834 x i16]* @_ZL9subframe1, i64 0, i64 0)), !taffo.info !584, !taffo.constinfo !92
   %9 = fmul float 1.000000e+00, %8, !taffo.info !584, !taffo.constinfo !92
-  %s64_0fixp7 = fptosi float %9 to i64, !taffo.info !525
-  %10 = sitofp i64 %s64_0fixp7 to double, !taffo.info !525
-  %.flt22 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.127, i64 0, i64 0), double %10), !taffo.initweight !112, !taffo.info !519, !taffo.constinfo !97
+  %s64_0fixp = fptosi float %9 to i64, !taffo.info !525
+  %10 = sitofp i64 %s64_0fixp to double, !taffo.info !525
+  %.flt21 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.127, i64 0, i64 0), double %10), !taffo.initweight !112, !taffo.info !519, !taffo.constinfo !97
   %11 = fmul float 1.000000e+00, %8, !taffo.info !584, !taffo.constinfo !92
   %12 = fptosi float %11 to i64, !taffo.info !584
-  %s64_0fixp8 = sub i64 %12, 8, !taffo.info !525, !taffo.constinfo !141
-  %13 = sitofp i64 %s64_0fixp8 to double, !taffo.info !525
+  %s64_0fixp7 = sub i64 %12, 8, !taffo.info !525, !taffo.constinfo !141
+  %13 = sitofp i64 %s64_0fixp7 to double, !taffo.info !525
   %14 = fmul float 1.000000e+00, %8, !taffo.info !584, !taffo.constinfo !92
-  %s64_0fixp = fptosi float %14 to i64, !taffo.info !525
-  %15 = sitofp i64 %s64_0fixp to double, !taffo.info !525
-  %.flt = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([16 x i8], [16 x i8]* @.str.129, i64 0, i64 0), double %15), !taffo.initweight !112, !taffo.info !519, !taffo.constinfo !97
+  %s64_0fixp8 = fptosi float %14 to i64, !taffo.info !525
+  %15 = sitofp i64 %s64_0fixp8 to double, !taffo.info !525
+  %.flt22 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([16 x i8], [16 x i8]* @.str.129, i64 0, i64 0), double %15), !taffo.initweight !112, !taffo.info !519, !taffo.constinfo !97
   %.flt29 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([16 x i8], [16 x i8]* @.str.130, i64 0, i64 0), double %13), !taffo.initweight !112, !taffo.info !519, !taffo.constinfo !97
-  %s11_21fixp17 = getelementptr inbounds [768 x i32], [768 x i32]* %s11_21fixp, i64 0, i64 0, !taffo.info !448
-  call void @_Z20MLX90640_CalculateToPKtffPf.5_fixp(i16* getelementptr inbounds ([834 x i16], [834 x i16]* @_ZL9subframe1, i64 0, i64 0), float 0x3FEE666660000000, i64 %s64_0fixp8, i32* %s11_21fixp17), !taffo.info !451, !taffo.constinfo !585
+  %s11_21fixp17 = getelementptr inbounds [768 x i32], [768 x i32]* %s11_21fixp3, i64 0, i64 0, !taffo.info !448
+  call void @_Z20MLX90640_CalculateToPKtffPf.5_fixp(i16* getelementptr inbounds ([834 x i16], [834 x i16]* @_ZL9subframe1, i64 0, i64 0), float 0x3FEE666660000000, i64 %s64_0fixp7, i32* %s11_21fixp17), !taffo.info !451, !taffo.constinfo !585
   %16 = call float @_Z14MLX90640_GetTaPKt(i16* getelementptr inbounds ([834 x i16], [834 x i16]* @_ZL9subframe2, i64 0, i64 0)), !taffo.constinfo !92
   %17 = fmul float 0x4140000000000000, %16, !taffo.info !588, !taffo.constinfo !92
   %18 = fptosi float %17 to i32, !taffo.info !588
@@ -4498,17 +4498,17 @@ define dso_local i32 @main(i32 %0, i8** %1) #4 !taffo.initweight !86 !taffo.funi
   %20 = fdiv double %19, 0x4140000000000000, !taffo.info !588, !taffo.constinfo !141
   %21 = sitofp i32 %s11_21fixp6 to float, !taffo.info !588
   %22 = fdiv float %21, 0x4140000000000000, !taffo.info !588, !taffo.constinfo !141
-  %s11_21fixp16 = getelementptr inbounds [768 x i32], [768 x i32]* %s11_21fixp, i64 0, i64 0, !taffo.info !448
+  %s11_21fixp16 = getelementptr inbounds [768 x i32], [768 x i32]* %s11_21fixp3, i64 0, i64 0, !taffo.info !448
   call void @_Z20MLX90640_CalculateToPKtffPf.4_fixp(i16* getelementptr inbounds ([834 x i16], [834 x i16]* @_ZL9subframe2, i64 0, i64 0), float 0x3FEE666660000000, float %22, i32* %s11_21fixp16), !taffo.info !451, !taffo.constinfo !585
   %23 = fmul float 0x4140000000000000, %16, !taffo.info !588, !taffo.constinfo !92
-  %s11_21fixp3 = fptosi float %23 to i32, !taffo.info !588
-  %24 = sitofp i32 %s11_21fixp3 to double, !taffo.info !588
+  %s11_21fixp = fptosi float %23 to i32, !taffo.info !588
+  %24 = sitofp i32 %s11_21fixp to double, !taffo.info !588
   %25 = fdiv double %24, 0x4140000000000000, !taffo.info !588
-  %.flt18 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([16 x i8], [16 x i8]* @.str.129, i64 0, i64 0), double %25), !taffo.initweight !112, !taffo.info !589, !taffo.constinfo !97
+  %.flt = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([16 x i8], [16 x i8]* @.str.129, i64 0, i64 0), double %25), !taffo.initweight !112, !taffo.info !589, !taffo.constinfo !97
   %.flt28 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([16 x i8], [16 x i8]* @.str.130, i64 0, i64 0), double %20), !taffo.initweight !112, !taffo.info !589, !taffo.constinfo !97
-  %s11_21fixp15 = getelementptr inbounds [768 x i32], [768 x i32]* %s11_21fixp, i64 0, i64 0, !taffo.info !448
+  %s11_21fixp15 = getelementptr inbounds [768 x i32], [768 x i32]* %s11_21fixp3, i64 0, i64 0, !taffo.info !448
   %s11_21fixp27 = load i32, i32* %s11_21fixp15, align 16, !taffo.info !448
-  %s11_21fixp14 = getelementptr inbounds [768 x i32], [768 x i32]* %s11_21fixp, i64 0, i64 0, !taffo.info !448
+  %s11_21fixp14 = getelementptr inbounds [768 x i32], [768 x i32]* %s11_21fixp3, i64 0, i64 0, !taffo.info !448
   %s11_21fixp26 = load i32, i32* %s11_21fixp14, align 16, !taffo.info !448
   %26 = ashr i32 %s11_21fixp26, 1, !taffo.info !448
   %27 = ashr i32 %s11_21fixp27, 1, !taffo.info !448
@@ -4523,15 +4523,15 @@ define dso_local i32 @main(i32 %0, i8** %1) #4 !taffo.initweight !86 !taffo.funi
 
 30:                                               ; preds = %28
   %31 = sext i32 %.01 to i64, !taffo.info !593
-  %s11_21fixp13 = getelementptr inbounds [768 x i32], [768 x i32]* %s11_21fixp, i64 0, i64 %31, !taffo.info !448
+  %s11_21fixp13 = getelementptr inbounds [768 x i32], [768 x i32]* %s11_21fixp3, i64 0, i64 %31, !taffo.info !448
   %s11_21fixp25 = load i32, i32* %s11_21fixp13, align 4, !taffo.info !448
   %s11_21fixp32 = call i32 @_Z5min_fff.15_s11_21fixp(i32 %.03.s12_20fixp, i32 %s11_21fixp25), !taffo.info !588, !taffo.constinfo !97
   %32 = sext i32 %.01 to i64, !taffo.info !593
-  %s11_21fixp12 = getelementptr inbounds [768 x i32], [768 x i32]* %s11_21fixp, i64 0, i64 %32, !taffo.info !448
+  %s11_21fixp12 = getelementptr inbounds [768 x i32], [768 x i32]* %s11_21fixp3, i64 0, i64 %32, !taffo.info !448
   %s11_21fixp24 = load i32, i32* %s11_21fixp12, align 4, !taffo.info !448
   %s11_21fixp31 = call i32 @_Z5max_fff.14_s11_21fixp(i32 %.02.s12_20fixp, i32 %s11_21fixp24), !taffo.info !588, !taffo.constinfo !97
   %33 = sext i32 %.01 to i64, !taffo.info !593
-  %s11_21fixp11 = getelementptr inbounds [768 x i32], [768 x i32]* %s11_21fixp, i64 0, i64 %33, !taffo.info !448
+  %s11_21fixp11 = getelementptr inbounds [768 x i32], [768 x i32]* %s11_21fixp3, i64 0, i64 %33, !taffo.info !448
   %s11_21fixp23 = load i32, i32* %s11_21fixp11, align 4, !taffo.info !448
   %34 = sitofp i32 %s11_21fixp23 to double, !taffo.info !448
   %35 = fdiv double %34, 0x4140000000000000, !taffo.info !448
@@ -4566,11 +4566,11 @@ define dso_local i32 @main(i32 %0, i8** %1) #4 !taffo.initweight !86 !taffo.funi
   %s11_21fixp5 = shl i32 %.02.s12_20fixp, 1, !taffo.info !588
   %56 = sitofp i32 %s11_21fixp5 to double, !taffo.info !588
   %57 = fdiv double %56, 0x4140000000000000, !taffo.info !588
-  %.flt21 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([16 x i8], [16 x i8]* @.str.139, i64 0, i64 0), double %57), !taffo.initweight !112, !taffo.info !589, !taffo.constinfo !97
+  %.flt20 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([16 x i8], [16 x i8]* @.str.139, i64 0, i64 0), double %57), !taffo.initweight !112, !taffo.info !589, !taffo.constinfo !97
   %s11_21fixp4 = shl i32 %.03.s12_20fixp, 1, !taffo.info !588
   %58 = sitofp i32 %s11_21fixp4 to double, !taffo.info !588
   %59 = fdiv double %58, 0x4140000000000000, !taffo.info !588
-  %.flt20 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([16 x i8], [16 x i8]* @.str.140, i64 0, i64 0), double %59), !taffo.initweight !112, !taffo.info !589, !taffo.constinfo !97
+  %.flt19 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([16 x i8], [16 x i8]* @.str.140, i64 0, i64 0), double %59), !taffo.initweight !112, !taffo.info !589, !taffo.constinfo !97
   %60 = call %struct._IO_FILE* @fopen(i8* getelementptr inbounds ([15 x i8], [15 x i8]* @.str.141, i64 0, i64 0), i8* getelementptr inbounds ([2 x i8], [2 x i8]* @.str.142, i64 0, i64 0)), !taffo.constinfo !97
   %61 = icmp eq %struct._IO_FILE* %60, null, !taffo.info !105
   br i1 %61, label %62, label %63
@@ -4579,13 +4579,13 @@ define dso_local i32 @main(i32 %0, i8** %1) #4 !taffo.initweight !86 !taffo.funi
   br label %68
 
 63:                                               ; preds = %40
-  %s11_21fixp10 = getelementptr inbounds [768 x i32], [768 x i32]* %s11_21fixp, i64 0, i64 0, !taffo.info !448
+  %s11_21fixp10 = getelementptr inbounds [768 x i32], [768 x i32]* %s11_21fixp3, i64 0, i64 0, !taffo.info !448
   call void @_Z8printPPMP8_IO_FILEPfiiff.6_fixp(%struct._IO_FILE* %60, i32* %s11_21fixp10, i32 32, i32 24, i32 %.03.s12_20fixp, i32 %s12_20fixp9), !taffo.info !451, !taffo.constinfo !605
   %64 = call i32 @fclose(%struct._IO_FILE* %60), !taffo.constinfo !92
   %65 = load %struct._IO_FILE*, %struct._IO_FILE** @stderr, align 8
   %66 = ashr i32 %.03.s12_20fixp, 20, !taffo.info !589
   %67 = ashr i32 %.02.s12_20fixp, 20, !taffo.info !589
-  %.flt19 = call i32 (%struct._IO_FILE*, i8*, ...) @fprintf(%struct._IO_FILE* %65, i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.143, i64 0, i64 0), i32 %66, i32 %67), !taffo.initweight !112, !taffo.info !589, !taffo.constinfo !88
+  %.flt18 = call i32 (%struct._IO_FILE*, i8*, ...) @fprintf(%struct._IO_FILE* %65, i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.143, i64 0, i64 0), i32 %66, i32 %67), !taffo.initweight !112, !taffo.info !589, !taffo.constinfo !88
   br label %68
 
 68:                                               ; preds = %63, %62, %5
@@ -4771,16 +4771,16 @@ define internal void @_Z8printPPMP8_IO_FILEPfiiff.6_fixp(%struct._IO_FILE* %0, i
   br label %46
 
 46:                                               ; preds = %45, %36
-  %s13_19fixp21 = phi i32 [ 524288, %36 ], [ %s13_19fixp40, %45 ], !taffo.info !642
+  %s13_19fixp = phi i32 [ 524288, %36 ], [ %s13_19fixp40, %45 ], !taffo.info !642
   br label %47
 
 47:                                               ; preds = %46, %26
-  %s13_19fixp41 = phi i32 [ %s13_19fixp35, %26 ], [ %s13_19fixp21, %46 ], !taffo.info !644
+  %s13_19fixp41 = phi i32 [ %s13_19fixp35, %26 ], [ %s13_19fixp, %46 ], !taffo.info !644
   %48 = sext i32 %s13_19fixp41 to i64, !taffo.info !644
   %49 = mul i64 511, %48, !taffo.info !646, !taffo.constinfo !567
   %50 = ashr i64 %49, 9, !taffo.info !646, !taffo.constinfo !567
-  %s21_11fixp20 = trunc i64 %50 to i32, !taffo.info !648
-  %51 = ashr i32 %s21_11fixp20, 11, !taffo.info !490
+  %s21_11fixp19 = trunc i64 %50 to i32, !taffo.info !648
+  %51 = ashr i32 %s21_11fixp19, 11, !taffo.info !490
   %52 = icmp sle i32 262144, %s11_21fixp24, !taffo.info !551
   br i1 %52, label %53, label %61, !taffo.initweight !112, !taffo.info !343
 
@@ -4834,16 +4834,16 @@ define internal void @_Z8printPPMP8_IO_FILEPfiiff.6_fixp(%struct._IO_FILE* %0, i
   br label %77
 
 77:                                               ; preds = %76, %65
-  %s13_19fixp = phi i32 [ 524288, %65 ], [ %s13_19fixp38, %76 ], !taffo.info !661
+  %s13_19fixp18 = phi i32 [ 524288, %65 ], [ %s13_19fixp38, %76 ], !taffo.info !661
   br label %78
 
 78:                                               ; preds = %77, %55
-  %s13_19fixp39 = phi i32 [ %s13_19fixp33, %55 ], [ %s13_19fixp, %77 ], !taffo.info !663
+  %s13_19fixp39 = phi i32 [ %s13_19fixp33, %55 ], [ %s13_19fixp18, %77 ], !taffo.info !663
   %79 = sext i32 %s13_19fixp39 to i64, !taffo.info !663
   %80 = mul i64 511, %79, !taffo.info !665, !taffo.constinfo !567
   %81 = ashr i64 %80, 9, !taffo.info !665, !taffo.constinfo !567
-  %s21_11fixp18 = trunc i64 %81 to i32, !taffo.info !667
-  %82 = ashr i32 %s21_11fixp18, 11, !taffo.info !490
+  %s21_11fixp20 = trunc i64 %81 to i32, !taffo.info !667
+  %82 = ashr i32 %s21_11fixp20, 11, !taffo.info !490
   %83 = icmp slt i32 %s11_21fixp24, 262144, !taffo.info !551
   br i1 %83, label %84, label %90, !taffo.initweight !112, !taffo.info !343
 
@@ -4893,11 +4893,11 @@ define internal void @_Z8printPPMP8_IO_FILEPfiiff.6_fixp(%struct._IO_FILE* %0, i
   br label %106
 
 106:                                              ; preds = %105, %94
-  %s13_19fixp19 = phi i32 [ 524288, %94 ], [ %s13_19fixp36, %105 ], !taffo.info !680
+  %s13_19fixp21 = phi i32 [ 524288, %94 ], [ %s13_19fixp36, %105 ], !taffo.info !680
   br label %107
 
 107:                                              ; preds = %106, %84
-  %s13_19fixp37 = phi i32 [ %s13_19fixp31, %84 ], [ %s13_19fixp19, %106 ], !taffo.info !682
+  %s13_19fixp37 = phi i32 [ %s13_19fixp31, %84 ], [ %s13_19fixp21, %106 ], !taffo.info !682
   %108 = sext i32 %s13_19fixp37 to i64, !taffo.info !682
   %109 = mul i64 511, %108, !taffo.info !684, !taffo.constinfo !567
   %110 = ashr i64 %109, 9, !taffo.info !684, !taffo.constinfo !567
@@ -4926,12 +4926,12 @@ define internal void @_Z8printPPMP8_IO_FILEPfiiff.6_fixp(%struct._IO_FILE* %0, i
 define internal void @_Z20MLX90640_CalculateToPKtffPf.4_fixp(i16* %0, float %1, float %2, i32* %.s11_21fixp) #0 !taffo.initweight !689 !taffo.funinfo !690 !taffo.sourceFunction !691 {
   %4 = fmul float 0x43E0000000000000, %1, !taffo.info !586
   %5 = fptoui float %4 to i64, !taffo.info !586
-  %6 = fmul float 0x41E0000000000000, %1, !taffo.info !586
-  %u1_31fixp = fptoui float %6 to i32, !taffo.info !692
-  %7 = uitofp i32 %u1_31fixp to double, !taffo.info !692
-  %8 = fdiv double %7, 0x41E0000000000000, !taffo.info !692
-  %9 = fmul float 0x43E0000000000000, %1, !taffo.info !586
-  %10 = fptoui float %9 to i64, !taffo.info !586
+  %6 = fmul float 0x43E0000000000000, %1, !taffo.info !586
+  %7 = fptoui float %6 to i64, !taffo.info !586
+  %8 = fmul float 0x41E0000000000000, %1, !taffo.info !586
+  %u1_31fixp = fptoui float %8 to i32, !taffo.info !692
+  %9 = uitofp i32 %u1_31fixp to double, !taffo.info !692
+  %10 = fdiv double %9, 0x41E0000000000000, !taffo.info !692
   %s32_0fixp = alloca [2 x i32], align 4, !taffo.info !694
   %s55_9fixp = alloca [4 x i64], align 16, !taffo.info !696
   %11 = getelementptr inbounds i16, i16* %0, i64 833, !taffo.info !80
@@ -4939,36 +4939,36 @@ define internal void @_Z20MLX90640_CalculateToPKtffPf.4_fixp(i16* %0, float %1, 
   %13 = call float @_Z15MLX90640_GetVddPKt(i16* %0), !taffo.constinfo !92
   %14 = call float @_Z14MLX90640_GetTaPKt(i16* %0), !taffo.constinfo !92
   %15 = fmul float 6.553600e+04, %14, !taffo.info !363, !taffo.constinfo !92
-  %s16_16fixp22 = fptosi float %15 to i32, !taffo.info !363
-  %16 = sitofp i32 %s16_16fixp22 to double, !taffo.info !363
+  %s16_16fixp19 = fptosi float %15 to i32, !taffo.info !363
+  %16 = sitofp i32 %s16_16fixp19 to double, !taffo.info !363
   %17 = fdiv double %16, 6.553600e+04, !taffo.info !363
-  %.flt65 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([12 x i8], [12 x i8]* @.str.22, i64 0, i64 0), double %17), !taffo.initweight !112, !taffo.info !365, !taffo.constinfo !97
+  %.flt52 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([12 x i8], [12 x i8]* @.str.22, i64 0, i64 0), double %17), !taffo.initweight !112, !taffo.info !365, !taffo.constinfo !97
   %18 = fpext float %2 to double, !taffo.initweight !110, !taffo.info !343
   %19 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([12 x i8], [12 x i8]* @.str.23, i64 0, i64 0), double %18), !taffo.initweight !112, !taffo.info !343, !taffo.constinfo !97
   %20 = fmul float 3.276800e+04, %14, !taffo.info !699, !taffo.constinfo !92
-  %s17_15fixp23 = fptosi float %20 to i32, !taffo.info !699
-  %s17_15fixp66 = add i32 %s17_15fixp23, 8950579, !taffo.info !700, !taffo.constinfo !366
-  %21 = sitofp i32 %s17_15fixp66 to double, !taffo.info !700
+  %s17_15fixp18 = fptosi float %20 to i32, !taffo.info !699
+  %s17_15fixp51 = add i32 %s17_15fixp18, 8950579, !taffo.info !700, !taffo.constinfo !366
+  %21 = sitofp i32 %s17_15fixp51 to double, !taffo.info !700
   %22 = fdiv double %21, 3.276800e+04, !taffo.info !700, !taffo.constinfo !366
-  %.flt115 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.24, i64 0, i64 0), double %22), !taffo.initweight !112, !taffo.info !386, !taffo.constinfo !97
-  %23 = sext i32 %s17_15fixp66 to i64, !taffo.info !700
-  %24 = sext i32 %s17_15fixp66 to i64, !taffo.info !700
+  %.flt114 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.24, i64 0, i64 0), double %22), !taffo.initweight !112, !taffo.info !386, !taffo.constinfo !97
+  %23 = sext i32 %s17_15fixp51 to i64, !taffo.info !700
+  %24 = sext i32 %s17_15fixp51 to i64, !taffo.info !700
   %25 = mul i64 %23, %24, !taffo.info !702
   %u31_33fixp = shl i64 %25, 3, !taffo.info !705
   %26 = zext i64 %u31_33fixp to i96, !taffo.info !705
-  %27 = sext i32 %s17_15fixp66 to i96, !taffo.info !700
+  %27 = sext i32 %s17_15fixp51 to i96, !taffo.info !700
   %28 = mul i96 %26, %27, !taffo.info !707
   %29 = ashr i96 %28, 31, !taffo.info !707
   %s47_17fixp = trunc i96 %29 to i64, !taffo.info !710
   %30 = sext i64 %s47_17fixp to i96, !taffo.info !710
-  %31 = sext i32 %s17_15fixp66 to i96, !taffo.info !700
+  %31 = sext i32 %s17_15fixp51 to i96, !taffo.info !700
   %32 = mul i96 %30, %31, !taffo.info !712
   %33 = ashr i96 %32, 32, !taffo.info !712
-  %s64_0fixp119 = trunc i96 %33 to i64, !taffo.info !715
-  %s35_29fixp130 = shl i64 %s64_0fixp119, 29, !taffo.info !371
-  %34 = sitofp i64 %s35_29fixp130 to double, !taffo.info !371
+  %s64_0fixp120 = trunc i96 %33 to i64, !taffo.info !715
+  %s35_29fixp132 = shl i64 %s64_0fixp120, 29, !taffo.info !371
+  %34 = sitofp i64 %s35_29fixp132 to double, !taffo.info !371
   %35 = fdiv double %34, 0x41C0000000000000, !taffo.info !371
-  %.flt140 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([11 x i8], [11 x i8]* @.str.25, i64 0, i64 0), double %35), !taffo.initweight !112, !taffo.info !374, !taffo.constinfo !97
+  %.flt142 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([11 x i8], [11 x i8]* @.str.25, i64 0, i64 0), double %35), !taffo.initweight !112, !taffo.info !374, !taffo.constinfo !97
   %36 = fpext float %2 to double, !taffo.initweight !110, !taffo.info !343
   %37 = fadd double %36, 2.731500e+02, !taffo.initweight !112, !taffo.info !343, !taffo.constinfo !366
   %38 = call double @_ZSt3powIdiEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.17(double %37, i32 4), !taffo.initweight !167, !taffo.info !343, !taffo.constinfo !97, !taffo.originalCall !716
@@ -4977,27 +4977,27 @@ define internal void @_Z20MLX90640_CalculateToPKtffPf.4_fixp(i16* %0, float %1, 
   %41 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([11 x i8], [11 x i8]* @.str.26, i64 0, i64 0), double %40), !taffo.initweight !112, !taffo.info !343, !taffo.constinfo !97
   %42 = fmul float 0x41C0000000000000, %39, !taffo.info !343
   %43 = fptosi float %42 to i64, !taffo.info !343
-  %44 = shl i64 %s64_0fixp119, 29, !taffo.info !715
+  %44 = shl i64 %s64_0fixp120, 29, !taffo.info !715
   %s35_29fixp = sub i64 %43, %44, !taffo.info !717
   %45 = sitofp i64 %s35_29fixp to double, !taffo.info !717
   %46 = fdiv double %45, 0x41C0000000000000, !taffo.info !717
-  %.flt147 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str.27, i64 0, i64 0), double %46), !taffo.initweight !112, !taffo.info !505, !taffo.constinfo !97
+  %.flt149 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str.27, i64 0, i64 0), double %46), !taffo.initweight !112, !taffo.info !505, !taffo.constinfo !97
   %47 = sext i64 %s35_29fixp to i128, !taffo.info !371
   %48 = shl i128 %47, 63, !taffo.info !371
   %49 = zext i64 %5 to i128, !taffo.info !586
   %50 = sdiv i128 %48, %49, !taffo.info !718
-  %s35_29fixp139 = trunc i128 %50 to i64, !taffo.info !720
-  %51 = sitofp i64 %s35_29fixp139 to double, !taffo.info !720
+  %s35_29fixp141 = trunc i128 %50 to i64, !taffo.info !720
+  %51 = sitofp i64 %s35_29fixp141 to double, !taffo.info !720
   %52 = fdiv double %51, 0x41C0000000000000, !taffo.info !720
-  %.flt152 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([32 x i8], [32 x i8]* @.str.28, i64 0, i64 0), double %52, double %8), !taffo.initweight !112, !taffo.info !505, !taffo.constinfo !95
+  %.flt153 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([32 x i8], [32 x i8]* @.str.28, i64 0, i64 0), double %52, double %10), !taffo.initweight !112, !taffo.info !505, !taffo.constinfo !95
   %53 = fmul float 0x41C0000000000000, %39, !taffo.info !343
   %54 = fptosi float %53 to i64, !taffo.info !343
-  %s35_29fixp146 = sub i64 %54, %s35_29fixp139, !taffo.info !505
-  %55 = sitofp i64 %s35_29fixp146 to double, !taffo.info !505
+  %s35_29fixp148 = sub i64 %54, %s35_29fixp141, !taffo.info !505
+  %55 = sitofp i64 %s35_29fixp148 to double, !taffo.info !505
   %56 = fdiv double %55, 0x41C0000000000000, !taffo.info !505
-  %57 = sitofp i64 %s35_29fixp146 to double, !taffo.info !505
+  %57 = sitofp i64 %s35_29fixp148 to double, !taffo.info !505
   %58 = fdiv double %57, 0x41C0000000000000, !taffo.info !505
-  %59 = sitofp i64 %s35_29fixp146 to double, !taffo.info !505
+  %59 = sitofp i64 %s35_29fixp148 to double, !taffo.info !505
   %60 = fdiv double %59, 0x41C0000000000000, !taffo.info !505
   %.flt157 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.29, i64 0, i64 0), double %56), !taffo.initweight !112, !taffo.info !505, !taffo.constinfo !97
   %61 = load float, float* getelementptr inbounds ([4 x float], [4 x float]* @params_ksTo, i64 0, i64 0), align 16, !taffo.initweight !110, !taffo.info !30
@@ -5006,44 +5006,44 @@ define internal void @_Z20MLX90640_CalculateToPKtffPf.4_fixp(i16* %0, float %1, 
   %64 = fdiv float 1.000000e+00, %63, !taffo.initweight !168, !taffo.info !725, !taffo.constinfo !300
   %65 = fmul float 5.120000e+02, %64, !taffo.info !725, !taffo.constinfo !300
   %66 = fptosi float %65 to i64, !taffo.info !725
-  %s55_9fixp61 = getelementptr inbounds [4 x i64], [4 x i64]* %s55_9fixp, i64 0, i64 0, !taffo.info !696
-  store i64 %66, i64* %s55_9fixp61, align 16, !taffo.info !343
-  %s55_9fixp60 = getelementptr inbounds [4 x i64], [4 x i64]* %s55_9fixp, i64 0, i64 1, !taffo.info !696
-  store i64 512, i64* %s55_9fixp60, align 4, !taffo.info !343, !taffo.constinfo !300
+  %s55_9fixp49 = getelementptr inbounds [4 x i64], [4 x i64]* %s55_9fixp, i64 0, i64 0, !taffo.info !696
+  store i64 %66, i64* %s55_9fixp49, align 16, !taffo.info !343
+  %s55_9fixp48 = getelementptr inbounds [4 x i64], [4 x i64]* %s55_9fixp, i64 0, i64 1, !taffo.info !696
+  store i64 512, i64* %s55_9fixp48, align 4, !taffo.info !343, !taffo.constinfo !300
   %67 = load float, float* getelementptr inbounds ([4 x float], [4 x float]* @params_ksTo, i64 0, i64 2), align 8, !taffo.initweight !110, !taffo.info !30
   %68 = load i16, i16* getelementptr inbounds ([4 x i16], [4 x i16]* @params_ct, i64 0, i64 2), align 2, !taffo.initweight !110, !taffo.info !1
   %69 = sext i16 %68 to i32, !taffo.initweight !112, !taffo.info !1
-  %s17_15fixp12 = shl i32 %69, 15, !taffo.info !381
-  %70 = sitofp i32 %s17_15fixp12 to float, !taffo.info !381
+  %s17_15fixp25 = shl i32 %69, 15, !taffo.info !381
+  %70 = sitofp i32 %s17_15fixp25 to float, !taffo.info !381
   %71 = fdiv float %70, 3.276800e+04, !taffo.info !381
   %72 = fmul float %67, %71, !taffo.initweight !112, !taffo.info !727
   %73 = fadd float 1.000000e+00, %72, !taffo.initweight !167, !taffo.info !729, !taffo.constinfo !300
   %74 = fmul float 5.120000e+02, %73, !taffo.info !729, !taffo.constinfo !300
   %75 = fptosi float %74 to i64, !taffo.info !729
-  %s55_9fixp59 = getelementptr inbounds [4 x i64], [4 x i64]* %s55_9fixp, i64 0, i64 2, !taffo.info !696
-  store i64 %75, i64* %s55_9fixp59, align 8, !taffo.info !343
-  %s55_9fixp58 = getelementptr inbounds [4 x i64], [4 x i64]* %s55_9fixp, i64 0, i64 2, !taffo.info !696
-  %s55_9fixp87 = load i64, i64* %s55_9fixp58, align 8, !taffo.info !731
+  %s55_9fixp47 = getelementptr inbounds [4 x i64], [4 x i64]* %s55_9fixp, i64 0, i64 2, !taffo.info !696
+  store i64 %75, i64* %s55_9fixp47, align 8, !taffo.info !343
+  %s55_9fixp46 = getelementptr inbounds [4 x i64], [4 x i64]* %s55_9fixp, i64 0, i64 2, !taffo.info !696
+  %s55_9fixp81 = load i64, i64* %s55_9fixp46, align 8, !taffo.info !731
   %76 = load float, float* getelementptr inbounds ([4 x float], [4 x float]* @params_ksTo, i64 0, i64 3), align 4, !taffo.initweight !110, !taffo.info !30
   %77 = load i16, i16* getelementptr inbounds ([4 x i16], [4 x i16]* @params_ct, i64 0, i64 3), align 2, !taffo.initweight !110, !taffo.info !1
   %78 = sext i16 %77 to i32, !taffo.initweight !112, !taffo.info !1
   %79 = load i16, i16* getelementptr inbounds ([4 x i16], [4 x i16]* @params_ct, i64 0, i64 2), align 2, !taffo.initweight !110, !taffo.info !1
   %80 = sext i16 %79 to i32, !taffo.initweight !112, !taffo.info !1
   %81 = sub nsw i32 %78, %80, !taffo.initweight !167, !taffo.info !733
-  %s17_15fixp13 = shl i32 %81, 15, !taffo.info !735
-  %82 = sitofp i32 %s17_15fixp13 to float, !taffo.info !735
+  %s17_15fixp7 = shl i32 %81, 15, !taffo.info !735
+  %82 = sitofp i32 %s17_15fixp7 to float, !taffo.info !735
   %83 = fdiv float %82, 3.276800e+04, !taffo.info !735
   %84 = fmul float %76, %83, !taffo.initweight !112, !taffo.info !736
   %85 = fadd float 1.000000e+00, %84, !taffo.initweight !167, !taffo.info !738, !taffo.constinfo !300
   %86 = fmul float 0x4230000000000000, %85, !taffo.info !738, !taffo.constinfo !300
   %87 = fptosi float %86 to i64, !taffo.info !738
-  %88 = sext i64 %s55_9fixp87 to i128, !taffo.info !731
+  %88 = sext i64 %s55_9fixp81 to i128, !taffo.info !731
   %89 = sext i64 %87 to i128, !taffo.info !738
   %90 = mul i128 %88, %89, !taffo.info !740
   %91 = ashr i128 %90, 36, !taffo.info !740
-  %s55_9fixp106 = trunc i128 %91 to i64, !taffo.info !696
-  %s55_9fixp57 = getelementptr inbounds [4 x i64], [4 x i64]* %s55_9fixp, i64 0, i64 3, !taffo.info !696
-  store i64 %s55_9fixp106, i64* %s55_9fixp57, align 4, !taffo.info !343
+  %s55_9fixp102 = trunc i128 %91 to i64, !taffo.info !696
+  %s55_9fixp45 = getelementptr inbounds [4 x i64], [4 x i64]* %s55_9fixp, i64 0, i64 3, !taffo.info !696
+  store i64 %s55_9fixp102, i64* %s55_9fixp45, align 4, !taffo.info !343
   %92 = getelementptr inbounds i16, i16* %0, i64 778, !taffo.info !80
   %93 = load i16, i16* %92, align 2, !taffo.info !80
   %94 = zext i16 %93 to i32, !taffo.info !80
@@ -5054,8 +5054,8 @@ define internal void @_Z20MLX90640_CalculateToPKtffPf.4_fixp(i16* %0, float %1, 
   br i1 %97, label %98, label %101, !taffo.initweight !112, !taffo.info !343
 
 98:                                               ; preds = %3
-  %s18_14fixp64 = sub i32 %s18_14fixp, 1073741824, !taffo.info !482, !taffo.constinfo !383
-  %99 = sitofp i32 %s18_14fixp64 to float, !taffo.info !482
+  %s18_14fixp40 = sub i32 %s18_14fixp, 1073741824, !taffo.info !482, !taffo.constinfo !383
+  %99 = sitofp i32 %s18_14fixp40 to float, !taffo.info !482
   %100 = fdiv float %99, 1.638400e+04, !taffo.info !482, !taffo.constinfo !383
   br label %101
 
@@ -5063,10 +5063,10 @@ define internal void @_Z20MLX90640_CalculateToPKtffPf.4_fixp(i16* %0, float %1, 
   %.06 = phi float [ %100, %98 ], [ %96, %3 ], !taffo.info !484
   %102 = load i16, i16* @params_gainEE, align 2, !taffo.initweight !109, !taffo.info !1
   %103 = sext i16 %102 to i32, !taffo.initweight !110, !taffo.info !1
-  %s17_15fixp7 = shl i32 %103, 15, !taffo.info !381
+  %s17_15fixp3 = shl i32 %103, 15, !taffo.info !381
   %104 = fmul float 0x42D0000000000000, %.06, !taffo.info !484
   %105 = fptosi float %104 to i64, !taffo.info !484
-  %106 = sext i32 %s17_15fixp7 to i96, !taffo.info !381
+  %106 = sext i32 %s17_15fixp3 to i96, !taffo.info !381
   %107 = shl i96 %106, 46, !taffo.info !381
   %108 = sext i64 %105 to i96, !taffo.info !484
   %109 = sdiv i96 %107, %108, !taffo.info !742
@@ -5083,17 +5083,17 @@ define internal void @_Z20MLX90640_CalculateToPKtffPf.4_fixp(i16* %0, float %1, 
   %119 = getelementptr inbounds i16, i16* %0, i64 776, !taffo.info !80
   %120 = load i16, i16* %119, align 2, !taffo.info !80
   %121 = zext i16 %120 to i32, !taffo.info !80
-  %s16_16fixp16 = shl i32 %121, 16, !taffo.info !745
-  %s32_0fixp55 = getelementptr inbounds [2 x i32], [2 x i32]* %s32_0fixp, i64 0, i64 0, !taffo.info !694
-  %122 = ashr i32 %s16_16fixp16, 16, !taffo.info !745
-  store i32 %122, i32* %s32_0fixp55, align 4, !taffo.info !343
+  %s16_16fixp20 = shl i32 %121, 16, !taffo.info !745
+  %s32_0fixp68 = getelementptr inbounds [2 x i32], [2 x i32]* %s32_0fixp, i64 0, i64 0, !taffo.info !694
+  %122 = ashr i32 %s16_16fixp20, 16, !taffo.info !745
+  store i32 %122, i32* %s32_0fixp68, align 4, !taffo.info !343
   %123 = getelementptr inbounds i16, i16* %0, i64 808, !taffo.info !80
   %124 = load i16, i16* %123, align 2, !taffo.info !80
   %125 = zext i16 %124 to i32, !taffo.info !80
-  %s16_16fixp18 = shl i32 %125, 16, !taffo.info !745
-  %s32_0fixp54 = getelementptr inbounds [2 x i32], [2 x i32]* %s32_0fixp, i64 0, i64 1, !taffo.info !694
-  %126 = ashr i32 %s16_16fixp18, 16, !taffo.info !745
-  store i32 %126, i32* %s32_0fixp54, align 4, !taffo.info !343
+  %s16_16fixp16 = shl i32 %125, 16, !taffo.info !745
+  %s32_0fixp67 = getelementptr inbounds [2 x i32], [2 x i32]* %s32_0fixp, i64 0, i64 1, !taffo.info !694
+  %126 = ashr i32 %s16_16fixp16, 16, !taffo.info !745
+  store i32 %126, i32* %s32_0fixp67, align 4, !taffo.info !343
   br label %127
 
 127:                                              ; preds = %145, %101
@@ -5103,36 +5103,36 @@ define internal void @_Z20MLX90640_CalculateToPKtffPf.4_fixp(i16* %0, float %1, 
 
 129:                                              ; preds = %127
   %130 = sext i32 %.01 to i64, !taffo.info !748
-  %s32_0fixp53 = getelementptr inbounds [2 x i32], [2 x i32]* %s32_0fixp, i64 0, i64 %130, !taffo.info !694
-  %s32_0fixp85 = load i32, i32* %s32_0fixp53, align 4, !taffo.info !750
-  %131 = icmp sgt i32 %s32_0fixp85, 32767, !taffo.info !519
+  %s32_0fixp66 = getelementptr inbounds [2 x i32], [2 x i32]* %s32_0fixp, i64 0, i64 %130, !taffo.info !694
+  %s32_0fixp89 = load i32, i32* %s32_0fixp66, align 4, !taffo.info !750
+  %131 = icmp sgt i32 %s32_0fixp89, 32767, !taffo.info !519
   br i1 %131, label %132, label %137, !taffo.initweight !167, !taffo.info !343
 
 132:                                              ; preds = %129
   %133 = sext i32 %.01 to i64, !taffo.info !748
-  %s32_0fixp52 = getelementptr inbounds [2 x i32], [2 x i32]* %s32_0fixp, i64 0, i64 %133, !taffo.info !694
-  %s32_0fixp84 = load i32, i32* %s32_0fixp52, align 4, !taffo.info !750
-  %134 = sext i32 %s32_0fixp84 to i64, !taffo.info !750
-  %s64_0fixp105 = sub i64 %134, 65536, !taffo.info !750, !taffo.constinfo !383
+  %s32_0fixp65 = getelementptr inbounds [2 x i32], [2 x i32]* %s32_0fixp, i64 0, i64 %133, !taffo.info !694
+  %s32_0fixp88 = load i32, i32* %s32_0fixp65, align 4, !taffo.info !750
+  %134 = sext i32 %s32_0fixp88 to i64, !taffo.info !750
+  %s64_0fixp106 = sub i64 %134, 65536, !taffo.info !750, !taffo.constinfo !383
   %135 = sext i32 %.01 to i64, !taffo.info !748
-  %s32_0fixp51 = getelementptr inbounds [2 x i32], [2 x i32]* %s32_0fixp, i64 0, i64 %135, !taffo.info !694
-  %136 = trunc i64 %s64_0fixp105 to i32, !taffo.info !750
-  store i32 %136, i32* %s32_0fixp51, align 4, !taffo.info !343
+  %s32_0fixp64 = getelementptr inbounds [2 x i32], [2 x i32]* %s32_0fixp, i64 0, i64 %135, !taffo.info !694
+  %136 = trunc i64 %s64_0fixp106 to i32, !taffo.info !750
+  store i32 %136, i32* %s32_0fixp64, align 4, !taffo.info !343
   br label %137
 
 137:                                              ; preds = %129, %132
   %138 = sext i32 %.01 to i64, !taffo.info !748
-  %s32_0fixp50 = getelementptr inbounds [2 x i32], [2 x i32]* %s32_0fixp, i64 0, i64 %138, !taffo.info !694
-  %s32_0fixp83 = load i32, i32* %s32_0fixp50, align 4, !taffo.info !750
-  %139 = sext i32 %s32_0fixp83 to i96, !taffo.info !750
+  %s32_0fixp63 = getelementptr inbounds [2 x i32], [2 x i32]* %s32_0fixp, i64 0, i64 %138, !taffo.info !694
+  %s32_0fixp87 = load i32, i32* %s32_0fixp63, align 4, !taffo.info !750
+  %139 = sext i32 %s32_0fixp87 to i96, !taffo.info !750
   %140 = sext i64 %s43_21fixp to i96, !taffo.info !744
   %141 = mul i96 %139, %140, !taffo.info !752
   %142 = ashr i96 %141, 21, !taffo.info !752
-  %s64_0fixp104 = trunc i96 %142 to i64, !taffo.info !755
+  %s64_0fixp105 = trunc i96 %142 to i64, !taffo.info !755
   %143 = sext i32 %.01 to i64, !taffo.info !748
-  %s32_0fixp49 = getelementptr inbounds [2 x i32], [2 x i32]* %s32_0fixp, i64 0, i64 %143, !taffo.info !694
-  %144 = trunc i64 %s64_0fixp104 to i32, !taffo.info !755
-  store i32 %144, i32* %s32_0fixp49, align 4, !taffo.info !343
+  %s32_0fixp62 = getelementptr inbounds [2 x i32], [2 x i32]* %s32_0fixp, i64 0, i64 %143, !taffo.info !694
+  %144 = trunc i64 %s64_0fixp105 to i32, !taffo.info !755
+  store i32 %144, i32* %s32_0fixp62, align 4, !taffo.info !343
   br label %145
 
 145:                                              ; preds = %137
@@ -5140,18 +5140,18 @@ define internal void @_Z20MLX90640_CalculateToPKtffPf.4_fixp(i16* %0, float %1, 
   br label %127, !llvm.loop !758
 
 147:                                              ; preds = %127
-  %s32_0fixp48 = getelementptr inbounds [2 x i32], [2 x i32]* %s32_0fixp, i64 0, i64 0, !taffo.info !694
-  %s32_0fixp82 = load i32, i32* %s32_0fixp48, align 4, !taffo.info !755
-  %s64_0fixp103 = sext i32 %s32_0fixp82 to i64, !taffo.info !755
+  %s32_0fixp61 = getelementptr inbounds [2 x i32], [2 x i32]* %s32_0fixp, i64 0, i64 0, !taffo.info !694
+  %s32_0fixp86 = load i32, i32* %s32_0fixp61, align 4, !taffo.info !755
+  %s64_0fixp104 = sext i32 %s32_0fixp86 to i64, !taffo.info !755
   %148 = load i16, i16* getelementptr inbounds ([2 x i16], [2 x i16]* @params_cpOffset, i64 0, i64 0), align 2, !taffo.initweight !110, !taffo.info !1
   %149 = sext i16 %148 to i32, !taffo.initweight !112, !taffo.info !1
   %s17_15fixp = shl i32 %149, 15, !taffo.info !381
   %u8_24fixp35 = load i32, i32* @params_cpKta.fixp, align 4, !taffo.info !21
   %150 = fmul float 6.553600e+04, %14, !taffo.info !363, !taffo.constinfo !92
   %151 = fptosi float %150 to i32, !taffo.info !363
-  %s16_16fixp6 = sub i32 %151, 1638400, !taffo.info !363, !taffo.constinfo !392
+  %s16_16fixp12 = sub i32 %151, 1638400, !taffo.info !363, !taffo.constinfo !392
   %152 = zext i32 %u8_24fixp35 to i64, !taffo.info !21
-  %153 = sext i32 %s16_16fixp6 to i64, !taffo.info !363
+  %153 = sext i32 %s16_16fixp12 to i64, !taffo.info !363
   %154 = mul i64 %152, %153, !taffo.info !759
   %155 = ashr i64 %154, 32, !taffo.info !759
   %s24_8fixp70 = trunc i64 %155 to i32, !taffo.info !762
@@ -5162,10 +5162,10 @@ define internal void @_Z20MLX90640_CalculateToPKtffPf.4_fixp(i16* %0, float %1, 
   %s39_25fixp110 = shl i64 %158, 2, !taffo.info !768
   %s9_23fixp32 = load i32, i32* @params_cpKv.fixp, align 4, !taffo.info !19
   %159 = fmul float 3.276800e+04, %13, !taffo.info !699, !taffo.constinfo !92
-  %s17_15fixp14 = fptosi float %159 to i32, !taffo.info !699
-  %s17_15fixp40 = sub i32 %s17_15fixp14, 108134, !taffo.info !769, !taffo.constinfo !400
+  %s17_15fixp23 = fptosi float %159 to i32, !taffo.info !699
+  %s17_15fixp54 = sub i32 %s17_15fixp23, 108134, !taffo.info !769, !taffo.constinfo !400
   %160 = sext i32 %s9_23fixp32 to i64, !taffo.info !19
-  %161 = sext i32 %s17_15fixp40 to i64, !taffo.info !769
+  %161 = sext i32 %s17_15fixp54 to i64, !taffo.info !769
   %162 = mul i64 %160, %161, !taffo.info !771
   %163 = ashr i64 %162, 30, !taffo.info !771
   %s24_8fixp93 = trunc i64 %163 to i32, !taffo.info !773
@@ -5175,10 +5175,10 @@ define internal void @_Z20MLX90640_CalculateToPKtffPf.4_fixp(i16* %0, float %1, 
   %166 = mul i96 %164, %165, !taffo.info !776
   %167 = ashr i96 %166, 33, !taffo.info !776
   %s64_0fixp122 = trunc i96 %167 to i64, !taffo.info !779
-  %s64_0fixp134 = sub i64 %s64_0fixp103, %s64_0fixp122, !taffo.info !755
+  %s64_0fixp134 = sub i64 %s64_0fixp104, %s64_0fixp122, !taffo.info !755
   %s32_0fixp143 = trunc i64 %s64_0fixp134 to i32, !taffo.info !694
-  %s32_0fixp47 = getelementptr inbounds [2 x i32], [2 x i32]* %s32_0fixp, i64 0, i64 0, !taffo.info !694
-  store i32 %s32_0fixp143, i32* %s32_0fixp47, align 4, !taffo.info !343
+  %s32_0fixp60 = getelementptr inbounds [2 x i32], [2 x i32]* %s32_0fixp, i64 0, i64 0, !taffo.info !694
+  store i32 %s32_0fixp143, i32* %s32_0fixp60, align 4, !taffo.info !343
   %168 = zext i8 %118 to i32
   %169 = load i8, i8* @params_calibrationModeEE, align 1, !taffo.info !26
   %170 = zext i8 %169 to i32, !taffo.info !26
@@ -5186,29 +5186,29 @@ define internal void @_Z20MLX90640_CalculateToPKtffPf.4_fixp(i16* %0, float %1, 
   br i1 %171, label %172, label %194
 
 172:                                              ; preds = %147
-  %s32_0fixp46 = getelementptr inbounds [2 x i32], [2 x i32]* %s32_0fixp, i64 0, i64 1, !taffo.info !694
-  %s32_0fixp81 = load i32, i32* %s32_0fixp46, align 4, !taffo.info !694
+  %s32_0fixp59 = getelementptr inbounds [2 x i32], [2 x i32]* %s32_0fixp, i64 0, i64 1, !taffo.info !694
+  %s32_0fixp85 = load i32, i32* %s32_0fixp59, align 4, !taffo.info !694
   %173 = load i16, i16* getelementptr inbounds ([2 x i16], [2 x i16]* @params_cpOffset, i64 0, i64 1), align 2, !taffo.initweight !110, !taffo.info !1
   %174 = sext i16 %173 to i32, !taffo.initweight !112, !taffo.info !1
-  %s17_15fixp10 = shl i32 %174, 15, !taffo.info !381
+  %s17_15fixp8 = shl i32 %174, 15, !taffo.info !381
   %u8_24fixp34 = load i32, i32* @params_cpKta.fixp, align 4, !taffo.info !21
   %175 = fmul float 6.553600e+04, %14, !taffo.info !363, !taffo.constinfo !92
   %176 = fptosi float %175 to i32, !taffo.info !363
-  %s16_16fixp26 = sub i32 %176, 1638400, !taffo.info !363, !taffo.constinfo !392
+  %s16_16fixp21 = sub i32 %176, 1638400, !taffo.info !363, !taffo.constinfo !392
   %177 = zext i32 %u8_24fixp34 to i64, !taffo.info !21
-  %178 = sext i32 %s16_16fixp26 to i64, !taffo.info !363
+  %178 = sext i32 %s16_16fixp21 to i64, !taffo.info !363
   %179 = mul i64 %177, %178, !taffo.info !759
   %180 = ashr i64 %179, 32, !taffo.info !759
   %s24_8fixp69 = trunc i64 %180 to i32, !taffo.info !762
   %s24_8fixp95 = add i32 256, %s24_8fixp69, !taffo.info !764, !taffo.constinfo !300
-  %181 = sext i32 %s17_15fixp10 to i64, !taffo.info !381
+  %181 = sext i32 %s17_15fixp8 to i64, !taffo.info !381
   %182 = sext i32 %s24_8fixp95 to i64, !taffo.info !764
   %183 = mul i64 %181, %182, !taffo.info !766
   %s39_25fixp = shl i64 %183, 2, !taffo.info !768
   %s9_23fixp31 = load i32, i32* @params_cpKv.fixp, align 4, !taffo.info !19
   %184 = fmul float 3.276800e+04, %13, !taffo.info !699, !taffo.constinfo !92
-  %s17_15fixp15 = fptosi float %184 to i32, !taffo.info !699
-  %s17_15fixp41 = sub i32 %s17_15fixp15, 108134, !taffo.info !769, !taffo.constinfo !400
+  %s17_15fixp10 = fptosi float %184 to i32, !taffo.info !699
+  %s17_15fixp41 = sub i32 %s17_15fixp10, 108134, !taffo.info !769, !taffo.constinfo !400
   %185 = sext i32 %s9_23fixp31 to i64, !taffo.info !19
   %186 = sext i32 %s17_15fixp41 to i64, !taffo.info !769
   %187 = mul i64 %185, %186, !taffo.info !771
@@ -5221,28 +5221,28 @@ define internal void @_Z20MLX90640_CalculateToPKtffPf.4_fixp(i16* %0, float %1, 
   %192 = ashr i96 %191, 33, !taffo.info !776
   %s64_0fixp121 = trunc i96 %192 to i64, !taffo.info !779
   %193 = trunc i64 %s64_0fixp121 to i32, !taffo.info !779
-  %s32_0fixp133 = sub i32 %s32_0fixp81, %193, !taffo.info !694
-  %s32_0fixp45 = getelementptr inbounds [2 x i32], [2 x i32]* %s32_0fixp, i64 0, i64 1, !taffo.info !694
-  store i32 %s32_0fixp133, i32* %s32_0fixp45, align 4, !taffo.info !343
+  %s32_0fixp133 = sub i32 %s32_0fixp85, %193, !taffo.info !694
+  %s32_0fixp58 = getelementptr inbounds [2 x i32], [2 x i32]* %s32_0fixp, i64 0, i64 1, !taffo.info !694
+  store i32 %s32_0fixp133, i32* %s32_0fixp58, align 4, !taffo.info !343
   br label %218
 
 194:                                              ; preds = %147
-  %s32_0fixp44 = getelementptr inbounds [2 x i32], [2 x i32]* %s32_0fixp, i64 0, i64 1, !taffo.info !694
-  %s32_0fixp80 = load i32, i32* %s32_0fixp44, align 4, !taffo.info !694
+  %s32_0fixp57 = getelementptr inbounds [2 x i32], [2 x i32]* %s32_0fixp, i64 0, i64 1, !taffo.info !694
+  %s32_0fixp84 = load i32, i32* %s32_0fixp57, align 4, !taffo.info !694
   %195 = load i16, i16* getelementptr inbounds ([2 x i16], [2 x i16]* @params_cpOffset, i64 0, i64 1), align 2, !taffo.initweight !110, !taffo.info !1
   %196 = sext i16 %195 to i32, !taffo.initweight !112, !taffo.info !1
-  %s17_15fixp3 = shl i32 %196, 15, !taffo.info !381
+  %s17_15fixp22 = shl i32 %196, 15, !taffo.info !381
   %.flt78 = load float, float* getelementptr inbounds ([3 x float], [3 x float]* @params_ilChessC, i64 0, i64 0), align 4, !taffo.initweight !110, !taffo.info !42
   %197 = fmul float 0x4160000000000000, %.flt78, !taffo.info !42
   %.flt78.fallback.s9_23fixp = fptosi float %197 to i32, !taffo.info !42
   %198 = ashr i32 %.flt78.fallback.s9_23fixp, 8, !taffo.info !42
-  %s17_15fixp100 = add i32 %s17_15fixp3, %198, !taffo.info !780
+  %s17_15fixp100 = add i32 %s17_15fixp22, %198, !taffo.info !780
   %u8_24fixp33 = load i32, i32* @params_cpKta.fixp, align 4, !taffo.info !21
   %199 = fmul float 6.553600e+04, %14, !taffo.info !363, !taffo.constinfo !92
   %200 = fptosi float %199 to i32, !taffo.info !363
-  %s16_16fixp5 = sub i32 %200, 1638400, !taffo.info !363, !taffo.constinfo !392
+  %s16_16fixp = sub i32 %200, 1638400, !taffo.info !363, !taffo.constinfo !392
   %201 = zext i32 %u8_24fixp33 to i64, !taffo.info !21
-  %202 = sext i32 %s16_16fixp5 to i64, !taffo.info !363
+  %202 = sext i32 %s16_16fixp to i64, !taffo.info !363
   %203 = mul i64 %201, %202, !taffo.info !759
   %204 = ashr i64 %203, 32, !taffo.info !759
   %s24_8fixp = trunc i64 %204 to i32, !taffo.info !762
@@ -5253,8 +5253,8 @@ define internal void @_Z20MLX90640_CalculateToPKtffPf.4_fixp(i16* %0, float %1, 
   %s40_24fixp = shl i64 %207, 1, !taffo.info !784
   %s9_23fixp = load i32, i32* @params_cpKv.fixp, align 4, !taffo.info !19
   %208 = fmul float 3.276800e+04, %13, !taffo.info !699, !taffo.constinfo !92
-  %s17_15fixp4 = fptosi float %208 to i32, !taffo.info !699
-  %s17_15fixp39 = sub i32 %s17_15fixp4, 108134, !taffo.info !769, !taffo.constinfo !400
+  %s17_15fixp6 = fptosi float %208 to i32, !taffo.info !699
+  %s17_15fixp39 = sub i32 %s17_15fixp6, 108134, !taffo.info !769, !taffo.constinfo !400
   %209 = sext i32 %s9_23fixp to i64, !taffo.info !19
   %210 = sext i32 %s17_15fixp39 to i64, !taffo.info !769
   %211 = mul i64 %209, %210, !taffo.info !771
@@ -5267,9 +5267,9 @@ define internal void @_Z20MLX90640_CalculateToPKtffPf.4_fixp(i16* %0, float %1, 
   %216 = ashr i96 %215, 32, !taffo.info !786
   %s64_0fixp129 = trunc i96 %216 to i64, !taffo.info !788
   %217 = trunc i64 %s64_0fixp129 to i32, !taffo.info !788
-  %s32_0fixp138 = sub i32 %s32_0fixp80, %217, !taffo.info !694
-  %s32_0fixp43 = getelementptr inbounds [2 x i32], [2 x i32]* %s32_0fixp, i64 0, i64 1, !taffo.info !694
-  store i32 %s32_0fixp138, i32* %s32_0fixp43, align 4, !taffo.info !343
+  %s32_0fixp138 = sub i32 %s32_0fixp84, %217, !taffo.info !694
+  %s32_0fixp56 = getelementptr inbounds [2 x i32], [2 x i32]* %s32_0fixp, i64 0, i64 1, !taffo.info !694
+  store i32 %s32_0fixp138, i32* %s32_0fixp56, align 4, !taffo.info !343
   br label %218
 
 218:                                              ; preds = %194, %172
@@ -5331,12 +5331,12 @@ define internal void @_Z20MLX90640_CalculateToPKtffPf.4_fixp(i16* %0, float %1, 
   %260 = getelementptr inbounds i16, i16* %0, i64 %259, !taffo.info !80
   %261 = load i16, i16* %260, align 2, !taffo.info !80
   %262 = zext i16 %261 to i32, !taffo.info !80
-  %s16_16fixp9 = shl i32 %262, 16, !taffo.info !745
-  %263 = sitofp i32 %s16_16fixp9 to float, !taffo.info !745
+  %s16_16fixp26 = shl i32 %262, 16, !taffo.info !745
+  %263 = sitofp i32 %s16_16fixp26 to float, !taffo.info !745
   %264 = fdiv float %263, 6.553600e+04, !taffo.info !745
-  %265 = sitofp i32 %s16_16fixp9 to float, !taffo.info !745
+  %265 = sitofp i32 %s16_16fixp26 to float, !taffo.info !745
   %266 = fdiv float %265, 6.553600e+04, !taffo.info !745
-  %matchop = icmp sgt i32 %s16_16fixp9, 2147418112, !taffo.info !26
+  %matchop = icmp sgt i32 %s16_16fixp26, 2147418112, !taffo.info !26
   br i1 %matchop, label %267, label %269
 
 267:                                              ; preds = %258
@@ -5360,19 +5360,19 @@ define internal void @_Z20MLX90640_CalculateToPKtffPf.4_fixp(i16* %0, float %1, 
   %281 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.31, i64 0, i64 0), double %280), !taffo.constinfo !97
   %282 = fmul float 6.553600e+04, %14, !taffo.info !363, !taffo.constinfo !92
   %283 = fptosi float %282 to i32, !taffo.info !363
-  %s16_16fixp21 = sub i32 %283, 1638400, !taffo.info !363, !taffo.constinfo !392
-  %284 = sitofp i32 %s16_16fixp21 to double, !taffo.info !363
+  %s16_16fixp4 = sub i32 %283, 1638400, !taffo.info !363, !taffo.constinfo !392
+  %284 = sitofp i32 %s16_16fixp4 to double, !taffo.info !363
   %285 = fdiv double %284, 6.553600e+04, !taffo.info !363, !taffo.constinfo !392
   %286 = fmul float 6.553600e+04, %14, !taffo.info !363, !taffo.constinfo !92
-  %s16_16fixp20 = fptosi float %286 to i32, !taffo.info !363
-  %287 = sitofp i32 %s16_16fixp20 to double, !taffo.info !363
+  %s16_16fixp5 = fptosi float %286 to i32, !taffo.info !363
+  %287 = sitofp i32 %s16_16fixp5 to double, !taffo.info !363
   %288 = fdiv double %287, 6.553600e+04, !taffo.info !363
-  %.flt63 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str.32, i64 0, i64 0), double %288), !taffo.initweight !112, !taffo.info !365, !taffo.constinfo !97
-  %.flt88 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([11 x i8], [11 x i8]* @.str.33, i64 0, i64 0), double %285), !taffo.initweight !112, !taffo.info !365, !taffo.constinfo !97
+  %.flt = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str.32, i64 0, i64 0), double %288), !taffo.initweight !112, !taffo.info !365, !taffo.constinfo !97
+  %.flt79 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([11 x i8], [11 x i8]* @.str.33, i64 0, i64 0), double %285), !taffo.initweight !112, !taffo.info !365, !taffo.constinfo !97
   %289 = sext i32 %.0 to i64, !taffo.info !799
   %s19_13fixp = getelementptr inbounds [768 x i32], [768 x i32]* @params_kta.fixp, i64 0, i64 %289, !taffo.info !34
   %s19_13fixp72 = load i32, i32* %s19_13fixp, align 4, !taffo.info !34
-  %290 = sext i32 %s16_16fixp21 to i64, !taffo.info !363
+  %290 = sext i32 %s16_16fixp4 to i64, !taffo.info !363
   %291 = sext i32 %s19_13fixp72 to i64, !taffo.info !34
   %292 = mul i64 %290, %291, !taffo.info !831
   %s34_30fixp = shl i64 %292, 1, !taffo.info !833
@@ -5387,9 +5387,9 @@ define internal void @_Z20MLX90640_CalculateToPKtffPf.4_fixp(i16* %0, float %1, 
   %298 = getelementptr inbounds [768 x i16], [768 x i16]* @params_offset, i64 0, i64 %297, !taffo.initweight !109, !taffo.info !1
   %299 = load i16, i16* %298, align 2, !taffo.initweight !110, !taffo.info !1
   %300 = sext i16 %299 to i32, !taffo.initweight !112, !taffo.info !1
-  %s17_15fixp25 = shl i32 %300, 15, !taffo.info !381
+  %s17_15fixp24 = shl i32 %300, 15, !taffo.info !381
   %301 = sext i64 %s34_30fixp112 to i96, !taffo.info !834
-  %302 = sext i32 %s17_15fixp25 to i96, !taffo.info !381
+  %302 = sext i32 %s17_15fixp24 to i96, !taffo.info !381
   %303 = mul i96 %301, %302, !taffo.info !836
   %304 = ashr i96 %303, 30, !taffo.info !836
   %s49_15fixp = trunc i96 %304 to i64, !taffo.info !839
@@ -5402,16 +5402,16 @@ define internal void @_Z20MLX90640_CalculateToPKtffPf.4_fixp(i16* %0, float %1, 
   %310 = sext i16 %309 to i32, !taffo.initweight !112, !taffo.info !1
   %311 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([18 x i8], [18 x i8]* @.str.37, i64 0, i64 0), i32 %310), !taffo.initweight !167, !taffo.info !1, !taffo.constinfo !97
   %312 = fmul float 3.276800e+04, %13, !taffo.info !699, !taffo.constinfo !92
-  %s17_15fixp24 = fptosi float %312 to i32, !taffo.info !699
-  %s17_15fixp67 = sub i32 %s17_15fixp24, 108134, !taffo.info !840, !taffo.constinfo !400
-  %313 = sitofp i32 %s17_15fixp67 to float, !taffo.info !840
+  %s17_15fixp11 = fptosi float %312 to i32, !taffo.info !699
+  %s17_15fixp42 = sub i32 %s17_15fixp11, 108134, !taffo.info !840, !taffo.constinfo !400
+  %313 = sitofp i32 %s17_15fixp42 to float, !taffo.info !840
   %314 = fdiv float %313, 3.276800e+04, !taffo.info !840, !taffo.constinfo !400
   %315 = fpext float %314 to double, !taffo.info !842
   %316 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([11 x i8], [11 x i8]* @.str.38, i64 0, i64 0), double %315), !taffo.constinfo !97
   %317 = sext i32 %.0 to i64, !taffo.info !799
   %s5_27fixp37 = getelementptr inbounds [768 x i32], [768 x i32]* @params_kv.fixp, i64 0, i64 %317, !taffo.info !37
   %s5_27fixp73 = load i32, i32* %s5_27fixp37, align 4, !taffo.info !37
-  %318 = sext i32 %s17_15fixp67 to i64, !taffo.info !840
+  %318 = sext i32 %s17_15fixp42 to i64, !taffo.info !840
   %319 = sext i32 %s5_27fixp73 to i64, !taffo.info !37
   %320 = mul i64 %318, %319, !taffo.info !843
   %321 = ashr i64 %320, 30, !taffo.info !843
@@ -5424,10 +5424,10 @@ define internal void @_Z20MLX90640_CalculateToPKtffPf.4_fixp(i16* %0, float %1, 
   %327 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([11 x i8], [11 x i8]* @.str.39, i64 0, i64 0), double %326), !taffo.constinfo !97
   %328 = fadd float 1.000000e+00, %325, !taffo.info !848, !taffo.constinfo !300
   %329 = fmul float 4.096000e+03, %328, !taffo.info !848, !taffo.constinfo !300
-  %s20_12fixp120 = fptosi float %329 to i32, !taffo.info !850
-  %330 = sitofp i32 %s20_12fixp120 to double, !taffo.info !850
+  %s20_12fixp119 = fptosi float %329 to i32, !taffo.info !850
+  %330 = sitofp i32 %s20_12fixp119 to double, !taffo.info !850
   %331 = fdiv double %330, 4.096000e+03, !taffo.info !850
-  %.flt132 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([11 x i8], [11 x i8]* @.str.40, i64 0, i64 0), double %331), !taffo.initweight !112, !taffo.info !851, !taffo.constinfo !97
+  %.flt131 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([11 x i8], [11 x i8]* @.str.40, i64 0, i64 0), double %331), !taffo.initweight !112, !taffo.info !851, !taffo.constinfo !97
   %332 = fmul float 0x42B0000000000000, %328, !taffo.info !848, !taffo.constinfo !300
   %333 = fptosi float %332 to i64, !taffo.info !848
   %334 = sext i64 %333 to i128, !taffo.info !848
@@ -5437,22 +5437,22 @@ define internal void @_Z20MLX90640_CalculateToPKtffPf.4_fixp(i16* %0, float %1, 
   %s52_12fixp = trunc i128 %337 to i64, !taffo.info !855
   %338 = sitofp i64 %s52_12fixp to double, !taffo.info !855
   %339 = fdiv double %338, 4.096000e+03, !taffo.info !855
-  %.flt142 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([11 x i8], [11 x i8]* @.str.41, i64 0, i64 0), double %339), !taffo.initweight !112, !taffo.info !857, !taffo.constinfo !97
+  %.flt140 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([11 x i8], [11 x i8]* @.str.41, i64 0, i64 0), double %339), !taffo.initweight !112, !taffo.info !857, !taffo.constinfo !97
   %340 = sext i32 %.0 to i64, !taffo.info !799
   %341 = getelementptr inbounds [768 x i16], [768 x i16]* @params_offset, i64 0, i64 %340, !taffo.initweight !109, !taffo.info !1
   %342 = load i16, i16* %341, align 2, !taffo.initweight !110, !taffo.info !1
   %343 = sext i16 %342 to i32, !taffo.initweight !112, !taffo.info !1
-  %s17_15fixp8 = shl i32 %343, 15, !taffo.info !381
+  %s17_15fixp9 = shl i32 %343, 15, !taffo.info !381
   %344 = sext i64 %s52_12fixp to i96, !taffo.info !855
-  %345 = sext i32 %s17_15fixp8 to i96, !taffo.info !381
+  %345 = sext i32 %s17_15fixp9 to i96, !taffo.info !381
   %346 = mul i96 %344, %345, !taffo.info !858
   %347 = ashr i96 %346, 27, !taffo.info !858
-  %s64_0fixp131 = trunc i96 %347 to i64, !taffo.info !861
-  %348 = sitofp i64 %s64_0fixp131 to double, !taffo.info !861
-  %.flt149 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([11 x i8], [11 x i8]* @.str.42, i64 0, i64 0), double %348), !taffo.initweight !112, !taffo.info !519, !taffo.constinfo !97
+  %s64_0fixp130 = trunc i96 %347 to i64, !taffo.info !861
+  %348 = sitofp i64 %s64_0fixp130 to double, !taffo.info !861
+  %.flt147 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([11 x i8], [11 x i8]* @.str.42, i64 0, i64 0), double %348), !taffo.initweight !112, !taffo.info !519, !taffo.constinfo !97
   %349 = ashr i64 %s59_5fixp, 5, !taffo.info !828
-  %s64_0fixp141 = sub i64 %349, %s64_0fixp131, !taffo.info !862
-  %350 = sitofp i64 %s64_0fixp141 to float, !taffo.info !862
+  %s64_0fixp139 = sub i64 %349, %s64_0fixp130, !taffo.info !862
+  %350 = sitofp i64 %s64_0fixp139 to float, !taffo.info !862
   %351 = fpext float %350 to double, !taffo.info !864
   %352 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.43, i64 0, i64 0), double %351), !taffo.constinfo !97
   %353 = zext i8 %118 to i32
@@ -5476,7 +5476,7 @@ define internal void @_Z20MLX90640_CalculateToPKtffPf.4_fixp(i16* %0, float %1, 
   %s13_19fixp = trunc i64 %365 to i32, !taffo.info !871
   %366 = sext i32 %s13_19fixp to i64, !taffo.info !871
   %367 = ashr i64 %366, 19, !taffo.info !871
-  %s64_0fixp148 = add i64 %s64_0fixp141, %367, !taffo.info !862
+  %s64_0fixp146 = add i64 %s64_0fixp139, %367, !taffo.info !862
   %.flt77 = load float, float* getelementptr inbounds ([3 x float], [3 x float]* @params_ilChessC, i64 0, i64 1), align 4, !taffo.initweight !110, !taffo.info !42
   %368 = fmul float 0x4160000000000000, %.flt77, !taffo.info !42
   %.flt77.fallback.s9_23fixp = fptosi float %368 to i32, !taffo.info !42
@@ -5489,30 +5489,30 @@ define internal void @_Z20MLX90640_CalculateToPKtffPf.4_fixp(i16* %0, float %1, 
   %s17_15fixp99 = trunc i64 %373 to i32, !taffo.info !875
   %374 = sext i32 %s17_15fixp99 to i64, !taffo.info !875
   %375 = ashr i64 %374, 15, !taffo.info !875
-  %s64_0fixp153 = sub i64 %s64_0fixp148, %375, !taffo.info !876
+  %s64_0fixp151 = sub i64 %s64_0fixp146, %375, !taffo.info !876
   br label %376
 
 376:                                              ; preds = %357, %269
-  %.15.s64_0fixp = phi i64 [ %s64_0fixp153, %357 ], [ %s64_0fixp141, %269 ], !taffo.info !876
+  %.15.s64_0fixp = phi i64 [ %s64_0fixp151, %357 ], [ %s64_0fixp139, %269 ], !taffo.info !876
   %377 = sext i64 %.15.s64_0fixp to i128, !taffo.info !876
   %378 = shl i128 %377, 63, !taffo.info !876
-  %379 = zext i64 %10 to i128, !taffo.info !586
+  %379 = zext i64 %7 to i128, !taffo.info !586
   %380 = sdiv i128 %378, %379, !taffo.info !878
   %s64_0fixp = trunc i128 %380 to i64, !taffo.info !881
   %s5_27fixp30 = load i32, i32* @params_tgc.fixp, align 4, !taffo.info !16
   %381 = zext i16 %12 to i64, !taffo.info !80
-  %s32_0fixp42 = getelementptr inbounds [2 x i32], [2 x i32]* %s32_0fixp, i64 0, i64 %381, !taffo.info !694
-  %s32_0fixp79 = load i32, i32* %s32_0fixp42, align 4, !taffo.info !694
+  %s32_0fixp55 = getelementptr inbounds [2 x i32], [2 x i32]* %s32_0fixp, i64 0, i64 %381, !taffo.info !694
+  %s32_0fixp83 = load i32, i32* %s32_0fixp55, align 4, !taffo.info !694
   %382 = sext i32 %s5_27fixp30 to i64, !taffo.info !16
-  %383 = sext i32 %s32_0fixp79 to i64, !taffo.info !694
+  %383 = sext i32 %s32_0fixp83 to i64, !taffo.info !694
   %384 = mul i64 %382, %383, !taffo.info !882
   %385 = ashr i64 %384, 27, !taffo.info !882
-  %s32_0fixp102 = trunc i64 %385 to i32, !taffo.info !883
+  %s32_0fixp103 = trunc i64 %385 to i32, !taffo.info !883
   %386 = trunc i64 %s64_0fixp to i32, !taffo.info !881
-  %s32_0fixp114 = sub i32 %386, %s32_0fixp102, !taffo.info !883
-  %387 = sitofp i32 %s32_0fixp114 to float, !taffo.info !883
-  %388 = sitofp i32 %s32_0fixp114 to float, !taffo.info !883
-  %389 = sitofp i32 %s32_0fixp114 to float, !taffo.info !883
+  %s32_0fixp115 = sub i32 %386, %s32_0fixp103, !taffo.info !883
+  %387 = sitofp i32 %s32_0fixp115 to float, !taffo.info !883
+  %388 = sitofp i32 %s32_0fixp115 to float, !taffo.info !883
+  %389 = sitofp i32 %s32_0fixp115 to float, !taffo.info !883
   %s5_27fixp29 = load i32, i32* @params_tgc.fixp, align 4, !taffo.info !16
   %390 = zext i16 %12 to i64, !taffo.info !80
   %s12_20fixp38 = getelementptr inbounds [2 x i32], [2 x i32]* @params_cpAlpha.fixp, i64 0, i64 %390, !taffo.info !39
@@ -5555,9 +5555,9 @@ define internal void @_Z20MLX90640_CalculateToPKtffPf.4_fixp(i16* %0, float %1, 
   %s2_30fixp36 = load i32, i32* @params_KsTa.fixp, align 4, !taffo.info !28
   %418 = fmul float 6.553600e+04, %14, !taffo.info !363, !taffo.constinfo !92
   %419 = fptosi float %418 to i32, !taffo.info !363
-  %s16_16fixp17 = sub i32 %419, 1638400, !taffo.info !363, !taffo.constinfo !392
+  %s16_16fixp15 = sub i32 %419, 1638400, !taffo.info !363, !taffo.constinfo !392
   %420 = sext i32 %s2_30fixp36 to i64, !taffo.info !28
-  %421 = sext i32 %s16_16fixp17 to i64, !taffo.info !363
+  %421 = sext i32 %s16_16fixp15 to i64, !taffo.info !363
   %422 = mul i64 %420, %421, !taffo.info !892
   %423 = ashr i64 %422, 31, !taffo.info !892
   %s17_15fixp71 = trunc i64 %423 to i32, !taffo.info !893
@@ -5585,16 +5585,16 @@ define internal void @_Z20MLX90640_CalculateToPKtffPf.4_fixp(i16* %0, float %1, 
   %438 = fdiv double %437, 0x41D0000000000000, !taffo.info !28
   %.flt137 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([13 x i8], [13 x i8]* @.str.53, i64 0, i64 0), double %438), !taffo.initweight !112, !taffo.info !423, !taffo.constinfo !97
   %439 = sext i64 %s32_32fixp to i128, !taffo.info !899
-  %440 = sext i64 %s35_29fixp146 to i128, !taffo.info !505
+  %440 = sext i64 %s35_29fixp148 to i128, !taffo.info !505
   %441 = mul i128 %439, %440, !taffo.info !901
   %442 = ashr i128 %441, 29, !taffo.info !901
-  %s32_32fixp151 = trunc i128 %442 to i64, !taffo.info !369
-  %443 = sitofp i64 %s32_32fixp151 to double, !taffo.info !369
+  %s32_32fixp152 = trunc i128 %442 to i64, !taffo.info !369
+  %443 = sitofp i64 %s32_32fixp152 to double, !taffo.info !369
   %444 = fdiv double %443, 0x41F0000000000000, !taffo.info !369
   %.flt159 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str.54, i64 0, i64 0), double %444), !taffo.initweight !112, !taffo.info !369, !taffo.constinfo !97
-  %445 = ashr i64 %s32_32fixp151, 32, !taffo.info !369
+  %445 = ashr i64 %s32_32fixp152, 32, !taffo.info !369
   %446 = trunc i64 %445 to i32, !taffo.info !369
-  %s32_0fixp156 = add i32 %s32_0fixp114, %446, !taffo.info !903
+  %s32_0fixp156 = add i32 %s32_0fixp115, %446, !taffo.info !903
   %447 = sitofp i32 %s32_0fixp156 to double, !taffo.info !903
   %.flt161 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str.55, i64 0, i64 0), double %447), !taffo.initweight !112, !taffo.info !903, !taffo.constinfo !97
   %448 = sext i64 %s32_32fixp to i128, !taffo.info !899
@@ -5644,14 +5644,14 @@ define internal void @_Z20MLX90640_CalculateToPKtffPf.4_fixp(i16* %0, float %1, 
   %481 = fdiv double %480, 0x41D0000000000000, !taffo.info !28
   %482 = load float, float* getelementptr inbounds ([4 x float], [4 x float]* @params_ksTo, i64 0, i64 1), align 4, !taffo.initweight !110, !taffo.info !30
   %483 = fpext float %482 to double, !taffo.initweight !112, !taffo.info !30
-  %.flt68 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([22 x i8], [22 x i8]* @.str.60, i64 0, i64 0), double %481, double %483), !taffo.initweight !112, !taffo.info !423, !taffo.constinfo !95
+  %.flt53 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([22 x i8], [22 x i8]* @.str.60, i64 0, i64 0), double %481, double %483), !taffo.initweight !112, !taffo.info !423, !taffo.constinfo !95
   %484 = fmul float 4.096000e+03, %477, !taffo.info !913
   %485 = fptosi float %484 to i32, !taffo.info !913
   %486 = shl i32 %485, 18, !taffo.info !913
   %s2_30fixp27 = sub i32 1073741824, %486, !taffo.info !907, !taffo.constinfo !300
   %487 = sitofp i32 %s2_30fixp27 to double, !taffo.info !907
   %488 = fdiv double %487, 0x41D0000000000000, !taffo.info !907, !taffo.constinfo !300
-  %.flt89 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str.61, i64 0, i64 0), double %488), !taffo.initweight !112, !taffo.info !908, !taffo.constinfo !97
+  %.flt82 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str.61, i64 0, i64 0), double %488), !taffo.initweight !112, !taffo.info !908, !taffo.constinfo !97
   %489 = sext i64 %s32_32fixp to i96, !taffo.info !899
   %490 = sext i32 %s2_30fixp27 to i96, !taffo.info !907
   %491 = mul i96 %489, %490, !taffo.info !906
@@ -5667,7 +5667,7 @@ define internal void @_Z20MLX90640_CalculateToPKtffPf.4_fixp(i16* %0, float %1, 
   %.flt171 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str.63, i64 0, i64 0), double %497), !taffo.initweight !112, !taffo.info !908, !taffo.constinfo !97
   %498 = fpext float %389 to double, !taffo.info !48
   %499 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([14 x i8], [14 x i8]* @.str.51, i64 0, i64 0), double %498), !taffo.constinfo !97
-  %500 = sext i32 %s32_0fixp114 to i64, !taffo.info !883
+  %500 = sext i32 %s32_0fixp115 to i64, !taffo.info !883
   %501 = shl i64 %500, 30, !taffo.info !883
   %502 = sext i32 %s2_30fixp164 to i64, !taffo.info !28
   %503 = sdiv i64 %501, %502, !taffo.info !915
@@ -5720,7 +5720,7 @@ define internal void @_Z20MLX90640_CalculateToPKtffPf.4_fixp(i16* %0, float %1, 
   %529 = sitofp i64 %s36_28fixp to double, !taffo.info !438
   %530 = fdiv double %529, 0x41B0000000000000, !taffo.info !438
   %.flt173 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str.67, i64 0, i64 0), double %530), !taffo.initweight !112, !taffo.info !439, !taffo.constinfo !97
-  %531 = ashr i64 %s35_29fixp146, 29, !taffo.info !505
+  %531 = ashr i64 %s35_29fixp148, 29, !taffo.info !505
   %532 = trunc i64 %531 to i32, !taffo.info !505
   %s32_0fixp168 = add i32 %s32_0fixp166, %532, !taffo.info !916
   %533 = sitofp i32 %s32_0fixp168 to double, !taffo.info !916
@@ -5778,8 +5778,8 @@ define internal void @_Z20MLX90640_CalculateToPKtffPf.4_fixp(i16* %0, float %1, 
   %555 = getelementptr inbounds [4 x i16], [4 x i16]* @params_ct, i64 0, i64 %554, !taffo.initweight !109, !taffo.info !1
   %556 = load i16, i16* %555, align 2, !taffo.initweight !110, !taffo.info !1
   %557 = sext i16 %556 to i32, !taffo.initweight !112, !taffo.info !1
-  %s17_15fixp11 = shl i32 %557, 15, !taffo.info !381
-  %558 = ashr i32 %s17_15fixp11, 15, !taffo.info !381
+  %s17_15fixp13 = shl i32 %557, 15, !taffo.info !381
+  %558 = ashr i32 %s17_15fixp13, 15, !taffo.info !381
   %s32_0fixp179 = sub i32 %s32_0fixp178, %558, !taffo.info !916
   %559 = sitofp i32 %s32_0fixp179 to double, !taffo.info !916
   %.flt187 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str.72, i64 0, i64 0), double %559), !taffo.initweight !112, !taffo.info !916, !taffo.constinfo !97
@@ -5803,10 +5803,10 @@ define internal void @_Z20MLX90640_CalculateToPKtffPf.4_fixp(i16* %0, float %1, 
   %573 = fdiv double %572, 0x41D0000000000000, !taffo.info !907, !taffo.constinfo !300
   %.flt190 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([11 x i8], [11 x i8]* @.str.74, i64 0, i64 0), double %573), !taffo.initweight !112, !taffo.info !908, !taffo.constinfo !97
   %574 = sext i8 %.2 to i64, !taffo.info !746
-  %s55_9fixp56 = getelementptr inbounds [4 x i64], [4 x i64]* %s55_9fixp, i64 0, i64 %574, !taffo.info !696
-  %s55_9fixp86 = load i64, i64* %s55_9fixp56, align 4, !taffo.info !696
+  %s55_9fixp44 = getelementptr inbounds [4 x i64], [4 x i64]* %s55_9fixp, i64 0, i64 %574, !taffo.info !696
+  %s55_9fixp80 = load i64, i64* %s55_9fixp44, align 4, !taffo.info !696
   %575 = sext i64 %s32_32fixp to i128, !taffo.info !899
-  %576 = sext i64 %s55_9fixp86 to i128, !taffo.info !696
+  %576 = sext i64 %s55_9fixp80 to i128, !taffo.info !696
   %577 = mul i128 %575, %576, !taffo.info !920
   %578 = ashr i128 %577, 11, !taffo.info !920
   %s2_30fixp124 = trunc i128 %578 to i32, !taffo.info !28
@@ -5850,7 +5850,7 @@ define internal void @_Z20MLX90640_CalculateToPKtffPf.4_fixp(i16* %0, float %1, 
   %606 = fmul float 1.000000e+00, %591, !taffo.info !48
   %607 = fptosi float %606 to i64, !taffo.info !48
   %608 = shl i64 %607, 29, !taffo.info !48
-  %s35_29fixp191 = add i64 %608, %s35_29fixp146, !taffo.info !505
+  %s35_29fixp191 = add i64 %608, %s35_29fixp148, !taffo.info !505
   %609 = sitofp i64 %s35_29fixp191 to float, !taffo.info !505
   %610 = fdiv float %609, 0x41C0000000000000, !taffo.info !505
   %u38_26fixp194 = ashr i64 %s35_29fixp191, 3, !taffo.info !446
@@ -5895,15 +5895,15 @@ define internal void @_Z20MLX90640_CalculateToPKtffPf.4_fixp(i16* %0, float %1, 
 
 631:                                              ; preds = %219
   %632 = fmul float 6.553600e+04, %13, !taffo.info !363, !taffo.constinfo !92
-  %s16_16fixp = fptosi float %632 to i32, !taffo.info !363
-  %633 = sitofp i32 %s16_16fixp to double, !taffo.info !363
+  %s16_16fixp14 = fptosi float %632 to i32, !taffo.info !363
+  %633 = sitofp i32 %s16_16fixp14 to double, !taffo.info !363
   %634 = fdiv double %633, 6.553600e+04, !taffo.info !363
-  %.flt = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([8 x i8], [8 x i8]* @.str.84, i64 0, i64 0), double %634), !taffo.initweight !112, !taffo.info !365, !taffo.constinfo !97
+  %.flt43 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([8 x i8], [8 x i8]* @.str.84, i64 0, i64 0), double %634), !taffo.initweight !112, !taffo.info !365, !taffo.constinfo !97
   %635 = fmul float 6.553600e+04, %14, !taffo.info !363, !taffo.constinfo !92
-  %s16_16fixp19 = fptosi float %635 to i32, !taffo.info !363
-  %636 = sitofp i32 %s16_16fixp19 to double, !taffo.info !363
+  %s16_16fixp17 = fptosi float %635 to i32, !taffo.info !363
+  %636 = sitofp i32 %s16_16fixp17 to double, !taffo.info !363
   %637 = fdiv double %636, 6.553600e+04, !taffo.info !363
-  %.flt62 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([8 x i8], [8 x i8]* @.str.85, i64 0, i64 0), double %637), !taffo.initweight !112, !taffo.info !365, !taffo.constinfo !97
+  %.flt50 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([8 x i8], [8 x i8]* @.str.85, i64 0, i64 0), double %637), !taffo.initweight !112, !taffo.info !365, !taffo.constinfo !97
   %638 = fpext float %2 to double, !taffo.initweight !110, !taffo.info !343
   %639 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str.86, i64 0, i64 0), double %638), !taffo.initweight !112, !taffo.info !343, !taffo.constinfo !97
   %.flt154 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([12 x i8], [12 x i8]* @.str.87, i64 0, i64 0), double %60), !taffo.initweight !112, !taffo.info !505, !taffo.constinfo !97
@@ -5929,28 +5929,28 @@ define internal void @_Z20MLX90640_CalculateToPKtffPf.5_fixp(i16* %0, float %1, 
   %14 = call float @_Z15MLX90640_GetVddPKt(i16* %0), !taffo.constinfo !92
   %15 = call float @_Z14MLX90640_GetTaPKt(i16* %0), !taffo.constinfo !92
   %16 = fmul float 6.553600e+04, %15, !taffo.info !363, !taffo.constinfo !92
-  %s16_16fixp14 = fptosi float %16 to i32, !taffo.info !363
-  %17 = sitofp i32 %s16_16fixp14 to double, !taffo.info !363
+  %s16_16fixp15 = fptosi float %16 to i32, !taffo.info !363
+  %17 = sitofp i32 %s16_16fixp15 to double, !taffo.info !363
   %18 = fdiv double %17, 6.553600e+04, !taffo.info !363
-  %.flt58 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([12 x i8], [12 x i8]* @.str.22, i64 0, i64 0), double %18), !taffo.initweight !112, !taffo.info !365, !taffo.constinfo !97
+  %.flt42 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([12 x i8], [12 x i8]* @.str.22, i64 0, i64 0), double %18), !taffo.initweight !112, !taffo.info !365, !taffo.constinfo !97
   %.flt69 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([12 x i8], [12 x i8]* @.str.23, i64 0, i64 0), double %6), !taffo.initweight !112, !taffo.info !519, !taffo.constinfo !97
   %19 = fmul float 3.276800e+04, %15, !taffo.info !699, !taffo.constinfo !92
-  %s17_15fixp11 = fptosi float %19 to i32, !taffo.info !699
-  %s17_15fixp43 = add i32 %s17_15fixp11, 8950579, !taffo.info !700, !taffo.constinfo !366
-  %20 = sitofp i32 %s17_15fixp43 to double, !taffo.info !700
+  %s17_15fixp17 = fptosi float %19 to i32, !taffo.info !699
+  %s17_15fixp44 = add i32 %s17_15fixp17, 8950579, !taffo.info !700, !taffo.constinfo !366
+  %20 = sitofp i32 %s17_15fixp44 to double, !taffo.info !700
   %21 = fdiv double %20, 3.276800e+04, !taffo.info !700, !taffo.constinfo !366
   %.flt118 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.24, i64 0, i64 0), double %21), !taffo.initweight !112, !taffo.info !386, !taffo.constinfo !97
-  %22 = sext i32 %s17_15fixp43 to i64, !taffo.info !700
-  %23 = sext i32 %s17_15fixp43 to i64, !taffo.info !700
+  %22 = sext i32 %s17_15fixp44 to i64, !taffo.info !700
+  %23 = sext i32 %s17_15fixp44 to i64, !taffo.info !700
   %24 = mul i64 %22, %23, !taffo.info !702
   %u31_33fixp = shl i64 %24, 3, !taffo.info !705
   %25 = zext i64 %u31_33fixp to i96, !taffo.info !705
-  %26 = sext i32 %s17_15fixp43 to i96, !taffo.info !700
+  %26 = sext i32 %s17_15fixp44 to i96, !taffo.info !700
   %27 = mul i96 %25, %26, !taffo.info !707
   %28 = ashr i96 %27, 31, !taffo.info !707
   %s47_17fixp = trunc i96 %28 to i64, !taffo.info !710
   %29 = sext i64 %s47_17fixp to i96, !taffo.info !710
-  %30 = sext i32 %s17_15fixp43 to i96, !taffo.info !700
+  %30 = sext i32 %s17_15fixp44 to i96, !taffo.info !700
   %31 = mul i96 %29, %30, !taffo.info !712
   %32 = ashr i96 %31, 32, !taffo.info !712
   %s64_0fixp124 = trunc i96 %32 to i64, !taffo.info !715
@@ -5995,8 +5995,8 @@ define internal void @_Z20MLX90640_CalculateToPKtffPf.5_fixp(i16* %0, float %1, 
   %56 = load float, float* getelementptr inbounds ([4 x float], [4 x float]* @params_ksTo, i64 0, i64 2), align 8, !taffo.initweight !110, !taffo.info !30
   %57 = load i16, i16* getelementptr inbounds ([4 x i16], [4 x i16]* @params_ct, i64 0, i64 2), align 2, !taffo.initweight !110, !taffo.info !1
   %58 = sext i16 %57 to i32, !taffo.initweight !112, !taffo.info !1
-  %s17_15fixp9 = shl i32 %58, 15, !taffo.info !381
-  %59 = sitofp i32 %s17_15fixp9 to float, !taffo.info !381
+  %s17_15fixp22 = shl i32 %58, 15, !taffo.info !381
+  %59 = sitofp i32 %s17_15fixp22 to float, !taffo.info !381
   %60 = fdiv float %59, 3.276800e+04, !taffo.info !381
   %61 = fmul float %56, %60, !taffo.initweight !112, !taffo.info !727
   %62 = fadd float 1.000000e+00, %61, !taffo.initweight !167, !taffo.info !729, !taffo.constinfo !300
@@ -6005,21 +6005,21 @@ define internal void @_Z20MLX90640_CalculateToPKtffPf.5_fixp(i16* %0, float %1, 
   %s55_9fixp65 = getelementptr inbounds [4 x i64], [4 x i64]* %s55_9fixp, i64 0, i64 2, !taffo.info !696
   store i64 %64, i64* %s55_9fixp65, align 8, !taffo.info !343
   %s55_9fixp64 = getelementptr inbounds [4 x i64], [4 x i64]* %s55_9fixp, i64 0, i64 2, !taffo.info !696
-  %s55_9fixp91 = load i64, i64* %s55_9fixp64, align 8, !taffo.info !731
+  %s55_9fixp92 = load i64, i64* %s55_9fixp64, align 8, !taffo.info !731
   %65 = load float, float* getelementptr inbounds ([4 x float], [4 x float]* @params_ksTo, i64 0, i64 3), align 4, !taffo.initweight !110, !taffo.info !30
   %66 = load i16, i16* getelementptr inbounds ([4 x i16], [4 x i16]* @params_ct, i64 0, i64 3), align 2, !taffo.initweight !110, !taffo.info !1
   %67 = sext i16 %66 to i32, !taffo.initweight !112, !taffo.info !1
   %68 = load i16, i16* getelementptr inbounds ([4 x i16], [4 x i16]* @params_ct, i64 0, i64 2), align 2, !taffo.initweight !110, !taffo.info !1
   %69 = sext i16 %68 to i32, !taffo.initweight !112, !taffo.info !1
   %70 = sub nsw i32 %67, %69, !taffo.initweight !167, !taffo.info !733
-  %s17_15fixp26 = shl i32 %70, 15, !taffo.info !735
-  %71 = sitofp i32 %s17_15fixp26 to float, !taffo.info !735
+  %s17_15fixp = shl i32 %70, 15, !taffo.info !735
+  %71 = sitofp i32 %s17_15fixp to float, !taffo.info !735
   %72 = fdiv float %71, 3.276800e+04, !taffo.info !735
   %73 = fmul float %65, %72, !taffo.initweight !112, !taffo.info !736
   %74 = fadd float 1.000000e+00, %73, !taffo.initweight !167, !taffo.info !738, !taffo.constinfo !300
   %75 = fmul float 0x4230000000000000, %74, !taffo.info !738, !taffo.constinfo !300
   %76 = fptosi float %75 to i64, !taffo.info !738
-  %77 = sext i64 %s55_9fixp91 to i128, !taffo.info !731
+  %77 = sext i64 %s55_9fixp92 to i128, !taffo.info !731
   %78 = sext i64 %76 to i128, !taffo.info !738
   %79 = mul i128 %77, %78, !taffo.info !740
   %80 = ashr i128 %79, 36, !taffo.info !740
@@ -6036,8 +6036,8 @@ define internal void @_Z20MLX90640_CalculateToPKtffPf.5_fixp(i16* %0, float %1, 
   br i1 %86, label %87, label %90, !taffo.initweight !112, !taffo.info !343
 
 87:                                               ; preds = %2
-  %s18_14fixp68 = sub i32 %s18_14fixp, 1073741824, !taffo.info !482, !taffo.constinfo !383
-  %88 = sitofp i32 %s18_14fixp68 to float, !taffo.info !482
+  %s18_14fixp47 = sub i32 %s18_14fixp, 1073741824, !taffo.info !482, !taffo.constinfo !383
+  %88 = sitofp i32 %s18_14fixp47 to float, !taffo.info !482
   %89 = fdiv float %88, 1.638400e+04, !taffo.info !482, !taffo.constinfo !383
   br label %90
 
@@ -6045,10 +6045,10 @@ define internal void @_Z20MLX90640_CalculateToPKtffPf.5_fixp(i16* %0, float %1, 
   %.06 = phi float [ %89, %87 ], [ %85, %2 ], !taffo.info !484
   %91 = load i16, i16* @params_gainEE, align 2, !taffo.initweight !109, !taffo.info !1
   %92 = sext i16 %91 to i32, !taffo.initweight !110, !taffo.info !1
-  %s17_15fixp13 = shl i32 %92, 15, !taffo.info !381
+  %s17_15fixp19 = shl i32 %92, 15, !taffo.info !381
   %93 = fmul float 0x42D0000000000000, %.06, !taffo.info !484
   %94 = fptosi float %93 to i64, !taffo.info !484
-  %95 = sext i32 %s17_15fixp13 to i96, !taffo.info !381
+  %95 = sext i32 %s17_15fixp19 to i96, !taffo.info !381
   %96 = shl i96 %95, 46, !taffo.info !381
   %97 = sext i64 %94 to i96, !taffo.info !484
   %98 = sdiv i96 %96, %97, !taffo.info !742
@@ -6065,17 +6065,17 @@ define internal void @_Z20MLX90640_CalculateToPKtffPf.5_fixp(i16* %0, float %1, 
   %108 = getelementptr inbounds i16, i16* %0, i64 776, !taffo.info !80
   %109 = load i16, i16* %108, align 2, !taffo.info !80
   %110 = zext i16 %109 to i32, !taffo.info !80
-  %s16_16fixp12 = shl i32 %110, 16, !taffo.info !745
-  %s32_0fixp57 = getelementptr inbounds [2 x i32], [2 x i32]* %s32_0fixp, i64 0, i64 0, !taffo.info !694
-  %111 = ashr i32 %s16_16fixp12, 16, !taffo.info !745
-  store i32 %111, i32* %s32_0fixp57, align 4, !taffo.info !343
+  %s16_16fixp14 = shl i32 %110, 16, !taffo.info !745
+  %s32_0fixp61 = getelementptr inbounds [2 x i32], [2 x i32]* %s32_0fixp, i64 0, i64 0, !taffo.info !694
+  %111 = ashr i32 %s16_16fixp14, 16, !taffo.info !745
+  store i32 %111, i32* %s32_0fixp61, align 4, !taffo.info !343
   %112 = getelementptr inbounds i16, i16* %0, i64 808, !taffo.info !80
   %113 = load i16, i16* %112, align 2, !taffo.info !80
   %114 = zext i16 %113 to i32, !taffo.info !80
-  %s16_16fixp5 = shl i32 %114, 16, !taffo.info !745
-  %s32_0fixp56 = getelementptr inbounds [2 x i32], [2 x i32]* %s32_0fixp, i64 0, i64 1, !taffo.info !694
-  %115 = ashr i32 %s16_16fixp5, 16, !taffo.info !745
-  store i32 %115, i32* %s32_0fixp56, align 4, !taffo.info !343
+  %s16_16fixp6 = shl i32 %114, 16, !taffo.info !745
+  %s32_0fixp60 = getelementptr inbounds [2 x i32], [2 x i32]* %s32_0fixp, i64 0, i64 1, !taffo.info !694
+  %115 = ashr i32 %s16_16fixp6, 16, !taffo.info !745
+  store i32 %115, i32* %s32_0fixp60, align 4, !taffo.info !343
   br label %116
 
 116:                                              ; preds = %134, %90
@@ -6085,36 +6085,36 @@ define internal void @_Z20MLX90640_CalculateToPKtffPf.5_fixp(i16* %0, float %1, 
 
 118:                                              ; preds = %116
   %119 = sext i32 %.01 to i64, !taffo.info !748
-  %s32_0fixp55 = getelementptr inbounds [2 x i32], [2 x i32]* %s32_0fixp, i64 0, i64 %119, !taffo.info !694
-  %s32_0fixp88 = load i32, i32* %s32_0fixp55, align 4, !taffo.info !750
-  %120 = icmp sgt i32 %s32_0fixp88, 32767, !taffo.info !519
+  %s32_0fixp59 = getelementptr inbounds [2 x i32], [2 x i32]* %s32_0fixp, i64 0, i64 %119, !taffo.info !694
+  %s32_0fixp90 = load i32, i32* %s32_0fixp59, align 4, !taffo.info !750
+  %120 = icmp sgt i32 %s32_0fixp90, 32767, !taffo.info !519
   br i1 %120, label %121, label %126, !taffo.initweight !167, !taffo.info !343
 
 121:                                              ; preds = %118
   %122 = sext i32 %.01 to i64, !taffo.info !748
-  %s32_0fixp54 = getelementptr inbounds [2 x i32], [2 x i32]* %s32_0fixp, i64 0, i64 %122, !taffo.info !694
-  %s32_0fixp87 = load i32, i32* %s32_0fixp54, align 4, !taffo.info !750
-  %123 = sext i32 %s32_0fixp87 to i64, !taffo.info !750
-  %s64_0fixp108 = sub i64 %123, 65536, !taffo.info !750, !taffo.constinfo !383
+  %s32_0fixp58 = getelementptr inbounds [2 x i32], [2 x i32]* %s32_0fixp, i64 0, i64 %122, !taffo.info !694
+  %s32_0fixp89 = load i32, i32* %s32_0fixp58, align 4, !taffo.info !750
+  %123 = sext i32 %s32_0fixp89 to i64, !taffo.info !750
+  %s64_0fixp109 = sub i64 %123, 65536, !taffo.info !750, !taffo.constinfo !383
   %124 = sext i32 %.01 to i64, !taffo.info !748
-  %s32_0fixp53 = getelementptr inbounds [2 x i32], [2 x i32]* %s32_0fixp, i64 0, i64 %124, !taffo.info !694
-  %125 = trunc i64 %s64_0fixp108 to i32, !taffo.info !750
-  store i32 %125, i32* %s32_0fixp53, align 4, !taffo.info !343
+  %s32_0fixp57 = getelementptr inbounds [2 x i32], [2 x i32]* %s32_0fixp, i64 0, i64 %124, !taffo.info !694
+  %125 = trunc i64 %s64_0fixp109 to i32, !taffo.info !750
+  store i32 %125, i32* %s32_0fixp57, align 4, !taffo.info !343
   br label %126
 
 126:                                              ; preds = %118, %121
   %127 = sext i32 %.01 to i64, !taffo.info !748
-  %s32_0fixp52 = getelementptr inbounds [2 x i32], [2 x i32]* %s32_0fixp, i64 0, i64 %127, !taffo.info !694
-  %s32_0fixp86 = load i32, i32* %s32_0fixp52, align 4, !taffo.info !750
-  %128 = sext i32 %s32_0fixp86 to i96, !taffo.info !750
+  %s32_0fixp56 = getelementptr inbounds [2 x i32], [2 x i32]* %s32_0fixp, i64 0, i64 %127, !taffo.info !694
+  %s32_0fixp88 = load i32, i32* %s32_0fixp56, align 4, !taffo.info !750
+  %128 = sext i32 %s32_0fixp88 to i96, !taffo.info !750
   %129 = sext i64 %s43_21fixp to i96, !taffo.info !744
   %130 = mul i96 %128, %129, !taffo.info !752
   %131 = ashr i96 %130, 21, !taffo.info !752
-  %s64_0fixp107 = trunc i96 %131 to i64, !taffo.info !755
+  %s64_0fixp108 = trunc i96 %131 to i64, !taffo.info !755
   %132 = sext i32 %.01 to i64, !taffo.info !748
-  %s32_0fixp51 = getelementptr inbounds [2 x i32], [2 x i32]* %s32_0fixp, i64 0, i64 %132, !taffo.info !694
-  %133 = trunc i64 %s64_0fixp107 to i32, !taffo.info !755
-  store i32 %133, i32* %s32_0fixp51, align 4, !taffo.info !343
+  %s32_0fixp55 = getelementptr inbounds [2 x i32], [2 x i32]* %s32_0fixp, i64 0, i64 %132, !taffo.info !694
+  %133 = trunc i64 %s64_0fixp108 to i32, !taffo.info !755
+  store i32 %133, i32* %s32_0fixp55, align 4, !taffo.info !343
   br label %134
 
 134:                                              ; preds = %126
@@ -6122,32 +6122,32 @@ define internal void @_Z20MLX90640_CalculateToPKtffPf.5_fixp(i16* %0, float %1, 
   br label %116, !llvm.loop !926
 
 136:                                              ; preds = %116
-  %s32_0fixp50 = getelementptr inbounds [2 x i32], [2 x i32]* %s32_0fixp, i64 0, i64 0, !taffo.info !694
-  %s32_0fixp85 = load i32, i32* %s32_0fixp50, align 4, !taffo.info !755
-  %s64_0fixp106 = sext i32 %s32_0fixp85 to i64, !taffo.info !755
+  %s32_0fixp54 = getelementptr inbounds [2 x i32], [2 x i32]* %s32_0fixp, i64 0, i64 0, !taffo.info !694
+  %s32_0fixp87 = load i32, i32* %s32_0fixp54, align 4, !taffo.info !755
+  %s64_0fixp107 = sext i32 %s32_0fixp87 to i64, !taffo.info !755
   %137 = load i16, i16* getelementptr inbounds ([2 x i16], [2 x i16]* @params_cpOffset, i64 0, i64 0), align 2, !taffo.initweight !110, !taffo.info !1
   %138 = sext i16 %137 to i32, !taffo.initweight !112, !taffo.info !1
-  %s17_15fixp25 = shl i32 %138, 15, !taffo.info !381
+  %s17_15fixp23 = shl i32 %138, 15, !taffo.info !381
   %u8_24fixp35 = load i32, i32* @params_cpKta.fixp, align 4, !taffo.info !21
   %139 = fmul float 6.553600e+04, %15, !taffo.info !363, !taffo.constinfo !92
   %140 = fptosi float %139 to i32, !taffo.info !363
-  %s16_16fixp22 = sub i32 %140, 1638400, !taffo.info !363, !taffo.constinfo !392
+  %s16_16fixp24 = sub i32 %140, 1638400, !taffo.info !363, !taffo.constinfo !392
   %141 = zext i32 %u8_24fixp35 to i64, !taffo.info !21
-  %142 = sext i32 %s16_16fixp22 to i64, !taffo.info !363
+  %142 = sext i32 %s16_16fixp24 to i64, !taffo.info !363
   %143 = mul i64 %141, %142, !taffo.info !759
   %144 = ashr i64 %143, 32, !taffo.info !759
   %s24_8fixp73 = trunc i64 %144 to i32, !taffo.info !762
   %s24_8fixp100 = add i32 256, %s24_8fixp73, !taffo.info !764, !taffo.constinfo !300
-  %145 = sext i32 %s17_15fixp25 to i64, !taffo.info !381
+  %145 = sext i32 %s17_15fixp23 to i64, !taffo.info !381
   %146 = sext i32 %s24_8fixp100 to i64, !taffo.info !764
   %147 = mul i64 %145, %146, !taffo.info !766
   %s39_25fixp114 = shl i64 %147, 2, !taffo.info !768
   %s9_23fixp32 = load i32, i32* @params_cpKv.fixp, align 4, !taffo.info !19
   %148 = fmul float 3.276800e+04, %14, !taffo.info !699, !taffo.constinfo !92
-  %s17_15fixp6 = fptosi float %148 to i32, !taffo.info !699
-  %s17_15fixp41 = sub i32 %s17_15fixp6, 108134, !taffo.info !769, !taffo.constinfo !400
+  %s17_15fixp11 = fptosi float %148 to i32, !taffo.info !699
+  %s17_15fixp39 = sub i32 %s17_15fixp11, 108134, !taffo.info !769, !taffo.constinfo !400
   %149 = sext i32 %s9_23fixp32 to i64, !taffo.info !19
-  %150 = sext i32 %s17_15fixp41 to i64, !taffo.info !769
+  %150 = sext i32 %s17_15fixp39 to i64, !taffo.info !769
   %151 = mul i64 %149, %150, !taffo.info !771
   %152 = ashr i64 %151, 30, !taffo.info !771
   %s24_8fixp97 = trunc i64 %152 to i32, !taffo.info !773
@@ -6157,10 +6157,10 @@ define internal void @_Z20MLX90640_CalculateToPKtffPf.5_fixp(i16* %0, float %1, 
   %155 = mul i96 %153, %154, !taffo.info !776
   %156 = ashr i96 %155, 33, !taffo.info !776
   %s64_0fixp127 = trunc i96 %156 to i64, !taffo.info !779
-  %s64_0fixp139 = sub i64 %s64_0fixp106, %s64_0fixp127, !taffo.info !755
+  %s64_0fixp139 = sub i64 %s64_0fixp107, %s64_0fixp127, !taffo.info !755
   %s32_0fixp148 = trunc i64 %s64_0fixp139 to i32, !taffo.info !694
-  %s32_0fixp49 = getelementptr inbounds [2 x i32], [2 x i32]* %s32_0fixp, i64 0, i64 0, !taffo.info !694
-  store i32 %s32_0fixp148, i32* %s32_0fixp49, align 4, !taffo.info !343
+  %s32_0fixp53 = getelementptr inbounds [2 x i32], [2 x i32]* %s32_0fixp, i64 0, i64 0, !taffo.info !694
+  store i32 %s32_0fixp148, i32* %s32_0fixp53, align 4, !taffo.info !343
   %157 = zext i8 %107 to i32
   %158 = load i8, i8* @params_calibrationModeEE, align 1, !taffo.info !26
   %159 = zext i8 %158 to i32, !taffo.info !26
@@ -6168,31 +6168,31 @@ define internal void @_Z20MLX90640_CalculateToPKtffPf.5_fixp(i16* %0, float %1, 
   br i1 %160, label %161, label %183
 
 161:                                              ; preds = %136
-  %s32_0fixp48 = getelementptr inbounds [2 x i32], [2 x i32]* %s32_0fixp, i64 0, i64 1, !taffo.info !694
-  %s32_0fixp84 = load i32, i32* %s32_0fixp48, align 4, !taffo.info !694
+  %s32_0fixp52 = getelementptr inbounds [2 x i32], [2 x i32]* %s32_0fixp, i64 0, i64 1, !taffo.info !694
+  %s32_0fixp86 = load i32, i32* %s32_0fixp52, align 4, !taffo.info !694
   %162 = load i16, i16* getelementptr inbounds ([2 x i16], [2 x i16]* @params_cpOffset, i64 0, i64 1), align 2, !taffo.initweight !110, !taffo.info !1
   %163 = sext i16 %162 to i32, !taffo.initweight !112, !taffo.info !1
-  %s17_15fixp21 = shl i32 %163, 15, !taffo.info !381
+  %s17_15fixp3 = shl i32 %163, 15, !taffo.info !381
   %u8_24fixp34 = load i32, i32* @params_cpKta.fixp, align 4, !taffo.info !21
   %164 = fmul float 6.553600e+04, %15, !taffo.info !363, !taffo.constinfo !92
   %165 = fptosi float %164 to i32, !taffo.info !363
-  %s16_16fixp20 = sub i32 %165, 1638400, !taffo.info !363, !taffo.constinfo !392
+  %s16_16fixp = sub i32 %165, 1638400, !taffo.info !363, !taffo.constinfo !392
   %166 = zext i32 %u8_24fixp34 to i64, !taffo.info !21
-  %167 = sext i32 %s16_16fixp20 to i64, !taffo.info !363
+  %167 = sext i32 %s16_16fixp to i64, !taffo.info !363
   %168 = mul i64 %166, %167, !taffo.info !759
   %169 = ashr i64 %168, 32, !taffo.info !759
   %s24_8fixp72 = trunc i64 %169 to i32, !taffo.info !762
   %s24_8fixp99 = add i32 256, %s24_8fixp72, !taffo.info !764, !taffo.constinfo !300
-  %170 = sext i32 %s17_15fixp21 to i64, !taffo.info !381
+  %170 = sext i32 %s17_15fixp3 to i64, !taffo.info !381
   %171 = sext i32 %s24_8fixp99 to i64, !taffo.info !764
   %172 = mul i64 %170, %171, !taffo.info !766
   %s39_25fixp = shl i64 %172, 2, !taffo.info !768
   %s9_23fixp31 = load i32, i32* @params_cpKv.fixp, align 4, !taffo.info !19
   %173 = fmul float 3.276800e+04, %14, !taffo.info !699, !taffo.constinfo !92
-  %s17_15fixp17 = fptosi float %173 to i32, !taffo.info !699
-  %s17_15fixp60 = sub i32 %s17_15fixp17, 108134, !taffo.info !769, !taffo.constinfo !400
+  %s17_15fixp12 = fptosi float %173 to i32, !taffo.info !699
+  %s17_15fixp40 = sub i32 %s17_15fixp12, 108134, !taffo.info !769, !taffo.constinfo !400
   %174 = sext i32 %s9_23fixp31 to i64, !taffo.info !19
-  %175 = sext i32 %s17_15fixp60 to i64, !taffo.info !769
+  %175 = sext i32 %s17_15fixp40 to i64, !taffo.info !769
   %176 = mul i64 %174, %175, !taffo.info !771
   %177 = ashr i64 %176, 30, !taffo.info !771
   %s24_8fixp96 = trunc i64 %177 to i32, !taffo.info !773
@@ -6203,28 +6203,28 @@ define internal void @_Z20MLX90640_CalculateToPKtffPf.5_fixp(i16* %0, float %1, 
   %181 = ashr i96 %180, 33, !taffo.info !776
   %s64_0fixp126 = trunc i96 %181 to i64, !taffo.info !779
   %182 = trunc i64 %s64_0fixp126 to i32, !taffo.info !779
-  %s32_0fixp138 = sub i32 %s32_0fixp84, %182, !taffo.info !694
-  %s32_0fixp47 = getelementptr inbounds [2 x i32], [2 x i32]* %s32_0fixp, i64 0, i64 1, !taffo.info !694
-  store i32 %s32_0fixp138, i32* %s32_0fixp47, align 4, !taffo.info !343
+  %s32_0fixp138 = sub i32 %s32_0fixp86, %182, !taffo.info !694
+  %s32_0fixp51 = getelementptr inbounds [2 x i32], [2 x i32]* %s32_0fixp, i64 0, i64 1, !taffo.info !694
+  store i32 %s32_0fixp138, i32* %s32_0fixp51, align 4, !taffo.info !343
   br label %207
 
 183:                                              ; preds = %136
-  %s32_0fixp46 = getelementptr inbounds [2 x i32], [2 x i32]* %s32_0fixp, i64 0, i64 1, !taffo.info !694
-  %s32_0fixp83 = load i32, i32* %s32_0fixp46, align 4, !taffo.info !694
+  %s32_0fixp50 = getelementptr inbounds [2 x i32], [2 x i32]* %s32_0fixp, i64 0, i64 1, !taffo.info !694
+  %s32_0fixp85 = load i32, i32* %s32_0fixp50, align 4, !taffo.info !694
   %184 = load i16, i16* getelementptr inbounds ([2 x i16], [2 x i16]* @params_cpOffset, i64 0, i64 1), align 2, !taffo.initweight !110, !taffo.info !1
   %185 = sext i16 %184 to i32, !taffo.initweight !112, !taffo.info !1
-  %s17_15fixp8 = shl i32 %185, 15, !taffo.info !381
+  %s17_15fixp20 = shl i32 %185, 15, !taffo.info !381
   %.flt81 = load float, float* getelementptr inbounds ([3 x float], [3 x float]* @params_ilChessC, i64 0, i64 0), align 4, !taffo.initweight !110, !taffo.info !42
   %186 = fmul float 0x4160000000000000, %.flt81, !taffo.info !42
   %.flt81.fallback.s9_23fixp = fptosi float %186 to i32, !taffo.info !42
   %187 = ashr i32 %.flt81.fallback.s9_23fixp, 8, !taffo.info !42
-  %s17_15fixp104 = add i32 %s17_15fixp8, %187, !taffo.info !780
+  %s17_15fixp104 = add i32 %s17_15fixp20, %187, !taffo.info !780
   %u8_24fixp33 = load i32, i32* @params_cpKta.fixp, align 4, !taffo.info !21
   %188 = fmul float 6.553600e+04, %15, !taffo.info !363, !taffo.constinfo !92
   %189 = fptosi float %188 to i32, !taffo.info !363
-  %s16_16fixp = sub i32 %189, 1638400, !taffo.info !363, !taffo.constinfo !392
+  %s16_16fixp25 = sub i32 %189, 1638400, !taffo.info !363, !taffo.constinfo !392
   %190 = zext i32 %u8_24fixp33 to i64, !taffo.info !21
-  %191 = sext i32 %s16_16fixp to i64, !taffo.info !363
+  %191 = sext i32 %s16_16fixp25 to i64, !taffo.info !363
   %192 = mul i64 %190, %191, !taffo.info !759
   %193 = ashr i64 %192, 32, !taffo.info !759
   %s24_8fixp = trunc i64 %193 to i32, !taffo.info !762
@@ -6235,10 +6235,10 @@ define internal void @_Z20MLX90640_CalculateToPKtffPf.5_fixp(i16* %0, float %1, 
   %s40_24fixp = shl i64 %196, 1, !taffo.info !784
   %s9_23fixp = load i32, i32* @params_cpKv.fixp, align 4, !taffo.info !19
   %197 = fmul float 3.276800e+04, %14, !taffo.info !699, !taffo.constinfo !92
-  %s17_15fixp = fptosi float %197 to i32, !taffo.info !699
-  %s17_15fixp39 = sub i32 %s17_15fixp, 108134, !taffo.info !769, !taffo.constinfo !400
+  %s17_15fixp27 = fptosi float %197 to i32, !taffo.info !699
+  %s17_15fixp68 = sub i32 %s17_15fixp27, 108134, !taffo.info !769, !taffo.constinfo !400
   %198 = sext i32 %s9_23fixp to i64, !taffo.info !19
-  %199 = sext i32 %s17_15fixp39 to i64, !taffo.info !769
+  %199 = sext i32 %s17_15fixp68 to i64, !taffo.info !769
   %200 = mul i64 %198, %199, !taffo.info !771
   %201 = ashr i64 %200, 30, !taffo.info !771
   %s24_8fixp95 = trunc i64 %201 to i32, !taffo.info !773
@@ -6249,9 +6249,9 @@ define internal void @_Z20MLX90640_CalculateToPKtffPf.5_fixp(i16* %0, float %1, 
   %205 = ashr i96 %204, 32, !taffo.info !786
   %s64_0fixp134 = trunc i96 %205 to i64, !taffo.info !788
   %206 = trunc i64 %s64_0fixp134 to i32, !taffo.info !788
-  %s32_0fixp143 = sub i32 %s32_0fixp83, %206, !taffo.info !694
-  %s32_0fixp45 = getelementptr inbounds [2 x i32], [2 x i32]* %s32_0fixp, i64 0, i64 1, !taffo.info !694
-  store i32 %s32_0fixp143, i32* %s32_0fixp45, align 4, !taffo.info !343
+  %s32_0fixp143 = sub i32 %s32_0fixp85, %206, !taffo.info !694
+  %s32_0fixp49 = getelementptr inbounds [2 x i32], [2 x i32]* %s32_0fixp, i64 0, i64 1, !taffo.info !694
+  store i32 %s32_0fixp143, i32* %s32_0fixp49, align 4, !taffo.info !343
   br label %207
 
 207:                                              ; preds = %183, %161
@@ -6313,12 +6313,12 @@ define internal void @_Z20MLX90640_CalculateToPKtffPf.5_fixp(i16* %0, float %1, 
   %249 = getelementptr inbounds i16, i16* %0, i64 %248, !taffo.info !80
   %250 = load i16, i16* %249, align 2, !taffo.info !80
   %251 = zext i16 %250 to i32, !taffo.info !80
-  %s16_16fixp23 = shl i32 %251, 16, !taffo.info !745
-  %252 = sitofp i32 %s16_16fixp23 to float, !taffo.info !745
+  %s16_16fixp7 = shl i32 %251, 16, !taffo.info !745
+  %252 = sitofp i32 %s16_16fixp7 to float, !taffo.info !745
   %253 = fdiv float %252, 6.553600e+04, !taffo.info !745
-  %254 = sitofp i32 %s16_16fixp23 to float, !taffo.info !745
+  %254 = sitofp i32 %s16_16fixp7 to float, !taffo.info !745
   %255 = fdiv float %254, 6.553600e+04, !taffo.info !745
-  %matchop = icmp sgt i32 %s16_16fixp23, 2147418112, !taffo.info !26
+  %matchop = icmp sgt i32 %s16_16fixp7, 2147418112, !taffo.info !26
   br i1 %matchop, label %256, label %258
 
 256:                                              ; preds = %247
@@ -6342,19 +6342,19 @@ define internal void @_Z20MLX90640_CalculateToPKtffPf.5_fixp(i16* %0, float %1, 
   %270 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.31, i64 0, i64 0), double %269), !taffo.constinfo !97
   %271 = fmul float 6.553600e+04, %15, !taffo.info !363, !taffo.constinfo !92
   %272 = fptosi float %271 to i32, !taffo.info !363
-  %s16_16fixp19 = sub i32 %272, 1638400, !taffo.info !363, !taffo.constinfo !392
-  %273 = sitofp i32 %s16_16fixp19 to double, !taffo.info !363
+  %s16_16fixp10 = sub i32 %272, 1638400, !taffo.info !363, !taffo.constinfo !392
+  %273 = sitofp i32 %s16_16fixp10 to double, !taffo.info !363
   %274 = fdiv double %273, 6.553600e+04, !taffo.info !363, !taffo.constinfo !392
   %275 = fmul float 6.553600e+04, %15, !taffo.info !363, !taffo.constinfo !92
-  %s16_16fixp15 = fptosi float %275 to i32, !taffo.info !363
-  %276 = sitofp i32 %s16_16fixp15 to double, !taffo.info !363
+  %s16_16fixp13 = fptosi float %275 to i32, !taffo.info !363
+  %276 = sitofp i32 %s16_16fixp13 to double, !taffo.info !363
   %277 = fdiv double %276, 6.553600e+04, !taffo.info !363
-  %.flt59 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str.32, i64 0, i64 0), double %277), !taffo.initweight !112, !taffo.info !365, !taffo.constinfo !97
-  %.flt89 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([11 x i8], [11 x i8]* @.str.33, i64 0, i64 0), double %274), !taffo.initweight !112, !taffo.info !365, !taffo.constinfo !97
+  %.flt41 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str.32, i64 0, i64 0), double %277), !taffo.initweight !112, !taffo.info !365, !taffo.constinfo !97
+  %.flt83 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([11 x i8], [11 x i8]* @.str.33, i64 0, i64 0), double %274), !taffo.initweight !112, !taffo.info !365, !taffo.constinfo !97
   %278 = sext i32 %.0 to i64, !taffo.info !799
   %s19_13fixp = getelementptr inbounds [768 x i32], [768 x i32]* @params_kta.fixp, i64 0, i64 %278, !taffo.info !34
   %s19_13fixp75 = load i32, i32* %s19_13fixp, align 4, !taffo.info !34
-  %279 = sext i32 %s16_16fixp19 to i64, !taffo.info !363
+  %279 = sext i32 %s16_16fixp10 to i64, !taffo.info !363
   %280 = sext i32 %s19_13fixp75 to i64, !taffo.info !34
   %281 = mul i64 %279, %280, !taffo.info !831
   %s34_30fixp = shl i64 %281, 1, !taffo.info !833
@@ -6369,9 +6369,9 @@ define internal void @_Z20MLX90640_CalculateToPKtffPf.5_fixp(i16* %0, float %1, 
   %287 = getelementptr inbounds [768 x i16], [768 x i16]* @params_offset, i64 0, i64 %286, !taffo.initweight !109, !taffo.info !1
   %288 = load i16, i16* %287, align 2, !taffo.initweight !110, !taffo.info !1
   %289 = sext i16 %288 to i32, !taffo.initweight !112, !taffo.info !1
-  %s17_15fixp4 = shl i32 %289, 15, !taffo.info !381
+  %s17_15fixp26 = shl i32 %289, 15, !taffo.info !381
   %290 = sext i64 %s34_30fixp116 to i96, !taffo.info !834
-  %291 = sext i32 %s17_15fixp4 to i96, !taffo.info !381
+  %291 = sext i32 %s17_15fixp26 to i96, !taffo.info !381
   %292 = mul i96 %290, %291, !taffo.info !836
   %293 = ashr i96 %292, 30, !taffo.info !836
   %s49_15fixp = trunc i96 %293 to i64, !taffo.info !839
@@ -6384,16 +6384,16 @@ define internal void @_Z20MLX90640_CalculateToPKtffPf.5_fixp(i16* %0, float %1, 
   %299 = sext i16 %298 to i32, !taffo.initweight !112, !taffo.info !1
   %300 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([18 x i8], [18 x i8]* @.str.37, i64 0, i64 0), i32 %299), !taffo.initweight !167, !taffo.info !1, !taffo.constinfo !97
   %301 = fmul float 3.276800e+04, %14, !taffo.info !699, !taffo.constinfo !92
-  %s17_15fixp3 = fptosi float %301 to i32, !taffo.info !699
-  %s17_15fixp40 = sub i32 %s17_15fixp3, 108134, !taffo.info !840, !taffo.constinfo !400
-  %302 = sitofp i32 %s17_15fixp40 to float, !taffo.info !840
+  %s17_15fixp16 = fptosi float %301 to i32, !taffo.info !699
+  %s17_15fixp43 = sub i32 %s17_15fixp16, 108134, !taffo.info !840, !taffo.constinfo !400
+  %302 = sitofp i32 %s17_15fixp43 to float, !taffo.info !840
   %303 = fdiv float %302, 3.276800e+04, !taffo.info !840, !taffo.constinfo !400
   %304 = fpext float %303 to double, !taffo.info !842
   %305 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([11 x i8], [11 x i8]* @.str.38, i64 0, i64 0), double %304), !taffo.constinfo !97
   %306 = sext i32 %.0 to i64, !taffo.info !799
   %s5_27fixp37 = getelementptr inbounds [768 x i32], [768 x i32]* @params_kv.fixp, i64 0, i64 %306, !taffo.info !37
   %s5_27fixp76 = load i32, i32* %s5_27fixp37, align 4, !taffo.info !37
-  %307 = sext i32 %s17_15fixp40 to i64, !taffo.info !840
+  %307 = sext i32 %s17_15fixp43 to i64, !taffo.info !840
   %308 = sext i32 %s5_27fixp76 to i64, !taffo.info !37
   %309 = mul i64 %307, %308, !taffo.info !843
   %310 = ashr i64 %309, 30, !taffo.info !843
@@ -6424,9 +6424,9 @@ define internal void @_Z20MLX90640_CalculateToPKtffPf.5_fixp(i16* %0, float %1, 
   %330 = getelementptr inbounds [768 x i16], [768 x i16]* @params_offset, i64 0, i64 %329, !taffo.initweight !109, !taffo.info !1
   %331 = load i16, i16* %330, align 2, !taffo.initweight !110, !taffo.info !1
   %332 = sext i16 %331 to i32, !taffo.initweight !112, !taffo.info !1
-  %s17_15fixp16 = shl i32 %332, 15, !taffo.info !381
+  %s17_15fixp5 = shl i32 %332, 15, !taffo.info !381
   %333 = sext i64 %s52_12fixp to i96, !taffo.info !855
-  %334 = sext i32 %s17_15fixp16 to i96, !taffo.info !381
+  %334 = sext i32 %s17_15fixp5 to i96, !taffo.info !381
   %335 = mul i96 %333, %334, !taffo.info !858
   %336 = ashr i96 %335, 27, !taffo.info !858
   %s64_0fixp135 = trunc i96 %336 to i64, !taffo.info !861
@@ -6483,15 +6483,15 @@ define internal void @_Z20MLX90640_CalculateToPKtffPf.5_fixp(i16* %0, float %1, 
   %s64_0fixp = trunc i128 %369 to i64, !taffo.info !881
   %s5_27fixp30 = load i32, i32* @params_tgc.fixp, align 4, !taffo.info !16
   %370 = zext i16 %13 to i64, !taffo.info !80
-  %s32_0fixp44 = getelementptr inbounds [2 x i32], [2 x i32]* %s32_0fixp, i64 0, i64 %370, !taffo.info !694
-  %s32_0fixp82 = load i32, i32* %s32_0fixp44, align 4, !taffo.info !694
+  %s32_0fixp48 = getelementptr inbounds [2 x i32], [2 x i32]* %s32_0fixp, i64 0, i64 %370, !taffo.info !694
+  %s32_0fixp84 = load i32, i32* %s32_0fixp48, align 4, !taffo.info !694
   %371 = sext i32 %s5_27fixp30 to i64, !taffo.info !16
-  %372 = sext i32 %s32_0fixp82 to i64, !taffo.info !694
+  %372 = sext i32 %s32_0fixp84 to i64, !taffo.info !694
   %373 = mul i64 %371, %372, !taffo.info !882
   %374 = ashr i64 %373, 27, !taffo.info !882
-  %s32_0fixp105 = trunc i64 %374 to i32, !taffo.info !883
+  %s32_0fixp106 = trunc i64 %374 to i32, !taffo.info !883
   %375 = trunc i64 %s64_0fixp to i32, !taffo.info !881
-  %s32_0fixp119 = sub i32 %375, %s32_0fixp105, !taffo.info !883
+  %s32_0fixp119 = sub i32 %375, %s32_0fixp106, !taffo.info !883
   %376 = sitofp i32 %s32_0fixp119 to float, !taffo.info !883
   %377 = sitofp i32 %s32_0fixp119 to float, !taffo.info !883
   %378 = sitofp i32 %s32_0fixp119 to float, !taffo.info !883
@@ -6537,9 +6537,9 @@ define internal void @_Z20MLX90640_CalculateToPKtffPf.5_fixp(i16* %0, float %1, 
   %s2_30fixp36 = load i32, i32* @params_KsTa.fixp, align 4, !taffo.info !28
   %407 = fmul float 6.553600e+04, %15, !taffo.info !363, !taffo.constinfo !92
   %408 = fptosi float %407 to i32, !taffo.info !363
-  %s16_16fixp24 = sub i32 %408, 1638400, !taffo.info !363, !taffo.constinfo !392
+  %s16_16fixp9 = sub i32 %408, 1638400, !taffo.info !363, !taffo.constinfo !392
   %409 = sext i32 %s2_30fixp36 to i64, !taffo.info !28
-  %410 = sext i32 %s16_16fixp24 to i64, !taffo.info !363
+  %410 = sext i32 %s16_16fixp9 to i64, !taffo.info !363
   %411 = mul i64 %409, %410, !taffo.info !892
   %412 = ashr i64 %411, 31, !taffo.info !892
   %s17_15fixp74 = trunc i64 %412 to i32, !taffo.info !893
@@ -6560,7 +6560,7 @@ define internal void @_Z20MLX90640_CalculateToPKtffPf.5_fixp(i16* %0, float %1, 
   %s32_32fixp = trunc i96 %422 to i64, !taffo.info !899
   %423 = fpext float %377 to double, !taffo.info !48
   %424 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([14 x i8], [14 x i8]* @.str.51, i64 0, i64 0), double %423), !taffo.constinfo !97
-  %.flt109 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([12 x i8], [12 x i8]* @.str.52, i64 0, i64 0), double %101), !taffo.initweight !112, !taffo.info !900, !taffo.constinfo !97
+  %.flt105 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([12 x i8], [12 x i8]* @.str.52, i64 0, i64 0), double %101), !taffo.initweight !112, !taffo.info !900, !taffo.constinfo !97
   %425 = ashr i64 %s32_32fixp, 2, !taffo.info !899
   %s2_30fixp132 = trunc i64 %425 to i32, !taffo.info !28
   %426 = sitofp i32 %s2_30fixp132 to double, !taffo.info !28
@@ -6625,16 +6625,16 @@ define internal void @_Z20MLX90640_CalculateToPKtffPf.5_fixp(i16* %0, float %1, 
   %469 = fdiv double %468, 0x41D0000000000000, !taffo.info !28
   %470 = load float, float* getelementptr inbounds ([4 x float], [4 x float]* @params_ksTo, i64 0, i64 1), align 4, !taffo.initweight !110, !taffo.info !30
   %471 = fpext float %470 to double, !taffo.initweight !112, !taffo.info !30
-  %.flt61 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([22 x i8], [22 x i8]* @.str.60, i64 0, i64 0), double %469, double %471), !taffo.initweight !112, !taffo.info !423, !taffo.constinfo !95
+  %.flt = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([22 x i8], [22 x i8]* @.str.60, i64 0, i64 0), double %469, double %471), !taffo.initweight !112, !taffo.info !423, !taffo.constinfo !95
   %472 = fmul float 4.096000e+03, %465, !taffo.info !913
   %473 = fptosi float %472 to i32, !taffo.info !913
   %474 = shl i32 %473, 18, !taffo.info !913
-  %s2_30fixp27 = sub i32 1073741824, %474, !taffo.info !907, !taffo.constinfo !300
-  %475 = sitofp i32 %s2_30fixp27 to double, !taffo.info !907
+  %s2_30fixp4 = sub i32 1073741824, %474, !taffo.info !907, !taffo.constinfo !300
+  %475 = sitofp i32 %s2_30fixp4 to double, !taffo.info !907
   %476 = fdiv double %475, 0x41D0000000000000, !taffo.info !907, !taffo.constinfo !300
-  %.flt92 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str.61, i64 0, i64 0), double %476), !taffo.initweight !112, !taffo.info !908, !taffo.constinfo !97
+  %.flt82 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str.61, i64 0, i64 0), double %476), !taffo.initweight !112, !taffo.info !908, !taffo.constinfo !97
   %477 = sext i64 %s32_32fixp to i96, !taffo.info !899
-  %478 = sext i32 %s2_30fixp27 to i96, !taffo.info !907
+  %478 = sext i32 %s2_30fixp4 to i96, !taffo.info !907
   %479 = mul i96 %477, %478, !taffo.info !906
   %480 = ashr i96 %479, 32, !taffo.info !906
   %s2_30fixp130 = trunc i96 %480 to i32, !taffo.info !907
@@ -6758,8 +6758,8 @@ define internal void @_Z20MLX90640_CalculateToPKtffPf.5_fixp(i16* %0, float %1, 
   %542 = getelementptr inbounds [4 x i16], [4 x i16]* @params_ct, i64 0, i64 %541, !taffo.initweight !109, !taffo.info !1
   %543 = load i16, i16* %542, align 2, !taffo.initweight !110, !taffo.info !1
   %544 = sext i16 %543 to i32, !taffo.initweight !112, !taffo.info !1
-  %s17_15fixp18 = shl i32 %544, 15, !taffo.info !381
-  %545 = ashr i32 %s17_15fixp18, 15, !taffo.info !381
+  %s17_15fixp8 = shl i32 %544, 15, !taffo.info !381
+  %545 = ashr i32 %s17_15fixp8, 15, !taffo.info !381
   %s32_0fixp184 = sub i32 %s32_0fixp183, %545, !taffo.info !916
   %546 = sitofp i32 %s32_0fixp184 to double, !taffo.info !916
   %.flt192 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str.72, i64 0, i64 0), double %546), !taffo.initweight !112, !taffo.info !916, !taffo.constinfo !97
@@ -6784,9 +6784,9 @@ define internal void @_Z20MLX90640_CalculateToPKtffPf.5_fixp(i16* %0, float %1, 
   %.flt195 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([11 x i8], [11 x i8]* @.str.74, i64 0, i64 0), double %560), !taffo.initweight !112, !taffo.info !908, !taffo.constinfo !97
   %561 = sext i8 %.2 to i64, !taffo.info !746
   %s55_9fixp62 = getelementptr inbounds [4 x i64], [4 x i64]* %s55_9fixp, i64 0, i64 %561, !taffo.info !696
-  %s55_9fixp90 = load i64, i64* %s55_9fixp62, align 4, !taffo.info !696
+  %s55_9fixp91 = load i64, i64* %s55_9fixp62, align 4, !taffo.info !696
   %562 = sext i64 %s32_32fixp to i128, !taffo.info !899
-  %563 = sext i64 %s55_9fixp90 to i128, !taffo.info !696
+  %563 = sext i64 %s55_9fixp91 to i128, !taffo.info !696
   %564 = mul i128 %562, %563, !taffo.info !920
   %565 = ashr i128 %564, 11, !taffo.info !920
   %s2_30fixp129 = trunc i128 %565 to i32, !taffo.info !28
@@ -6873,15 +6873,15 @@ define internal void @_Z20MLX90640_CalculateToPKtffPf.5_fixp(i16* %0, float %1, 
 
 616:                                              ; preds = %208
   %617 = fmul float 6.553600e+04, %14, !taffo.info !363, !taffo.constinfo !92
-  %s16_16fixp7 = fptosi float %617 to i32, !taffo.info !363
-  %618 = sitofp i32 %s16_16fixp7 to double, !taffo.info !363
+  %s16_16fixp18 = fptosi float %617 to i32, !taffo.info !363
+  %618 = sitofp i32 %s16_16fixp18 to double, !taffo.info !363
   %619 = fdiv double %618, 6.553600e+04, !taffo.info !363
-  %.flt = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([8 x i8], [8 x i8]* @.str.84, i64 0, i64 0), double %619), !taffo.initweight !112, !taffo.info !365, !taffo.constinfo !97
+  %.flt45 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([8 x i8], [8 x i8]* @.str.84, i64 0, i64 0), double %619), !taffo.initweight !112, !taffo.info !365, !taffo.constinfo !97
   %620 = fmul float 6.553600e+04, %15, !taffo.info !363, !taffo.constinfo !92
-  %s16_16fixp10 = fptosi float %620 to i32, !taffo.info !363
-  %621 = sitofp i32 %s16_16fixp10 to double, !taffo.info !363
+  %s16_16fixp21 = fptosi float %620 to i32, !taffo.info !363
+  %621 = sitofp i32 %s16_16fixp21 to double, !taffo.info !363
   %622 = fdiv double %621, 6.553600e+04, !taffo.info !363
-  %.flt42 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([8 x i8], [8 x i8]* @.str.85, i64 0, i64 0), double %622), !taffo.initweight !112, !taffo.info !365, !taffo.constinfo !97
+  %.flt46 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([8 x i8], [8 x i8]* @.str.85, i64 0, i64 0), double %622), !taffo.initweight !112, !taffo.info !365, !taffo.constinfo !97
   %.flt71 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str.86, i64 0, i64 0), double %5), !taffo.initweight !112, !taffo.info !519, !taffo.constinfo !97
   %.flt159 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([12 x i8], [12 x i8]* @.str.87, i64 0, i64 0), double %49), !taffo.initweight !112, !taffo.info !519, !taffo.constinfo !97
   ret void
