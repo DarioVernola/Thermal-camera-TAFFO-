@@ -355,15 +355,15 @@ void MLX90640_CalculateTo(const uint16_t *frameData, float __attribute__((annota
     float  __attribute__((annotate("scalar()"))) tr4; // ta
     float  __attribute__((annotate("scalar()"))) taTr;
     float  __attribute__((annotate("scalar()"))) gain; // Too big of a error
-    float  __attribute__((annotate("scalar()"))) irDataCP[2]; // ta dependent
+    float  __attribute__((annotate("scalar(range(-65536, 65536) final)"))) irDataCP[2]; // ta dependent
     float  irData; // generates unreasonable values
-    float  __attribute__((annotate("scalar(range(-1,1) final)"))) alphaCompensated;
+    float  alphaCompensated; // __attribute__((annotate("scalar(range(-1,1) final)")))
     uint8_t mode;
     int8_t ilPattern;
     int8_t chessPattern;
     int8_t pattern;
     int8_t conversionPattern;
-    float __attribute__((annotate("scalar(range(-1,1) final)"))) Sx ;
+    float Sx ; // __attribute__((annotate("scalar(range(-1,1) final)")))
     float __attribute__((annotate("scalar(range(-99,999) final)"))) To;
     float __attribute__((annotate("scalar()")))  alphaCorrR[4];
     int8_t range;
@@ -509,7 +509,7 @@ void MLX90640_CalculateTo(const uint16_t *frameData, float __attribute__((annota
             printf("cpAlpha %.10f \n",params_cpAlpha[subPage] );
             printf("a1 %.10f\n",a1);
 
-            float __attribute__((annotate("scalar()"))) a2 = params_alpha[pixelNumber] - a1; // Same
+            float a2 = params_alpha[pixelNumber] - a1; // Same  __attribute__((annotate("scalar()")))
             printf("alphastruct %.10f \n",params_alpha[pixelNumber] );
             printf("a2 %.10f\n",a2);
 
@@ -532,10 +532,10 @@ void MLX90640_CalculateTo(const uint16_t *frameData, float __attribute__((annota
             float  __attribute__((annotate("scalar()"))) s2 = irData + s1;
             printf("s2 %.10f\n",s2);
 
-            float  __attribute__((annotate("scalar()"))) s3 = alphaCompensated*alphaCompensated*alphaCompensated;
+            float s3 = alphaCompensated*alphaCompensated*alphaCompensated;
             printf("s3 %.10f\n",s3);
 
-            float  __attribute__((annotate("scalar()"))) s4 = s3*s2;
+            float s4 = s3*s2;
             printf("S4 %.10f\n",s4);
 
             Sx = sqrt(sqrt(s4)) * params_ksTo[1];
@@ -555,7 +555,7 @@ void MLX90640_CalculateTo(const uint16_t *frameData, float __attribute__((annota
             float  __attribute__((annotate("scalar()"))) t4 = t3 + Sx; // was range(-1,1000000000) final 
             printf("t4 %.10f\n",t4);
             printf("irData %.10f\n",irData);
-            float __attribute__((annotate("scalar(range(-779971200,  29350096896) final)"))) t5 = irData / t4;
+            float __attribute__((annotate("scalar(range(-29350096896,  29350096896) final)"))) t5 = irData / t4;
             if(pixelNumber == 0)
             {
                 mint5 = t5;

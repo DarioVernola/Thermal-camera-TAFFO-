@@ -30,7 +30,7 @@ float max_f(float  __attribute__((annotate("scalar(range(-99,999) final)"))) a, 
 }
 
 
-void printPPM(FILE *fp, float __attribute__((annotate("scalar(range(-99,999) final)")))temperature[] , int nx, int ny, float  __attribute__((annotate("scalar(range(-99,999) final)"))) minVal, float __attribute__((annotate("scalar(range (15,999) final) "))) range)
+void printPPM(FILE *fp, float temperature[] , int nx, int ny, float minVal, float range)
 {
     fprintf(fp, "P3\n");
     fprintf(fp, "%d %d\n", nx, ny);
@@ -42,11 +42,13 @@ void printPPM(FILE *fp, float __attribute__((annotate("scalar(range(-99,999) fin
     // Pixel : normalizes the value of the pixel temperature 
     for (int y = 0; y < ny; y++) {
         for (int x = 0; x < nx; x++) {
-            //printf("fp?\n");
-            float  __attribute__((annotate("scalar()"))) t = temperature[(nx - 1 - x) + y * nx];
-            //printf("fp?\n");
-            float  __attribute__((annotate("scalar()"))) pixel = ((t - minVal) / range);
-            //printf("fp?\n");
+            fflush(stdout);
+            float t = temperature[(nx - 1 - x) + y * nx];
+            printf("t=%f\n", t);
+            fflush(stdout);
+            float pixel = ((t - minVal) / range);
+            printf("pixel=%f\n", pixel);
+            fflush(stdout);
 
             
             // Value of the pixels is decided using ternary operators, depending on the temperature value the pixel is normalized
@@ -130,6 +132,7 @@ int main(int argc, char *argv[])
     printf("minRange = %.10f\n",minRange);
     printf("maxVal = %.10f\n",maxVal);
     printf("minVal = %.10f\n",minVal);
+    fflush(stdout);
 
     FILE *fp = fopen("thermalmap.ppm", "w");
     if (fp == NULL)
