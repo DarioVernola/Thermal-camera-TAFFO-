@@ -5,7 +5,7 @@
 #include "MLX90640_API.cpp"
 #include "MLX90640_I2C_Driver.h"
 #include "MLX90640_I2C_Driver.cpp"
-#include "test/vacuumTubeCloseup2.h"
+#include "test/fridgeVsFreezer.h"
 
 using namespace std;
 
@@ -44,10 +44,10 @@ void printPPM(FILE *fp, float temperature[] , int nx, int ny, float minVal, floa
         for (int x = 0; x < nx; x++) {
             fflush(stdout);
             float t = temperature[(nx - 1 - x) + y * nx];
-            printf("t=%f\n", t);
+            //printf("t=%f\n", t);
             fflush(stdout);
             float pixel = ((t - minVal) / range);
-            printf("pixel=%f\n", pixel);
+            //printf("pixel=%f\n", pixel);
             fflush(stdout);
 
             
@@ -121,7 +121,7 @@ int main(int argc, char *argv[])
     for(int i = 1; i < nx * ny; i++) {
        minVal = min_f(minVal, temperature[i]);
        maxVal = max_f(maxVal, temperature[i]);
-       printf("temp[%d] = %.10f\n", i, temperature[i]);
+       //printf("temp[%d] = %.10f\n", i, temperature[i]);
     }
     printf("maximum t13 %.10f\n", maximum2);
     printf("maximum t14 %.10f\n", maximum);

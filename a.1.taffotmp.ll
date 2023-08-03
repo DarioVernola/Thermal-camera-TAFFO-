@@ -3,8 +3,10 @@ source_filename = "main.cpp"
 target datalayout = "e-m:e-p270:32:32-p271:32:32-p272:64:64-i64:64-f80:128-n8:16:32:64-S128"
 target triple = "x86_64-pc-linux-gnu"
 
-%struct._IO_FILE = type { i32, i8*, i8*, i8*, i8*, i8*, i8*, i8*, i8*, i8*, i8*, i8*, %struct._IO_marker*, %struct._IO_FILE*, i32, i32, i64, i16, i8, [1 x i8], i8*, i64, i8*, i8*, i8*, i8*, i64, i32, [20 x i8] }
-%struct._IO_marker = type { %struct._IO_marker*, %struct._IO_FILE*, i32 }
+%struct._IO_FILE = type { i32, i8*, i8*, i8*, i8*, i8*, i8*, i8*, i8*, i8*, i8*, i8*, %struct._IO_marker*, %struct._IO_FILE*, i32, i32, i64, i16, i8, [1 x i8], i8*, i64, %struct._IO_codecvt*, %struct._IO_wide_data*, %struct._IO_FILE*, i8*, i64, i32, [20 x i8] }
+%struct._IO_marker = type opaque
+%struct._IO_codecvt = type opaque
+%struct._IO_wide_data = type opaque
 
 $_ZSt3powIdiEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_ = comdat any
 
@@ -38,172 +40,178 @@ $_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integ
 @params_ksTo = dso_local global [4 x float] zeroinitializer, align 16
 @.str.10 = private unnamed_addr constant [34 x i8] c"scalar(range(-256, 256) disabled)\00", section "llvm.metadata"
 @params_ct = dso_local global [4 x i16] zeroinitializer, align 2
+@.str.11 = private unnamed_addr constant [29 x i8] c"scalar(range(-32768,32767) )\00", section "llvm.metadata"
 @params_alpha = dso_local global [768 x float] zeroinitializer, align 16
 @params_offset = dso_local global [768 x i16] zeroinitializer, align 16
 @params_kta = dso_local global [768 x float] zeroinitializer, align 16
-@.str.11 = private unnamed_addr constant [35 x i8] c"scalar(range(-131200,98431) final)\00", section "llvm.metadata"
+@.str.12 = private unnamed_addr constant [35 x i8] c"scalar(range(-131200,98431) final)\00", section "llvm.metadata"
 @params_kv = dso_local global [768 x float] zeroinitializer, align 16
-@.str.12 = private unnamed_addr constant [26 x i8] c"scalar(range(-8,7) final)\00", section "llvm.metadata"
+@.str.13 = private unnamed_addr constant [26 x i8] c"scalar(range(-8,7) final)\00", section "llvm.metadata"
 @params_cpAlpha = dso_local global [2 x float] zeroinitializer, align 4
-@.str.13 = private unnamed_addr constant [32 x i8] c"scalar(range(-512, 1527) final)\00", section "llvm.metadata"
+@.str.14 = private unnamed_addr constant [32 x i8] c"scalar(range(-512, 1527) final)\00", section "llvm.metadata"
 @params_cpOffset = dso_local global [2 x i16] zeroinitializer, align 2
 @params_ilChessC = dso_local global [3 x float] zeroinitializer, align 4
-@.str.14 = private unnamed_addr constant [9 x i8] c"scalar()\00", section "llvm.metadata"
+@.str.15 = private unnamed_addr constant [9 x i8] c"scalar()\00", section "llvm.metadata"
 @params_brokenPixels = dso_local global [5 x i16] zeroinitializer, align 2
-@.str.15 = private unnamed_addr constant [32 x i8] c"scalar(range(0,65536) disabled)\00", section "llvm.metadata"
+@.str.16 = private unnamed_addr constant [32 x i8] c"scalar(range(0,65536) disabled)\00", section "llvm.metadata"
 @params_outlierPixels = dso_local global [5 x i16] zeroinitializer, align 2
 @maximum = dso_local global float 0.000000e+00, align 4
 @maximum2 = dso_local global float 0.000000e+00, align 4
 @mint5 = dso_local global float 0.000000e+00, align 4
 @maxt5 = dso_local global float 0.000000e+00, align 4
-@.str.16 = private unnamed_addr constant [38 x i8] c"MLX90640_GetFrameData tried %d times\0A\00", align 1
-@.str.17 = private unnamed_addr constant [19 x i8] c"./MLX90640_API.cpp\00", section "llvm.metadata"
-@.str.18 = private unnamed_addr constant [30 x i8] c"scalar(range(-99, 999) final)\00", section "llvm.metadata"
-@.str.19 = private unnamed_addr constant [28 x i8] c"scalar(range(-32767,32767))\00", section "llvm.metadata"
-@.str.20 = private unnamed_addr constant [45 x i8] c"scalar(range(-5000000000,10000000000) final)\00", section "llvm.metadata"
-@.str.21 = private unnamed_addr constant [29 x i8] c"scalar(range(-99,999) final)\00", section "llvm.metadata"
-@.str.22 = private unnamed_addr constant [12 x i8] c"taTO %.10f\0A\00", align 1
-@.str.23 = private unnamed_addr constant [12 x i8] c"trTO %.10f\0A\00", align 1
-@.str.24 = private unnamed_addr constant [19 x i8] c"taTO Kelvin %.10f\0A\00", align 1
-@.str.25 = private unnamed_addr constant [11 x i8] c"ta4 %.10f\0A\00", align 1
-@.str.26 = private unnamed_addr constant [11 x i8] c"tr4 %.10f\0A\00", align 1
-@.str.27 = private unnamed_addr constant [10 x i8] c"taTr1 %e\0A\00", align 1
-@.str.28 = private unnamed_addr constant [32 x i8] c"taTr2 %.10f (emissivity=%.10f)\0A\00", align 1
-@.str.29 = private unnamed_addr constant [9 x i8] c"taTr %e\0A\00", align 1
-@.str.30 = private unnamed_addr constant [19 x i8] c"irDataBGain %.10f\0A\00", align 1
-@.str.31 = private unnamed_addr constant [19 x i8] c"irDataAGain %.10f\0A\00", align 1
-@.str.32 = private unnamed_addr constant [10 x i8] c"ta %.10f\0A\00", align 1
-@.str.33 = private unnamed_addr constant [11 x i8] c"ir1 %.10f\0A\00", align 1
-@.str.34 = private unnamed_addr constant [11 x i8] c"ir2 %.10f\0A\00", align 1
-@.str.35 = private unnamed_addr constant [11 x i8] c"ir3 %.10f\0A\00", align 1
-@.str.36 = private unnamed_addr constant [11 x i8] c"ir4 %.10f\0A\00", align 1
-@.str.37 = private unnamed_addr constant [18 x i8] c"params_offset %d\0A\00", align 1
-@.str.38 = private unnamed_addr constant [11 x i8] c"ir5 %.10f\0A\00", align 1
-@.str.39 = private unnamed_addr constant [11 x i8] c"ir6 %.10f\0A\00", align 1
-@.str.40 = private unnamed_addr constant [11 x i8] c"ir7 %.10f\0A\00", align 1
-@.str.41 = private unnamed_addr constant [11 x i8] c"ir8 %.10f\0A\00", align 1
-@.str.42 = private unnamed_addr constant [11 x i8] c"ir9 %.10f\0A\00", align 1
-@.str.43 = private unnamed_addr constant [19 x i8] c"irDataACalc %.10f\0A\00", align 1
-@.str.44 = private unnamed_addr constant [11 x i8] c"tgc %.10f\0A\00", align 1
-@.str.45 = private unnamed_addr constant [16 x i8] c"cpAlpha %.10f \0A\00", align 1
-@.str.46 = private unnamed_addr constant [10 x i8] c"a1 %.10f\0A\00", align 1
-@.str.47 = private unnamed_addr constant [20 x i8] c"alphastruct %.10f \0A\00", align 1
-@.str.48 = private unnamed_addr constant [10 x i8] c"a2 %.10f\0A\00", align 1
-@.str.49 = private unnamed_addr constant [10 x i8] c"a3 %.10f\0A\00", align 1
-@.str.50 = private unnamed_addr constant [10 x i8] c"a4 %.10f\0A\00", align 1
-@.str.51 = private unnamed_addr constant [14 x i8] c"irData %.10f\0A\00", align 1
-@.str.52 = private unnamed_addr constant [12 x i8] c"gain %.10f\0A\00", align 1
-@.str.53 = private unnamed_addr constant [13 x i8] c"alpha %.10f\0A\00", align 1
-@.str.54 = private unnamed_addr constant [10 x i8] c"s1 %.10f\0A\00", align 1
-@.str.55 = private unnamed_addr constant [10 x i8] c"s2 %.10f\0A\00", align 1
-@.str.56 = private unnamed_addr constant [10 x i8] c"s3 %.10f\0A\00", align 1
-@.str.57 = private unnamed_addr constant [10 x i8] c"S4 %.10f\0A\00", align 1
-@.str.58 = private unnamed_addr constant [10 x i8] c"Sx %.10f\0A\00", align 1
-@.str.59 = private unnamed_addr constant [27 x i8] c"scalar(range(-1, 1) final)\00", section "llvm.metadata"
-@.str.60 = private unnamed_addr constant [22 x i8] c"t1 %.10f, ksTo %.10f\0A\00", align 1
-@.str.61 = private unnamed_addr constant [10 x i8] c"t2 %.10f\0A\00", align 1
-@.str.62 = private unnamed_addr constant [10 x i8] c"t3 %.10f\0A\00", align 1
-@.str.63 = private unnamed_addr constant [10 x i8] c"t4 %.10f\0A\00", align 1
-@.str.64 = private unnamed_addr constant [46 x i8] c"scalar(range(-779971200,  29350096896) final)\00", section "llvm.metadata"
-@.str.65 = private unnamed_addr constant [14 x i8] c"mint5: %.10f\0A\00", align 1
-@.str.66 = private unnamed_addr constant [14 x i8] c"maxt5: %.10f\0A\00", align 1
-@.str.67 = private unnamed_addr constant [10 x i8] c"t5 %.10f\0A\00", align 1
-@.str.68 = private unnamed_addr constant [10 x i8] c"t6 %.10f\0A\00", align 1
-@.str.69 = private unnamed_addr constant [10 x i8] c"To %.10f\0A\00", align 1
-@.str.70 = private unnamed_addr constant [13 x i8] c"taTr %.10f \0A\00", align 1
-@.str.71 = private unnamed_addr constant [11 x i8] c"range %d \0A\00", align 1
-@.str.72 = private unnamed_addr constant [10 x i8] c"t8 %.10f\0A\00", align 1
-@.str.73 = private unnamed_addr constant [10 x i8] c"t9 %.10f\0A\00", align 1
-@.str.74 = private unnamed_addr constant [11 x i8] c"t10 %.10f\0A\00", align 1
-@.str.75 = private unnamed_addr constant [11 x i8] c"t11 %.10f\0A\00", align 1
-@.str.76 = private unnamed_addr constant [11 x i8] c"t12 %.10f\0A\00", align 1
-@.str.77 = private unnamed_addr constant [36 x i8] c"scalar(range(0,169577873408) final)\00", section "llvm.metadata"
-@.str.78 = private unnamed_addr constant [11 x i8] c"t13 %.10f\0A\00", align 1
-@.str.79 = private unnamed_addr constant [15 x i8] c"maximum2%.10f\0A\00", align 1
-@.str.80 = private unnamed_addr constant [37 x i8] c"scalar(range(0, 178186977280) final)\00", section "llvm.metadata"
-@.str.81 = private unnamed_addr constant [11 x i8] c"t14 %.10f\0A\00", align 1
-@.str.82 = private unnamed_addr constant [11 x i8] c"ToF %.10f\0A\00", align 1
-@.str.83 = private unnamed_addr constant [18 x i8] c"pixel Number %d \0A\00", align 1
-@.str.84 = private unnamed_addr constant [8 x i8] c"vdd %f\0A\00", align 1
-@.str.85 = private unnamed_addr constant [8 x i8] c"ta %f \0A\00", align 1
-@.str.86 = private unnamed_addr constant [10 x i8] c"tr %.10f\0A\00", align 1
-@.str.87 = private unnamed_addr constant [12 x i8] c"taTr %.10f\0A\00", align 1
-@.str.88 = private unnamed_addr constant [34 x i8] c"scalar(range(-32768,32767) final)\00", section "llvm.metadata"
-@.str.89 = private unnamed_addr constant [29 x i8] c"scalar(range(-32767, 32767))\00", section "llvm.metadata"
-@.str.90 = private unnamed_addr constant [34 x i8] c"scalar(range(-32768,65536) final)\00", section "llvm.metadata"
-@.str.91 = private unnamed_addr constant [26 x i8] c"scalar(range(0.125,4096))\00", section "llvm.metadata"
-@.str.92 = private unnamed_addr constant [35 x i8] c"scalar(range(-32768, 65535) final)\00", section "llvm.metadata"
-@.str.93 = private unnamed_addr constant [29 x i8] c"scalar(range(-32768, 65535))\00", section "llvm.metadata"
-@.str.94 = private unnamed_addr constant [29 x i8] c"scalar(range(-32768, 32767))\00", section "llvm.metadata"
-@.str.95 = private unnamed_addr constant [11 x i8] c"getVdd...\0A\00", align 1
-@.str.96 = private unnamed_addr constant [10 x i8] c"vdd = %e\0A\00", align 1
-@.str.97 = private unnamed_addr constant [17 x i8] c"ptatArt1= %.10f\0A\00", align 1
-@.str.98 = private unnamed_addr constant [17 x i8] c"ptatArt2= %.10f\0A\00", align 1
-@.str.99 = private unnamed_addr constant [17 x i8] c"ptatArt3= %.10f\0A\00", align 1
-@.str.100 = private unnamed_addr constant [13 x i8] c"ptat= %.10f\0A\00", align 1
-@.str.101 = private unnamed_addr constant [18 x i8] c"alphaptat= %.10f\0A\00", align 1
-@.str.102 = private unnamed_addr constant [16 x i8] c"ptatArt= %.10f\0A\00", align 1
-@.str.103 = private unnamed_addr constant [12 x i8] c"vd1= %.10f\0A\00", align 1
-@.str.104 = private unnamed_addr constant [15 x i8] c"kvPTAT= %.10f\0A\00", align 1
-@.str.105 = private unnamed_addr constant [12 x i8] c"vdd= %.10f\0A\00", align 1
-@.str.106 = private unnamed_addr constant [12 x i8] c"ta1= %.10f\0A\00", align 1
-@.str.107 = private unnamed_addr constant [12 x i8] c"ta2= %.10f\0A\00", align 1
-@.str.108 = private unnamed_addr constant [12 x i8] c"ta3= %.10f\0A\00", align 1
-@.str.109 = private unnamed_addr constant [15 x i8] c"taBDiv= %.10f\0A\00", align 1
-@.str.110 = private unnamed_addr constant [15 x i8] c"taADiv= %.10f\0A\00", align 1
-@.str.111 = private unnamed_addr constant [22 x i8] c"scalar(range(-32,63))\00", section "llvm.metadata"
-@.str.112 = private unnamed_addr constant [25 x i8] c"scalar(range(-512,1023))\00", section "llvm.metadata"
-@.str.113 = private unnamed_addr constant [23 x i8] c"scalar(range(8,11.75))\00", section "llvm.metadata"
-@.str.114 = private unnamed_addr constant [24 x i8] c"scalar(range(-128,255))\00", section "llvm.metadata"
-@.str.115 = private unnamed_addr constant [30 x i8] c"scalar(range(-128,255) final)\00", section "llvm.metadata"
-@.str.116 = private unnamed_addr constant [25 x i8] c"scalar(range(-512,1527))\00", section "llvm.metadata"
-@.str.117 = private unnamed_addr constant [9 x i8] c"main.cpp\00", section "llvm.metadata"
-@.str.118 = private unnamed_addr constant [30 x i8] c"scalar(range (15,999) final) \00", section "llvm.metadata"
-@.str.119 = private unnamed_addr constant [4 x i8] c"P3\0A\00", align 1
-@.str.120 = private unnamed_addr constant [7 x i8] c"%d %d\0A\00", align 1
-@.str.121 = private unnamed_addr constant [5 x i8] c"255\0A\00", align 1
-@.str.122 = private unnamed_addr constant [10 x i8] c"%d %d %d \00", align 1
-@.str.123 = private unnamed_addr constant [2 x i8] c"\0A\00", align 1
+@.str.17 = private unnamed_addr constant [38 x i8] c"MLX90640_GetFrameData tried %d times\0A\00", align 1
+@.str.18 = private unnamed_addr constant [19 x i8] c"./MLX90640_API.cpp\00", section "llvm.metadata"
+@.str.19 = private unnamed_addr constant [30 x i8] c"scalar(range(-99, 999) final)\00", section "llvm.metadata"
+@.str.20 = private unnamed_addr constant [28 x i8] c"scalar(range(-32767,32767))\00", section "llvm.metadata"
+@.str.21 = private unnamed_addr constant [34 x i8] c"scalar(range(-32767,32767) final)\00", section "llvm.metadata"
+@.str.22 = private unnamed_addr constant [45 x i8] c"scalar(range(-5000000000,10000000000) final)\00", section "llvm.metadata"
+@.str.23 = private unnamed_addr constant [34 x i8] c"scalar(range(-32768,65535) final)\00", section "llvm.metadata"
+@.str.24 = private unnamed_addr constant [35 x i8] c"scalar(range(-65536, 65536) final)\00", section "llvm.metadata"
+@.str.25 = private unnamed_addr constant [45 x i8] c"scalar(range(-4294967296, 4294967296) final)\00", section "llvm.metadata"
+@.str.26 = private unnamed_addr constant [29 x i8] c"scalar(range(-99,999) final)\00", section "llvm.metadata"
+@.str.27 = private unnamed_addr constant [12 x i8] c"taTO %.10f\0A\00", align 1
+@.str.28 = private unnamed_addr constant [12 x i8] c"trTO %.10f\0A\00", align 1
+@.str.29 = private unnamed_addr constant [19 x i8] c"taTO Kelvin %.10f\0A\00", align 1
+@.str.30 = private unnamed_addr constant [11 x i8] c"ta4 %.10f\0A\00", align 1
+@.str.31 = private unnamed_addr constant [11 x i8] c"tr4 %.10f\0A\00", align 1
+@.str.32 = private unnamed_addr constant [10 x i8] c"taTr1 %e\0A\00", align 1
+@.str.33 = private unnamed_addr constant [32 x i8] c"taTr2 %.10f (emissivity=%.10f)\0A\00", align 1
+@.str.34 = private unnamed_addr constant [9 x i8] c"taTr %e\0A\00", align 1
+@.str.35 = private unnamed_addr constant [19 x i8] c"irDataBGain %.10f\0A\00", align 1
+@.str.36 = private unnamed_addr constant [19 x i8] c"irDataAGain %.10f\0A\00", align 1
+@.str.37 = private unnamed_addr constant [10 x i8] c"ta %.10f\0A\00", align 1
+@.str.38 = private unnamed_addr constant [11 x i8] c"ir1 %.10f\0A\00", align 1
+@.str.39 = private unnamed_addr constant [11 x i8] c"ir2 %.10f\0A\00", align 1
+@.str.40 = private unnamed_addr constant [11 x i8] c"ir3 %.10f\0A\00", align 1
+@.str.41 = private unnamed_addr constant [11 x i8] c"ir4 %.10f\0A\00", align 1
+@.str.42 = private unnamed_addr constant [18 x i8] c"params_offset %d\0A\00", align 1
+@.str.43 = private unnamed_addr constant [11 x i8] c"ir5 %.10f\0A\00", align 1
+@.str.44 = private unnamed_addr constant [11 x i8] c"ir6 %.10f\0A\00", align 1
+@.str.45 = private unnamed_addr constant [11 x i8] c"ir7 %.10f\0A\00", align 1
+@.str.46 = private unnamed_addr constant [11 x i8] c"ir8 %.10f\0A\00", align 1
+@.str.47 = private unnamed_addr constant [11 x i8] c"ir9 %.10f\0A\00", align 1
+@.str.48 = private unnamed_addr constant [19 x i8] c"irDataACalc %.10f\0A\00", align 1
+@.str.49 = private unnamed_addr constant [11 x i8] c"tgc %.10f\0A\00", align 1
+@.str.50 = private unnamed_addr constant [16 x i8] c"cpAlpha %.10f \0A\00", align 1
+@.str.51 = private unnamed_addr constant [10 x i8] c"a1 %.10f\0A\00", align 1
+@.str.52 = private unnamed_addr constant [20 x i8] c"alphastruct %.10f \0A\00", align 1
+@.str.53 = private unnamed_addr constant [10 x i8] c"a2 %.10f\0A\00", align 1
+@.str.54 = private unnamed_addr constant [10 x i8] c"a3 %.10f\0A\00", align 1
+@.str.55 = private unnamed_addr constant [10 x i8] c"a4 %.10f\0A\00", align 1
+@.str.56 = private unnamed_addr constant [14 x i8] c"irData %.10f\0A\00", align 1
+@.str.57 = private unnamed_addr constant [12 x i8] c"gain %.10f\0A\00", align 1
+@.str.58 = private unnamed_addr constant [13 x i8] c"alpha %.10f\0A\00", align 1
+@.str.59 = private unnamed_addr constant [34 x i8] c"scalar(range(-65535,65535) final)\00", section "llvm.metadata"
+@.str.60 = private unnamed_addr constant [10 x i8] c"s1 %.10f\0A\00", align 1
+@.str.61 = private unnamed_addr constant [10 x i8] c"s2 %.10f\0A\00", align 1
+@.str.62 = private unnamed_addr constant [10 x i8] c"s3 %.10f\0A\00", align 1
+@.str.63 = private unnamed_addr constant [10 x i8] c"S4 %.10f\0A\00", align 1
+@.str.64 = private unnamed_addr constant [10 x i8] c"Sx %.10f\0A\00", align 1
+@.str.65 = private unnamed_addr constant [27 x i8] c"scalar(range(-1, 1) final)\00", section "llvm.metadata"
+@.str.66 = private unnamed_addr constant [22 x i8] c"t1 %.10f, ksTo %.10f\0A\00", align 1
+@.str.67 = private unnamed_addr constant [10 x i8] c"t2 %.10f\0A\00", align 1
+@.str.68 = private unnamed_addr constant [20 x i8] c"scalar(range(-2,2))\00", section "llvm.metadata"
+@.str.69 = private unnamed_addr constant [10 x i8] c"t3 %.10f\0A\00", align 1
+@.str.70 = private unnamed_addr constant [10 x i8] c"t4 %.10f\0A\00", align 1
+@.str.71 = private unnamed_addr constant [48 x i8] c"scalar(range(-29350096896,  29350096896) final)\00", section "llvm.metadata"
+@.str.72 = private unnamed_addr constant [14 x i8] c"mint5: %.10f\0A\00", align 1
+@.str.73 = private unnamed_addr constant [14 x i8] c"maxt5: %.10f\0A\00", align 1
+@.str.74 = private unnamed_addr constant [10 x i8] c"t5 %.10f\0A\00", align 1
+@.str.75 = private unnamed_addr constant [10 x i8] c"t6 %.10f\0A\00", align 1
+@.str.76 = private unnamed_addr constant [10 x i8] c"To %.10f\0A\00", align 1
+@.str.77 = private unnamed_addr constant [13 x i8] c"taTr %.10f \0A\00", align 1
+@.str.78 = private unnamed_addr constant [11 x i8] c"range %d \0A\00", align 1
+@.str.79 = private unnamed_addr constant [10 x i8] c"t8 %.10f\0A\00", align 1
+@.str.80 = private unnamed_addr constant [10 x i8] c"t9 %.10f\0A\00", align 1
+@.str.81 = private unnamed_addr constant [11 x i8] c"t10 %.10f\0A\00", align 1
+@.str.82 = private unnamed_addr constant [11 x i8] c"t11 %.10f\0A\00", align 1
+@.str.83 = private unnamed_addr constant [11 x i8] c"t12 %.10f\0A\00", align 1
+@.str.84 = private unnamed_addr constant [36 x i8] c"scalar(range(0,169577873408) final)\00", section "llvm.metadata"
+@.str.85 = private unnamed_addr constant [11 x i8] c"t13 %.10f\0A\00", align 1
+@.str.86 = private unnamed_addr constant [15 x i8] c"maximum2%.10f\0A\00", align 1
+@.str.87 = private unnamed_addr constant [37 x i8] c"scalar(range(0, 178186977280) final)\00", section "llvm.metadata"
+@.str.88 = private unnamed_addr constant [11 x i8] c"t14 %.10f\0A\00", align 1
+@.str.89 = private unnamed_addr constant [11 x i8] c"ToF %.10f\0A\00", align 1
+@.str.90 = private unnamed_addr constant [18 x i8] c"pixel Number %d \0A\00", align 1
+@.str.91 = private unnamed_addr constant [8 x i8] c"vdd %f\0A\00", align 1
+@.str.92 = private unnamed_addr constant [8 x i8] c"ta %f \0A\00", align 1
+@.str.93 = private unnamed_addr constant [10 x i8] c"tr %.10f\0A\00", align 1
+@.str.94 = private unnamed_addr constant [12 x i8] c"taTr %.10f\0A\00", align 1
+@.str.95 = private unnamed_addr constant [34 x i8] c"scalar(range(-32768,32767) final)\00", section "llvm.metadata"
+@.str.96 = private unnamed_addr constant [29 x i8] c"scalar(range(-32767, 32767))\00", section "llvm.metadata"
+@.str.97 = private unnamed_addr constant [34 x i8] c"scalar(range(-32768,65536) final)\00", section "llvm.metadata"
+@.str.98 = private unnamed_addr constant [26 x i8] c"scalar(range(0.125,4096))\00", section "llvm.metadata"
+@.str.99 = private unnamed_addr constant [35 x i8] c"scalar(range(-32768, 65535) final)\00", section "llvm.metadata"
+@.str.100 = private unnamed_addr constant [29 x i8] c"scalar(range(-32768, 65535))\00", section "llvm.metadata"
+@.str.101 = private unnamed_addr constant [29 x i8] c"scalar(range(-32768, 32767))\00", section "llvm.metadata"
+@.str.102 = private unnamed_addr constant [11 x i8] c"getVdd...\0A\00", align 1
+@.str.103 = private unnamed_addr constant [10 x i8] c"vdd = %e\0A\00", align 1
+@.str.104 = private unnamed_addr constant [17 x i8] c"ptatArt1= %.10f\0A\00", align 1
+@.str.105 = private unnamed_addr constant [17 x i8] c"ptatArt2= %.10f\0A\00", align 1
+@.str.106 = private unnamed_addr constant [17 x i8] c"ptatArt3= %.10f\0A\00", align 1
+@.str.107 = private unnamed_addr constant [13 x i8] c"ptat= %.10f\0A\00", align 1
+@.str.108 = private unnamed_addr constant [18 x i8] c"alphaptat= %.10f\0A\00", align 1
+@.str.109 = private unnamed_addr constant [16 x i8] c"ptatArt= %.10f\0A\00", align 1
+@.str.110 = private unnamed_addr constant [12 x i8] c"vd1= %.10f\0A\00", align 1
+@.str.111 = private unnamed_addr constant [15 x i8] c"kvPTAT= %.10f\0A\00", align 1
+@.str.112 = private unnamed_addr constant [12 x i8] c"vdd= %.10f\0A\00", align 1
+@.str.113 = private unnamed_addr constant [12 x i8] c"ta1= %.10f\0A\00", align 1
+@.str.114 = private unnamed_addr constant [12 x i8] c"ta2= %.10f\0A\00", align 1
+@.str.115 = private unnamed_addr constant [12 x i8] c"ta3= %.10f\0A\00", align 1
+@.str.116 = private unnamed_addr constant [15 x i8] c"taBDiv= %.10f\0A\00", align 1
+@.str.117 = private unnamed_addr constant [15 x i8] c"taADiv= %.10f\0A\00", align 1
+@.str.118 = private unnamed_addr constant [22 x i8] c"scalar(range(-32,63))\00", section "llvm.metadata"
+@.str.119 = private unnamed_addr constant [25 x i8] c"scalar(range(-512,1023))\00", section "llvm.metadata"
+@.str.120 = private unnamed_addr constant [23 x i8] c"scalar(range(8,11.75))\00", section "llvm.metadata"
+@.str.121 = private unnamed_addr constant [24 x i8] c"scalar(range(-128,255))\00", section "llvm.metadata"
+@.str.122 = private unnamed_addr constant [30 x i8] c"scalar(range(-128,255) final)\00", section "llvm.metadata"
+@.str.123 = private unnamed_addr constant [25 x i8] c"scalar(range(-512,1527))\00", section "llvm.metadata"
+@.str.124 = private unnamed_addr constant [9 x i8] c"main.cpp\00", section "llvm.metadata"
+@.str.125 = private unnamed_addr constant [4 x i8] c"P3\0A\00", align 1
+@.str.126 = private unnamed_addr constant [7 x i8] c"%d %d\0A\00", align 1
+@.str.127 = private unnamed_addr constant [5 x i8] c"255\0A\00", align 1
+@stdout = external global %struct._IO_FILE*, align 8
+@.str.128 = private unnamed_addr constant [10 x i8] c"%d %d %d \00", align 1
+@.str.129 = private unnamed_addr constant [2 x i8] c"\0A\00", align 1
 @_ZL6eeprom = internal constant [832 x i16] [i16 195, i16 14751, i16 0, i16 8289, i16 5, i16 800, i16 992, i16 5919, i16 -13513, i16 393, i16 1177, i16 0, i16 6401, i16 0, i16 0, i16 -16845, i16 16928, i16 -58, i16 530, i16 514, i16 -3582, i16 -7694, i16 -11807, i16 -24640, i16 257, i16 258, i16 -3838, i16 -3838, i16 -3598, i16 -7694, i16 -7966, i16 -16159, i16 -30571, i16 15246, i16 -4678, i16 4607, i16 13106, i16 13107, i16 290, i16 -13057, i16 -8756, i16 255, i16 8465, i16 8755, i16 8755, i16 4386, i16 -4351, i16 -17442, i16 6224, i16 12195, i16 5461, i16 -23164, i16 26197, i16 2512, i16 14646, i16 13363, i16 9298, i16 4262, i16 6079, i16 1572, i16 -2560, i16 -14900, i16 -26703, i16 9833, i16 4126, i16 4240, i16 7246, i16 222, i16 1070, i16 4224, i16 9118, i16 -1010, i16 3072, i16 1216, i16 6382, i16 1022, i16 1950, i16 -18, i16 6238, i16 -1922, i16 5056, i16 2016, i16 5246, i16 -3938, i16 2048, i16 -928, i16 4128, i16 -3042, i16 1938, i16 992, i16 7120, i16 -6048, i16 -64, i16 -5054, i16 4288, i16 -8080, i16 2032, i16 110, i16 -5076, i16 1198, i16 -3040, i16 -946, i16 -3204, i16 944, i16 -32, i16 -3954, i16 -4916, i16 3008, i16 -1166, i16 -4178, i16 -5060, i16 1088, i16 1936, i16 -1106, i16 -5044, i16 -944, i16 980, i16 -4048, i16 -5124, i16 2, i16 884, i16 -1088, i16 -2098, i16 -1982, i16 -1102, i16 -6112, i16 -4976, i16 -3006, i16 5008, i16 4160, i16 6190, i16 -866, i16 -978, i16 3184, i16 8060, i16 -1042, i16 126, i16 1104, i16 6222, i16 878, i16 1870, i16 -96, i16 6158, i16 -1970, i16 3070, i16 2032, i16 6112, i16 -3122, i16 -896, i16 -16, i16 5106, i16 -2096, i16 1968, i16 -912, i16 7120, i16 -6000, i16 -32, i16 -4960, i16 5282, i16 -8144, i16 7008, i16 3102, i16 -2020, i16 5216, i16 2, i16 2126, i16 -180, i16 5008, i16 1088, i16 1054, i16 -980, i16 6928, i16 2850, i16 -146, i16 -36, i16 5136, i16 4018, i16 2976, i16 -66, i16 3984, i16 1106, i16 960, i16 -1074, i16 6064, i16 3972, i16 1104, i16 1998, i16 2144, i16 3010, i16 -2960, i16 -880, i16 18, i16 8992, i16 3152, i16 5150, i16 -882, i16 3072, i16 4128, i16 8062, i16 -1074, i16 3134, i16 1104, i16 6208, i16 974, i16 2926, i16 -80, i16 7134, i16 -1970, i16 5040, i16 2944, i16 6128, i16 -3042, i16 2160, i16 2, i16 3198, i16 -3040, i16 2000, i16 -816, i16 7136, i16 -4976, i16 -16, i16 -3918, i16 6226, i16 -7072, i16 9058, i16 1182, i16 -2964, i16 4272, i16 3170, i16 2142, i16 -82, i16 4080, i16 2176, i16 142, i16 -1892, i16 6112, i16 2976, i16 -18, i16 -978, i16 4238, i16 6130, i16 3022, i16 -1970, i16 3136, i16 3268, i16 62, i16 -2882, i16 5234, i16 3092, i16 1296, i16 1072, i16 1218, i16 2130, i16 -2832, i16 160, i16 162, i16 2990, i16 3152, i16 5150, i16 -882, i16 46, i16 3168, i16 7040, i16 -1090, i16 3038, i16 1056, i16 6176, i16 1790, i16 1808, i16 880, i16 5152, i16 -2034, i16 3040, i16 2896, i16 4112, i16 -4080, i16 82, i16 -974, i16 5106, i16 -3072, i16 2852, i16 98, i16 7106, i16 -6000, i16 978, i16 -3038, i16 6210, i16 -7088, i16 3040, i16 142, i16 -4004, i16 2208, i16 -944, i16 128, i16 -2100, i16 3024, i16 1026, i16 -946, i16 -2962, i16 5904, i16 1890, i16 -1106, i16 -3988, i16 4144, i16 2084, i16 1888, i16 -4018, i16 2096, i16 1154, i16 -944, i16 -4050, i16 3122, i16 4934, i16 128, i16 1022, i16 1202, i16 1026, i16 -1984, i16 -896, i16 130, i16 3038, i16 2128, i16 5150, i16 -1906, i16 30, i16 3072, i16 7008, i16 -2066, i16 3008, i16 160, i16 5168, i16 -80, i16 -1056, i16 -1056, i16 3280, i16 -2896, i16 3024, i16 1024, i16 3168, i16 -4080, i16 -864, i16 -910, i16 2144, i16 -4016, i16 1972, i16 194, i16 5186, i16 -6880, i16 -1008, i16 -3966, i16 6162, i16 -7040, i16 880, i16 -1042, i16 -5170, i16 1056, i16 -2094, i16 912, i16 -3314, i16 880, i16 882, i16 -2978, i16 -4164, i16 3906, i16 -2160, i16 -3200, i16 -6004, i16 1104, i16 1906, i16 -98, i16 -6100, i16 1968, i16 -958, i16 -3056, i16 -6098, i16 3040, i16 1894, i16 -944, i16 -1056, i16 -814, i16 946, i16 -3040, i16 -64, i16 -2014, i16 5906, i16 2066, i16 5038, i16 -2000, i16 2960, i16 4050, i16 4960, i16 -2192, i16 2046, i16 96, i16 2222, i16 -160, i16 1856, i16 -176, i16 4078, i16 -3056, i16 3970, i16 1936, i16 3072, i16 -5104, i16 1010, i16 -1006, i16 3026, i16 -1152, i16 -1070, i16 -894, i16 4066, i16 -5968, i16 -1038, i16 -3054, i16 3202, i16 -7136, i16 6962, i16 1056, i16 -2098, i16 3138, i16 4018, i16 3038, i16 -1140, i16 4994, i16 3074, i16 -928, i16 -2868, i16 6000, i16 3938, i16 848, i16 -1026, i16 4112, i16 6068, i16 2974, i16 -2002, i16 4146, i16 3108, i16 1072, i16 -1026, i16 7058, i16 4084, i16 2192, i16 14, i16 2240, i16 2052, i16 32, i16 160, i16 2082, i16 -80, i16 2082, i16 3056, i16 -2944, i16 -2066, i16 1072, i16 4014, i16 -3120, i16 -1072, i16 -864, i16 2128, i16 -2050, i16 -1216, i16 -1088, i16 4064, i16 -4064, i16 -990, i16 -992, i16 1152, i16 -7072, i16 -2014, i16 -1934, i16 98, i16 -3104, i16 -142, i16 34, i16 2096, i16 -7024, i16 -1118, i16 -4958, i16 3122, i16 -7152, i16 -62, i16 -2002, i16 -7154, i16 1136, i16 -1038, i16 -962, i16 -5172, i16 978, i16 -16, i16 -2898, i16 -5010, i16 4080, i16 -160, i16 -1104, i16 -3074, i16 3120, i16 1076, i16 -992, i16 -5970, i16 1106, i16 1090, i16 -1936, i16 -6002, i16 4098, i16 3972, i16 1056, i16 -1954, i16 2178, i16 1986, i16 -1888, i16 -944, i16 1026, i16 1822, i16 5122, i16 4064, i16 80, i16 912, i16 4130, i16 5920, i16 -112, i16 1968, i16 2130, i16 4222, i16 894, i16 -1074, i16 1922, i16 4208, i16 -1952, i16 3008, i16 4000, i16 3168, i16 -3984, i16 992, i16 1104, i16 3090, i16 -80, i16 2850, i16 2160, i16 5122, i16 -3984, i16 1872, i16 -942, i16 7154, i16 -5120, i16 1826, i16 -1010, i16 -4180, i16 3136, i16 -94, i16 16, i16 -3266, i16 2978, i16 1970, i16 -928, i16 -3970, i16 7026, i16 -46, i16 -144, i16 -4964, i16 4176, i16 4036, i16 1952, i16 -3970, i16 3168, i16 3060, i16 80, i16 -4050, i16 7090, i16 5940, i16 2160, i16 1022, i16 3186, i16 4930, i16 64, i16 2016, i16 4082, i16 928, i16 5104, i16 2976, i16 -944, i16 -2032, i16 5042, i16 2912, i16 -4050, i16 992, i16 1122, i16 1120, i16 -1058, i16 848, i16 834, i16 1104, i16 -2928, i16 96, i16 1138, i16 2128, i16 -4016, i16 1042, i16 50, i16 2080, i16 -1088, i16 -1086, i16 2130, i16 4016, i16 -5040, i16 -1120, i16 -1982, i16 2096, i16 -4160, i16 -2158, i16 -1072, i16 -8290, i16 -960, i16 -5120, i16 -112, i16 -7314, i16 -1008, i16 -46, i16 -4002, i16 -7044, i16 1968, i16 -190, i16 -2224, i16 -7058, i16 144, i16 82, i16 -1938, i16 -6034, i16 64, i16 1042, i16 -992, i16 -6114, i16 5072, i16 962, i16 64, i16 -1106, i16 48, i16 914, i16 -2016, i16 -2032, i16 1954, i16 -4354, i16 3026, i16 -2032, i16 -4000, i16 -5200, i16 2066, i16 -64, i16 -4144, i16 -4114, i16 -926, i16 128, i16 -2162, i16 -5234, i16 -1166, i16 -866, i16 -4048, i16 -1136, i16 992, i16 -880, i16 -6064, i16 -3006, i16 -1022, i16 2, i16 -3120, i16 -2208, i16 1058, i16 3906, i16 -7056, i16 -2318, i16 -1038, i16 2016, i16 -4272, i16 -3200, i16 -3024, i16 -11138, i16 -830, i16 -4062, i16 -1936, i16 -8114, i16 66, i16 -2958, i16 -2880, i16 -6914, i16 4080, i16 -2064, i16 -2080, i16 -6882, i16 3232, i16 1026, i16 96, i16 -6882, i16 1216, i16 178, i16 112, i16 -4994, i16 5186, i16 3010, i16 2176, i16 -66, i16 2226, i16 3922, i16 64, i16 -944, i16 5042, i16 -5154, i16 3074, i16 -2032, i16 -48, i16 -4194, i16 3106, i16 1968, i16 -3984, i16 -4048, i16 1138, i16 1166, i16 -80, i16 -2160, i16 1874, i16 2160, i16 -2848, i16 -16, i16 2080, i16 2112, i16 -4048, i16 -1024, i16 2050, i16 96, i16 -2016, i16 -1152, i16 5074, i16 3954, i16 -4046, i16 -1216, i16 1970, i16 2066, i16 -1216, i16 -7248, i16 -2096, i16 -10242, i16 1952, i16 -4238, i16 -1040, i16 -7250, i16 -958, i16 -3040, i16 -1968, i16 -7042, i16 5008, i16 -1152, i16 -1216, i16 -6034, i16 3248, i16 2018, i16 1024, i16 -5058, i16 2064, i16 3058, i16 976, i16 -6066, i16 6130, i16 1892, i16 4000, i16 -1202, i16 3074, i16 2834, i16 1920, i16 -32, i16 6930, i16 -48, i16 6242, i16 48, i16 64, i16 -3026, i16 6194, i16 2992, i16 -992, i16 64, i16 3312, i16 2224, i16 1056, i16 -994, i16 2144, i16 2206, i16 -704, i16 2128, i16 7138, i16 4160, i16 -912, i16 1138, i16 4178, i16 3104, i16 1072, i16 -1058, i16 6162, i16 3984, i16 -976, i16 -1120, i16 5074, i16 2064, i16 2992, i16 -3152, i16 -3024, i16 -11234, i16 1042, i16 -4112, i16 16, i16 -7266, i16 994, i16 -976, i16 -2880, i16 -7010, i16 2048, i16 -1040, i16 -3024, i16 -4978, i16 1312, i16 2112, i16 4016, i16 -4050, i16 4160, i16 2130, i16 2080, i16 -3074, i16 6146, i16 1954, i16 4064, i16 -146, i16 3104, i16 2946, i16 3968, i16 14, i16 8082], align 16
-@.str.124 = private unnamed_addr constant [28 x i8] c"target('ta_shift') scalar()\00", section "llvm.metadata"
-@.str.125 = private unnamed_addr constant [10 x i8] c"getTa...\0A\00", align 1
-@.str.126 = private unnamed_addr constant [23 x i8] c"scalar(range(-99,999))\00", section "llvm.metadata"
-@_ZL9subframe1 = internal constant [834 x i16] [i16 -69, i16 -75, i16 -72, i16 -81, i16 -69, i16 -79, i16 -72, i16 -85, i16 -67, i16 -81, i16 -62, i16 -76, i16 18, i16 7, i16 18, i16 -19, i16 -56, i16 -79, i16 -74, i16 -93, i16 -67, i16 -89, i16 -75, i16 -94, i16 -67, i16 -88, i16 -76, i16 -95, i16 -73, i16 -93, i16 -74, i16 -103, i16 -80, i16 -82, i16 -89, i16 -85, i16 -83, i16 -86, i16 -89, i16 -86, i16 -80, i16 -89, i16 -86, i16 -64, i16 -16, i16 23, i16 18, i16 -22, i16 -63, i16 -85, i16 -89, i16 -92, i16 -78, i16 -94, i16 -90, i16 -95, i16 -76, i16 -92, i16 -90, i16 -95, i16 -82, i16 -96, i16 -90, i16 -101, i16 -70, i16 -79, i16 -74, i16 -84, i16 -74, i16 -84, i16 -72, i16 -86, i16 -72, i16 -83, i16 -63, i16 -77, i16 28, i16 27, i16 56, i16 7, i16 -53, i16 -82, i16 -72, i16 -89, i16 -73, i16 -87, i16 -75, i16 -96, i16 -74, i16 -91, i16 -76, i16 -96, i16 -73, i16 -94, i16 -76, i16 -104, i16 -80, i16 -86, i16 -91, i16 -84, i16 -82, i16 -90, i16 -89, i16 -88, i16 -83, i16 -88, i16 -88, i16 -66, i16 -4, i16 51, i16 51, i16 14, i16 -60, i16 -82, i16 -91, i16 -92, i16 -82, i16 -91, i16 -90, i16 -92, i16 -79, i16 -93, i16 -91, i16 -97, i16 -83, i16 -100, i16 -91, i16 -101, i16 -67, i16 -80, i16 -75, i16 -84, i16 -73, i16 -82, i16 -73, i16 -86, i16 -71, i16 -82, i16 -67, i16 -78, i16 39, i16 55, i16 110, i16 43, i16 -39, i16 -72, i16 -74, i16 -92, i16 -71, i16 -87, i16 -76, i16 -93, i16 -72, i16 -91, i16 -78, i16 -95, i16 -74, i16 -94, i16 -73, i16 -103, i16 -77, i16 -89, i16 -94, i16 -88, i16 -82, i16 -88, i16 -92, i16 -92, i16 -82, i16 -89, i16 -89, i16 -72, i16 10, i16 77, i16 100, i16 69, i16 -48, i16 -77, i16 -88, i16 -91, i16 -81, i16 -96, i16 -90, i16 -92, i16 -79, i16 -98, i16 -91, i16 -96, i16 -84, i16 -99, i16 -88, i16 -103, i16 -74, i16 -82, i16 -78, i16 -89, i16 -74, i16 -83, i16 -75, i16 -87, i16 -72, i16 -82, i16 -69, i16 -79, i16 52, i16 87, i16 187, i16 99, i16 -18, i16 -67, i16 -72, i16 -89, i16 -70, i16 -89, i16 -74, i16 -92, i16 -69, i16 -92, i16 -77, i16 -96, i16 -78, i16 -92, i16 -75, i16 -105, i16 -87, i16 -91, i16 -97, i16 -90, i16 -86, i16 -90, i16 -96, i16 -89, i16 -83, i16 -91, i16 -86, i16 -74, i16 26, i16 112, i16 169, i16 142, i16 -31, i16 -70, i16 -89, i16 -91, i16 -85, i16 -96, i16 -92, i16 -96, i16 -79, i16 -98, i16 -93, i16 -99, i16 -85, i16 -102, i16 -91, i16 -105, i16 -75, i16 -83, i16 -76, i16 -87, i16 -73, i16 -83, i16 -77, i16 -92, i16 -73, i16 -86, i16 -70, i16 -80, i16 69, i16 132, i16 294, i16 189, i16 10, i16 -61, i16 -75, i16 -94, i16 -74, i16 -91, i16 -81, i16 -95, i16 -72, i16 -94, i16 -76, i16 -98, i16 -78, i16 -95, i16 -75, i16 -106, i16 -88, i16 -94, i16 -94, i16 -92, i16 -86, i16 -93, i16 -97, i16 -94, i16 -83, i16 -95, i16 -90, i16 -77, i16 49, i16 164, i16 281, i16 260, i16 1, i16 -57, i16 -93, i16 -93, i16 -85, i16 -96, i16 -96, i16 -100, i16 -82, i16 -99, i16 -95, i16 -103, i16 -88, i16 -103, i16 -90, i16 -109, i16 -73, i16 -81, i16 -77, i16 -89, i16 -72, i16 -83, i16 -77, i16 -90, i16 -73, i16 -86, i16 -73, i16 -76, i16 107, i16 204, i16 462, i16 336, i16 66, i16 -39, i16 -74, i16 -93, i16 -76, i16 -87, i16 -82, i16 -98, i16 -77, i16 -96, i16 -83, i16 -99, i16 -80, i16 -96, i16 -80, i16 -107, i16 -86, i16 -96, i16 -97, i16 -93, i16 -86, i16 -92, i16 -98, i16 -93, i16 -88, i16 -97, i16 -92, i16 -79, i16 98, i16 258, i16 468, i16 451, i16 62, i16 -27, i16 -94, i16 -96, i16 -84, i16 -99, i16 -101, i16 -101, i16 -88, i16 -104, i16 -97, i16 -102, i16 -90, i16 -102, i16 -98, i16 -108, i16 -79, i16 -87, i16 -79, i16 -91, i16 -76, i16 -86, i16 -79, i16 -93, i16 -78, i16 -88, i16 -71, i16 -74, i16 182, i16 354, i16 781, i16 616, i16 166, i16 -3, i16 -76, i16 -96, i16 -77, i16 -93, i16 -84, i16 -101, i16 -75, i16 -94, i16 -83, i16 -101, i16 -82, i16 -97, i16 -80, i16 -108, i16 -92, i16 -99, i16 -103, i16 -99, i16 -91, i16 -97, i16 -102, i16 -97, i16 -92, i16 -98, i16 -94, i16 -75, i16 188, i16 456, i16 839, i16 826, i16 173, i16 17, i16 -96, i16 -99, i16 -89, i16 -102, i16 -104, i16 -103, i16 -86, i16 -104, i16 -101, i16 -102, i16 -90, i16 -103, i16 -96, i16 -109, i16 -79, i16 -82, i16 -81, i16 -89, i16 -78, i16 -88, i16 -83, i16 -91, i16 -77, i16 -86, i16 -73, i16 -70, i16 341, i16 644, i16 1378, i16 1151, i16 346, i16 57, i16 -79, i16 -98, i16 -80, i16 -94, i16 -84, i16 -103, i16 -77, i16 -97, i16 -84, i16 -103, i16 -79, i16 -96, i16 -80, i16 -109, i16 -97, i16 -100, i16 -104, i16 -98, i16 -93, i16 -99, i16 -102, i16 -97, i16 -93, i16 -99, i16 -92, i16 -72, i16 376, i16 800, i16 1492, i16 1450, i16 359, i16 89, i16 -96, i16 -103, i16 -92, i16 -105, i16 -105, i16 -106, i16 -90, i16 -104, i16 -102, i16 -104, i16 -91, i16 -104, i16 -97, i16 -107, i16 -79, i16 -82, i16 -82, i16 -91, i16 -78, i16 -85, i16 -82, i16 -92, i16 -74, i16 -85, i16 -47, i16 -45, i16 540, i16 956, i16 1625, i16 1530, i16 480, i16 93, i16 -78, i16 -97, i16 -78, i16 -94, i16 -86, i16 -103, i16 -84, i16 -98, i16 -85, i16 -103, i16 -83, i16 -98, i16 -82, i16 -106, i16 -99, i16 -100, i16 -106, i16 -101, i16 -96, i16 -94, i16 -102, i16 -92, i16 -79, i16 -67, i16 -7, i16 92, i16 601, i16 952, i16 1505, i16 1397, i16 381, i16 72, i16 -101, i16 -106, i16 -93, i16 -107, i16 -106, i16 -104, i16 -94, i16 -108, i16 -104, i16 -107, i16 -95, i16 -107, i16 -102, i16 -112, i16 -73, i16 -77, i16 -73, i16 -83, i16 -61, i16 -64, i16 -45, i16 -49, i16 4, i16 26, i16 182, i16 272, i16 594, i16 808, i16 1003, i16 879, i16 122, i16 -31, i16 -85, i16 -98, i16 -81, i16 -95, i16 -86, i16 -101, i16 -82, i16 -97, i16 -83, i16 -100, i16 -80, i16 -94, i16 -82, i16 -105, i16 -94, i16 -90, i16 -95, i16 -83, i16 -76, i16 -75, i16 -63, i16 -51, i16 -6, i16 8, i16 137, i16 201, i16 512, i16 555, i16 693, i16 414, i16 -14, i16 -80, i16 -108, i16 -108, i16 -98, i16 -110, i16 -108, i16 -109, i16 -94, i16 -108, i16 -103, i16 -104, i16 -92, i16 -108, i16 -102, i16 -113, i16 -81, i16 -75, i16 -75, i16 -76, i16 -64, i16 -59, i16 -51, i16 -50, i16 -26, i16 -7, i16 45, i16 103, i16 113, i16 121, i16 -15, i16 -43, i16 -75, i16 -89, i16 -84, i16 -102, i16 -83, i16 -96, i16 -90, i16 -103, i16 -83, i16 -95, i16 -85, i16 -101, i16 -83, i16 -95, i16 -82, i16 -104, i16 -105, i16 -102, i16 -105, i16 -96, i16 -89, i16 -95, i16 -92, i16 -90, i16 -66, i16 -75, i16 -39, i16 -46, i16 -9, i16 -54, i16 -80, i16 -95, i16 -95, i16 -107, i16 -113, i16 -111, i16 -99, i16 -111, i16 -114, i16 -112, i16 -98, i16 -112, i16 -111, i16 -109, i16 -99, i16 -108, i16 -108, i16 -112, i16 -84, i16 -83, i16 -88, i16 -89, i16 -83, i16 -86, i16 -83, i16 -92, i16 -79, i16 -84, i16 -83, i16 -86, i16 -78, i16 -85, i16 -84, i16 -96, i16 -80, i16 -92, i16 -85, i16 -100, i16 -85, i16 -96, i16 -89, i16 -103, i16 -87, i16 -97, i16 -87, i16 -101, i16 -85, i16 -97, i16 -86, i16 -103, i16 -113, i16 -116, i16 -123, i16 -114, i16 -110, i16 -112, i16 -121, i16 -115, i16 -106, i16 -115, i16 -116, i16 -116, i16 -109, i16 -118, i16 -119, i16 -118, i16 -109, i16 -117, i16 -119, i16 -121, i16 -110, i16 -119, i16 -121, i16 -120, i16 -111, i16 -118, i16 -118, i16 -119, i16 -108, i16 -117, i16 -116, i16 -122, i16 19585, i16 6455, i16 32767, i16 6455, i16 32767, i16 6455, i16 32767, i16 6455, i16 -70, i16 -12736, i16 6212, i16 -10499, i16 -6, i16 10, i16 -2, i16 -3, i16 6292, i16 1026, i16 623, i16 32767, i16 6292, i16 1027, i16 623, i16 32767, i16 3, i16 3, i16 3, i16 3, i16 3, i16 3, i16 3, i16 3, i16 1613, i16 32767, i16 6455, i16 32767, i16 6455, i16 32767, i16 6455, i16 32767, i16 -66, i16 -2857, i16 -12231, i16 -10457, i16 9, i16 -1, i16 -5, i16 0, i16 243, i16 66, i16 10601, i16 60, i16 243, i16 66, i16 10601, i16 60, i16 3, i16 3, i16 3, i16 3, i16 3, i16 3, i16 3, i16 3, i16 6529, i16 1], align 16
-@.str.127 = private unnamed_addr constant [9 x i8] c"ta = %e\0A\00", align 1
-@.str.128 = private unnamed_addr constant [10 x i8] c"scalar() \00", section "llvm.metadata"
-@.str.129 = private unnamed_addr constant [16 x i8] c"TaMain = %.10f\0A\00", align 1
-@.str.130 = private unnamed_addr constant [16 x i8] c"TrMain = %.10f\0A\00", align 1
-@_ZL9subframe2 = internal constant [834 x i16] [i16 -72, i16 -75, i16 -72, i16 -81, i16 -75, i16 -79, i16 -71, i16 -85, i16 -71, i16 -81, i16 -69, i16 -76, i16 -9, i16 7, i16 18, i16 -19, i16 -48, i16 -79, i16 -73, i16 -93, i16 -71, i16 -89, i16 -75, i16 -94, i16 -73, i16 -88, i16 -77, i16 -95, i16 -75, i16 -93, i16 -73, i16 -103, i16 -80, i16 -86, i16 -89, i16 -84, i16 -83, i16 -90, i16 -89, i16 -87, i16 -80, i16 -90, i16 -86, i16 -76, i16 -16, i16 -1, i16 18, i16 -12, i16 -63, i16 -83, i16 -89, i16 -92, i16 -78, i16 -95, i16 -90, i16 -95, i16 -76, i16 -95, i16 -90, i16 -93, i16 -82, i16 -96, i16 -90, i16 -102, i16 -71, i16 -79, i16 -76, i16 -84, i16 -76, i16 -84, i16 -74, i16 -86, i16 -77, i16 -83, i16 -69, i16 -77, i16 -3, i16 27, i16 50, i16 7, i16 -43, i16 -82, i16 -72, i16 -89, i16 -76, i16 -87, i16 -76, i16 -96, i16 -72, i16 -91, i16 -77, i16 -96, i16 -76, i16 -94, i16 -76, i16 -104, i16 -80, i16 -88, i16 -91, i16 -87, i16 -82, i16 -90, i16 -89, i16 -85, i16 -83, i16 -91, i16 -88, i16 -79, i16 -4, i16 15, i16 51, i16 20, i16 -60, i16 -79, i16 -91, i16 -89, i16 -82, i16 -94, i16 -90, i16 -93, i16 -79, i16 -96, i16 -91, i16 -95, i16 -83, i16 -98, i16 -91, i16 -103, i16 -70, i16 -80, i16 -76, i16 -84, i16 -73, i16 -82, i16 -73, i16 -86, i16 -72, i16 -82, i16 -73, i16 -78, i16 9, i16 55, i16 95, i16 43, i16 -30, i16 -72, i16 -73, i16 -92, i16 -73, i16 -87, i16 -77, i16 -93, i16 -72, i16 -91, i16 -78, i16 -95, i16 -78, i16 -94, i16 -76, i16 -103, i16 -77, i16 -92, i16 -94, i16 -89, i16 -82, i16 -91, i16 -92, i16 -90, i16 -82, i16 -94, i16 -89, i16 -81, i16 10, i16 39, i16 100, i16 65, i16 -48, i16 -71, i16 -88, i16 -88, i16 -81, i16 -95, i16 -90, i16 -93, i16 -79, i16 -99, i16 -91, i16 -95, i16 -84, i16 -100, i16 -88, i16 -105, i16 -78, i16 -82, i16 -77, i16 -89, i16 -76, i16 -83, i16 -77, i16 -87, i16 -76, i16 -82, i16 -73, i16 -79, i16 20, i16 87, i16 159, i16 99, i16 -11, i16 -67, i16 -73, i16 -89, i16 -74, i16 -89, i16 -76, i16 -92, i16 -71, i16 -92, i16 -78, i16 -96, i16 -79, i16 -92, i16 -75, i16 -105, i16 -87, i16 -94, i16 -97, i16 -90, i16 -86, i16 -92, i16 -96, i16 -91, i16 -83, i16 -94, i16 -86, i16 -81, i16 26, i16 67, i16 169, i16 135, i16 -31, i16 -63, i16 -89, i16 -90, i16 -85, i16 -96, i16 -92, i16 -97, i16 -79, i16 -100, i16 -93, i16 -98, i16 -85, i16 -101, i16 -91, i16 -106, i16 -77, i16 -83, i16 -76, i16 -87, i16 -77, i16 -83, i16 -77, i16 -92, i16 -74, i16 -86, i16 -71, i16 -80, i16 36, i16 132, i16 258, i16 189, i16 24, i16 -61, i16 -77, i16 -94, i16 -77, i16 -91, i16 -80, i16 -95, i16 -75, i16 -94, i16 -77, i16 -98, i16 -79, i16 -95, i16 -75, i16 -106, i16 -88, i16 -96, i16 -94, i16 -94, i16 -86, i16 -95, i16 -97, i16 -93, i16 -83, i16 -98, i16 -90, i16 -85, i16 49, i16 116, i16 281, i16 244, i16 1, i16 -47, i16 -93, i16 -92, i16 -85, i16 -101, i16 -96, i16 -100, i16 -82, i16 -103, i16 -95, i16 -102, i16 -88, i16 -103, i16 -90, i16 -109, i16 -74, i16 -81, i16 -78, i16 -89, i16 -74, i16 -83, i16 -77, i16 -90, i16 -76, i16 -86, i16 -75, i16 -76, i16 73, i16 204, i16 414, i16 336, i16 90, i16 -39, i16 -76, i16 -93, i16 -79, i16 -87, i16 -79, i16 -98, i16 -80, i16 -96, i16 -80, i16 -99, i16 -80, i16 -96, i16 -81, i16 -107, i16 -86, i16 -94, i16 -97, i16 -93, i16 -86, i16 -91, i16 -98, i16 -95, i16 -88, i16 -99, i16 -92, i16 -84, i16 98, i16 197, i16 468, i16 439, i16 62, i16 -13, i16 -94, i16 -95, i16 -84, i16 -101, i16 -101, i16 -102, i16 -88, i16 -103, i16 -97, i16 -103, i16 -90, i16 -103, i16 -98, i16 -108, i16 -81, i16 -87, i16 -79, i16 -91, i16 -83, i16 -86, i16 -81, i16 -93, i16 -78, i16 -88, i16 -75, i16 -74, i16 132, i16 354, i16 720, i16 616, i16 218, i16 -3, i16 -73, i16 -96, i16 -80, i16 -93, i16 -86, i16 -101, i16 -78, i16 -94, i16 -83, i16 -101, i16 -80, i16 -97, i16 -79, i16 -108, i16 -92, i16 -99, i16 -103, i16 -98, i16 -91, i16 -98, i16 -102, i16 -96, i16 -92, i16 -102, i16 -94, i16 -80, i16 188, i16 361, i16 839, i16 832, i16 173, i16 61, i16 -96, i16 -99, i16 -89, i16 -105, i16 -104, i16 -104, i16 -86, i16 -105, i16 -101, i16 -102, i16 -90, i16 -107, i16 -96, i16 -110, i16 -81, i16 -82, i16 -84, i16 -89, i16 -82, i16 -88, i16 -81, i16 -91, i16 -77, i16 -86, i16 -75, i16 -70, i16 247, i16 644, i16 1297, i16 1151, i16 474, i16 57, i16 -71, i16 -98, i16 -81, i16 -94, i16 -86, i16 -103, i16 -81, i16 -97, i16 -84, i16 -103, i16 -80, i16 -96, i16 -80, i16 -109, i16 -97, i16 -99, i16 -104, i16 -99, i16 -93, i16 -102, i16 -102, i16 -99, i16 -93, i16 -101, i16 -92, i16 -78, i16 376, i16 631, i16 1492, i16 1472, i16 359, i16 195, i16 -96, i16 -101, i16 -92, i16 -108, i16 -105, i16 -106, i16 -90, i16 -110, i16 -102, i16 -103, i16 -91, i16 -107, i16 -97, i16 -113, i16 -83, i16 -82, i16 -83, i16 -91, i16 -83, i16 -85, i16 -81, i16 -92, i16 -75, i16 -85, i16 -54, i16 -45, i16 384, i16 956, i16 1515, i16 1530, i16 673, i16 93, i16 -66, i16 -97, i16 -80, i16 -94, i16 -86, i16 -103, i16 -85, i16 -98, i16 -87, i16 -103, i16 -84, i16 -98, i16 -83, i16 -106, i16 -99, i16 -99, i16 -106, i16 -99, i16 -96, i16 -99, i16 -102, i16 -93, i16 -79, i16 -71, i16 -7, i16 65, i16 601, i16 766, i16 1505, i16 1401, i16 381, i16 210, i16 -101, i16 -97, i16 -93, i16 -109, i16 -106, i16 -106, i16 -94, i16 -113, i16 -104, i16 -106, i16 -95, i16 -108, i16 -102, i16 -112, i16 -80, i16 -77, i16 -73, i16 -83, i16 -64, i16 -64, i16 -45, i16 -49, i16 -3, i16 26, i16 152, i16 272, i16 520, i16 808, i16 958, i16 879, i16 244, i16 -31, i16 -80, i16 -98, i16 -84, i16 -95, i16 -87, i16 -101, i16 -84, i16 -97, i16 -85, i16 -100, i16 -83, i16 -94, i16 -83, i16 -105, i16 -94, i16 -94, i16 -95, i16 -86, i16 -76, i16 -77, i16 -63, i16 -53, i16 -6, i16 0, i16 137, i16 172, i16 512, i16 491, i16 693, i16 471, i16 -14, i16 -45, i16 -108, i16 -106, i16 -98, i16 -110, i16 -108, i16 -109, i16 -94, i16 -111, i16 -103, i16 -107, i16 -92, i16 -107, i16 -102, i16 -111, i16 -82, i16 -75, i16 -75, i16 -76, i16 -66, i16 -59, i16 -56, i16 -50, i16 -29, i16 -7, i16 33, i16 103, i16 111, i16 121, i16 -2, i16 -43, i16 -70, i16 -89, i16 -84, i16 -102, i16 -85, i16 -96, i16 -89, i16 -103, i16 -86, i16 -95, i16 -85, i16 -101, i16 -85, i16 -95, i16 -84, i16 -104, i16 -105, i16 -103, i16 -105, i16 -96, i16 -89, i16 -96, i16 -92, i16 -91, i16 -66, i16 -80, i16 -39, i16 -50, i16 -9, i16 -55, i16 -80, i16 -91, i16 -95, i16 -107, i16 -113, i16 -111, i16 -99, i16 -113, i16 -114, i16 -111, i16 -98, i16 -111, i16 -111, i16 -110, i16 -99, i16 -110, i16 -108, i16 -111, i16 -88, i16 -83, i16 -88, i16 -89, i16 -86, i16 -86, i16 -86, i16 -92, i16 -80, i16 -84, i16 -80, i16 -86, i16 -80, i16 -85, i16 -85, i16 -96, i16 -83, i16 -92, i16 -88, i16 -100, i16 -87, i16 -96, i16 -89, i16 -103, i16 -88, i16 -97, i16 -90, i16 -101, i16 -89, i16 -97, i16 -89, i16 -103, i16 -113, i16 -117, i16 -123, i16 -113, i16 -110, i16 -117, i16 -121, i16 -117, i16 -106, i16 -117, i16 -116, i16 -118, i16 -109, i16 -121, i16 -119, i16 -120, i16 -109, i16 -117, i16 -119, i16 -122, i16 -110, i16 -124, i16 -121, i16 -121, i16 -111, i16 -121, i16 -118, i16 -119, i16 -108, i16 -120, i16 -116, i16 -121, i16 19584, i16 6455, i16 32767, i16 6455, i16 32767, i16 6455, i16 32767, i16 6455, i16 -69, i16 -12736, i16 6215, i16 -10499, i16 -6, i16 10, i16 -3, i16 -3, i16 6302, i16 1026, i16 623, i16 32767, i16 6301, i16 1027, i16 623, i16 32767, i16 3, i16 3, i16 3, i16 3, i16 3, i16 3, i16 3, i16 3, i16 1613, i16 32767, i16 6455, i16 32767, i16 6455, i16 32767, i16 6455, i16 32767, i16 -66, i16 -2858, i16 -12231, i16 -10456, i16 9, i16 -4, i16 -5, i16 1, i16 243, i16 64, i16 10601, i16 60, i16 243, i16 64, i16 10601, i16 60, i16 3, i16 3, i16 3, i16 3, i16 3, i16 3, i16 3, i16 3, i16 6529, i16 0], align 16
-@.str.131 = private unnamed_addr constant [18 x i8] c"temp[%d] = %.10f\0A\00", align 1
-@.str.132 = private unnamed_addr constant [19 x i8] c"maximum t13 %.10f\0A\00", align 1
-@.str.133 = private unnamed_addr constant [19 x i8] c"maximum t14 %.10f\0A\00", align 1
-@.str.134 = private unnamed_addr constant [15 x i8] c"mint5 = %.10f\0A\00", align 1
-@.str.135 = private unnamed_addr constant [14 x i8] c"max5 = %.10f\0A\00", align 1
-@.str.136 = private unnamed_addr constant [30 x i8] c"scalar(range (-99,999) final)\00", section "llvm.metadata"
-@.str.137 = private unnamed_addr constant [15 x i8] c"Range = %.10f\0A\00", align 1
-@.str.138 = private unnamed_addr constant [18 x i8] c"minRange = %.10f\0A\00", align 1
-@.str.139 = private unnamed_addr constant [16 x i8] c"maxVal = %.10f\0A\00", align 1
-@.str.140 = private unnamed_addr constant [16 x i8] c"minVal = %.10f\0A\00", align 1
-@.str.141 = private unnamed_addr constant [15 x i8] c"thermalmap.ppm\00", align 1
-@.str.142 = private unnamed_addr constant [2 x i8] c"w\00", align 1
-@stderr = external dso_local global %struct._IO_FILE*, align 8
-@.str.143 = private unnamed_addr constant [19 x i8] c"min = %d max = %d\0A\00", align 1
-@llvm.global.annotations = appending global [23 x { i8*, i8*, i8*, i32, i8* }] [{ i8*, i8*, i8*, i32, i8* } { i8* bitcast (i16* @params_kVdd to i8*), i8* getelementptr inbounds ([37 x i8], [37 x i8]* @.str, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 23, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast (i16* @params_vdd25 to i8*), i8* getelementptr inbounds ([37 x i8], [37 x i8]* @.str, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 24, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast (float* @params_KvPTAT to i8*), i8* getelementptr inbounds ([37 x i8], [37 x i8]* @.str.2, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 25, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast (float* @params_KtPTAT to i8*), i8* getelementptr inbounds ([30 x i8], [30 x i8]* @.str.3, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 26, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast (i16* @params_vPTAT25 to i8*), i8* getelementptr inbounds ([37 x i8], [37 x i8]* @.str, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 27, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast (float* @params_alphaPTAT to i8*), i8* getelementptr inbounds ([30 x i8], [30 x i8]* @.str.4, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 28, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast (i16* @params_gainEE to i8*), i8* getelementptr inbounds ([37 x i8], [37 x i8]* @.str, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 29, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast (float* @params_tgc to i8*), i8* getelementptr inbounds ([27 x i8], [27 x i8]* @.str.5, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 30, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast (float* @params_cpKv to i8*), i8* getelementptr inbounds ([34 x i8], [34 x i8]* @.str.6, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 31, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast (float* @params_cpKta to i8*), i8* getelementptr inbounds ([28 x i8], [28 x i8]* @.str.7, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 32, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast (i32* @params_resolutionEE to i8*), i8* getelementptr inbounds ([30 x i8], [30 x i8]* @.str.8, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 33, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* @params_calibrationModeEE, i8* getelementptr inbounds ([30 x i8], [30 x i8]* @.str.8, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 34, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast (float* @params_KsTa to i8*), i8* getelementptr inbounds ([26 x i8], [26 x i8]* @.str.9, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 35, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast ([4 x float]* @params_ksTo to i8*), i8* getelementptr inbounds ([34 x i8], [34 x i8]* @.str.10, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 36, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast ([4 x i16]* @params_ct to i8*), i8* getelementptr inbounds ([37 x i8], [37 x i8]* @.str, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 37, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast ([768 x i16]* @params_offset to i8*), i8* getelementptr inbounds ([37 x i8], [37 x i8]* @.str, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 39, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast ([768 x float]* @params_kta to i8*), i8* getelementptr inbounds ([35 x i8], [35 x i8]* @.str.11, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 40, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast ([768 x float]* @params_kv to i8*), i8* getelementptr inbounds ([26 x i8], [26 x i8]* @.str.12, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 41, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast ([2 x float]* @params_cpAlpha to i8*), i8* getelementptr inbounds ([32 x i8], [32 x i8]* @.str.13, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 42, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast ([2 x i16]* @params_cpOffset to i8*), i8* getelementptr inbounds ([37 x i8], [37 x i8]* @.str, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 43, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast ([3 x float]* @params_ilChessC to i8*), i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 44, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast ([5 x i16]* @params_brokenPixels to i8*), i8* getelementptr inbounds ([32 x i8], [32 x i8]* @.str.15, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 45, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast ([5 x i16]* @params_outlierPixels to i8*), i8* getelementptr inbounds ([32 x i8], [32 x i8]* @.str.15, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 46, i8* null }], section "llvm.metadata"
+@.str.130 = private unnamed_addr constant [28 x i8] c"target('ta_shift') scalar()\00", section "llvm.metadata"
+@.str.131 = private unnamed_addr constant [10 x i8] c"getTa...\0A\00", align 1
+@.str.132 = private unnamed_addr constant [23 x i8] c"scalar(range(-99,999))\00", section "llvm.metadata"
+@_ZL9subframe1 = internal constant [834 x i16] [i16 -95, i16 -99, i16 -96, i16 -107, i16 -101, i16 -104, i16 -98, i16 -112, i16 -103, i16 -114, i16 -106, i16 -120, i16 -106, i16 -119, i16 -109, i16 -125, i16 -107, i16 -124, i16 -110, i16 -127, i16 -106, i16 -124, i16 -109, i16 -126, i16 -106, i16 -124, i16 -110, i16 -125, i16 -108, i16 -124, i16 -102, i16 -129, i16 -106, i16 -111, i16 -111, i16 -112, i16 -108, i16 -115, i16 -114, i16 -117, i16 -110, i16 -124, i16 -121, i16 -122, i16 -116, i16 -128, i16 -122, i16 -128, i16 -116, i16 -133, i16 -125, i16 -128, i16 -113, i16 -128, i16 -121, i16 -127, i16 -115, i16 -132, i16 -121, i16 -129, i16 -113, i16 -129, i16 -115, i16 -129, i16 -100, i16 -104, i16 -99, i16 -108, i16 -104, i16 -111, i16 -103, i16 -115, i16 -110, i16 -117, i16 -108, i16 -121, i16 -111, i16 -123, i16 -111, i16 -127, i16 -113, i16 -127, i16 -114, i16 -126, i16 -115, i16 -125, i16 -112, i16 -127, i16 -111, i16 -129, i16 -112, i16 -131, i16 -111, i16 -128, i16 -104, i16 -133, i16 -105, i16 -113, i16 -114, i16 -112, i16 -114, i16 -121, i16 -118, i16 -121, i16 -117, i16 -125, i16 -122, i16 -124, i16 -120, i16 -131, i16 -124, i16 -129, i16 -121, i16 -135, i16 -125, i16 -132, i16 -120, i16 -132, i16 -123, i16 -129, i16 -118, i16 -135, i16 -125, i16 -134, i16 -119, i16 -134, i16 -117, i16 -134, i16 -95, i16 -105, i16 -99, i16 -111, i16 -104, i16 -112, i16 -106, i16 -116, i16 -107, i16 -119, i16 -111, i16 -124, i16 -112, i16 -124, i16 -112, i16 -127, i16 -113, i16 -128, i16 -116, i16 -129, i16 -113, i16 -126, i16 -115, i16 -130, i16 -114, i16 -132, i16 -115, i16 -132, i16 -116, i16 -130, i16 -106, i16 -132, i16 -105, i16 -115, i16 -117, i16 -117, i16 -113, i16 -122, i16 -122, i16 -122, i16 -119, i16 -128, i16 -124, i16 -128, i16 -120, i16 -132, i16 -125, i16 -131, i16 -119, i16 -134, i16 -130, i16 -135, i16 -121, i16 -135, i16 -129, i16 -134, i16 -119, i16 -138, i16 -128, i16 -136, i16 -121, i16 -136, i16 -119, i16 -138, i16 -102, i16 -108, i16 -103, i16 -114, i16 -110, i16 -115, i16 -108, i16 -117, i16 -108, i16 -119, i16 -110, i16 -122, i16 -113, i16 -124, i16 -114, i16 -128, i16 -115, i16 -128, i16 -119, i16 -133, i16 -117, i16 -128, i16 -115, i16 -132, i16 -111, i16 -130, i16 -115, i16 -134, i16 -115, i16 -128, i16 -107, i16 -135, i16 -111, i16 -119, i16 -119, i16 -119, i16 -116, i16 -124, i16 -124, i16 -123, i16 -119, i16 -129, i16 -128, i16 -127, i16 -122, i16 -134, i16 -129, i16 -131, i16 -125, i16 -137, i16 -134, i16 -137, i16 -125, i16 -138, i16 -130, i16 -137, i16 -119, i16 -139, i16 -129, i16 -135, i16 -119, i16 -137, i16 -120, i16 -137, i16 -104, i16 -109, i16 -104, i16 -114, i16 -110, i16 -113, i16 -110, i16 -120, i16 -111, i16 -122, i16 -113, i16 -127, i16 -116, i16 -126, i16 -117, i16 -131, i16 -116, i16 -128, i16 -119, i16 -134, i16 -119, i16 -132, i16 -118, i16 -135, i16 -114, i16 -134, i16 -118, i16 -133, i16 -116, i16 -129, i16 -105, i16 -136, i16 -114, i16 -121, i16 -122, i16 -121, i16 -121, i16 -126, i16 -126, i16 -127, i16 -120, i16 -135, i16 -130, i16 -131, i16 -126, i16 -138, i16 -134, i16 -136, i16 -123, i16 -138, i16 -136, i16 -138, i16 -126, i16 -142, i16 -135, i16 -139, i16 -123, i16 -144, i16 -133, i16 -137, i16 -121, i16 -135, i16 -119, i16 -139, i16 -100, i16 -111, i16 -106, i16 -116, i16 -107, i16 -114, i16 -110, i16 -121, i16 -113, i16 -124, i16 -119, i16 -128, i16 -117, i16 -127, i16 -116, i16 -130, i16 -114, i16 -129, i16 -120, i16 -135, i16 -118, i16 -134, i16 -119, i16 -133, i16 -119, i16 -134, i16 -117, i16 -132, i16 -115, i16 -126, i16 -110, i16 -133, i16 -112, i16 -126, i16 -123, i16 -124, i16 -119, i16 -127, i16 -128, i16 -126, i16 -123, i16 -136, i16 -133, i16 -135, i16 -126, i16 -137, i16 -135, i16 -138, i16 -127, i16 -141, i16 -138, i16 -142, i16 -127, i16 -142, i16 -134, i16 -139, i16 -125, i16 -141, i16 -130, i16 -137, i16 -124, i16 -137, i16 -124, i16 -139, i16 -107, i16 -109, i16 -108, i16 -117, i16 -112, i16 -115, i16 -113, i16 -122, i16 -114, i16 -125, i16 -116, i16 -129, i16 -119, i16 -128, i16 -118, i16 -131, i16 -120, i16 -133, i16 -124, i16 -138, i16 -120, i16 -134, i16 -121, i16 -136, i16 -117, i16 -131, i16 -119, i16 -132, i16 -116, i16 -130, i16 -109, i16 -135, i16 -119, i16 -127, i16 -127, i16 -127, i16 -122, i16 -133, i16 -133, i16 -131, i16 -128, i16 -139, i16 -133, i16 -135, i16 -129, i16 -140, i16 -134, i16 -137, i16 -130, i16 -145, i16 -140, i16 -140, i16 -129, i16 -145, i16 -137, i16 -141, i16 -125, i16 -140, i16 -132, i16 -135, i16 -122, i16 -139, i16 -124, i16 -141, i16 -109, i16 -109, i16 -110, i16 -117, i16 -111, i16 -117, i16 -111, i16 -121, i16 -114, i16 -123, i16 -118, i16 -127, i16 -123, i16 -127, i16 -120, i16 -133, i16 -119, i16 -130, i16 -123, i16 -135, i16 -119, i16 -134, i16 -120, i16 -134, i16 -116, i16 -130, i16 -119, i16 -133, i16 -116, i16 -127, i16 -109, i16 -136, i16 -122, i16 -130, i16 -128, i16 -127, i16 -126, i16 -133, i16 -131, i16 -133, i16 -129, i16 -141, i16 -136, i16 -137, i16 -136, i16 -142, i16 -141, i16 -139, i16 -131, i16 -144, i16 -140, i16 -144, i16 -130, i16 -146, i16 -137, i16 -141, i16 -125, i16 -144, i16 -134, i16 -140, i16 -124, i16 -139, i16 -125, i16 -141, i16 -112, i16 -110, i16 -109, i16 -116, i16 -114, i16 -115, i16 -115, i16 -123, i16 -115, i16 -125, i16 -120, i16 -131, i16 -119, i16 -126, i16 -121, i16 -134, i16 -119, i16 -132, i16 -122, i16 -135, i16 -119, i16 -130, i16 -119, i16 -132, i16 -118, i16 -130, i16 -118, i16 -133, i16 -116, i16 -129, i16 -116, i16 -132, i16 -125, i16 -130, i16 -131, i16 -130, i16 -129, i16 -133, i16 -135, i16 -136, i16 -129, i16 -141, i16 -140, i16 -141, i16 -132, i16 -142, i16 -141, i16 -144, i16 -132, i16 -146, i16 -142, i16 -144, i16 -129, i16 -145, i16 -139, i16 -141, i16 -128, i16 -146, i16 -132, i16 -139, i16 -126, i16 -141, i16 -127, i16 -142, i16 -111, i16 -111, i16 -114, i16 -119, i16 -116, i16 -119, i16 -117, i16 -125, i16 -120, i16 -125, i16 -121, i16 -130, i16 -124, i16 -129, i16 -123, i16 -134, i16 -121, i16 -131, i16 -125, i16 -136, i16 -122, i16 -131, i16 -119, i16 -132, i16 -117, i16 -130, i16 -117, i16 -132, i16 -115, i16 -125, i16 -112, i16 -132, i16 -130, i16 -132, i16 -138, i16 -134, i16 -131, i16 -137, i16 -139, i16 -136, i16 -134, i16 -143, i16 -141, i16 -141, i16 -137, i16 -145, i16 -145, i16 -141, i16 -133, i16 -148, i16 -144, i16 -145, i16 -134, i16 -145, i16 -139, i16 -142, i16 -128, i16 -145, i16 -135, i16 -142, i16 -125, i16 -141, i16 -130, i16 -141, i16 -120, i16 -111, i16 -114, i16 -116, i16 -118, i16 -115, i16 -117, i16 -127, i16 -120, i16 -125, i16 -119, i16 -128, i16 -123, i16 -125, i16 -122, i16 -135, i16 -120, i16 -132, i16 -122, i16 -133, i16 -121, i16 -129, i16 -123, i16 -134, i16 -119, i16 -127, i16 -116, i16 -132, i16 -118, i16 -125, i16 -112, i16 -129, i16 -137, i16 -133, i16 -138, i16 -133, i16 -133, i16 -139, i16 -143, i16 -141, i16 -136, i16 -142, i16 -143, i16 -143, i16 -136, i16 -145, i16 -145, i16 -147, i16 -137, i16 -147, i16 -144, i16 -143, i16 -132, i16 -147, i16 -143, i16 -144, i16 -130, i16 -145, i16 -135, i16 -141, i16 -129, i16 -140, i16 -131, i16 -139, i16 -114, i16 -110, i16 -114, i16 -117, i16 -116, i16 -117, i16 -116, i16 -124, i16 -119, i16 -124, i16 -122, i16 -128, i16 -121, i16 -127, i16 -123, i16 -133, i16 -119, i16 -126, i16 -121, i16 -131, i16 -119, i16 -128, i16 -118, i16 -129, i16 -121, i16 -125, i16 -118, i16 -128, i16 -119, i16 -121, i16 -115, i16 -128, i16 -141, i16 -145, i16 -150, i16 -141, i16 -143, i16 -146, i16 -151, i16 -148, i16 -143, i16 -155, i16 -153, i16 -155, i16 -148, i16 -157, i16 -154, i16 -158, i16 -144, i16 -155, i16 -150, i16 -153, i16 -143, i16 -153, i16 -148, i16 -152, i16 -141, i16 -152, i16 -145, i16 -151, i16 -139, i16 -147, i16 -139, i16 -147, i16 19183, i16 6600, i16 32767, i16 6600, i16 32767, i16 6599, i16 32767, i16 6599, i16 -76, i16 -12710, i16 6080, i16 -10492, i16 -10, i16 8, i16 -1, i16 -1, i16 6520, i16 1052, i16 644, i16 32767, i16 6520, i16 1052, i16 644, i16 32767, i16 1, i16 1, i16 1, i16 1, i16 1, i16 1, i16 1, i16 1, i16 1650, i16 32767, i16 6600, i16 32767, i16 6600, i16 32767, i16 6599, i16 32767, i16 -70, i16 -2871, i16 -12221, i16 -10453, i16 7, i16 -4, i16 -4, i16 -1, i16 241, i16 67, i16 10878, i16 58, i16 241, i16 67, i16 10878, i16 58, i16 1, i16 1, i16 1, i16 1, i16 1, i16 1, i16 1, i16 1, i16 6401, i16 0], align 16
+@.str.133 = private unnamed_addr constant [9 x i8] c"ta = %e\0A\00", align 1
+@.str.134 = private unnamed_addr constant [10 x i8] c"scalar() \00", section "llvm.metadata"
+@.str.135 = private unnamed_addr constant [16 x i8] c"TaMain = %.10f\0A\00", align 1
+@.str.136 = private unnamed_addr constant [16 x i8] c"TrMain = %.10f\0A\00", align 1
+@_ZL9subframe2 = internal constant [834 x i16] [i16 -95, i16 -102, i16 -96, i16 -105, i16 -101, i16 -106, i16 -98, i16 -113, i16 -103, i16 -114, i16 -106, i16 -119, i16 -106, i16 -118, i16 -109, i16 -123, i16 -107, i16 -123, i16 -110, i16 -127, i16 -106, i16 -124, i16 -109, i16 -127, i16 -106, i16 -124, i16 -110, i16 -125, i16 -108, i16 -125, i16 -102, i16 -130, i16 -106, i16 -111, i16 -111, i16 -112, i16 -109, i16 -115, i16 -114, i16 -117, i16 -112, i16 -124, i16 -120, i16 -122, i16 -116, i16 -128, i16 -122, i16 -128, i16 -117, i16 -133, i16 -125, i16 -128, i16 -114, i16 -128, i16 -120, i16 -127, i16 -115, i16 -132, i16 -121, i16 -129, i16 -115, i16 -129, i16 -116, i16 -129, i16 -100, i16 -104, i16 -99, i16 -109, i16 -104, i16 -111, i16 -103, i16 -116, i16 -110, i16 -118, i16 -108, i16 -122, i16 -111, i16 -123, i16 -111, i16 -128, i16 -113, i16 -128, i16 -114, i16 -127, i16 -115, i16 -125, i16 -112, i16 -129, i16 -111, i16 -131, i16 -112, i16 -131, i16 -111, i16 -127, i16 -104, i16 -132, i16 -107, i16 -113, i16 -115, i16 -112, i16 -115, i16 -121, i16 -119, i16 -121, i16 -119, i16 -125, i16 -122, i16 -124, i16 -119, i16 -131, i16 -124, i16 -129, i16 -122, i16 -135, i16 -126, i16 -132, i16 -120, i16 -132, i16 -124, i16 -129, i16 -117, i16 -135, i16 -126, i16 -134, i16 -119, i16 -134, i16 -117, i16 -134, i16 -95, i16 -107, i16 -99, i16 -113, i16 -104, i16 -112, i16 -106, i16 -117, i16 -107, i16 -119, i16 -111, i16 -125, i16 -112, i16 -124, i16 -112, i16 -127, i16 -113, i16 -127, i16 -116, i16 -130, i16 -113, i16 -126, i16 -115, i16 -131, i16 -114, i16 -133, i16 -115, i16 -133, i16 -116, i16 -129, i16 -106, i16 -133, i16 -104, i16 -115, i16 -115, i16 -117, i16 -114, i16 -122, i16 -121, i16 -122, i16 -118, i16 -128, i16 -126, i16 -128, i16 -121, i16 -132, i16 -125, i16 -131, i16 -121, i16 -134, i16 -130, i16 -135, i16 -120, i16 -135, i16 -126, i16 -134, i16 -120, i16 -138, i16 -127, i16 -136, i16 -122, i16 -136, i16 -117, i16 -138, i16 -102, i16 -109, i16 -103, i16 -115, i16 -110, i16 -114, i16 -108, i16 -117, i16 -108, i16 -119, i16 -110, i16 -122, i16 -113, i16 -124, i16 -114, i16 -127, i16 -115, i16 -128, i16 -119, i16 -135, i16 -117, i16 -129, i16 -115, i16 -132, i16 -111, i16 -133, i16 -115, i16 -131, i16 -115, i16 -127, i16 -107, i16 -135, i16 -112, i16 -119, i16 -118, i16 -119, i16 -118, i16 -124, i16 -123, i16 -123, i16 -119, i16 -129, i16 -128, i16 -127, i16 -124, i16 -134, i16 -129, i16 -131, i16 -125, i16 -137, i16 -134, i16 -137, i16 -123, i16 -138, i16 -129, i16 -137, i16 -119, i16 -139, i16 -127, i16 -135, i16 -122, i16 -137, i16 -120, i16 -137, i16 -104, i16 -109, i16 -104, i16 -114, i16 -110, i16 -114, i16 -110, i16 -119, i16 -111, i16 -124, i16 -113, i16 -126, i16 -116, i16 -128, i16 -117, i16 -129, i16 -116, i16 -128, i16 -119, i16 -131, i16 -119, i16 -132, i16 -118, i16 -136, i16 -114, i16 -134, i16 -118, i16 -134, i16 -116, i16 -128, i16 -105, i16 -136, i16 -114, i16 -121, i16 -124, i16 -121, i16 -121, i16 -126, i16 -126, i16 -127, i16 -122, i16 -135, i16 -129, i16 -131, i16 -128, i16 -138, i16 -134, i16 -136, i16 -127, i16 -138, i16 -136, i16 -138, i16 -129, i16 -142, i16 -134, i16 -139, i16 -125, i16 -144, i16 -129, i16 -137, i16 -120, i16 -135, i16 -118, i16 -139, i16 -100, i16 -112, i16 -106, i16 -114, i16 -107, i16 -115, i16 -110, i16 -120, i16 -113, i16 -126, i16 -119, i16 -128, i16 -117, i16 -127, i16 -116, i16 -131, i16 -114, i16 -129, i16 -120, i16 -136, i16 -118, i16 -132, i16 -119, i16 -133, i16 -119, i16 -132, i16 -117, i16 -133, i16 -115, i16 -129, i16 -110, i16 -133, i16 -113, i16 -126, i16 -123, i16 -124, i16 -120, i16 -127, i16 -129, i16 -126, i16 -124, i16 -136, i16 -133, i16 -135, i16 -128, i16 -137, i16 -132, i16 -138, i16 -126, i16 -141, i16 -139, i16 -142, i16 -126, i16 -142, i16 -134, i16 -139, i16 -126, i16 -141, i16 -129, i16 -137, i16 -124, i16 -137, i16 -123, i16 -139, i16 -107, i16 -112, i16 -108, i16 -116, i16 -112, i16 -119, i16 -113, i16 -123, i16 -114, i16 -125, i16 -116, i16 -129, i16 -119, i16 -128, i16 -118, i16 -133, i16 -120, i16 -136, i16 -124, i16 -140, i16 -120, i16 -135, i16 -121, i16 -135, i16 -117, i16 -132, i16 -119, i16 -133, i16 -116, i16 -132, i16 -109, i16 -135, i16 -122, i16 -127, i16 -128, i16 -127, i16 -124, i16 -133, i16 -130, i16 -131, i16 -128, i16 -139, i16 -134, i16 -135, i16 -129, i16 -140, i16 -135, i16 -137, i16 -131, i16 -145, i16 -141, i16 -140, i16 -131, i16 -145, i16 -137, i16 -141, i16 -126, i16 -140, i16 -132, i16 -135, i16 -125, i16 -139, i16 -124, i16 -141, i16 -109, i16 -110, i16 -110, i16 -117, i16 -111, i16 -118, i16 -111, i16 -123, i16 -114, i16 -125, i16 -118, i16 -127, i16 -123, i16 -129, i16 -120, i16 -133, i16 -119, i16 -131, i16 -123, i16 -137, i16 -119, i16 -133, i16 -120, i16 -133, i16 -116, i16 -130, i16 -119, i16 -134, i16 -116, i16 -130, i16 -109, i16 -136, i16 -122, i16 -130, i16 -129, i16 -127, i16 -126, i16 -133, i16 -132, i16 -133, i16 -128, i16 -141, i16 -137, i16 -137, i16 -135, i16 -142, i16 -140, i16 -139, i16 -132, i16 -144, i16 -140, i16 -144, i16 -131, i16 -146, i16 -137, i16 -141, i16 -125, i16 -144, i16 -132, i16 -140, i16 -125, i16 -139, i16 -126, i16 -141, i16 -112, i16 -109, i16 -109, i16 -116, i16 -114, i16 -115, i16 -115, i16 -124, i16 -115, i16 -125, i16 -120, i16 -130, i16 -119, i16 -127, i16 -121, i16 -134, i16 -119, i16 -134, i16 -122, i16 -135, i16 -119, i16 -132, i16 -119, i16 -135, i16 -118, i16 -132, i16 -118, i16 -132, i16 -116, i16 -129, i16 -116, i16 -133, i16 -126, i16 -130, i16 -132, i16 -130, i16 -128, i16 -133, i16 -137, i16 -136, i16 -131, i16 -141, i16 -139, i16 -141, i16 -132, i16 -142, i16 -141, i16 -144, i16 -134, i16 -146, i16 -141, i16 -144, i16 -131, i16 -145, i16 -138, i16 -141, i16 -129, i16 -146, i16 -135, i16 -139, i16 -130, i16 -141, i16 -128, i16 -142, i16 -111, i16 -112, i16 -114, i16 -120, i16 -116, i16 -119, i16 -117, i16 -125, i16 -120, i16 -125, i16 -121, i16 -130, i16 -124, i16 -127, i16 -123, i16 -134, i16 -121, i16 -131, i16 -125, i16 -136, i16 -122, i16 -131, i16 -119, i16 -134, i16 -117, i16 -132, i16 -117, i16 -131, i16 -115, i16 -128, i16 -112, i16 -133, i16 -130, i16 -132, i16 -137, i16 -134, i16 -131, i16 -137, i16 -140, i16 -136, i16 -135, i16 -143, i16 -142, i16 -141, i16 -138, i16 -145, i16 -143, i16 -141, i16 -133, i16 -148, i16 -145, i16 -145, i16 -134, i16 -145, i16 -139, i16 -142, i16 -130, i16 -145, i16 -136, i16 -142, i16 -127, i16 -141, i16 -129, i16 -141, i16 -120, i16 -112, i16 -114, i16 -117, i16 -118, i16 -117, i16 -117, i16 -125, i16 -120, i16 -127, i16 -119, i16 -129, i16 -123, i16 -125, i16 -122, i16 -134, i16 -120, i16 -130, i16 -122, i16 -134, i16 -121, i16 -131, i16 -123, i16 -135, i16 -119, i16 -128, i16 -116, i16 -129, i16 -118, i16 -127, i16 -112, i16 -129, i16 -139, i16 -133, i16 -140, i16 -133, i16 -134, i16 -139, i16 -140, i16 -141, i16 -138, i16 -142, i16 -144, i16 -143, i16 -136, i16 -145, i16 -144, i16 -147, i16 -137, i16 -147, i16 -143, i16 -143, i16 -134, i16 -147, i16 -142, i16 -144, i16 -132, i16 -145, i16 -134, i16 -141, i16 -129, i16 -140, i16 -128, i16 -139, i16 -114, i16 -113, i16 -114, i16 -116, i16 -116, i16 -116, i16 -116, i16 -123, i16 -119, i16 -125, i16 -122, i16 -128, i16 -121, i16 -129, i16 -123, i16 -132, i16 -119, i16 -128, i16 -121, i16 -131, i16 -119, i16 -128, i16 -118, i16 -130, i16 -121, i16 -127, i16 -118, i16 -130, i16 -119, i16 -123, i16 -115, i16 -127, i16 -142, i16 -145, i16 -149, i16 -141, i16 -145, i16 -146, i16 -150, i16 -148, i16 -146, i16 -155, i16 -152, i16 -155, i16 -147, i16 -157, i16 -152, i16 -158, i16 -145, i16 -155, i16 -150, i16 -153, i16 -143, i16 -153, i16 -148, i16 -152, i16 -142, i16 -152, i16 -145, i16 -151, i16 -139, i16 -147, i16 -138, i16 -147, i16 19183, i16 6599, i16 32767, i16 6599, i16 32767, i16 6598, i16 32767, i16 6598, i16 -76, i16 -12711, i16 6080, i16 -10492, i16 -10, i16 8, i16 -1, i16 -1, i16 6520, i16 1054, i16 644, i16 32767, i16 6520, i16 1055, i16 644, i16 32767, i16 1, i16 1, i16 1, i16 1, i16 1, i16 1, i16 1, i16 1, i16 1649, i16 32767, i16 6599, i16 32767, i16 6599, i16 32767, i16 6598, i16 32767, i16 -72, i16 -2871, i16 -12220, i16 -10453, i16 7, i16 -4, i16 -3, i16 -1, i16 239, i16 67, i16 10878, i16 58, i16 239, i16 67, i16 10878, i16 58, i16 1, i16 1, i16 1, i16 1, i16 1, i16 1, i16 1, i16 1, i16 6401, i16 1], align 16
+@.str.137 = private unnamed_addr constant [19 x i8] c"maximum t13 %.10f\0A\00", align 1
+@.str.138 = private unnamed_addr constant [19 x i8] c"maximum t14 %.10f\0A\00", align 1
+@.str.139 = private unnamed_addr constant [15 x i8] c"mint5 = %.10f\0A\00", align 1
+@.str.140 = private unnamed_addr constant [14 x i8] c"max5 = %.10f\0A\00", align 1
+@.str.141 = private unnamed_addr constant [30 x i8] c"scalar(range (-99,999) final)\00", section "llvm.metadata"
+@.str.142 = private unnamed_addr constant [15 x i8] c"Range = %.10f\0A\00", align 1
+@.str.143 = private unnamed_addr constant [18 x i8] c"minRange = %.10f\0A\00", align 1
+@.str.144 = private unnamed_addr constant [16 x i8] c"maxVal = %.10f\0A\00", align 1
+@.str.145 = private unnamed_addr constant [16 x i8] c"minVal = %.10f\0A\00", align 1
+@.str.146 = private unnamed_addr constant [15 x i8] c"thermalmap.ppm\00", align 1
+@.str.147 = private unnamed_addr constant [2 x i8] c"w\00", align 1
+@stderr = external global %struct._IO_FILE*, align 8
+@.str.148 = private unnamed_addr constant [19 x i8] c"min = %d max = %d\0A\00", align 1
+@llvm.global.annotations = appending global [23 x { i8*, i8*, i8*, i32, i8* }] [{ i8*, i8*, i8*, i32, i8* } { i8* bitcast (i16* @params_kVdd to i8*), i8* getelementptr inbounds ([37 x i8], [37 x i8]* @.str, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 23, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast (i16* @params_vdd25 to i8*), i8* getelementptr inbounds ([37 x i8], [37 x i8]* @.str, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 24, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast (float* @params_KvPTAT to i8*), i8* getelementptr inbounds ([37 x i8], [37 x i8]* @.str.2, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 25, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast (float* @params_KtPTAT to i8*), i8* getelementptr inbounds ([30 x i8], [30 x i8]* @.str.3, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 26, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast (i16* @params_vPTAT25 to i8*), i8* getelementptr inbounds ([37 x i8], [37 x i8]* @.str, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 27, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast (float* @params_alphaPTAT to i8*), i8* getelementptr inbounds ([30 x i8], [30 x i8]* @.str.4, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 28, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast (i16* @params_gainEE to i8*), i8* getelementptr inbounds ([37 x i8], [37 x i8]* @.str, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 29, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast (float* @params_tgc to i8*), i8* getelementptr inbounds ([27 x i8], [27 x i8]* @.str.5, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 30, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast (float* @params_cpKv to i8*), i8* getelementptr inbounds ([34 x i8], [34 x i8]* @.str.6, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 31, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast (float* @params_cpKta to i8*), i8* getelementptr inbounds ([28 x i8], [28 x i8]* @.str.7, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 32, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast (i32* @params_resolutionEE to i8*), i8* getelementptr inbounds ([30 x i8], [30 x i8]* @.str.8, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 33, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* @params_calibrationModeEE, i8* getelementptr inbounds ([30 x i8], [30 x i8]* @.str.8, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 34, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast (float* @params_KsTa to i8*), i8* getelementptr inbounds ([26 x i8], [26 x i8]* @.str.9, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 35, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast ([4 x float]* @params_ksTo to i8*), i8* getelementptr inbounds ([34 x i8], [34 x i8]* @.str.10, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 36, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast ([4 x i16]* @params_ct to i8*), i8* getelementptr inbounds ([29 x i8], [29 x i8]* @.str.11, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 37, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast ([768 x i16]* @params_offset to i8*), i8* getelementptr inbounds ([37 x i8], [37 x i8]* @.str, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 39, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast ([768 x float]* @params_kta to i8*), i8* getelementptr inbounds ([35 x i8], [35 x i8]* @.str.12, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 40, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast ([768 x float]* @params_kv to i8*), i8* getelementptr inbounds ([26 x i8], [26 x i8]* @.str.13, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 41, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast ([2 x float]* @params_cpAlpha to i8*), i8* getelementptr inbounds ([32 x i8], [32 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 42, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast ([2 x i16]* @params_cpOffset to i8*), i8* getelementptr inbounds ([37 x i8], [37 x i8]* @.str, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 43, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast ([3 x float]* @params_ilChessC to i8*), i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.15, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 44, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast ([5 x i16]* @params_brokenPixels to i8*), i8* getelementptr inbounds ([32 x i8], [32 x i8]* @.str.16, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 45, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast ([5 x i16]* @params_outlierPixels to i8*), i8* getelementptr inbounds ([32 x i8], [32 x i8]* @.str.16, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 46, i8* null }], section "llvm.metadata"
 
-; Function Attrs: noinline uwtable mustprogress
-define dso_local i32 @_Z15MLX90640_DumpEEhPt(i8 zeroext %0, i16* %1) #0 {
+; Function Attrs: mustprogress noinline uwtable
+define dso_local noundef i32 @_Z15MLX90640_DumpEEhPt(i8 noundef zeroext %0, i16* noundef %1) #0 {
   %3 = alloca i8, align 1
   %4 = alloca i16*, align 8
   store i8 %0, i8* %3, align 1
   store i16* %1, i16** %4, align 8
   %5 = load i8, i8* %3, align 1
   %6 = load i16*, i16** %4, align 8
-  %7 = call i32 @_Z16MLX90640_I2CReadhjjPt(i8 zeroext %5, i32 9216, i32 832, i16* %6)
+  %7 = call noundef i32 @_Z16MLX90640_I2CReadhjjPt(i8 noundef zeroext %5, i32 noundef 9216, i32 noundef 832, i16* noundef %6)
   ret i32 %7
 }
 
-; Function Attrs: noinline nounwind uwtable mustprogress
-define dso_local i32 @_Z16MLX90640_I2CReadhjjPt(i8 zeroext %0, i32 %1, i32 %2, i16* %3) #1 {
+; Function Attrs: mustprogress noinline nounwind uwtable
+define dso_local noundef i32 @_Z16MLX90640_I2CReadhjjPt(i8 noundef zeroext %0, i32 noundef %1, i32 noundef %2, i16* noundef %3) #1 {
   %5 = alloca i8, align 1
   %6 = alloca i32, align 4
   %7 = alloca i32, align 4
@@ -212,12 +220,12 @@ define dso_local i32 @_Z16MLX90640_I2CReadhjjPt(i8 zeroext %0, i32 %1, i32 %2, i
   store i32 %1, i32* %6, align 4
   store i32 %2, i32* %7, align 4
   store i16* %3, i16** %8, align 8
-  call void @abort() #7
+  call void @abort() #8
   unreachable
 }
 
-; Function Attrs: noinline uwtable mustprogress
-define dso_local i32 @_Z21MLX90640_GetFrameDatahPt(i8 zeroext %0, i16* %1) #0 {
+; Function Attrs: mustprogress noinline uwtable
+define dso_local noundef i32 @_Z21MLX90640_GetFrameDatahPt(i8 noundef zeroext %0, i16* noundef %1) #0 {
   %3 = alloca i32, align 4
   %4 = alloca i8, align 1
   %5 = alloca i16*, align 8
@@ -242,7 +250,7 @@ define dso_local i32 @_Z21MLX90640_GetFrameDatahPt(i8 zeroext %0, i16* %1) #0 {
 
 15:                                               ; preds = %11
   %16 = load i8, i8* %4, align 1
-  %17 = call i32 @_Z16MLX90640_I2CReadhjjPt(i8 zeroext %16, i32 32768, i32 1, i16* %8)
+  %17 = call noundef i32 @_Z16MLX90640_I2CReadhjjPt(i8 noundef zeroext %16, i32 noundef 32768, i32 noundef 1, i16* noundef %8)
   store i32 %17, i32* %9, align 4
   %18 = load i32, i32* %9, align 4
   %19 = icmp ne i32 %18, 0
@@ -259,7 +267,7 @@ define dso_local i32 @_Z21MLX90640_GetFrameDatahPt(i8 zeroext %0, i16* %1) #0 {
   %25 = and i32 %24, 8
   %26 = trunc i32 %25 to i16
   store i16 %26, i16* %6, align 2
-  br label %11, !llvm.loop !2
+  br label %11, !llvm.loop !6
 
 27:                                               ; preds = %11
   br label %28
@@ -286,7 +294,7 @@ define dso_local i32 @_Z21MLX90640_GetFrameDatahPt(i8 zeroext %0, i16* %1) #0 {
   %41 = zext i16 %40 to i32
   %42 = and i32 %41, -9
   %43 = trunc i32 %42 to i16
-  %44 = call i32 @_Z17MLX90640_I2CWritehjt(i8 zeroext %39, i32 32768, i16 zeroext %43)
+  %44 = call noundef i32 @_Z17MLX90640_I2CWritehjt(i8 noundef zeroext %39, i32 noundef 32768, i16 noundef zeroext %43)
   store i32 %44, i32* %9, align 4
   %45 = load i32, i32* %9, align 4
   %46 = icmp eq i32 %45, -1
@@ -300,7 +308,7 @@ define dso_local i32 @_Z21MLX90640_GetFrameDatahPt(i8 zeroext %0, i16* %1) #0 {
 49:                                               ; preds = %38
   %50 = load i8, i8* %4, align 1
   %51 = load i16*, i16** %5, align 8
-  %52 = call i32 @_Z16MLX90640_I2CReadhjjPt(i8 zeroext %50, i32 1024, i32 832, i16* %51)
+  %52 = call noundef i32 @_Z16MLX90640_I2CReadhjjPt(i8 noundef zeroext %50, i32 noundef 1024, i32 noundef 832, i16* noundef %51)
   store i32 %52, i32* %9, align 4
   %53 = load i32, i32* %9, align 4
   %54 = icmp ne i32 %53, 0
@@ -313,7 +321,7 @@ define dso_local i32 @_Z21MLX90640_GetFrameDatahPt(i8 zeroext %0, i16* %1) #0 {
 
 57:                                               ; preds = %49
   %58 = load i8, i8* %4, align 1
-  %59 = call i32 @_Z16MLX90640_I2CReadhjjPt(i8 zeroext %58, i32 32768, i32 1, i16* %8)
+  %59 = call noundef i32 @_Z16MLX90640_I2CReadhjjPt(i8 noundef zeroext %58, i32 noundef 32768, i32 noundef 1, i16* noundef %8)
   store i32 %59, i32* %9, align 4
   %60 = load i32, i32* %9, align 4
   %61 = icmp ne i32 %60, 0
@@ -335,7 +343,7 @@ define dso_local i32 @_Z21MLX90640_GetFrameDatahPt(i8 zeroext %0, i16* %1) #0 {
   %71 = add nsw i32 %70, 1
   %72 = trunc i32 %71 to i8
   store i8 %72, i8* %10, align 1
-  br label %28, !llvm.loop !4
+  br label %28, !llvm.loop !8
 
 73:                                               ; preds = %36
   %74 = load i8, i8* %10, align 1
@@ -346,7 +354,7 @@ define dso_local i32 @_Z21MLX90640_GetFrameDatahPt(i8 zeroext %0, i16* %1) #0 {
 77:                                               ; preds = %73
   %78 = load i8, i8* %10, align 1
   %79 = zext i8 %78 to i32
-  %80 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([38 x i8], [38 x i8]* @.str.16, i64 0, i64 0), i32 %79)
+  %80 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([38 x i8], [38 x i8]* @.str.17, i64 0, i64 0), i32 noundef %79)
   br label %81
 
 81:                                               ; preds = %77, %73
@@ -361,7 +369,7 @@ define dso_local i32 @_Z21MLX90640_GetFrameDatahPt(i8 zeroext %0, i16* %1) #0 {
 
 86:                                               ; preds = %81
   %87 = load i8, i8* %4, align 1
-  %88 = call i32 @_Z16MLX90640_I2CReadhjjPt(i8 zeroext %87, i32 32781, i32 1, i16* %7)
+  %88 = call noundef i32 @_Z16MLX90640_I2CReadhjjPt(i8 noundef zeroext %87, i32 noundef 32781, i32 noundef 1, i16* noundef %7)
   store i32 %88, i32* %9, align 4
   %89 = load i16, i16* %7, align 2
   %90 = load i16*, i16** %5, align 8
@@ -396,27 +404,27 @@ define dso_local i32 @_Z21MLX90640_GetFrameDatahPt(i8 zeroext %0, i16* %1) #0 {
   ret i32 %108
 }
 
-; Function Attrs: noinline nounwind uwtable mustprogress
-define dso_local i32 @_Z17MLX90640_I2CWritehjt(i8 zeroext %0, i32 %1, i16 zeroext %2) #1 {
+; Function Attrs: mustprogress noinline nounwind uwtable
+define dso_local noundef i32 @_Z17MLX90640_I2CWritehjt(i8 noundef zeroext %0, i32 noundef %1, i16 noundef zeroext %2) #1 {
   %4 = alloca i8, align 1
   %5 = alloca i32, align 4
   %6 = alloca i16, align 2
   store i8 %0, i8* %4, align 1
   store i32 %1, i32* %5, align 4
   store i16 %2, i16* %6, align 2
-  call void @abort() #7
+  call void @abort() #8
   unreachable
 }
 
-declare dso_local i32 @printf(i8*, ...) #2
+declare i32 @printf(i8* noundef, ...) #2
 
-; Function Attrs: noinline uwtable mustprogress
-define dso_local i32 @_Z26MLX90640_ExtractParametersPKt(i16* %0) #0 {
+; Function Attrs: mustprogress noinline uwtable
+define dso_local noundef i32 @_Z26MLX90640_ExtractParametersPKt(i16* noundef %0) #0 {
   %2 = alloca i16*, align 8
   %3 = alloca i32, align 4
   store i16* %0, i16** %2, align 8
   %4 = load i16*, i16** %2, align 8
-  %5 = call i32 @_Z16CheckEEPROMValidPKt(i16* %4)
+  %5 = call noundef i32 @_Z16CheckEEPROMValidPKt(i16* noundef %4)
   store i32 %5, i32* %3, align 4
   %6 = load i32, i32* %3, align 4
   %7 = icmp eq i32 %6, 0
@@ -424,33 +432,33 @@ define dso_local i32 @_Z26MLX90640_ExtractParametersPKt(i16* %0) #0 {
 
 8:                                                ; preds = %1
   %9 = load i16*, i16** %2, align 8
-  call void @_Z20ExtractVDDParametersPKt(i16* %9)
+  call void @_Z20ExtractVDDParametersPKt(i16* noundef %9)
   %10 = load i16*, i16** %2, align 8
-  call void @_Z21ExtractPTATParametersPKt(i16* %10)
+  call void @_Z21ExtractPTATParametersPKt(i16* noundef %10)
   %11 = load i16*, i16** %2, align 8
-  call void @_Z21ExtractGainParametersPKt(i16* %11)
+  call void @_Z21ExtractGainParametersPKt(i16* noundef %11)
   %12 = load i16*, i16** %2, align 8
-  call void @_Z20ExtractTgcParametersPKt(i16* %12)
+  call void @_Z20ExtractTgcParametersPKt(i16* noundef %12)
   %13 = load i16*, i16** %2, align 8
-  call void @_Z27ExtractResolutionParametersPKt(i16* %13)
+  call void @_Z27ExtractResolutionParametersPKt(i16* noundef %13)
   %14 = load i16*, i16** %2, align 8
-  call void @_Z21ExtractKsTaParametersPKt(i16* %14)
+  call void @_Z21ExtractKsTaParametersPKt(i16* noundef %14)
   %15 = load i16*, i16** %2, align 8
-  call void @_Z21ExtractKsToParametersPKt(i16* %15)
+  call void @_Z21ExtractKsToParametersPKt(i16* noundef %15)
   %16 = load i16*, i16** %2, align 8
-  call void @_Z22ExtractAlphaParametersPKt(i16* %16)
+  call void @_Z22ExtractAlphaParametersPKt(i16* noundef %16)
   %17 = load i16*, i16** %2, align 8
-  call void @_Z23ExtractOffsetParametersPKt(i16* %17)
+  call void @_Z23ExtractOffsetParametersPKt(i16* noundef %17)
   %18 = load i16*, i16** %2, align 8
-  call void @_Z25ExtractKtaPixelParametersPKt(i16* %18)
+  call void @_Z25ExtractKtaPixelParametersPKt(i16* noundef %18)
   %19 = load i16*, i16** %2, align 8
-  call void @_Z24ExtractKvPixelParametersPKt(i16* %19)
+  call void @_Z24ExtractKvPixelParametersPKt(i16* noundef %19)
   %20 = load i16*, i16** %2, align 8
-  call void @_Z19ExtractCPParametersPKt(i16* %20)
+  call void @_Z19ExtractCPParametersPKt(i16* noundef %20)
   %21 = load i16*, i16** %2, align 8
-  call void @_Z21ExtractCILCParametersPKt(i16* %21)
+  call void @_Z21ExtractCILCParametersPKt(i16* noundef %21)
   %22 = load i16*, i16** %2, align 8
-  %23 = call i32 @_Z22ExtractDeviatingPixelsPKt(i16* %22)
+  %23 = call noundef i32 @_Z22ExtractDeviatingPixelsPKt(i16* noundef %22)
   store i32 %23, i32* %3, align 4
   br label %24
 
@@ -459,8 +467,8 @@ define dso_local i32 @_Z26MLX90640_ExtractParametersPKt(i16* %0) #0 {
   ret i32 %25
 }
 
-; Function Attrs: noinline nounwind uwtable mustprogress
-define dso_local i32 @_Z16CheckEEPROMValidPKt(i16* %0) #1 {
+; Function Attrs: mustprogress noinline nounwind uwtable
+define dso_local noundef i32 @_Z16CheckEEPROMValidPKt(i16* noundef %0) #1 {
   %2 = alloca i32, align 4
   %3 = alloca i16*, align 8
   %4 = alloca i32, align 4
@@ -488,8 +496,8 @@ define dso_local i32 @_Z16CheckEEPROMValidPKt(i16* %0) #1 {
   ret i32 %15
 }
 
-; Function Attrs: noinline nounwind uwtable mustprogress
-define dso_local void @_Z20ExtractVDDParametersPKt(i16* %0) #1 {
+; Function Attrs: mustprogress noinline nounwind uwtable
+define dso_local void @_Z20ExtractVDDParametersPKt(i16* noundef %0) #1 {
   %2 = alloca i16*, align 8
   %3 = alloca i16, align 2
   %4 = alloca i16, align 2
@@ -546,8 +554,8 @@ define dso_local void @_Z20ExtractVDDParametersPKt(i16* %0) #1 {
   ret void
 }
 
-; Function Attrs: noinline uwtable mustprogress
-define dso_local void @_Z21ExtractPTATParametersPKt(i16* %0) #0 {
+; Function Attrs: mustprogress noinline uwtable
+define dso_local void @_Z21ExtractPTATParametersPKt(i16* noundef %0) #0 {
   %2 = alloca i16*, align 8
   %3 = alloca float, align 4
   %4 = alloca float, align 4
@@ -555,11 +563,11 @@ define dso_local void @_Z21ExtractPTATParametersPKt(i16* %0) #0 {
   %6 = alloca float, align 4
   store i16* %0, i16** %2, align 8
   %7 = bitcast float* %3 to i8*
-  call void @llvm.var.annotation(i8* %7, i8* getelementptr inbounds ([22 x i8], [22 x i8]* @.str.111, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 944, i8* null)
+  call void @llvm.var.annotation(i8* %7, i8* getelementptr inbounds ([22 x i8], [22 x i8]* @.str.118, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.18, i32 0, i32 0), i32 944, i8* null)
   %8 = bitcast float* %4 to i8*
-  call void @llvm.var.annotation(i8* %8, i8* getelementptr inbounds ([25 x i8], [25 x i8]* @.str.112, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 945, i8* null)
+  call void @llvm.var.annotation(i8* %8, i8* getelementptr inbounds ([25 x i8], [25 x i8]* @.str.119, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.18, i32 0, i32 0), i32 945, i8* null)
   %9 = bitcast float* %6 to i8*
-  call void @llvm.var.annotation(i8* %9, i8* getelementptr inbounds ([23 x i8], [23 x i8]* @.str.113, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 947, i8* null)
+  call void @llvm.var.annotation(i8* %9, i8* getelementptr inbounds ([23 x i8], [23 x i8]* @.str.120, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.18, i32 0, i32 0), i32 947, i8* null)
   %10 = load i16*, i16** %2, align 8
   %11 = getelementptr inbounds i16, i16* %10, i64 50
   %12 = load i16, i16* %11, align 2
@@ -613,7 +621,7 @@ define dso_local void @_Z21ExtractPTATParametersPKt(i16* %0) #0 {
   %45 = zext i16 %44 to i32
   %46 = and i32 %45, 61440
   %47 = sitofp i32 %46 to double
-  %48 = call double @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_(i32 2, double 1.400000e+01)
+  %48 = call noundef double @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_(i32 noundef 2, double noundef 1.400000e+01)
   %49 = fdiv double %47, %48
   %50 = fadd double %49, 8.000000e+00
   %51 = fptrunc double %50 to float
@@ -629,8 +637,8 @@ define dso_local void @_Z21ExtractPTATParametersPKt(i16* %0) #0 {
   ret void
 }
 
-; Function Attrs: noinline nounwind uwtable mustprogress
-define dso_local void @_Z21ExtractGainParametersPKt(i16* %0) #1 {
+; Function Attrs: mustprogress noinline nounwind uwtable
+define dso_local void @_Z21ExtractGainParametersPKt(i16* noundef %0) #1 {
   %2 = alloca i16*, align 8
   %3 = alloca i16, align 2
   store i16* %0, i16** %2, align 8
@@ -657,13 +665,13 @@ define dso_local void @_Z21ExtractGainParametersPKt(i16* %0) #1 {
   ret void
 }
 
-; Function Attrs: noinline nounwind uwtable mustprogress
-define dso_local void @_Z20ExtractTgcParametersPKt(i16* %0) #1 {
+; Function Attrs: mustprogress noinline nounwind uwtable
+define dso_local void @_Z20ExtractTgcParametersPKt(i16* noundef %0) #1 {
   %2 = alloca i16*, align 8
   %3 = alloca float, align 4
   store i16* %0, i16** %2, align 8
   %4 = bitcast float* %3 to i8*
-  call void @llvm.var.annotation(i8* %4, i8* getelementptr inbounds ([24 x i8], [24 x i8]* @.str.114, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 993, i8* null)
+  call void @llvm.var.annotation(i8* %4, i8* getelementptr inbounds ([24 x i8], [24 x i8]* @.str.121, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.18, i32 0, i32 0), i32 993, i8* null)
   %5 = load i16*, i16** %2, align 8
   %6 = getelementptr inbounds i16, i16* %5, i64 60
   %7 = load i16, i16* %6, align 2
@@ -690,8 +698,8 @@ define dso_local void @_Z20ExtractTgcParametersPKt(i16* %0) #1 {
   ret void
 }
 
-; Function Attrs: noinline nounwind uwtable mustprogress
-define dso_local void @_Z27ExtractResolutionParametersPKt(i16* %0) #1 {
+; Function Attrs: mustprogress noinline nounwind uwtable
+define dso_local void @_Z27ExtractResolutionParametersPKt(i16* noundef %0) #1 {
   %2 = alloca i16*, align 8
   %3 = alloca i8, align 1
   store i16* %0, i16** %2, align 8
@@ -709,13 +717,13 @@ define dso_local void @_Z27ExtractResolutionParametersPKt(i16* %0) #1 {
   ret void
 }
 
-; Function Attrs: noinline nounwind uwtable mustprogress
-define dso_local void @_Z21ExtractKsTaParametersPKt(i16* %0) #1 {
+; Function Attrs: mustprogress noinline nounwind uwtable
+define dso_local void @_Z21ExtractKsTaParametersPKt(i16* noundef %0) #1 {
   %2 = alloca i16*, align 8
   %3 = alloca float, align 4
   store i16* %0, i16** %2, align 8
   %4 = bitcast float* %3 to i8*
-  call void @llvm.var.annotation(i8* %4, i8* getelementptr inbounds ([30 x i8], [30 x i8]* @.str.115, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 1018, i8* null)
+  call void @llvm.var.annotation(i8* %4, i8* getelementptr inbounds ([30 x i8], [30 x i8]* @.str.122, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.18, i32 0, i32 0), i32 1018, i8* null)
   %5 = load i16*, i16** %2, align 8
   %6 = getelementptr inbounds i16, i16* %5, i64 60
   %7 = load i16, i16* %6, align 2
@@ -743,8 +751,8 @@ define dso_local void @_Z21ExtractKsTaParametersPKt(i16* %0) #1 {
   ret void
 }
 
-; Function Attrs: noinline nounwind uwtable mustprogress
-define dso_local void @_Z21ExtractKsToParametersPKt(i16* %0) #1 {
+; Function Attrs: mustprogress noinline nounwind uwtable
+define dso_local void @_Z21ExtractKsToParametersPKt(i16* noundef %0) #1 {
   %2 = alloca i16*, align 8
   %3 = alloca i32, align 4
   %4 = alloca i8, align 1
@@ -880,14 +888,14 @@ define dso_local void @_Z21ExtractKsToParametersPKt(i16* %0) #1 {
   %107 = load i32, i32* %5, align 4
   %108 = add nsw i32 %107, 1
   store i32 %108, i32* %5, align 4
-  br label %77, !llvm.loop !5
+  br label %77, !llvm.loop !9
 
 109:                                              ; preds = %77
   ret void
 }
 
-; Function Attrs: noinline uwtable mustprogress
-define dso_local void @_Z22ExtractAlphaParametersPKt(i16* %0) #0 {
+; Function Attrs: mustprogress noinline uwtable
+define dso_local void @_Z22ExtractAlphaParametersPKt(i16* noundef %0) #0 {
   %2 = alloca i16*, align 8
   %3 = alloca [24 x i32], align 16
   %4 = alloca [32 x i32], align 16
@@ -1015,7 +1023,7 @@ define dso_local void @_Z22ExtractAlphaParametersPKt(i16* %0) #0 {
   %107 = load i32, i32* %11, align 4
   %108 = add nsw i32 %107, 1
   store i32 %108, i32* %11, align 4
-  br label %49, !llvm.loop !6
+  br label %49, !llvm.loop !10
 
 109:                                              ; preds = %49
   store i32 0, i32* %12, align 4
@@ -1053,7 +1061,7 @@ define dso_local void @_Z22ExtractAlphaParametersPKt(i16* %0) #0 {
   %130 = load i32, i32* %12, align 4
   %131 = add nsw i32 %130, 1
   store i32 %131, i32* %12, align 4
-  br label %110, !llvm.loop !7
+  br label %110, !llvm.loop !11
 
 132:                                              ; preds = %110
   store i32 0, i32* %13, align 4
@@ -1129,7 +1137,7 @@ define dso_local void @_Z22ExtractAlphaParametersPKt(i16* %0) #0 {
   %191 = load i32, i32* %13, align 4
   %192 = add nsw i32 %191, 1
   store i32 %192, i32* %13, align 4
-  br label %133, !llvm.loop !8
+  br label %133, !llvm.loop !12
 
 193:                                              ; preds = %133
   store i32 0, i32* %14, align 4
@@ -1167,7 +1175,7 @@ define dso_local void @_Z22ExtractAlphaParametersPKt(i16* %0) #0 {
   %214 = load i32, i32* %14, align 4
   %215 = add nsw i32 %214, 1
   store i32 %215, i32* %14, align 4
-  br label %194, !llvm.loop !9
+  br label %194, !llvm.loop !13
 
 216:                                              ; preds = %194
   store i32 0, i32* %15, align 4
@@ -1274,7 +1282,7 @@ define dso_local void @_Z22ExtractAlphaParametersPKt(i16* %0) #0 {
   %299 = fpext float %298 to double
   %300 = load i8, i8* %7, align 1
   %301 = uitofp i8 %300 to double
-  %302 = call double @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_(i32 2, double %301)
+  %302 = call noundef double @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_(i32 noundef 2, double noundef %301)
   %303 = fdiv double %299, %302
   %304 = fptrunc double %303 to float
   %305 = load i32, i32* %5, align 4
@@ -1287,7 +1295,7 @@ define dso_local void @_Z22ExtractAlphaParametersPKt(i16* %0) #0 {
   %309 = load i32, i32* %16, align 4
   %310 = add nsw i32 %309, 1
   store i32 %310, i32* %16, align 4
-  br label %221, !llvm.loop !10
+  br label %221, !llvm.loop !14
 
 311:                                              ; preds = %221
   br label %312
@@ -1296,14 +1304,14 @@ define dso_local void @_Z22ExtractAlphaParametersPKt(i16* %0) #0 {
   %313 = load i32, i32* %15, align 4
   %314 = add nsw i32 %313, 1
   store i32 %314, i32* %15, align 4
-  br label %217, !llvm.loop !11
+  br label %217, !llvm.loop !15
 
 315:                                              ; preds = %217
   ret void
 }
 
-; Function Attrs: noinline nounwind uwtable mustprogress
-define dso_local void @_Z23ExtractOffsetParametersPKt(i16* %0) #1 {
+; Function Attrs: mustprogress noinline nounwind uwtable
+define dso_local void @_Z23ExtractOffsetParametersPKt(i16* noundef %0) #1 {
   %2 = alloca i16*, align 8
   %3 = alloca [24 x i32], align 16
   %4 = alloca [32 x i32], align 16
@@ -1434,7 +1442,7 @@ define dso_local void @_Z23ExtractOffsetParametersPKt(i16* %0) #1 {
   %106 = load i32, i32* %10, align 4
   %107 = add nsw i32 %106, 1
   store i32 %107, i32* %10, align 4
-  br label %48, !llvm.loop !12
+  br label %48, !llvm.loop !16
 
 108:                                              ; preds = %48
   store i32 0, i32* %11, align 4
@@ -1472,7 +1480,7 @@ define dso_local void @_Z23ExtractOffsetParametersPKt(i16* %0) #1 {
   %129 = load i32, i32* %11, align 4
   %130 = add nsw i32 %129, 1
   store i32 %130, i32* %11, align 4
-  br label %109, !llvm.loop !13
+  br label %109, !llvm.loop !17
 
 131:                                              ; preds = %109
   store i32 0, i32* %12, align 4
@@ -1548,7 +1556,7 @@ define dso_local void @_Z23ExtractOffsetParametersPKt(i16* %0) #1 {
   %190 = load i32, i32* %12, align 4
   %191 = add nsw i32 %190, 1
   store i32 %191, i32* %12, align 4
-  br label %132, !llvm.loop !14
+  br label %132, !llvm.loop !18
 
 192:                                              ; preds = %132
   store i32 0, i32* %13, align 4
@@ -1586,7 +1594,7 @@ define dso_local void @_Z23ExtractOffsetParametersPKt(i16* %0) #1 {
   %213 = load i32, i32* %13, align 4
   %214 = add nsw i32 %213, 1
   store i32 %214, i32* %13, align 4
-  br label %193, !llvm.loop !15
+  br label %193, !llvm.loop !19
 
 215:                                              ; preds = %193
   store i32 0, i32* %14, align 4
@@ -1698,7 +1706,7 @@ define dso_local void @_Z23ExtractOffsetParametersPKt(i16* %0) #1 {
   %301 = load i32, i32* %15, align 4
   %302 = add nsw i32 %301, 1
   store i32 %302, i32* %15, align 4
-  br label %220, !llvm.loop !16
+  br label %220, !llvm.loop !20
 
 303:                                              ; preds = %220
   br label %304
@@ -1707,14 +1715,14 @@ define dso_local void @_Z23ExtractOffsetParametersPKt(i16* %0) #1 {
   %305 = load i32, i32* %14, align 4
   %306 = add nsw i32 %305, 1
   store i32 %306, i32* %14, align 4
-  br label %216, !llvm.loop !17
+  br label %216, !llvm.loop !21
 
 307:                                              ; preds = %216
   ret void
 }
 
-; Function Attrs: noinline uwtable mustprogress
-define dso_local void @_Z25ExtractKtaPixelParametersPKt(i16* %0) #0 {
+; Function Attrs: mustprogress noinline uwtable
+define dso_local void @_Z25ExtractKtaPixelParametersPKt(i16* noundef %0) #0 {
   %2 = alloca i16*, align 8
   %3 = alloca i32, align 4
   %4 = alloca [4 x i8], align 1
@@ -1947,7 +1955,7 @@ define dso_local void @_Z25ExtractKtaPixelParametersPKt(i16* %0) #0 {
   %179 = fpext float %178 to double
   %180 = load i8, i8* %9, align 1
   %181 = uitofp i8 %180 to double
-  %182 = call double @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_(i32 2, double %181)
+  %182 = call noundef double @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_(i32 noundef 2, double noundef %181)
   %183 = fdiv double %179, %182
   %184 = fptrunc double %183 to float
   %185 = load i32, i32* %3, align 4
@@ -1960,7 +1968,7 @@ define dso_local void @_Z25ExtractKtaPixelParametersPKt(i16* %0) #0 {
   %189 = load i32, i32* %13, align 4
   %190 = add nsw i32 %189, 1
   store i32 %190, i32* %13, align 4
-  br label %102, !llvm.loop !18
+  br label %102, !llvm.loop !22
 
 191:                                              ; preds = %102
   br label %192
@@ -1969,14 +1977,14 @@ define dso_local void @_Z25ExtractKtaPixelParametersPKt(i16* %0) #0 {
   %193 = load i32, i32* %12, align 4
   %194 = add nsw i32 %193, 1
   store i32 %194, i32* %12, align 4
-  br label %98, !llvm.loop !19
+  br label %98, !llvm.loop !23
 
 195:                                              ; preds = %98
   ret void
 }
 
-; Function Attrs: noinline uwtable mustprogress
-define dso_local void @_Z24ExtractKvPixelParametersPKt(i16* %0) #0 {
+; Function Attrs: mustprogress noinline uwtable
+define dso_local void @_Z24ExtractKvPixelParametersPKt(i16* noundef %0) #0 {
   %2 = alloca i16*, align 8
   %3 = alloca i32, align 4
   %4 = alloca [4 x i8], align 1
@@ -2148,7 +2156,7 @@ define dso_local void @_Z24ExtractKvPixelParametersPKt(i16* %0) #0 {
   %126 = fpext float %125 to double
   %127 = load i8, i8* %9, align 1
   %128 = uitofp i8 %127 to double
-  %129 = call double @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_(i32 2, double %128)
+  %129 = call noundef double @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_(i32 noundef 2, double noundef %128)
   %130 = fdiv double %126, %129
   %131 = fptrunc double %130 to float
   %132 = load i32, i32* %3, align 4
@@ -2161,7 +2169,7 @@ define dso_local void @_Z24ExtractKvPixelParametersPKt(i16* %0) #0 {
   %136 = load i32, i32* %12, align 4
   %137 = add nsw i32 %136, 1
   store i32 %137, i32* %12, align 4
-  br label %95, !llvm.loop !20
+  br label %95, !llvm.loop !24
 
 138:                                              ; preds = %95
   br label %139
@@ -2170,14 +2178,14 @@ define dso_local void @_Z24ExtractKvPixelParametersPKt(i16* %0) #0 {
   %140 = load i32, i32* %11, align 4
   %141 = add nsw i32 %140, 1
   store i32 %141, i32* %11, align 4
-  br label %91, !llvm.loop !21
+  br label %91, !llvm.loop !25
 
 142:                                              ; preds = %91
   ret void
 }
 
-; Function Attrs: noinline uwtable mustprogress
-define dso_local void @_Z19ExtractCPParametersPKt(i16* %0) #0 {
+; Function Attrs: mustprogress noinline uwtable
+define dso_local void @_Z19ExtractCPParametersPKt(i16* noundef %0) #0 {
   %2 = alloca i16*, align 8
   %3 = alloca [2 x float], align 4
   %4 = alloca [2 x i16], align 2
@@ -2188,11 +2196,11 @@ define dso_local void @_Z19ExtractCPParametersPKt(i16* %0) #0 {
   %9 = alloca i8, align 1
   store i16* %0, i16** %2, align 8
   %10 = bitcast [2 x float]* %3 to i8*
-  call void @llvm.var.annotation(i8* %10, i8* getelementptr inbounds ([25 x i8], [25 x i8]* @.str.116, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 1331, i8* null)
+  call void @llvm.var.annotation(i8* %10, i8* getelementptr inbounds ([25 x i8], [25 x i8]* @.str.123, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.18, i32 0, i32 0), i32 1331, i8* null)
   %11 = bitcast float* %5 to i8*
-  call void @llvm.var.annotation(i8* %11, i8* getelementptr inbounds ([24 x i8], [24 x i8]* @.str.114, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 1333, i8* null)
+  call void @llvm.var.annotation(i8* %11, i8* getelementptr inbounds ([24 x i8], [24 x i8]* @.str.121, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.18, i32 0, i32 0), i32 1333, i8* null)
   %12 = bitcast float* %6 to i8*
-  call void @llvm.var.annotation(i8* %12, i8* getelementptr inbounds ([24 x i8], [24 x i8]* @.str.114, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 1334, i8* null)
+  call void @llvm.var.annotation(i8* %12, i8* getelementptr inbounds ([24 x i8], [24 x i8]* @.str.121, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.18, i32 0, i32 0), i32 1334, i8* null)
   %13 = load i16*, i16** %2, align 8
   %14 = getelementptr inbounds i16, i16* %13, i64 32
   %15 = load i16, i16* %14, align 2
@@ -2290,7 +2298,7 @@ define dso_local void @_Z19ExtractCPParametersPKt(i16* %0) #0 {
   %87 = fpext float %86 to double
   %88 = load i8, i8* %7, align 1
   %89 = uitofp i8 %88 to double
-  %90 = call double @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_(i32 2, double %89)
+  %90 = call noundef double @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_(i32 noundef 2, double noundef %89)
   %91 = fdiv double %87, %90
   %92 = fptrunc double %91 to float
   %93 = getelementptr inbounds [2 x float], [2 x float]* %3, i64 0, i64 0
@@ -2358,7 +2366,7 @@ define dso_local void @_Z19ExtractCPParametersPKt(i16* %0) #0 {
   %140 = fpext float %139 to double
   %141 = load i8, i8* %8, align 1
   %142 = uitofp i8 %141 to double
-  %143 = call double @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_(i32 2, double %142)
+  %143 = call noundef double @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_(i32 noundef 2, double noundef %142)
   %144 = fdiv double %140, %143
   %145 = fptrunc double %144 to float
   store float %145, float* @params_cpKta, align 4
@@ -2393,7 +2401,7 @@ define dso_local void @_Z19ExtractCPParametersPKt(i16* %0) #0 {
   %167 = fpext float %166 to double
   %168 = load i8, i8* %9, align 1
   %169 = uitofp i8 %168 to double
-  %170 = call double @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_(i32 2, double %169)
+  %170 = call noundef double @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_(i32 noundef 2, double noundef %169)
   %171 = fdiv double %167, %170
   %172 = fptrunc double %171 to float
   store float %172, float* @params_cpKv, align 4
@@ -2412,14 +2420,14 @@ define dso_local void @_Z19ExtractCPParametersPKt(i16* %0) #0 {
   ret void
 }
 
-; Function Attrs: noinline nounwind uwtable mustprogress
-define dso_local void @_Z21ExtractCILCParametersPKt(i16* %0) #1 {
+; Function Attrs: mustprogress noinline nounwind uwtable
+define dso_local void @_Z21ExtractCILCParametersPKt(i16* noundef %0) #1 {
   %2 = alloca i16*, align 8
   %3 = alloca [3 x float], align 4
   %4 = alloca i8, align 1
   store i16* %0, i16** %2, align 8
   %5 = bitcast [3 x float]* %3 to i8*
-  call void @llvm.var.annotation(i8* %5, i8* getelementptr inbounds ([22 x i8], [22 x i8]* @.str.111, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 1394, i8* null)
+  call void @llvm.var.annotation(i8* %5, i8* getelementptr inbounds ([22 x i8], [22 x i8]* @.str.118, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.18, i32 0, i32 0), i32 1394, i8* null)
   %6 = load i16*, i16** %2, align 8
   %7 = getelementptr inbounds i16, i16* %6, i64 10
   %8 = load i16, i16* %7, align 2
@@ -2530,8 +2538,8 @@ define dso_local void @_Z21ExtractCILCParametersPKt(i16* %0) #1 {
   ret void
 }
 
-; Function Attrs: noinline uwtable mustprogress
-define dso_local i32 @_Z22ExtractDeviatingPixelsPKt(i16* %0) #0 {
+; Function Attrs: mustprogress noinline uwtable
+define dso_local noundef i32 @_Z22ExtractDeviatingPixelsPKt(i16* noundef %0) #0 {
   %2 = alloca i32, align 4
   %3 = alloca i16*, align 8
   %4 = alloca i16, align 2
@@ -2568,7 +2576,7 @@ define dso_local i32 @_Z22ExtractDeviatingPixelsPKt(i16* %0) #0 {
   %21 = load i16, i16* %4, align 2
   %22 = add i16 %21, 1
   store i16 %22, i16* %4, align 2
-  br label %9, !llvm.loop !22
+  br label %9, !llvm.loop !26
 
 23:                                               ; preds = %9
   store i16 0, i16* %4, align 2
@@ -2656,7 +2664,7 @@ define dso_local i32 @_Z22ExtractDeviatingPixelsPKt(i16* %0) #0 {
   %81 = add nsw i32 %80, 1
   %82 = trunc i32 %81 to i16
   store i16 %82, i16* %4, align 2
-  br label %24, !llvm.loop !23
+  br label %24, !llvm.loop !27
 
 83:                                               ; preds = %36
   %84 = load i16, i16* %5, align 2
@@ -2726,7 +2734,7 @@ define dso_local i32 @_Z22ExtractDeviatingPixelsPKt(i16* %0) #0 {
   %123 = sext i32 %122 to i64
   %124 = getelementptr inbounds [5 x i16], [5 x i16]* @params_brokenPixels, i64 0, i64 %123
   %125 = load i16, i16* %124, align 2
-  %126 = call i32 @_Z19CheckAdjacentPixelstt(i16 zeroext %121, i16 zeroext %125)
+  %126 = call noundef i32 @_Z19CheckAdjacentPixelstt(i16 noundef zeroext %121, i16 noundef zeroext %125)
   store i32 %126, i32* %7, align 4
   %127 = load i32, i32* %7, align 4
   %128 = icmp ne i32 %127, 0
@@ -2744,7 +2752,7 @@ define dso_local i32 @_Z22ExtractDeviatingPixelsPKt(i16* %0) #0 {
   %133 = load i32, i32* %8, align 4
   %134 = add nsw i32 %133, 1
   store i32 %134, i32* %8, align 4
-  br label %112, !llvm.loop !24
+  br label %112, !llvm.loop !28
 
 135:                                              ; preds = %112
   br label %136
@@ -2753,7 +2761,7 @@ define dso_local i32 @_Z22ExtractDeviatingPixelsPKt(i16* %0) #0 {
   %137 = load i16, i16* %4, align 2
   %138 = add i16 %137, 1
   store i16 %138, i16* %4, align 2
-  br label %102, !llvm.loop !25
+  br label %102, !llvm.loop !29
 
 139:                                              ; preds = %102
   store i16 0, i16* %4, align 2
@@ -2790,7 +2798,7 @@ define dso_local i32 @_Z22ExtractDeviatingPixelsPKt(i16* %0) #0 {
   %161 = sext i32 %160 to i64
   %162 = getelementptr inbounds [5 x i16], [5 x i16]* @params_outlierPixels, i64 0, i64 %161
   %163 = load i16, i16* %162, align 2
-  %164 = call i32 @_Z19CheckAdjacentPixelstt(i16 zeroext %159, i16 zeroext %163)
+  %164 = call noundef i32 @_Z19CheckAdjacentPixelstt(i16 noundef zeroext %159, i16 noundef zeroext %163)
   store i32 %164, i32* %7, align 4
   %165 = load i32, i32* %7, align 4
   %166 = icmp ne i32 %165, 0
@@ -2808,7 +2816,7 @@ define dso_local i32 @_Z22ExtractDeviatingPixelsPKt(i16* %0) #0 {
   %171 = load i32, i32* %8, align 4
   %172 = add nsw i32 %171, 1
   store i32 %172, i32* %8, align 4
-  br label %150, !llvm.loop !26
+  br label %150, !llvm.loop !30
 
 173:                                              ; preds = %150
   br label %174
@@ -2817,7 +2825,7 @@ define dso_local i32 @_Z22ExtractDeviatingPixelsPKt(i16* %0) #0 {
   %175 = load i16, i16* %4, align 2
   %176 = add i16 %175, 1
   store i16 %176, i16* %4, align 2
-  br label %140, !llvm.loop !27
+  br label %140, !llvm.loop !31
 
 177:                                              ; preds = %140
   store i16 0, i16* %4, align 2
@@ -2851,7 +2859,7 @@ define dso_local i32 @_Z22ExtractDeviatingPixelsPKt(i16* %0) #0 {
   %196 = sext i32 %195 to i64
   %197 = getelementptr inbounds [5 x i16], [5 x i16]* @params_outlierPixels, i64 0, i64 %196
   %198 = load i16, i16* %197, align 2
-  %199 = call i32 @_Z19CheckAdjacentPixelstt(i16 zeroext %194, i16 zeroext %198)
+  %199 = call noundef i32 @_Z19CheckAdjacentPixelstt(i16 noundef zeroext %194, i16 noundef zeroext %198)
   store i32 %199, i32* %7, align 4
   %200 = load i32, i32* %7, align 4
   %201 = icmp ne i32 %200, 0
@@ -2869,7 +2877,7 @@ define dso_local i32 @_Z22ExtractDeviatingPixelsPKt(i16* %0) #0 {
   %206 = load i32, i32* %8, align 4
   %207 = add nsw i32 %206, 1
   store i32 %207, i32* %8, align 4
-  br label %185, !llvm.loop !28
+  br label %185, !llvm.loop !32
 
 208:                                              ; preds = %185
   br label %209
@@ -2878,7 +2886,7 @@ define dso_local i32 @_Z22ExtractDeviatingPixelsPKt(i16* %0) #0 {
   %210 = load i16, i16* %4, align 2
   %211 = add i16 %210, 1
   store i16 %211, i16* %4, align 2
-  br label %178, !llvm.loop !29
+  br label %178, !llvm.loop !33
 
 212:                                              ; preds = %178
   br label %213
@@ -2899,8 +2907,8 @@ define dso_local i32 @_Z22ExtractDeviatingPixelsPKt(i16* %0) #0 {
   ret i32 %218
 }
 
-; Function Attrs: noinline uwtable mustprogress
-define dso_local i32 @_Z22MLX90640_SetResolutionhh(i8 zeroext %0, i8 zeroext %1) #0 {
+; Function Attrs: mustprogress noinline uwtable
+define dso_local noundef i32 @_Z22MLX90640_SetResolutionhh(i8 noundef zeroext %0, i8 noundef zeroext %1) #0 {
   %3 = alloca i8, align 1
   %4 = alloca i8, align 1
   %5 = alloca i16, align 2
@@ -2914,7 +2922,7 @@ define dso_local i32 @_Z22MLX90640_SetResolutionhh(i8 zeroext %0, i8 zeroext %1)
   %11 = shl i32 %10, 10
   store i32 %11, i32* %6, align 4
   %12 = load i8, i8* %3, align 1
-  %13 = call i32 @_Z16MLX90640_I2CReadhjjPt(i8 zeroext %12, i32 32781, i32 1, i16* %5)
+  %13 = call noundef i32 @_Z16MLX90640_I2CReadhjjPt(i8 noundef zeroext %12, i32 noundef 32781, i32 noundef 1, i16* noundef %5)
   store i32 %13, i32* %7, align 4
   %14 = load i32, i32* %7, align 4
   %15 = icmp eq i32 %14, 0
@@ -2930,7 +2938,7 @@ define dso_local i32 @_Z22MLX90640_SetResolutionhh(i8 zeroext %0, i8 zeroext %1)
   %22 = load i8, i8* %3, align 1
   %23 = load i32, i32* %6, align 4
   %24 = trunc i32 %23 to i16
-  %25 = call i32 @_Z17MLX90640_I2CWritehjt(i8 zeroext %22, i32 32781, i16 zeroext %24)
+  %25 = call noundef i32 @_Z17MLX90640_I2CWritehjt(i8 noundef zeroext %22, i32 noundef 32781, i16 noundef zeroext %24)
   store i32 %25, i32* %7, align 4
   br label %26
 
@@ -2939,8 +2947,8 @@ define dso_local i32 @_Z22MLX90640_SetResolutionhh(i8 zeroext %0, i8 zeroext %1)
   ret i32 %27
 }
 
-; Function Attrs: noinline uwtable mustprogress
-define dso_local i32 @_Z25MLX90640_GetCurResolutionh(i8 zeroext %0) #0 {
+; Function Attrs: mustprogress noinline uwtable
+define dso_local noundef i32 @_Z25MLX90640_GetCurResolutionh(i8 noundef zeroext %0) #0 {
   %2 = alloca i32, align 4
   %3 = alloca i8, align 1
   %4 = alloca i16, align 2
@@ -2948,7 +2956,7 @@ define dso_local i32 @_Z25MLX90640_GetCurResolutionh(i8 zeroext %0) #0 {
   %6 = alloca i32, align 4
   store i8 %0, i8* %3, align 1
   %7 = load i8, i8* %3, align 1
-  %8 = call i32 @_Z16MLX90640_I2CReadhjjPt(i8 zeroext %7, i32 32781, i32 1, i16* %4)
+  %8 = call noundef i32 @_Z16MLX90640_I2CReadhjjPt(i8 noundef zeroext %7, i32 noundef 32781, i32 noundef 1, i16* noundef %4)
   store i32 %8, i32* %6, align 4
   %9 = load i32, i32* %6, align 4
   %10 = icmp ne i32 %9, 0
@@ -2974,8 +2982,8 @@ define dso_local i32 @_Z25MLX90640_GetCurResolutionh(i8 zeroext %0) #0 {
   ret i32 %20
 }
 
-; Function Attrs: noinline uwtable mustprogress
-define dso_local i32 @_Z23MLX90640_SetRefreshRatehh(i8 zeroext %0, i8 zeroext %1) #0 {
+; Function Attrs: mustprogress noinline uwtable
+define dso_local noundef i32 @_Z23MLX90640_SetRefreshRatehh(i8 noundef zeroext %0, i8 noundef zeroext %1) #0 {
   %3 = alloca i8, align 1
   %4 = alloca i8, align 1
   %5 = alloca i16, align 2
@@ -2989,7 +2997,7 @@ define dso_local i32 @_Z23MLX90640_SetRefreshRatehh(i8 zeroext %0, i8 zeroext %1
   %11 = shl i32 %10, 7
   store i32 %11, i32* %6, align 4
   %12 = load i8, i8* %3, align 1
-  %13 = call i32 @_Z16MLX90640_I2CReadhjjPt(i8 zeroext %12, i32 32781, i32 1, i16* %5)
+  %13 = call noundef i32 @_Z16MLX90640_I2CReadhjjPt(i8 noundef zeroext %12, i32 noundef 32781, i32 noundef 1, i16* noundef %5)
   store i32 %13, i32* %7, align 4
   %14 = load i32, i32* %7, align 4
   %15 = icmp eq i32 %14, 0
@@ -3005,7 +3013,7 @@ define dso_local i32 @_Z23MLX90640_SetRefreshRatehh(i8 zeroext %0, i8 zeroext %1
   %22 = load i8, i8* %3, align 1
   %23 = load i32, i32* %6, align 4
   %24 = trunc i32 %23 to i16
-  %25 = call i32 @_Z17MLX90640_I2CWritehjt(i8 zeroext %22, i32 32781, i16 zeroext %24)
+  %25 = call noundef i32 @_Z17MLX90640_I2CWritehjt(i8 noundef zeroext %22, i32 noundef 32781, i16 noundef zeroext %24)
   store i32 %25, i32* %7, align 4
   br label %26
 
@@ -3014,8 +3022,8 @@ define dso_local i32 @_Z23MLX90640_SetRefreshRatehh(i8 zeroext %0, i8 zeroext %1
   ret i32 %27
 }
 
-; Function Attrs: noinline uwtable mustprogress
-define dso_local i32 @_Z23MLX90640_GetRefreshRateh(i8 zeroext %0) #0 {
+; Function Attrs: mustprogress noinline uwtable
+define dso_local noundef i32 @_Z23MLX90640_GetRefreshRateh(i8 noundef zeroext %0) #0 {
   %2 = alloca i32, align 4
   %3 = alloca i8, align 1
   %4 = alloca i16, align 2
@@ -3023,7 +3031,7 @@ define dso_local i32 @_Z23MLX90640_GetRefreshRateh(i8 zeroext %0) #0 {
   %6 = alloca i32, align 4
   store i8 %0, i8* %3, align 1
   %7 = load i8, i8* %3, align 1
-  %8 = call i32 @_Z16MLX90640_I2CReadhjjPt(i8 zeroext %7, i32 32781, i32 1, i16* %4)
+  %8 = call noundef i32 @_Z16MLX90640_I2CReadhjjPt(i8 noundef zeroext %7, i32 noundef 32781, i32 noundef 1, i16* noundef %4)
   store i32 %8, i32* %6, align 4
   %9 = load i32, i32* %6, align 4
   %10 = icmp ne i32 %9, 0
@@ -3049,15 +3057,15 @@ define dso_local i32 @_Z23MLX90640_GetRefreshRateh(i8 zeroext %0) #0 {
   ret i32 %20
 }
 
-; Function Attrs: noinline uwtable mustprogress
-define dso_local i32 @_Z27MLX90640_SetInterleavedModeh(i8 zeroext %0) #0 {
+; Function Attrs: mustprogress noinline uwtable
+define dso_local noundef i32 @_Z27MLX90640_SetInterleavedModeh(i8 noundef zeroext %0) #0 {
   %2 = alloca i8, align 1
   %3 = alloca i16, align 2
   %4 = alloca i32, align 4
   %5 = alloca i32, align 4
   store i8 %0, i8* %2, align 1
   %6 = load i8, i8* %2, align 1
-  %7 = call i32 @_Z16MLX90640_I2CReadhjjPt(i8 zeroext %6, i32 32781, i32 1, i16* %3)
+  %7 = call noundef i32 @_Z16MLX90640_I2CReadhjjPt(i8 noundef zeroext %6, i32 noundef 32781, i32 noundef 1, i16* noundef %3)
   store i32 %7, i32* %5, align 4
   %8 = load i32, i32* %5, align 4
   %9 = icmp eq i32 %8, 0
@@ -3071,7 +3079,7 @@ define dso_local i32 @_Z27MLX90640_SetInterleavedModeh(i8 zeroext %0) #0 {
   %14 = load i8, i8* %2, align 1
   %15 = load i32, i32* %4, align 4
   %16 = trunc i32 %15 to i16
-  %17 = call i32 @_Z17MLX90640_I2CWritehjt(i8 zeroext %14, i32 32781, i16 zeroext %16)
+  %17 = call noundef i32 @_Z17MLX90640_I2CWritehjt(i8 noundef zeroext %14, i32 noundef 32781, i16 noundef zeroext %16)
   store i32 %17, i32* %5, align 4
   br label %18
 
@@ -3080,15 +3088,15 @@ define dso_local i32 @_Z27MLX90640_SetInterleavedModeh(i8 zeroext %0) #0 {
   ret i32 %19
 }
 
-; Function Attrs: noinline uwtable mustprogress
-define dso_local i32 @_Z21MLX90640_SetChessModeh(i8 zeroext %0) #0 {
+; Function Attrs: mustprogress noinline uwtable
+define dso_local noundef i32 @_Z21MLX90640_SetChessModeh(i8 noundef zeroext %0) #0 {
   %2 = alloca i8, align 1
   %3 = alloca i16, align 2
   %4 = alloca i32, align 4
   %5 = alloca i32, align 4
   store i8 %0, i8* %2, align 1
   %6 = load i8, i8* %2, align 1
-  %7 = call i32 @_Z16MLX90640_I2CReadhjjPt(i8 zeroext %6, i32 32781, i32 1, i16* %3)
+  %7 = call noundef i32 @_Z16MLX90640_I2CReadhjjPt(i8 noundef zeroext %6, i32 noundef 32781, i32 noundef 1, i16* noundef %3)
   store i32 %7, i32* %5, align 4
   %8 = load i32, i32* %5, align 4
   %9 = icmp eq i32 %8, 0
@@ -3102,7 +3110,7 @@ define dso_local i32 @_Z21MLX90640_SetChessModeh(i8 zeroext %0) #0 {
   %14 = load i8, i8* %2, align 1
   %15 = load i32, i32* %4, align 4
   %16 = trunc i32 %15 to i16
-  %17 = call i32 @_Z17MLX90640_I2CWritehjt(i8 zeroext %14, i32 32781, i16 zeroext %16)
+  %17 = call noundef i32 @_Z17MLX90640_I2CWritehjt(i8 noundef zeroext %14, i32 noundef 32781, i16 noundef zeroext %16)
   store i32 %17, i32* %5, align 4
   br label %18
 
@@ -3111,8 +3119,8 @@ define dso_local i32 @_Z21MLX90640_SetChessModeh(i8 zeroext %0) #0 {
   ret i32 %19
 }
 
-; Function Attrs: noinline uwtable mustprogress
-define dso_local i32 @_Z19MLX90640_GetCurModeh(i8 zeroext %0) #0 {
+; Function Attrs: mustprogress noinline uwtable
+define dso_local noundef i32 @_Z19MLX90640_GetCurModeh(i8 noundef zeroext %0) #0 {
   %2 = alloca i32, align 4
   %3 = alloca i8, align 1
   %4 = alloca i16, align 2
@@ -3120,7 +3128,7 @@ define dso_local i32 @_Z19MLX90640_GetCurModeh(i8 zeroext %0) #0 {
   %6 = alloca i32, align 4
   store i8 %0, i8* %3, align 1
   %7 = load i8, i8* %3, align 1
-  %8 = call i32 @_Z16MLX90640_I2CReadhjjPt(i8 zeroext %7, i32 32781, i32 1, i16* %4)
+  %8 = call noundef i32 @_Z16MLX90640_I2CReadhjjPt(i8 noundef zeroext %7, i32 noundef 32781, i32 noundef 1, i16* noundef %4)
   store i32 %8, i32* %6, align 4
   %9 = load i32, i32* %6, align 4
   %10 = icmp ne i32 %9, 0
@@ -3146,8 +3154,8 @@ define dso_local i32 @_Z19MLX90640_GetCurModeh(i8 zeroext %0) #0 {
   ret i32 %20
 }
 
-; Function Attrs: noinline uwtable mustprogress
-define dso_local void @_Z20MLX90640_CalculateToPKtffPf(i16* %0, float %1, float %2, float* %3) #0 {
+; Function Attrs: mustprogress noinline uwtable
+define dso_local void @_Z20MLX90640_CalculateToPKtffPf(i16* noundef %0, float noundef %1, float noundef %2, float* noundef %3) #0 {
   %5 = alloca i16*, align 8
   %6 = alloca float, align 4
   %7 = alloca float, align 4
@@ -3211,1001 +3219,991 @@ define dso_local void @_Z20MLX90640_CalculateToPKtffPf(i16* %0, float %1, float 
   store i16* %0, i16** %5, align 8
   store float %1, float* %6, align 4
   %65 = bitcast float* %6 to i8*
-  call void @llvm.var.annotation(i8* %65, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 349, i8* null)
+  call void @llvm.var.annotation(i8* %65, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.15, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.18, i32 0, i32 0), i32 349, i8* null)
   store float %2, float* %7, align 4
   %66 = bitcast float* %7 to i8*
-  call void @llvm.var.annotation(i8* %66, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 349, i8* null)
+  call void @llvm.var.annotation(i8* %66, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.15, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.18, i32 0, i32 0), i32 349, i8* null)
   store float* %3, float** %8, align 8
   %67 = bitcast float** %8 to i8*
-  call void @llvm.var.annotation(i8* %67, i8* getelementptr inbounds ([30 x i8], [30 x i8]* @.str.18, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 349, i8* null)
+  call void @llvm.var.annotation(i8* %67, i8* getelementptr inbounds ([30 x i8], [30 x i8]* @.str.19, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.18, i32 0, i32 0), i32 349, i8* null)
   %68 = bitcast float* %9 to i8*
-  call void @llvm.var.annotation(i8* %68, i8* getelementptr inbounds ([28 x i8], [28 x i8]* @.str.19, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 352, i8* null)
+  call void @llvm.var.annotation(i8* %68, i8* getelementptr inbounds ([28 x i8], [28 x i8]* @.str.20, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.18, i32 0, i32 0), i32 352, i8* null)
   %69 = bitcast float* %10 to i8*
-  call void @llvm.var.annotation(i8* %69, i8* getelementptr inbounds ([28 x i8], [28 x i8]* @.str.19, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 353, i8* null)
+  call void @llvm.var.annotation(i8* %69, i8* getelementptr inbounds ([34 x i8], [34 x i8]* @.str.21, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.18, i32 0, i32 0), i32 353, i8* null)
   %70 = bitcast float* %11 to i8*
-  call void @llvm.var.annotation(i8* %70, i8* getelementptr inbounds ([45 x i8], [45 x i8]* @.str.20, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 354, i8* null)
+  call void @llvm.var.annotation(i8* %70, i8* getelementptr inbounds ([45 x i8], [45 x i8]* @.str.22, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.18, i32 0, i32 0), i32 354, i8* null)
   %71 = bitcast float* %12 to i8*
-  call void @llvm.var.annotation(i8* %71, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 355, i8* null)
+  call void @llvm.var.annotation(i8* %71, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.15, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.18, i32 0, i32 0), i32 355, i8* null)
   %72 = bitcast float* %13 to i8*
-  call void @llvm.var.annotation(i8* %72, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 356, i8* null)
+  call void @llvm.var.annotation(i8* %72, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.15, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.18, i32 0, i32 0), i32 356, i8* null)
   %73 = bitcast float* %14 to i8*
-  call void @llvm.var.annotation(i8* %73, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 357, i8* null)
+  call void @llvm.var.annotation(i8* %73, i8* getelementptr inbounds ([34 x i8], [34 x i8]* @.str.23, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.18, i32 0, i32 0), i32 357, i8* null)
   %74 = bitcast [2 x float]* %15 to i8*
-  call void @llvm.var.annotation(i8* %74, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 358, i8* null)
-  %75 = bitcast float* %17 to i8*
-  call void @llvm.var.annotation(i8* %75, i8* getelementptr inbounds ([26 x i8], [26 x i8]* @.str.9, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 360, i8* null)
-  %76 = bitcast float* %23 to i8*
-  call void @llvm.var.annotation(i8* %76, i8* getelementptr inbounds ([26 x i8], [26 x i8]* @.str.9, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 366, i8* null)
-  %77 = bitcast float* %24 to i8*
-  call void @llvm.var.annotation(i8* %77, i8* getelementptr inbounds ([29 x i8], [29 x i8]* @.str.21, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 367, i8* null)
-  %78 = bitcast [4 x float]* %25 to i8*
-  call void @llvm.var.annotation(i8* %78, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 368, i8* null)
-  %79 = load i16*, i16** %5, align 8
-  %80 = getelementptr inbounds i16, i16* %79, i64 833
-  %81 = load i16, i16* %80, align 2
-  store i16 %81, i16* %27, align 2
-  %82 = load i16*, i16** %5, align 8
-  %83 = call float @_Z15MLX90640_GetVddPKt(i16* %82)
-  store float %83, float* %9, align 4
-  %84 = load i16*, i16** %5, align 8
-  %85 = call float @_Z14MLX90640_GetTaPKt(i16* %84)
-  store float %85, float* %10, align 4
-  %86 = load float, float* %10, align 4
-  %87 = fpext float %86 to double
-  %88 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([12 x i8], [12 x i8]* @.str.22, i64 0, i64 0), double %87)
-  %89 = load float, float* %7, align 4
-  %90 = fpext float %89 to double
-  %91 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([12 x i8], [12 x i8]* @.str.23, i64 0, i64 0), double %90)
-  %92 = bitcast float* %28 to i8*
-  call void @llvm.var.annotation(i8* %92, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 381, i8* null)
-  %93 = load float, float* %10, align 4
-  %94 = fpext float %93 to double
-  %95 = fadd double %94, 2.731500e+02
-  %96 = fptrunc double %95 to float
-  store float %96, float* %28, align 4
-  %97 = load float, float* %28, align 4
-  %98 = fpext float %97 to double
-  %99 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.24, i64 0, i64 0), double %98)
+  call void @llvm.var.annotation(i8* %74, i8* getelementptr inbounds ([35 x i8], [35 x i8]* @.str.24, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.18, i32 0, i32 0), i32 358, i8* null)
+  %75 = bitcast float* %16 to i8*
+  call void @llvm.var.annotation(i8* %75, i8* getelementptr inbounds ([45 x i8], [45 x i8]* @.str.25, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.18, i32 0, i32 0), i32 359, i8* null)
+  %76 = bitcast float* %24 to i8*
+  call void @llvm.var.annotation(i8* %76, i8* getelementptr inbounds ([29 x i8], [29 x i8]* @.str.26, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.18, i32 0, i32 0), i32 367, i8* null)
+  %77 = bitcast [4 x float]* %25 to i8*
+  call void @llvm.var.annotation(i8* %77, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.15, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.18, i32 0, i32 0), i32 368, i8* null)
+  %78 = load i16*, i16** %5, align 8
+  %79 = getelementptr inbounds i16, i16* %78, i64 833
+  %80 = load i16, i16* %79, align 2
+  store i16 %80, i16* %27, align 2
+  %81 = load i16*, i16** %5, align 8
+  %82 = call noundef float @_Z15MLX90640_GetVddPKt(i16* noundef %81)
+  store float %82, float* %9, align 4
+  %83 = load i16*, i16** %5, align 8
+  %84 = call noundef float @_Z14MLX90640_GetTaPKt(i16* noundef %83)
+  store float %84, float* %10, align 4
+  %85 = load float, float* %10, align 4
+  %86 = fpext float %85 to double
+  %87 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([12 x i8], [12 x i8]* @.str.27, i64 0, i64 0), double noundef %86)
+  %88 = load float, float* %7, align 4
+  %89 = fpext float %88 to double
+  %90 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([12 x i8], [12 x i8]* @.str.28, i64 0, i64 0), double noundef %89)
+  %91 = bitcast float* %28 to i8*
+  call void @llvm.var.annotation(i8* %91, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.15, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.18, i32 0, i32 0), i32 381, i8* null)
+  %92 = load float, float* %10, align 4
+  %93 = fpext float %92 to double
+  %94 = fadd double %93, 2.731500e+02
+  %95 = fptrunc double %94 to float
+  store float %95, float* %28, align 4
+  %96 = load float, float* %28, align 4
+  %97 = fpext float %96 to double
+  %98 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([19 x i8], [19 x i8]* @.str.29, i64 0, i64 0), double noundef %97)
+  %99 = load float, float* %28, align 4
   %100 = load float, float* %28, align 4
-  %101 = load float, float* %28, align 4
-  %102 = fmul float %100, %101
-  %103 = load float, float* %28, align 4
-  %104 = fmul float %102, %103
-  %105 = load float, float* %28, align 4
-  %106 = fmul float %104, %105
-  store float %106, float* %11, align 4
-  %107 = load float, float* %11, align 4
-  %108 = fpext float %107 to double
-  %109 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([11 x i8], [11 x i8]* @.str.25, i64 0, i64 0), double %108)
-  %110 = load float, float* %7, align 4
-  %111 = fpext float %110 to double
-  %112 = fadd double %111, 2.731500e+02
-  %113 = call double @_ZSt3powIdiEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_(double %112, i32 4)
-  %114 = fptrunc double %113 to float
-  store float %114, float* %12, align 4
-  %115 = load float, float* %12, align 4
-  %116 = fpext float %115 to double
-  %117 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([11 x i8], [11 x i8]* @.str.26, i64 0, i64 0), double %116)
-  %118 = bitcast float* %29 to i8*
-  call void @llvm.var.annotation(i8* %118, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 389, i8* null)
-  %119 = load float, float* %12, align 4
-  %120 = load float, float* %11, align 4
-  %121 = fsub float %119, %120
-  store float %121, float* %29, align 4
-  %122 = load float, float* %29, align 4
-  %123 = fpext float %122 to double
-  %124 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str.27, i64 0, i64 0), double %123)
-  %125 = bitcast float* %30 to i8*
-  call void @llvm.var.annotation(i8* %125, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 391, i8* null)
-  %126 = load float, float* %29, align 4
-  %127 = load float, float* %6, align 4
-  %128 = fdiv float %126, %127
-  store float %128, float* %30, align 4
-  %129 = load float, float* %30, align 4
-  %130 = fpext float %129 to double
-  %131 = load float, float* %6, align 4
-  %132 = fpext float %131 to double
-  %133 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([32 x i8], [32 x i8]* @.str.28, i64 0, i64 0), double %130, double %132)
-  %134 = load float, float* %12, align 4
-  %135 = load float, float* %30, align 4
-  %136 = fsub float %134, %135
-  store float %136, float* %13, align 4
-  %137 = load float, float* %13, align 4
-  %138 = fpext float %137 to double
-  %139 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.29, i64 0, i64 0), double %138)
-  %140 = load float, float* getelementptr inbounds ([4 x float], [4 x float]* @params_ksTo, i64 0, i64 0), align 16
-  %141 = fmul float %140, 4.000000e+01
-  %142 = fadd float 1.000000e+00, %141
-  %143 = fdiv float 1.000000e+00, %142
-  %144 = getelementptr inbounds [4 x float], [4 x float]* %25, i64 0, i64 0
-  store float %143, float* %144, align 16
-  %145 = getelementptr inbounds [4 x float], [4 x float]* %25, i64 0, i64 1
-  store float 1.000000e+00, float* %145, align 4
-  %146 = load float, float* getelementptr inbounds ([4 x float], [4 x float]* @params_ksTo, i64 0, i64 2), align 8
-  %147 = load i16, i16* getelementptr inbounds ([4 x i16], [4 x i16]* @params_ct, i64 0, i64 2), align 2
-  %148 = sext i16 %147 to i32
-  %149 = sitofp i32 %148 to float
-  %150 = fmul float %146, %149
-  %151 = fadd float 1.000000e+00, %150
-  %152 = getelementptr inbounds [4 x float], [4 x float]* %25, i64 0, i64 2
-  store float %151, float* %152, align 8
-  %153 = getelementptr inbounds [4 x float], [4 x float]* %25, i64 0, i64 2
-  %154 = load float, float* %153, align 8
-  %155 = load float, float* getelementptr inbounds ([4 x float], [4 x float]* @params_ksTo, i64 0, i64 3), align 4
-  %156 = load i16, i16* getelementptr inbounds ([4 x i16], [4 x i16]* @params_ct, i64 0, i64 3), align 2
-  %157 = sext i16 %156 to i32
-  %158 = load i16, i16* getelementptr inbounds ([4 x i16], [4 x i16]* @params_ct, i64 0, i64 2), align 2
-  %159 = sext i16 %158 to i32
-  %160 = sub nsw i32 %157, %159
-  %161 = sitofp i32 %160 to float
-  %162 = fmul float %155, %161
-  %163 = fadd float 1.000000e+00, %162
-  %164 = fmul float %154, %163
-  %165 = getelementptr inbounds [4 x float], [4 x float]* %25, i64 0, i64 3
-  store float %164, float* %165, align 4
-  %166 = load i16*, i16** %5, align 8
-  %167 = getelementptr inbounds i16, i16* %166, i64 778
-  %168 = load i16, i16* %167, align 2
-  %169 = uitofp i16 %168 to float
-  store float %169, float* %14, align 4
-  %170 = load float, float* %14, align 4
-  %171 = fcmp ogt float %170, 3.276700e+04
-  br i1 %171, label %172, label %175
+  %101 = fmul float %99, %100
+  %102 = load float, float* %28, align 4
+  %103 = fmul float %101, %102
+  %104 = load float, float* %28, align 4
+  %105 = fmul float %103, %104
+  store float %105, float* %11, align 4
+  %106 = load float, float* %11, align 4
+  %107 = fpext float %106 to double
+  %108 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([11 x i8], [11 x i8]* @.str.30, i64 0, i64 0), double noundef %107)
+  %109 = load float, float* %7, align 4
+  %110 = fpext float %109 to double
+  %111 = fadd double %110, 2.731500e+02
+  %112 = call noundef double @_ZSt3powIdiEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_(double noundef %111, i32 noundef 4)
+  %113 = fptrunc double %112 to float
+  store float %113, float* %12, align 4
+  %114 = load float, float* %12, align 4
+  %115 = fpext float %114 to double
+  %116 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([11 x i8], [11 x i8]* @.str.31, i64 0, i64 0), double noundef %115)
+  %117 = bitcast float* %29 to i8*
+  call void @llvm.var.annotation(i8* %117, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.15, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.18, i32 0, i32 0), i32 389, i8* null)
+  %118 = load float, float* %12, align 4
+  %119 = load float, float* %11, align 4
+  %120 = fsub float %118, %119
+  store float %120, float* %29, align 4
+  %121 = load float, float* %29, align 4
+  %122 = fpext float %121 to double
+  %123 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([10 x i8], [10 x i8]* @.str.32, i64 0, i64 0), double noundef %122)
+  %124 = bitcast float* %30 to i8*
+  call void @llvm.var.annotation(i8* %124, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.15, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.18, i32 0, i32 0), i32 391, i8* null)
+  %125 = load float, float* %29, align 4
+  %126 = load float, float* %6, align 4
+  %127 = fdiv float %125, %126
+  store float %127, float* %30, align 4
+  %128 = load float, float* %30, align 4
+  %129 = fpext float %128 to double
+  %130 = load float, float* %6, align 4
+  %131 = fpext float %130 to double
+  %132 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([32 x i8], [32 x i8]* @.str.33, i64 0, i64 0), double noundef %129, double noundef %131)
+  %133 = load float, float* %12, align 4
+  %134 = load float, float* %30, align 4
+  %135 = fsub float %133, %134
+  store float %135, float* %13, align 4
+  %136 = load float, float* %13, align 4
+  %137 = fpext float %136 to double
+  %138 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([9 x i8], [9 x i8]* @.str.34, i64 0, i64 0), double noundef %137)
+  %139 = load float, float* getelementptr inbounds ([4 x float], [4 x float]* @params_ksTo, i64 0, i64 0), align 16
+  %140 = call float @llvm.fmuladd.f32(float %139, float 4.000000e+01, float 1.000000e+00)
+  %141 = fdiv float 1.000000e+00, %140
+  %142 = getelementptr inbounds [4 x float], [4 x float]* %25, i64 0, i64 0
+  store float %141, float* %142, align 16
+  %143 = getelementptr inbounds [4 x float], [4 x float]* %25, i64 0, i64 1
+  store float 1.000000e+00, float* %143, align 4
+  %144 = load float, float* getelementptr inbounds ([4 x float], [4 x float]* @params_ksTo, i64 0, i64 2), align 8
+  %145 = load i16, i16* getelementptr inbounds ([4 x i16], [4 x i16]* @params_ct, i64 0, i64 2), align 2
+  %146 = sext i16 %145 to i32
+  %147 = sitofp i32 %146 to float
+  %148 = call float @llvm.fmuladd.f32(float %144, float %147, float 1.000000e+00)
+  %149 = getelementptr inbounds [4 x float], [4 x float]* %25, i64 0, i64 2
+  store float %148, float* %149, align 8
+  %150 = getelementptr inbounds [4 x float], [4 x float]* %25, i64 0, i64 2
+  %151 = load float, float* %150, align 8
+  %152 = load float, float* getelementptr inbounds ([4 x float], [4 x float]* @params_ksTo, i64 0, i64 3), align 4
+  %153 = load i16, i16* getelementptr inbounds ([4 x i16], [4 x i16]* @params_ct, i64 0, i64 3), align 2
+  %154 = sext i16 %153 to i32
+  %155 = load i16, i16* getelementptr inbounds ([4 x i16], [4 x i16]* @params_ct, i64 0, i64 2), align 2
+  %156 = sext i16 %155 to i32
+  %157 = sub nsw i32 %154, %156
+  %158 = sitofp i32 %157 to float
+  %159 = call float @llvm.fmuladd.f32(float %152, float %158, float 1.000000e+00)
+  %160 = fmul float %151, %159
+  %161 = getelementptr inbounds [4 x float], [4 x float]* %25, i64 0, i64 3
+  store float %160, float* %161, align 4
+  %162 = load i16*, i16** %5, align 8
+  %163 = getelementptr inbounds i16, i16* %162, i64 778
+  %164 = load i16, i16* %163, align 2
+  %165 = uitofp i16 %164 to float
+  store float %165, float* %14, align 4
+  %166 = load float, float* %14, align 4
+  %167 = fcmp ogt float %166, 3.276700e+04
+  br i1 %167, label %168, label %171
 
-172:                                              ; preds = %4
-  %173 = load float, float* %14, align 4
-  %174 = fsub float %173, 6.553600e+04
-  store float %174, float* %14, align 4
-  br label %175
+168:                                              ; preds = %4
+  %169 = load float, float* %14, align 4
+  %170 = fsub float %169, 6.553600e+04
+  store float %170, float* %14, align 4
+  br label %171
 
-175:                                              ; preds = %172, %4
-  %176 = load i16, i16* @params_gainEE, align 2
-  %177 = sext i16 %176 to i32
-  %178 = sitofp i32 %177 to float
-  %179 = load float, float* %14, align 4
-  %180 = fdiv float %178, %179
-  store float %180, float* %14, align 4
-  %181 = load i16*, i16** %5, align 8
-  %182 = getelementptr inbounds i16, i16* %181, i64 832
-  %183 = load i16, i16* %182, align 2
-  %184 = zext i16 %183 to i32
-  %185 = and i32 %184, 4096
-  %186 = ashr i32 %185, 5
-  %187 = trunc i32 %186 to i8
-  store i8 %187, i8* %18, align 1
-  %188 = load i16*, i16** %5, align 8
-  %189 = getelementptr inbounds i16, i16* %188, i64 776
-  %190 = load i16, i16* %189, align 2
-  %191 = uitofp i16 %190 to float
-  %192 = getelementptr inbounds [2 x float], [2 x float]* %15, i64 0, i64 0
-  store float %191, float* %192, align 4
-  %193 = load i16*, i16** %5, align 8
-  %194 = getelementptr inbounds i16, i16* %193, i64 808
-  %195 = load i16, i16* %194, align 2
-  %196 = uitofp i16 %195 to float
-  %197 = getelementptr inbounds [2 x float], [2 x float]* %15, i64 0, i64 1
-  store float %196, float* %197, align 4
+171:                                              ; preds = %168, %4
+  %172 = load i16, i16* @params_gainEE, align 2
+  %173 = sext i16 %172 to i32
+  %174 = sitofp i32 %173 to float
+  %175 = load float, float* %14, align 4
+  %176 = fdiv float %174, %175
+  store float %176, float* %14, align 4
+  %177 = load i16*, i16** %5, align 8
+  %178 = getelementptr inbounds i16, i16* %177, i64 832
+  %179 = load i16, i16* %178, align 2
+  %180 = zext i16 %179 to i32
+  %181 = and i32 %180, 4096
+  %182 = ashr i32 %181, 5
+  %183 = trunc i32 %182 to i8
+  store i8 %183, i8* %18, align 1
+  %184 = load i16*, i16** %5, align 8
+  %185 = getelementptr inbounds i16, i16* %184, i64 776
+  %186 = load i16, i16* %185, align 2
+  %187 = uitofp i16 %186 to float
+  %188 = getelementptr inbounds [2 x float], [2 x float]* %15, i64 0, i64 0
+  store float %187, float* %188, align 4
+  %189 = load i16*, i16** %5, align 8
+  %190 = getelementptr inbounds i16, i16* %189, i64 808
+  %191 = load i16, i16* %190, align 2
+  %192 = uitofp i16 %191 to float
+  %193 = getelementptr inbounds [2 x float], [2 x float]* %15, i64 0, i64 1
+  store float %192, float* %193, align 4
   store i32 0, i32* %31, align 4
-  br label %198
+  br label %194
 
-198:                                              ; preds = %226, %175
-  %199 = load i32, i32* %31, align 4
-  %200 = icmp slt i32 %199, 2
-  br i1 %200, label %201, label %229
+194:                                              ; preds = %222, %171
+  %195 = load i32, i32* %31, align 4
+  %196 = icmp slt i32 %195, 2
+  br i1 %196, label %197, label %225
 
-201:                                              ; preds = %198
-  %202 = load i32, i32* %31, align 4
-  %203 = sext i32 %202 to i64
-  %204 = getelementptr inbounds [2 x float], [2 x float]* %15, i64 0, i64 %203
-  %205 = load float, float* %204, align 4
-  %206 = fcmp ogt float %205, 3.276700e+04
-  br i1 %206, label %207, label %216
+197:                                              ; preds = %194
+  %198 = load i32, i32* %31, align 4
+  %199 = sext i32 %198 to i64
+  %200 = getelementptr inbounds [2 x float], [2 x float]* %15, i64 0, i64 %199
+  %201 = load float, float* %200, align 4
+  %202 = fcmp ogt float %201, 3.276700e+04
+  br i1 %202, label %203, label %212
 
-207:                                              ; preds = %201
-  %208 = load i32, i32* %31, align 4
-  %209 = sext i32 %208 to i64
-  %210 = getelementptr inbounds [2 x float], [2 x float]* %15, i64 0, i64 %209
-  %211 = load float, float* %210, align 4
-  %212 = fsub float %211, 6.553600e+04
+203:                                              ; preds = %197
+  %204 = load i32, i32* %31, align 4
+  %205 = sext i32 %204 to i64
+  %206 = getelementptr inbounds [2 x float], [2 x float]* %15, i64 0, i64 %205
+  %207 = load float, float* %206, align 4
+  %208 = fsub float %207, 6.553600e+04
+  %209 = load i32, i32* %31, align 4
+  %210 = sext i32 %209 to i64
+  %211 = getelementptr inbounds [2 x float], [2 x float]* %15, i64 0, i64 %210
+  store float %208, float* %211, align 4
+  br label %212
+
+212:                                              ; preds = %203, %197
   %213 = load i32, i32* %31, align 4
   %214 = sext i32 %213 to i64
   %215 = getelementptr inbounds [2 x float], [2 x float]* %15, i64 0, i64 %214
-  store float %212, float* %215, align 4
-  br label %216
+  %216 = load float, float* %215, align 4
+  %217 = load float, float* %14, align 4
+  %218 = fmul float %216, %217
+  %219 = load i32, i32* %31, align 4
+  %220 = sext i32 %219 to i64
+  %221 = getelementptr inbounds [2 x float], [2 x float]* %15, i64 0, i64 %220
+  store float %218, float* %221, align 4
+  br label %222
 
-216:                                              ; preds = %207, %201
-  %217 = load i32, i32* %31, align 4
-  %218 = sext i32 %217 to i64
-  %219 = getelementptr inbounds [2 x float], [2 x float]* %15, i64 0, i64 %218
-  %220 = load float, float* %219, align 4
-  %221 = load float, float* %14, align 4
-  %222 = fmul float %220, %221
+222:                                              ; preds = %212
   %223 = load i32, i32* %31, align 4
-  %224 = sext i32 %223 to i64
-  %225 = getelementptr inbounds [2 x float], [2 x float]* %15, i64 0, i64 %224
-  store float %222, float* %225, align 4
-  br label %226
+  %224 = add nsw i32 %223, 1
+  store i32 %224, i32* %31, align 4
+  br label %194, !llvm.loop !34
 
-226:                                              ; preds = %216
-  %227 = load i32, i32* %31, align 4
-  %228 = add nsw i32 %227, 1
-  store i32 %228, i32* %31, align 4
-  br label %198, !llvm.loop !30
+225:                                              ; preds = %194
+  %226 = getelementptr inbounds [2 x float], [2 x float]* %15, i64 0, i64 0
+  %227 = load float, float* %226, align 4
+  %228 = fpext float %227 to double
+  %229 = load i16, i16* getelementptr inbounds ([2 x i16], [2 x i16]* @params_cpOffset, i64 0, i64 0), align 2
+  %230 = sext i16 %229 to i32
+  %231 = sitofp i32 %230 to float
+  %232 = load float, float* @params_cpKta, align 4
+  %233 = load float, float* %10, align 4
+  %234 = fsub float %233, 2.500000e+01
+  %235 = call float @llvm.fmuladd.f32(float %232, float %234, float 1.000000e+00)
+  %236 = fmul float %231, %235
+  %237 = fpext float %236 to double
+  %238 = load float, float* @params_cpKv, align 4
+  %239 = fpext float %238 to double
+  %240 = load float, float* %9, align 4
+  %241 = fpext float %240 to double
+  %242 = fsub double %241, 3.300000e+00
+  %243 = call double @llvm.fmuladd.f64(double %239, double %242, double 1.000000e+00)
+  %244 = fneg double %237
+  %245 = call double @llvm.fmuladd.f64(double %244, double %243, double %228)
+  %246 = fptrunc double %245 to float
+  %247 = getelementptr inbounds [2 x float], [2 x float]* %15, i64 0, i64 0
+  store float %246, float* %247, align 4
+  %248 = load i8, i8* %18, align 1
+  %249 = zext i8 %248 to i32
+  %250 = load i8, i8* @params_calibrationModeEE, align 1
+  %251 = zext i8 %250 to i32
+  %252 = icmp eq i32 %249, %251
+  br i1 %252, label %253, label %276
 
-229:                                              ; preds = %198
-  %230 = getelementptr inbounds [2 x float], [2 x float]* %15, i64 0, i64 0
-  %231 = load float, float* %230, align 4
-  %232 = fpext float %231 to double
-  %233 = load i16, i16* getelementptr inbounds ([2 x i16], [2 x i16]* @params_cpOffset, i64 0, i64 0), align 2
-  %234 = sext i16 %233 to i32
-  %235 = sitofp i32 %234 to float
-  %236 = load float, float* @params_cpKta, align 4
-  %237 = load float, float* %10, align 4
-  %238 = fsub float %237, 2.500000e+01
-  %239 = fmul float %236, %238
-  %240 = fadd float 1.000000e+00, %239
-  %241 = fmul float %235, %240
-  %242 = fpext float %241 to double
-  %243 = load float, float* @params_cpKv, align 4
-  %244 = fpext float %243 to double
-  %245 = load float, float* %9, align 4
-  %246 = fpext float %245 to double
-  %247 = fsub double %246, 3.300000e+00
-  %248 = fmul double %244, %247
-  %249 = fadd double 1.000000e+00, %248
-  %250 = fmul double %242, %249
-  %251 = fsub double %232, %250
-  %252 = fptrunc double %251 to float
-  %253 = getelementptr inbounds [2 x float], [2 x float]* %15, i64 0, i64 0
-  store float %252, float* %253, align 4
-  %254 = load i8, i8* %18, align 1
-  %255 = zext i8 %254 to i32
-  %256 = load i8, i8* @params_calibrationModeEE, align 1
-  %257 = zext i8 %256 to i32
-  %258 = icmp eq i32 %255, %257
-  br i1 %258, label %259, label %284
+253:                                              ; preds = %225
+  %254 = getelementptr inbounds [2 x float], [2 x float]* %15, i64 0, i64 1
+  %255 = load float, float* %254, align 4
+  %256 = fpext float %255 to double
+  %257 = load i16, i16* getelementptr inbounds ([2 x i16], [2 x i16]* @params_cpOffset, i64 0, i64 1), align 2
+  %258 = sext i16 %257 to i32
+  %259 = sitofp i32 %258 to float
+  %260 = load float, float* @params_cpKta, align 4
+  %261 = load float, float* %10, align 4
+  %262 = fsub float %261, 2.500000e+01
+  %263 = call float @llvm.fmuladd.f32(float %260, float %262, float 1.000000e+00)
+  %264 = fmul float %259, %263
+  %265 = fpext float %264 to double
+  %266 = load float, float* @params_cpKv, align 4
+  %267 = fpext float %266 to double
+  %268 = load float, float* %9, align 4
+  %269 = fpext float %268 to double
+  %270 = fsub double %269, 3.300000e+00
+  %271 = call double @llvm.fmuladd.f64(double %267, double %270, double 1.000000e+00)
+  %272 = fneg double %265
+  %273 = call double @llvm.fmuladd.f64(double %272, double %271, double %256)
+  %274 = fptrunc double %273 to float
+  %275 = getelementptr inbounds [2 x float], [2 x float]* %15, i64 0, i64 1
+  store float %274, float* %275, align 4
+  br label %301
 
-259:                                              ; preds = %229
-  %260 = getelementptr inbounds [2 x float], [2 x float]* %15, i64 0, i64 1
-  %261 = load float, float* %260, align 4
-  %262 = fpext float %261 to double
-  %263 = load i16, i16* getelementptr inbounds ([2 x i16], [2 x i16]* @params_cpOffset, i64 0, i64 1), align 2
-  %264 = sext i16 %263 to i32
-  %265 = sitofp i32 %264 to float
-  %266 = load float, float* @params_cpKta, align 4
-  %267 = load float, float* %10, align 4
-  %268 = fsub float %267, 2.500000e+01
-  %269 = fmul float %266, %268
-  %270 = fadd float 1.000000e+00, %269
-  %271 = fmul float %265, %270
-  %272 = fpext float %271 to double
-  %273 = load float, float* @params_cpKv, align 4
-  %274 = fpext float %273 to double
-  %275 = load float, float* %9, align 4
-  %276 = fpext float %275 to double
-  %277 = fsub double %276, 3.300000e+00
-  %278 = fmul double %274, %277
-  %279 = fadd double 1.000000e+00, %278
-  %280 = fmul double %272, %279
-  %281 = fsub double %262, %280
-  %282 = fptrunc double %281 to float
-  %283 = getelementptr inbounds [2 x float], [2 x float]* %15, i64 0, i64 1
-  store float %282, float* %283, align 4
-  br label %311
+276:                                              ; preds = %225
+  %277 = getelementptr inbounds [2 x float], [2 x float]* %15, i64 0, i64 1
+  %278 = load float, float* %277, align 4
+  %279 = fpext float %278 to double
+  %280 = load i16, i16* getelementptr inbounds ([2 x i16], [2 x i16]* @params_cpOffset, i64 0, i64 1), align 2
+  %281 = sext i16 %280 to i32
+  %282 = sitofp i32 %281 to float
+  %283 = load float, float* getelementptr inbounds ([3 x float], [3 x float]* @params_ilChessC, i64 0, i64 0), align 4
+  %284 = fadd float %282, %283
+  %285 = load float, float* @params_cpKta, align 4
+  %286 = load float, float* %10, align 4
+  %287 = fsub float %286, 2.500000e+01
+  %288 = call float @llvm.fmuladd.f32(float %285, float %287, float 1.000000e+00)
+  %289 = fmul float %284, %288
+  %290 = fpext float %289 to double
+  %291 = load float, float* @params_cpKv, align 4
+  %292 = fpext float %291 to double
+  %293 = load float, float* %9, align 4
+  %294 = fpext float %293 to double
+  %295 = fsub double %294, 3.300000e+00
+  %296 = call double @llvm.fmuladd.f64(double %292, double %295, double 1.000000e+00)
+  %297 = fneg double %290
+  %298 = call double @llvm.fmuladd.f64(double %297, double %296, double %279)
+  %299 = fptrunc double %298 to float
+  %300 = getelementptr inbounds [2 x float], [2 x float]* %15, i64 0, i64 1
+  store float %299, float* %300, align 4
+  br label %301
 
-284:                                              ; preds = %229
-  %285 = getelementptr inbounds [2 x float], [2 x float]* %15, i64 0, i64 1
-  %286 = load float, float* %285, align 4
-  %287 = fpext float %286 to double
-  %288 = load i16, i16* getelementptr inbounds ([2 x i16], [2 x i16]* @params_cpOffset, i64 0, i64 1), align 2
-  %289 = sext i16 %288 to i32
-  %290 = sitofp i32 %289 to float
-  %291 = load float, float* getelementptr inbounds ([3 x float], [3 x float]* @params_ilChessC, i64 0, i64 0), align 4
-  %292 = fadd float %290, %291
-  %293 = load float, float* @params_cpKta, align 4
-  %294 = load float, float* %10, align 4
-  %295 = fsub float %294, 2.500000e+01
-  %296 = fmul float %293, %295
-  %297 = fadd float 1.000000e+00, %296
-  %298 = fmul float %292, %297
-  %299 = fpext float %298 to double
-  %300 = load float, float* @params_cpKv, align 4
-  %301 = fpext float %300 to double
-  %302 = load float, float* %9, align 4
-  %303 = fpext float %302 to double
-  %304 = fsub double %303, 3.300000e+00
-  %305 = fmul double %301, %304
-  %306 = fadd double 1.000000e+00, %305
-  %307 = fmul double %299, %306
-  %308 = fsub double %287, %307
-  %309 = fptrunc double %308 to float
-  %310 = getelementptr inbounds [2 x float], [2 x float]* %15, i64 0, i64 1
-  store float %309, float* %310, align 4
-  br label %311
-
-311:                                              ; preds = %284, %259
+301:                                              ; preds = %276, %253
   store i32 0, i32* %32, align 4
-  br label %312
+  br label %302
 
-312:                                              ; preds = %811, %311
-  %313 = load i32, i32* %32, align 4
-  %314 = icmp slt i32 %313, 768
-  br i1 %314, label %315, label %814
+302:                                              ; preds = %801, %301
+  %303 = load i32, i32* %32, align 4
+  %304 = icmp slt i32 %303, 768
+  br i1 %304, label %305, label %804
 
-315:                                              ; preds = %312
+305:                                              ; preds = %302
+  %306 = load i32, i32* %32, align 4
+  %307 = sdiv i32 %306, 32
+  %308 = load i32, i32* %32, align 4
+  %309 = sdiv i32 %308, 64
+  %310 = mul nsw i32 %309, 2
+  %311 = sub nsw i32 %307, %310
+  %312 = trunc i32 %311 to i8
+  store i8 %312, i8* %19, align 1
+  %313 = load i8, i8* %19, align 1
+  %314 = sext i8 %313 to i32
+  %315 = load i32, i32* %32, align 4
   %316 = load i32, i32* %32, align 4
-  %317 = sdiv i32 %316, 32
-  %318 = load i32, i32* %32, align 4
-  %319 = sdiv i32 %318, 64
-  %320 = mul nsw i32 %319, 2
-  %321 = sub nsw i32 %317, %320
-  %322 = trunc i32 %321 to i8
-  store i8 %322, i8* %19, align 1
-  %323 = load i8, i8* %19, align 1
-  %324 = sext i8 %323 to i32
+  %317 = sdiv i32 %316, 2
+  %318 = mul nsw i32 %317, 2
+  %319 = sub nsw i32 %315, %318
+  %320 = xor i32 %314, %319
+  %321 = trunc i32 %320 to i8
+  store i8 %321, i8* %20, align 1
+  %322 = load i32, i32* %32, align 4
+  %323 = add nsw i32 %322, 2
+  %324 = sdiv i32 %323, 4
   %325 = load i32, i32* %32, align 4
-  %326 = load i32, i32* %32, align 4
-  %327 = sdiv i32 %326, 2
-  %328 = mul nsw i32 %327, 2
-  %329 = sub nsw i32 %325, %328
-  %330 = xor i32 %324, %329
-  %331 = trunc i32 %330 to i8
-  store i8 %331, i8* %20, align 1
-  %332 = load i32, i32* %32, align 4
-  %333 = add nsw i32 %332, 2
+  %326 = add nsw i32 %325, 3
+  %327 = sdiv i32 %326, 4
+  %328 = sub nsw i32 %324, %327
+  %329 = load i32, i32* %32, align 4
+  %330 = add nsw i32 %329, 1
+  %331 = sdiv i32 %330, 4
+  %332 = add nsw i32 %328, %331
+  %333 = load i32, i32* %32, align 4
   %334 = sdiv i32 %333, 4
-  %335 = load i32, i32* %32, align 4
-  %336 = add nsw i32 %335, 3
-  %337 = sdiv i32 %336, 4
-  %338 = sub nsw i32 %334, %337
-  %339 = load i32, i32* %32, align 4
-  %340 = add nsw i32 %339, 1
-  %341 = sdiv i32 %340, 4
-  %342 = add nsw i32 %338, %341
-  %343 = load i32, i32* %32, align 4
-  %344 = sdiv i32 %343, 4
-  %345 = sub nsw i32 %342, %344
+  %335 = sub nsw i32 %332, %334
+  %336 = load i8, i8* %19, align 1
+  %337 = sext i8 %336 to i32
+  %338 = mul nsw i32 2, %337
+  %339 = sub nsw i32 1, %338
+  %340 = mul nsw i32 %335, %339
+  %341 = trunc i32 %340 to i8
+  store i8 %341, i8* %22, align 1
+  %342 = load i8, i8* %18, align 1
+  %343 = zext i8 %342 to i32
+  %344 = icmp eq i32 %343, 0
+  br i1 %344, label %345, label %347
+
+345:                                              ; preds = %305
   %346 = load i8, i8* %19, align 1
-  %347 = sext i8 %346 to i32
-  %348 = mul nsw i32 2, %347
-  %349 = sub nsw i32 1, %348
-  %350 = mul nsw i32 %345, %349
-  %351 = trunc i32 %350 to i8
-  store i8 %351, i8* %22, align 1
-  %352 = load i8, i8* %18, align 1
-  %353 = zext i8 %352 to i32
-  %354 = icmp eq i32 %353, 0
-  br i1 %354, label %355, label %357
+  store i8 %346, i8* %21, align 1
+  br label %349
 
-355:                                              ; preds = %315
-  %356 = load i8, i8* %19, align 1
-  store i8 %356, i8* %21, align 1
-  br label %359
+347:                                              ; preds = %305
+  %348 = load i8, i8* %20, align 1
+  store i8 %348, i8* %21, align 1
+  br label %349
 
-357:                                              ; preds = %315
-  %358 = load i8, i8* %20, align 1
-  store i8 %358, i8* %21, align 1
-  br label %359
+349:                                              ; preds = %347, %345
+  %350 = load i8, i8* %21, align 1
+  %351 = sext i8 %350 to i32
+  %352 = load i16*, i16** %5, align 8
+  %353 = getelementptr inbounds i16, i16* %352, i64 833
+  %354 = load i16, i16* %353, align 2
+  %355 = zext i16 %354 to i32
+  %356 = icmp eq i32 %351, %355
+  br i1 %356, label %357, label %800
 
-359:                                              ; preds = %357, %355
-  %360 = load i8, i8* %21, align 1
-  %361 = sext i8 %360 to i32
-  %362 = load i16*, i16** %5, align 8
-  %363 = getelementptr inbounds i16, i16* %362, i64 833
-  %364 = load i16, i16* %363, align 2
-  %365 = zext i16 %364 to i32
-  %366 = icmp eq i32 %361, %365
-  br i1 %366, label %367, label %810
+357:                                              ; preds = %349
+  %358 = load i16*, i16** %5, align 8
+  %359 = load i32, i32* %32, align 4
+  %360 = sext i32 %359 to i64
+  %361 = getelementptr inbounds i16, i16* %358, i64 %360
+  %362 = load i16, i16* %361, align 2
+  %363 = uitofp i16 %362 to float
+  store float %363, float* %16, align 4
+  %364 = load float, float* %16, align 4
+  %365 = fcmp ogt float %364, 3.276700e+04
+  br i1 %365, label %366, label %369
 
-367:                                              ; preds = %359
-  %368 = load i16*, i16** %5, align 8
-  %369 = load i32, i32* %32, align 4
-  %370 = sext i32 %369 to i64
-  %371 = getelementptr inbounds i16, i16* %368, i64 %370
-  %372 = load i16, i16* %371, align 2
-  %373 = uitofp i16 %372 to float
-  store float %373, float* %16, align 4
-  %374 = load float, float* %16, align 4
-  %375 = fcmp ogt float %374, 3.276700e+04
-  br i1 %375, label %376, label %379
+366:                                              ; preds = %357
+  %367 = load float, float* %16, align 4
+  %368 = fsub float %367, 6.553600e+04
+  store float %368, float* %16, align 4
+  br label %369
 
-376:                                              ; preds = %367
-  %377 = load float, float* %16, align 4
-  %378 = fsub float %377, 6.553600e+04
-  store float %378, float* %16, align 4
-  br label %379
-
-379:                                              ; preds = %376, %367
-  %380 = load float, float* %16, align 4
-  %381 = fpext float %380 to double
-  %382 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.30, i64 0, i64 0), double %381)
-  %383 = load float, float* %16, align 4
-  %384 = load float, float* %14, align 4
-  %385 = fmul float %383, %384
-  store float %385, float* %16, align 4
-  %386 = load float, float* %16, align 4
-  %387 = fpext float %386 to double
-  %388 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.31, i64 0, i64 0), double %387)
-  %389 = bitcast float* %33 to i8*
-  call void @llvm.var.annotation(i8* %389, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 463, i8* null)
-  %390 = load float, float* %10, align 4
-  %391 = fsub float %390, 2.500000e+01
-  store float %391, float* %33, align 4
-  %392 = load float, float* %10, align 4
-  %393 = fpext float %392 to double
-  %394 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str.32, i64 0, i64 0), double %393)
-  %395 = load float, float* %33, align 4
+369:                                              ; preds = %366, %357
+  %370 = load float, float* %16, align 4
+  %371 = fpext float %370 to double
+  %372 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([19 x i8], [19 x i8]* @.str.35, i64 0, i64 0), double noundef %371)
+  %373 = load float, float* %16, align 4
+  %374 = load float, float* %14, align 4
+  %375 = fmul float %373, %374
+  store float %375, float* %16, align 4
+  %376 = load float, float* %16, align 4
+  %377 = fpext float %376 to double
+  %378 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([19 x i8], [19 x i8]* @.str.36, i64 0, i64 0), double noundef %377)
+  %379 = bitcast float* %33 to i8*
+  call void @llvm.var.annotation(i8* %379, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.15, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.18, i32 0, i32 0), i32 463, i8* null)
+  %380 = load float, float* %10, align 4
+  %381 = fsub float %380, 2.500000e+01
+  store float %381, float* %33, align 4
+  %382 = load float, float* %10, align 4
+  %383 = fpext float %382 to double
+  %384 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([10 x i8], [10 x i8]* @.str.37, i64 0, i64 0), double noundef %383)
+  %385 = load float, float* %33, align 4
+  %386 = fpext float %385 to double
+  %387 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([11 x i8], [11 x i8]* @.str.38, i64 0, i64 0), double noundef %386)
+  %388 = bitcast float* %34 to i8*
+  call void @llvm.var.annotation(i8* %388, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.15, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.18, i32 0, i32 0), i32 467, i8* null)
+  %389 = load float, float* %33, align 4
+  %390 = load i32, i32* %32, align 4
+  %391 = sext i32 %390 to i64
+  %392 = getelementptr inbounds [768 x float], [768 x float]* @params_kta, i64 0, i64 %391
+  %393 = load float, float* %392, align 4
+  %394 = fmul float %389, %393
+  store float %394, float* %34, align 4
+  %395 = load float, float* %34, align 4
   %396 = fpext float %395 to double
-  %397 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([11 x i8], [11 x i8]* @.str.33, i64 0, i64 0), double %396)
-  %398 = bitcast float* %34 to i8*
-  call void @llvm.var.annotation(i8* %398, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 467, i8* null)
-  %399 = load float, float* %33, align 4
-  %400 = load i32, i32* %32, align 4
-  %401 = sext i32 %400 to i64
-  %402 = getelementptr inbounds [768 x float], [768 x float]* @params_kta, i64 0, i64 %401
-  %403 = load float, float* %402, align 4
-  %404 = fmul float %399, %403
-  store float %404, float* %34, align 4
-  %405 = load float, float* %34, align 4
-  %406 = fpext float %405 to double
-  %407 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([11 x i8], [11 x i8]* @.str.34, i64 0, i64 0), double %406)
-  %408 = bitcast float* %35 to i8*
-  call void @llvm.var.annotation(i8* %408, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 470, i8* null)
-  %409 = load float, float* %34, align 4
-  %410 = fadd float 1.000000e+00, %409
-  store float %410, float* %35, align 4
-  %411 = load float, float* %35, align 4
-  %412 = fpext float %411 to double
-  %413 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([11 x i8], [11 x i8]* @.str.35, i64 0, i64 0), double %412)
-  %414 = bitcast float* %36 to i8*
-  call void @llvm.var.annotation(i8* %414, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 474, i8* null)
-  %415 = load float, float* %35, align 4
+  %397 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([11 x i8], [11 x i8]* @.str.39, i64 0, i64 0), double noundef %396)
+  %398 = bitcast float* %35 to i8*
+  call void @llvm.var.annotation(i8* %398, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.15, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.18, i32 0, i32 0), i32 470, i8* null)
+  %399 = load float, float* %34, align 4
+  %400 = fadd float 1.000000e+00, %399
+  store float %400, float* %35, align 4
+  %401 = load float, float* %35, align 4
+  %402 = fpext float %401 to double
+  %403 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([11 x i8], [11 x i8]* @.str.40, i64 0, i64 0), double noundef %402)
+  %404 = bitcast float* %36 to i8*
+  call void @llvm.var.annotation(i8* %404, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.15, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.18, i32 0, i32 0), i32 474, i8* null)
+  %405 = load float, float* %35, align 4
+  %406 = load i32, i32* %32, align 4
+  %407 = sext i32 %406 to i64
+  %408 = getelementptr inbounds [768 x i16], [768 x i16]* @params_offset, i64 0, i64 %407
+  %409 = load i16, i16* %408, align 2
+  %410 = sext i16 %409 to i32
+  %411 = sitofp i32 %410 to float
+  %412 = fmul float %405, %411
+  store float %412, float* %36, align 4
+  %413 = load float, float* %36, align 4
+  %414 = fpext float %413 to double
+  %415 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([11 x i8], [11 x i8]* @.str.41, i64 0, i64 0), double noundef %414)
   %416 = load i32, i32* %32, align 4
   %417 = sext i32 %416 to i64
   %418 = getelementptr inbounds [768 x i16], [768 x i16]* @params_offset, i64 0, i64 %417
   %419 = load i16, i16* %418, align 2
   %420 = sext i16 %419 to i32
-  %421 = sitofp i32 %420 to float
-  %422 = fmul float %415, %421
-  store float %422, float* %36, align 4
-  %423 = load float, float* %36, align 4
+  %421 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([18 x i8], [18 x i8]* @.str.42, i64 0, i64 0), i32 noundef %420)
+  %422 = bitcast float* %37 to i8*
+  call void @llvm.var.annotation(i8* %422, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.15, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.18, i32 0, i32 0), i32 478, i8* null)
+  %423 = load float, float* %9, align 4
   %424 = fpext float %423 to double
-  %425 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([11 x i8], [11 x i8]* @.str.36, i64 0, i64 0), double %424)
-  %426 = load i32, i32* %32, align 4
-  %427 = sext i32 %426 to i64
-  %428 = getelementptr inbounds [768 x i16], [768 x i16]* @params_offset, i64 0, i64 %427
-  %429 = load i16, i16* %428, align 2
-  %430 = sext i16 %429 to i32
-  %431 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([18 x i8], [18 x i8]* @.str.37, i64 0, i64 0), i32 %430)
-  %432 = load float, float* %9, align 4
-  %433 = fpext float %432 to double
-  %434 = fsub double %433, 3.300000e+00
-  %435 = fptrunc double %434 to float
-  store float %435, float* %37, align 4
-  %436 = load float, float* %37, align 4
-  %437 = fpext float %436 to double
-  %438 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([11 x i8], [11 x i8]* @.str.38, i64 0, i64 0), double %437)
-  %439 = load float, float* %37, align 4
-  %440 = load i32, i32* %32, align 4
-  %441 = sext i32 %440 to i64
-  %442 = getelementptr inbounds [768 x float], [768 x float]* @params_kv, i64 0, i64 %441
-  %443 = load float, float* %442, align 4
-  %444 = fmul float %439, %443
-  store float %444, float* %38, align 4
-  %445 = load float, float* %38, align 4
-  %446 = fpext float %445 to double
-  %447 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([11 x i8], [11 x i8]* @.str.39, i64 0, i64 0), double %446)
-  %448 = bitcast float* %39 to i8*
-  call void @llvm.var.annotation(i8* %448, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 484, i8* null)
-  %449 = load float, float* %38, align 4
-  %450 = fadd float 1.000000e+00, %449
-  store float %450, float* %39, align 4
-  %451 = load float, float* %39, align 4
-  %452 = fpext float %451 to double
-  %453 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([11 x i8], [11 x i8]* @.str.40, i64 0, i64 0), double %452)
-  %454 = bitcast float* %40 to i8*
-  call void @llvm.var.annotation(i8* %454, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 487, i8* null)
-  %455 = load float, float* %39, align 4
-  %456 = load float, float* %35, align 4
-  %457 = fmul float %455, %456
-  store float %457, float* %40, align 4
-  %458 = load float, float* %40, align 4
-  %459 = fpext float %458 to double
-  %460 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([11 x i8], [11 x i8]* @.str.41, i64 0, i64 0), double %459)
-  %461 = bitcast float* %41 to i8*
-  call void @llvm.var.annotation(i8* %461, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 490, i8* null)
-  %462 = load float, float* %40, align 4
-  %463 = load i32, i32* %32, align 4
-  %464 = sext i32 %463 to i64
-  %465 = getelementptr inbounds [768 x i16], [768 x i16]* @params_offset, i64 0, i64 %464
-  %466 = load i16, i16* %465, align 2
-  %467 = sext i16 %466 to i32
-  %468 = sitofp i32 %467 to float
-  %469 = fmul float %462, %468
-  store float %469, float* %41, align 4
-  %470 = load float, float* %41, align 4
-  %471 = fpext float %470 to double
-  %472 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([11 x i8], [11 x i8]* @.str.42, i64 0, i64 0), double %471)
-  %473 = load float, float* %16, align 4
-  %474 = load float, float* %41, align 4
-  %475 = fsub float %473, %474
-  store float %475, float* %16, align 4
-  %476 = load float, float* %16, align 4
-  %477 = fpext float %476 to double
-  %478 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.43, i64 0, i64 0), double %477)
-  %479 = load i8, i8* %18, align 1
-  %480 = zext i8 %479 to i32
-  %481 = load i8, i8* @params_calibrationModeEE, align 1
-  %482 = zext i8 %481 to i32
-  %483 = icmp ne i32 %480, %482
-  br i1 %483, label %484, label %500
+  %425 = fsub double %424, 3.300000e+00
+  %426 = fptrunc double %425 to float
+  store float %426, float* %37, align 4
+  %427 = load float, float* %37, align 4
+  %428 = fpext float %427 to double
+  %429 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([11 x i8], [11 x i8]* @.str.43, i64 0, i64 0), double noundef %428)
+  %430 = bitcast float* %38 to i8*
+  call void @llvm.var.annotation(i8* %430, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.15, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.18, i32 0, i32 0), i32 481, i8* null)
+  %431 = load float, float* %37, align 4
+  %432 = load i32, i32* %32, align 4
+  %433 = sext i32 %432 to i64
+  %434 = getelementptr inbounds [768 x float], [768 x float]* @params_kv, i64 0, i64 %433
+  %435 = load float, float* %434, align 4
+  %436 = fmul float %431, %435
+  store float %436, float* %38, align 4
+  %437 = load float, float* %38, align 4
+  %438 = fpext float %437 to double
+  %439 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([11 x i8], [11 x i8]* @.str.44, i64 0, i64 0), double noundef %438)
+  %440 = bitcast float* %39 to i8*
+  call void @llvm.var.annotation(i8* %440, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.15, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.18, i32 0, i32 0), i32 484, i8* null)
+  %441 = load float, float* %38, align 4
+  %442 = fadd float 1.000000e+00, %441
+  store float %442, float* %39, align 4
+  %443 = load float, float* %39, align 4
+  %444 = fpext float %443 to double
+  %445 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([11 x i8], [11 x i8]* @.str.45, i64 0, i64 0), double noundef %444)
+  %446 = bitcast float* %40 to i8*
+  call void @llvm.var.annotation(i8* %446, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.15, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.18, i32 0, i32 0), i32 487, i8* null)
+  %447 = load float, float* %39, align 4
+  %448 = load float, float* %35, align 4
+  %449 = fmul float %447, %448
+  store float %449, float* %40, align 4
+  %450 = load float, float* %40, align 4
+  %451 = fpext float %450 to double
+  %452 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([11 x i8], [11 x i8]* @.str.46, i64 0, i64 0), double noundef %451)
+  %453 = bitcast float* %41 to i8*
+  call void @llvm.var.annotation(i8* %453, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.15, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.18, i32 0, i32 0), i32 490, i8* null)
+  %454 = load float, float* %40, align 4
+  %455 = load i32, i32* %32, align 4
+  %456 = sext i32 %455 to i64
+  %457 = getelementptr inbounds [768 x i16], [768 x i16]* @params_offset, i64 0, i64 %456
+  %458 = load i16, i16* %457, align 2
+  %459 = sext i16 %458 to i32
+  %460 = sitofp i32 %459 to float
+  %461 = fmul float %454, %460
+  store float %461, float* %41, align 4
+  %462 = load float, float* %41, align 4
+  %463 = fpext float %462 to double
+  %464 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([11 x i8], [11 x i8]* @.str.47, i64 0, i64 0), double noundef %463)
+  %465 = load float, float* %16, align 4
+  %466 = load float, float* %41, align 4
+  %467 = fsub float %465, %466
+  store float %467, float* %16, align 4
+  %468 = load float, float* %16, align 4
+  %469 = fpext float %468 to double
+  %470 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([19 x i8], [19 x i8]* @.str.48, i64 0, i64 0), double noundef %469)
+  %471 = load i8, i8* %18, align 1
+  %472 = zext i8 %471 to i32
+  %473 = load i8, i8* @params_calibrationModeEE, align 1
+  %474 = zext i8 %473 to i32
+  %475 = icmp ne i32 %472, %474
+  br i1 %475, label %476, label %491
 
-484:                                              ; preds = %379
-  %485 = load float, float* %16, align 4
-  %486 = load float, float* getelementptr inbounds ([3 x float], [3 x float]* @params_ilChessC, i64 0, i64 2), align 4
-  %487 = load i8, i8* %19, align 1
-  %488 = sext i8 %487 to i32
-  %489 = mul nsw i32 2, %488
-  %490 = sub nsw i32 %489, 1
-  %491 = sitofp i32 %490 to float
-  %492 = fmul float %486, %491
-  %493 = fadd float %485, %492
-  %494 = load float, float* getelementptr inbounds ([3 x float], [3 x float]* @params_ilChessC, i64 0, i64 1), align 4
-  %495 = load i8, i8* %22, align 1
-  %496 = sext i8 %495 to i32
-  %497 = sitofp i32 %496 to float
-  %498 = fmul float %494, %497
-  %499 = fsub float %493, %498
-  store float %499, float* %16, align 4
-  br label %500
+476:                                              ; preds = %369
+  %477 = load float, float* %16, align 4
+  %478 = load float, float* getelementptr inbounds ([3 x float], [3 x float]* @params_ilChessC, i64 0, i64 2), align 4
+  %479 = load i8, i8* %19, align 1
+  %480 = sext i8 %479 to i32
+  %481 = mul nsw i32 2, %480
+  %482 = sub nsw i32 %481, 1
+  %483 = sitofp i32 %482 to float
+  %484 = call float @llvm.fmuladd.f32(float %478, float %483, float %477)
+  %485 = load float, float* getelementptr inbounds ([3 x float], [3 x float]* @params_ilChessC, i64 0, i64 1), align 4
+  %486 = load i8, i8* %22, align 1
+  %487 = sext i8 %486 to i32
+  %488 = sitofp i32 %487 to float
+  %489 = fneg float %485
+  %490 = call float @llvm.fmuladd.f32(float %489, float %488, float %484)
+  store float %490, float* %16, align 4
+  br label %491
 
-500:                                              ; preds = %484, %379
-  %501 = load float, float* %16, align 4
-  %502 = load float, float* %6, align 4
-  %503 = fdiv float %501, %502
-  store float %503, float* %16, align 4
-  %504 = load float, float* %16, align 4
-  %505 = load float, float* @params_tgc, align 4
-  %506 = load i16, i16* %27, align 2
-  %507 = zext i16 %506 to i64
-  %508 = getelementptr inbounds [2 x float], [2 x float]* %15, i64 0, i64 %507
-  %509 = load float, float* %508, align 4
-  %510 = fmul float %505, %509
-  %511 = fsub float %504, %510
-  store float %511, float* %16, align 4
-  %512 = load float, float* @params_tgc, align 4
-  %513 = load i16, i16* %27, align 2
-  %514 = zext i16 %513 to i64
-  %515 = getelementptr inbounds [2 x float], [2 x float]* @params_cpAlpha, i64 0, i64 %514
-  %516 = load float, float* %515, align 4
-  %517 = fmul float %512, %516
-  store float %517, float* %42, align 4
-  %518 = load float, float* @params_tgc, align 4
+491:                                              ; preds = %476, %369
+  %492 = load float, float* %16, align 4
+  %493 = load float, float* %6, align 4
+  %494 = fdiv float %492, %493
+  store float %494, float* %16, align 4
+  %495 = load float, float* %16, align 4
+  %496 = load float, float* @params_tgc, align 4
+  %497 = load i16, i16* %27, align 2
+  %498 = zext i16 %497 to i64
+  %499 = getelementptr inbounds [2 x float], [2 x float]* %15, i64 0, i64 %498
+  %500 = load float, float* %499, align 4
+  %501 = fneg float %496
+  %502 = call float @llvm.fmuladd.f32(float %501, float %500, float %495)
+  store float %502, float* %16, align 4
+  %503 = load float, float* @params_tgc, align 4
+  %504 = load i16, i16* %27, align 2
+  %505 = zext i16 %504 to i64
+  %506 = getelementptr inbounds [2 x float], [2 x float]* @params_cpAlpha, i64 0, i64 %505
+  %507 = load float, float* %506, align 4
+  %508 = fmul float %503, %507
+  store float %508, float* %42, align 4
+  %509 = load float, float* @params_tgc, align 4
+  %510 = fpext float %509 to double
+  %511 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([11 x i8], [11 x i8]* @.str.49, i64 0, i64 0), double noundef %510)
+  %512 = load i16, i16* %27, align 2
+  %513 = zext i16 %512 to i64
+  %514 = getelementptr inbounds [2 x float], [2 x float]* @params_cpAlpha, i64 0, i64 %513
+  %515 = load float, float* %514, align 4
+  %516 = fpext float %515 to double
+  %517 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([16 x i8], [16 x i8]* @.str.50, i64 0, i64 0), double noundef %516)
+  %518 = load float, float* %42, align 4
   %519 = fpext float %518 to double
-  %520 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([11 x i8], [11 x i8]* @.str.44, i64 0, i64 0), double %519)
-  %521 = load i16, i16* %27, align 2
-  %522 = zext i16 %521 to i64
-  %523 = getelementptr inbounds [2 x float], [2 x float]* @params_cpAlpha, i64 0, i64 %522
+  %520 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([10 x i8], [10 x i8]* @.str.51, i64 0, i64 0), double noundef %519)
+  %521 = load i32, i32* %32, align 4
+  %522 = sext i32 %521 to i64
+  %523 = getelementptr inbounds [768 x float], [768 x float]* @params_alpha, i64 0, i64 %522
   %524 = load float, float* %523, align 4
-  %525 = fpext float %524 to double
-  %526 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([16 x i8], [16 x i8]* @.str.45, i64 0, i64 0), double %525)
-  %527 = load float, float* %42, align 4
-  %528 = fpext float %527 to double
-  %529 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str.46, i64 0, i64 0), double %528)
-  %530 = bitcast float* %43 to i8*
-  call void @llvm.var.annotation(i8* %530, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 512, i8* null)
-  %531 = load i32, i32* %32, align 4
-  %532 = sext i32 %531 to i64
-  %533 = getelementptr inbounds [768 x float], [768 x float]* @params_alpha, i64 0, i64 %532
-  %534 = load float, float* %533, align 4
-  %535 = load float, float* %42, align 4
-  %536 = fsub float %534, %535
-  store float %536, float* %43, align 4
-  %537 = load i32, i32* %32, align 4
-  %538 = sext i32 %537 to i64
-  %539 = getelementptr inbounds [768 x float], [768 x float]* @params_alpha, i64 0, i64 %538
-  %540 = load float, float* %539, align 4
-  %541 = fpext float %540 to double
-  %542 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([20 x i8], [20 x i8]* @.str.47, i64 0, i64 0), double %541)
-  %543 = load float, float* %43, align 4
-  %544 = fpext float %543 to double
-  %545 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str.48, i64 0, i64 0), double %544)
-  %546 = bitcast float* %44 to i8*
-  call void @llvm.var.annotation(i8* %546, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 516, i8* null)
-  %547 = load float, float* @params_KsTa, align 4
-  %548 = load float, float* %10, align 4
-  %549 = fsub float %548, 2.500000e+01
-  %550 = fmul float %547, %549
-  store float %550, float* %44, align 4
-  %551 = load float, float* %44, align 4
-  %552 = fpext float %551 to double
-  %553 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str.49, i64 0, i64 0), double %552)
-  %554 = bitcast float* %45 to i8*
-  call void @llvm.var.annotation(i8* %554, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 519, i8* null)
-  %555 = load float, float* %44, align 4
-  %556 = fadd float 1.000000e+00, %555
-  store float %556, float* %45, align 4
-  %557 = load float, float* %45, align 4
-  %558 = fpext float %557 to double
-  %559 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str.50, i64 0, i64 0), double %558)
-  %560 = load float, float* %43, align 4
-  %561 = load float, float* %45, align 4
-  %562 = fmul float %560, %561
-  store float %562, float* %17, align 4
-  %563 = load float, float* %16, align 4
-  %564 = fpext float %563 to double
-  %565 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([14 x i8], [14 x i8]* @.str.51, i64 0, i64 0), double %564)
-  %566 = load float, float* %14, align 4
+  %525 = load float, float* %42, align 4
+  %526 = fsub float %524, %525
+  store float %526, float* %43, align 4
+  %527 = load i32, i32* %32, align 4
+  %528 = sext i32 %527 to i64
+  %529 = getelementptr inbounds [768 x float], [768 x float]* @params_alpha, i64 0, i64 %528
+  %530 = load float, float* %529, align 4
+  %531 = fpext float %530 to double
+  %532 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([20 x i8], [20 x i8]* @.str.52, i64 0, i64 0), double noundef %531)
+  %533 = load float, float* %43, align 4
+  %534 = fpext float %533 to double
+  %535 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([10 x i8], [10 x i8]* @.str.53, i64 0, i64 0), double noundef %534)
+  %536 = bitcast float* %44 to i8*
+  call void @llvm.var.annotation(i8* %536, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.15, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.18, i32 0, i32 0), i32 516, i8* null)
+  %537 = load float, float* @params_KsTa, align 4
+  %538 = load float, float* %10, align 4
+  %539 = fsub float %538, 2.500000e+01
+  %540 = fmul float %537, %539
+  store float %540, float* %44, align 4
+  %541 = load float, float* %44, align 4
+  %542 = fpext float %541 to double
+  %543 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([10 x i8], [10 x i8]* @.str.54, i64 0, i64 0), double noundef %542)
+  %544 = bitcast float* %45 to i8*
+  call void @llvm.var.annotation(i8* %544, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.15, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.18, i32 0, i32 0), i32 519, i8* null)
+  %545 = load float, float* %44, align 4
+  %546 = fadd float 1.000000e+00, %545
+  store float %546, float* %45, align 4
+  %547 = load float, float* %45, align 4
+  %548 = fpext float %547 to double
+  %549 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([10 x i8], [10 x i8]* @.str.55, i64 0, i64 0), double noundef %548)
+  %550 = load float, float* %43, align 4
+  %551 = load float, float* %45, align 4
+  %552 = fmul float %550, %551
+  store float %552, float* %17, align 4
+  %553 = load float, float* %16, align 4
+  %554 = fpext float %553 to double
+  %555 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([14 x i8], [14 x i8]* @.str.56, i64 0, i64 0), double noundef %554)
+  %556 = load float, float* %14, align 4
+  %557 = fpext float %556 to double
+  %558 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([12 x i8], [12 x i8]* @.str.57, i64 0, i64 0), double noundef %557)
+  %559 = load float, float* %17, align 4
+  %560 = fpext float %559 to double
+  %561 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([13 x i8], [13 x i8]* @.str.58, i64 0, i64 0), double noundef %560)
+  %562 = bitcast float* %46 to i8*
+  call void @llvm.var.annotation(i8* %562, i8* getelementptr inbounds ([34 x i8], [34 x i8]* @.str.59, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.18, i32 0, i32 0), i32 529, i8* null)
+  %563 = load float, float* %17, align 4
+  %564 = load float, float* %13, align 4
+  %565 = fmul float %563, %564
+  store float %565, float* %46, align 4
+  %566 = load float, float* %46, align 4
   %567 = fpext float %566 to double
-  %568 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([12 x i8], [12 x i8]* @.str.52, i64 0, i64 0), double %567)
-  %569 = load float, float* %17, align 4
-  %570 = fpext float %569 to double
-  %571 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([13 x i8], [13 x i8]* @.str.53, i64 0, i64 0), double %570)
-  %572 = bitcast float* %46 to i8*
-  call void @llvm.var.annotation(i8* %572, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 529, i8* null)
-  %573 = load float, float* %17, align 4
-  %574 = load float, float* %13, align 4
-  %575 = fmul float %573, %574
-  store float %575, float* %46, align 4
-  %576 = load float, float* %46, align 4
-  %577 = fpext float %576 to double
-  %578 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str.54, i64 0, i64 0), double %577)
-  %579 = bitcast float* %47 to i8*
-  call void @llvm.var.annotation(i8* %579, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 532, i8* null)
-  %580 = load float, float* %16, align 4
-  %581 = load float, float* %46, align 4
-  %582 = fadd float %580, %581
-  store float %582, float* %47, align 4
-  %583 = load float, float* %47, align 4
-  %584 = fpext float %583 to double
-  %585 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str.55, i64 0, i64 0), double %584)
-  %586 = bitcast float* %48 to i8*
-  call void @llvm.var.annotation(i8* %586, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 535, i8* null)
-  %587 = load float, float* %17, align 4
-  %588 = load float, float* %17, align 4
-  %589 = fmul float %587, %588
-  %590 = load float, float* %17, align 4
-  %591 = fmul float %589, %590
-  store float %591, float* %48, align 4
-  %592 = load float, float* %48, align 4
-  %593 = fpext float %592 to double
-  %594 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str.56, i64 0, i64 0), double %593)
-  %595 = bitcast float* %49 to i8*
-  call void @llvm.var.annotation(i8* %595, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 538, i8* null)
-  %596 = load float, float* %48, align 4
-  %597 = load float, float* %47, align 4
-  %598 = fmul float %596, %597
-  store float %598, float* %49, align 4
-  %599 = load float, float* %49, align 4
-  %600 = fpext float %599 to double
-  %601 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str.57, i64 0, i64 0), double %600)
-  %602 = load float, float* %49, align 4
-  %603 = call float @_ZSt4sqrtf(float %602)
-  %604 = call float @_ZSt4sqrtf(float %603)
-  %605 = load float, float* getelementptr inbounds ([4 x float], [4 x float]* @params_ksTo, i64 0, i64 1), align 4
-  %606 = fmul float %604, %605
-  store float %606, float* %23, align 4
-  %607 = load float, float* %23, align 4
+  %568 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([10 x i8], [10 x i8]* @.str.60, i64 0, i64 0), double noundef %567)
+  %569 = bitcast float* %47 to i8*
+  call void @llvm.var.annotation(i8* %569, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.15, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.18, i32 0, i32 0), i32 532, i8* null)
+  %570 = load float, float* %16, align 4
+  %571 = load float, float* %46, align 4
+  %572 = fadd float %570, %571
+  store float %572, float* %47, align 4
+  %573 = load float, float* %47, align 4
+  %574 = fpext float %573 to double
+  %575 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([10 x i8], [10 x i8]* @.str.61, i64 0, i64 0), double noundef %574)
+  %576 = bitcast float* %48 to i8*
+  call void @llvm.var.annotation(i8* %576, i8* getelementptr inbounds ([26 x i8], [26 x i8]* @.str.9, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.18, i32 0, i32 0), i32 535, i8* null)
+  %577 = load float, float* %17, align 4
+  %578 = load float, float* %17, align 4
+  %579 = fmul float %577, %578
+  %580 = load float, float* %17, align 4
+  %581 = fmul float %579, %580
+  store float %581, float* %48, align 4
+  %582 = load float, float* %48, align 4
+  %583 = fpext float %582 to double
+  %584 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([10 x i8], [10 x i8]* @.str.62, i64 0, i64 0), double noundef %583)
+  %585 = bitcast float* %49 to i8*
+  call void @llvm.var.annotation(i8* %585, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.15, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.18, i32 0, i32 0), i32 538, i8* null)
+  %586 = load float, float* %48, align 4
+  %587 = load float, float* %47, align 4
+  %588 = fmul float %586, %587
+  store float %588, float* %49, align 4
+  %589 = load float, float* %49, align 4
+  %590 = fpext float %589 to double
+  %591 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([10 x i8], [10 x i8]* @.str.63, i64 0, i64 0), double noundef %590)
+  %592 = load float, float* %49, align 4
+  %593 = call noundef float @_ZSt4sqrtf(float noundef %592)
+  %594 = call noundef float @_ZSt4sqrtf(float noundef %593)
+  %595 = load float, float* getelementptr inbounds ([4 x float], [4 x float]* @params_ksTo, i64 0, i64 1), align 4
+  %596 = fmul float %594, %595
+  store float %596, float* %23, align 4
+  %597 = load float, float* %23, align 4
+  %598 = fpext float %597 to double
+  %599 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([10 x i8], [10 x i8]* @.str.64, i64 0, i64 0), double noundef %598)
+  %600 = bitcast float* %50 to i8*
+  call void @llvm.var.annotation(i8* %600, i8* getelementptr inbounds ([27 x i8], [27 x i8]* @.str.65, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.18, i32 0, i32 0), i32 546, i8* null)
+  %601 = load float, float* getelementptr inbounds ([4 x float], [4 x float]* @params_ksTo, i64 0, i64 1), align 4
+  %602 = fpext float %601 to double
+  %603 = fmul double %602, 2.731500e+02
+  %604 = fptrunc double %603 to float
+  store float %604, float* %50, align 4
+  %605 = load float, float* %50, align 4
+  %606 = fpext float %605 to double
+  %607 = load float, float* getelementptr inbounds ([4 x float], [4 x float]* @params_ksTo, i64 0, i64 1), align 4
   %608 = fpext float %607 to double
-  %609 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str.58, i64 0, i64 0), double %608)
-  %610 = bitcast float* %50 to i8*
-  call void @llvm.var.annotation(i8* %610, i8* getelementptr inbounds ([27 x i8], [27 x i8]* @.str.59, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 546, i8* null)
-  %611 = load float, float* getelementptr inbounds ([4 x float], [4 x float]* @params_ksTo, i64 0, i64 1), align 4
-  %612 = fpext float %611 to double
-  %613 = fmul double %612, 2.731500e+02
-  %614 = fptrunc double %613 to float
-  store float %614, float* %50, align 4
-  %615 = load float, float* %50, align 4
-  %616 = fpext float %615 to double
-  %617 = load float, float* getelementptr inbounds ([4 x float], [4 x float]* @params_ksTo, i64 0, i64 1), align 4
-  %618 = fpext float %617 to double
-  %619 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([22 x i8], [22 x i8]* @.str.60, i64 0, i64 0), double %616, double %618)
-  %620 = bitcast float* %51 to i8*
-  call void @llvm.var.annotation(i8* %620, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 549, i8* null)
-  %621 = load float, float* %50, align 4
-  %622 = fsub float 1.000000e+00, %621
-  store float %622, float* %51, align 4
-  %623 = load float, float* %51, align 4
-  %624 = fpext float %623 to double
-  %625 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str.61, i64 0, i64 0), double %624)
-  %626 = bitcast float* %52 to i8*
-  call void @llvm.var.annotation(i8* %626, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 552, i8* null)
-  %627 = load float, float* %17, align 4
-  %628 = load float, float* %51, align 4
-  %629 = fmul float %627, %628
-  store float %629, float* %52, align 4
-  %630 = load float, float* %52, align 4
+  %609 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([22 x i8], [22 x i8]* @.str.66, i64 0, i64 0), double noundef %606, double noundef %608)
+  %610 = bitcast float* %51 to i8*
+  call void @llvm.var.annotation(i8* %610, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.15, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.18, i32 0, i32 0), i32 549, i8* null)
+  %611 = load float, float* %50, align 4
+  %612 = fsub float 1.000000e+00, %611
+  store float %612, float* %51, align 4
+  %613 = load float, float* %51, align 4
+  %614 = fpext float %613 to double
+  %615 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([10 x i8], [10 x i8]* @.str.67, i64 0, i64 0), double noundef %614)
+  %616 = bitcast float* %52 to i8*
+  call void @llvm.var.annotation(i8* %616, i8* getelementptr inbounds ([20 x i8], [20 x i8]* @.str.68, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.18, i32 0, i32 0), i32 552, i8* null)
+  %617 = load float, float* %17, align 4
+  %618 = load float, float* %51, align 4
+  %619 = fmul float %617, %618
+  store float %619, float* %52, align 4
+  %620 = load float, float* %52, align 4
+  %621 = fpext float %620 to double
+  %622 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([10 x i8], [10 x i8]* @.str.69, i64 0, i64 0), double noundef %621)
+  %623 = bitcast float* %53 to i8*
+  call void @llvm.var.annotation(i8* %623, i8* getelementptr inbounds ([20 x i8], [20 x i8]* @.str.68, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.18, i32 0, i32 0), i32 555, i8* null)
+  %624 = load float, float* %52, align 4
+  %625 = load float, float* %23, align 4
+  %626 = fadd float %624, %625
+  store float %626, float* %53, align 4
+  %627 = load float, float* %53, align 4
+  %628 = fpext float %627 to double
+  %629 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([10 x i8], [10 x i8]* @.str.70, i64 0, i64 0), double noundef %628)
+  %630 = load float, float* %16, align 4
   %631 = fpext float %630 to double
-  %632 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str.62, i64 0, i64 0), double %631)
-  %633 = bitcast float* %53 to i8*
-  call void @llvm.var.annotation(i8* %633, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 555, i8* null)
-  %634 = load float, float* %52, align 4
-  %635 = load float, float* %23, align 4
-  %636 = fadd float %634, %635
-  store float %636, float* %53, align 4
-  %637 = load float, float* %53, align 4
-  %638 = fpext float %637 to double
-  %639 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str.63, i64 0, i64 0), double %638)
-  %640 = load float, float* %16, align 4
-  %641 = fpext float %640 to double
-  %642 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([14 x i8], [14 x i8]* @.str.51, i64 0, i64 0), double %641)
-  %643 = bitcast float* %54 to i8*
-  call void @llvm.var.annotation(i8* %643, i8* getelementptr inbounds ([46 x i8], [46 x i8]* @.str.64, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 558, i8* null)
-  %644 = load float, float* %16, align 4
-  %645 = load float, float* %53, align 4
-  %646 = fdiv float %644, %645
-  store float %646, float* %54, align 4
-  %647 = load i32, i32* %32, align 4
-  %648 = icmp eq i32 %647, 0
-  br i1 %648, label %649, label %651
+  %632 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([14 x i8], [14 x i8]* @.str.56, i64 0, i64 0), double noundef %631)
+  %633 = bitcast float* %54 to i8*
+  call void @llvm.var.annotation(i8* %633, i8* getelementptr inbounds ([48 x i8], [48 x i8]* @.str.71, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.18, i32 0, i32 0), i32 558, i8* null)
+  %634 = load float, float* %16, align 4
+  %635 = load float, float* %53, align 4
+  %636 = fdiv float %634, %635
+  store float %636, float* %54, align 4
+  %637 = load i32, i32* %32, align 4
+  %638 = icmp eq i32 %637, 0
+  br i1 %638, label %639, label %641
 
-649:                                              ; preds = %500
-  %650 = load float, float* %54, align 4
-  store float %650, float* @mint5, align 4
-  br label %651
+639:                                              ; preds = %491
+  %640 = load float, float* %54, align 4
+  store float %640, float* @mint5, align 4
+  br label %641
 
-651:                                              ; preds = %649, %500
-  %652 = load float, float* %54, align 4
-  %653 = load float, float* @mint5, align 4
-  %654 = fcmp olt float %652, %653
-  br i1 %654, label %655, label %660
+641:                                              ; preds = %639, %491
+  %642 = load float, float* %54, align 4
+  %643 = load float, float* @mint5, align 4
+  %644 = fcmp olt float %642, %643
+  br i1 %644, label %645, label %650
 
-655:                                              ; preds = %651
+645:                                              ; preds = %641
+  %646 = load float, float* %54, align 4
+  store float %646, float* @mint5, align 4
+  %647 = load float, float* %54, align 4
+  %648 = fpext float %647 to double
+  %649 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([14 x i8], [14 x i8]* @.str.72, i64 0, i64 0), double noundef %648)
+  br label %650
+
+650:                                              ; preds = %645, %641
+  %651 = load float, float* %54, align 4
+  %652 = load float, float* @maxt5, align 4
+  %653 = fcmp ogt float %651, %652
+  br i1 %653, label %654, label %659
+
+654:                                              ; preds = %650
+  %655 = load float, float* %54, align 4
+  store float %655, float* @maxt5, align 4
   %656 = load float, float* %54, align 4
-  store float %656, float* @mint5, align 4
-  %657 = load float, float* %54, align 4
-  %658 = fpext float %657 to double
-  %659 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([14 x i8], [14 x i8]* @.str.65, i64 0, i64 0), double %658)
-  br label %660
+  %657 = fpext float %656 to double
+  %658 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([14 x i8], [14 x i8]* @.str.73, i64 0, i64 0), double noundef %657)
+  br label %659
 
-660:                                              ; preds = %655, %651
-  %661 = load float, float* %54, align 4
-  %662 = load float, float* @maxt5, align 4
-  %663 = fcmp ogt float %661, %662
-  br i1 %663, label %664, label %669
-
-664:                                              ; preds = %660
-  %665 = load float, float* %54, align 4
-  store float %665, float* @maxt5, align 4
-  %666 = load float, float* %54, align 4
-  %667 = fpext float %666 to double
-  %668 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([14 x i8], [14 x i8]* @.str.66, i64 0, i64 0), double %667)
-  br label %669
-
-669:                                              ; preds = %664, %660
-  %670 = load float, float* %54, align 4
-  %671 = fpext float %670 to double
-  %672 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str.67, i64 0, i64 0), double %671)
-  %673 = bitcast float* %55 to i8*
-  call void @llvm.var.annotation(i8* %673, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 576, i8* null)
-  %674 = load float, float* %54, align 4
-  %675 = load float, float* %13, align 4
-  %676 = fadd float %674, %675
-  store float %676, float* %55, align 4
-  %677 = load float, float* %55, align 4
+659:                                              ; preds = %654, %650
+  %660 = load float, float* %54, align 4
+  %661 = fpext float %660 to double
+  %662 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([10 x i8], [10 x i8]* @.str.74, i64 0, i64 0), double noundef %661)
+  %663 = bitcast float* %55 to i8*
+  call void @llvm.var.annotation(i8* %663, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.15, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.18, i32 0, i32 0), i32 576, i8* null)
+  %664 = load float, float* %54, align 4
+  %665 = load float, float* %13, align 4
+  %666 = fadd float %664, %665
+  store float %666, float* %55, align 4
+  %667 = load float, float* %55, align 4
+  %668 = fpext float %667 to double
+  %669 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([10 x i8], [10 x i8]* @.str.75, i64 0, i64 0), double noundef %668)
+  %670 = bitcast float* %56 to i8*
+  call void @llvm.var.annotation(i8* %670, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.15, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.18, i32 0, i32 0), i32 579, i8* null)
+  %671 = load float, float* %55, align 4
+  %672 = call noundef float @_ZSt4sqrtf(float noundef %671)
+  %673 = call noundef float @_ZSt4sqrtf(float noundef %672)
+  %674 = fpext float %673 to double
+  %675 = fsub double %674, 2.731500e+02
+  %676 = fptrunc double %675 to float
+  store float %676, float* %56, align 4
+  %677 = load float, float* %56, align 4
   %678 = fpext float %677 to double
-  %679 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str.68, i64 0, i64 0), double %678)
-  %680 = bitcast float* %56 to i8*
-  call void @llvm.var.annotation(i8* %680, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 579, i8* null)
-  %681 = load float, float* %55, align 4
-  %682 = call float @_ZSt4sqrtf(float %681)
-  %683 = call float @_ZSt4sqrtf(float %682)
-  %684 = fpext float %683 to double
-  %685 = fsub double %684, 2.731500e+02
-  %686 = fptrunc double %685 to float
-  store float %686, float* %56, align 4
-  %687 = load float, float* %56, align 4
-  %688 = fpext float %687 to double
-  %689 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str.69, i64 0, i64 0), double %688)
-  %690 = load float, float* %13, align 4
-  %691 = fpext float %690 to double
-  %692 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([13 x i8], [13 x i8]* @.str.70, i64 0, i64 0), double %691)
-  %693 = load float, float* %56, align 4
-  %694 = fptosi float %693 to i32
-  %695 = load i16, i16* getelementptr inbounds ([4 x i16], [4 x i16]* @params_ct, i64 0, i64 1), align 2
-  %696 = sext i16 %695 to i32
-  %697 = icmp slt i32 %694, %696
-  br i1 %697, label %698, label %699
+  %679 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([10 x i8], [10 x i8]* @.str.76, i64 0, i64 0), double noundef %678)
+  %680 = load float, float* %13, align 4
+  %681 = fpext float %680 to double
+  %682 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([13 x i8], [13 x i8]* @.str.77, i64 0, i64 0), double noundef %681)
+  %683 = load float, float* %56, align 4
+  %684 = fptosi float %683 to i32
+  %685 = load i16, i16* getelementptr inbounds ([4 x i16], [4 x i16]* @params_ct, i64 0, i64 1), align 2
+  %686 = sext i16 %685 to i32
+  %687 = icmp slt i32 %684, %686
+  br i1 %687, label %688, label %689
 
-698:                                              ; preds = %669
+688:                                              ; preds = %659
   store i8 0, i8* %26, align 1
-  br label %716
+  br label %706
 
-699:                                              ; preds = %669
-  %700 = load float, float* %56, align 4
-  %701 = fptosi float %700 to i32
-  %702 = load i16, i16* getelementptr inbounds ([4 x i16], [4 x i16]* @params_ct, i64 0, i64 2), align 2
-  %703 = sext i16 %702 to i32
-  %704 = icmp slt i32 %701, %703
-  br i1 %704, label %705, label %706
+689:                                              ; preds = %659
+  %690 = load float, float* %56, align 4
+  %691 = fptosi float %690 to i32
+  %692 = load i16, i16* getelementptr inbounds ([4 x i16], [4 x i16]* @params_ct, i64 0, i64 2), align 2
+  %693 = sext i16 %692 to i32
+  %694 = icmp slt i32 %691, %693
+  br i1 %694, label %695, label %696
 
-705:                                              ; preds = %699
+695:                                              ; preds = %689
   store i8 1, i8* %26, align 1
-  br label %715
+  br label %705
 
-706:                                              ; preds = %699
-  %707 = load float, float* %56, align 4
-  %708 = fptosi float %707 to i32
-  %709 = load i16, i16* getelementptr inbounds ([4 x i16], [4 x i16]* @params_ct, i64 0, i64 3), align 2
-  %710 = sext i16 %709 to i32
-  %711 = icmp slt i32 %708, %710
-  br i1 %711, label %712, label %713
+696:                                              ; preds = %689
+  %697 = load float, float* %56, align 4
+  %698 = fptosi float %697 to i32
+  %699 = load i16, i16* getelementptr inbounds ([4 x i16], [4 x i16]* @params_ct, i64 0, i64 3), align 2
+  %700 = sext i16 %699 to i32
+  %701 = icmp slt i32 %698, %700
+  br i1 %701, label %702, label %703
 
-712:                                              ; preds = %706
+702:                                              ; preds = %696
   store i8 2, i8* %26, align 1
-  br label %714
+  br label %704
 
-713:                                              ; preds = %706
+703:                                              ; preds = %696
   store i8 3, i8* %26, align 1
-  br label %714
+  br label %704
 
-714:                                              ; preds = %713, %712
-  br label %715
+704:                                              ; preds = %703, %702
+  br label %705
 
-715:                                              ; preds = %714, %705
-  br label %716
+705:                                              ; preds = %704, %695
+  br label %706
 
-716:                                              ; preds = %715, %698
-  %717 = load i8, i8* %26, align 1
-  %718 = sext i8 %717 to i32
-  %719 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([11 x i8], [11 x i8]* @.str.71, i64 0, i64 0), i32 %718)
-  %720 = bitcast float* %57 to i8*
-  call void @llvm.var.annotation(i8* %720, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 611, i8* null)
-  %721 = load float, float* %56, align 4
-  %722 = load i8, i8* %26, align 1
-  %723 = sext i8 %722 to i64
-  %724 = getelementptr inbounds [4 x i16], [4 x i16]* @params_ct, i64 0, i64 %723
-  %725 = load i16, i16* %724, align 2
-  %726 = sext i16 %725 to i32
-  %727 = sitofp i32 %726 to float
-  %728 = fsub float %721, %727
-  store float %728, float* %57, align 4
-  %729 = load float, float* %57, align 4
+706:                                              ; preds = %705, %688
+  %707 = load i8, i8* %26, align 1
+  %708 = sext i8 %707 to i32
+  %709 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([11 x i8], [11 x i8]* @.str.78, i64 0, i64 0), i32 noundef %708)
+  %710 = bitcast float* %57 to i8*
+  call void @llvm.var.annotation(i8* %710, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.15, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.18, i32 0, i32 0), i32 611, i8* null)
+  %711 = load float, float* %56, align 4
+  %712 = load i8, i8* %26, align 1
+  %713 = sext i8 %712 to i64
+  %714 = getelementptr inbounds [4 x i16], [4 x i16]* @params_ct, i64 0, i64 %713
+  %715 = load i16, i16* %714, align 2
+  %716 = sext i16 %715 to i32
+  %717 = sitofp i32 %716 to float
+  %718 = fsub float %711, %717
+  store float %718, float* %57, align 4
+  %719 = load float, float* %57, align 4
+  %720 = fpext float %719 to double
+  %721 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([10 x i8], [10 x i8]* @.str.79, i64 0, i64 0), double noundef %720)
+  %722 = bitcast float* %58 to i8*
+  call void @llvm.var.annotation(i8* %722, i8* getelementptr inbounds ([26 x i8], [26 x i8]* @.str.9, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.18, i32 0, i32 0), i32 614, i8* null)
+  %723 = load i8, i8* %26, align 1
+  %724 = sext i8 %723 to i64
+  %725 = getelementptr inbounds [4 x float], [4 x float]* @params_ksTo, i64 0, i64 %724
+  %726 = load float, float* %725, align 4
+  %727 = load float, float* %57, align 4
+  %728 = fmul float %726, %727
+  store float %728, float* %58, align 4
+  %729 = load float, float* %58, align 4
   %730 = fpext float %729 to double
-  %731 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str.72, i64 0, i64 0), double %730)
-  %732 = bitcast float* %58 to i8*
-  call void @llvm.var.annotation(i8* %732, i8* getelementptr inbounds ([26 x i8], [26 x i8]* @.str.9, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 614, i8* null)
-  %733 = load i8, i8* %26, align 1
-  %734 = sext i8 %733 to i64
-  %735 = getelementptr inbounds [4 x float], [4 x float]* @params_ksTo, i64 0, i64 %734
-  %736 = load float, float* %735, align 4
-  %737 = load float, float* %57, align 4
-  %738 = fmul float %736, %737
-  store float %738, float* %58, align 4
-  %739 = load float, float* %58, align 4
-  %740 = fpext float %739 to double
-  %741 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str.73, i64 0, i64 0), double %740)
-  %742 = bitcast float* %59 to i8*
-  call void @llvm.var.annotation(i8* %742, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 617, i8* null)
-  %743 = load float, float* %58, align 4
-  %744 = fadd float 1.000000e+00, %743
-  store float %744, float* %59, align 4
-  %745 = load float, float* %59, align 4
+  %731 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([10 x i8], [10 x i8]* @.str.80, i64 0, i64 0), double noundef %730)
+  %732 = bitcast float* %59 to i8*
+  call void @llvm.var.annotation(i8* %732, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.15, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.18, i32 0, i32 0), i32 617, i8* null)
+  %733 = load float, float* %58, align 4
+  %734 = fadd float 1.000000e+00, %733
+  store float %734, float* %59, align 4
+  %735 = load float, float* %59, align 4
+  %736 = fpext float %735 to double
+  %737 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([11 x i8], [11 x i8]* @.str.81, i64 0, i64 0), double noundef %736)
+  %738 = bitcast float* %60 to i8*
+  call void @llvm.var.annotation(i8* %738, i8* getelementptr inbounds ([26 x i8], [26 x i8]* @.str.9, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.18, i32 0, i32 0), i32 620, i8* null)
+  %739 = load float, float* %17, align 4
+  %740 = load i8, i8* %26, align 1
+  %741 = sext i8 %740 to i64
+  %742 = getelementptr inbounds [4 x float], [4 x float]* %25, i64 0, i64 %741
+  %743 = load float, float* %742, align 4
+  %744 = fmul float %739, %743
+  store float %744, float* %60, align 4
+  %745 = load float, float* %60, align 4
   %746 = fpext float %745 to double
-  %747 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([11 x i8], [11 x i8]* @.str.74, i64 0, i64 0), double %746)
-  %748 = bitcast float* %60 to i8*
-  call void @llvm.var.annotation(i8* %748, i8* getelementptr inbounds ([26 x i8], [26 x i8]* @.str.9, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 620, i8* null)
-  %749 = load float, float* %17, align 4
-  %750 = load i8, i8* %26, align 1
-  %751 = sext i8 %750 to i64
-  %752 = getelementptr inbounds [4 x float], [4 x float]* %25, i64 0, i64 %751
-  %753 = load float, float* %752, align 4
-  %754 = fmul float %749, %753
-  store float %754, float* %60, align 4
-  %755 = load float, float* %60, align 4
-  %756 = fpext float %755 to double
-  %757 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([11 x i8], [11 x i8]* @.str.75, i64 0, i64 0), double %756)
-  %758 = load float, float* %60, align 4
-  %759 = load float, float* %59, align 4
-  %760 = fmul float %758, %759
-  store float %760, float* %61, align 4
-  %761 = load float, float* %61, align 4
-  %762 = fpext float %761 to double
-  %763 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([11 x i8], [11 x i8]* @.str.76, i64 0, i64 0), double %762)
-  %764 = bitcast float* %62 to i8*
-  call void @llvm.var.annotation(i8* %764, i8* getelementptr inbounds ([36 x i8], [36 x i8]* @.str.77, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 626, i8* null)
-  %765 = load float, float* %16, align 4
-  %766 = load float, float* %61, align 4
-  %767 = fdiv float %765, %766
-  store float %767, float* %62, align 4
-  %768 = load float, float* %62, align 4
-  %769 = fpext float %768 to double
-  %770 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([11 x i8], [11 x i8]* @.str.78, i64 0, i64 0), double %769)
+  %747 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([11 x i8], [11 x i8]* @.str.82, i64 0, i64 0), double noundef %746)
+  %748 = load float, float* %60, align 4
+  %749 = load float, float* %59, align 4
+  %750 = fmul float %748, %749
+  store float %750, float* %61, align 4
+  %751 = load float, float* %61, align 4
+  %752 = fpext float %751 to double
+  %753 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([11 x i8], [11 x i8]* @.str.83, i64 0, i64 0), double noundef %752)
+  %754 = bitcast float* %62 to i8*
+  call void @llvm.var.annotation(i8* %754, i8* getelementptr inbounds ([36 x i8], [36 x i8]* @.str.84, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.18, i32 0, i32 0), i32 626, i8* null)
+  %755 = load float, float* %16, align 4
+  %756 = load float, float* %61, align 4
+  %757 = fdiv float %755, %756
+  store float %757, float* %62, align 4
+  %758 = load float, float* %62, align 4
+  %759 = fpext float %758 to double
+  %760 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([11 x i8], [11 x i8]* @.str.85, i64 0, i64 0), double noundef %759)
+  %761 = load float, float* %62, align 4
+  %762 = load float, float* @maximum2, align 4
+  %763 = fcmp ogt float %761, %762
+  br i1 %763, label %764, label %769
+
+764:                                              ; preds = %706
+  %765 = load float, float* %62, align 4
+  store float %765, float* @maximum2, align 4
+  %766 = load float, float* @maximum2, align 4
+  %767 = fpext float %766 to double
+  %768 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([15 x i8], [15 x i8]* @.str.86, i64 0, i64 0), double noundef %767)
+  br label %769
+
+769:                                              ; preds = %764, %706
+  %770 = bitcast float* %63 to i8*
+  call void @llvm.var.annotation(i8* %770, i8* getelementptr inbounds ([37 x i8], [37 x i8]* @.str.87, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.18, i32 0, i32 0), i32 634, i8* null)
   %771 = load float, float* %62, align 4
-  %772 = load float, float* @maximum2, align 4
-  %773 = fcmp ogt float %771, %772
-  br i1 %773, label %774, label %779
+  %772 = load float, float* %13, align 4
+  %773 = fadd float %771, %772
+  store float %773, float* %63, align 4
+  %774 = load float, float* %63, align 4
+  %775 = fpext float %774 to double
+  %776 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([11 x i8], [11 x i8]* @.str.88, i64 0, i64 0), double noundef %775)
+  %777 = load float, float* %63, align 4
+  %778 = load float, float* @maximum, align 4
+  %779 = fcmp ogt float %777, %778
+  br i1 %779, label %780, label %782
 
-774:                                              ; preds = %716
-  %775 = load float, float* %62, align 4
-  store float %775, float* @maximum2, align 4
-  %776 = load float, float* @maximum2, align 4
-  %777 = fpext float %776 to double
-  %778 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([15 x i8], [15 x i8]* @.str.79, i64 0, i64 0), double %777)
-  br label %779
+780:                                              ; preds = %769
+  %781 = load float, float* %63, align 4
+  store float %781, float* @maximum, align 4
+  br label %782
 
-779:                                              ; preds = %774, %716
-  %780 = bitcast float* %63 to i8*
-  call void @llvm.var.annotation(i8* %780, i8* getelementptr inbounds ([37 x i8], [37 x i8]* @.str.80, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 634, i8* null)
-  %781 = load float, float* %62, align 4
-  %782 = load float, float* %13, align 4
-  %783 = fadd float %781, %782
-  store float %783, float* %63, align 4
+782:                                              ; preds = %780, %769
+  %783 = bitcast float* %64 to i8*
+  call void @llvm.var.annotation(i8* %783, i8* getelementptr inbounds ([29 x i8], [29 x i8]* @.str.26, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.18, i32 0, i32 0), i32 638, i8* null)
   %784 = load float, float* %63, align 4
-  %785 = fpext float %784 to double
-  %786 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([11 x i8], [11 x i8]* @.str.81, i64 0, i64 0), double %785)
-  %787 = load float, float* %63, align 4
-  %788 = load float, float* @maximum, align 4
-  %789 = fcmp ogt float %787, %788
-  br i1 %789, label %790, label %792
+  %785 = call noundef float @_ZSt4sqrtf(float noundef %784)
+  %786 = call noundef float @_ZSt4sqrtf(float noundef %785)
+  %787 = fpext float %786 to double
+  %788 = fsub double %787, 2.731500e+02
+  %789 = fptrunc double %788 to float
+  store float %789, float* %64, align 4
+  %790 = load float, float* %64, align 4
+  %791 = fpext float %790 to double
+  %792 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([11 x i8], [11 x i8]* @.str.89, i64 0, i64 0), double noundef %791)
+  %793 = load float, float* %64, align 4
+  %794 = load float*, float** %8, align 8
+  %795 = load i32, i32* %32, align 4
+  %796 = sext i32 %795 to i64
+  %797 = getelementptr inbounds float, float* %794, i64 %796
+  store float %793, float* %797, align 4
+  %798 = load i32, i32* %32, align 4
+  %799 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([18 x i8], [18 x i8]* @.str.90, i64 0, i64 0), i32 noundef %798)
+  br label %800
 
-790:                                              ; preds = %779
-  %791 = load float, float* %63, align 4
-  store float %791, float* @maximum, align 4
-  br label %792
+800:                                              ; preds = %782, %349
+  br label %801
 
-792:                                              ; preds = %790, %779
-  %793 = bitcast float* %64 to i8*
-  call void @llvm.var.annotation(i8* %793, i8* getelementptr inbounds ([29 x i8], [29 x i8]* @.str.21, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 638, i8* null)
-  %794 = load float, float* %63, align 4
-  %795 = call float @_ZSt4sqrtf(float %794)
-  %796 = call float @_ZSt4sqrtf(float %795)
-  %797 = fpext float %796 to double
-  %798 = fsub double %797, 2.731500e+02
-  %799 = fptrunc double %798 to float
-  store float %799, float* %64, align 4
-  %800 = load float, float* %64, align 4
-  %801 = fpext float %800 to double
-  %802 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([11 x i8], [11 x i8]* @.str.82, i64 0, i64 0), double %801)
-  %803 = load float, float* %64, align 4
-  %804 = load float*, float** %8, align 8
-  %805 = load i32, i32* %32, align 4
-  %806 = sext i32 %805 to i64
-  %807 = getelementptr inbounds float, float* %804, i64 %806
-  store float %803, float* %807, align 4
-  %808 = load i32, i32* %32, align 4
-  %809 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([18 x i8], [18 x i8]* @.str.83, i64 0, i64 0), i32 %808)
-  br label %810
+801:                                              ; preds = %800
+  %802 = load i32, i32* %32, align 4
+  %803 = add nsw i32 %802, 1
+  store i32 %803, i32* %32, align 4
+  br label %302, !llvm.loop !35
 
-810:                                              ; preds = %792, %359
-  br label %811
-
-811:                                              ; preds = %810
-  %812 = load i32, i32* %32, align 4
-  %813 = add nsw i32 %812, 1
-  store i32 %813, i32* %32, align 4
-  br label %312, !llvm.loop !31
-
-814:                                              ; preds = %312
-  %815 = load float, float* %9, align 4
-  %816 = fpext float %815 to double
-  %817 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([8 x i8], [8 x i8]* @.str.84, i64 0, i64 0), double %816)
-  %818 = load float, float* %10, align 4
-  %819 = fpext float %818 to double
-  %820 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([8 x i8], [8 x i8]* @.str.85, i64 0, i64 0), double %819)
-  %821 = load float, float* %7, align 4
-  %822 = fpext float %821 to double
-  %823 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str.86, i64 0, i64 0), double %822)
-  %824 = load float, float* %13, align 4
-  %825 = fpext float %824 to double
-  %826 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([12 x i8], [12 x i8]* @.str.87, i64 0, i64 0), double %825)
+804:                                              ; preds = %302
+  %805 = load float, float* %9, align 4
+  %806 = fpext float %805 to double
+  %807 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([8 x i8], [8 x i8]* @.str.91, i64 0, i64 0), double noundef %806)
+  %808 = load float, float* %10, align 4
+  %809 = fpext float %808 to double
+  %810 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([8 x i8], [8 x i8]* @.str.92, i64 0, i64 0), double noundef %809)
+  %811 = load float, float* %7, align 4
+  %812 = fpext float %811 to double
+  %813 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([10 x i8], [10 x i8]* @.str.93, i64 0, i64 0), double noundef %812)
+  %814 = load float, float* %13, align 4
+  %815 = fpext float %814 to double
+  %816 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([12 x i8], [12 x i8]* @.str.94, i64 0, i64 0), double noundef %815)
   ret void
 }
 
-; Function Attrs: nofree nosync nounwind willreturn
+; Function Attrs: inaccessiblememonly nofree nosync nounwind willreturn
 declare void @llvm.var.annotation(i8*, i8*, i8*, i32, i8*) #3
 
-; Function Attrs: noinline uwtable mustprogress
-define dso_local float @_Z15MLX90640_GetVddPKt(i16* %0) #0 {
+; Function Attrs: mustprogress noinline uwtable
+define dso_local noundef float @_Z15MLX90640_GetVddPKt(i16* noundef %0) #0 {
   %2 = alloca i16*, align 8
   %3 = alloca float, align 4
   %4 = alloca float, align 4
   %5 = alloca i32, align 4
   store i16* %0, i16** %2, align 8
   %6 = bitcast float* %3 to i8*
-  call void @llvm.var.annotation(i8* %6, i8* getelementptr inbounds ([34 x i8], [34 x i8]* @.str.90, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 759, i8* null)
+  call void @llvm.var.annotation(i8* %6, i8* getelementptr inbounds ([34 x i8], [34 x i8]* @.str.97, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.18, i32 0, i32 0), i32 759, i8* null)
   %7 = bitcast float* %4 to i8*
-  call void @llvm.var.annotation(i8* %7, i8* getelementptr inbounds ([26 x i8], [26 x i8]* @.str.91, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 765, i8* null)
+  call void @llvm.var.annotation(i8* %7, i8* getelementptr inbounds ([26 x i8], [26 x i8]* @.str.98, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.18, i32 0, i32 0), i32 765, i8* null)
   %8 = load i16*, i16** %2, align 8
   %9 = getelementptr inbounds i16, i16* %8, i64 810
   %10 = load i16, i16* %9, align 2
@@ -4231,20 +4229,20 @@ define dso_local float @_Z15MLX90640_GetVddPKt(i16* %0) #0 {
   store i32 %23, i32* %5, align 4
   %24 = load i32, i32* @params_resolutionEE, align 4
   %25 = sitofp i32 %24 to double
-  %26 = call double @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_(i32 2, double %25)
+  %26 = call noundef double @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_(i32 noundef 2, double noundef %25)
   %27 = load i32, i32* %5, align 4
   %28 = sitofp i32 %27 to double
-  %29 = call double @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_(i32 2, double %28)
+  %29 = call noundef double @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_(i32 noundef 2, double noundef %28)
   %30 = fdiv double %26, %29
   %31 = fptrunc double %30 to float
   store float %31, float* %4, align 4
   %32 = load float, float* %4, align 4
   %33 = load float, float* %3, align 4
-  %34 = fmul float %32, %33
-  %35 = load i16, i16* @params_vdd25, align 2
-  %36 = sext i16 %35 to i32
-  %37 = sitofp i32 %36 to float
-  %38 = fsub float %34, %37
+  %34 = load i16, i16* @params_vdd25, align 2
+  %35 = sext i16 %34 to i32
+  %36 = sitofp i32 %35 to float
+  %37 = fneg float %36
+  %38 = call float @llvm.fmuladd.f32(float %32, float %33, float %37)
   %39 = load i16, i16* @params_kVdd, align 2
   %40 = sext i16 %39 to i32
   %41 = sitofp i32 %40 to float
@@ -4257,8 +4255,8 @@ define dso_local float @_Z15MLX90640_GetVddPKt(i16* %0) #0 {
   ret float %46
 }
 
-; Function Attrs: noinline uwtable mustprogress
-define dso_local float @_Z14MLX90640_GetTaPKt(i16* %0) #0 {
+; Function Attrs: mustprogress noinline uwtable
+define dso_local noundef float @_Z14MLX90640_GetTaPKt(i16* noundef %0) #0 {
   %2 = alloca i16*, align 8
   %3 = alloca float, align 4
   %4 = alloca float, align 4
@@ -4274,20 +4272,20 @@ define dso_local float @_Z14MLX90640_GetTaPKt(i16* %0) #0 {
   %14 = alloca float, align 4
   store i16* %0, i16** %2, align 8
   %15 = bitcast float* %3 to i8*
-  call void @llvm.var.annotation(i8* %15, i8* getelementptr inbounds ([35 x i8], [35 x i8]* @.str.92, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 805, i8* null)
+  call void @llvm.var.annotation(i8* %15, i8* getelementptr inbounds ([35 x i8], [35 x i8]* @.str.99, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.18, i32 0, i32 0), i32 805, i8* null)
   %16 = bitcast float* %4 to i8*
-  call void @llvm.var.annotation(i8* %16, i8* getelementptr inbounds ([29 x i8], [29 x i8]* @.str.93, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 811, i8* null)
+  call void @llvm.var.annotation(i8* %16, i8* getelementptr inbounds ([29 x i8], [29 x i8]* @.str.100, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.18, i32 0, i32 0), i32 811, i8* null)
   %17 = bitcast float* %5 to i8*
-  call void @llvm.var.annotation(i8* %17, i8* getelementptr inbounds ([29 x i8], [29 x i8]* @.str.94, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 818, i8* null)
+  call void @llvm.var.annotation(i8* %17, i8* getelementptr inbounds ([29 x i8], [29 x i8]* @.str.101, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.18, i32 0, i32 0), i32 818, i8* null)
   %18 = bitcast float* %6 to i8*
-  call void @llvm.var.annotation(i8* %18, i8* getelementptr inbounds ([29 x i8], [29 x i8]* @.str.89, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 825, i8* null)
-  %19 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([11 x i8], [11 x i8]* @.str.95, i64 0, i64 0))
+  call void @llvm.var.annotation(i8* %18, i8* getelementptr inbounds ([29 x i8], [29 x i8]* @.str.96, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.18, i32 0, i32 0), i32 825, i8* null)
+  %19 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([11 x i8], [11 x i8]* @.str.102, i64 0, i64 0))
   %20 = load i16*, i16** %2, align 8
-  %21 = call float @_Z15MLX90640_GetVddPKt(i16* %20)
+  %21 = call noundef float @_Z15MLX90640_GetVddPKt(i16* noundef %20)
   store float %21, float* %5, align 4
   %22 = load float, float* %5, align 4
   %23 = fpext float %22 to double
-  %24 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str.96, i64 0, i64 0), double %23)
+  %24 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([10 x i8], [10 x i8]* @.str.103, i64 0, i64 0), double noundef %23)
   %25 = load i16*, i16** %2, align 8
   %26 = getelementptr inbounds i16, i16* %25, i64 800
   %27 = load i16, i16* %26, align 2
@@ -4321,46 +4319,46 @@ define dso_local float @_Z14MLX90640_GetTaPKt(i16* %0) #0 {
 
 44:                                               ; preds = %41, %34
   %45 = bitcast float* %7 to i8*
-  call void @llvm.var.annotation(i8* %45, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 849, i8* null)
+  call void @llvm.var.annotation(i8* %45, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.15, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.18, i32 0, i32 0), i32 849, i8* null)
   %46 = load float, float* %3, align 4
   %47 = load float, float* @params_alphaPTAT, align 4
   %48 = fmul float %46, %47
   store float %48, float* %7, align 4
   %49 = load float, float* %7, align 4
   %50 = fpext float %49 to double
-  %51 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.97, i64 0, i64 0), double %50)
+  %51 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([17 x i8], [17 x i8]* @.str.104, i64 0, i64 0), double noundef %50)
   %52 = bitcast float* %8 to i8*
-  call void @llvm.var.annotation(i8* %52, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 851, i8* null)
+  call void @llvm.var.annotation(i8* %52, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.15, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.18, i32 0, i32 0), i32 851, i8* null)
   %53 = load float, float* %7, align 4
   %54 = load float, float* %4, align 4
   %55 = fadd float %53, %54
   store float %55, float* %8, align 4
   %56 = load float, float* %8, align 4
   %57 = fpext float %56 to double
-  %58 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.98, i64 0, i64 0), double %57)
+  %58 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([17 x i8], [17 x i8]* @.str.105, i64 0, i64 0), double noundef %57)
   %59 = bitcast float* %9 to i8*
-  call void @llvm.var.annotation(i8* %59, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 857, i8* null)
+  call void @llvm.var.annotation(i8* %59, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.15, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.18, i32 0, i32 0), i32 857, i8* null)
   %60 = load float, float* %3, align 4
   %61 = load float, float* %8, align 4
   %62 = fdiv float %60, %61
   store float %62, float* %9, align 4
   %63 = load float, float* %9, align 4
   %64 = fpext float %63 to double
-  %65 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.99, i64 0, i64 0), double %64)
+  %65 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([17 x i8], [17 x i8]* @.str.106, i64 0, i64 0), double noundef %64)
   %66 = load float, float* %9, align 4
   %67 = fmul float %66, 2.621440e+05
   store float %67, float* %4, align 4
   %68 = load float, float* %3, align 4
   %69 = fpext float %68 to double
-  %70 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([13 x i8], [13 x i8]* @.str.100, i64 0, i64 0), double %69)
+  %70 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([13 x i8], [13 x i8]* @.str.107, i64 0, i64 0), double noundef %69)
   %71 = load float, float* @params_alphaPTAT, align 4
   %72 = fpext float %71 to double
-  %73 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([18 x i8], [18 x i8]* @.str.101, i64 0, i64 0), double %72)
+  %73 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([18 x i8], [18 x i8]* @.str.108, i64 0, i64 0), double noundef %72)
   %74 = load float, float* %4, align 4
   %75 = fpext float %74 to double
-  %76 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([16 x i8], [16 x i8]* @.str.102, i64 0, i64 0), double %75)
+  %76 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([16 x i8], [16 x i8]* @.str.109, i64 0, i64 0), double noundef %75)
   %77 = bitcast float* %10 to i8*
-  call void @llvm.var.annotation(i8* %77, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 867, i8* null)
+  call void @llvm.var.annotation(i8* %77, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.15, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.18, i32 0, i32 0), i32 867, i8* null)
   %78 = load float, float* %5, align 4
   %79 = fpext float %78 to double
   %80 = fsub double %79, 3.300000e+00
@@ -4368,39 +4366,39 @@ define dso_local float @_Z14MLX90640_GetTaPKt(i16* %0) #0 {
   store float %81, float* %10, align 4
   %82 = load float, float* %10, align 4
   %83 = fpext float %82 to double
-  %84 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([12 x i8], [12 x i8]* @.str.103, i64 0, i64 0), double %83)
+  %84 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([12 x i8], [12 x i8]* @.str.110, i64 0, i64 0), double noundef %83)
   %85 = bitcast float* %11 to i8*
-  call void @llvm.var.annotation(i8* %85, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 870, i8* null)
+  call void @llvm.var.annotation(i8* %85, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.15, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.18, i32 0, i32 0), i32 870, i8* null)
   %86 = load float, float* @params_KvPTAT, align 4
   %87 = load float, float* %10, align 4
   %88 = fmul float %86, %87
   store float %88, float* %11, align 4
   %89 = load float, float* @params_KvPTAT, align 4
   %90 = fpext float %89 to double
-  %91 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([15 x i8], [15 x i8]* @.str.104, i64 0, i64 0), double %90)
+  %91 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([15 x i8], [15 x i8]* @.str.111, i64 0, i64 0), double noundef %90)
   %92 = load float, float* %5, align 4
   %93 = fpext float %92 to double
-  %94 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([12 x i8], [12 x i8]* @.str.105, i64 0, i64 0), double %93)
+  %94 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([12 x i8], [12 x i8]* @.str.112, i64 0, i64 0), double noundef %93)
   %95 = load float, float* %11, align 4
   %96 = fpext float %95 to double
-  %97 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([12 x i8], [12 x i8]* @.str.106, i64 0, i64 0), double %96)
+  %97 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([12 x i8], [12 x i8]* @.str.113, i64 0, i64 0), double noundef %96)
   %98 = bitcast float* %12 to i8*
-  call void @llvm.var.annotation(i8* %98, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 878, i8* null)
+  call void @llvm.var.annotation(i8* %98, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.15, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.18, i32 0, i32 0), i32 878, i8* null)
   %99 = load float, float* %11, align 4
   %100 = fadd float 1.000000e+00, %99
   store float %100, float* %12, align 4
   %101 = load float, float* %12, align 4
   %102 = fpext float %101 to double
-  %103 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([12 x i8], [12 x i8]* @.str.107, i64 0, i64 0), double %102)
+  %103 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([12 x i8], [12 x i8]* @.str.114, i64 0, i64 0), double noundef %102)
   %104 = bitcast float* %13 to i8*
-  call void @llvm.var.annotation(i8* %104, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 884, i8* null)
+  call void @llvm.var.annotation(i8* %104, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.15, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.18, i32 0, i32 0), i32 884, i8* null)
   %105 = load float, float* %4, align 4
   %106 = load float, float* %12, align 4
   %107 = fdiv float %105, %106
   store float %107, float* %13, align 4
   %108 = load float, float* %13, align 4
   %109 = fpext float %108 to double
-  %110 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([12 x i8], [12 x i8]* @.str.108, i64 0, i64 0), double %109)
+  %110 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([12 x i8], [12 x i8]* @.str.115, i64 0, i64 0), double noundef %109)
   %111 = load float, float* %13, align 4
   %112 = load i16, i16* @params_vPTAT25, align 2
   %113 = zext i16 %112 to i32
@@ -4409,9 +4407,9 @@ define dso_local float @_Z14MLX90640_GetTaPKt(i16* %0) #0 {
   store float %115, float* %6, align 4
   %116 = load float, float* %6, align 4
   %117 = fpext float %116 to double
-  %118 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([15 x i8], [15 x i8]* @.str.109, i64 0, i64 0), double %117)
+  %118 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([15 x i8], [15 x i8]* @.str.116, i64 0, i64 0), double noundef %117)
   %119 = bitcast float* %14 to i8*
-  call void @llvm.var.annotation(i8* %119, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 894, i8* null)
+  call void @llvm.var.annotation(i8* %119, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.15, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.18, i32 0, i32 0), i32 894, i8* null)
   %120 = load float, float* @params_KtPTAT, align 4
   store float %120, float* %14, align 4
   %121 = load float, float* %6, align 4
@@ -4421,13 +4419,13 @@ define dso_local float @_Z14MLX90640_GetTaPKt(i16* %0) #0 {
   store float %124, float* %6, align 4
   %125 = load float, float* %6, align 4
   %126 = fpext float %125 to double
-  %127 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([15 x i8], [15 x i8]* @.str.110, i64 0, i64 0), double %126)
+  %127 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([15 x i8], [15 x i8]* @.str.117, i64 0, i64 0), double noundef %126)
   %128 = load float, float* %6, align 4
   ret float %128
 }
 
-; Function Attrs: noinline nounwind uwtable mustprogress
-define linkonce_odr dso_local double @_ZSt3powIdiEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_(double %0, i32 %1) #1 comdat {
+; Function Attrs: mustprogress noinline nounwind uwtable
+define linkonce_odr dso_local noundef double @_ZSt3powIdiEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_(double noundef %0, i32 noundef %1) #1 comdat {
   %3 = alloca double, align 8
   %4 = alloca i32, align 4
   store double %0, double* %3, align 8
@@ -4435,21 +4433,27 @@ define linkonce_odr dso_local double @_ZSt3powIdiEN9__gnu_cxx11__promote_2IT_T0_
   %5 = load double, double* %3, align 8
   %6 = load i32, i32* %4, align 4
   %7 = sitofp i32 %6 to double
-  %8 = call double @pow(double %5, double %7) #8
+  %8 = call double @pow(double noundef %5, double noundef %7) #9
   ret double %8
 }
 
-; Function Attrs: noinline nounwind uwtable mustprogress
-define linkonce_odr dso_local float @_ZSt4sqrtf(float %0) #1 comdat {
+; Function Attrs: nofree nosync nounwind readnone speculatable willreturn
+declare float @llvm.fmuladd.f32(float, float, float) #4
+
+; Function Attrs: nofree nosync nounwind readnone speculatable willreturn
+declare double @llvm.fmuladd.f64(double, double, double) #4
+
+; Function Attrs: mustprogress noinline nounwind uwtable
+define linkonce_odr dso_local noundef float @_ZSt4sqrtf(float noundef %0) #1 comdat {
   %2 = alloca float, align 4
   store float %0, float* %2, align 4
   %3 = load float, float* %2, align 4
-  %4 = call float @sqrtf(float %3) #8
+  %4 = call float @sqrtf(float noundef %3) #9
   ret float %4
 }
 
-; Function Attrs: noinline uwtable mustprogress
-define dso_local void @_Z17MLX90640_GetImagePKtPf(i16* %0, float* %1) #0 {
+; Function Attrs: mustprogress noinline uwtable
+define dso_local void @_Z17MLX90640_GetImagePKtPf(i16* noundef %0, float* noundef %1) #0 {
   %3 = alloca i16*, align 8
   %4 = alloca float*, align 8
   %5 = alloca float, align 4
@@ -4470,30 +4474,30 @@ define dso_local void @_Z17MLX90640_GetImagePKtPf(i16* %0, float* %1) #0 {
   store i16* %0, i16** %3, align 8
   store float* %1, float** %4, align 8
   %20 = bitcast float** %4 to i8*
-  call void @llvm.var.annotation(i8* %20, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 658, i8* null)
+  call void @llvm.var.annotation(i8* %20, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.15, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.18, i32 0, i32 0), i32 658, i8* null)
   %21 = bitcast float* %5 to i8*
-  call void @llvm.var.annotation(i8* %21, i8* getelementptr inbounds ([34 x i8], [34 x i8]* @.str.88, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 660, i8* null)
+  call void @llvm.var.annotation(i8* %21, i8* getelementptr inbounds ([34 x i8], [34 x i8]* @.str.95, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.18, i32 0, i32 0), i32 660, i8* null)
   %22 = bitcast float* %6 to i8*
-  call void @llvm.var.annotation(i8* %22, i8* getelementptr inbounds ([29 x i8], [29 x i8]* @.str.89, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 661, i8* null)
+  call void @llvm.var.annotation(i8* %22, i8* getelementptr inbounds ([29 x i8], [29 x i8]* @.str.96, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.18, i32 0, i32 0), i32 661, i8* null)
   %23 = bitcast float* %7 to i8*
-  call void @llvm.var.annotation(i8* %23, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 662, i8* null)
+  call void @llvm.var.annotation(i8* %23, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.15, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.18, i32 0, i32 0), i32 662, i8* null)
   %24 = bitcast [2 x float]* %8 to i8*
-  call void @llvm.var.annotation(i8* %24, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 663, i8* null)
+  call void @llvm.var.annotation(i8* %24, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.15, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.18, i32 0, i32 0), i32 663, i8* null)
   %25 = bitcast float* %9 to i8*
-  call void @llvm.var.annotation(i8* %25, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 664, i8* null)
+  call void @llvm.var.annotation(i8* %25, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.15, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.18, i32 0, i32 0), i32 664, i8* null)
   %26 = bitcast float* %10 to i8*
-  call void @llvm.var.annotation(i8* %26, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 665, i8* null)
+  call void @llvm.var.annotation(i8* %26, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.15, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.18, i32 0, i32 0), i32 665, i8* null)
   %27 = bitcast float* %16 to i8*
-  call void @llvm.var.annotation(i8* %27, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.17, i32 0, i32 0), i32 671, i8* null)
+  call void @llvm.var.annotation(i8* %27, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.15, i32 0, i32 0), i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.18, i32 0, i32 0), i32 671, i8* null)
   %28 = load i16*, i16** %3, align 8
   %29 = getelementptr inbounds i16, i16* %28, i64 833
   %30 = load i16, i16* %29, align 2
   store i16 %30, i16* %17, align 2
   %31 = load i16*, i16** %3, align 8
-  %32 = call float @_Z15MLX90640_GetVddPKt(i16* %31)
+  %32 = call noundef float @_Z15MLX90640_GetVddPKt(i16* noundef %31)
   store float %32, float* %5, align 4
   %33 = load i16*, i16** %3, align 8
-  %34 = call float @_Z14MLX90640_GetTaPKt(i16* %33)
+  %34 = call noundef float @_Z14MLX90640_GetTaPKt(i16* noundef %33)
   store float %34, float* %6, align 4
   %35 = load i16*, i16** %3, align 8
   %36 = getelementptr inbounds i16, i16* %35, i64 778
@@ -4582,7 +4586,7 @@ define dso_local void @_Z17MLX90640_GetImagePKtPf(i16* %0, float* %1) #0 {
   %96 = load i32, i32* %18, align 4
   %97 = add nsw i32 %96, 1
   store i32 %97, i32* %18, align 4
-  br label %67, !llvm.loop !32
+  br label %67, !llvm.loop !36
 
 98:                                               ; preds = %67
   %99 = getelementptr inbounds [2 x float], [2 x float]* %8, i64 0, i64 0
@@ -4594,297 +4598,287 @@ define dso_local void @_Z17MLX90640_GetImagePKtPf(i16* %0, float* %1) #0 {
   %105 = load float, float* @params_cpKta, align 4
   %106 = load float, float* %6, align 4
   %107 = fsub float %106, 2.500000e+01
-  %108 = fmul float %105, %107
-  %109 = fadd float 1.000000e+00, %108
-  %110 = fmul float %104, %109
-  %111 = fpext float %110 to double
-  %112 = load float, float* @params_cpKv, align 4
-  %113 = fpext float %112 to double
-  %114 = load float, float* %5, align 4
-  %115 = fpext float %114 to double
-  %116 = fsub double %115, 3.300000e+00
-  %117 = fmul double %113, %116
-  %118 = fadd double 1.000000e+00, %117
-  %119 = fmul double %111, %118
-  %120 = fsub double %101, %119
-  %121 = fptrunc double %120 to float
-  %122 = getelementptr inbounds [2 x float], [2 x float]* %8, i64 0, i64 0
-  store float %121, float* %122, align 4
-  %123 = load i8, i8* %11, align 1
+  %108 = call float @llvm.fmuladd.f32(float %105, float %107, float 1.000000e+00)
+  %109 = fmul float %104, %108
+  %110 = fpext float %109 to double
+  %111 = load float, float* @params_cpKv, align 4
+  %112 = fpext float %111 to double
+  %113 = load float, float* %5, align 4
+  %114 = fpext float %113 to double
+  %115 = fsub double %114, 3.300000e+00
+  %116 = call double @llvm.fmuladd.f64(double %112, double %115, double 1.000000e+00)
+  %117 = fneg double %110
+  %118 = call double @llvm.fmuladd.f64(double %117, double %116, double %101)
+  %119 = fptrunc double %118 to float
+  %120 = getelementptr inbounds [2 x float], [2 x float]* %8, i64 0, i64 0
+  store float %119, float* %120, align 4
+  %121 = load i8, i8* %11, align 1
+  %122 = zext i8 %121 to i32
+  %123 = load i8, i8* @params_calibrationModeEE, align 1
   %124 = zext i8 %123 to i32
-  %125 = load i8, i8* @params_calibrationModeEE, align 1
-  %126 = zext i8 %125 to i32
-  %127 = icmp eq i32 %124, %126
-  br i1 %127, label %128, label %153
+  %125 = icmp eq i32 %122, %124
+  br i1 %125, label %126, label %149
 
-128:                                              ; preds = %98
-  %129 = getelementptr inbounds [2 x float], [2 x float]* %8, i64 0, i64 1
-  %130 = load float, float* %129, align 4
-  %131 = fpext float %130 to double
-  %132 = load i16, i16* getelementptr inbounds ([2 x i16], [2 x i16]* @params_cpOffset, i64 0, i64 1), align 2
-  %133 = sext i16 %132 to i32
-  %134 = sitofp i32 %133 to float
-  %135 = load float, float* @params_cpKta, align 4
-  %136 = load float, float* %6, align 4
-  %137 = fsub float %136, 2.500000e+01
-  %138 = fmul float %135, %137
-  %139 = fadd float 1.000000e+00, %138
-  %140 = fmul float %134, %139
-  %141 = fpext float %140 to double
-  %142 = load float, float* @params_cpKv, align 4
-  %143 = fpext float %142 to double
-  %144 = load float, float* %5, align 4
-  %145 = fpext float %144 to double
-  %146 = fsub double %145, 3.300000e+00
-  %147 = fmul double %143, %146
-  %148 = fadd double 1.000000e+00, %147
-  %149 = fmul double %141, %148
-  %150 = fsub double %131, %149
-  %151 = fptrunc double %150 to float
-  %152 = getelementptr inbounds [2 x float], [2 x float]* %8, i64 0, i64 1
-  store float %151, float* %152, align 4
-  br label %180
+126:                                              ; preds = %98
+  %127 = getelementptr inbounds [2 x float], [2 x float]* %8, i64 0, i64 1
+  %128 = load float, float* %127, align 4
+  %129 = fpext float %128 to double
+  %130 = load i16, i16* getelementptr inbounds ([2 x i16], [2 x i16]* @params_cpOffset, i64 0, i64 1), align 2
+  %131 = sext i16 %130 to i32
+  %132 = sitofp i32 %131 to float
+  %133 = load float, float* @params_cpKta, align 4
+  %134 = load float, float* %6, align 4
+  %135 = fsub float %134, 2.500000e+01
+  %136 = call float @llvm.fmuladd.f32(float %133, float %135, float 1.000000e+00)
+  %137 = fmul float %132, %136
+  %138 = fpext float %137 to double
+  %139 = load float, float* @params_cpKv, align 4
+  %140 = fpext float %139 to double
+  %141 = load float, float* %5, align 4
+  %142 = fpext float %141 to double
+  %143 = fsub double %142, 3.300000e+00
+  %144 = call double @llvm.fmuladd.f64(double %140, double %143, double 1.000000e+00)
+  %145 = fneg double %138
+  %146 = call double @llvm.fmuladd.f64(double %145, double %144, double %129)
+  %147 = fptrunc double %146 to float
+  %148 = getelementptr inbounds [2 x float], [2 x float]* %8, i64 0, i64 1
+  store float %147, float* %148, align 4
+  br label %174
 
-153:                                              ; preds = %98
-  %154 = getelementptr inbounds [2 x float], [2 x float]* %8, i64 0, i64 1
-  %155 = load float, float* %154, align 4
-  %156 = fpext float %155 to double
-  %157 = load i16, i16* getelementptr inbounds ([2 x i16], [2 x i16]* @params_cpOffset, i64 0, i64 1), align 2
-  %158 = sext i16 %157 to i32
-  %159 = sitofp i32 %158 to float
-  %160 = load float, float* getelementptr inbounds ([3 x float], [3 x float]* @params_ilChessC, i64 0, i64 0), align 4
-  %161 = fadd float %159, %160
-  %162 = load float, float* @params_cpKta, align 4
-  %163 = load float, float* %6, align 4
-  %164 = fsub float %163, 2.500000e+01
-  %165 = fmul float %162, %164
-  %166 = fadd float 1.000000e+00, %165
-  %167 = fmul float %161, %166
-  %168 = fpext float %167 to double
-  %169 = load float, float* @params_cpKv, align 4
-  %170 = fpext float %169 to double
-  %171 = load float, float* %5, align 4
-  %172 = fpext float %171 to double
-  %173 = fsub double %172, 3.300000e+00
-  %174 = fmul double %170, %173
-  %175 = fadd double 1.000000e+00, %174
-  %176 = fmul double %168, %175
-  %177 = fsub double %156, %176
-  %178 = fptrunc double %177 to float
-  %179 = getelementptr inbounds [2 x float], [2 x float]* %8, i64 0, i64 1
-  store float %178, float* %179, align 4
-  br label %180
+149:                                              ; preds = %98
+  %150 = getelementptr inbounds [2 x float], [2 x float]* %8, i64 0, i64 1
+  %151 = load float, float* %150, align 4
+  %152 = fpext float %151 to double
+  %153 = load i16, i16* getelementptr inbounds ([2 x i16], [2 x i16]* @params_cpOffset, i64 0, i64 1), align 2
+  %154 = sext i16 %153 to i32
+  %155 = sitofp i32 %154 to float
+  %156 = load float, float* getelementptr inbounds ([3 x float], [3 x float]* @params_ilChessC, i64 0, i64 0), align 4
+  %157 = fadd float %155, %156
+  %158 = load float, float* @params_cpKta, align 4
+  %159 = load float, float* %6, align 4
+  %160 = fsub float %159, 2.500000e+01
+  %161 = call float @llvm.fmuladd.f32(float %158, float %160, float 1.000000e+00)
+  %162 = fmul float %157, %161
+  %163 = fpext float %162 to double
+  %164 = load float, float* @params_cpKv, align 4
+  %165 = fpext float %164 to double
+  %166 = load float, float* %5, align 4
+  %167 = fpext float %166 to double
+  %168 = fsub double %167, 3.300000e+00
+  %169 = call double @llvm.fmuladd.f64(double %165, double %168, double 1.000000e+00)
+  %170 = fneg double %163
+  %171 = call double @llvm.fmuladd.f64(double %170, double %169, double %152)
+  %172 = fptrunc double %171 to float
+  %173 = getelementptr inbounds [2 x float], [2 x float]* %8, i64 0, i64 1
+  store float %172, float* %173, align 4
+  br label %174
 
-180:                                              ; preds = %153, %128
+174:                                              ; preds = %149, %126
   store i32 0, i32* %19, align 4
-  br label %181
+  br label %175
 
-181:                                              ; preds = %339, %180
-  %182 = load i32, i32* %19, align 4
-  %183 = icmp slt i32 %182, 768
-  br i1 %183, label %184, label %342
+175:                                              ; preds = %329, %174
+  %176 = load i32, i32* %19, align 4
+  %177 = icmp slt i32 %176, 768
+  br i1 %177, label %178, label %332
 
-184:                                              ; preds = %181
-  %185 = load i32, i32* %19, align 4
-  %186 = sdiv i32 %185, 32
-  %187 = load i32, i32* %19, align 4
-  %188 = sdiv i32 %187, 64
-  %189 = mul nsw i32 %188, 2
-  %190 = sub nsw i32 %186, %189
-  %191 = trunc i32 %190 to i8
-  store i8 %191, i8* %12, align 1
-  %192 = load i8, i8* %12, align 1
-  %193 = sext i8 %192 to i32
-  %194 = load i32, i32* %19, align 4
+178:                                              ; preds = %175
+  %179 = load i32, i32* %19, align 4
+  %180 = sdiv i32 %179, 32
+  %181 = load i32, i32* %19, align 4
+  %182 = sdiv i32 %181, 64
+  %183 = mul nsw i32 %182, 2
+  %184 = sub nsw i32 %180, %183
+  %185 = trunc i32 %184 to i8
+  store i8 %185, i8* %12, align 1
+  %186 = load i8, i8* %12, align 1
+  %187 = sext i8 %186 to i32
+  %188 = load i32, i32* %19, align 4
+  %189 = load i32, i32* %19, align 4
+  %190 = sdiv i32 %189, 2
+  %191 = mul nsw i32 %190, 2
+  %192 = sub nsw i32 %188, %191
+  %193 = xor i32 %187, %192
+  %194 = trunc i32 %193 to i8
+  store i8 %194, i8* %13, align 1
   %195 = load i32, i32* %19, align 4
-  %196 = sdiv i32 %195, 2
-  %197 = mul nsw i32 %196, 2
-  %198 = sub nsw i32 %194, %197
-  %199 = xor i32 %193, %198
-  %200 = trunc i32 %199 to i8
-  store i8 %200, i8* %13, align 1
-  %201 = load i32, i32* %19, align 4
-  %202 = add nsw i32 %201, 2
-  %203 = sdiv i32 %202, 4
-  %204 = load i32, i32* %19, align 4
-  %205 = add nsw i32 %204, 3
-  %206 = sdiv i32 %205, 4
-  %207 = sub nsw i32 %203, %206
-  %208 = load i32, i32* %19, align 4
-  %209 = add nsw i32 %208, 1
-  %210 = sdiv i32 %209, 4
-  %211 = add nsw i32 %207, %210
-  %212 = load i32, i32* %19, align 4
-  %213 = sdiv i32 %212, 4
-  %214 = sub nsw i32 %211, %213
-  %215 = load i8, i8* %12, align 1
-  %216 = sext i8 %215 to i32
-  %217 = mul nsw i32 2, %216
-  %218 = sub nsw i32 1, %217
-  %219 = mul nsw i32 %214, %218
-  %220 = trunc i32 %219 to i8
-  store i8 %220, i8* %15, align 1
-  %221 = load i8, i8* %11, align 1
-  %222 = zext i8 %221 to i32
-  %223 = icmp eq i32 %222, 0
-  br i1 %223, label %224, label %226
+  %196 = add nsw i32 %195, 2
+  %197 = sdiv i32 %196, 4
+  %198 = load i32, i32* %19, align 4
+  %199 = add nsw i32 %198, 3
+  %200 = sdiv i32 %199, 4
+  %201 = sub nsw i32 %197, %200
+  %202 = load i32, i32* %19, align 4
+  %203 = add nsw i32 %202, 1
+  %204 = sdiv i32 %203, 4
+  %205 = add nsw i32 %201, %204
+  %206 = load i32, i32* %19, align 4
+  %207 = sdiv i32 %206, 4
+  %208 = sub nsw i32 %205, %207
+  %209 = load i8, i8* %12, align 1
+  %210 = sext i8 %209 to i32
+  %211 = mul nsw i32 2, %210
+  %212 = sub nsw i32 1, %211
+  %213 = mul nsw i32 %208, %212
+  %214 = trunc i32 %213 to i8
+  store i8 %214, i8* %15, align 1
+  %215 = load i8, i8* %11, align 1
+  %216 = zext i8 %215 to i32
+  %217 = icmp eq i32 %216, 0
+  br i1 %217, label %218, label %220
 
-224:                                              ; preds = %184
-  %225 = load i8, i8* %12, align 1
-  store i8 %225, i8* %14, align 1
-  br label %228
+218:                                              ; preds = %178
+  %219 = load i8, i8* %12, align 1
+  store i8 %219, i8* %14, align 1
+  br label %222
 
-226:                                              ; preds = %184
-  %227 = load i8, i8* %13, align 1
-  store i8 %227, i8* %14, align 1
-  br label %228
+220:                                              ; preds = %178
+  %221 = load i8, i8* %13, align 1
+  store i8 %221, i8* %14, align 1
+  br label %222
 
-228:                                              ; preds = %226, %224
-  %229 = load i8, i8* %14, align 1
-  %230 = sext i8 %229 to i32
+222:                                              ; preds = %220, %218
+  %223 = load i8, i8* %14, align 1
+  %224 = sext i8 %223 to i32
+  %225 = load i16*, i16** %3, align 8
+  %226 = getelementptr inbounds i16, i16* %225, i64 833
+  %227 = load i16, i16* %226, align 2
+  %228 = zext i16 %227 to i32
+  %229 = icmp eq i32 %224, %228
+  br i1 %229, label %230, label %328
+
+230:                                              ; preds = %222
   %231 = load i16*, i16** %3, align 8
-  %232 = getelementptr inbounds i16, i16* %231, i64 833
-  %233 = load i16, i16* %232, align 2
-  %234 = zext i16 %233 to i32
-  %235 = icmp eq i32 %230, %234
-  br i1 %235, label %236, label %338
+  %232 = load i32, i32* %19, align 4
+  %233 = sext i32 %232 to i64
+  %234 = getelementptr inbounds i16, i16* %231, i64 %233
+  %235 = load i16, i16* %234, align 2
+  %236 = uitofp i16 %235 to float
+  store float %236, float* %9, align 4
+  %237 = load float, float* %9, align 4
+  %238 = fcmp ogt float %237, 3.276700e+04
+  br i1 %238, label %239, label %242
 
-236:                                              ; preds = %228
-  %237 = load i16*, i16** %3, align 8
-  %238 = load i32, i32* %19, align 4
-  %239 = sext i32 %238 to i64
-  %240 = getelementptr inbounds i16, i16* %237, i64 %239
-  %241 = load i16, i16* %240, align 2
-  %242 = uitofp i16 %241 to float
-  store float %242, float* %9, align 4
+239:                                              ; preds = %230
+  %240 = load float, float* %9, align 4
+  %241 = fsub float %240, 6.553600e+04
+  store float %241, float* %9, align 4
+  br label %242
+
+242:                                              ; preds = %239, %230
   %243 = load float, float* %9, align 4
-  %244 = fcmp ogt float %243, 3.276700e+04
-  br i1 %244, label %245, label %248
-
-245:                                              ; preds = %236
+  %244 = load float, float* %7, align 4
+  %245 = fmul float %243, %244
+  store float %245, float* %9, align 4
   %246 = load float, float* %9, align 4
-  %247 = fsub float %246, 6.553600e+04
-  store float %247, float* %9, align 4
-  br label %248
-
-248:                                              ; preds = %245, %236
-  %249 = load float, float* %9, align 4
-  %250 = load float, float* %7, align 4
-  %251 = fmul float %249, %250
-  store float %251, float* %9, align 4
-  %252 = load float, float* %9, align 4
-  %253 = fpext float %252 to double
+  %247 = fpext float %246 to double
+  %248 = load i32, i32* %19, align 4
+  %249 = sext i32 %248 to i64
+  %250 = getelementptr inbounds [768 x i16], [768 x i16]* @params_offset, i64 0, i64 %249
+  %251 = load i16, i16* %250, align 2
+  %252 = sext i16 %251 to i32
+  %253 = sitofp i32 %252 to float
   %254 = load i32, i32* %19, align 4
   %255 = sext i32 %254 to i64
-  %256 = getelementptr inbounds [768 x i16], [768 x i16]* @params_offset, i64 0, i64 %255
-  %257 = load i16, i16* %256, align 2
-  %258 = sext i16 %257 to i32
-  %259 = sitofp i32 %258 to float
-  %260 = load i32, i32* %19, align 4
-  %261 = sext i32 %260 to i64
-  %262 = getelementptr inbounds [768 x float], [768 x float]* @params_kta, i64 0, i64 %261
-  %263 = load float, float* %262, align 4
-  %264 = load float, float* %6, align 4
-  %265 = fsub float %264, 2.500000e+01
-  %266 = fmul float %263, %265
-  %267 = fadd float 1.000000e+00, %266
-  %268 = fmul float %259, %267
+  %256 = getelementptr inbounds [768 x float], [768 x float]* @params_kta, i64 0, i64 %255
+  %257 = load float, float* %256, align 4
+  %258 = load float, float* %6, align 4
+  %259 = fsub float %258, 2.500000e+01
+  %260 = call float @llvm.fmuladd.f32(float %257, float %259, float 1.000000e+00)
+  %261 = fmul float %253, %260
+  %262 = fpext float %261 to double
+  %263 = load i32, i32* %19, align 4
+  %264 = sext i32 %263 to i64
+  %265 = getelementptr inbounds [768 x float], [768 x float]* @params_kv, i64 0, i64 %264
+  %266 = load float, float* %265, align 4
+  %267 = fpext float %266 to double
+  %268 = load float, float* %5, align 4
   %269 = fpext float %268 to double
-  %270 = load i32, i32* %19, align 4
-  %271 = sext i32 %270 to i64
-  %272 = getelementptr inbounds [768 x float], [768 x float]* @params_kv, i64 0, i64 %271
-  %273 = load float, float* %272, align 4
-  %274 = fpext float %273 to double
-  %275 = load float, float* %5, align 4
-  %276 = fpext float %275 to double
-  %277 = fsub double %276, 3.300000e+00
-  %278 = fmul double %274, %277
-  %279 = fadd double 1.000000e+00, %278
-  %280 = fmul double %269, %279
-  %281 = fsub double %253, %280
-  %282 = fptrunc double %281 to float
-  store float %282, float* %9, align 4
-  %283 = load i8, i8* %11, align 1
-  %284 = zext i8 %283 to i32
-  %285 = load i8, i8* @params_calibrationModeEE, align 1
-  %286 = zext i8 %285 to i32
-  %287 = icmp ne i32 %284, %286
-  br i1 %287, label %288, label %304
+  %270 = fsub double %269, 3.300000e+00
+  %271 = call double @llvm.fmuladd.f64(double %267, double %270, double 1.000000e+00)
+  %272 = fneg double %262
+  %273 = call double @llvm.fmuladd.f64(double %272, double %271, double %247)
+  %274 = fptrunc double %273 to float
+  store float %274, float* %9, align 4
+  %275 = load i8, i8* %11, align 1
+  %276 = zext i8 %275 to i32
+  %277 = load i8, i8* @params_calibrationModeEE, align 1
+  %278 = zext i8 %277 to i32
+  %279 = icmp ne i32 %276, %278
+  br i1 %279, label %280, label %295
 
-288:                                              ; preds = %248
-  %289 = load float, float* %9, align 4
-  %290 = load float, float* getelementptr inbounds ([3 x float], [3 x float]* @params_ilChessC, i64 0, i64 2), align 4
-  %291 = load i8, i8* %12, align 1
-  %292 = sext i8 %291 to i32
-  %293 = mul nsw i32 2, %292
-  %294 = sub nsw i32 %293, 1
-  %295 = sitofp i32 %294 to float
-  %296 = fmul float %290, %295
-  %297 = fadd float %289, %296
-  %298 = load float, float* getelementptr inbounds ([3 x float], [3 x float]* @params_ilChessC, i64 0, i64 1), align 4
-  %299 = load i8, i8* %15, align 1
-  %300 = sext i8 %299 to i32
-  %301 = sitofp i32 %300 to float
-  %302 = fmul float %298, %301
-  %303 = fsub float %297, %302
+280:                                              ; preds = %242
+  %281 = load float, float* %9, align 4
+  %282 = load float, float* getelementptr inbounds ([3 x float], [3 x float]* @params_ilChessC, i64 0, i64 2), align 4
+  %283 = load i8, i8* %12, align 1
+  %284 = sext i8 %283 to i32
+  %285 = mul nsw i32 2, %284
+  %286 = sub nsw i32 %285, 1
+  %287 = sitofp i32 %286 to float
+  %288 = call float @llvm.fmuladd.f32(float %282, float %287, float %281)
+  %289 = load float, float* getelementptr inbounds ([3 x float], [3 x float]* @params_ilChessC, i64 0, i64 1), align 4
+  %290 = load i8, i8* %15, align 1
+  %291 = sext i8 %290 to i32
+  %292 = sitofp i32 %291 to float
+  %293 = fneg float %289
+  %294 = call float @llvm.fmuladd.f32(float %293, float %292, float %288)
+  store float %294, float* %9, align 4
+  br label %295
+
+295:                                              ; preds = %280, %242
+  %296 = load float, float* %9, align 4
+  %297 = load float, float* @params_tgc, align 4
+  %298 = load i16, i16* %17, align 2
+  %299 = zext i16 %298 to i64
+  %300 = getelementptr inbounds [2 x float], [2 x float]* %8, i64 0, i64 %299
+  %301 = load float, float* %300, align 4
+  %302 = fneg float %297
+  %303 = call float @llvm.fmuladd.f32(float %302, float %301, float %296)
   store float %303, float* %9, align 4
-  br label %304
+  %304 = load i32, i32* %19, align 4
+  %305 = sext i32 %304 to i64
+  %306 = getelementptr inbounds [768 x float], [768 x float]* @params_alpha, i64 0, i64 %305
+  %307 = load float, float* %306, align 4
+  %308 = load float, float* @params_tgc, align 4
+  %309 = load i16, i16* %17, align 2
+  %310 = zext i16 %309 to i64
+  %311 = getelementptr inbounds [2 x float], [2 x float]* @params_cpAlpha, i64 0, i64 %310
+  %312 = load float, float* %311, align 4
+  %313 = fneg float %308
+  %314 = call float @llvm.fmuladd.f32(float %313, float %312, float %307)
+  %315 = load float, float* @params_KsTa, align 4
+  %316 = load float, float* %6, align 4
+  %317 = fsub float %316, 2.500000e+01
+  %318 = call float @llvm.fmuladd.f32(float %315, float %317, float 1.000000e+00)
+  %319 = fmul float %314, %318
+  store float %319, float* %10, align 4
+  %320 = load float, float* %9, align 4
+  %321 = load float, float* %10, align 4
+  %322 = fdiv float %320, %321
+  store float %322, float* %16, align 4
+  %323 = load float, float* %16, align 4
+  %324 = load float*, float** %4, align 8
+  %325 = load i32, i32* %19, align 4
+  %326 = sext i32 %325 to i64
+  %327 = getelementptr inbounds float, float* %324, i64 %326
+  store float %323, float* %327, align 4
+  br label %328
 
-304:                                              ; preds = %288, %248
-  %305 = load float, float* %9, align 4
-  %306 = load float, float* @params_tgc, align 4
-  %307 = load i16, i16* %17, align 2
-  %308 = zext i16 %307 to i64
-  %309 = getelementptr inbounds [2 x float], [2 x float]* %8, i64 0, i64 %308
-  %310 = load float, float* %309, align 4
-  %311 = fmul float %306, %310
-  %312 = fsub float %305, %311
-  store float %312, float* %9, align 4
-  %313 = load i32, i32* %19, align 4
-  %314 = sext i32 %313 to i64
-  %315 = getelementptr inbounds [768 x float], [768 x float]* @params_alpha, i64 0, i64 %314
-  %316 = load float, float* %315, align 4
-  %317 = load float, float* @params_tgc, align 4
-  %318 = load i16, i16* %17, align 2
-  %319 = zext i16 %318 to i64
-  %320 = getelementptr inbounds [2 x float], [2 x float]* @params_cpAlpha, i64 0, i64 %319
-  %321 = load float, float* %320, align 4
-  %322 = fmul float %317, %321
-  %323 = fsub float %316, %322
-  %324 = load float, float* @params_KsTa, align 4
-  %325 = load float, float* %6, align 4
-  %326 = fsub float %325, 2.500000e+01
-  %327 = fmul float %324, %326
-  %328 = fadd float 1.000000e+00, %327
-  %329 = fmul float %323, %328
-  store float %329, float* %10, align 4
-  %330 = load float, float* %9, align 4
-  %331 = load float, float* %10, align 4
-  %332 = fdiv float %330, %331
-  store float %332, float* %16, align 4
-  %333 = load float, float* %16, align 4
-  %334 = load float*, float** %4, align 8
-  %335 = load i32, i32* %19, align 4
-  %336 = sext i32 %335 to i64
-  %337 = getelementptr inbounds float, float* %334, i64 %336
-  store float %333, float* %337, align 4
-  br label %338
+328:                                              ; preds = %295, %222
+  br label %329
 
-338:                                              ; preds = %304, %228
-  br label %339
+329:                                              ; preds = %328
+  %330 = load i32, i32* %19, align 4
+  %331 = add nsw i32 %330, 1
+  store i32 %331, i32* %19, align 4
+  br label %175, !llvm.loop !37
 
-339:                                              ; preds = %338
-  %340 = load i32, i32* %19, align 4
-  %341 = add nsw i32 %340, 1
-  store i32 %341, i32* %19, align 4
-  br label %181, !llvm.loop !33
-
-342:                                              ; preds = %181
+332:                                              ; preds = %175
   ret void
 }
 
-; Function Attrs: noinline nounwind uwtable mustprogress
-define linkonce_odr dso_local double @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_(i32 %0, double %1) #1 comdat {
+; Function Attrs: mustprogress noinline nounwind uwtable
+define linkonce_odr dso_local noundef double @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_(i32 noundef %0, double noundef %1) #1 comdat {
   %3 = alloca i32, align 4
   %4 = alloca double, align 8
   store i32 %0, i32* %3, align 4
@@ -4892,12 +4886,12 @@ define linkonce_odr dso_local double @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_
   %5 = load i32, i32* %3, align 4
   %6 = sitofp i32 %5 to double
   %7 = load double, double* %4, align 8
-  %8 = call double @pow(double %6, double %7) #8
+  %8 = call double @pow(double noundef %6, double noundef %7) #9
   ret double %8
 }
 
-; Function Attrs: noinline nounwind uwtable mustprogress
-define dso_local i32 @_Z25MLX90640_GetSubPageNumberPKt(i16* %0) #1 {
+; Function Attrs: mustprogress noinline nounwind uwtable
+define dso_local noundef i32 @_Z25MLX90640_GetSubPageNumberPKt(i16* noundef %0) #1 {
   %2 = alloca i16*, align 8
   store i16* %0, i16** %2, align 8
   %3 = load i16*, i16** %2, align 8
@@ -4907,8 +4901,8 @@ define dso_local i32 @_Z25MLX90640_GetSubPageNumberPKt(i16* %0) #1 {
   ret i32 %6
 }
 
-; Function Attrs: noinline nounwind uwtable mustprogress
-define dso_local i32 @_Z19CheckAdjacentPixelstt(i16 zeroext %0, i16 zeroext %1) #1 {
+; Function Attrs: mustprogress noinline nounwind uwtable
+define dso_local noundef i32 @_Z19CheckAdjacentPixelstt(i16 noundef zeroext %0, i16 noundef zeroext %1) #1 {
   %3 = alloca i32, align 4
   %4 = alloca i16, align 2
   %5 = alloca i16, align 2
@@ -4971,32 +4965,32 @@ define dso_local i32 @_Z19CheckAdjacentPixelstt(i16 zeroext %0, i16 zeroext %1) 
   ret i32 %34
 }
 
-; Function Attrs: noinline nounwind uwtable mustprogress
+; Function Attrs: mustprogress noinline nounwind uwtable
 define dso_local void @_Z16MLX90640_I2CInitv() #1 {
   ret void
 }
 
 ; Function Attrs: noreturn nounwind
-declare dso_local void @abort() #4
+declare void @abort() #5
 
-; Function Attrs: noinline nounwind uwtable mustprogress
-define dso_local void @_Z19MLX90640_I2CFreqSeti(i32 %0) #1 {
+; Function Attrs: mustprogress noinline nounwind uwtable
+define dso_local void @_Z19MLX90640_I2CFreqSeti(i32 noundef %0) #1 {
   %2 = alloca i32, align 4
   store i32 %0, i32* %2, align 4
   ret void
 }
 
-; Function Attrs: noinline nounwind uwtable mustprogress
-define dso_local float @_Z5min_fff(float %0, float %1) #1 {
+; Function Attrs: mustprogress noinline nounwind uwtable
+define dso_local noundef float @_Z5min_fff(float noundef %0, float noundef %1) #1 {
   %3 = alloca float, align 4
   %4 = alloca float, align 4
   %5 = alloca float, align 4
   store float %0, float* %4, align 4
   %6 = bitcast float* %4 to i8*
-  call void @llvm.var.annotation(i8* %6, i8* getelementptr inbounds ([29 x i8], [29 x i8]* @.str.21, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.117, i32 0, i32 0), i32 16, i8* null)
+  call void @llvm.var.annotation(i8* %6, i8* getelementptr inbounds ([29 x i8], [29 x i8]* @.str.26, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.124, i32 0, i32 0), i32 16, i8* null)
   store float %1, float* %5, align 4
   %7 = bitcast float* %5 to i8*
-  call void @llvm.var.annotation(i8* %7, i8* getelementptr inbounds ([29 x i8], [29 x i8]* @.str.21, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.117, i32 0, i32 0), i32 16, i8* null)
+  call void @llvm.var.annotation(i8* %7, i8* getelementptr inbounds ([29 x i8], [29 x i8]* @.str.26, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.124, i32 0, i32 0), i32 16, i8* null)
   %8 = load float, float* %4, align 4
   %9 = load float, float* %5, align 4
   %10 = fcmp olt float %8, %9
@@ -5017,17 +5011,17 @@ define dso_local float @_Z5min_fff(float %0, float %1) #1 {
   ret float %16
 }
 
-; Function Attrs: noinline nounwind uwtable mustprogress
-define dso_local float @_Z5max_fff(float %0, float %1) #1 {
+; Function Attrs: mustprogress noinline nounwind uwtable
+define dso_local noundef float @_Z5max_fff(float noundef %0, float noundef %1) #1 {
   %3 = alloca float, align 4
   %4 = alloca float, align 4
   %5 = alloca float, align 4
   store float %0, float* %4, align 4
   %6 = bitcast float* %4 to i8*
-  call void @llvm.var.annotation(i8* %6, i8* getelementptr inbounds ([29 x i8], [29 x i8]* @.str.21, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.117, i32 0, i32 0), i32 24, i8* null)
+  call void @llvm.var.annotation(i8* %6, i8* getelementptr inbounds ([29 x i8], [29 x i8]* @.str.26, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.124, i32 0, i32 0), i32 24, i8* null)
   store float %1, float* %5, align 4
   %7 = bitcast float* %5 to i8*
-  call void @llvm.var.annotation(i8* %7, i8* getelementptr inbounds ([29 x i8], [29 x i8]* @.str.21, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.117, i32 0, i32 0), i32 24, i8* null)
+  call void @llvm.var.annotation(i8* %7, i8* getelementptr inbounds ([29 x i8], [29 x i8]* @.str.26, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.124, i32 0, i32 0), i32 24, i8* null)
   %8 = load float, float* %4, align 4
   %9 = load float, float* %5, align 4
   %10 = fcmp ogt float %8, %9
@@ -5048,8 +5042,8 @@ define dso_local float @_Z5max_fff(float %0, float %1) #1 {
   ret float %16
 }
 
-; Function Attrs: noinline uwtable mustprogress
-define dso_local void @_Z8printPPMP8_IO_FILEPfiiff(%struct._IO_FILE* %0, float* %1, i32 %2, i32 %3, float %4, float %5) #0 {
+; Function Attrs: mustprogress noinline uwtable
+define dso_local void @_Z8printPPMP8_IO_FILEPfiiff(%struct._IO_FILE* noundef %0, float* noundef %1, i32 noundef %2, i32 noundef %3, float noundef %4, float noundef %5) #0 {
   %7 = alloca %struct._IO_FILE*, align 8
   %8 = alloca float*, align 8
   %9 = alloca i32, align 4
@@ -5065,269 +5059,267 @@ define dso_local void @_Z8printPPMP8_IO_FILEPfiiff(%struct._IO_FILE* %0, float* 
   %19 = alloca i32, align 4
   store %struct._IO_FILE* %0, %struct._IO_FILE** %7, align 8
   store float* %1, float** %8, align 8
-  %20 = bitcast float** %8 to i8*
-  call void @llvm.var.annotation(i8* %20, i8* getelementptr inbounds ([29 x i8], [29 x i8]* @.str.21, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.117, i32 0, i32 0), i32 33, i8* null)
   store i32 %2, i32* %9, align 4
   store i32 %3, i32* %10, align 4
   store float %4, float* %11, align 4
-  %21 = bitcast float* %11 to i8*
-  call void @llvm.var.annotation(i8* %21, i8* getelementptr inbounds ([29 x i8], [29 x i8]* @.str.21, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.117, i32 0, i32 0), i32 33, i8* null)
   store float %5, float* %12, align 4
-  %22 = bitcast float* %12 to i8*
-  call void @llvm.var.annotation(i8* %22, i8* getelementptr inbounds ([30 x i8], [30 x i8]* @.str.118, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.117, i32 0, i32 0), i32 33, i8* null)
-  %23 = load %struct._IO_FILE*, %struct._IO_FILE** %7, align 8
-  %24 = call i32 (%struct._IO_FILE*, i8*, ...) @fprintf(%struct._IO_FILE* %23, i8* getelementptr inbounds ([4 x i8], [4 x i8]* @.str.119, i64 0, i64 0))
-  %25 = load %struct._IO_FILE*, %struct._IO_FILE** %7, align 8
-  %26 = load i32, i32* %9, align 4
-  %27 = load i32, i32* %10, align 4
-  %28 = call i32 (%struct._IO_FILE*, i8*, ...) @fprintf(%struct._IO_FILE* %25, i8* getelementptr inbounds ([7 x i8], [7 x i8]* @.str.120, i64 0, i64 0), i32 %26, i32 %27)
-  %29 = load %struct._IO_FILE*, %struct._IO_FILE** %7, align 8
-  %30 = call i32 (%struct._IO_FILE*, i8*, ...) @fprintf(%struct._IO_FILE* %29, i8* getelementptr inbounds ([5 x i8], [5 x i8]* @.str.121, i64 0, i64 0))
+  %20 = load %struct._IO_FILE*, %struct._IO_FILE** %7, align 8
+  %21 = call i32 (%struct._IO_FILE*, i8*, ...) @fprintf(%struct._IO_FILE* noundef %20, i8* noundef getelementptr inbounds ([4 x i8], [4 x i8]* @.str.125, i64 0, i64 0))
+  %22 = load %struct._IO_FILE*, %struct._IO_FILE** %7, align 8
+  %23 = load i32, i32* %9, align 4
+  %24 = load i32, i32* %10, align 4
+  %25 = call i32 (%struct._IO_FILE*, i8*, ...) @fprintf(%struct._IO_FILE* noundef %22, i8* noundef getelementptr inbounds ([7 x i8], [7 x i8]* @.str.126, i64 0, i64 0), i32 noundef %23, i32 noundef %24)
+  %26 = load %struct._IO_FILE*, %struct._IO_FILE** %7, align 8
+  %27 = call i32 (%struct._IO_FILE*, i8*, ...) @fprintf(%struct._IO_FILE* noundef %26, i8* noundef getelementptr inbounds ([5 x i8], [5 x i8]* @.str.127, i64 0, i64 0))
   store i32 0, i32* %13, align 4
-  br label %31
+  br label %28
 
-31:                                               ; preds = %170, %6
-  %32 = load i32, i32* %13, align 4
-  %33 = load i32, i32* %10, align 4
-  %34 = icmp slt i32 %32, %33
-  br i1 %34, label %35, label %173
+28:                                               ; preds = %171, %6
+  %29 = load i32, i32* %13, align 4
+  %30 = load i32, i32* %10, align 4
+  %31 = icmp slt i32 %29, %30
+  br i1 %31, label %32, label %174
 
-35:                                               ; preds = %31
+32:                                               ; preds = %28
   store i32 0, i32* %14, align 4
-  br label %36
+  br label %33
 
-36:                                               ; preds = %164, %35
-  %37 = load i32, i32* %14, align 4
-  %38 = load i32, i32* %9, align 4
-  %39 = icmp slt i32 %37, %38
-  br i1 %39, label %40, label %167
+33:                                               ; preds = %165, %32
+  %34 = load i32, i32* %14, align 4
+  %35 = load i32, i32* %9, align 4
+  %36 = icmp slt i32 %34, %35
+  br i1 %36, label %37, label %168
 
-40:                                               ; preds = %36
-  %41 = bitcast float* %15 to i8*
-  call void @llvm.var.annotation(i8* %41, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.117, i32 0, i32 0), i32 46, i8* null)
-  %42 = load float*, float** %8, align 8
-  %43 = load i32, i32* %9, align 4
-  %44 = sub nsw i32 %43, 1
-  %45 = load i32, i32* %14, align 4
-  %46 = sub nsw i32 %44, %45
-  %47 = load i32, i32* %13, align 4
-  %48 = load i32, i32* %9, align 4
-  %49 = mul nsw i32 %47, %48
-  %50 = add nsw i32 %46, %49
-  %51 = sext i32 %50 to i64
-  %52 = getelementptr inbounds float, float* %42, i64 %51
-  %53 = load float, float* %52, align 4
-  store float %53, float* %15, align 4
-  %54 = bitcast float* %16 to i8*
-  call void @llvm.var.annotation(i8* %54, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.117, i32 0, i32 0), i32 48, i8* null)
-  %55 = load float, float* %15, align 4
-  %56 = load float, float* %11, align 4
-  %57 = fsub float %55, %56
-  %58 = load float, float* %12, align 4
-  %59 = fdiv float %57, %58
-  store float %59, float* %16, align 4
-  %60 = load float, float* %16, align 4
-  %61 = fcmp ole float 3.750000e-01, %60
-  br i1 %61, label %62, label %69
+37:                                               ; preds = %33
+  %38 = load %struct._IO_FILE*, %struct._IO_FILE** @stdout, align 8
+  %39 = call i32 @fflush(%struct._IO_FILE* noundef %38)
+  %40 = load float*, float** %8, align 8
+  %41 = load i32, i32* %9, align 4
+  %42 = sub nsw i32 %41, 1
+  %43 = load i32, i32* %14, align 4
+  %44 = sub nsw i32 %42, %43
+  %45 = load i32, i32* %13, align 4
+  %46 = load i32, i32* %9, align 4
+  %47 = mul nsw i32 %45, %46
+  %48 = add nsw i32 %44, %47
+  %49 = sext i32 %48 to i64
+  %50 = getelementptr inbounds float, float* %40, i64 %49
+  %51 = load float, float* %50, align 4
+  store float %51, float* %15, align 4
+  %52 = load %struct._IO_FILE*, %struct._IO_FILE** @stdout, align 8
+  %53 = call i32 @fflush(%struct._IO_FILE* noundef %52)
+  %54 = load float, float* %15, align 4
+  %55 = load float, float* %11, align 4
+  %56 = fsub float %54, %55
+  %57 = load float, float* %12, align 4
+  %58 = fdiv float %56, %57
+  store float %58, float* %16, align 4
+  %59 = load %struct._IO_FILE*, %struct._IO_FILE** @stdout, align 8
+  %60 = call i32 @fflush(%struct._IO_FILE* noundef %59)
+  %61 = load float, float* %16, align 4
+  %62 = fcmp ole float 3.750000e-01, %61
+  br i1 %62, label %63, label %70
 
-62:                                               ; preds = %40
-  %63 = load float, float* %16, align 4
-  %64 = fcmp olt float %63, 6.250000e-01
-  br i1 %64, label %65, label %69
+63:                                               ; preds = %37
+  %64 = load float, float* %16, align 4
+  %65 = fcmp olt float %64, 6.250000e-01
+  br i1 %65, label %66, label %70
 
-65:                                               ; preds = %62
-  %66 = load float, float* %16, align 4
-  %67 = fsub float %66, 3.750000e-01
-  %68 = fdiv float %67, 2.500000e-01
-  br label %88
+66:                                               ; preds = %63
+  %67 = load float, float* %16, align 4
+  %68 = fsub float %67, 3.750000e-01
+  %69 = fdiv float %68, 2.500000e-01
+  br label %89
 
-69:                                               ; preds = %62, %40
-  %70 = load float, float* %16, align 4
-  %71 = fcmp ole float 6.250000e-01, %70
-  br i1 %71, label %72, label %76
+70:                                               ; preds = %63, %37
+  %71 = load float, float* %16, align 4
+  %72 = fcmp ole float 6.250000e-01, %71
+  br i1 %72, label %73, label %77
 
-72:                                               ; preds = %69
-  %73 = load float, float* %16, align 4
-  %74 = fcmp olt float %73, 8.750000e-01
-  br i1 %74, label %75, label %76
+73:                                               ; preds = %70
+  %74 = load float, float* %16, align 4
+  %75 = fcmp olt float %74, 8.750000e-01
+  br i1 %75, label %76, label %77
 
-75:                                               ; preds = %72
-  br label %86
+76:                                               ; preds = %73
+  br label %87
 
-76:                                               ; preds = %72, %69
-  %77 = load float, float* %16, align 4
-  %78 = fcmp ole float 8.750000e-01, %77
-  br i1 %78, label %79, label %83
+77:                                               ; preds = %73, %70
+  %78 = load float, float* %16, align 4
+  %79 = fcmp ole float 8.750000e-01, %78
+  br i1 %79, label %80, label %84
 
-79:                                               ; preds = %76
-  %80 = load float, float* %16, align 4
-  %81 = fsub float 1.125000e+00, %80
-  %82 = fdiv float %81, 2.500000e-01
-  br label %84
+80:                                               ; preds = %77
+  %81 = load float, float* %16, align 4
+  %82 = fsub float 1.125000e+00, %81
+  %83 = fdiv float %82, 2.500000e-01
+  br label %85
 
-83:                                               ; preds = %76
-  br label %84
+84:                                               ; preds = %77
+  br label %85
 
-84:                                               ; preds = %83, %79
-  %85 = phi float [ %82, %79 ], [ 0.000000e+00, %83 ]
-  br label %86
+85:                                               ; preds = %84, %80
+  %86 = phi float [ %83, %80 ], [ 0.000000e+00, %84 ]
+  br label %87
 
-86:                                               ; preds = %84, %75
-  %87 = phi float [ 1.000000e+00, %75 ], [ %85, %84 ]
-  br label %88
+87:                                               ; preds = %85, %76
+  %88 = phi float [ 1.000000e+00, %76 ], [ %86, %85 ]
+  br label %89
 
-88:                                               ; preds = %86, %65
-  %89 = phi float [ %68, %65 ], [ %87, %86 ]
-  %90 = fmul float 2.555000e+02, %89
-  %91 = fptosi float %90 to i32
-  store i32 %91, i32* %17, align 4
-  %92 = load float, float* %16, align 4
-  %93 = fcmp ole float 1.250000e-01, %92
-  br i1 %93, label %94, label %101
+89:                                               ; preds = %87, %66
+  %90 = phi float [ %69, %66 ], [ %88, %87 ]
+  %91 = fmul float 2.555000e+02, %90
+  %92 = fptosi float %91 to i32
+  store i32 %92, i32* %17, align 4
+  %93 = load float, float* %16, align 4
+  %94 = fcmp ole float 1.250000e-01, %93
+  br i1 %94, label %95, label %102
 
-94:                                               ; preds = %88
-  %95 = load float, float* %16, align 4
-  %96 = fcmp olt float %95, 3.750000e-01
-  br i1 %96, label %97, label %101
+95:                                               ; preds = %89
+  %96 = load float, float* %16, align 4
+  %97 = fcmp olt float %96, 3.750000e-01
+  br i1 %97, label %98, label %102
 
-97:                                               ; preds = %94
-  %98 = load float, float* %16, align 4
-  %99 = fsub float %98, 1.250000e-01
-  %100 = fdiv float %99, 2.500000e-01
-  br label %123
+98:                                               ; preds = %95
+  %99 = load float, float* %16, align 4
+  %100 = fsub float %99, 1.250000e-01
+  %101 = fdiv float %100, 2.500000e-01
+  br label %124
 
-101:                                              ; preds = %94, %88
-  %102 = load float, float* %16, align 4
-  %103 = fcmp ole float 3.750000e-01, %102
-  br i1 %103, label %104, label %108
+102:                                              ; preds = %95, %89
+  %103 = load float, float* %16, align 4
+  %104 = fcmp ole float 3.750000e-01, %103
+  br i1 %104, label %105, label %109
 
-104:                                              ; preds = %101
-  %105 = load float, float* %16, align 4
-  %106 = fcmp olt float %105, 6.250000e-01
-  br i1 %106, label %107, label %108
+105:                                              ; preds = %102
+  %106 = load float, float* %16, align 4
+  %107 = fcmp olt float %106, 6.250000e-01
+  br i1 %107, label %108, label %109
 
-107:                                              ; preds = %104
-  br label %121
+108:                                              ; preds = %105
+  br label %122
 
-108:                                              ; preds = %104, %101
-  %109 = load float, float* %16, align 4
-  %110 = fcmp ole float 6.250000e-01, %109
-  br i1 %110, label %111, label %118
+109:                                              ; preds = %105, %102
+  %110 = load float, float* %16, align 4
+  %111 = fcmp ole float 6.250000e-01, %110
+  br i1 %111, label %112, label %119
 
-111:                                              ; preds = %108
-  %112 = load float, float* %16, align 4
-  %113 = fcmp olt float %112, 8.750000e-01
-  br i1 %113, label %114, label %118
+112:                                              ; preds = %109
+  %113 = load float, float* %16, align 4
+  %114 = fcmp olt float %113, 8.750000e-01
+  br i1 %114, label %115, label %119
 
-114:                                              ; preds = %111
-  %115 = load float, float* %16, align 4
-  %116 = fsub float 8.750000e-01, %115
-  %117 = fdiv float %116, 2.500000e-01
-  br label %119
+115:                                              ; preds = %112
+  %116 = load float, float* %16, align 4
+  %117 = fsub float 8.750000e-01, %116
+  %118 = fdiv float %117, 2.500000e-01
+  br label %120
 
-118:                                              ; preds = %111, %108
-  br label %119
+119:                                              ; preds = %112, %109
+  br label %120
 
-119:                                              ; preds = %118, %114
-  %120 = phi float [ %117, %114 ], [ 0.000000e+00, %118 ]
-  br label %121
+120:                                              ; preds = %119, %115
+  %121 = phi float [ %118, %115 ], [ 0.000000e+00, %119 ]
+  br label %122
 
-121:                                              ; preds = %119, %107
-  %122 = phi float [ 1.000000e+00, %107 ], [ %120, %119 ]
-  br label %123
+122:                                              ; preds = %120, %108
+  %123 = phi float [ 1.000000e+00, %108 ], [ %121, %120 ]
+  br label %124
 
-123:                                              ; preds = %121, %97
-  %124 = phi float [ %100, %97 ], [ %122, %121 ]
-  %125 = fmul float 2.555000e+02, %124
-  %126 = fptosi float %125 to i32
-  store i32 %126, i32* %18, align 4
-  %127 = load float, float* %16, align 4
-  %128 = fcmp olt float %127, 1.250000e-01
-  br i1 %128, label %129, label %133
+124:                                              ; preds = %122, %98
+  %125 = phi float [ %101, %98 ], [ %123, %122 ]
+  %126 = fmul float 2.555000e+02, %125
+  %127 = fptosi float %126 to i32
+  store i32 %127, i32* %18, align 4
+  %128 = load float, float* %16, align 4
+  %129 = fcmp olt float %128, 1.250000e-01
+  br i1 %129, label %130, label %134
 
-129:                                              ; preds = %123
-  %130 = load float, float* %16, align 4
-  %131 = fadd float %130, 1.250000e-01
-  %132 = fdiv float %131, 2.500000e-01
-  br label %155
+130:                                              ; preds = %124
+  %131 = load float, float* %16, align 4
+  %132 = fadd float %131, 1.250000e-01
+  %133 = fdiv float %132, 2.500000e-01
+  br label %156
 
-133:                                              ; preds = %123
-  %134 = load float, float* %16, align 4
-  %135 = fcmp ole float 1.250000e-01, %134
-  br i1 %135, label %136, label %140
+134:                                              ; preds = %124
+  %135 = load float, float* %16, align 4
+  %136 = fcmp ole float 1.250000e-01, %135
+  br i1 %136, label %137, label %141
 
-136:                                              ; preds = %133
-  %137 = load float, float* %16, align 4
-  %138 = fcmp olt float %137, 3.750000e-01
-  br i1 %138, label %139, label %140
+137:                                              ; preds = %134
+  %138 = load float, float* %16, align 4
+  %139 = fcmp olt float %138, 3.750000e-01
+  br i1 %139, label %140, label %141
 
-139:                                              ; preds = %136
-  br label %153
+140:                                              ; preds = %137
+  br label %154
 
-140:                                              ; preds = %136, %133
-  %141 = load float, float* %16, align 4
-  %142 = fcmp ole float 3.750000e-01, %141
-  br i1 %142, label %143, label %150
+141:                                              ; preds = %137, %134
+  %142 = load float, float* %16, align 4
+  %143 = fcmp ole float 3.750000e-01, %142
+  br i1 %143, label %144, label %151
 
-143:                                              ; preds = %140
-  %144 = load float, float* %16, align 4
-  %145 = fcmp olt float %144, 6.250000e-01
-  br i1 %145, label %146, label %150
+144:                                              ; preds = %141
+  %145 = load float, float* %16, align 4
+  %146 = fcmp olt float %145, 6.250000e-01
+  br i1 %146, label %147, label %151
 
-146:                                              ; preds = %143
-  %147 = load float, float* %16, align 4
-  %148 = fsub float 6.250000e-01, %147
-  %149 = fdiv float %148, 2.500000e-01
-  br label %151
+147:                                              ; preds = %144
+  %148 = load float, float* %16, align 4
+  %149 = fsub float 6.250000e-01, %148
+  %150 = fdiv float %149, 2.500000e-01
+  br label %152
 
-150:                                              ; preds = %143, %140
-  br label %151
+151:                                              ; preds = %144, %141
+  br label %152
 
-151:                                              ; preds = %150, %146
-  %152 = phi float [ %149, %146 ], [ 0.000000e+00, %150 ]
-  br label %153
+152:                                              ; preds = %151, %147
+  %153 = phi float [ %150, %147 ], [ 0.000000e+00, %151 ]
+  br label %154
 
-153:                                              ; preds = %151, %139
-  %154 = phi float [ 1.000000e+00, %139 ], [ %152, %151 ]
-  br label %155
+154:                                              ; preds = %152, %140
+  %155 = phi float [ 1.000000e+00, %140 ], [ %153, %152 ]
+  br label %156
 
-155:                                              ; preds = %153, %129
-  %156 = phi float [ %132, %129 ], [ %154, %153 ]
-  %157 = fmul float 2.555000e+02, %156
-  %158 = fptosi float %157 to i32
-  store i32 %158, i32* %19, align 4
-  %159 = load %struct._IO_FILE*, %struct._IO_FILE** %7, align 8
-  %160 = load i32, i32* %17, align 4
-  %161 = load i32, i32* %18, align 4
-  %162 = load i32, i32* %19, align 4
-  %163 = call i32 (%struct._IO_FILE*, i8*, ...) @fprintf(%struct._IO_FILE* %159, i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str.122, i64 0, i64 0), i32 %160, i32 %161, i32 %162)
-  br label %164
+156:                                              ; preds = %154, %130
+  %157 = phi float [ %133, %130 ], [ %155, %154 ]
+  %158 = fmul float 2.555000e+02, %157
+  %159 = fptosi float %158 to i32
+  store i32 %159, i32* %19, align 4
+  %160 = load %struct._IO_FILE*, %struct._IO_FILE** %7, align 8
+  %161 = load i32, i32* %17, align 4
+  %162 = load i32, i32* %18, align 4
+  %163 = load i32, i32* %19, align 4
+  %164 = call i32 (%struct._IO_FILE*, i8*, ...) @fprintf(%struct._IO_FILE* noundef %160, i8* noundef getelementptr inbounds ([10 x i8], [10 x i8]* @.str.128, i64 0, i64 0), i32 noundef %161, i32 noundef %162, i32 noundef %163)
+  br label %165
 
-164:                                              ; preds = %155
-  %165 = load i32, i32* %14, align 4
-  %166 = add nsw i32 %165, 1
-  store i32 %166, i32* %14, align 4
-  br label %36, !llvm.loop !34
+165:                                              ; preds = %156
+  %166 = load i32, i32* %14, align 4
+  %167 = add nsw i32 %166, 1
+  store i32 %167, i32* %14, align 4
+  br label %33, !llvm.loop !38
 
-167:                                              ; preds = %36
-  %168 = load %struct._IO_FILE*, %struct._IO_FILE** %7, align 8
-  %169 = call i32 (%struct._IO_FILE*, i8*, ...) @fprintf(%struct._IO_FILE* %168, i8* getelementptr inbounds ([2 x i8], [2 x i8]* @.str.123, i64 0, i64 0))
-  br label %170
+168:                                              ; preds = %33
+  %169 = load %struct._IO_FILE*, %struct._IO_FILE** %7, align 8
+  %170 = call i32 (%struct._IO_FILE*, i8*, ...) @fprintf(%struct._IO_FILE* noundef %169, i8* noundef getelementptr inbounds ([2 x i8], [2 x i8]* @.str.129, i64 0, i64 0))
+  br label %171
 
-170:                                              ; preds = %167
-  %171 = load i32, i32* %13, align 4
-  %172 = add nsw i32 %171, 1
-  store i32 %172, i32* %13, align 4
-  br label %31, !llvm.loop !35
+171:                                              ; preds = %168
+  %172 = load i32, i32* %13, align 4
+  %173 = add nsw i32 %172, 1
+  store i32 %173, i32* %13, align 4
+  br label %28, !llvm.loop !39
 
-173:                                              ; preds = %31
+174:                                              ; preds = %28
   ret void
 }
 
-declare dso_local i32 @fprintf(%struct._IO_FILE*, i8*, ...) #2
+declare i32 @fprintf(%struct._IO_FILE* noundef, i8* noundef, ...) #2
 
-; Function Attrs: noinline norecurse uwtable mustprogress
-define dso_local i32 @main(i32 %0, i8** %1) #5 {
+declare i32 @fflush(%struct._IO_FILE* noundef) #2
+
+; Function Attrs: mustprogress noinline norecurse uwtable
+define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #6 {
   %3 = alloca i32, align 4
   %4 = alloca i32, align 4
   %5 = alloca i8**, align 8
@@ -5347,81 +5339,81 @@ define dso_local i32 @main(i32 %0, i8** %1) #5 {
   store i32 0, i32* %3, align 4
   store i32 %0, i32* %4, align 4
   store i8** %1, i8*** %5, align 8
-  %19 = call i32 @_Z26MLX90640_ExtractParametersPKt(i16* getelementptr inbounds ([832 x i16], [832 x i16]* @_ZL6eeprom, i64 0, i64 0))
+  %19 = call noundef i32 @_Z26MLX90640_ExtractParametersPKt(i16* noundef getelementptr inbounds ([832 x i16], [832 x i16]* @_ZL6eeprom, i64 0, i64 0))
   %20 = icmp ne i32 %19, 0
   br i1 %20, label %21, label %22
 
 21:                                               ; preds = %2
   store i32 1, i32* %3, align 4
-  br label %132
+  br label %127
 
 22:                                               ; preds = %2
   %23 = bitcast float* %6 to i8*
-  call void @llvm.var.annotation(i8* %23, i8* getelementptr inbounds ([28 x i8], [28 x i8]* @.str.124, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.117, i32 0, i32 0), i32 83, i8* null)
+  call void @llvm.var.annotation(i8* %23, i8* getelementptr inbounds ([28 x i8], [28 x i8]* @.str.130, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.124, i32 0, i32 0), i32 85, i8* null)
   store float 8.000000e+00, float* %6, align 4
   %24 = bitcast float* %7 to i8*
-  call void @llvm.var.annotation(i8* %24, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.117, i32 0, i32 0), i32 84, i8* null)
+  call void @llvm.var.annotation(i8* %24, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.15, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.124, i32 0, i32 0), i32 86, i8* null)
   store float 0x3FEE666660000000, float* %7, align 4
   %25 = bitcast float* %8 to i8*
-  call void @llvm.var.annotation(i8* %25, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.117, i32 0, i32 0), i32 85, i8* null)
+  call void @llvm.var.annotation(i8* %25, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.15, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.124, i32 0, i32 0), i32 87, i8* null)
   store float 1.500000e+01, float* %8, align 4
   store i32 32, i32* %9, align 4
   store i32 24, i32* %10, align 4
   %26 = bitcast [768 x float]* %11 to i8*
-  call void @llvm.var.annotation(i8* %26, i8* getelementptr inbounds ([29 x i8], [29 x i8]* @.str.21, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.117, i32 0, i32 0), i32 93, i8* null)
-  %27 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str.125, i64 0, i64 0))
+  call void @llvm.var.annotation(i8* %26, i8* getelementptr inbounds ([29 x i8], [29 x i8]* @.str.26, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.124, i32 0, i32 0), i32 95, i8* null)
+  %27 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([10 x i8], [10 x i8]* @.str.131, i64 0, i64 0))
   %28 = bitcast float* %12 to i8*
-  call void @llvm.var.annotation(i8* %28, i8* getelementptr inbounds ([23 x i8], [23 x i8]* @.str.126, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.117, i32 0, i32 0), i32 100, i8* null)
-  %29 = call float @_Z14MLX90640_GetTaPKt(i16* getelementptr inbounds ([834 x i16], [834 x i16]* @_ZL9subframe1, i64 0, i64 0))
+  call void @llvm.var.annotation(i8* %28, i8* getelementptr inbounds ([23 x i8], [23 x i8]* @.str.132, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.124, i32 0, i32 0), i32 102, i8* null)
+  %29 = call noundef float @_Z14MLX90640_GetTaPKt(i16* noundef getelementptr inbounds ([834 x i16], [834 x i16]* @_ZL9subframe1, i64 0, i64 0))
   store float %29, float* %12, align 4
   %30 = load float, float* %12, align 4
   %31 = fpext float %30 to double
-  %32 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.127, i64 0, i64 0), double %31)
+  %32 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([9 x i8], [9 x i8]* @.str.133, i64 0, i64 0), double noundef %31)
   %33 = bitcast float* %13 to i8*
-  call void @llvm.var.annotation(i8* %33, i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str.128, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.117, i32 0, i32 0), i32 104, i8* null)
+  call void @llvm.var.annotation(i8* %33, i8* getelementptr inbounds ([10 x i8], [10 x i8]* @.str.134, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.124, i32 0, i32 0), i32 106, i8* null)
   %34 = load float, float* %12, align 4
   %35 = fsub float %34, 8.000000e+00
   store float %35, float* %13, align 4
   %36 = load float, float* %12, align 4
   %37 = fpext float %36 to double
-  %38 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([16 x i8], [16 x i8]* @.str.129, i64 0, i64 0), double %37)
+  %38 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([16 x i8], [16 x i8]* @.str.135, i64 0, i64 0), double noundef %37)
   %39 = load float, float* %13, align 4
   %40 = fpext float %39 to double
-  %41 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([16 x i8], [16 x i8]* @.str.130, i64 0, i64 0), double %40)
+  %41 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([16 x i8], [16 x i8]* @.str.136, i64 0, i64 0), double noundef %40)
   %42 = load float, float* %13, align 4
   %43 = getelementptr inbounds [768 x float], [768 x float]* %11, i64 0, i64 0
-  call void @_Z20MLX90640_CalculateToPKtffPf(i16* getelementptr inbounds ([834 x i16], [834 x i16]* @_ZL9subframe1, i64 0, i64 0), float 0x3FEE666660000000, float %42, float* %43)
-  %44 = call float @_Z14MLX90640_GetTaPKt(i16* getelementptr inbounds ([834 x i16], [834 x i16]* @_ZL9subframe2, i64 0, i64 0))
+  call void @_Z20MLX90640_CalculateToPKtffPf(i16* noundef getelementptr inbounds ([834 x i16], [834 x i16]* @_ZL9subframe1, i64 0, i64 0), float noundef 0x3FEE666660000000, float noundef %42, float* noundef %43)
+  %44 = call noundef float @_Z14MLX90640_GetTaPKt(i16* noundef getelementptr inbounds ([834 x i16], [834 x i16]* @_ZL9subframe2, i64 0, i64 0))
   store float %44, float* %12, align 4
   %45 = load float, float* %12, align 4
   %46 = fsub float %45, 8.000000e+00
   store float %46, float* %13, align 4
   %47 = load float, float* %13, align 4
   %48 = getelementptr inbounds [768 x float], [768 x float]* %11, i64 0, i64 0
-  call void @_Z20MLX90640_CalculateToPKtffPf(i16* getelementptr inbounds ([834 x i16], [834 x i16]* @_ZL9subframe2, i64 0, i64 0), float 0x3FEE666660000000, float %47, float* %48)
+  call void @_Z20MLX90640_CalculateToPKtffPf(i16* noundef getelementptr inbounds ([834 x i16], [834 x i16]* @_ZL9subframe2, i64 0, i64 0), float noundef 0x3FEE666660000000, float noundef %47, float* noundef %48)
   %49 = load float, float* %12, align 4
   %50 = fpext float %49 to double
-  %51 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([16 x i8], [16 x i8]* @.str.129, i64 0, i64 0), double %50)
+  %51 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([16 x i8], [16 x i8]* @.str.135, i64 0, i64 0), double noundef %50)
   %52 = load float, float* %13, align 4
   %53 = fpext float %52 to double
-  %54 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([16 x i8], [16 x i8]* @.str.130, i64 0, i64 0), double %53)
+  %54 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([16 x i8], [16 x i8]* @.str.136, i64 0, i64 0), double noundef %53)
   %55 = bitcast float* %14 to i8*
-  call void @llvm.var.annotation(i8* %55, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.117, i32 0, i32 0), i32 117, i8* null)
+  call void @llvm.var.annotation(i8* %55, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.15, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.124, i32 0, i32 0), i32 119, i8* null)
   %56 = getelementptr inbounds [768 x float], [768 x float]* %11, i64 0, i64 0
   %57 = load float, float* %56, align 16
   store float %57, float* %14, align 4
   %58 = bitcast float* %15 to i8*
-  call void @llvm.var.annotation(i8* %58, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.117, i32 0, i32 0), i32 117, i8* null)
+  call void @llvm.var.annotation(i8* %58, i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.15, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.124, i32 0, i32 0), i32 119, i8* null)
   %59 = getelementptr inbounds [768 x float], [768 x float]* %11, i64 0, i64 0
   %60 = load float, float* %59, align 16
   store float %60, float* %15, align 4
   store i32 1, i32* %16, align 4
   br label %61
 
-61:                                               ; preds = %84, %22
+61:                                               ; preds = %77, %22
   %62 = load i32, i32* %16, align 4
   %63 = icmp slt i32 %62, 768
-  br i1 %63, label %64, label %87
+  br i1 %63, label %64, label %80
 
 64:                                               ; preds = %61
   %65 = load float, float* %14, align 4
@@ -5429,149 +5421,149 @@ define dso_local i32 @main(i32 %0, i8** %1) #5 {
   %67 = sext i32 %66 to i64
   %68 = getelementptr inbounds [768 x float], [768 x float]* %11, i64 0, i64 %67
   %69 = load float, float* %68, align 4
-  %70 = call float @_Z5min_fff(float %65, float %69)
+  %70 = call noundef float @_Z5min_fff(float noundef %65, float noundef %69)
   store float %70, float* %14, align 4
   %71 = load float, float* %15, align 4
   %72 = load i32, i32* %16, align 4
   %73 = sext i32 %72 to i64
   %74 = getelementptr inbounds [768 x float], [768 x float]* %11, i64 0, i64 %73
   %75 = load float, float* %74, align 4
-  %76 = call float @_Z5max_fff(float %71, float %75)
+  %76 = call noundef float @_Z5max_fff(float noundef %71, float noundef %75)
   store float %76, float* %15, align 4
-  %77 = load i32, i32* %16, align 4
+  br label %77
+
+77:                                               ; preds = %64
   %78 = load i32, i32* %16, align 4
-  %79 = sext i32 %78 to i64
-  %80 = getelementptr inbounds [768 x float], [768 x float]* %11, i64 0, i64 %79
-  %81 = load float, float* %80, align 4
+  %79 = add nsw i32 %78, 1
+  store i32 %79, i32* %16, align 4
+  br label %61, !llvm.loop !40
+
+80:                                               ; preds = %61
+  %81 = load float, float* @maximum2, align 4
   %82 = fpext float %81 to double
-  %83 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([18 x i8], [18 x i8]* @.str.131, i64 0, i64 0), i32 %77, double %82)
-  br label %84
-
-84:                                               ; preds = %64
-  %85 = load i32, i32* %16, align 4
-  %86 = add nsw i32 %85, 1
-  store i32 %86, i32* %16, align 4
-  br label %61, !llvm.loop !36
-
-87:                                               ; preds = %61
-  %88 = load float, float* @maximum2, align 4
-  %89 = fpext float %88 to double
-  %90 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.132, i64 0, i64 0), double %89)
-  %91 = load float, float* @maximum, align 4
-  %92 = fpext float %91 to double
-  %93 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.133, i64 0, i64 0), double %92)
-  %94 = load float, float* @mint5, align 4
-  %95 = fpext float %94 to double
-  %96 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([15 x i8], [15 x i8]* @.str.134, i64 0, i64 0), double %95)
-  %97 = load float, float* @maxt5, align 4
-  %98 = fpext float %97 to double
-  %99 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([14 x i8], [14 x i8]* @.str.135, i64 0, i64 0), double %98)
-  %100 = bitcast float* %17 to i8*
-  call void @llvm.var.annotation(i8* %100, i8* getelementptr inbounds ([30 x i8], [30 x i8]* @.str.136, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.117, i32 0, i32 0), i32 128, i8* null)
-  %101 = load float, float* %15, align 4
-  %102 = load float, float* %14, align 4
-  %103 = fsub float %101, %102
-  %104 = call float @_Z5max_fff(float 1.500000e+01, float %103)
-  store float %104, float* %17, align 4
-  %105 = load float, float* %17, align 4
+  %83 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([19 x i8], [19 x i8]* @.str.137, i64 0, i64 0), double noundef %82)
+  %84 = load float, float* @maximum, align 4
+  %85 = fpext float %84 to double
+  %86 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([19 x i8], [19 x i8]* @.str.138, i64 0, i64 0), double noundef %85)
+  %87 = load float, float* @mint5, align 4
+  %88 = fpext float %87 to double
+  %89 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([15 x i8], [15 x i8]* @.str.139, i64 0, i64 0), double noundef %88)
+  %90 = load float, float* @maxt5, align 4
+  %91 = fpext float %90 to double
+  %92 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([14 x i8], [14 x i8]* @.str.140, i64 0, i64 0), double noundef %91)
+  %93 = bitcast float* %17 to i8*
+  call void @llvm.var.annotation(i8* %93, i8* getelementptr inbounds ([30 x i8], [30 x i8]* @.str.141, i32 0, i32 0), i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.124, i32 0, i32 0), i32 130, i8* null)
+  %94 = load float, float* %15, align 4
+  %95 = load float, float* %14, align 4
+  %96 = fsub float %94, %95
+  %97 = call noundef float @_Z5max_fff(float noundef 1.500000e+01, float noundef %96)
+  store float %97, float* %17, align 4
+  %98 = load float, float* %17, align 4
+  %99 = fpext float %98 to double
+  %100 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([15 x i8], [15 x i8]* @.str.142, i64 0, i64 0), double noundef %99)
+  %101 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([18 x i8], [18 x i8]* @.str.143, i64 0, i64 0), double noundef 1.500000e+01)
+  %102 = load float, float* %15, align 4
+  %103 = fpext float %102 to double
+  %104 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([16 x i8], [16 x i8]* @.str.144, i64 0, i64 0), double noundef %103)
+  %105 = load float, float* %14, align 4
   %106 = fpext float %105 to double
-  %107 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([15 x i8], [15 x i8]* @.str.137, i64 0, i64 0), double %106)
-  %108 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([18 x i8], [18 x i8]* @.str.138, i64 0, i64 0), double 1.500000e+01)
-  %109 = load float, float* %15, align 4
-  %110 = fpext float %109 to double
-  %111 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([16 x i8], [16 x i8]* @.str.139, i64 0, i64 0), double %110)
-  %112 = load float, float* %14, align 4
-  %113 = fpext float %112 to double
-  %114 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([16 x i8], [16 x i8]* @.str.140, i64 0, i64 0), double %113)
-  %115 = call %struct._IO_FILE* @fopen(i8* getelementptr inbounds ([15 x i8], [15 x i8]* @.str.141, i64 0, i64 0), i8* getelementptr inbounds ([2 x i8], [2 x i8]* @.str.142, i64 0, i64 0))
-  store %struct._IO_FILE* %115, %struct._IO_FILE** %18, align 8
-  %116 = load %struct._IO_FILE*, %struct._IO_FILE** %18, align 8
-  %117 = icmp eq %struct._IO_FILE* %116, null
-  br i1 %117, label %118, label %119
+  %107 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([16 x i8], [16 x i8]* @.str.145, i64 0, i64 0), double noundef %106)
+  %108 = load %struct._IO_FILE*, %struct._IO_FILE** @stdout, align 8
+  %109 = call i32 @fflush(%struct._IO_FILE* noundef %108)
+  %110 = call noalias %struct._IO_FILE* @fopen(i8* noundef getelementptr inbounds ([15 x i8], [15 x i8]* @.str.146, i64 0, i64 0), i8* noundef getelementptr inbounds ([2 x i8], [2 x i8]* @.str.147, i64 0, i64 0))
+  store %struct._IO_FILE* %110, %struct._IO_FILE** %18, align 8
+  %111 = load %struct._IO_FILE*, %struct._IO_FILE** %18, align 8
+  %112 = icmp eq %struct._IO_FILE* %111, null
+  br i1 %112, label %113, label %114
 
-118:                                              ; preds = %87
+113:                                              ; preds = %80
   store i32 1, i32* %3, align 4
-  br label %132
+  br label %127
 
-119:                                              ; preds = %87
-  %120 = load %struct._IO_FILE*, %struct._IO_FILE** %18, align 8
-  %121 = getelementptr inbounds [768 x float], [768 x float]* %11, i64 0, i64 0
+114:                                              ; preds = %80
+  %115 = load %struct._IO_FILE*, %struct._IO_FILE** %18, align 8
+  %116 = getelementptr inbounds [768 x float], [768 x float]* %11, i64 0, i64 0
+  %117 = load float, float* %14, align 4
+  %118 = load float, float* %17, align 4
+  call void @_Z8printPPMP8_IO_FILEPfiiff(%struct._IO_FILE* noundef %115, float* noundef %116, i32 noundef 32, i32 noundef 24, float noundef %117, float noundef %118)
+  %119 = load %struct._IO_FILE*, %struct._IO_FILE** %18, align 8
+  %120 = call i32 @fclose(%struct._IO_FILE* noundef %119)
+  %121 = load %struct._IO_FILE*, %struct._IO_FILE** @stderr, align 8
   %122 = load float, float* %14, align 4
-  %123 = load float, float* %17, align 4
-  call void @_Z8printPPMP8_IO_FILEPfiiff(%struct._IO_FILE* %120, float* %121, i32 32, i32 24, float %122, float %123)
-  %124 = load %struct._IO_FILE*, %struct._IO_FILE** %18, align 8
-  %125 = call i32 @fclose(%struct._IO_FILE* %124)
-  %126 = load %struct._IO_FILE*, %struct._IO_FILE** @stderr, align 8
-  %127 = load float, float* %14, align 4
-  %128 = fptosi float %127 to i32
-  %129 = load float, float* %15, align 4
-  %130 = fptosi float %129 to i32
-  %131 = call i32 (%struct._IO_FILE*, i8*, ...) @fprintf(%struct._IO_FILE* %126, i8* getelementptr inbounds ([19 x i8], [19 x i8]* @.str.143, i64 0, i64 0), i32 %128, i32 %130)
+  %123 = fptosi float %122 to i32
+  %124 = load float, float* %15, align 4
+  %125 = fptosi float %124 to i32
+  %126 = call i32 (%struct._IO_FILE*, i8*, ...) @fprintf(%struct._IO_FILE* noundef %121, i8* noundef getelementptr inbounds ([19 x i8], [19 x i8]* @.str.148, i64 0, i64 0), i32 noundef %123, i32 noundef %125)
   store i32 0, i32* %3, align 4
-  br label %132
+  br label %127
 
-132:                                              ; preds = %119, %118, %21
-  %133 = load i32, i32* %3, align 4
-  ret i32 %133
+127:                                              ; preds = %114, %113, %21
+  %128 = load i32, i32* %3, align 4
+  ret i32 %128
 }
 
-declare dso_local %struct._IO_FILE* @fopen(i8*, i8*) #2
+declare noalias %struct._IO_FILE* @fopen(i8* noundef, i8* noundef) #2
 
-declare dso_local i32 @fclose(%struct._IO_FILE*) #2
-
-; Function Attrs: nounwind
-declare dso_local double @pow(double, double) #6
+declare i32 @fclose(%struct._IO_FILE* noundef) #2
 
 ; Function Attrs: nounwind
-declare dso_local float @sqrtf(float) #6
+declare double @pow(double noundef, double noundef) #7
 
-attributes #0 = { noinline uwtable mustprogress "disable-tail-calls"="false" "frame-pointer"="all" "less-precise-fpmad"="false" "min-legal-vector-width"="0" "no-infs-fp-math"="false" "no-jump-tables"="false" "no-nans-fp-math"="false" "no-signed-zeros-fp-math"="false" "no-trapping-math"="true" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+cx8,+fxsr,+mmx,+sse,+sse2,+x87" "tune-cpu"="generic" "unsafe-fp-math"="false" "use-soft-float"="false" }
-attributes #1 = { noinline nounwind uwtable mustprogress "disable-tail-calls"="false" "frame-pointer"="all" "less-precise-fpmad"="false" "min-legal-vector-width"="0" "no-infs-fp-math"="false" "no-jump-tables"="false" "no-nans-fp-math"="false" "no-signed-zeros-fp-math"="false" "no-trapping-math"="true" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+cx8,+fxsr,+mmx,+sse,+sse2,+x87" "tune-cpu"="generic" "unsafe-fp-math"="false" "use-soft-float"="false" }
-attributes #2 = { "disable-tail-calls"="false" "frame-pointer"="all" "less-precise-fpmad"="false" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "no-signed-zeros-fp-math"="false" "no-trapping-math"="true" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+cx8,+fxsr,+mmx,+sse,+sse2,+x87" "tune-cpu"="generic" "unsafe-fp-math"="false" "use-soft-float"="false" }
-attributes #3 = { nofree nosync nounwind willreturn }
-attributes #4 = { noreturn nounwind "disable-tail-calls"="false" "frame-pointer"="all" "less-precise-fpmad"="false" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "no-signed-zeros-fp-math"="false" "no-trapping-math"="true" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+cx8,+fxsr,+mmx,+sse,+sse2,+x87" "tune-cpu"="generic" "unsafe-fp-math"="false" "use-soft-float"="false" }
-attributes #5 = { noinline norecurse uwtable mustprogress "disable-tail-calls"="false" "frame-pointer"="all" "less-precise-fpmad"="false" "min-legal-vector-width"="0" "no-infs-fp-math"="false" "no-jump-tables"="false" "no-nans-fp-math"="false" "no-signed-zeros-fp-math"="false" "no-trapping-math"="true" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+cx8,+fxsr,+mmx,+sse,+sse2,+x87" "tune-cpu"="generic" "unsafe-fp-math"="false" "use-soft-float"="false" }
-attributes #6 = { nounwind "disable-tail-calls"="false" "frame-pointer"="all" "less-precise-fpmad"="false" "no-infs-fp-math"="false" "no-nans-fp-math"="false" "no-signed-zeros-fp-math"="false" "no-trapping-math"="true" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+cx8,+fxsr,+mmx,+sse,+sse2,+x87" "tune-cpu"="generic" "unsafe-fp-math"="false" "use-soft-float"="false" }
-attributes #7 = { noreturn nounwind }
-attributes #8 = { nounwind }
+; Function Attrs: nounwind
+declare float @sqrtf(float noundef) #7
 
-!llvm.module.flags = !{!0}
-!llvm.ident = !{!1}
+attributes #0 = { mustprogress noinline uwtable "frame-pointer"="all" "min-legal-vector-width"="0" "no-trapping-math"="true" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+cx8,+fxsr,+mmx,+sse,+sse2,+x87" "tune-cpu"="generic" }
+attributes #1 = { mustprogress noinline nounwind uwtable "frame-pointer"="all" "min-legal-vector-width"="0" "no-trapping-math"="true" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+cx8,+fxsr,+mmx,+sse,+sse2,+x87" "tune-cpu"="generic" }
+attributes #2 = { "frame-pointer"="all" "no-trapping-math"="true" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+cx8,+fxsr,+mmx,+sse,+sse2,+x87" "tune-cpu"="generic" }
+attributes #3 = { inaccessiblememonly nofree nosync nounwind willreturn }
+attributes #4 = { nofree nosync nounwind readnone speculatable willreturn }
+attributes #5 = { noreturn nounwind "frame-pointer"="all" "no-trapping-math"="true" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+cx8,+fxsr,+mmx,+sse,+sse2,+x87" "tune-cpu"="generic" }
+attributes #6 = { mustprogress noinline norecurse uwtable "frame-pointer"="all" "min-legal-vector-width"="0" "no-trapping-math"="true" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+cx8,+fxsr,+mmx,+sse,+sse2,+x87" "tune-cpu"="generic" }
+attributes #7 = { nounwind "frame-pointer"="all" "no-trapping-math"="true" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+cx8,+fxsr,+mmx,+sse,+sse2,+x87" "tune-cpu"="generic" }
+attributes #8 = { noreturn nounwind }
+attributes #9 = { nounwind }
+
+!llvm.module.flags = !{!0, !1, !2, !3, !4}
+!llvm.ident = !{!5}
 
 !0 = !{i32 1, !"wchar_size", i32 4}
-!1 = !{!"Ubuntu clang version 12.0.1-++20211102090516+fed41342a82f-1~exp1~20211102211019.11"}
-!2 = distinct !{!2, !3}
-!3 = !{!"llvm.loop.mustprogress"}
-!4 = distinct !{!4, !3}
-!5 = distinct !{!5, !3}
-!6 = distinct !{!6, !3}
-!7 = distinct !{!7, !3}
-!8 = distinct !{!8, !3}
-!9 = distinct !{!9, !3}
-!10 = distinct !{!10, !3}
-!11 = distinct !{!11, !3}
-!12 = distinct !{!12, !3}
-!13 = distinct !{!13, !3}
-!14 = distinct !{!14, !3}
-!15 = distinct !{!15, !3}
-!16 = distinct !{!16, !3}
-!17 = distinct !{!17, !3}
-!18 = distinct !{!18, !3}
-!19 = distinct !{!19, !3}
-!20 = distinct !{!20, !3}
-!21 = distinct !{!21, !3}
-!22 = distinct !{!22, !3}
-!23 = distinct !{!23, !3}
-!24 = distinct !{!24, !3}
-!25 = distinct !{!25, !3}
-!26 = distinct !{!26, !3}
-!27 = distinct !{!27, !3}
-!28 = distinct !{!28, !3}
-!29 = distinct !{!29, !3}
-!30 = distinct !{!30, !3}
-!31 = distinct !{!31, !3}
-!32 = distinct !{!32, !3}
-!33 = distinct !{!33, !3}
-!34 = distinct !{!34, !3}
-!35 = distinct !{!35, !3}
-!36 = distinct !{!36, !3}
+!1 = !{i32 7, !"PIC Level", i32 2}
+!2 = !{i32 7, !"PIE Level", i32 2}
+!3 = !{i32 7, !"uwtable", i32 1}
+!4 = !{i32 7, !"frame-pointer", i32 2}
+!5 = !{!"Ubuntu clang version 14.0.0-1ubuntu1"}
+!6 = distinct !{!6, !7}
+!7 = !{!"llvm.loop.mustprogress"}
+!8 = distinct !{!8, !7}
+!9 = distinct !{!9, !7}
+!10 = distinct !{!10, !7}
+!11 = distinct !{!11, !7}
+!12 = distinct !{!12, !7}
+!13 = distinct !{!13, !7}
+!14 = distinct !{!14, !7}
+!15 = distinct !{!15, !7}
+!16 = distinct !{!16, !7}
+!17 = distinct !{!17, !7}
+!18 = distinct !{!18, !7}
+!19 = distinct !{!19, !7}
+!20 = distinct !{!20, !7}
+!21 = distinct !{!21, !7}
+!22 = distinct !{!22, !7}
+!23 = distinct !{!23, !7}
+!24 = distinct !{!24, !7}
+!25 = distinct !{!25, !7}
+!26 = distinct !{!26, !7}
+!27 = distinct !{!27, !7}
+!28 = distinct !{!28, !7}
+!29 = distinct !{!29, !7}
+!30 = distinct !{!30, !7}
+!31 = distinct !{!31, !7}
+!32 = distinct !{!32, !7}
+!33 = distinct !{!33, !7}
+!34 = distinct !{!34, !7}
+!35 = distinct !{!35, !7}
+!36 = distinct !{!36, !7}
+!37 = distinct !{!37, !7}
+!38 = distinct !{!38, !7}
+!39 = distinct !{!39, !7}
+!40 = distinct !{!40, !7}

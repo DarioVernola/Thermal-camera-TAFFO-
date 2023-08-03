@@ -349,14 +349,14 @@ int MLX90640_GetCurMode(uint8_t slaveAddr)
 void MLX90640_CalculateTo(const uint16_t *frameData, float __attribute__((annotate("scalar()"))) emissivity , float __attribute__((annotate("scalar()"))) tr, float *result __attribute((annotate("scalar(range(-99, 999) final)"))))
 {
     
-    float  __attribute__((annotate("scalar(range(-32767,32767))"))) vdd ; // Range not working (floating point exception)
-    float  __attribute__((annotate("scalar(range(-32767,32767))"))) ta ; // FP exception
-    float  __attribute__((annotate("scalar(range(-5000000000,10000000000) final)"))) ta4 ; // ta dependent
+    float  __attribute__((annotate("scalar(range(-32767,32767))"))) vdd ; 
+    float  __attribute__((annotate("scalar(range(-32767,32767) final)"))) ta ; 
+    float  __attribute__((annotate("scalar(range(-5000000000,10000000000) final)"))) ta4 ; 
     float  __attribute__((annotate("scalar()"))) tr4; // ta
     float  __attribute__((annotate("scalar()"))) taTr;
-    float  __attribute__((annotate("scalar()"))) gain; // Too big of a error
+    float  __attribute__((annotate("scalar(range(-32768,65535) final)"))) gain; // Too big of a error[FIXED]
     float  __attribute__((annotate("scalar(range(-65536, 65536) final)"))) irDataCP[2]; // ta dependent
-    float  irData; // generates unreasonable values
+    float  __attribute__((annotate("scalar(range(-4294967296, 4294967296) final)"))) irData; // generates unreasonable values [FIXED BUT SLIGHT ERROR]
     float  alphaCompensated; // __attribute__((annotate("scalar(range(-1,1) final)")))
     uint8_t mode;
     int8_t ilPattern;
@@ -460,14 +460,14 @@ void MLX90640_CalculateTo(const uint16_t *frameData, float __attribute__((annota
             irData = irData * gain;
             printf("irDataAGain %.10f\n", irData );
 
-            float __attribute__((annotate("scalar()"))) ir1 = ta - 25; //Annotation causes precision loss
+            float __attribute__((annotate("scalar()"))) ir1 = ta - 25; 
             printf("ta %.10f\n", ta);
             printf("ir1 %.10f\n", ir1);
 
             float __attribute__((annotate("scalar()"))) ir2 = ir1*params_kta[pixelNumber];
             printf("ir2 %.10f\n", ir2);
 
-            float __attribute__((annotate("scalar()"))) ir3 = 1 + ir2; //Annotation causes more precision loss
+            float __attribute__((annotate("scalar()"))) ir3 = 1 + ir2; 
             printf("ir3 %.10f\n", ir3);
 
 
@@ -475,10 +475,10 @@ void MLX90640_CalculateTo(const uint16_t *frameData, float __attribute__((annota
             printf("ir4 %.10f\n", ir4);
             printf("params_offset %d\n", params_offset[pixelNumber]);
 
-            float ir5 = vdd - 3.3; // Annotation causes precision loss
+            float  __attribute__((annotate("scalar()"))) ir5 = vdd - 3.3; // Annotation causes precision loss
             printf("ir5 %.10f\n", ir5);
 
-            float ir6 = ir5*params_kv[pixelNumber]; // Same
+            float __attribute__((annotate("scalar()"))) ir6 = ir5*params_kv[pixelNumber]; // Same
             printf("ir6 %.10f\n", ir6);
 
             float __attribute__((annotate("scalar()"))) ir7 = 1 + ir6;
@@ -526,16 +526,16 @@ void MLX90640_CalculateTo(const uint16_t *frameData, float __attribute__((annota
             printf("gain %.10f\n",gain);
             printf("alpha %.10f\n",alphaCompensated);
 
-            float __attribute__((annotate("scalar()"))) s1 = alphaCompensated*taTr;
+            float __attribute__((annotate("scalar(range(-65535,65535) final)"))) s1 = alphaCompensated*taTr; // causes FP Exeption 
             printf("s1 %.10f\n",s1);
 
             float  __attribute__((annotate("scalar()"))) s2 = irData + s1;
             printf("s2 %.10f\n",s2);
 
-            float s3 = alphaCompensated*alphaCompensated*alphaCompensated;
+            float __attribute__((annotate("scalar(range(-1,1) final)"))) s3 = alphaCompensated*alphaCompensated*alphaCompensated;
             printf("s3 %.10f\n",s3);
 
-            float s4 = s3*s2;
+            float __attribute__((annotate("scalar()"))) s4 = s3*s2;
             printf("S4 %.10f\n",s4);
 
             Sx = sqrt(sqrt(s4)) * params_ksTo[1];
@@ -549,10 +549,10 @@ void MLX90640_CalculateTo(const uint16_t *frameData, float __attribute__((annota
             float __attribute__((annotate("scalar()"))) t2 = 1 - t1;
             printf("t2 %.10f\n",t2);
 
-            float __attribute__((annotate("scalar()")))  t3 = alphaCompensated * t2;
+            float __attribute__((annotate("scalar(range(-2,2))")))  t3 = alphaCompensated * t2;
             printf("t3 %.10f\n",t3);
 
-            float  __attribute__((annotate("scalar()"))) t4 = t3 + Sx; // was range(-1,1000000000) final 
+            float  __attribute__((annotate("scalar(range(-2,2))"))) t4 = t3 + Sx; // was range(-1,1000000000) final 
             printf("t4 %.10f\n",t4);
             printf("irData %.10f\n",irData);
             float __attribute__((annotate("scalar(range(-29350096896,  29350096896) final)"))) t5 = irData / t4;
@@ -623,7 +623,7 @@ void MLX90640_CalculateTo(const uint16_t *frameData, float __attribute__((annota
             float  t12 = t11*t10;
             printf("t12 %.10f\n",t12);
 
-            float  __attribute__((annotate("scalar(range(0,169577873408) final)"))) t13 = irData/t12; // controllare github
+            float  __attribute__((annotate("scalar(range(0,169577873408) final)"))) t13 = irData/t12; 
             printf("t13 %.10f\n",t13);
             if(t13 > maximum2)
             {
@@ -659,9 +659,9 @@ void MLX90640_GetImage(const uint16_t *frameData, float  __attribute__((annotate
 {
     float  __attribute__((annotate("scalar(range(-32768,32767) final)"))) vdd; //min 1.32
     float  __attribute__((annotate("scalar(range(-32767, 32767))"))) ta; // check, added range 06/05
-    float  __attribute__((annotate("scalar()"))) gain;
-    float  __attribute__((annotate("scalar()"))) irDataCP[2];
-    float  __attribute__((annotate("scalar()"))) irData;
+    float  __attribute__((annotate("scalar(range(-32768,65535) final )"))) gain;
+    float  __attribute__((annotate("scalar(range(-65536, 65536) final)"))) irDataCP[2];
+    float  __attribute__((annotate("scalar(range(-4294967296, 4294967296) final)"))) irData;
     float  __attribute__((annotate("scalar()"))) alphaCompensated;
     uint8_t mode;
     int8_t ilPattern;
