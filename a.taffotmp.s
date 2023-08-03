@@ -4680,7 +4680,7 @@ _Z14MLX90640_GetTaPKt:                  # @_Z14MLX90640_GetTaPKt
 	.cfi_def_cfa_register %rbp
 	subq	$160, %rsp
 	movq	%rdi, -16(%rbp)                 # 8-byte Spill
-	leaq	.L.str.102(%rip), %rdi
+	leaq	.L.str.103(%rip), %rdi
 	movb	$0, %al
 	callq	printf@PLT
 	movq	-16(%rbp), %rdi                 # 8-byte Reload
@@ -4693,7 +4693,7 @@ _Z14MLX90640_GetTaPKt:                  # @_Z14MLX90640_GetTaPKt
 	movsd	.LCPI29_0(%rip), %xmm2          # xmm2 = mem[0],zero
 	divsd	%xmm2, %xmm1
 	movsd	%xmm1, -24(%rbp)                # 8-byte Spill
-	leaq	.L.str.103(%rip), %rdi
+	leaq	.L.str.104(%rip), %rdi
 	movb	$1, %al
 	callq	printf@PLT
 	movq	-16(%rbp), %rdi                 # 8-byte Reload
@@ -4748,7 +4748,7 @@ _Z14MLX90640_GetTaPKt:                  # @_Z14MLX90640_GetTaPKt
 	cvtsi2sd	%rax, %xmm0
 	movsd	.LCPI29_4(%rip), %xmm1          # xmm1 = mem[0],zero
 	divsd	%xmm1, %xmm0
-	leaq	.L.str.104(%rip), %rdi
+	leaq	.L.str.105(%rip), %rdi
 	movb	$1, %al
 	movb	%al, -113(%rbp)                 # 1-byte Spill
 	callq	printf@PLT
@@ -4763,7 +4763,7 @@ _Z14MLX90640_GetTaPKt:                  # @_Z14MLX90640_GetTaPKt
 	movsd	.LCPI29_0(%rip), %xmm1          # xmm1 = mem[0],zero
 	movsd	%xmm1, -128(%rbp)               # 8-byte Spill
 	divsd	%xmm1, %xmm0
-	leaq	.L.str.105(%rip), %rdi
+	leaq	.L.str.106(%rip), %rdi
 	callq	printf@PLT
 	movl	-148(%rbp), %ecx                # 4-byte Reload
 	movsd	-128(%rbp), %xmm1               # 8-byte Reload
@@ -4780,7 +4780,7 @@ _Z14MLX90640_GetTaPKt:                  # @_Z14MLX90640_GetTaPKt
 	movl	%ecx, -132(%rbp)                # 4-byte Spill
 	cvtsi2sd	%ecx, %xmm0
 	divsd	%xmm1, %xmm0
-	leaq	.L.str.106(%rip), %rdi
+	leaq	.L.str.107(%rip), %rdi
 	callq	printf@PLT
 	movl	-132(%rbp), %ecx                # 4-byte Reload
 	movsd	-128(%rbp), %xmm2               # 8-byte Reload
@@ -4794,7 +4794,7 @@ _Z14MLX90640_GetTaPKt:                  # @_Z14MLX90640_GetTaPKt
 	cvtsi2sd	%ecx, %xmm1
 	divsd	%xmm2, %xmm1
 	movsd	%xmm1, -104(%rbp)               # 8-byte Spill
-	leaq	.L.str.107(%rip), %rdi
+	leaq	.L.str.108(%rip), %rdi
 	callq	printf@PLT
                                         # kill: def $ecx killed $eax
 	movq	-112(%rbp), %rax                # 8-byte Reload
@@ -4803,12 +4803,12 @@ _Z14MLX90640_GetTaPKt:                  # @_Z14MLX90640_GetTaPKt
 	cvtsi2sd	%rax, %xmm0
 	movsd	.LCPI29_4(%rip), %xmm1          # xmm1 = mem[0],zero
 	divsd	%xmm1, %xmm0
-	leaq	.L.str.108(%rip), %rdi
+	leaq	.L.str.109(%rip), %rdi
 	movb	$1, %al
 	callq	printf@PLT
 	movsd	-104(%rbp), %xmm0               # 8-byte Reload
                                         # xmm0 = mem[0],zero
-	leaq	.L.str.109(%rip), %rdi
+	leaq	.L.str.110(%rip), %rdi
 	movb	$1, %al
 	callq	printf@PLT
                                         # kill: def $ecx killed $eax
@@ -4820,7 +4820,7 @@ _Z14MLX90640_GetTaPKt:                  # @_Z14MLX90640_GetTaPKt
 	cvtsi2sd	%eax, %xmm0
 	movsd	.LCPI29_0(%rip), %xmm1          # xmm1 = mem[0],zero
 	divsd	%xmm1, %xmm0
-	leaq	.L.str.110(%rip), %rdi
+	leaq	.L.str.111(%rip), %rdi
 	movb	$1, %al
 	callq	printf@PLT
 	movl	-92(%rbp), %ecx                 # 4-byte Reload
@@ -4839,17 +4839,17 @@ _Z14MLX90640_GetTaPKt:                  # @_Z14MLX90640_GetTaPKt
 	cvtsi2sdl	(%rax), %xmm0
 	movsd	.LCPI29_3(%rip), %xmm1          # xmm1 = mem[0],zero
 	divsd	%xmm1, %xmm0
-	leaq	.L.str.111(%rip), %rdi
+	leaq	.L.str.112(%rip), %rdi
 	movb	$1, %al
 	callq	printf@PLT
 	movsd	-24(%rbp), %xmm0                # 8-byte Reload
                                         # xmm0 = mem[0],zero
-	leaq	.L.str.112(%rip), %rdi
+	leaq	.L.str.113(%rip), %rdi
 	movb	$1, %al
 	callq	printf@PLT
 	movsd	-88(%rbp), %xmm0                # 8-byte Reload
                                         # xmm0 = mem[0],zero
-	leaq	.L.str.113(%rip), %rdi
+	leaq	.L.str.114(%rip), %rdi
 	movb	$1, %al
 	callq	printf@PLT
 	movl	-76(%rbp), %ecx                 # 4-byte Reload
@@ -4860,7 +4860,7 @@ _Z14MLX90640_GetTaPKt:                  # @_Z14MLX90640_GetTaPKt
 	cvtsi2sd	%eax, %xmm0
 	movsd	.LCPI29_3(%rip), %xmm1          # xmm1 = mem[0],zero
 	divsd	%xmm1, %xmm0
-	leaq	.L.str.114(%rip), %rdi
+	leaq	.L.str.115(%rip), %rdi
 	movb	$1, %al
 	callq	printf@PLT
 	movl	-72(%rbp), %ecx                 # 4-byte Reload
@@ -4876,7 +4876,7 @@ _Z14MLX90640_GetTaPKt:                  # @_Z14MLX90640_GetTaPKt
 	cvtsi2sd	%eax, %xmm0
 	movsd	.LCPI29_0(%rip), %xmm1          # xmm1 = mem[0],zero
 	divsd	%xmm1, %xmm0
-	leaq	.L.str.115(%rip), %rdi
+	leaq	.L.str.116(%rip), %rdi
 	movb	$1, %al
 	callq	printf@PLT
                                         # kill: def $ecx killed $eax
@@ -4888,7 +4888,7 @@ _Z14MLX90640_GetTaPKt:                  # @_Z14MLX90640_GetTaPKt
 	cvtsi2sd	%eax, %xmm0
 	movsd	.LCPI29_0(%rip), %xmm1          # xmm1 = mem[0],zero
 	divsd	%xmm1, %xmm0
-	leaq	.L.str.116(%rip), %rdi
+	leaq	.L.str.117(%rip), %rdi
 	movb	$1, %al
 	callq	printf@PLT
                                         # kill: def $ecx killed $eax
@@ -4912,7 +4912,7 @@ _Z14MLX90640_GetTaPKt:                  # @_Z14MLX90640_GetTaPKt
 	movss	.LCPI29_1(%rip), %xmm2          # xmm2 = mem[0],zero,zero,zero
 	divss	%xmm2, %xmm1
 	movss	%xmm1, -56(%rbp)                # 4-byte Spill
-	leaq	.L.str.117(%rip), %rdi
+	leaq	.L.str.118(%rip), %rdi
 	movb	$1, %al
 	callq	printf@PLT
 	movss	-56(%rbp), %xmm0                # 4-byte Reload
@@ -4928,23 +4928,18 @@ _Z14MLX90640_GetTaPKt:                  # @_Z14MLX90640_GetTaPKt
 	.section	.rodata.cst4,"aM",@progbits,4
 	.p2align	2                               # -- Begin function _Z17MLX90640_GetImagePKtPf
 .LCPI30_0:
-	.long	0x46fffe00                      # float 32767
-.LCPI30_1:
-	.long	0x47800000                      # float 65536
-.LCPI30_2:
-	.long	0x4b000000                      # float 8388608
-.LCPI30_4:
 	.long	0x4b800000                      # float 16777216
-.LCPI30_6:
-	.long	0x46000000                      # float 8192
-.LCPI30_7:
-	.long	0x4d000000                      # float 134217728
-	.section	.rodata.cst8,"aM",@progbits,8
-	.p2align	3
+.LCPI30_1:
+	.long	0x4e800000                      # float 1.07374182E+9
 .LCPI30_3:
-	.quad	0x4160000000000000              # double 8388608
-.LCPI30_5:
-	.quad	0x40c0000000000000              # double 8192
+	.long	0x4d000000                      # float 134217728
+	.section	.rodata.cst16,"aM",@progbits,16
+	.p2align	4
+.LCPI30_2:
+	.long	0x80000000                      # float -0
+	.long	0x80000000                      # float -0
+	.long	0x80000000                      # float -0
+	.long	0x80000000                      # float -0
 	.text
 	.globl	_Z17MLX90640_GetImagePKtPf
 	.p2align	4, 0x90
@@ -4957,7 +4952,7 @@ _Z17MLX90640_GetImagePKtPf:             # @_Z17MLX90640_GetImagePKtPf
 	.cfi_offset %rbp, -16
 	movq	%rsp, %rbp
 	.cfi_def_cfa_register %rbp
-	subq	$96, %rsp
+	subq	$112, %rsp
 	movq	%rdi, -32(%rbp)                 # 8-byte Spill
 	movq	%rsi, -48(%rbp)                 # 8-byte Spill
 	movw	1666(%rdi), %ax
@@ -4969,37 +4964,40 @@ _Z17MLX90640_GetImagePKtPf:             # @_Z17MLX90640_GetImagePKtPf
 	movq	-32(%rbp), %rdi                 # 8-byte Reload
 	movl	%eax, -20(%rbp)                 # 4-byte Spill
 	movzwl	1556(%rdi), %eax
-	cvtsi2ss	%eax, %xmm0
-	movss	%xmm0, -16(%rbp)                # 4-byte Spill
-	movss	.LCPI30_0(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
-	ucomiss	%xmm1, %xmm0
-	movss	%xmm0, -12(%rbp)                # 4-byte Spill
-	jbe	.LBB30_2
+	shll	$15, %eax
+	movl	%eax, -16(%rbp)                 # 4-byte Spill
+	movl	$4294836224, %ecx               # imm = 0xFFFE0000
+	shrl	$2, %ecx
+	cmpl	%ecx, %eax
+	movl	%eax, -12(%rbp)                 # 4-byte Spill
+	jle	.LBB30_2
 # %bb.1:
-	movss	-16(%rbp), %xmm0                # 4-byte Reload
-                                        # xmm0 = mem[0],zero,zero,zero
-	movss	.LCPI30_1(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
-	subss	%xmm1, %xmm0
-	movss	%xmm0, -12(%rbp)                # 4-byte Spill
+	movl	-16(%rbp), %eax                 # 4-byte Reload
+	subl	$-2147483648, %eax              # imm = 0x80000000
+	movl	%eax, -12(%rbp)                 # 4-byte Spill
 .LBB30_2:
+	movl	-12(%rbp), %ecx                 # 4-byte Reload
+	movswl	params_gainEE(%rip), %eax
+	cltq
+	shlq	$30, %rax
+	movslq	%ecx, %rcx
+	cqto
+	idivq	%rcx
+	movq	%rax, %rcx
 	movq	-32(%rbp), %rax                 # 8-byte Reload
-	movss	-12(%rbp), %xmm1                # 4-byte Reload
-                                        # xmm1 = mem[0],zero,zero,zero
-	movswl	params_gainEE(%rip), %ecx
-	cvtsi2ss	%ecx, %xmm0
-	divss	%xmm1, %xmm0
-	movss	%xmm0, -60(%rbp)                # 4-byte Spill
+                                        # kill: def $ecx killed $ecx killed $rcx
+	movl	%ecx, -60(%rbp)                 # 4-byte Spill
 	movzwl	1664(%rax), %ecx
 	andl	$4096, %ecx                     # imm = 0x1000
-	shrl	$5, %ecx
+	sarl	$5, %ecx
                                         # kill: def $cl killed $cl killed $ecx
 	movb	%cl, -53(%rbp)                  # 1-byte Spill
 	movzwl	1552(%rax), %ecx
-	cvtsi2ss	%ecx, %xmm0
-	movss	%xmm0, -8(%rbp)
+	shll	$14, %ecx
+	movl	%ecx, -8(%rbp)
 	movzwl	1616(%rax), %eax
-	cvtsi2ss	%eax, %xmm0
-	movss	%xmm0, -4(%rbp)
+	shll	$14, %eax
+	movl	%eax, -4(%rbp)
 	xorl	%eax, %eax
 	movl	%eax, -52(%rbp)                 # 4-byte Spill
 .LBB30_3:                               # =>This Inner Loop Header: Depth=1
@@ -5010,26 +5008,31 @@ _Z17MLX90640_GetImagePKtPf:             # @_Z17MLX90640_GetImagePKtPf
 # %bb.4:                                #   in Loop: Header=BB30_3 Depth=1
 	movl	-64(%rbp), %eax                 # 4-byte Reload
 	cltq
-	movss	-8(%rbp,%rax,4), %xmm0          # xmm0 = mem[0],zero,zero,zero
-	movss	.LCPI30_0(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
-	ucomiss	%xmm1, %xmm0
-	jbe	.LBB30_6
+	movl	-8(%rbp,%rax,4), %eax
+	movl	$4294836224, %ecx               # imm = 0xFFFE0000
+	shrl	$3, %ecx
+	cmpl	%ecx, %eax
+	jle	.LBB30_6
 # %bb.5:                                #   in Loop: Header=BB30_3 Depth=1
 	movl	-64(%rbp), %eax                 # 4-byte Reload
 	movslq	%eax, %rcx
-	movss	-8(%rbp,%rcx,4), %xmm0          # xmm0 = mem[0],zero,zero,zero
-	movss	.LCPI30_1(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
-	subss	%xmm1, %xmm0
+	movl	-8(%rbp,%rcx,4), %ecx
+	movl	$2147483648, %edx               # imm = 0x80000000
+	shrl	$1, %edx
+	subl	%edx, %ecx
 	cltq
-	movss	%xmm0, -8(%rbp,%rax,4)
+	movl	%ecx, -8(%rbp,%rax,4)
 .LBB30_6:                               #   in Loop: Header=BB30_3 Depth=1
 	movl	-64(%rbp), %eax                 # 4-byte Reload
-	movss	-60(%rbp), %xmm0                # 4-byte Reload
-                                        # xmm0 = mem[0],zero,zero,zero
+	movl	-60(%rbp), %edx                 # 4-byte Reload
 	movslq	%eax, %rcx
-	mulss	-8(%rbp,%rcx,4), %xmm0
+	movslq	-8(%rbp,%rcx,4), %rcx
+	movslq	%edx, %rdx
+	imulq	%rdx, %rcx
+	sarq	$15, %rcx
+                                        # kill: def $ecx killed $ecx killed $rcx
 	cltq
-	movss	%xmm0, -8(%rbp,%rax,4)
+	movl	%ecx, -8(%rbp,%rax,4)
 # %bb.7:                                #   in Loop: Header=BB30_3 Depth=1
 	movl	-64(%rbp), %eax                 # 4-byte Reload
 	addl	$1, %eax
@@ -5037,11 +5040,63 @@ _Z17MLX90640_GetImagePKtPf:             # @_Z17MLX90640_GetImagePKtPf
 	jmp	.LBB30_3
 .LBB30_8:
 	movb	-53(%rbp), %al                  # 1-byte Reload
+	movl	-36(%rbp), %r8d                 # 4-byte Reload
+	movl	-20(%rbp), %r9d                 # 4-byte Reload
+	movl	-8(%rbp), %edx
+	movswl	params_cpOffset(%rip), %ecx
+	movq	params_cpKta.fixp@GOTPCREL(%rip), %rsi
+	movl	(%rsi), %esi
+	movl	$3355443200, %edi               # imm = 0xC8000000
+	shrl	$11, %edi
+	subl	%edi, %r9d
+	movl	$2147483648, %edi               # imm = 0x80000000
+	shrl	$7, %edi
+	movl	%esi, %esi
+                                        # kill: def $rsi killed $esi
+	movslq	%r9d, %r9
+	imulq	%r9, %rsi
+	shrq	$16, %rsi
+                                        # kill: def $esi killed $esi killed $rsi
+	addl	%edi, %esi
+	movslq	%ecx, %rcx
+	movl	%esi, %esi
+                                        # kill: def $rsi killed $esi
+	imulq	%rsi, %rcx
+	movl	%ecx, %edi
+	movq	params_cpKv.fixp@GOTPCREL(%rip), %rcx
+	movl	(%rcx), %esi
+	movl	$1771674009, %ecx               # imm = 0x69999999
+	shrl	$14, %ecx
+	subl	%ecx, %r8d
+	movl	$2147483648, %ecx               # imm = 0x80000000
+	shrl	$8, %ecx
+	movslq	%esi, %rsi
+	movslq	%r8d, %r8
+	imulq	%r8, %rsi
+	sarq	$15, %rsi
+                                        # kill: def $esi killed $esi killed $rsi
+	addl	%ecx, %esi
+	shrl	$1, %edi
+	xorl	%ecx, %ecx
+	subl	%edi, %ecx
+	shll	$9, %edx
+	movslq	%ecx, %rcx
+	movslq	%esi, %rsi
+	imulq	%rsi, %rcx
+	sarq	$23, %rcx
+                                        # kill: def $ecx killed $ecx killed $rcx
+	addl	%edx, %ecx
+	sarl	$9, %ecx
+	movl	%ecx, -8(%rbp)
+	movzbl	%al, %eax
+	movzbl	params_calibrationModeEE(%rip), %ecx
+	cmpl	%ecx, %eax
+	jne	.LBB30_10
+# %bb.9:
 	movl	-36(%rbp), %edi                 # 4-byte Reload
 	movl	-20(%rbp), %r8d                 # 4-byte Reload
-	movss	-8(%rbp), %xmm0                 # xmm0 = mem[0],zero,zero,zero
-	cvtss2sd	%xmm0, %xmm1
-	movswl	params_cpOffset(%rip), %ecx
+	movl	-4(%rbp), %ecx
+	movswl	params_cpOffset+2(%rip), %eax
 	movq	params_cpKta.fixp@GOTPCREL(%rip), %rdx
 	movl	(%rdx), %edx
 	movl	$3355443200, %esi               # imm = 0xC8000000
@@ -5056,157 +5111,90 @@ _Z17MLX90640_GetImagePKtPf:             # @_Z17MLX90640_GetImagePKtPf
 	shrq	$16, %rdx
                                         # kill: def $edx killed $edx killed $rdx
 	addl	%esi, %edx
-	movslq	%ecx, %rcx
+	cltq
 	movl	%edx, %edx
                                         # kill: def $rdx killed $edx
-	imulq	%rdx, %rcx
-	movl	%ecx, %edx
-	movq	params_cpKv.fixp@GOTPCREL(%rip), %rcx
-	movl	(%rcx), %esi
-	movl	$1771674009, %ecx               # imm = 0x69999999
-	shrl	$14, %ecx
-	subl	%ecx, %edi
-	movl	$2147483648, %ecx               # imm = 0x80000000
-	shrl	$8, %ecx
-	movslq	%esi, %rsi
-	movslq	%edi, %rdi
-	imulq	%rdi, %rsi
-	sarq	$15, %rsi
-                                        # kill: def $esi killed $esi killed $rsi
-	addl	%ecx, %esi
-	shrl	$1, %edx
-	xorl	%ecx, %ecx
-	subl	%edx, %ecx
-	movsd	.LCPI30_3(%rip), %xmm0          # xmm0 = mem[0],zero
-	mulsd	%xmm1, %xmm0
-	cvttsd2si	%xmm0, %edx
-	movslq	%ecx, %rcx
-	movslq	%esi, %rsi
-	imulq	%rsi, %rcx
-	sarq	$23, %rcx
-                                        # kill: def $ecx killed $ecx killed $rcx
-	addl	%edx, %ecx
-	cvtsi2ss	%ecx, %xmm0
-	movss	.LCPI30_2(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
-	divss	%xmm1, %xmm0
-	movss	%xmm0, -8(%rbp)
-	movzbl	%al, %eax
-	movzbl	params_calibrationModeEE(%rip), %ecx
-	cmpl	%ecx, %eax
-	jne	.LBB30_10
-# %bb.9:
-	movl	-36(%rbp), %esi                 # 4-byte Reload
-	movl	-20(%rbp), %edi                 # 4-byte Reload
-	movss	-4(%rbp), %xmm0                 # xmm0 = mem[0],zero,zero,zero
-	cvtss2sd	%xmm0, %xmm1
-	movswl	params_cpOffset+2(%rip), %eax
-	movq	params_cpKta.fixp@GOTPCREL(%rip), %rcx
-	movl	(%rcx), %ecx
-	movl	$3355443200, %edx               # imm = 0xC8000000
-	shrl	$11, %edx
-	subl	%edx, %edi
-	movl	$2147483648, %edx               # imm = 0x80000000
-	shrl	$7, %edx
-	movl	%ecx, %ecx
-                                        # kill: def $rcx killed $ecx
-	movslq	%edi, %rdi
-	imulq	%rdi, %rcx
-	shrq	$16, %rcx
-                                        # kill: def $ecx killed $ecx killed $rcx
-	addl	%edx, %ecx
-	cltq
-	movl	%ecx, %ecx
-                                        # kill: def $rcx killed $ecx
-	imulq	%rcx, %rax
-	movl	%eax, %ecx
+	imulq	%rdx, %rax
+	movl	%eax, %esi
 	movq	params_cpKv.fixp@GOTPCREL(%rip), %rax
 	movl	(%rax), %edx
 	movl	$1771674009, %eax               # imm = 0x69999999
 	shrl	$14, %eax
-	subl	%eax, %esi
+	subl	%eax, %edi
 	movl	$2147483648, %eax               # imm = 0x80000000
 	shrl	$8, %eax
 	movslq	%edx, %rdx
-	movslq	%esi, %rsi
-	imulq	%rsi, %rdx
+	movslq	%edi, %rdi
+	imulq	%rdi, %rdx
 	sarq	$15, %rdx
                                         # kill: def $edx killed $edx killed $rdx
 	addl	%eax, %edx
-	shrl	$1, %ecx
+	shrl	$1, %esi
 	xorl	%eax, %eax
-	subl	%ecx, %eax
-	movsd	.LCPI30_3(%rip), %xmm0          # xmm0 = mem[0],zero
-	mulsd	%xmm1, %xmm0
-	cvttsd2si	%xmm0, %ecx
+	subl	%esi, %eax
+	shll	$9, %ecx
 	cltq
 	movslq	%edx, %rdx
 	imulq	%rdx, %rax
 	sarq	$23, %rax
                                         # kill: def $eax killed $eax killed $rax
 	addl	%ecx, %eax
-	cvtsi2ss	%eax, %xmm0
-	movss	.LCPI30_2(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
-	divss	%xmm1, %xmm0
-	movss	%xmm0, -4(%rbp)
+	sarl	$9, %eax
+	movl	%eax, -4(%rbp)
 	jmp	.LBB30_11
 .LBB30_10:
-	movl	-36(%rbp), %esi                 # 4-byte Reload
-	movl	-20(%rbp), %ecx                 # 4-byte Reload
-	movss	-4(%rbp), %xmm0                 # xmm0 = mem[0],zero,zero,zero
-	cvtss2sd	%xmm0, %xmm1
+	movl	-36(%rbp), %edi                 # 4-byte Reload
+	movl	-20(%rbp), %edx                 # 4-byte Reload
+	movl	-4(%rbp), %ecx
 	movswl	params_cpOffset+2(%rip), %eax
 	cvtsi2ss	%eax, %xmm0
-	movss	params_ilChessC(%rip), %xmm2    # xmm2 = mem[0],zero,zero,zero
-	addss	%xmm2, %xmm0
+	movss	params_ilChessC(%rip), %xmm1    # xmm1 = mem[0],zero,zero,zero
+	addss	%xmm1, %xmm0
 	movq	params_cpKta.fixp@GOTPCREL(%rip), %rax
 	movl	(%rax), %eax
                                         # kill: def $rax killed $eax
-	addl	$-1638400, %ecx                 # imm = 0xFFE70000
-	movslq	%ecx, %rcx
-	imulq	%rcx, %rax
+	addl	$-1638400, %edx                 # imm = 0xFFE70000
+	movslq	%edx, %rdx
+	imulq	%rdx, %rax
 	shrq	$16, %rax
-	movl	%eax, %ecx
-	addl	$16777216, %ecx                 # imm = 0x1000000
-	movss	.LCPI30_4(%rip), %xmm2          # xmm2 = mem[0],zero,zero,zero
-	mulss	%xmm2, %xmm0
+	movl	%eax, %edx
+	addl	$16777216, %edx                 # imm = 0x1000000
+	movss	.LCPI30_0(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
+	mulss	%xmm1, %xmm0
 	cvttss2si	%xmm0, %rax
                                         # kill: def $eax killed $eax killed $rax
 	movl	%eax, %eax
                                         # kill: def $rax killed $eax
-	movl	%ecx, %ecx
-                                        # kill: def $rcx killed $ecx
-	imulq	%rcx, %rax
+	movl	%edx, %edx
+                                        # kill: def $rdx killed $edx
+	imulq	%rdx, %rax
 	shrq	$24, %rax
-	movl	%eax, %ecx
+	movl	%eax, %esi
 	movq	params_cpKv.fixp@GOTPCREL(%rip), %rax
 	movl	(%rax), %edx
 	movl	$1771674009, %eax               # imm = 0x69999999
 	shrl	$14, %eax
-	subl	%eax, %esi
+	subl	%eax, %edi
 	movl	$2147483648, %eax               # imm = 0x80000000
 	shrl	$8, %eax
 	movslq	%edx, %rdx
-	movslq	%esi, %rsi
-	imulq	%rsi, %rdx
+	movslq	%edi, %rdi
+	imulq	%rdi, %rdx
 	sarq	$15, %rdx
                                         # kill: def $edx killed $edx killed $rdx
 	addl	%eax, %edx
-	shrl	$1, %ecx
+	shrl	$1, %esi
 	xorl	%eax, %eax
-	subl	%ecx, %eax
-	movsd	.LCPI30_3(%rip), %xmm0          # xmm0 = mem[0],zero
-	mulsd	%xmm1, %xmm0
-	cvttsd2si	%xmm0, %ecx
+	subl	%esi, %eax
+	shll	$9, %ecx
 	cltq
 	movslq	%edx, %rdx
 	imulq	%rdx, %rax
 	sarq	$23, %rax
                                         # kill: def $eax killed $eax killed $rax
 	addl	%ecx, %eax
-	cvtsi2ss	%eax, %xmm0
-	movss	.LCPI30_2(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
-	divss	%xmm1, %xmm0
-	movss	%xmm0, -4(%rbp)
+	sarl	$9, %eax
+	movl	%eax, -4(%rbp)
 .LBB30_11:
 	xorl	%eax, %eax
 	movl	%eax, -68(%rbp)                 # 4-byte Spill
@@ -5301,181 +5289,159 @@ _Z17MLX90640_GetImagePKtPf:             # @_Z17MLX90640_GetImagePKtPf
 	movl	-72(%rbp), %ecx                 # 4-byte Reload
 	movslq	%ecx, %rcx
 	movzwl	(%rax,%rcx,2), %eax
-	cvtsi2ss	%eax, %xmm0
-	movss	%xmm0, -84(%rbp)                # 4-byte Spill
-	movss	.LCPI30_0(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
-	ucomiss	%xmm1, %xmm0
-	movss	%xmm0, -80(%rbp)                # 4-byte Spill
-	jbe	.LBB30_19
+                                        # kill: def $rax killed $eax
+	shlq	$30, %rax
+	movq	%rax, -96(%rbp)                 # 8-byte Spill
+	movabsq	$-562949953421312, %rcx         # imm = 0xFFFE000000000000
+	shrq	$19, %rcx
+	cmpq	%rcx, %rax
+	movq	%rax, -88(%rbp)                 # 8-byte Spill
+	jle	.LBB30_19
 # %bb.18:                               #   in Loop: Header=BB30_12 Depth=1
-	movss	-84(%rbp), %xmm0                # 4-byte Reload
-                                        # xmm0 = mem[0],zero,zero,zero
-	movss	.LCPI30_1(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
-	subss	%xmm1, %xmm0
-	movss	%xmm0, -80(%rbp)                # 4-byte Spill
+	movq	-96(%rbp), %rax                 # 8-byte Reload
+	movabsq	$-9223372036854775808, %rcx     # imm = 0x8000000000000000
+	shrq	$17, %rcx
+	subq	%rcx, %rax
+	movq	%rax, -88(%rbp)                 # 8-byte Spill
 .LBB30_19:                              #   in Loop: Header=BB30_12 Depth=1
 	movb	-53(%rbp), %cl                  # 1-byte Reload
-	movl	-36(%rbp), %edi                 # 4-byte Reload
+	movl	-36(%rbp), %r8d                 # 4-byte Reload
 	movl	-72(%rbp), %eax                 # 4-byte Reload
-	movl	-20(%rbp), %r9d                 # 4-byte Reload
-	movss	-60(%rbp), %xmm1                # 4-byte Reload
-                                        # xmm1 = mem[0],zero,zero,zero
-	movss	-80(%rbp), %xmm0                # 4-byte Reload
-                                        # xmm0 = mem[0],zero,zero,zero
-	mulss	%xmm1, %xmm0
-	cvtss2sd	%xmm0, %xmm1
-	movslq	%eax, %rsi
-	leaq	params_offset(%rip), %rdx
-	movswl	(%rdx,%rsi,2), %edx
-	movslq	%eax, %r8
-	movq	params_kta.fixp@GOTPCREL(%rip), %rsi
-	movl	(%rsi,%r8,4), %esi
-	movl	$3355443200, %r8d               # imm = 0xC8000000
-	shrl	$11, %r8d
-	subl	%r8d, %r9d
-	movl	$2147483648, %r8d               # imm = 0x80000000
-	shrl	$18, %r8d
-	movslq	%esi, %rsi
-	movslq	%r9d, %r9
-	imulq	%r9, %rsi
-	sarq	$16, %rsi
-                                        # kill: def $esi killed $esi killed $rsi
-	addl	%r8d, %esi
-	movslq	%edx, %rdx
+	movl	-20(%rbp), %r10d                # 4-byte Reload
+	movl	-60(%rbp), %esi                 # 4-byte Reload
+	movq	-88(%rbp), %rdx                 # 8-byte Reload
 	movslq	%esi, %rsi
 	imulq	%rsi, %rdx
+	shrq	$30, %rdx
                                         # kill: def $edx killed $edx killed $rdx
+	movslq	%edx, %rdx
+	shlq	$15, %rdx
+	movslq	%eax, %rdi
+	leaq	params_offset(%rip), %rsi
+	movswl	(%rsi,%rdi,2), %esi
+	movslq	%eax, %r9
+	movq	params_kta.fixp@GOTPCREL(%rip), %rdi
+	movl	(%rdi,%r9,4), %edi
+	movl	$3355443200, %r9d               # imm = 0xC8000000
+	shrl	$11, %r9d
+	subl	%r9d, %r10d
+	movl	$2147483648, %r9d               # imm = 0x80000000
+	shrl	$18, %r9d
+	movslq	%edi, %rdi
+	movslq	%r10d, %r10
+	imulq	%r10, %rdi
+	sarq	$16, %rdi
+                                        # kill: def $edi killed $edi killed $rdi
+	addl	%r9d, %edi
+	movslq	%esi, %rsi
+	movslq	%edi, %rdi
+	imulq	%rdi, %rsi
+	movl	%esi, %edi
 	movslq	%eax, %rsi
 	movq	params_kv.fixp@GOTPCREL(%rip), %rax
 	movl	(%rax,%rsi,4), %esi
 	movl	$1771674009, %eax               # imm = 0x69999999
 	shrl	$14, %eax
-	subl	%eax, %edi
+	subl	%eax, %r8d
 	movl	$2147483648, %eax               # imm = 0x80000000
 	shrl	$4, %eax
 	movslq	%esi, %rsi
-	movslq	%edi, %rdi
-	imulq	%rdi, %rsi
+	movslq	%r8d, %r8
+	imulq	%r8, %rsi
 	sarq	$15, %rsi
                                         # kill: def $esi killed $esi killed $rsi
 	addl	%eax, %esi
 	xorl	%eax, %eax
-	subl	%edx, %eax
-	movsd	.LCPI30_5(%rip), %xmm0          # xmm0 = mem[0],zero
-	mulsd	%xmm1, %xmm0
-	cvttsd2si	%xmm0, %edx
+	subl	%edi, %eax
 	cltq
 	movslq	%esi, %rsi
 	imulq	%rsi, %rax
-	sarq	$27, %rax
-                                        # kill: def $eax killed $eax killed $rax
-	addl	%edx, %eax
-	movl	%eax, -92(%rbp)                 # 4-byte Spill
+	sarq	$10, %rax
+	addq	%rdx, %rax
+	movq	%rax, -112(%rbp)                # 8-byte Spill
 	movzbl	%cl, %ecx
 	movzbl	params_calibrationModeEE(%rip), %edx
 	cmpl	%edx, %ecx
-	movl	%eax, -88(%rbp)                 # 4-byte Spill
+	movq	%rax, -104(%rbp)                # 8-byte Spill
 	je	.LBB30_21
 # %bb.20:                               #   in Loop: Header=BB30_12 Depth=1
-	movb	-73(%rbp), %al                  # 1-byte Reload
-	movl	-92(%rbp), %edx                 # 4-byte Reload
+	movb	-73(%rbp), %dl                  # 1-byte Reload
+	movq	-112(%rbp), %rax                # 8-byte Reload
 	movb	-74(%rbp), %cl                  # 1-byte Reload
-	movss	params_ilChessC+8(%rip), %xmm1  # xmm1 = mem[0],zero,zero,zero
+	movss	params_ilChessC+8(%rip), %xmm0  # xmm0 = mem[0],zero,zero,zero
 	movsbl	%cl, %esi
-	shll	$1, %esi
-	subl	$1, %esi
-	movss	.LCPI30_6(%rip), %xmm0          # xmm0 = mem[0],zero,zero,zero
+                                        # implicit-def: $rcx
+	movl	%esi, %ecx
+	leal	-1(%rcx,%rcx), %esi
+	movss	.LCPI30_1(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
 	mulss	%xmm1, %xmm0
-	cvttss2si	%xmm0, %ecx
-	movslq	%ecx, %rcx
+	cvttss2si	%xmm0, %rcx
 	movslq	%esi, %rsi
 	imulq	%rsi, %rcx
-                                        # kill: def $ecx killed $ecx killed $rcx
-	addl	%edx, %ecx
+	addq	%rax, %rcx
+	movaps	.LCPI30_2(%rip), %xmm2          # xmm2 = [-0.0E+0,-0.0E+0,-0.0E+0,-0.0E+0]
 	movss	params_ilChessC+4(%rip), %xmm0  # xmm0 = mem[0],zero,zero,zero
-	movsbl	%al, %edx
-	movd	%xmm0, %eax
-	xorl	$2147483648, %eax               # imm = 0x80000000
-	movd	%eax, %xmm1
-	movss	.LCPI30_6(%rip), %xmm0          # xmm0 = mem[0],zero,zero,zero
+	pxor	%xmm2, %xmm0
 	mulss	%xmm1, %xmm0
-	cvttss2si	%xmm0, %eax
-	cltq
-	movslq	%edx, %rdx
+	cvttss2si	%xmm0, %rax
+	movsbq	%dl, %rdx
 	imulq	%rdx, %rax
-                                        # kill: def $eax killed $eax killed $rax
-	addl	%ecx, %eax
-	movl	%eax, -88(%rbp)                 # 4-byte Spill
+	addq	%rcx, %rax
+	movq	%rax, -104(%rbp)                # 8-byte Spill
 .LBB30_21:                              #   in Loop: Header=BB30_12 Depth=1
 	movl	-72(%rbp), %ecx                 # 4-byte Reload
-	movl	-20(%rbp), %r8d                 # 4-byte Reload
-	movw	-38(%rbp), %dx                  # 2-byte Reload
-	movl	-88(%rbp), %esi                 # 4-byte Reload
+	movl	-20(%rbp), %edx                 # 4-byte Reload
+	movw	-38(%rbp), %si                  # 2-byte Reload
+	movq	-104(%rbp), %r8                 # 8-byte Reload
 	movq	params_tgc.fixp@GOTPCREL(%rip), %rax
-	movl	(%rax), %edi
-	movzwl	%dx, %eax
-                                        # kill: def $rax killed $eax
-	movss	-8(%rbp,%rax,4), %xmm1          # xmm1 = mem[0],zero,zero,zero
-	xorl	%eax, %eax
-	subl	%edi, %eax
-	movss	.LCPI30_7(%rip), %xmm0          # xmm0 = mem[0],zero,zero,zero
-	mulss	%xmm1, %xmm0
-	cvttss2si	%xmm0, %edi
-	shll	$14, %esi
+	movl	(%rax), %eax
+	movzwl	%si, %esi
+                                        # kill: def $rsi killed $esi
+	movslq	-8(%rbp,%rsi,4), %r9
+	negl	%eax
 	cltq
-	movslq	%edi, %rdi
-	imulq	%rdi, %rax
-	sarq	$27, %rax
+	movq	%rax, %rdi
+	imulq	%r9, %rdi
+	sarq	$11, %rdi
+	addq	%r8, %rdi
+	movslq	%ecx, %r8
+	leaq	params_alpha(%rip), %rcx
+	movss	(%rcx,%r8,4), %xmm0             # xmm0 = mem[0],zero,zero,zero
+	movq	params_cpAlpha.fixp@GOTPCREL(%rip), %rcx
+	movslq	(%rcx,%rsi,4), %rsi
+	movss	.LCPI30_3(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
+	mulss	%xmm1, %xmm0
+	cvttss2si	%xmm0, %ecx
+	imulq	%rsi, %rax
+	shrq	$20, %rax
                                         # kill: def $eax killed $eax killed $rax
-	addl	%esi, %eax
-	movslq	%ecx, %rdi
-	leaq	params_alpha(%rip), %rsi
-	movss	(%rsi,%rdi,4), %xmm1            # xmm1 = mem[0],zero,zero,zero
-	movq	params_tgc.fixp@GOTPCREL(%rip), %rsi
-	movl	(%rsi), %esi
-	movzwl	%dx, %edx
-	movl	%edx, %edi
-	movq	params_cpAlpha.fixp@GOTPCREL(%rip), %rdx
-	movl	(%rdx,%rdi,4), %edi
-	xorl	%edx, %edx
-	subl	%esi, %edx
-	movss	.LCPI30_7(%rip), %xmm0          # xmm0 = mem[0],zero,zero,zero
-	mulss	%xmm1, %xmm0
-	cvttss2si	%xmm0, %esi
+	addl	%ecx, %eax
+	movq	params_KsTa.fixp@GOTPCREL(%rip), %rcx
+	movslq	(%rcx), %rcx
+	addl	$-1638400, %edx                 # imm = 0xFFE70000
 	movslq	%edx, %rdx
-	movslq	%edi, %rdi
-	imulq	%rdi, %rdx
-	sarq	$20, %rdx
-                                        # kill: def $edx killed $edx killed $rdx
-	addl	%esi, %edx
-	movq	params_KsTa.fixp@GOTPCREL(%rip), %rsi
-	movl	(%rsi), %esi
-	movl	$3355443200, %edi               # imm = 0xC8000000
-	shrl	$11, %edi
-	subl	%edi, %r8d
-	movl	$2147483648, %edi               # imm = 0x80000000
-	shrl	$1, %edi
-	movslq	%esi, %rsi
-	movslq	%r8d, %r8
-	imulq	%r8, %rsi
-	sarq	$16, %rsi
-                                        # kill: def $esi killed $esi killed $rsi
-	addl	%edi, %esi
-	movslq	%edx, %rdx
-	movslq	%esi, %rsi
-	imulq	%rsi, %rdx
-	sarq	$27, %rdx
-                                        # kill: def $edx killed $edx killed $rdx
+	imulq	%rdx, %rcx
+	shrq	$16, %rcx
+                                        # kill: def $ecx killed $ecx killed $rcx
+	addl	$1073741824, %ecx               # imm = 0x40000000
 	cltq
-	shlq	$30, %rax
-	movslq	%edx, %rsi
-	cqto
-	idivq	%rsi
+	movslq	%ecx, %rcx
+	imulq	%rcx, %rax
+	shrq	$27, %rax
+	movq	%rdi, %rsi
+	sarq	$63, %rsi
+	shldq	$30, %rdi, %rsi
+	shlq	$30, %rdi
+                                        # kill: def $eax killed $eax killed $rax
+	movslq	%eax, %rdx
+	movq	%rdx, %rcx
+	sarq	$63, %rcx
+	callq	__divti3@PLT
+	movl	-72(%rbp), %ecx                 # 4-byte Reload
 	movq	%rax, %rdx
 	movq	-48(%rbp), %rax                 # 8-byte Reload
-                                        # kill: def $edx killed $edx killed $rdx
-	cvtsi2ss	%edx, %xmm0
-	movss	.LCPI30_7(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
+	cvtsi2ss	%rdx, %xmm0
+	movss	.LCPI30_1(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
 	divss	%xmm1, %xmm0
 	movslq	%ecx, %rcx
 	movss	%xmm0, (%rax,%rcx,4)
@@ -5487,7 +5453,7 @@ _Z17MLX90640_GetImagePKtPf:             # @_Z17MLX90640_GetImagePKtPf
 	movl	%eax, -68(%rbp)                 # 4-byte Spill
 	jmp	.LBB30_12
 .LBB30_24:
-	addq	$96, %rsp
+	addq	$112, %rsp
 	popq	%rbp
 	.cfi_def_cfa %rsp, 8
 	retq
@@ -5752,17 +5718,17 @@ _Z8printPPMP8_IO_FILEPfiiff:            # @_Z8printPPMP8_IO_FILEPfiiff
 	movl	%ecx, -20(%rbp)                 # 4-byte Spill
 	movss	%xmm0, -32(%rbp)                # 4-byte Spill
 	movss	%xmm1, -28(%rbp)                # 4-byte Spill
-	leaq	.L.str.125(%rip), %rsi
+	leaq	.L.str.126(%rip), %rsi
 	movb	$0, %al
 	callq	fprintf@PLT
 	movl	-24(%rbp), %edx                 # 4-byte Reload
 	movl	-20(%rbp), %ecx                 # 4-byte Reload
 	movq	-16(%rbp), %rdi                 # 8-byte Reload
-	leaq	.L.str.126(%rip), %rsi
+	leaq	.L.str.127(%rip), %rsi
 	movb	$0, %al
 	callq	fprintf@PLT
 	movq	-16(%rbp), %rdi                 # 8-byte Reload
-	leaq	.L.str.127(%rip), %rsi
+	leaq	.L.str.128(%rip), %rsi
 	movb	$0, %al
 	callq	fprintf@PLT
 	xorl	%eax, %eax
@@ -6035,7 +6001,7 @@ _Z8printPPMP8_IO_FILEPfiiff:            # @_Z8printPPMP8_IO_FILEPfiiff
 	movss	.LCPI38_7(%rip), %xmm0          # xmm0 = mem[0],zero,zero,zero
 	mulss	%xmm1, %xmm0
 	cvttss2si	%xmm0, %r8d
-	leaq	.L.str.128(%rip), %rsi
+	leaq	.L.str.129(%rip), %rsi
 	movb	$0, %al
 	callq	fprintf@PLT
 # %bb.39:                               #   in Loop: Header=BB38_3 Depth=2
@@ -6045,7 +6011,7 @@ _Z8printPPMP8_IO_FILEPfiiff:            # @_Z8printPPMP8_IO_FILEPfiiff
 	jmp	.LBB38_3
 .LBB38_40:                              #   in Loop: Header=BB38_1 Depth=1
 	movq	-16(%rbp), %rdi                 # 8-byte Reload
-	leaq	.L.str.129(%rip), %rsi
+	leaq	.L.str.130(%rip), %rsi
 	movb	$0, %al
 	callq	fprintf@PLT
 # %bb.41:                               #   in Loop: Header=BB38_1 Depth=1
@@ -6100,14 +6066,14 @@ main:                                   # @main
 	movl	%eax, -3076(%rbp)               # 4-byte Spill
 	jmp	.LBB39_9
 .LBB39_2:
-	leaq	.L.str.131(%rip), %rdi
+	leaq	.L.str.132(%rip), %rdi
 	movb	$0, %al
 	callq	printf@PLT
 	leaq	_ZL9subframe1(%rip), %rdi
 	callq	_Z14MLX90640_GetTaPKt.6_1flp
 	movss	%xmm0, -3104(%rbp)              # 4-byte Spill
 	cvtss2sd	%xmm0, %xmm0
-	leaq	.L.str.133(%rip), %rdi
+	leaq	.L.str.134(%rip), %rdi
 	movb	$1, %al
 	callq	printf@PLT
 	movss	-3104(%rbp), %xmm0              # 4-byte Reload
@@ -6117,13 +6083,13 @@ main:                                   # @main
 	subss	%xmm2, %xmm1
 	movss	%xmm1, -3100(%rbp)              # 4-byte Spill
 	cvtss2sd	%xmm0, %xmm0
-	leaq	.L.str.135(%rip), %rdi
+	leaq	.L.str.136(%rip), %rdi
 	movb	$1, %al
 	callq	printf@PLT
 	movss	-3100(%rbp), %xmm0              # 4-byte Reload
                                         # xmm0 = mem[0],zero,zero,zero
 	cvtss2sd	%xmm0, %xmm0
-	leaq	.L.str.136(%rip), %rdi
+	leaq	.L.str.137(%rip), %rdi
 	movb	$1, %al
 	callq	printf@PLT
 	movss	-3100(%rbp), %xmm1              # 4-byte Reload
@@ -6146,13 +6112,13 @@ main:                                   # @main
 	movss	-3096(%rbp), %xmm0              # 4-byte Reload
                                         # xmm0 = mem[0],zero,zero,zero
 	cvtss2sd	%xmm0, %xmm0
-	leaq	.L.str.135(%rip), %rdi
+	leaq	.L.str.136(%rip), %rdi
 	movb	$1, %al
 	callq	printf@PLT
 	movss	-3092(%rbp), %xmm0              # 4-byte Reload
                                         # xmm0 = mem[0],zero,zero,zero
 	cvtss2sd	%xmm0, %xmm0
-	leaq	.L.str.136(%rip), %rdi
+	leaq	.L.str.137(%rip), %rdi
 	movb	$1, %al
 	callq	printf@PLT
 	movl	-3072(%rbp), %edx
@@ -6200,22 +6166,22 @@ main:                                   # @main
 .LBB39_6:
 	movss	maximum2(%rip), %xmm0           # xmm0 = mem[0],zero,zero,zero
 	cvtss2sd	%xmm0, %xmm0
-	leaq	.L.str.137(%rip), %rdi
+	leaq	.L.str.138(%rip), %rdi
 	movb	$1, %al
 	callq	printf@PLT
 	movss	maximum(%rip), %xmm0            # xmm0 = mem[0],zero,zero,zero
 	cvtss2sd	%xmm0, %xmm0
-	leaq	.L.str.138(%rip), %rdi
+	leaq	.L.str.139(%rip), %rdi
 	movb	$1, %al
 	callq	printf@PLT
 	movss	mint5(%rip), %xmm0              # xmm0 = mem[0],zero,zero,zero
 	cvtss2sd	%xmm0, %xmm0
-	leaq	.L.str.139(%rip), %rdi
+	leaq	.L.str.140(%rip), %rdi
 	movb	$1, %al
 	callq	printf@PLT
 	movss	maxt5(%rip), %xmm0              # xmm0 = mem[0],zero,zero,zero
 	cvtss2sd	%xmm0, %xmm0
-	leaq	.L.str.140(%rip), %rdi
+	leaq	.L.str.141(%rip), %rdi
 	movb	$1, %al
 	callq	printf@PLT
 	movl	-3112(%rbp), %edi               # 4-byte Reload
@@ -6228,10 +6194,10 @@ main:                                   # @main
 	cvtsi2sd	%eax, %xmm0
 	movsd	.LCPI39_4(%rip), %xmm1          # xmm1 = mem[0],zero
 	divsd	%xmm1, %xmm0
-	leaq	.L.str.142(%rip), %rdi
+	leaq	.L.str.143(%rip), %rdi
 	movb	$1, %al
 	callq	printf@PLT
-	leaq	.L.str.143(%rip), %rdi
+	leaq	.L.str.144(%rip), %rdi
 	movsd	.LCPI39_3(%rip), %xmm0          # xmm0 = mem[0],zero
 	movb	$1, %al
 	callq	printf@PLT
@@ -6241,7 +6207,7 @@ main:                                   # @main
 	cvtsi2sd	%eax, %xmm0
 	movsd	.LCPI39_2(%rip), %xmm1          # xmm1 = mem[0],zero
 	divsd	%xmm1, %xmm0
-	leaq	.L.str.144(%rip), %rdi
+	leaq	.L.str.145(%rip), %rdi
 	movb	$1, %al
 	callq	printf@PLT
                                         # kill: def $ecx killed $eax
@@ -6250,14 +6216,14 @@ main:                                   # @main
 	cvtsi2sd	%eax, %xmm0
 	movsd	.LCPI39_2(%rip), %xmm1          # xmm1 = mem[0],zero
 	divsd	%xmm1, %xmm0
-	leaq	.L.str.145(%rip), %rdi
+	leaq	.L.str.146(%rip), %rdi
 	movb	$1, %al
 	callq	printf@PLT
 	movq	stdout@GOTPCREL(%rip), %rax
 	movq	(%rax), %rdi
 	callq	fflush@PLT
-	leaq	.L.str.146(%rip), %rdi
-	leaq	.L.str.147(%rip), %rsi
+	leaq	.L.str.147(%rip), %rdi
+	leaq	.L.str.148(%rip), %rsi
 	callq	fopen@PLT
 	movq	%rax, -3136(%rbp)               # 8-byte Spill
 	cmpq	$0, %rax
@@ -6282,7 +6248,7 @@ main:                                   # @main
 	movq	(%rax), %rdi
 	sarl	$20, %edx
 	sarl	$20, %ecx
-	leaq	.L.str.148(%rip), %rsi
+	leaq	.L.str.149(%rip), %rsi
 	movb	$0, %al
 	callq	fprintf@PLT
 	xorl	%eax, %eax
@@ -6460,35 +6426,19 @@ _ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_intege
 	.cfi_endproc
                                         # -- End function
 	.section	.rodata.cst8,"aM",@progbits,8
-	.p2align	3                               # -- Begin function _Z14MLX90640_GetTaPKt.6_1flp
+	.p2align	3                               # -- Begin function _Z14MLX90640_GetTaPKt.2_s16_16fixp
 .LCPI46_0:
 	.quad	0x40e0000000000000              # double 32768
-.LCPI46_4:
-	.quad	0x4150000000000000              # double 4194304
-.LCPI46_5:
-	.quad	0x41d0000000000000              # double 1073741824
-.LCPI46_6:
-	.quad	0x41b0000000000000              # double 268435456
-.LCPI46_7:
-	.quad	0x40a0000000000000              # double 2048
-.LCPI46_8:
-	.quad	0x4130000000000000              # double 1048576
-	.section	.rodata.cst4,"aM",@progbits,4
-	.p2align	2
 .LCPI46_1:
-	.long	0x41c80000                      # float 25
+	.quad	0x40f0000000000000              # double 65536
 .LCPI46_2:
-	.long	0x4b000000                      # float 8388608
+	.quad	0x41d0000000000000              # double 1073741824
 .LCPI46_3:
-	.long	0x4a800000                      # float 4194304
-.LCPI46_9:
-	.long	0x49800000                      # float 1048576
-.LCPI46_10:
-	.long	0x48800000                      # float 262144
+	.quad	0x41b0000000000000              # double 268435456
 	.text
 	.p2align	4, 0x90
-	.type	_Z14MLX90640_GetTaPKt.6_1flp,@function
-_Z14MLX90640_GetTaPKt.6_1flp:           # @_Z14MLX90640_GetTaPKt.6_1flp
+	.type	_Z14MLX90640_GetTaPKt.2_s16_16fixp,@function
+_Z14MLX90640_GetTaPKt.2_s16_16fixp:     # @_Z14MLX90640_GetTaPKt.2_s16_16fixp
 	.cfi_startproc
 # %bb.0:
 	pushq	%rbp
@@ -6496,13 +6446,13 @@ _Z14MLX90640_GetTaPKt.6_1flp:           # @_Z14MLX90640_GetTaPKt.6_1flp
 	.cfi_offset %rbp, -16
 	movq	%rsp, %rbp
 	.cfi_def_cfa_register %rbp
-	subq	$144, %rsp
+	subq	$160, %rsp
 	movq	%rdi, -16(%rbp)                 # 8-byte Spill
-	leaq	.L.str.102(%rip), %rdi
+	leaq	.L.str.103(%rip), %rdi
 	movb	$0, %al
 	callq	printf@PLT
 	movq	-16(%rbp), %rdi                 # 8-byte Reload
-	callq	_Z15MLX90640_GetVddPKt.3.29_s17_15fixp
+	callq	_Z15MLX90640_GetVddPKt.3_s17_15fixp
 	movl	%eax, -28(%rbp)                 # 4-byte Spill
 	cvtsi2sd	%eax, %xmm0
 	movsd	.LCPI46_0(%rip), %xmm1          # xmm1 = mem[0],zero
@@ -6511,7 +6461,7 @@ _Z14MLX90640_GetTaPKt.6_1flp:           # @_Z14MLX90640_GetTaPKt.6_1flp
 	movsd	.LCPI46_0(%rip), %xmm2          # xmm2 = mem[0],zero
 	divsd	%xmm2, %xmm1
 	movsd	%xmm1, -24(%rbp)                # 8-byte Spill
-	leaq	.L.str.103(%rip), %rdi
+	leaq	.L.str.104(%rip), %rdi
 	movb	$1, %al
 	callq	printf@PLT
 	movq	-16(%rbp), %rdi                 # 8-byte Reload
@@ -6536,271 +6486,18 @@ _Z14MLX90640_GetTaPKt.6_1flp:           # @_Z14MLX90640_GetTaPKt.6_1flp
 	divsd	%xmm1, %xmm0
 	movsd	%xmm0, -48(%rbp)                # 8-byte Spill
 	movzwl	1536(%rax), %eax
-	shll	$14, %eax
+	shll	$15, %eax
 	movl	%eax, -36(%rbp)                 # 4-byte Spill
 	movl	$4294836224, %ecx               # imm = 0xFFFE0000
-	shrl	$3, %ecx
+	shrl	$2, %ecx
 	cmpl	%ecx, %eax
 	movl	%eax, -32(%rbp)                 # 4-byte Spill
 	jle	.LBB46_4
 # %bb.3:
 	movl	-36(%rbp), %eax                 # 4-byte Reload
-	movl	$2147483648, %ecx               # imm = 0x80000000
-	shrl	$1, %ecx
-	subl	%ecx, %eax
+	subl	$-2147483648, %eax              # imm = 0x80000000
 	movl	%eax, -32(%rbp)                 # 4-byte Spill
 .LBB46_4:
-	movl	-52(%rbp), %eax                 # 4-byte Reload
-	movl	-32(%rbp), %ecx                 # 4-byte Reload
-	movl	%ecx, -144(%rbp)                # 4-byte Spill
-	movq	params_alphaPTAT.fixp@GOTPCREL(%rip), %rcx
-	movq	%rcx, -104(%rbp)                # 8-byte Spill
-	movl	(%rcx), %ecx
-                                        # kill: def $rcx killed $ecx
-	cltq
-	movq	%rax, -120(%rbp)                # 8-byte Spill
-	imulq	%rcx, %rax
-	shrq	$32, %rax
-                                        # kill: def $eax killed $eax killed $rax
-	movl	%eax, -140(%rbp)                # 4-byte Spill
-	cvtsi2sd	%eax, %xmm0
-	movsd	.LCPI46_7(%rip), %xmm1          # xmm1 = mem[0],zero
-	movsd	%xmm1, -136(%rbp)               # 8-byte Spill
-	divsd	%xmm1, %xmm0
-	leaq	.L.str.104(%rip), %rdi
-	movb	$1, %al
-	movb	%al, -105(%rbp)                 # 1-byte Spill
-	callq	printf@PLT
-	movl	-144(%rbp), %edx                # 4-byte Reload
-	movl	-140(%rbp), %ecx                # 4-byte Reload
-	movsd	-136(%rbp), %xmm1               # 8-byte Reload
-                                        # xmm1 = mem[0],zero
-                                        # kill: def $esi killed $eax
-	movb	-105(%rbp), %al                 # 1-byte Reload
-	sarl	$3, %edx
-	addl	%edx, %ecx
-	movl	%ecx, -124(%rbp)                # 4-byte Spill
-	cvtsi2sd	%ecx, %xmm0
-	divsd	%xmm1, %xmm0
-	leaq	.L.str.105(%rip), %rdi
-	callq	printf@PLT
-	movl	-124(%rbp), %ecx                # 4-byte Reload
-                                        # kill: def $edx killed $eax
-	movq	-120(%rbp), %rax                # 8-byte Reload
-	shlq	$16, %rax
-	movslq	%ecx, %rcx
-	cqto
-	idivq	%rcx
-	movq	%rax, %rcx
-	movb	-105(%rbp), %al                 # 1-byte Reload
-	cvtsi2sd	%rcx, %xmm0
-	movsd	.LCPI46_8(%rip), %xmm1          # xmm1 = mem[0],zero
-	divsd	%xmm1, %xmm0
-	cvtsi2ss	%rcx, %xmm1
-	movss	.LCPI46_9(%rip), %xmm2          # xmm2 = mem[0],zero,zero,zero
-	divss	%xmm2, %xmm1
-	movss	%xmm1, -112(%rbp)               # 4-byte Spill
-	leaq	.L.str.106(%rip), %rdi
-	callq	printf@PLT
-	movss	-112(%rbp), %xmm1               # 4-byte Reload
-                                        # xmm1 = mem[0],zero,zero,zero
-	movsd	-48(%rbp), %xmm0                # 8-byte Reload
-                                        # xmm0 = mem[0],zero
-                                        # kill: def $ecx killed $eax
-	movb	-105(%rbp), %al                 # 1-byte Reload
-	movss	.LCPI46_10(%rip), %xmm2         # xmm2 = mem[0],zero,zero,zero
-	mulss	%xmm2, %xmm1
-	movss	%xmm1, -72(%rbp)                # 4-byte Spill
-	leaq	.L.str.107(%rip), %rdi
-	callq	printf@PLT
-                                        # kill: def $ecx killed $eax
-	movq	-104(%rbp), %rax                # 8-byte Reload
-	movl	(%rax), %eax
-                                        # kill: def $rax killed $eax
-	cvtsi2sd	%rax, %xmm0
-	movsd	.LCPI46_6(%rip), %xmm1          # xmm1 = mem[0],zero
-	divsd	%xmm1, %xmm0
-	leaq	.L.str.108(%rip), %rdi
-	movb	$1, %al
-	callq	printf@PLT
-	movss	-72(%rbp), %xmm0                # 4-byte Reload
-                                        # xmm0 = mem[0],zero,zero,zero
-	cvtss2sd	%xmm0, %xmm0
-	leaq	.L.str.109(%rip), %rdi
-	movb	$1, %al
-	callq	printf@PLT
-                                        # kill: def $ecx killed $eax
-	movl	-28(%rbp), %eax                 # 4-byte Reload
-	movl	$1771674009, %ecx               # imm = 0x69999999
-	shrl	$14, %ecx
-	subl	%ecx, %eax
-	movl	%eax, -92(%rbp)                 # 4-byte Spill
-	cvtsi2sd	%eax, %xmm0
-	movsd	.LCPI46_0(%rip), %xmm1          # xmm1 = mem[0],zero
-	divsd	%xmm1, %xmm0
-	leaq	.L.str.110(%rip), %rdi
-	movb	$1, %al
-	callq	printf@PLT
-	movl	-92(%rbp), %ecx                 # 4-byte Reload
-	movq	params_KvPTAT.fixp@GOTPCREL(%rip), %rax
-	movslq	(%rax), %rax
-	movslq	%ecx, %rcx
-	imulq	%rcx, %rax
-	sarq	$23, %rax
-                                        # kill: def $eax killed $eax killed $rax
-	movl	%eax, -76(%rbp)                 # 4-byte Spill
-	cvtsi2sd	%eax, %xmm0
-	movsd	.LCPI46_4(%rip), %xmm1          # xmm1 = mem[0],zero
-	divsd	%xmm1, %xmm0
-	movsd	%xmm0, -88(%rbp)                # 8-byte Spill
-	movq	params_KvPTAT.fixp@GOTPCREL(%rip), %rax
-	cvtsi2sdl	(%rax), %xmm0
-	movsd	.LCPI46_5(%rip), %xmm1          # xmm1 = mem[0],zero
-	divsd	%xmm1, %xmm0
-	leaq	.L.str.111(%rip), %rdi
-	movb	$1, %al
-	callq	printf@PLT
-	movsd	-24(%rbp), %xmm0                # 8-byte Reload
-                                        # xmm0 = mem[0],zero
-	leaq	.L.str.112(%rip), %rdi
-	movb	$1, %al
-	callq	printf@PLT
-	movsd	-88(%rbp), %xmm0                # 8-byte Reload
-                                        # xmm0 = mem[0],zero
-	leaq	.L.str.113(%rip), %rdi
-	movb	$1, %al
-	callq	printf@PLT
-	movl	-76(%rbp), %ecx                 # 4-byte Reload
-	movl	$2147483648, %eax               # imm = 0x80000000
-	shrl	$9, %eax
-	addl	%ecx, %eax
-	cvtsi2sd	%eax, %xmm0
-	movsd	.LCPI46_4(%rip), %xmm1          # xmm1 = mem[0],zero
-	divsd	%xmm1, %xmm0
-	cvtsi2ss	%eax, %xmm1
-	movss	.LCPI46_3(%rip), %xmm2          # xmm2 = mem[0],zero,zero,zero
-	divss	%xmm2, %xmm1
-	movss	%xmm1, -68(%rbp)                # 4-byte Spill
-	leaq	.L.str.114(%rip), %rdi
-	movb	$1, %al
-	callq	printf@PLT
-	movss	-72(%rbp), %xmm0                # 4-byte Reload
-                                        # xmm0 = mem[0],zero,zero,zero
-	movss	-68(%rbp), %xmm1                # 4-byte Reload
-                                        # xmm1 = mem[0],zero,zero,zero
-	divss	%xmm1, %xmm0
-	movss	%xmm0, -64(%rbp)                # 4-byte Spill
-	cvtss2sd	%xmm0, %xmm0
-	leaq	.L.str.115(%rip), %rdi
-	movb	$1, %al
-	callq	printf@PLT
-	movss	-64(%rbp), %xmm0                # 4-byte Reload
-                                        # xmm0 = mem[0],zero,zero,zero
-	movzwl	params_vPTAT25(%rip), %eax
-	cvtsi2ss	%eax, %xmm1
-	subss	%xmm1, %xmm0
-	movss	%xmm0, -60(%rbp)                # 4-byte Spill
-	cvtss2sd	%xmm0, %xmm0
-	leaq	.L.str.116(%rip), %rdi
-	movb	$1, %al
-	callq	printf@PLT
-	movss	-60(%rbp), %xmm0                # 4-byte Reload
-                                        # xmm0 = mem[0],zero,zero,zero
-	movq	params_KtPTAT.fixp@GOTPCREL(%rip), %rax
-	cvtsi2ssl	(%rax), %xmm1
-	movss	.LCPI46_2(%rip), %xmm2          # xmm2 = mem[0],zero,zero,zero
-	divss	%xmm2, %xmm1
-	divss	%xmm1, %xmm0
-	movss	.LCPI46_1(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
-	addss	%xmm1, %xmm0
-	movss	%xmm0, -56(%rbp)                # 4-byte Spill
-	cvtss2sd	%xmm0, %xmm0
-	leaq	.L.str.117(%rip), %rdi
-	movb	$1, %al
-	callq	printf@PLT
-	movss	-56(%rbp), %xmm0                # 4-byte Reload
-                                        # xmm0 = mem[0],zero,zero,zero
-	addq	$144, %rsp
-	popq	%rbp
-	.cfi_def_cfa %rsp, 8
-	retq
-.Lfunc_end46:
-	.size	_Z14MLX90640_GetTaPKt.6_1flp, .Lfunc_end46-_Z14MLX90640_GetTaPKt.6_1flp
-	.cfi_endproc
-                                        # -- End function
-	.section	.rodata.cst8,"aM",@progbits,8
-	.p2align	3                               # -- Begin function _Z14MLX90640_GetTaPKt.2_s16_16fixp
-.LCPI47_0:
-	.quad	0x40e0000000000000              # double 32768
-.LCPI47_1:
-	.quad	0x40f0000000000000              # double 65536
-.LCPI47_2:
-	.quad	0x41d0000000000000              # double 1073741824
-.LCPI47_3:
-	.quad	0x41b0000000000000              # double 268435456
-	.text
-	.p2align	4, 0x90
-	.type	_Z14MLX90640_GetTaPKt.2_s16_16fixp,@function
-_Z14MLX90640_GetTaPKt.2_s16_16fixp:     # @_Z14MLX90640_GetTaPKt.2_s16_16fixp
-	.cfi_startproc
-# %bb.0:
-	pushq	%rbp
-	.cfi_def_cfa_offset 16
-	.cfi_offset %rbp, -16
-	movq	%rsp, %rbp
-	.cfi_def_cfa_register %rbp
-	subq	$160, %rsp
-	movq	%rdi, -16(%rbp)                 # 8-byte Spill
-	leaq	.L.str.102(%rip), %rdi
-	movb	$0, %al
-	callq	printf@PLT
-	movq	-16(%rbp), %rdi                 # 8-byte Reload
-	callq	_Z15MLX90640_GetVddPKt.3_s17_15fixp
-	movl	%eax, -28(%rbp)                 # 4-byte Spill
-	cvtsi2sd	%eax, %xmm0
-	movsd	.LCPI47_0(%rip), %xmm1          # xmm1 = mem[0],zero
-	divsd	%xmm1, %xmm0
-	cvtsi2sd	%eax, %xmm1
-	movsd	.LCPI47_0(%rip), %xmm2          # xmm2 = mem[0],zero
-	divsd	%xmm2, %xmm1
-	movsd	%xmm1, -24(%rbp)                # 8-byte Spill
-	leaq	.L.str.103(%rip), %rdi
-	movb	$1, %al
-	callq	printf@PLT
-	movq	-16(%rbp), %rdi                 # 8-byte Reload
-	movzwl	1600(%rdi), %eax
-	shll	$15, %eax
-	movl	%eax, -8(%rbp)                  # 4-byte Spill
-	movl	$4294836224, %ecx               # imm = 0xFFFE0000
-	shrl	$2, %ecx
-	cmpl	%ecx, %eax
-	movl	%eax, -4(%rbp)                  # 4-byte Spill
-	jle	.LBB47_2
-# %bb.1:
-	movl	-8(%rbp), %eax                  # 4-byte Reload
-	subl	$-2147483648, %eax              # imm = 0x80000000
-	movl	%eax, -4(%rbp)                  # 4-byte Spill
-.LBB47_2:
-	movq	-16(%rbp), %rax                 # 8-byte Reload
-	movl	-4(%rbp), %ecx                  # 4-byte Reload
-	movl	%ecx, -52(%rbp)                 # 4-byte Spill
-	cvtsi2sd	%ecx, %xmm0
-	movsd	.LCPI47_0(%rip), %xmm1          # xmm1 = mem[0],zero
-	divsd	%xmm1, %xmm0
-	movsd	%xmm0, -48(%rbp)                # 8-byte Spill
-	movzwl	1536(%rax), %eax
-	shll	$15, %eax
-	movl	%eax, -36(%rbp)                 # 4-byte Spill
-	movl	$4294836224, %ecx               # imm = 0xFFFE0000
-	shrl	$2, %ecx
-	cmpl	%ecx, %eax
-	movl	%eax, -32(%rbp)                 # 4-byte Spill
-	jle	.LBB47_4
-# %bb.3:
-	movl	-36(%rbp), %eax                 # 4-byte Reload
-	subl	$-2147483648, %eax              # imm = 0x80000000
-	movl	%eax, -32(%rbp)                 # 4-byte Spill
-.LBB47_4:
 	movl	-52(%rbp), %eax                 # 4-byte Reload
 	movl	-32(%rbp), %ecx                 # 4-byte Reload
 	movl	%ecx, -152(%rbp)                # 4-byte Spill
@@ -6817,9 +6514,9 @@ _Z14MLX90640_GetTaPKt.2_s16_16fixp:     # @_Z14MLX90640_GetTaPKt.2_s16_16fixp
 	movl	%eax, %eax
                                         # kill: def $rax killed $eax
 	cvtsi2sd	%rax, %xmm0
-	movsd	.LCPI47_3(%rip), %xmm1          # xmm1 = mem[0],zero
+	movsd	.LCPI46_3(%rip), %xmm1          # xmm1 = mem[0],zero
 	divsd	%xmm1, %xmm0
-	leaq	.L.str.104(%rip), %rdi
+	leaq	.L.str.105(%rip), %rdi
 	movb	$1, %al
 	movb	%al, -113(%rbp)                 # 1-byte Spill
 	callq	printf@PLT
@@ -6831,10 +6528,10 @@ _Z14MLX90640_GetTaPKt.2_s16_16fixp:     # @_Z14MLX90640_GetTaPKt.2_s16_16fixp
 	addl	%edx, %ecx
 	movl	%ecx, -148(%rbp)                # 4-byte Spill
 	cvtsi2sd	%ecx, %xmm0
-	movsd	.LCPI47_0(%rip), %xmm1          # xmm1 = mem[0],zero
+	movsd	.LCPI46_0(%rip), %xmm1          # xmm1 = mem[0],zero
 	movsd	%xmm1, -128(%rbp)               # 8-byte Spill
 	divsd	%xmm1, %xmm0
-	leaq	.L.str.105(%rip), %rdi
+	leaq	.L.str.106(%rip), %rdi
 	callq	printf@PLT
 	movl	-148(%rbp), %ecx                # 4-byte Reload
 	movsd	-128(%rbp), %xmm1               # 8-byte Reload
@@ -6851,7 +6548,7 @@ _Z14MLX90640_GetTaPKt.2_s16_16fixp:     # @_Z14MLX90640_GetTaPKt.2_s16_16fixp
 	movl	%ecx, -132(%rbp)                # 4-byte Spill
 	cvtsi2sd	%ecx, %xmm0
 	divsd	%xmm1, %xmm0
-	leaq	.L.str.106(%rip), %rdi
+	leaq	.L.str.107(%rip), %rdi
 	callq	printf@PLT
 	movl	-132(%rbp), %ecx                # 4-byte Reload
 	movsd	-128(%rbp), %xmm2               # 8-byte Reload
@@ -6865,21 +6562,21 @@ _Z14MLX90640_GetTaPKt.2_s16_16fixp:     # @_Z14MLX90640_GetTaPKt.2_s16_16fixp
 	cvtsi2sd	%ecx, %xmm1
 	divsd	%xmm2, %xmm1
 	movsd	%xmm1, -104(%rbp)               # 8-byte Spill
-	leaq	.L.str.107(%rip), %rdi
+	leaq	.L.str.108(%rip), %rdi
 	callq	printf@PLT
                                         # kill: def $ecx killed $eax
 	movq	-112(%rbp), %rax                # 8-byte Reload
 	movl	(%rax), %eax
                                         # kill: def $rax killed $eax
 	cvtsi2sd	%rax, %xmm0
-	movsd	.LCPI47_3(%rip), %xmm1          # xmm1 = mem[0],zero
+	movsd	.LCPI46_3(%rip), %xmm1          # xmm1 = mem[0],zero
 	divsd	%xmm1, %xmm0
-	leaq	.L.str.108(%rip), %rdi
+	leaq	.L.str.109(%rip), %rdi
 	movb	$1, %al
 	callq	printf@PLT
 	movsd	-104(%rbp), %xmm0               # 8-byte Reload
                                         # xmm0 = mem[0],zero
-	leaq	.L.str.109(%rip), %rdi
+	leaq	.L.str.110(%rip), %rdi
 	movb	$1, %al
 	callq	printf@PLT
                                         # kill: def $ecx killed $eax
@@ -6889,9 +6586,9 @@ _Z14MLX90640_GetTaPKt.2_s16_16fixp:     # @_Z14MLX90640_GetTaPKt.2_s16_16fixp
 	subl	%ecx, %eax
 	movl	%eax, -92(%rbp)                 # 4-byte Spill
 	cvtsi2sd	%eax, %xmm0
-	movsd	.LCPI47_0(%rip), %xmm1          # xmm1 = mem[0],zero
+	movsd	.LCPI46_0(%rip), %xmm1          # xmm1 = mem[0],zero
 	divsd	%xmm1, %xmm0
-	leaq	.L.str.110(%rip), %rdi
+	leaq	.L.str.111(%rip), %rdi
 	movb	$1, %al
 	callq	printf@PLT
 	movl	-92(%rbp), %ecx                 # 4-byte Reload
@@ -6903,24 +6600,24 @@ _Z14MLX90640_GetTaPKt.2_s16_16fixp:     # @_Z14MLX90640_GetTaPKt.2_s16_16fixp
                                         # kill: def $eax killed $eax killed $rax
 	movl	%eax, -76(%rbp)                 # 4-byte Spill
 	cvtsi2sd	%eax, %xmm0
-	movsd	.LCPI47_2(%rip), %xmm1          # xmm1 = mem[0],zero
+	movsd	.LCPI46_2(%rip), %xmm1          # xmm1 = mem[0],zero
 	divsd	%xmm1, %xmm0
 	movsd	%xmm0, -88(%rbp)                # 8-byte Spill
 	movq	params_KvPTAT.fixp@GOTPCREL(%rip), %rax
 	cvtsi2sdl	(%rax), %xmm0
-	movsd	.LCPI47_2(%rip), %xmm1          # xmm1 = mem[0],zero
+	movsd	.LCPI46_2(%rip), %xmm1          # xmm1 = mem[0],zero
 	divsd	%xmm1, %xmm0
-	leaq	.L.str.111(%rip), %rdi
+	leaq	.L.str.112(%rip), %rdi
 	movb	$1, %al
 	callq	printf@PLT
 	movsd	-24(%rbp), %xmm0                # 8-byte Reload
                                         # xmm0 = mem[0],zero
-	leaq	.L.str.112(%rip), %rdi
+	leaq	.L.str.113(%rip), %rdi
 	movb	$1, %al
 	callq	printf@PLT
 	movsd	-88(%rbp), %xmm0                # 8-byte Reload
                                         # xmm0 = mem[0],zero
-	leaq	.L.str.113(%rip), %rdi
+	leaq	.L.str.114(%rip), %rdi
 	movb	$1, %al
 	callq	printf@PLT
 	movl	-76(%rbp), %ecx                 # 4-byte Reload
@@ -6929,9 +6626,9 @@ _Z14MLX90640_GetTaPKt.2_s16_16fixp:     # @_Z14MLX90640_GetTaPKt.2_s16_16fixp
 	addl	%ecx, %eax
 	movl	%eax, -72(%rbp)                 # 4-byte Spill
 	cvtsi2sd	%eax, %xmm0
-	movsd	.LCPI47_2(%rip), %xmm1          # xmm1 = mem[0],zero
+	movsd	.LCPI46_2(%rip), %xmm1          # xmm1 = mem[0],zero
 	divsd	%xmm1, %xmm0
-	leaq	.L.str.114(%rip), %rdi
+	leaq	.L.str.115(%rip), %rdi
 	movb	$1, %al
 	callq	printf@PLT
 	movl	-72(%rbp), %ecx                 # 4-byte Reload
@@ -6945,9 +6642,9 @@ _Z14MLX90640_GetTaPKt.2_s16_16fixp:     # @_Z14MLX90640_GetTaPKt.2_s16_16fixp
                                         # kill: def $eax killed $eax killed $rax
 	movl	%eax, -64(%rbp)                 # 4-byte Spill
 	cvtsi2sd	%eax, %xmm0
-	movsd	.LCPI47_0(%rip), %xmm1          # xmm1 = mem[0],zero
+	movsd	.LCPI46_0(%rip), %xmm1          # xmm1 = mem[0],zero
 	divsd	%xmm1, %xmm0
-	leaq	.L.str.115(%rip), %rdi
+	leaq	.L.str.116(%rip), %rdi
 	movb	$1, %al
 	callq	printf@PLT
                                         # kill: def $ecx killed $eax
@@ -6957,9 +6654,9 @@ _Z14MLX90640_GetTaPKt.2_s16_16fixp:     # @_Z14MLX90640_GetTaPKt.2_s16_16fixp
 	subl	%ecx, %eax
 	movl	%eax, -60(%rbp)                 # 4-byte Spill
 	cvtsi2sd	%eax, %xmm0
-	movsd	.LCPI47_0(%rip), %xmm1          # xmm1 = mem[0],zero
+	movsd	.LCPI46_0(%rip), %xmm1          # xmm1 = mem[0],zero
 	divsd	%xmm1, %xmm0
-	leaq	.L.str.116(%rip), %rdi
+	leaq	.L.str.117(%rip), %rdi
 	movb	$1, %al
 	callq	printf@PLT
                                         # kill: def $ecx killed $eax
@@ -6978,9 +6675,9 @@ _Z14MLX90640_GetTaPKt.2_s16_16fixp:     # @_Z14MLX90640_GetTaPKt.2_s16_16fixp
 	addl	%ecx, %eax
 	movl	%eax, -56(%rbp)                 # 4-byte Spill
 	cvtsi2sd	%eax, %xmm0
-	movsd	.LCPI47_1(%rip), %xmm1          # xmm1 = mem[0],zero
+	movsd	.LCPI46_1(%rip), %xmm1          # xmm1 = mem[0],zero
 	divsd	%xmm1, %xmm0
-	leaq	.L.str.117(%rip), %rdi
+	leaq	.L.str.118(%rip), %rdi
 	movb	$1, %al
 	callq	printf@PLT
                                         # kill: def $ecx killed $eax
@@ -6989,8 +6686,105 @@ _Z14MLX90640_GetTaPKt.2_s16_16fixp:     # @_Z14MLX90640_GetTaPKt.2_s16_16fixp
 	popq	%rbp
 	.cfi_def_cfa %rsp, 8
 	retq
+.Lfunc_end46:
+	.size	_Z14MLX90640_GetTaPKt.2_s16_16fixp, .Lfunc_end46-_Z14MLX90640_GetTaPKt.2_s16_16fixp
+	.cfi_endproc
+                                        # -- End function
+	.section	.rodata.cst4,"aM",@progbits,4
+	.p2align	2                               # -- Begin function _Z15MLX90640_GetVddPKt.1_s16_16fixp
+.LCPI47_0:
+	.long	0x47000000                      # float 32768
+.LCPI47_2:
+	.long	0x4b000000                      # float 8388608
+	.section	.rodata.cst16,"aM",@progbits,16
+	.p2align	4
+.LCPI47_1:
+	.long	0x80000000                      # float -0
+	.long	0x80000000                      # float -0
+	.long	0x80000000                      # float -0
+	.long	0x80000000                      # float -0
+	.text
+	.p2align	4, 0x90
+	.type	_Z15MLX90640_GetVddPKt.1_s16_16fixp,@function
+_Z15MLX90640_GetVddPKt.1_s16_16fixp:    # @_Z15MLX90640_GetVddPKt.1_s16_16fixp
+	.cfi_startproc
+# %bb.0:
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset %rbp, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register %rbp
+	subq	$48, %rsp
+	movq	%rdi, -16(%rbp)                 # 8-byte Spill
+	movzwl	1620(%rdi), %eax
+	shll	$14, %eax
+	movl	%eax, -8(%rbp)                  # 4-byte Spill
+	movl	$4294836224, %ecx               # imm = 0xFFFE0000
+	shrl	$3, %ecx
+	cmpl	%ecx, %eax
+	movl	%eax, -4(%rbp)                  # 4-byte Spill
+	jle	.LBB47_2
+# %bb.1:
+	movl	-8(%rbp), %eax                  # 4-byte Reload
+	movl	$2147483648, %ecx               # imm = 0x80000000
+	shrl	$1, %ecx
+	subl	%ecx, %eax
+	movl	%eax, -4(%rbp)                  # 4-byte Spill
+.LBB47_2:
+	movq	-16(%rbp), %rax                 # 8-byte Reload
+	movl	-4(%rbp), %ecx                  # 4-byte Reload
+	movl	%ecx, -28(%rbp)                 # 4-byte Spill
+	movzwl	1664(%rax), %eax
+	shrl	$10, %eax
+	andl	$3, %eax
+	movl	%eax, -36(%rbp)                 # 4-byte Spill
+	cvtsi2sdl	params_resolutionEE(%rip), %xmm0
+	movl	$2, %edi
+	movl	%edi, -32(%rbp)                 # 4-byte Spill
+	callq	_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.14
+	movl	-36(%rbp), %eax                 # 4-byte Reload
+	movl	-32(%rbp), %edi                 # 4-byte Reload
+	movsd	%xmm0, -24(%rbp)                # 8-byte Spill
+	cvtsi2sd	%eax, %xmm0
+	callq	_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_
+	movl	-28(%rbp), %edx                 # 4-byte Reload
+	movaps	%xmm0, %xmm1
+	movsd	-24(%rbp), %xmm0                # 8-byte Reload
+                                        # xmm0 = mem[0],zero
+	divsd	%xmm1, %xmm0
+	cvtsd2ss	%xmm0, %xmm0
+	movswl	params_vdd25(%rip), %eax
+	cvtsi2ss	%eax, %xmm1
+	movaps	.LCPI47_1(%rip), %xmm2          # xmm2 = [-0.0E+0,-0.0E+0,-0.0E+0,-0.0E+0]
+	pxor	%xmm2, %xmm1
+	movss	.LCPI47_2(%rip), %xmm2          # xmm2 = mem[0],zero,zero,zero
+	mulss	%xmm2, %xmm0
+	cvttss2si	%xmm0, %rax
+                                        # kill: def $eax killed $eax killed $rax
+	movss	.LCPI47_0(%rip), %xmm0          # xmm0 = mem[0],zero,zero,zero
+	mulss	%xmm1, %xmm0
+	cvttss2si	%xmm0, %ecx
+	sarl	$1, %ecx
+	movl	%eax, %eax
+                                        # kill: def $rax killed $eax
+	movslq	%edx, %rdx
+	imulq	%rdx, %rax
+	sarq	$23, %rax
+                                        # kill: def $eax killed $eax killed $rax
+	addl	%ecx, %eax
+	movswl	params_kVdd(%rip), %ecx
+	cltd
+	idivl	%ecx
+	movl	$1771674009, %ecx               # imm = 0x69999999
+	shrl	$15, %ecx
+	addl	%ecx, %eax
+	shll	$2, %eax
+	addq	$48, %rsp
+	popq	%rbp
+	.cfi_def_cfa %rsp, 8
+	retq
 .Lfunc_end47:
-	.size	_Z14MLX90640_GetTaPKt.2_s16_16fixp, .Lfunc_end47-_Z14MLX90640_GetTaPKt.2_s16_16fixp
+	.size	_Z15MLX90640_GetVddPKt.1_s16_16fixp, .Lfunc_end47-_Z15MLX90640_GetVddPKt.1_s16_16fixp
 	.cfi_endproc
                                         # -- End function
 	.section	.rodata.cst4,"aM",@progbits,4
@@ -7090,23 +6884,36 @@ _Z15MLX90640_GetVddPKt.3_s17_15fixp:    # @_Z15MLX90640_GetVddPKt.3_s17_15fixp
 	.size	_Z15MLX90640_GetVddPKt.3_s17_15fixp, .Lfunc_end48-_Z15MLX90640_GetVddPKt.3_s17_15fixp
 	.cfi_endproc
                                         # -- End function
-	.section	.rodata.cst4,"aM",@progbits,4
-	.p2align	2                               # -- Begin function _Z15MLX90640_GetVddPKt.1_s16_16fixp
+	.section	.rodata.cst8,"aM",@progbits,8
+	.p2align	3                               # -- Begin function _Z14MLX90640_GetTaPKt.6_1flp
 .LCPI49_0:
-	.long	0x47000000                      # float 32768
+	.quad	0x40e0000000000000              # double 32768
+.LCPI49_4:
+	.quad	0x4150000000000000              # double 4194304
+.LCPI49_5:
+	.quad	0x41d0000000000000              # double 1073741824
+.LCPI49_6:
+	.quad	0x41b0000000000000              # double 268435456
+.LCPI49_7:
+	.quad	0x40a0000000000000              # double 2048
+.LCPI49_8:
+	.quad	0x4130000000000000              # double 1048576
+	.section	.rodata.cst4,"aM",@progbits,4
+	.p2align	2
+.LCPI49_1:
+	.long	0x41c80000                      # float 25
 .LCPI49_2:
 	.long	0x4b000000                      # float 8388608
-	.section	.rodata.cst16,"aM",@progbits,16
-	.p2align	4
-.LCPI49_1:
-	.long	0x80000000                      # float -0
-	.long	0x80000000                      # float -0
-	.long	0x80000000                      # float -0
-	.long	0x80000000                      # float -0
+.LCPI49_3:
+	.long	0x4a800000                      # float 4194304
+.LCPI49_9:
+	.long	0x49800000                      # float 1048576
+.LCPI49_10:
+	.long	0x48800000                      # float 262144
 	.text
 	.p2align	4, 0x90
-	.type	_Z15MLX90640_GetVddPKt.1_s16_16fixp,@function
-_Z15MLX90640_GetVddPKt.1_s16_16fixp:    # @_Z15MLX90640_GetVddPKt.1_s16_16fixp
+	.type	_Z14MLX90640_GetTaPKt.6_1flp,@function
+_Z14MLX90640_GetTaPKt.6_1flp:           # @_Z14MLX90640_GetTaPKt.6_1flp
 	.cfi_startproc
 # %bb.0:
 	pushq	%rbp
@@ -7114,77 +6921,236 @@ _Z15MLX90640_GetVddPKt.1_s16_16fixp:    # @_Z15MLX90640_GetVddPKt.1_s16_16fixp
 	.cfi_offset %rbp, -16
 	movq	%rsp, %rbp
 	.cfi_def_cfa_register %rbp
-	subq	$48, %rsp
+	subq	$144, %rsp
 	movq	%rdi, -16(%rbp)                 # 8-byte Spill
-	movzwl	1620(%rdi), %eax
-	shll	$14, %eax
+	leaq	.L.str.103(%rip), %rdi
+	movb	$0, %al
+	callq	printf@PLT
+	movq	-16(%rbp), %rdi                 # 8-byte Reload
+	callq	_Z15MLX90640_GetVddPKt.3.29_s17_15fixp
+	movl	%eax, -28(%rbp)                 # 4-byte Spill
+	cvtsi2sd	%eax, %xmm0
+	movsd	.LCPI49_0(%rip), %xmm1          # xmm1 = mem[0],zero
+	divsd	%xmm1, %xmm0
+	cvtsi2sd	%eax, %xmm1
+	movsd	.LCPI49_0(%rip), %xmm2          # xmm2 = mem[0],zero
+	divsd	%xmm2, %xmm1
+	movsd	%xmm1, -24(%rbp)                # 8-byte Spill
+	leaq	.L.str.104(%rip), %rdi
+	movb	$1, %al
+	callq	printf@PLT
+	movq	-16(%rbp), %rdi                 # 8-byte Reload
+	movzwl	1600(%rdi), %eax
+	shll	$15, %eax
 	movl	%eax, -8(%rbp)                  # 4-byte Spill
 	movl	$4294836224, %ecx               # imm = 0xFFFE0000
-	shrl	$3, %ecx
+	shrl	$2, %ecx
 	cmpl	%ecx, %eax
 	movl	%eax, -4(%rbp)                  # 4-byte Spill
 	jle	.LBB49_2
 # %bb.1:
 	movl	-8(%rbp), %eax                  # 4-byte Reload
-	movl	$2147483648, %ecx               # imm = 0x80000000
-	shrl	$1, %ecx
-	subl	%ecx, %eax
+	subl	$-2147483648, %eax              # imm = 0x80000000
 	movl	%eax, -4(%rbp)                  # 4-byte Spill
 .LBB49_2:
 	movq	-16(%rbp), %rax                 # 8-byte Reload
 	movl	-4(%rbp), %ecx                  # 4-byte Reload
-	movl	%ecx, -28(%rbp)                 # 4-byte Spill
-	movzwl	1664(%rax), %eax
-	shrl	$10, %eax
-	andl	$3, %eax
-	movl	%eax, -36(%rbp)                 # 4-byte Spill
-	cvtsi2sdl	params_resolutionEE(%rip), %xmm0
-	movl	$2, %edi
-	movl	%edi, -32(%rbp)                 # 4-byte Spill
-	callq	_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.14
-	movl	-36(%rbp), %eax                 # 4-byte Reload
-	movl	-32(%rbp), %edi                 # 4-byte Reload
-	movsd	%xmm0, -24(%rbp)                # 8-byte Spill
-	cvtsi2sd	%eax, %xmm0
-	callq	_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_
-	movl	-28(%rbp), %edx                 # 4-byte Reload
-	movaps	%xmm0, %xmm1
-	movsd	-24(%rbp), %xmm0                # 8-byte Reload
-                                        # xmm0 = mem[0],zero
+	movl	%ecx, -52(%rbp)                 # 4-byte Spill
+	cvtsi2sd	%ecx, %xmm0
+	movsd	.LCPI49_0(%rip), %xmm1          # xmm1 = mem[0],zero
 	divsd	%xmm1, %xmm0
-	cvtsd2ss	%xmm0, %xmm0
-	movswl	params_vdd25(%rip), %eax
-	cvtsi2ss	%eax, %xmm1
-	movaps	.LCPI49_1(%rip), %xmm2          # xmm2 = [-0.0E+0,-0.0E+0,-0.0E+0,-0.0E+0]
-	pxor	%xmm2, %xmm1
-	movss	.LCPI49_2(%rip), %xmm2          # xmm2 = mem[0],zero,zero,zero
-	mulss	%xmm2, %xmm0
-	cvttss2si	%xmm0, %rax
+	movsd	%xmm0, -48(%rbp)                # 8-byte Spill
+	movzwl	1536(%rax), %eax
+	shll	$14, %eax
+	movl	%eax, -36(%rbp)                 # 4-byte Spill
+	movl	$4294836224, %ecx               # imm = 0xFFFE0000
+	shrl	$3, %ecx
+	cmpl	%ecx, %eax
+	movl	%eax, -32(%rbp)                 # 4-byte Spill
+	jle	.LBB49_4
+# %bb.3:
+	movl	-36(%rbp), %eax                 # 4-byte Reload
+	movl	$2147483648, %ecx               # imm = 0x80000000
+	shrl	$1, %ecx
+	subl	%ecx, %eax
+	movl	%eax, -32(%rbp)                 # 4-byte Spill
+.LBB49_4:
+	movl	-52(%rbp), %eax                 # 4-byte Reload
+	movl	-32(%rbp), %ecx                 # 4-byte Reload
+	movl	%ecx, -144(%rbp)                # 4-byte Spill
+	movq	params_alphaPTAT.fixp@GOTPCREL(%rip), %rcx
+	movq	%rcx, -104(%rbp)                # 8-byte Spill
+	movl	(%rcx), %ecx
+                                        # kill: def $rcx killed $ecx
+	cltq
+	movq	%rax, -120(%rbp)                # 8-byte Spill
+	imulq	%rcx, %rax
+	shrq	$32, %rax
                                         # kill: def $eax killed $eax killed $rax
-	movss	.LCPI49_0(%rip), %xmm0          # xmm0 = mem[0],zero,zero,zero
-	mulss	%xmm1, %xmm0
-	cvttss2si	%xmm0, %ecx
-	sarl	$1, %ecx
-	movl	%eax, %eax
+	movl	%eax, -140(%rbp)                # 4-byte Spill
+	cvtsi2sd	%eax, %xmm0
+	movsd	.LCPI49_7(%rip), %xmm1          # xmm1 = mem[0],zero
+	movsd	%xmm1, -136(%rbp)               # 8-byte Spill
+	divsd	%xmm1, %xmm0
+	leaq	.L.str.105(%rip), %rdi
+	movb	$1, %al
+	movb	%al, -105(%rbp)                 # 1-byte Spill
+	callq	printf@PLT
+	movl	-144(%rbp), %edx                # 4-byte Reload
+	movl	-140(%rbp), %ecx                # 4-byte Reload
+	movsd	-136(%rbp), %xmm1               # 8-byte Reload
+                                        # xmm1 = mem[0],zero
+                                        # kill: def $esi killed $eax
+	movb	-105(%rbp), %al                 # 1-byte Reload
+	sarl	$3, %edx
+	addl	%edx, %ecx
+	movl	%ecx, -124(%rbp)                # 4-byte Spill
+	cvtsi2sd	%ecx, %xmm0
+	divsd	%xmm1, %xmm0
+	leaq	.L.str.106(%rip), %rdi
+	callq	printf@PLT
+	movl	-124(%rbp), %ecx                # 4-byte Reload
+                                        # kill: def $edx killed $eax
+	movq	-120(%rbp), %rax                # 8-byte Reload
+	shlq	$16, %rax
+	movslq	%ecx, %rcx
+	cqto
+	idivq	%rcx
+	movq	%rax, %rcx
+	movb	-105(%rbp), %al                 # 1-byte Reload
+	cvtsi2sd	%rcx, %xmm0
+	movsd	.LCPI49_8(%rip), %xmm1          # xmm1 = mem[0],zero
+	divsd	%xmm1, %xmm0
+	cvtsi2ss	%rcx, %xmm1
+	movss	.LCPI49_9(%rip), %xmm2          # xmm2 = mem[0],zero,zero,zero
+	divss	%xmm2, %xmm1
+	movss	%xmm1, -112(%rbp)               # 4-byte Spill
+	leaq	.L.str.107(%rip), %rdi
+	callq	printf@PLT
+	movss	-112(%rbp), %xmm1               # 4-byte Reload
+                                        # xmm1 = mem[0],zero,zero,zero
+	movsd	-48(%rbp), %xmm0                # 8-byte Reload
+                                        # xmm0 = mem[0],zero
+                                        # kill: def $ecx killed $eax
+	movb	-105(%rbp), %al                 # 1-byte Reload
+	movss	.LCPI49_10(%rip), %xmm2         # xmm2 = mem[0],zero,zero,zero
+	mulss	%xmm2, %xmm1
+	movss	%xmm1, -72(%rbp)                # 4-byte Spill
+	leaq	.L.str.108(%rip), %rdi
+	callq	printf@PLT
+                                        # kill: def $ecx killed $eax
+	movq	-104(%rbp), %rax                # 8-byte Reload
+	movl	(%rax), %eax
                                         # kill: def $rax killed $eax
-	movslq	%edx, %rdx
-	imulq	%rdx, %rax
+	cvtsi2sd	%rax, %xmm0
+	movsd	.LCPI49_6(%rip), %xmm1          # xmm1 = mem[0],zero
+	divsd	%xmm1, %xmm0
+	leaq	.L.str.109(%rip), %rdi
+	movb	$1, %al
+	callq	printf@PLT
+	movss	-72(%rbp), %xmm0                # 4-byte Reload
+                                        # xmm0 = mem[0],zero,zero,zero
+	cvtss2sd	%xmm0, %xmm0
+	leaq	.L.str.110(%rip), %rdi
+	movb	$1, %al
+	callq	printf@PLT
+                                        # kill: def $ecx killed $eax
+	movl	-28(%rbp), %eax                 # 4-byte Reload
+	movl	$1771674009, %ecx               # imm = 0x69999999
+	shrl	$14, %ecx
+	subl	%ecx, %eax
+	movl	%eax, -92(%rbp)                 # 4-byte Spill
+	cvtsi2sd	%eax, %xmm0
+	movsd	.LCPI49_0(%rip), %xmm1          # xmm1 = mem[0],zero
+	divsd	%xmm1, %xmm0
+	leaq	.L.str.111(%rip), %rdi
+	movb	$1, %al
+	callq	printf@PLT
+	movl	-92(%rbp), %ecx                 # 4-byte Reload
+	movq	params_KvPTAT.fixp@GOTPCREL(%rip), %rax
+	movslq	(%rax), %rax
+	movslq	%ecx, %rcx
+	imulq	%rcx, %rax
 	sarq	$23, %rax
                                         # kill: def $eax killed $eax killed $rax
+	movl	%eax, -76(%rbp)                 # 4-byte Spill
+	cvtsi2sd	%eax, %xmm0
+	movsd	.LCPI49_4(%rip), %xmm1          # xmm1 = mem[0],zero
+	divsd	%xmm1, %xmm0
+	movsd	%xmm0, -88(%rbp)                # 8-byte Spill
+	movq	params_KvPTAT.fixp@GOTPCREL(%rip), %rax
+	cvtsi2sdl	(%rax), %xmm0
+	movsd	.LCPI49_5(%rip), %xmm1          # xmm1 = mem[0],zero
+	divsd	%xmm1, %xmm0
+	leaq	.L.str.112(%rip), %rdi
+	movb	$1, %al
+	callq	printf@PLT
+	movsd	-24(%rbp), %xmm0                # 8-byte Reload
+                                        # xmm0 = mem[0],zero
+	leaq	.L.str.113(%rip), %rdi
+	movb	$1, %al
+	callq	printf@PLT
+	movsd	-88(%rbp), %xmm0                # 8-byte Reload
+                                        # xmm0 = mem[0],zero
+	leaq	.L.str.114(%rip), %rdi
+	movb	$1, %al
+	callq	printf@PLT
+	movl	-76(%rbp), %ecx                 # 4-byte Reload
+	movl	$2147483648, %eax               # imm = 0x80000000
+	shrl	$9, %eax
 	addl	%ecx, %eax
-	movswl	params_kVdd(%rip), %ecx
-	cltd
-	idivl	%ecx
-	movl	$1771674009, %ecx               # imm = 0x69999999
-	shrl	$15, %ecx
-	addl	%ecx, %eax
-	shll	$2, %eax
-	addq	$48, %rsp
+	cvtsi2sd	%eax, %xmm0
+	movsd	.LCPI49_4(%rip), %xmm1          # xmm1 = mem[0],zero
+	divsd	%xmm1, %xmm0
+	cvtsi2ss	%eax, %xmm1
+	movss	.LCPI49_3(%rip), %xmm2          # xmm2 = mem[0],zero,zero,zero
+	divss	%xmm2, %xmm1
+	movss	%xmm1, -68(%rbp)                # 4-byte Spill
+	leaq	.L.str.115(%rip), %rdi
+	movb	$1, %al
+	callq	printf@PLT
+	movss	-72(%rbp), %xmm0                # 4-byte Reload
+                                        # xmm0 = mem[0],zero,zero,zero
+	movss	-68(%rbp), %xmm1                # 4-byte Reload
+                                        # xmm1 = mem[0],zero,zero,zero
+	divss	%xmm1, %xmm0
+	movss	%xmm0, -64(%rbp)                # 4-byte Spill
+	cvtss2sd	%xmm0, %xmm0
+	leaq	.L.str.116(%rip), %rdi
+	movb	$1, %al
+	callq	printf@PLT
+	movss	-64(%rbp), %xmm0                # 4-byte Reload
+                                        # xmm0 = mem[0],zero,zero,zero
+	movzwl	params_vPTAT25(%rip), %eax
+	cvtsi2ss	%eax, %xmm1
+	subss	%xmm1, %xmm0
+	movss	%xmm0, -60(%rbp)                # 4-byte Spill
+	cvtss2sd	%xmm0, %xmm0
+	leaq	.L.str.117(%rip), %rdi
+	movb	$1, %al
+	callq	printf@PLT
+	movss	-60(%rbp), %xmm0                # 4-byte Reload
+                                        # xmm0 = mem[0],zero,zero,zero
+	movq	params_KtPTAT.fixp@GOTPCREL(%rip), %rax
+	cvtsi2ssl	(%rax), %xmm1
+	movss	.LCPI49_2(%rip), %xmm2          # xmm2 = mem[0],zero,zero,zero
+	divss	%xmm2, %xmm1
+	divss	%xmm1, %xmm0
+	movss	.LCPI49_1(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
+	addss	%xmm1, %xmm0
+	movss	%xmm0, -56(%rbp)                # 4-byte Spill
+	cvtss2sd	%xmm0, %xmm0
+	leaq	.L.str.118(%rip), %rdi
+	movb	$1, %al
+	callq	printf@PLT
+	movss	-56(%rbp), %xmm0                # 4-byte Reload
+                                        # xmm0 = mem[0],zero,zero,zero
+	addq	$144, %rsp
 	popq	%rbp
 	.cfi_def_cfa %rsp, 8
 	retq
 .Lfunc_end49:
-	.size	_Z15MLX90640_GetVddPKt.1_s16_16fixp, .Lfunc_end49-_Z15MLX90640_GetVddPKt.1_s16_16fixp
+	.size	_Z14MLX90640_GetTaPKt.6_1flp, .Lfunc_end49-_Z14MLX90640_GetTaPKt.6_1flp
 	.cfi_endproc
                                         # -- End function
 	.section	.rodata.cst4,"aM",@progbits,4
@@ -8961,17 +8927,17 @@ _Z8printPPMP8_IO_FILEPfiiff.13_fixp:    # @_Z8printPPMP8_IO_FILEPfiiff.13_fixp
 	movl	%ecx, -20(%rbp)                 # 4-byte Spill
 	movl	%r8d, -32(%rbp)                 # 4-byte Spill
 	movl	%r9d, -28(%rbp)                 # 4-byte Spill
-	leaq	.L.str.125(%rip), %rsi
+	leaq	.L.str.126(%rip), %rsi
 	movb	$0, %al
 	callq	fprintf@PLT
 	movl	-24(%rbp), %edx                 # 4-byte Reload
 	movl	-20(%rbp), %ecx                 # 4-byte Reload
 	movq	-16(%rbp), %rdi                 # 8-byte Reload
-	leaq	.L.str.126(%rip), %rsi
+	leaq	.L.str.127(%rip), %rsi
 	movb	$0, %al
 	callq	fprintf@PLT
 	movq	-16(%rbp), %rdi                 # 8-byte Reload
-	leaq	.L.str.127(%rip), %rsi
+	leaq	.L.str.128(%rip), %rsi
 	movb	$0, %al
 	callq	fprintf@PLT
 	xorl	%eax, %eax
@@ -9289,7 +9255,7 @@ _Z8printPPMP8_IO_FILEPfiiff.13_fixp:    # @_Z8printPPMP8_IO_FILEPfiiff.13_fixp
 	movss	.LCPI52_5(%rip), %xmm0          # xmm0 = mem[0],zero,zero,zero
 	mulss	%xmm1, %xmm0
 	cvttss2si	%xmm0, %r8d
-	leaq	.L.str.128(%rip), %rsi
+	leaq	.L.str.129(%rip), %rsi
 	movb	$0, %al
 	callq	fprintf@PLT
 # %bb.39:                               #   in Loop: Header=BB52_3 Depth=2
@@ -9299,7 +9265,7 @@ _Z8printPPMP8_IO_FILEPfiiff.13_fixp:    # @_Z8printPPMP8_IO_FILEPfiiff.13_fixp
 	jmp	.LBB52_3
 .LBB52_40:                              #   in Loop: Header=BB52_1 Depth=1
 	movq	-16(%rbp), %rdi                 # 8-byte Reload
-	leaq	.L.str.129(%rip), %rsi
+	leaq	.L.str.130(%rip), %rsi
 	movb	$0, %al
 	callq	fprintf@PLT
 # %bb.41:                               #   in Loop: Header=BB52_1 Depth=1
@@ -9753,7 +9719,7 @@ _Z14MLX90640_GetTaPKt.2.34_s16_16fixp:  # @_Z14MLX90640_GetTaPKt.2.34_s16_16fixp
 	.cfi_def_cfa_register %rbp
 	subq	$144, %rsp
 	movq	%rdi, -16(%rbp)                 # 8-byte Spill
-	leaq	.L.str.102(%rip), %rdi
+	leaq	.L.str.103(%rip), %rdi
 	movb	$0, %al
 	callq	printf@PLT
 	movq	-16(%rbp), %rdi                 # 8-byte Reload
@@ -9766,7 +9732,7 @@ _Z14MLX90640_GetTaPKt.2.34_s16_16fixp:  # @_Z14MLX90640_GetTaPKt.2.34_s16_16fixp
 	movsd	.LCPI60_0(%rip), %xmm2          # xmm2 = mem[0],zero
 	divsd	%xmm2, %xmm1
 	movsd	%xmm1, -24(%rbp)                # 8-byte Spill
-	leaq	.L.str.103(%rip), %rdi
+	leaq	.L.str.104(%rip), %rdi
 	movb	$1, %al
 	callq	printf@PLT
 	movq	-16(%rbp), %rdi                 # 8-byte Reload
@@ -9822,7 +9788,7 @@ _Z14MLX90640_GetTaPKt.2.34_s16_16fixp:  # @_Z14MLX90640_GetTaPKt.2.34_s16_16fixp
 	movsd	.LCPI60_8(%rip), %xmm1          # xmm1 = mem[0],zero
 	movsd	%xmm1, -136(%rbp)               # 8-byte Spill
 	divsd	%xmm1, %xmm0
-	leaq	.L.str.104(%rip), %rdi
+	leaq	.L.str.105(%rip), %rdi
 	movb	$1, %al
 	movb	%al, -105(%rbp)                 # 1-byte Spill
 	callq	printf@PLT
@@ -9837,7 +9803,7 @@ _Z14MLX90640_GetTaPKt.2.34_s16_16fixp:  # @_Z14MLX90640_GetTaPKt.2.34_s16_16fixp
 	movl	%ecx, -124(%rbp)                # 4-byte Spill
 	cvtsi2sd	%ecx, %xmm0
 	divsd	%xmm1, %xmm0
-	leaq	.L.str.105(%rip), %rdi
+	leaq	.L.str.106(%rip), %rdi
 	callq	printf@PLT
 	movl	-124(%rbp), %ecx                # 4-byte Reload
                                         # kill: def $edx killed $eax
@@ -9855,7 +9821,7 @@ _Z14MLX90640_GetTaPKt.2.34_s16_16fixp:  # @_Z14MLX90640_GetTaPKt.2.34_s16_16fixp
 	movss	.LCPI60_10(%rip), %xmm2         # xmm2 = mem[0],zero,zero,zero
 	divss	%xmm2, %xmm1
 	movss	%xmm1, -112(%rbp)               # 4-byte Spill
-	leaq	.L.str.106(%rip), %rdi
+	leaq	.L.str.107(%rip), %rdi
 	callq	printf@PLT
 	movss	-112(%rbp), %xmm1               # 4-byte Reload
                                         # xmm1 = mem[0],zero,zero,zero
@@ -9866,7 +9832,7 @@ _Z14MLX90640_GetTaPKt.2.34_s16_16fixp:  # @_Z14MLX90640_GetTaPKt.2.34_s16_16fixp
 	movss	.LCPI60_11(%rip), %xmm2         # xmm2 = mem[0],zero,zero,zero
 	mulss	%xmm2, %xmm1
 	movss	%xmm1, -72(%rbp)                # 4-byte Spill
-	leaq	.L.str.107(%rip), %rdi
+	leaq	.L.str.108(%rip), %rdi
 	callq	printf@PLT
                                         # kill: def $ecx killed $eax
 	movq	-104(%rbp), %rax                # 8-byte Reload
@@ -9875,13 +9841,13 @@ _Z14MLX90640_GetTaPKt.2.34_s16_16fixp:  # @_Z14MLX90640_GetTaPKt.2.34_s16_16fixp
 	cvtsi2sd	%rax, %xmm0
 	movsd	.LCPI60_7(%rip), %xmm1          # xmm1 = mem[0],zero
 	divsd	%xmm1, %xmm0
-	leaq	.L.str.108(%rip), %rdi
+	leaq	.L.str.109(%rip), %rdi
 	movb	$1, %al
 	callq	printf@PLT
 	movss	-72(%rbp), %xmm0                # 4-byte Reload
                                         # xmm0 = mem[0],zero,zero,zero
 	cvtss2sd	%xmm0, %xmm0
-	leaq	.L.str.109(%rip), %rdi
+	leaq	.L.str.110(%rip), %rdi
 	movb	$1, %al
 	callq	printf@PLT
                                         # kill: def $ecx killed $eax
@@ -9893,7 +9859,7 @@ _Z14MLX90640_GetTaPKt.2.34_s16_16fixp:  # @_Z14MLX90640_GetTaPKt.2.34_s16_16fixp
 	cvtsi2sd	%eax, %xmm0
 	movsd	.LCPI60_0(%rip), %xmm1          # xmm1 = mem[0],zero
 	divsd	%xmm1, %xmm0
-	leaq	.L.str.110(%rip), %rdi
+	leaq	.L.str.111(%rip), %rdi
 	movb	$1, %al
 	callq	printf@PLT
 	movl	-92(%rbp), %ecx                 # 4-byte Reload
@@ -9912,17 +9878,17 @@ _Z14MLX90640_GetTaPKt.2.34_s16_16fixp:  # @_Z14MLX90640_GetTaPKt.2.34_s16_16fixp
 	cvtsi2sdl	(%rax), %xmm0
 	movsd	.LCPI60_6(%rip), %xmm1          # xmm1 = mem[0],zero
 	divsd	%xmm1, %xmm0
-	leaq	.L.str.111(%rip), %rdi
+	leaq	.L.str.112(%rip), %rdi
 	movb	$1, %al
 	callq	printf@PLT
 	movsd	-24(%rbp), %xmm0                # 8-byte Reload
                                         # xmm0 = mem[0],zero
-	leaq	.L.str.112(%rip), %rdi
+	leaq	.L.str.113(%rip), %rdi
 	movb	$1, %al
 	callq	printf@PLT
 	movsd	-88(%rbp), %xmm0                # 8-byte Reload
                                         # xmm0 = mem[0],zero
-	leaq	.L.str.113(%rip), %rdi
+	leaq	.L.str.114(%rip), %rdi
 	movb	$1, %al
 	callq	printf@PLT
 	movl	-76(%rbp), %ecx                 # 4-byte Reload
@@ -9936,7 +9902,7 @@ _Z14MLX90640_GetTaPKt.2.34_s16_16fixp:  # @_Z14MLX90640_GetTaPKt.2.34_s16_16fixp
 	movss	.LCPI60_4(%rip), %xmm2          # xmm2 = mem[0],zero,zero,zero
 	divss	%xmm2, %xmm1
 	movss	%xmm1, -68(%rbp)                # 4-byte Spill
-	leaq	.L.str.114(%rip), %rdi
+	leaq	.L.str.115(%rip), %rdi
 	movb	$1, %al
 	callq	printf@PLT
 	movss	-72(%rbp), %xmm0                # 4-byte Reload
@@ -9946,7 +9912,7 @@ _Z14MLX90640_GetTaPKt.2.34_s16_16fixp:  # @_Z14MLX90640_GetTaPKt.2.34_s16_16fixp
 	divss	%xmm1, %xmm0
 	movss	%xmm0, -64(%rbp)                # 4-byte Spill
 	cvtss2sd	%xmm0, %xmm0
-	leaq	.L.str.115(%rip), %rdi
+	leaq	.L.str.116(%rip), %rdi
 	movb	$1, %al
 	callq	printf@PLT
 	movss	-64(%rbp), %xmm0                # 4-byte Reload
@@ -9956,7 +9922,7 @@ _Z14MLX90640_GetTaPKt.2.34_s16_16fixp:  # @_Z14MLX90640_GetTaPKt.2.34_s16_16fixp
 	subss	%xmm1, %xmm0
 	movss	%xmm0, -60(%rbp)                # 4-byte Spill
 	cvtss2sd	%xmm0, %xmm0
-	leaq	.L.str.116(%rip), %rdi
+	leaq	.L.str.117(%rip), %rdi
 	movb	$1, %al
 	callq	printf@PLT
 	movss	-60(%rbp), %xmm0                # 4-byte Reload
@@ -9973,7 +9939,7 @@ _Z14MLX90640_GetTaPKt.2.34_s16_16fixp:  # @_Z14MLX90640_GetTaPKt.2.34_s16_16fixp
 	cvttss2si	%xmm1, %eax
 	movl	%eax, -56(%rbp)                 # 4-byte Spill
 	cvtss2sd	%xmm0, %xmm0
-	leaq	.L.str.117(%rip), %rdi
+	leaq	.L.str.118(%rip), %rdi
 	movb	$1, %al
 	callq	printf@PLT
                                         # kill: def $ecx killed $eax
@@ -10769,110 +10735,110 @@ maxt5:
 	.asciz	"taTr %.10f\n"
 	.size	.L.str.94, 12
 
-	.type	.L.str.102,@object              # @.str.102
-.L.str.102:
-	.asciz	"getVdd...\n"
-	.size	.L.str.102, 11
-
 	.type	.L.str.103,@object              # @.str.103
 .L.str.103:
-	.asciz	"vdd = %e\n"
-	.size	.L.str.103, 10
+	.asciz	"getVdd...\n"
+	.size	.L.str.103, 11
 
 	.type	.L.str.104,@object              # @.str.104
 .L.str.104:
-	.asciz	"ptatArt1= %.10f\n"
-	.size	.L.str.104, 17
+	.asciz	"vdd = %e\n"
+	.size	.L.str.104, 10
 
 	.type	.L.str.105,@object              # @.str.105
 .L.str.105:
-	.asciz	"ptatArt2= %.10f\n"
+	.asciz	"ptatArt1= %.10f\n"
 	.size	.L.str.105, 17
 
 	.type	.L.str.106,@object              # @.str.106
 .L.str.106:
-	.asciz	"ptatArt3= %.10f\n"
+	.asciz	"ptatArt2= %.10f\n"
 	.size	.L.str.106, 17
 
 	.type	.L.str.107,@object              # @.str.107
 .L.str.107:
-	.asciz	"ptat= %.10f\n"
-	.size	.L.str.107, 13
+	.asciz	"ptatArt3= %.10f\n"
+	.size	.L.str.107, 17
 
 	.type	.L.str.108,@object              # @.str.108
 .L.str.108:
-	.asciz	"alphaptat= %.10f\n"
-	.size	.L.str.108, 18
+	.asciz	"ptat= %.10f\n"
+	.size	.L.str.108, 13
 
 	.type	.L.str.109,@object              # @.str.109
 .L.str.109:
-	.asciz	"ptatArt= %.10f\n"
-	.size	.L.str.109, 16
+	.asciz	"alphaptat= %.10f\n"
+	.size	.L.str.109, 18
 
 	.type	.L.str.110,@object              # @.str.110
 .L.str.110:
-	.asciz	"vd1= %.10f\n"
-	.size	.L.str.110, 12
+	.asciz	"ptatArt= %.10f\n"
+	.size	.L.str.110, 16
 
 	.type	.L.str.111,@object              # @.str.111
 .L.str.111:
-	.asciz	"kvPTAT= %.10f\n"
-	.size	.L.str.111, 15
+	.asciz	"vd1= %.10f\n"
+	.size	.L.str.111, 12
 
 	.type	.L.str.112,@object              # @.str.112
 .L.str.112:
-	.asciz	"vdd= %.10f\n"
-	.size	.L.str.112, 12
+	.asciz	"kvPTAT= %.10f\n"
+	.size	.L.str.112, 15
 
 	.type	.L.str.113,@object              # @.str.113
 .L.str.113:
-	.asciz	"ta1= %.10f\n"
+	.asciz	"vdd= %.10f\n"
 	.size	.L.str.113, 12
 
 	.type	.L.str.114,@object              # @.str.114
 .L.str.114:
-	.asciz	"ta2= %.10f\n"
+	.asciz	"ta1= %.10f\n"
 	.size	.L.str.114, 12
 
 	.type	.L.str.115,@object              # @.str.115
 .L.str.115:
-	.asciz	"ta3= %.10f\n"
+	.asciz	"ta2= %.10f\n"
 	.size	.L.str.115, 12
 
 	.type	.L.str.116,@object              # @.str.116
 .L.str.116:
-	.asciz	"taBDiv= %.10f\n"
-	.size	.L.str.116, 15
+	.asciz	"ta3= %.10f\n"
+	.size	.L.str.116, 12
 
 	.type	.L.str.117,@object              # @.str.117
 .L.str.117:
-	.asciz	"taADiv= %.10f\n"
+	.asciz	"taBDiv= %.10f\n"
 	.size	.L.str.117, 15
 
-	.type	.L.str.125,@object              # @.str.125
-.L.str.125:
-	.asciz	"P3\n"
-	.size	.L.str.125, 4
+	.type	.L.str.118,@object              # @.str.118
+.L.str.118:
+	.asciz	"taADiv= %.10f\n"
+	.size	.L.str.118, 15
 
 	.type	.L.str.126,@object              # @.str.126
 .L.str.126:
-	.asciz	"%d %d\n"
-	.size	.L.str.126, 7
+	.asciz	"P3\n"
+	.size	.L.str.126, 4
 
 	.type	.L.str.127,@object              # @.str.127
 .L.str.127:
-	.asciz	"255\n"
-	.size	.L.str.127, 5
+	.asciz	"%d %d\n"
+	.size	.L.str.127, 7
 
 	.type	.L.str.128,@object              # @.str.128
 .L.str.128:
-	.asciz	"%d %d %d "
-	.size	.L.str.128, 10
+	.asciz	"255\n"
+	.size	.L.str.128, 5
 
 	.type	.L.str.129,@object              # @.str.129
 .L.str.129:
+	.asciz	"%d %d %d "
+	.size	.L.str.129, 10
+
+	.type	.L.str.130,@object              # @.str.130
+.L.str.130:
 	.asciz	"\n"
-	.size	.L.str.129, 2
+	.size	.L.str.130, 2
 
 	.type	_ZL6eeprom,@object              # @_ZL6eeprom
 	.section	.rodata,"a",@progbits
@@ -11712,807 +11678,807 @@ _ZL6eeprom:
 	.short	8082                            # 0x1f92
 	.size	_ZL6eeprom, 1664
 
-	.type	.L.str.131,@object              # @.str.131
+	.type	.L.str.132,@object              # @.str.132
 	.section	.rodata.str1.1,"aMS",@progbits,1
-.L.str.131:
+.L.str.132:
 	.asciz	"getTa...\n"
-	.size	.L.str.131, 10
+	.size	.L.str.132, 10
 
 	.type	_ZL9subframe1,@object           # @_ZL9subframe1
 	.section	.rodata,"a",@progbits
 	.p2align	4
 _ZL9subframe1:
+	.short	65447                           # 0xffa7
+	.short	65442                           # 0xffa2
+	.short	65446                           # 0xffa6
+	.short	65433                           # 0xff99
+	.short	65434                           # 0xff9a
+	.short	65426                           # 0xff92
+	.short	65410                           # 0xff82
+	.short	65386                           # 0xff6a
+	.short	65393                           # 0xff71
+	.short	65381                           # 0xff65
+	.short	65385                           # 0xff69
+	.short	65373                           # 0xff5d
+	.short	65388                           # 0xff6c
+	.short	65370                           # 0xff5a
+	.short	65378                           # 0xff62
+	.short	65360                           # 0xff50
+	.short	65384                           # 0xff68
+	.short	65365                           # 0xff55
+	.short	65418                           # 0xff8a
+	.short	65417                           # 0xff89
+	.short	65444                           # 0xffa4
+	.short	65427                           # 0xff93
+	.short	65443                           # 0xffa3
+	.short	65424                           # 0xff90
+	.short	65446                           # 0xffa6
+	.short	65431                           # 0xff97
+	.short	65442                           # 0xffa2
+	.short	65425                           # 0xff91
+	.short	65443                           # 0xffa3
+	.short	65427                           # 0xff93
+	.short	65446                           # 0xffa6
+	.short	65417                           # 0xff89
+	.short	65438                           # 0xff9e
+	.short	65431                           # 0xff97
+	.short	65428                           # 0xff94
+	.short	65430                           # 0xff96
+	.short	65425                           # 0xff91
+	.short	65416                           # 0xff88
+	.short	65391                           # 0xff6f
+	.short	65380                           # 0xff64
+	.short	65383                           # 0xff67
+	.short	65371                           # 0xff5b
+	.short	65372                           # 0xff5c
+	.short	65368                           # 0xff58
+	.short	65375                           # 0xff5f
+	.short	65357                           # 0xff4d
+	.short	65358                           # 0xff4e
+	.short	65356                           # 0xff4c
+	.short	65371                           # 0xff5b
+	.short	65356                           # 0xff4c
+	.short	65397                           # 0xff75
+	.short	65416                           # 0xff88
+	.short	65436                           # 0xff9c
+	.short	65420                           # 0xff8c
+	.short	65430                           # 0xff96
+	.short	65424                           # 0xff90
+	.short	65439                           # 0xff9f
+	.short	65422                           # 0xff8e
+	.short	65428                           # 0xff94
+	.short	65425                           # 0xff91
+	.short	65438                           # 0xff9e
+	.short	65420                           # 0xff8c
+	.short	65433                           # 0xff99
+	.short	65418                           # 0xff8a
+	.short	65446                           # 0xffa6
+	.short	65438                           # 0xff9e
+	.short	65443                           # 0xffa3
+	.short	65432                           # 0xff98
+	.short	65430                           # 0xff96
+	.short	65420                           # 0xff8c
+	.short	65402                           # 0xff7a
+	.short	65381                           # 0xff65
+	.short	65384                           # 0xff68
+	.short	65372                           # 0xff5c
+	.short	65386                           # 0xff6a
+	.short	65375                           # 0xff5f
+	.short	65385                           # 0xff69
+	.short	65370                           # 0xff5a
+	.short	65377                           # 0xff61
+	.short	65357                           # 0xff4d
+	.short	65370                           # 0xff5a
+	.short	65359                           # 0xff4f
+	.short	65411                           # 0xff83
+	.short	65417                           # 0xff89
+	.short	65439                           # 0xff9f
+	.short	65427                           # 0xff93
+	.short	65443                           # 0xffa3
+	.short	65424                           # 0xff90
+	.short	65444                           # 0xffa4
+	.short	65426                           # 0xff92
 	.short	65441                           # 0xffa1
-	.short	65437                           # 0xff9d
-	.short	65440                           # 0xffa0
+	.short	65422                           # 0xff8e
+	.short	65441                           # 0xffa1
+	.short	65424                           # 0xff90
+	.short	65443                           # 0xffa3
+	.short	65417                           # 0xff89
+	.short	65436                           # 0xff9c
 	.short	65429                           # 0xff95
+	.short	65427                           # 0xff93
+	.short	65428                           # 0xff94
+	.short	65423                           # 0xff8f
+	.short	65410                           # 0xff82
+	.short	65386                           # 0xff6a
+	.short	65377                           # 0xff61
+	.short	65375                           # 0xff5f
+	.short	65366                           # 0xff56
+	.short	65376                           # 0xff60
+	.short	65372                           # 0xff5c
+	.short	65372                           # 0xff5c
+	.short	65358                           # 0xff4e
+	.short	65359                           # 0xff4f
+	.short	65354                           # 0xff4a
+	.short	65362                           # 0xff52
+	.short	65350                           # 0xff46
+	.short	65391                           # 0xff6f
+	.short	65415                           # 0xff87
+	.short	65435                           # 0xff9b
+	.short	65421                           # 0xff8d
+	.short	65429                           # 0xff95
+	.short	65423                           # 0xff8f
+	.short	65437                           # 0xff9d
+	.short	65419                           # 0xff8b
+	.short	65430                           # 0xff96
+	.short	65421                           # 0xff8d
+	.short	65434                           # 0xff9a
+	.short	65417                           # 0xff89
+	.short	65431                           # 0xff97
+	.short	65416                           # 0xff88
+	.short	65449                           # 0xffa9
+	.short	65437                           # 0xff9d
+	.short	65441                           # 0xffa1
+	.short	65428                           # 0xff94
+	.short	65433                           # 0xff99
+	.short	65419                           # 0xff8b
+	.short	65397                           # 0xff75
+	.short	65378                           # 0xff62
+	.short	65388                           # 0xff6c
+	.short	65375                           # 0xff5f
+	.short	65382                           # 0xff66
+	.short	65366                           # 0xff56
+	.short	65374                           # 0xff5e
+	.short	65360                           # 0xff50
+	.short	65364                           # 0xff54
+	.short	65348                           # 0xff44
+	.short	65367                           # 0xff57
+	.short	65352                           # 0xff48
+	.short	65403                           # 0xff7b
+	.short	65412                           # 0xff84
+	.short	65446                           # 0xffa6
+	.short	65431                           # 0xff97
+	.short	65443                           # 0xffa3
+	.short	65424                           # 0xff90
+	.short	65444                           # 0xffa4
+	.short	65423                           # 0xff8f
+	.short	65441                           # 0xffa1
+	.short	65423                           # 0xff8f
+	.short	65440                           # 0xffa0
+	.short	65426                           # 0xff92
+	.short	65446                           # 0xffa6
+	.short	65417                           # 0xff89
+	.short	65438                           # 0xff9e
+	.short	65426                           # 0xff92
+	.short	65423                           # 0xff8f
+	.short	65424                           # 0xff90
+	.short	65421                           # 0xff8d
+	.short	65409                           # 0xff81
+	.short	65381                           # 0xff65
+	.short	65374                           # 0xff5e
+	.short	65379                           # 0xff63
+	.short	65367                           # 0xff57
+	.short	65367                           # 0xff57
+	.short	65363                           # 0xff53
+	.short	65367                           # 0xff57
+	.short	65351                           # 0xff47
+	.short	65353                           # 0xff49
+	.short	65347                           # 0xff43
+	.short	65354                           # 0xff4a
+	.short	65343                           # 0xff3f
+	.short	65384                           # 0xff68
+	.short	65412                           # 0xff84
+	.short	65438                           # 0xff9e
+	.short	65425                           # 0xff91
+	.short	65428                           # 0xff94
+	.short	65424                           # 0xff90
+	.short	65436                           # 0xff9c
+	.short	65416                           # 0xff88
+	.short	65427                           # 0xff93
+	.short	65421                           # 0xff8d
+	.short	65434                           # 0xff9a
+	.short	65416                           # 0xff88
+	.short	65432                           # 0xff98
+	.short	65415                           # 0xff87
+	.short	65440                           # 0xffa0
+	.short	65435                           # 0xff9b
+	.short	65438                           # 0xff9e
+	.short	65427                           # 0xff93
+	.short	65428                           # 0xff94
+	.short	65418                           # 0xff8a
+	.short	65393                           # 0xff71
+	.short	65372                           # 0xff5c
+	.short	65376                           # 0xff60
+	.short	65371                           # 0xff5b
+	.short	65381                           # 0xff65
+	.short	65368                           # 0xff58
+	.short	65373                           # 0xff5d
+	.short	65360                           # 0xff50
+	.short	65370                           # 0xff5a
+	.short	65355                           # 0xff4b
+	.short	65357                           # 0xff4d
+	.short	65348                           # 0xff44
+	.short	65395                           # 0xff73
+	.short	65409                           # 0xff81
+	.short	65443                           # 0xffa3
+	.short	65431                           # 0xff97
+	.short	65443                           # 0xffa3
+	.short	65425                           # 0xff91
+	.short	65446                           # 0xffa6
+	.short	65426                           # 0xff92
+	.short	65442                           # 0xffa2
+	.short	65420                           # 0xff8c
+	.short	65439                           # 0xff9f
+	.short	65425                           # 0xff91
+	.short	65444                           # 0xffa4
+	.short	65415                           # 0xff87
+	.short	65430                           # 0xff96
+	.short	65423                           # 0xff8f
+	.short	65421                           # 0xff8d
+	.short	65422                           # 0xff8e
+	.short	65416                           # 0xff88
+	.short	65406                           # 0xff7e
+	.short	65375                           # 0xff5f
+	.short	65366                           # 0xff56
+	.short	65366                           # 0xff56
+	.short	65357                           # 0xff4d
+	.short	65360                           # 0xff50
+	.short	65361                           # 0xff51
+	.short	65365                           # 0xff55
+	.short	65353                           # 0xff49
+	.short	65359                           # 0xff4f
+	.short	65354                           # 0xff4a
+	.short	65346                           # 0xff42
+	.short	65337                           # 0xff39
+	.short	65374                           # 0xff5e
+	.short	65405                           # 0xff7d
+	.short	65436                           # 0xff9c
+	.short	65424                           # 0xff90
+	.short	65426                           # 0xff92
+	.short	65421                           # 0xff8d
+	.short	65438                           # 0xff9e
+	.short	65417                           # 0xff89
+	.short	65427                           # 0xff93
+	.short	65421                           # 0xff8d
+	.short	65432                           # 0xff98
+	.short	65417                           # 0xff89
+	.short	65429                           # 0xff95
+	.short	65414                           # 0xff86
+	.short	65438                           # 0xff9e
+	.short	65432                           # 0xff98
+	.short	65437                           # 0xff9d
+	.short	65426                           # 0xff92
+	.short	65427                           # 0xff93
+	.short	65419                           # 0xff8b
+	.short	65397                           # 0xff75
+	.short	65379                           # 0xff63
+	.short	65380                           # 0xff64
+	.short	65363                           # 0xff53
+	.short	65371                           # 0xff5b
+	.short	65358                           # 0xff4e
+	.short	65364                           # 0xff54
+	.short	65355                           # 0xff4b
+	.short	65364                           # 0xff54
+	.short	65352                           # 0xff48
+	.short	65357                           # 0xff4d
+	.short	65341                           # 0xff3d
+	.short	65388                           # 0xff6c
+	.short	65406                           # 0xff7e
+	.short	65442                           # 0xffa2
+	.short	65429                           # 0xff95
+	.short	65441                           # 0xffa1
+	.short	65420                           # 0xff8c
+	.short	65442                           # 0xffa2
+	.short	65425                           # 0xff91
+	.short	65439                           # 0xff9f
+	.short	65421                           # 0xff8d
+	.short	65438                           # 0xff9e
+	.short	65425                           # 0xff91
+	.short	65445                           # 0xffa5
+	.short	65413                           # 0xff85
+	.short	65427                           # 0xff93
+	.short	65420                           # 0xff8c
+	.short	65420                           # 0xff8c
+	.short	65421                           # 0xff8d
+	.short	65417                           # 0xff89
+	.short	65408                           # 0xff80
+	.short	65378                           # 0xff62
+	.short	65372                           # 0xff5c
+	.short	65373                           # 0xff5d
+	.short	65352                           # 0xff48
+	.short	65354                           # 0xff4a
+	.short	65353                           # 0xff49
+	.short	65352                           # 0xff48
+	.short	65344                           # 0xff40
+	.short	65341                           # 0xff3d
+	.short	65344                           # 0xff40
+	.short	65349                           # 0xff45
+	.short	65330                           # 0xff32
+	.short	65371                           # 0xff5b
+	.short	65404                           # 0xff7c
+	.short	65433                           # 0xff99
+	.short	65421                           # 0xff8d
+	.short	65424                           # 0xff90
+	.short	65420                           # 0xff8c
+	.short	65435                           # 0xff9b
+	.short	65415                           # 0xff87
+	.short	65423                           # 0xff8f
+	.short	65416                           # 0xff88
+	.short	65431                           # 0xff97
+	.short	65416                           # 0xff88
+	.short	65430                           # 0xff96
+	.short	65410                           # 0xff82
+	.short	65442                           # 0xffa2
+	.short	65434                           # 0xff9a
+	.short	65437                           # 0xff9d
+	.short	65429                           # 0xff95
+	.short	65434                           # 0xff9a
+	.short	65419                           # 0xff8b
+	.short	65389                           # 0xff6d
+	.short	65371                           # 0xff5b
+	.short	65383                           # 0xff67
+	.short	65379                           # 0xff63
+	.short	65372                           # 0xff5c
+	.short	65359                           # 0xff4f
+	.short	65366                           # 0xff56
+	.short	65354                           # 0xff4a
+	.short	65361                           # 0xff51
+	.short	65350                           # 0xff46
+	.short	65370                           # 0xff5a
+	.short	65358                           # 0xff4e
+	.short	65391                           # 0xff6f
+	.short	65406                           # 0xff7e
+	.short	65442                           # 0xffa2
+	.short	65430                           # 0xff96
+	.short	65441                           # 0xffa1
+	.short	65425                           # 0xff91
+	.short	65440                           # 0xffa0
+	.short	65424                           # 0xff90
+	.short	65438                           # 0xff9e
+	.short	65419                           # 0xff8b
+	.short	65436                           # 0xff9c
+	.short	65424                           # 0xff90
+	.short	65439                           # 0xff9f
+	.short	65413                           # 0xff85
+	.short	65430                           # 0xff96
+	.short	65419                           # 0xff8b
+	.short	65419                           # 0xff8b
+	.short	65419                           # 0xff8b
+	.short	65420                           # 0xff8c
+	.short	65405                           # 0xff7d
+	.short	65370                           # 0xff5a
+	.short	65369                           # 0xff59
+	.short	65375                           # 0xff5f
+	.short	65371                           # 0xff5b
+	.short	65359                           # 0xff4f
+	.short	65356                           # 0xff4c
+	.short	65360                           # 0xff50
+	.short	65346                           # 0xff42
+	.short	65352                           # 0xff48
+	.short	65349                           # 0xff45
+	.short	65365                           # 0xff55
+	.short	65350                           # 0xff46
+	.short	65379                           # 0xff63
+	.short	65403                           # 0xff7b
+	.short	65433                           # 0xff99
+	.short	65420                           # 0xff8c
+	.short	65423                           # 0xff8f
+	.short	65420                           # 0xff8c
+	.short	65429                           # 0xff95
+	.short	65414                           # 0xff86
+	.short	65422                           # 0xff8e
+	.short	65413                           # 0xff85
+	.short	65426                           # 0xff92
+	.short	65414                           # 0xff86
+	.short	65426                           # 0xff92
+	.short	65410                           # 0xff82
 	.short	65435                           # 0xff9b
 	.short	65432                           # 0xff98
-	.short	65438                           # 0xff9e
-	.short	65424                           # 0xff90
-	.short	65433                           # 0xff99
-	.short	65422                           # 0xff8e
-	.short	65430                           # 0xff96
-	.short	65416                           # 0xff88
-	.short	65430                           # 0xff96
-	.short	65417                           # 0xff89
+	.short	65435                           # 0xff9b
 	.short	65427                           # 0xff93
-	.short	65411                           # 0xff83
-	.short	65429                           # 0xff95
-	.short	65412                           # 0xff84
 	.short	65426                           # 0xff92
-	.short	65409                           # 0xff81
-	.short	65430                           # 0xff96
-	.short	65412                           # 0xff84
-	.short	65427                           # 0xff93
-	.short	65410                           # 0xff82
-	.short	65430                           # 0xff96
-	.short	65412                           # 0xff84
-	.short	65426                           # 0xff92
-	.short	65411                           # 0xff83
+	.short	65421                           # 0xff8d
+	.short	65389                           # 0xff6d
+	.short	65380                           # 0xff64
+	.short	65387                           # 0xff6b
+	.short	65383                           # 0xff67
+	.short	65380                           # 0xff64
+	.short	65363                           # 0xff53
+	.short	65371                           # 0xff5b
+	.short	65362                           # 0xff52
+	.short	65370                           # 0xff5a
+	.short	65358                           # 0xff4e
+	.short	65373                           # 0xff5d
+	.short	65360                           # 0xff50
+	.short	65395                           # 0xff73
+	.short	65406                           # 0xff7e
+	.short	65439                           # 0xff9f
 	.short	65428                           # 0xff94
-	.short	65412                           # 0xff84
-	.short	65434                           # 0xff9a
-	.short	65407                           # 0xff7f
-	.short	65430                           # 0xff96
-	.short	65425                           # 0xff91
-	.short	65425                           # 0xff91
-	.short	65424                           # 0xff90
-	.short	65428                           # 0xff94
+	.short	65439                           # 0xff9f
 	.short	65421                           # 0xff8d
-	.short	65422                           # 0xff8e
-	.short	65419                           # 0xff8b
-	.short	65426                           # 0xff92
-	.short	65412                           # 0xff84
-	.short	65415                           # 0xff87
-	.short	65414                           # 0xff86
-	.short	65420                           # 0xff8c
-	.short	65408                           # 0xff80
-	.short	65414                           # 0xff86
-	.short	65408                           # 0xff80
-	.short	65420                           # 0xff8c
-	.short	65403                           # 0xff7b
-	.short	65411                           # 0xff83
-	.short	65408                           # 0xff80
-	.short	65423                           # 0xff8f
-	.short	65408                           # 0xff80
-	.short	65415                           # 0xff87
-	.short	65409                           # 0xff81
-	.short	65421                           # 0xff8d
-	.short	65404                           # 0xff7c
-	.short	65415                           # 0xff87
-	.short	65407                           # 0xff7f
-	.short	65423                           # 0xff8f
-	.short	65407                           # 0xff7f
-	.short	65421                           # 0xff8d
-	.short	65407                           # 0xff7f
-	.short	65436                           # 0xff9c
-	.short	65432                           # 0xff98
-	.short	65437                           # 0xff9d
-	.short	65428                           # 0xff94
-	.short	65432                           # 0xff98
-	.short	65425                           # 0xff91
-	.short	65433                           # 0xff99
-	.short	65421                           # 0xff8d
-	.short	65426                           # 0xff92
-	.short	65419                           # 0xff8b
-	.short	65428                           # 0xff94
-	.short	65415                           # 0xff87
-	.short	65425                           # 0xff91
-	.short	65413                           # 0xff85
-	.short	65425                           # 0xff91
-	.short	65409                           # 0xff81
-	.short	65423                           # 0xff8f
-	.short	65409                           # 0xff81
-	.short	65422                           # 0xff8e
-	.short	65410                           # 0xff82
-	.short	65421                           # 0xff8d
-	.short	65411                           # 0xff83
-	.short	65424                           # 0xff90
-	.short	65409                           # 0xff81
-	.short	65425                           # 0xff91
-	.short	65407                           # 0xff7f
-	.short	65424                           # 0xff90
-	.short	65405                           # 0xff7d
-	.short	65425                           # 0xff91
-	.short	65408                           # 0xff80
-	.short	65432                           # 0xff98
-	.short	65403                           # 0xff7b
-	.short	65431                           # 0xff97
-	.short	65423                           # 0xff8f
-	.short	65422                           # 0xff8e
-	.short	65424                           # 0xff90
-	.short	65422                           # 0xff8e
-	.short	65415                           # 0xff87
-	.short	65418                           # 0xff8a
-	.short	65415                           # 0xff87
-	.short	65419                           # 0xff8b
-	.short	65411                           # 0xff83
-	.short	65414                           # 0xff86
-	.short	65412                           # 0xff84
-	.short	65416                           # 0xff88
-	.short	65405                           # 0xff7d
-	.short	65412                           # 0xff84
-	.short	65407                           # 0xff7f
-	.short	65415                           # 0xff87
-	.short	65401                           # 0xff79
-	.short	65411                           # 0xff83
-	.short	65404                           # 0xff7c
-	.short	65416                           # 0xff88
-	.short	65404                           # 0xff7c
-	.short	65413                           # 0xff85
-	.short	65407                           # 0xff7f
-	.short	65418                           # 0xff8a
-	.short	65401                           # 0xff79
-	.short	65411                           # 0xff83
-	.short	65402                           # 0xff7a
-	.short	65417                           # 0xff89
-	.short	65402                           # 0xff7a
-	.short	65419                           # 0xff8b
-	.short	65402                           # 0xff7a
 	.short	65441                           # 0xffa1
-	.short	65431                           # 0xff97
-	.short	65437                           # 0xff9d
-	.short	65425                           # 0xff91
-	.short	65432                           # 0xff98
 	.short	65424                           # 0xff90
-	.short	65430                           # 0xff96
-	.short	65420                           # 0xff8c
-	.short	65429                           # 0xff95
-	.short	65417                           # 0xff89
-	.short	65425                           # 0xff91
-	.short	65412                           # 0xff84
-	.short	65424                           # 0xff90
-	.short	65412                           # 0xff84
-	.short	65424                           # 0xff90
-	.short	65409                           # 0xff81
-	.short	65423                           # 0xff8f
-	.short	65408                           # 0xff80
-	.short	65420                           # 0xff8c
-	.short	65407                           # 0xff7f
-	.short	65423                           # 0xff8f
-	.short	65410                           # 0xff82
-	.short	65421                           # 0xff8d
-	.short	65406                           # 0xff7e
-	.short	65422                           # 0xff8e
-	.short	65404                           # 0xff7c
-	.short	65421                           # 0xff8d
-	.short	65404                           # 0xff7c
-	.short	65420                           # 0xff8c
-	.short	65406                           # 0xff7e
-	.short	65430                           # 0xff96
-	.short	65404                           # 0xff7c
-	.short	65431                           # 0xff97
-	.short	65421                           # 0xff8d
-	.short	65419                           # 0xff8b
-	.short	65419                           # 0xff8b
-	.short	65423                           # 0xff8f
-	.short	65414                           # 0xff86
-	.short	65414                           # 0xff86
-	.short	65414                           # 0xff86
-	.short	65417                           # 0xff89
-	.short	65408                           # 0xff80
-	.short	65412                           # 0xff84
-	.short	65408                           # 0xff80
-	.short	65416                           # 0xff88
-	.short	65404                           # 0xff7c
-	.short	65411                           # 0xff83
-	.short	65405                           # 0xff7d
-	.short	65417                           # 0xff89
-	.short	65402                           # 0xff7a
-	.short	65406                           # 0xff7e
-	.short	65401                           # 0xff79
-	.short	65415                           # 0xff87
-	.short	65401                           # 0xff79
-	.short	65407                           # 0xff7f
-	.short	65402                           # 0xff7a
-	.short	65417                           # 0xff89
-	.short	65398                           # 0xff76
-	.short	65408                           # 0xff80
-	.short	65400                           # 0xff78
-	.short	65415                           # 0xff87
-	.short	65400                           # 0xff78
-	.short	65417                           # 0xff89
-	.short	65398                           # 0xff76
-	.short	65434                           # 0xff9a
-	.short	65428                           # 0xff94
-	.short	65433                           # 0xff99
-	.short	65422                           # 0xff8e
-	.short	65426                           # 0xff92
-	.short	65421                           # 0xff8d
-	.short	65428                           # 0xff94
-	.short	65419                           # 0xff8b
-	.short	65428                           # 0xff94
-	.short	65417                           # 0xff89
-	.short	65426                           # 0xff92
-	.short	65414                           # 0xff86
-	.short	65423                           # 0xff8f
-	.short	65412                           # 0xff84
-	.short	65422                           # 0xff8e
-	.short	65408                           # 0xff80
-	.short	65421                           # 0xff8d
-	.short	65408                           # 0xff80
-	.short	65417                           # 0xff89
-	.short	65403                           # 0xff7b
-	.short	65419                           # 0xff8b
-	.short	65408                           # 0xff80
-	.short	65421                           # 0xff8d
-	.short	65404                           # 0xff7c
-	.short	65425                           # 0xff91
-	.short	65406                           # 0xff7e
-	.short	65421                           # 0xff8d
-	.short	65402                           # 0xff7a
-	.short	65421                           # 0xff8d
-	.short	65408                           # 0xff80
-	.short	65429                           # 0xff95
-	.short	65401                           # 0xff79
-	.short	65425                           # 0xff91
-	.short	65417                           # 0xff89
-	.short	65417                           # 0xff89
-	.short	65417                           # 0xff89
-	.short	65420                           # 0xff8c
-	.short	65412                           # 0xff84
-	.short	65412                           # 0xff84
-	.short	65413                           # 0xff85
-	.short	65417                           # 0xff89
-	.short	65407                           # 0xff7f
-	.short	65408                           # 0xff80
-	.short	65409                           # 0xff81
-	.short	65414                           # 0xff86
-	.short	65402                           # 0xff7a
-	.short	65407                           # 0xff7f
-	.short	65405                           # 0xff7d
-	.short	65411                           # 0xff83
-	.short	65399                           # 0xff77
-	.short	65402                           # 0xff7a
-	.short	65399                           # 0xff77
-	.short	65411                           # 0xff83
-	.short	65398                           # 0xff76
-	.short	65406                           # 0xff7e
-	.short	65399                           # 0xff77
-	.short	65417                           # 0xff89
-	.short	65397                           # 0xff75
-	.short	65407                           # 0xff7f
-	.short	65401                           # 0xff79
-	.short	65417                           # 0xff89
-	.short	65399                           # 0xff77
-	.short	65416                           # 0xff88
-	.short	65399                           # 0xff77
-	.short	65432                           # 0xff98
-	.short	65427                           # 0xff93
-	.short	65432                           # 0xff98
-	.short	65422                           # 0xff8e
-	.short	65426                           # 0xff92
-	.short	65423                           # 0xff8f
-	.short	65426                           # 0xff92
-	.short	65416                           # 0xff88
-	.short	65425                           # 0xff91
-	.short	65414                           # 0xff86
-	.short	65423                           # 0xff8f
-	.short	65409                           # 0xff81
-	.short	65420                           # 0xff8c
-	.short	65410                           # 0xff82
-	.short	65419                           # 0xff8b
-	.short	65405                           # 0xff7d
-	.short	65420                           # 0xff8c
-	.short	65408                           # 0xff80
-	.short	65417                           # 0xff89
-	.short	65402                           # 0xff7a
-	.short	65417                           # 0xff89
-	.short	65404                           # 0xff7c
-	.short	65418                           # 0xff8a
-	.short	65401                           # 0xff79
-	.short	65422                           # 0xff8e
-	.short	65402                           # 0xff7a
-	.short	65418                           # 0xff8a
-	.short	65403                           # 0xff7b
-	.short	65420                           # 0xff8c
-	.short	65407                           # 0xff7f
-	.short	65431                           # 0xff97
-	.short	65400                           # 0xff78
-	.short	65422                           # 0xff8e
-	.short	65415                           # 0xff87
-	.short	65414                           # 0xff86
-	.short	65415                           # 0xff87
-	.short	65415                           # 0xff87
-	.short	65410                           # 0xff82
-	.short	65410                           # 0xff82
-	.short	65409                           # 0xff81
-	.short	65416                           # 0xff88
-	.short	65401                           # 0xff79
-	.short	65406                           # 0xff7e
-	.short	65405                           # 0xff7d
-	.short	65410                           # 0xff82
-	.short	65398                           # 0xff76
-	.short	65402                           # 0xff7a
-	.short	65400                           # 0xff78
-	.short	65413                           # 0xff85
-	.short	65398                           # 0xff76
-	.short	65400                           # 0xff78
-	.short	65398                           # 0xff76
-	.short	65410                           # 0xff82
-	.short	65394                           # 0xff72
-	.short	65401                           # 0xff79
-	.short	65397                           # 0xff75
-	.short	65413                           # 0xff85
-	.short	65392                           # 0xff70
-	.short	65403                           # 0xff7b
-	.short	65399                           # 0xff77
-	.short	65415                           # 0xff87
-	.short	65401                           # 0xff79
-	.short	65417                           # 0xff89
-	.short	65397                           # 0xff75
 	.short	65436                           # 0xff9c
+	.short	65421                           # 0xff8d
+	.short	65435                           # 0xff9b
+	.short	65422                           # 0xff8e
+	.short	65440                           # 0xffa0
+	.short	65415                           # 0xff87
+	.short	65422                           # 0xff8e
+	.short	65415                           # 0xff87
+	.short	65416                           # 0xff88
+	.short	65419                           # 0xff8b
+	.short	65416                           # 0xff88
+	.short	65406                           # 0xff7e
+	.short	65373                           # 0xff5d
+	.short	65373                           # 0xff5d
+	.short	65380                           # 0xff64
+	.short	65373                           # 0xff5d
+	.short	65373                           # 0xff5d
+	.short	65361                           # 0xff51
+	.short	65371                           # 0xff5b
+	.short	65352                           # 0xff48
+	.short	65363                           # 0xff53
+	.short	65353                           # 0xff49
+	.short	65370                           # 0xff5a
+	.short	65354                           # 0xff4a
+	.short	65382                           # 0xff66
+	.short	65401                           # 0xff79
+	.short	65428                           # 0xff94
+	.short	65416                           # 0xff88
+	.short	65417                           # 0xff89
+	.short	65416                           # 0xff88
+	.short	65430                           # 0xff96
+	.short	65413                           # 0xff85
+	.short	65419                           # 0xff8b
+	.short	65416                           # 0xff88
+	.short	65427                           # 0xff93
+	.short	65411                           # 0xff83
+	.short	65424                           # 0xff90
+	.short	65409                           # 0xff81
+	.short	65435                           # 0xff9b
+	.short	65433                           # 0xff99
+	.short	65433                           # 0xff99
+	.short	65428                           # 0xff94
+	.short	65429                           # 0xff95
+	.short	65424                           # 0xff90
+	.short	65408                           # 0xff80
+	.short	65402                           # 0xff7a
+	.short	65419                           # 0xff8b
+	.short	65418                           # 0xff8a
 	.short	65425                           # 0xff91
+	.short	65411                           # 0xff83
+	.short	65421                           # 0xff8d
+	.short	65416                           # 0xff88
+	.short	65424                           # 0xff90
+	.short	65413                           # 0xff85
+	.short	65429                           # 0xff95
+	.short	65416                           # 0xff88
+	.short	65424                           # 0xff90
+	.short	65413                           # 0xff85
+	.short	65433                           # 0xff99
+	.short	65419                           # 0xff8b
+	.short	65432                           # 0xff98
+	.short	65419                           # 0xff8b
+	.short	65437                           # 0xff9d
+	.short	65421                           # 0xff8d
+	.short	65434                           # 0xff9a
+	.short	65415                           # 0xff87
+	.short	65434                           # 0xff9a
+	.short	65420                           # 0xff8c
+	.short	65441                           # 0xffa1
+	.short	65412                           # 0xff84
+	.short	65420                           # 0xff8c
+	.short	65413                           # 0xff85
+	.short	65414                           # 0xff86
+	.short	65417                           # 0xff89
+	.short	65415                           # 0xff87
+	.short	65409                           # 0xff81
+	.short	65404                           # 0xff7c
+	.short	65406                           # 0xff7e
+	.short	65415                           # 0xff87
+	.short	65402                           # 0xff7a
+	.short	65391                           # 0xff6f
+	.short	65399                           # 0xff77
+	.short	65394                           # 0xff72
+	.short	65399                           # 0xff77
+	.short	65394                           # 0xff72
+	.short	65403                           # 0xff7b
+	.short	65407                           # 0xff7f
+	.short	65398                           # 0xff76
+	.short	65399                           # 0xff77
+	.short	65406                           # 0xff7e
+	.short	65422                           # 0xff8e
+	.short	65407                           # 0xff7f
+	.short	65414                           # 0xff86
+	.short	65412                           # 0xff84
+	.short	65428                           # 0xff94
+	.short	65408                           # 0xff80
+	.short	65415                           # 0xff87
+	.short	65413                           # 0xff85
+	.short	65425                           # 0xff91
+	.short	65409                           # 0xff81
+	.short	65422                           # 0xff8e
+	.short	65406                           # 0xff7e
+	.short	65432                           # 0xff98
+	.short	65433                           # 0xff99
+	.short	65434                           # 0xff9a
+	.short	65426                           # 0xff92
+	.short	65428                           # 0xff94
+	.short	65425                           # 0xff91
+	.short	65425                           # 0xff91
+	.short	65410                           # 0xff82
+	.short	65400                           # 0xff78
+	.short	65369                           # 0xff59
+	.short	65348                           # 0xff44
+	.short	65318                           # 0xff26
+	.short	65325                           # 0xff2d
+	.short	65318                           # 0xff26
+	.short	65327                           # 0xff2f
+	.short	65312                           # 0xff20
+	.short	65328                           # 0xff30
+	.short	65307                           # 0xff1b
+	.short	65367                           # 0xff57
+	.short	65390                           # 0xff6e
+	.short	65429                           # 0xff95
+	.short	65418                           # 0xff8a
+	.short	65430                           # 0xff96
+	.short	65416                           # 0xff88
+	.short	65431                           # 0xff97
+	.short	65418                           # 0xff8a
+	.short	65431                           # 0xff97
+	.short	65417                           # 0xff89
+	.short	65431                           # 0xff97
+	.short	65420                           # 0xff8c
+	.short	65434                           # 0xff9a
+	.short	65412                           # 0xff84
+	.short	65415                           # 0xff87
+	.short	65412                           # 0xff84
+	.short	65410                           # 0xff82
+	.short	65414                           # 0xff86
+	.short	65413                           # 0xff85
+	.short	65411                           # 0xff83
+	.short	65396                           # 0xff74
+	.short	65394                           # 0xff72
+	.short	65353                           # 0xff49
+	.short	65339                           # 0xff3b
+	.short	65327                           # 0xff2f
+	.short	65314                           # 0xff22
+	.short	65320                           # 0xff28
+	.short	65308                           # 0xff1c
+	.short	65309                           # 0xff1d
+	.short	65304                           # 0xff18
+	.short	65315                           # 0xff23
+	.short	65297                           # 0xff11
+	.short	65341                           # 0xff3d
+	.short	65383                           # 0xff67
+	.short	65417                           # 0xff89
+	.short	65403                           # 0xff7b
+	.short	65410                           # 0xff82
+	.short	65409                           # 0xff81
+	.short	65420                           # 0xff8c
+	.short	65405                           # 0xff7d
+	.short	65414                           # 0xff86
+	.short	65409                           # 0xff81
+	.short	65421                           # 0xff8d
+	.short	65406                           # 0xff7e
+	.short	65418                           # 0xff8a
+	.short	65406                           # 0xff7e
+	.short	65429                           # 0xff95
+	.short	65430                           # 0xff96
+	.short	65430                           # 0xff96
+	.short	65424                           # 0xff90
+	.short	65426                           # 0xff92
+	.short	65420                           # 0xff8c
+	.short	65399                           # 0xff77
+	.short	65380                           # 0xff64
+	.short	65350                           # 0xff46
+	.short	65339                           # 0xff3b
+	.short	65346                           # 0xff42
+	.short	65317                           # 0xff25
+	.short	65320                           # 0xff28
+	.short	65311                           # 0xff1f
+	.short	65319                           # 0xff27
+	.short	65309                           # 0xff1d
+	.short	65330                           # 0xff32
+	.short	65318                           # 0xff26
+	.short	65360                           # 0xff50
+	.short	65390                           # 0xff6e
+	.short	65426                           # 0xff92
+	.short	65417                           # 0xff89
+	.short	65430                           # 0xff96
+	.short	65414                           # 0xff86
+	.short	65433                           # 0xff99
+	.short	65420                           # 0xff8c
+	.short	65433                           # 0xff99
+	.short	65415                           # 0xff87
+	.short	65433                           # 0xff99
+	.short	65420                           # 0xff8c
+	.short	65434                           # 0xff9a
+	.short	65413                           # 0xff85
+	.short	65415                           # 0xff87
+	.short	65409                           # 0xff81
+	.short	65404                           # 0xff7c
+	.short	65412                           # 0xff84
+	.short	65409                           # 0xff81
+	.short	65399                           # 0xff77
+	.short	65375                           # 0xff5f
+	.short	65363                           # 0xff53
+	.short	65337                           # 0xff39
+	.short	65320                           # 0xff28
+	.short	65323                           # 0xff2b
+	.short	65306                           # 0xff1a
+	.short	65297                           # 0xff11
+	.short	65288                           # 0xff08
+	.short	65288                           # 0xff08
+	.short	65293                           # 0xff0d
+	.short	65305                           # 0xff19
+	.short	65295                           # 0xff0f
+	.short	65333                           # 0xff35
+	.short	65378                           # 0xff62
+	.short	65411                           # 0xff83
+	.short	65403                           # 0xff7b
+	.short	65406                           # 0xff7e
+	.short	65407                           # 0xff7f
+	.short	65419                           # 0xff8b
+	.short	65405                           # 0xff7d
+	.short	65413                           # 0xff85
+	.short	65409                           # 0xff81
+	.short	65423                           # 0xff8f
+	.short	65407                           # 0xff7f
+	.short	65417                           # 0xff89
+	.short	65405                           # 0xff7d
+	.short	65422                           # 0xff8e
+	.short	65428                           # 0xff94
+	.short	65427                           # 0xff93
+	.short	65426                           # 0xff92
+	.short	65421                           # 0xff8d
+	.short	65417                           # 0xff89
+	.short	65401                           # 0xff79
+	.short	65369                           # 0xff59
+	.short	65358                           # 0xff4e
+	.short	65339                           # 0xff3b
+	.short	65341                           # 0xff3d
+	.short	65311                           # 0xff1f
+	.short	65313                           # 0xff21
+	.short	65310                           # 0xff1e
+	.short	65314                           # 0xff22
+	.short	65300                           # 0xff14
+	.short	65317                           # 0xff25
+	.short	65306                           # 0xff1a
+	.short	65354                           # 0xff4a
+	.short	65387                           # 0xff6b
+	.short	65424                           # 0xff90
+	.short	65419                           # 0xff8b
+	.short	65426                           # 0xff92
+	.short	65412                           # 0xff84
+	.short	65427                           # 0xff93
+	.short	65422                           # 0xff8e
+	.short	65430                           # 0xff96
+	.short	65417                           # 0xff89
 	.short	65430                           # 0xff96
 	.short	65420                           # 0xff8c
-	.short	65429                           # 0xff95
-	.short	65422                           # 0xff8e
-	.short	65426                           # 0xff92
-	.short	65415                           # 0xff87
-	.short	65423                           # 0xff8f
-	.short	65412                           # 0xff84
-	.short	65417                           # 0xff89
-	.short	65408                           # 0xff80
-	.short	65419                           # 0xff8b
-	.short	65409                           # 0xff81
-	.short	65420                           # 0xff8c
-	.short	65406                           # 0xff7e
-	.short	65422                           # 0xff8e
-	.short	65407                           # 0xff7f
-	.short	65416                           # 0xff88
-	.short	65401                           # 0xff79
-	.short	65418                           # 0xff8a
-	.short	65402                           # 0xff7a
-	.short	65417                           # 0xff89
-	.short	65403                           # 0xff7b
-	.short	65417                           # 0xff89
-	.short	65402                           # 0xff7a
-	.short	65419                           # 0xff8b
+	.short	65432                           # 0xff98
+	.short	65414                           # 0xff86
 	.short	65404                           # 0xff7c
-	.short	65421                           # 0xff8d
-	.short	65410                           # 0xff82
-	.short	65426                           # 0xff92
-	.short	65403                           # 0xff7b
-	.short	65424                           # 0xff90
-	.short	65410                           # 0xff82
-	.short	65413                           # 0xff85
-	.short	65412                           # 0xff84
-	.short	65417                           # 0xff89
-	.short	65409                           # 0xff81
-	.short	65408                           # 0xff80
-	.short	65410                           # 0xff82
-	.short	65413                           # 0xff85
-	.short	65400                           # 0xff78
-	.short	65403                           # 0xff7b
-	.short	65401                           # 0xff79
-	.short	65410                           # 0xff82
-	.short	65399                           # 0xff77
-	.short	65401                           # 0xff79
-	.short	65398                           # 0xff76
-	.short	65409                           # 0xff81
-	.short	65395                           # 0xff73
-	.short	65398                           # 0xff76
-	.short	65394                           # 0xff72
-	.short	65409                           # 0xff81
-	.short	65394                           # 0xff72
-	.short	65402                           # 0xff7a
-	.short	65397                           # 0xff75
-	.short	65411                           # 0xff83
-	.short	65395                           # 0xff73
 	.short	65406                           # 0xff7e
-	.short	65399                           # 0xff77
-	.short	65412                           # 0xff84
-	.short	65399                           # 0xff77
-	.short	65412                           # 0xff84
+	.short	65402                           # 0xff7a
+	.short	65410                           # 0xff82
+	.short	65406                           # 0xff7e
 	.short	65397                           # 0xff75
-	.short	65429                           # 0xff95
-	.short	65427                           # 0xff93
+	.short	65380                           # 0xff64
+	.short	65356                           # 0xff4c
+	.short	65351                           # 0xff47
+	.short	65320                           # 0xff28
+	.short	65313                           # 0xff21
+	.short	65298                           # 0xff12
+	.short	65294                           # 0xff0e
+	.short	65289                           # 0xff09
+	.short	65286                           # 0xff06
+	.short	65286                           # 0xff06
+	.short	65299                           # 0xff13
+	.short	65286                           # 0xff06
+	.short	65328                           # 0xff30
+	.short	65374                           # 0xff5e
+	.short	65412                           # 0xff84
+	.short	65400                           # 0xff78
+	.short	65405                           # 0xff7d
+	.short	65402                           # 0xff7a
+	.short	65417                           # 0xff89
+	.short	65403                           # 0xff7b
+	.short	65409                           # 0xff81
+	.short	65407                           # 0xff7f
+	.short	65418                           # 0xff8a
+	.short	65407                           # 0xff7f
+	.short	65415                           # 0xff87
+	.short	65406                           # 0xff7e
+	.short	65425                           # 0xff91
+	.short	65430                           # 0xff96
+	.short	65425                           # 0xff91
+	.short	65423                           # 0xff8f
+	.short	65423                           # 0xff8f
+	.short	65422                           # 0xff8e
+	.short	65406                           # 0xff7e
+	.short	65382                           # 0xff66
+	.short	65381                           # 0xff65
+	.short	65343                           # 0xff3f
+	.short	65338                           # 0xff3a
+	.short	65307                           # 0xff1b
+	.short	65304                           # 0xff18
+	.short	65298                           # 0xff12
+	.short	65304                           # 0xff18
+	.short	65289                           # 0xff09
+	.short	65304                           # 0xff18
+	.short	65303                           # 0xff17
+	.short	65348                           # 0xff44
+	.short	65386                           # 0xff6a
+	.short	65424                           # 0xff90
+	.short	65419                           # 0xff8b
+	.short	65428                           # 0xff94
+	.short	65414                           # 0xff86
 	.short	65428                           # 0xff94
 	.short	65419                           # 0xff8b
+	.short	65427                           # 0xff93
+	.short	65415                           # 0xff87
+	.short	65427                           # 0xff93
 	.short	65424                           # 0xff90
-	.short	65421                           # 0xff8d
-	.short	65423                           # 0xff8f
-	.short	65414                           # 0xff86
-	.short	65422                           # 0xff8e
-	.short	65411                           # 0xff83
-	.short	65420                           # 0xff8c
-	.short	65407                           # 0xff7f
-	.short	65417                           # 0xff89
-	.short	65408                           # 0xff80
-	.short	65418                           # 0xff8a
-	.short	65405                           # 0xff7d
+	.short	65431                           # 0xff97
 	.short	65416                           # 0xff88
-	.short	65403                           # 0xff7b
-	.short	65412                           # 0xff84
 	.short	65398                           # 0xff76
-	.short	65416                           # 0xff88
-	.short	65402                           # 0xff7a
-	.short	65415                           # 0xff87
-	.short	65400                           # 0xff78
-	.short	65419                           # 0xff8b
-	.short	65405                           # 0xff7d
-	.short	65417                           # 0xff89
-	.short	65404                           # 0xff7c
-	.short	65420                           # 0xff8c
-	.short	65406                           # 0xff7e
-	.short	65427                           # 0xff93
-	.short	65401                           # 0xff79
-	.short	65417                           # 0xff89
-	.short	65409                           # 0xff81
-	.short	65409                           # 0xff81
-	.short	65409                           # 0xff81
-	.short	65414                           # 0xff86
-	.short	65403                           # 0xff7b
-	.short	65403                           # 0xff7b
-	.short	65405                           # 0xff7d
-	.short	65408                           # 0xff80
 	.short	65397                           # 0xff75
-	.short	65403                           # 0xff7b
-	.short	65401                           # 0xff79
-	.short	65407                           # 0xff7f
-	.short	65396                           # 0xff74
-	.short	65402                           # 0xff7a
-	.short	65399                           # 0xff77
-	.short	65406                           # 0xff7e
-	.short	65391                           # 0xff6f
-	.short	65396                           # 0xff74
-	.short	65396                           # 0xff74
-	.short	65407                           # 0xff7f
-	.short	65391                           # 0xff6f
-	.short	65399                           # 0xff77
-	.short	65395                           # 0xff73
-	.short	65411                           # 0xff83
-	.short	65396                           # 0xff74
-	.short	65404                           # 0xff7c
-	.short	65401                           # 0xff79
-	.short	65414                           # 0xff86
-	.short	65397                           # 0xff75
-	.short	65412                           # 0xff84
-	.short	65395                           # 0xff73
-	.short	65427                           # 0xff93
-	.short	65427                           # 0xff93
-	.short	65426                           # 0xff92
-	.short	65419                           # 0xff8b
-	.short	65425                           # 0xff91
-	.short	65419                           # 0xff8b
-	.short	65425                           # 0xff91
-	.short	65415                           # 0xff87
-	.short	65422                           # 0xff8e
-	.short	65413                           # 0xff85
-	.short	65418                           # 0xff8a
-	.short	65409                           # 0xff81
-	.short	65413                           # 0xff85
-	.short	65409                           # 0xff81
-	.short	65416                           # 0xff88
-	.short	65403                           # 0xff7b
-	.short	65417                           # 0xff89
-	.short	65406                           # 0xff7e
-	.short	65413                           # 0xff85
-	.short	65401                           # 0xff79
-	.short	65417                           # 0xff89
-	.short	65402                           # 0xff7a
-	.short	65416                           # 0xff88
-	.short	65402                           # 0xff7a
-	.short	65420                           # 0xff8c
-	.short	65406                           # 0xff7e
-	.short	65417                           # 0xff89
-	.short	65403                           # 0xff7b
-	.short	65420                           # 0xff8c
-	.short	65409                           # 0xff81
-	.short	65427                           # 0xff93
-	.short	65400                           # 0xff78
-	.short	65414                           # 0xff86
-	.short	65406                           # 0xff7e
-	.short	65408                           # 0xff80
-	.short	65409                           # 0xff81
-	.short	65410                           # 0xff82
-	.short	65403                           # 0xff7b
-	.short	65405                           # 0xff7d
-	.short	65403                           # 0xff7b
-	.short	65407                           # 0xff7f
-	.short	65395                           # 0xff73
-	.short	65400                           # 0xff78
-	.short	65399                           # 0xff77
-	.short	65400                           # 0xff78
-	.short	65394                           # 0xff72
-	.short	65395                           # 0xff73
-	.short	65397                           # 0xff75
-	.short	65405                           # 0xff7d
-	.short	65392                           # 0xff70
-	.short	65396                           # 0xff74
-	.short	65392                           # 0xff70
-	.short	65406                           # 0xff7e
-	.short	65390                           # 0xff6e
-	.short	65399                           # 0xff77
-	.short	65395                           # 0xff73
-	.short	65411                           # 0xff83
-	.short	65392                           # 0xff70
-	.short	65402                           # 0xff7a
-	.short	65396                           # 0xff74
-	.short	65412                           # 0xff84
-	.short	65397                           # 0xff75
-	.short	65411                           # 0xff83
-	.short	65395                           # 0xff73
-	.short	65424                           # 0xff90
-	.short	65426                           # 0xff92
-	.short	65427                           # 0xff93
-	.short	65420                           # 0xff8c
-	.short	65422                           # 0xff8e
-	.short	65421                           # 0xff8d
-	.short	65421                           # 0xff8d
-	.short	65413                           # 0xff85
-	.short	65421                           # 0xff8d
-	.short	65411                           # 0xff83
-	.short	65416                           # 0xff88
-	.short	65405                           # 0xff7d
-	.short	65417                           # 0xff89
-	.short	65410                           # 0xff82
-	.short	65415                           # 0xff87
-	.short	65402                           # 0xff7a
-	.short	65417                           # 0xff89
-	.short	65404                           # 0xff7c
-	.short	65414                           # 0xff86
-	.short	65401                           # 0xff79
-	.short	65417                           # 0xff89
-	.short	65406                           # 0xff7e
-	.short	65417                           # 0xff89
-	.short	65404                           # 0xff7c
-	.short	65418                           # 0xff8a
-	.short	65406                           # 0xff7e
-	.short	65418                           # 0xff8a
-	.short	65403                           # 0xff7b
-	.short	65420                           # 0xff8c
-	.short	65407                           # 0xff7f
-	.short	65420                           # 0xff8c
-	.short	65404                           # 0xff7c
-	.short	65411                           # 0xff83
-	.short	65406                           # 0xff7e
-	.short	65405                           # 0xff7d
-	.short	65406                           # 0xff7e
-	.short	65407                           # 0xff7f
-	.short	65403                           # 0xff7b
-	.short	65401                           # 0xff79
-	.short	65400                           # 0xff78
-	.short	65407                           # 0xff7f
-	.short	65395                           # 0xff73
-	.short	65396                           # 0xff74
-	.short	65395                           # 0xff73
-	.short	65404                           # 0xff7c
-	.short	65394                           # 0xff72
-	.short	65395                           # 0xff73
-	.short	65392                           # 0xff70
-	.short	65404                           # 0xff7c
-	.short	65390                           # 0xff6e
-	.short	65394                           # 0xff72
-	.short	65392                           # 0xff70
-	.short	65407                           # 0xff7f
-	.short	65391                           # 0xff6f
-	.short	65397                           # 0xff75
-	.short	65395                           # 0xff73
-	.short	65408                           # 0xff80
-	.short	65390                           # 0xff6e
-	.short	65404                           # 0xff7c
-	.short	65397                           # 0xff75
-	.short	65410                           # 0xff82
-	.short	65395                           # 0xff73
-	.short	65409                           # 0xff81
-	.short	65394                           # 0xff72
-	.short	65425                           # 0xff91
-	.short	65425                           # 0xff91
-	.short	65422                           # 0xff8e
-	.short	65417                           # 0xff89
-	.short	65420                           # 0xff8c
-	.short	65417                           # 0xff89
-	.short	65419                           # 0xff8b
-	.short	65411                           # 0xff83
-	.short	65416                           # 0xff88
-	.short	65411                           # 0xff83
-	.short	65415                           # 0xff87
-	.short	65406                           # 0xff7e
-	.short	65412                           # 0xff84
-	.short	65407                           # 0xff7f
-	.short	65413                           # 0xff85
-	.short	65402                           # 0xff7a
-	.short	65415                           # 0xff87
-	.short	65405                           # 0xff7d
-	.short	65411                           # 0xff83
-	.short	65400                           # 0xff78
-	.short	65414                           # 0xff86
-	.short	65405                           # 0xff7d
-	.short	65417                           # 0xff89
-	.short	65404                           # 0xff7c
-	.short	65419                           # 0xff8b
-	.short	65406                           # 0xff7e
-	.short	65419                           # 0xff8b
-	.short	65404                           # 0xff7c
-	.short	65421                           # 0xff8d
-	.short	65411                           # 0xff83
-	.short	65424                           # 0xff90
-	.short	65404                           # 0xff7c
-	.short	65406                           # 0xff7e
-	.short	65404                           # 0xff7c
+	.short	65389                           # 0xff6d
 	.short	65398                           # 0xff76
-	.short	65402                           # 0xff7a
-	.short	65405                           # 0xff7d
-	.short	65399                           # 0xff77
 	.short	65397                           # 0xff75
-	.short	65400                           # 0xff78
-	.short	65402                           # 0xff7a
-	.short	65393                           # 0xff71
-	.short	65395                           # 0xff73
-	.short	65395                           # 0xff73
-	.short	65399                           # 0xff77
 	.short	65391                           # 0xff6f
-	.short	65391                           # 0xff6f
-	.short	65395                           # 0xff73
-	.short	65403                           # 0xff7b
-	.short	65388                           # 0xff6c
-	.short	65392                           # 0xff70
-	.short	65391                           # 0xff6f
-	.short	65402                           # 0xff7a
-	.short	65391                           # 0xff6f
-	.short	65397                           # 0xff75
-	.short	65394                           # 0xff72
-	.short	65408                           # 0xff80
-	.short	65391                           # 0xff6f
-	.short	65401                           # 0xff79
-	.short	65394                           # 0xff72
-	.short	65411                           # 0xff83
-	.short	65395                           # 0xff73
-	.short	65406                           # 0xff7e
-	.short	65395                           # 0xff73
-	.short	65416                           # 0xff88
-	.short	65425                           # 0xff91
-	.short	65422                           # 0xff8e
-	.short	65420                           # 0xff8c
-	.short	65418                           # 0xff8a
-	.short	65421                           # 0xff8d
-	.short	65419                           # 0xff8b
-	.short	65409                           # 0xff81
-	.short	65416                           # 0xff88
-	.short	65411                           # 0xff83
-	.short	65417                           # 0xff89
-	.short	65408                           # 0xff80
-	.short	65413                           # 0xff85
-	.short	65411                           # 0xff83
-	.short	65414                           # 0xff86
-	.short	65401                           # 0xff79
-	.short	65416                           # 0xff88
-	.short	65404                           # 0xff7c
-	.short	65414                           # 0xff86
-	.short	65403                           # 0xff7b
-	.short	65415                           # 0xff87
-	.short	65407                           # 0xff7f
-	.short	65413                           # 0xff85
-	.short	65402                           # 0xff7a
-	.short	65417                           # 0xff89
-	.short	65409                           # 0xff81
-	.short	65420                           # 0xff8c
-	.short	65404                           # 0xff7c
-	.short	65418                           # 0xff8a
-	.short	65411                           # 0xff83
-	.short	65424                           # 0xff90
-	.short	65407                           # 0xff7f
-	.short	65399                           # 0xff77
-	.short	65403                           # 0xff7b
-	.short	65398                           # 0xff76
-	.short	65403                           # 0xff7b
-	.short	65403                           # 0xff7b
-	.short	65397                           # 0xff75
-	.short	65393                           # 0xff71
-	.short	65395                           # 0xff73
-	.short	65400                           # 0xff78
-	.short	65394                           # 0xff72
-	.short	65393                           # 0xff71
-	.short	65393                           # 0xff71
+	.short	65374                           # 0xff5e
+	.short	65362                           # 0xff52
+	.short	65365                           # 0xff55
+	.short	65327                           # 0xff2f
+	.short	65328                           # 0xff30
+	.short	65302                           # 0xff16
+	.short	65310                           # 0xff1e
+	.short	65280                           # 0xff00
+	.short	65280                           # 0xff00
+	.short	65269                           # 0xfef5
+	.short	65284                           # 0xff04
+	.short	65275                           # 0xfefb
+	.short	65318                           # 0xff26
+	.short	65365                           # 0xff55
 	.short	65400                           # 0xff78
 	.short	65391                           # 0xff6f
-	.short	65391                           # 0xff6f
-	.short	65389                           # 0xff6d
-	.short	65399                           # 0xff77
-	.short	65389                           # 0xff6d
-	.short	65392                           # 0xff70
-	.short	65393                           # 0xff71
-	.short	65404                           # 0xff7c
-	.short	65389                           # 0xff6d
-	.short	65393                           # 0xff71
-	.short	65392                           # 0xff70
-	.short	65406                           # 0xff7e
-	.short	65391                           # 0xff6f
-	.short	65401                           # 0xff79
+	.short	65396                           # 0xff74
 	.short	65395                           # 0xff73
-	.short	65407                           # 0xff7f
+	.short	65404                           # 0xff7c
+	.short	65392                           # 0xff70
+	.short	65401                           # 0xff79
 	.short	65396                           # 0xff74
 	.short	65405                           # 0xff7d
-	.short	65397                           # 0xff75
-	.short	65422                           # 0xff8e
-	.short	65426                           # 0xff92
-	.short	65422                           # 0xff8e
-	.short	65419                           # 0xff8b
-	.short	65420                           # 0xff8c
-	.short	65419                           # 0xff8b
-	.short	65420                           # 0xff8c
-	.short	65412                           # 0xff84
-	.short	65417                           # 0xff89
-	.short	65412                           # 0xff84
-	.short	65414                           # 0xff86
-	.short	65408                           # 0xff80
-	.short	65415                           # 0xff87
-	.short	65409                           # 0xff81
-	.short	65413                           # 0xff85
-	.short	65403                           # 0xff7b
-	.short	65417                           # 0xff89
-	.short	65410                           # 0xff82
-	.short	65415                           # 0xff87
+	.short	65398                           # 0xff76
 	.short	65405                           # 0xff7d
-	.short	65417                           # 0xff89
-	.short	65408                           # 0xff80
-	.short	65418                           # 0xff8a
-	.short	65407                           # 0xff7f
-	.short	65415                           # 0xff87
-	.short	65411                           # 0xff83
-	.short	65418                           # 0xff8a
-	.short	65408                           # 0xff80
-	.short	65417                           # 0xff89
-	.short	65415                           # 0xff87
-	.short	65421                           # 0xff8d
-	.short	65408                           # 0xff80
-	.short	65395                           # 0xff73
-	.short	65391                           # 0xff6f
-	.short	65386                           # 0xff6a
-	.short	65395                           # 0xff73
-	.short	65393                           # 0xff71
-	.short	65390                           # 0xff6e
-	.short	65385                           # 0xff69
-	.short	65388                           # 0xff6c
-	.short	65393                           # 0xff71
-	.short	65381                           # 0xff65
-	.short	65383                           # 0xff67
-	.short	65381                           # 0xff65
-	.short	65388                           # 0xff6c
-	.short	65379                           # 0xff63
-	.short	65382                           # 0xff66
-	.short	65378                           # 0xff62
-	.short	65392                           # 0xff70
-	.short	65381                           # 0xff65
-	.short	65386                           # 0xff6a
-	.short	65383                           # 0xff67
-	.short	65393                           # 0xff71
-	.short	65383                           # 0xff67
-	.short	65388                           # 0xff6c
-	.short	65384                           # 0xff68
-	.short	65395                           # 0xff73
-	.short	65384                           # 0xff68
-	.short	65391                           # 0xff6f
-	.short	65385                           # 0xff69
-	.short	65397                           # 0xff75
-	.short	65389                           # 0xff6d
-	.short	65397                           # 0xff75
-	.short	65389                           # 0xff6d
-	.short	19183                           # 0x4aef
-	.short	6600                            # 0x19c8
+	.short	65396                           # 0xff74
+	.short	19544                           # 0x4c58
+	.short	6470                            # 0x1946
 	.short	32767                           # 0x7fff
-	.short	6600                            # 0x19c8
+	.short	6470                            # 0x1946
 	.short	32767                           # 0x7fff
-	.short	6599                            # 0x19c7
+	.short	6469                            # 0x1945
 	.short	32767                           # 0x7fff
-	.short	6599                            # 0x19c7
-	.short	65460                           # 0xffb4
-	.short	52826                           # 0xce5a
-	.short	6080                            # 0x17c0
-	.short	55044                           # 0xd704
-	.short	65526                           # 0xfff6
+	.short	6469                            # 0x1945
+	.short	65459                           # 0xffb3
+	.short	52804                           # 0xce44
+	.short	6201                            # 0x1839
+	.short	55037                           # 0xd6fd
+	.short	65528                           # 0xfff8
 	.short	8                               # 0x8
 	.short	65535                           # 0xffff
-	.short	65535                           # 0xffff
-	.short	6520                            # 0x1978
-	.short	1052                            # 0x41c
-	.short	644                             # 0x284
+	.short	65532                           # 0xfffc
+	.short	6377                            # 0x18e9
+	.short	1032                            # 0x408
+	.short	626                             # 0x272
 	.short	32767                           # 0x7fff
-	.short	6520                            # 0x1978
-	.short	1052                            # 0x41c
-	.short	644                             # 0x284
+	.short	6377                            # 0x18e9
+	.short	1032                            # 0x408
+	.short	626                             # 0x272
 	.short	32767                           # 0x7fff
 	.short	1                               # 0x1
 	.short	1                               # 0x1
@@ -12522,30 +12488,886 @@ _ZL9subframe1:
 	.short	1                               # 0x1
 	.short	1                               # 0x1
 	.short	1                               # 0x1
-	.short	1650                            # 0x672
+	.short	1617                            # 0x651
 	.short	32767                           # 0x7fff
-	.short	6600                            # 0x19c8
+	.short	6470                            # 0x1946
 	.short	32767                           # 0x7fff
-	.short	6600                            # 0x19c8
+	.short	6470                            # 0x1946
 	.short	32767                           # 0x7fff
-	.short	6599                            # 0x19c7
+	.short	6469                            # 0x1945
 	.short	32767                           # 0x7fff
-	.short	65466                           # 0xffba
-	.short	62665                           # 0xf4c9
-	.short	53315                           # 0xd043
-	.short	55083                           # 0xd72b
+	.short	65465                           # 0xffb9
+	.short	62678                           # 0xf4d6
+	.short	53307                           # 0xd03b
+	.short	55079                           # 0xd727
 	.short	7                               # 0x7
 	.short	65532                           # 0xfffc
-	.short	65532                           # 0xfffc
+	.short	65531                           # 0xfffb
+	.short	0                               # 0x0
+	.short	237                             # 0xed
+	.short	67                              # 0x43
+	.short	10627                           # 0x2983
+	.short	60                              # 0x3c
+	.short	237                             # 0xed
+	.short	67                              # 0x43
+	.short	10627                           # 0x2983
+	.short	60                              # 0x3c
+	.short	1                               # 0x1
+	.short	1                               # 0x1
+	.short	1                               # 0x1
+	.short	1                               # 0x1
+	.short	1                               # 0x1
+	.short	1                               # 0x1
+	.short	1                               # 0x1
+	.short	1                               # 0x1
+	.short	6401                            # 0x1901
+	.short	1                               # 0x1
+	.size	_ZL9subframe1, 1668
+
+	.type	.L.str.134,@object              # @.str.134
+	.section	.rodata.str1.1,"aMS",@progbits,1
+.L.str.134:
+	.asciz	"ta = %e\n"
+	.size	.L.str.134, 9
+
+	.type	.L.str.136,@object              # @.str.136
+.L.str.136:
+	.asciz	"TaMain = %.10f\n"
+	.size	.L.str.136, 16
+
+	.type	.L.str.137,@object              # @.str.137
+.L.str.137:
+	.asciz	"TrMain = %.10f\n"
+	.size	.L.str.137, 16
+
+	.type	_ZL9subframe2,@object           # @_ZL9subframe2
+	.section	.rodata,"a",@progbits
+	.p2align	4
+_ZL9subframe2:
+	.short	65446                           # 0xffa6
+	.short	65442                           # 0xffa2
+	.short	65446                           # 0xffa6
+	.short	65433                           # 0xff99
+	.short	65436                           # 0xff9c
+	.short	65426                           # 0xff92
+	.short	65408                           # 0xff80
+	.short	65386                           # 0xff6a
+	.short	65395                           # 0xff73
+	.short	65381                           # 0xff65
+	.short	65386                           # 0xff6a
+	.short	65373                           # 0xff5d
+	.short	65384                           # 0xff68
+	.short	65370                           # 0xff5a
+	.short	65376                           # 0xff60
+	.short	65360                           # 0xff50
+	.short	65380                           # 0xff64
+	.short	65365                           # 0xff55
+	.short	65417                           # 0xff89
+	.short	65417                           # 0xff89
+	.short	65444                           # 0xffa4
+	.short	65427                           # 0xff93
+	.short	65443                           # 0xffa3
+	.short	65424                           # 0xff90
+	.short	65445                           # 0xffa5
+	.short	65431                           # 0xff97
+	.short	65444                           # 0xffa4
+	.short	65425                           # 0xff91
+	.short	65443                           # 0xffa3
+	.short	65427                           # 0xff93
+	.short	65445                           # 0xffa5
+	.short	65417                           # 0xff89
+	.short	65438                           # 0xff9e
+	.short	65434                           # 0xff9a
+	.short	65428                           # 0xff94
+	.short	65429                           # 0xff95
+	.short	65425                           # 0xff91
+	.short	65417                           # 0xff89
+	.short	65391                           # 0xff6f
+	.short	65378                           # 0xff62
+	.short	65383                           # 0xff67
+	.short	65371                           # 0xff5b
+	.short	65372                           # 0xff5c
+	.short	65370                           # 0xff5a
+	.short	65375                           # 0xff5f
+	.short	65361                           # 0xff51
+	.short	65358                           # 0xff4e
+	.short	65357                           # 0xff4d
+	.short	65371                           # 0xff5b
+	.short	65357                           # 0xff4d
+	.short	65397                           # 0xff75
+	.short	65416                           # 0xff88
+	.short	65436                           # 0xff9c
+	.short	65420                           # 0xff8c
+	.short	65430                           # 0xff96
+	.short	65423                           # 0xff8f
+	.short	65439                           # 0xff9f
+	.short	65424                           # 0xff90
+	.short	65428                           # 0xff94
+	.short	65424                           # 0xff90
+	.short	65438                           # 0xff9e
+	.short	65422                           # 0xff8e
+	.short	65433                           # 0xff99
+	.short	65418                           # 0xff8a
+	.short	65446                           # 0xffa6
+	.short	65438                           # 0xff9e
+	.short	65441                           # 0xffa1
+	.short	65432                           # 0xff98
+	.short	65431                           # 0xff97
+	.short	65420                           # 0xff8c
+	.short	65404                           # 0xff7c
+	.short	65381                           # 0xff65
+	.short	65385                           # 0xff69
+	.short	65372                           # 0xff5c
+	.short	65388                           # 0xff6c
+	.short	65375                           # 0xff5f
+	.short	65385                           # 0xff69
+	.short	65370                           # 0xff5a
+	.short	65376                           # 0xff60
+	.short	65357                           # 0xff4d
+	.short	65369                           # 0xff59
+	.short	65359                           # 0xff4f
+	.short	65410                           # 0xff82
+	.short	65417                           # 0xff89
+	.short	65438                           # 0xff9e
+	.short	65427                           # 0xff93
+	.short	65444                           # 0xffa4
+	.short	65424                           # 0xff90
+	.short	65444                           # 0xffa4
+	.short	65426                           # 0xff92
+	.short	65441                           # 0xffa1
+	.short	65422                           # 0xff8e
+	.short	65442                           # 0xffa2
+	.short	65424                           # 0xff90
+	.short	65445                           # 0xffa5
+	.short	65417                           # 0xff89
+	.short	65436                           # 0xff9c
+	.short	65431                           # 0xff97
+	.short	65427                           # 0xff93
+	.short	65428                           # 0xff94
+	.short	65423                           # 0xff8f
+	.short	65412                           # 0xff84
+	.short	65386                           # 0xff6a
+	.short	65377                           # 0xff61
+	.short	65375                           # 0xff5f
+	.short	65368                           # 0xff58
+	.short	65376                           # 0xff60
+	.short	65369                           # 0xff59
+	.short	65372                           # 0xff5c
+	.short	65357                           # 0xff4d
+	.short	65359                           # 0xff4f
+	.short	65352                           # 0xff48
+	.short	65362                           # 0xff52
+	.short	65350                           # 0xff46
+	.short	65391                           # 0xff6f
+	.short	65417                           # 0xff89
+	.short	65435                           # 0xff9b
+	.short	65422                           # 0xff8e
+	.short	65429                           # 0xff95
+	.short	65425                           # 0xff91
+	.short	65437                           # 0xff9d
+	.short	65421                           # 0xff8d
+	.short	65430                           # 0xff96
+	.short	65422                           # 0xff8e
+	.short	65434                           # 0xff9a
+	.short	65418                           # 0xff8a
+	.short	65431                           # 0xff97
+	.short	65414                           # 0xff86
+	.short	65448                           # 0xffa8
+	.short	65437                           # 0xff9d
+	.short	65441                           # 0xffa1
+	.short	65428                           # 0xff94
+	.short	65431                           # 0xff97
+	.short	65419                           # 0xff8b
+	.short	65396                           # 0xff74
+	.short	65378                           # 0xff62
+	.short	65388                           # 0xff6c
+	.short	65375                           # 0xff5f
+	.short	65383                           # 0xff67
+	.short	65366                           # 0xff56
+	.short	65374                           # 0xff5e
+	.short	65360                           # 0xff50
+	.short	65367                           # 0xff57
+	.short	65348                           # 0xff44
+	.short	65364                           # 0xff54
+	.short	65352                           # 0xff48
+	.short	65403                           # 0xff7b
+	.short	65412                           # 0xff84
+	.short	65446                           # 0xffa6
+	.short	65431                           # 0xff97
+	.short	65443                           # 0xffa3
+	.short	65424                           # 0xff90
+	.short	65443                           # 0xffa3
+	.short	65423                           # 0xff8f
+	.short	65442                           # 0xffa2
+	.short	65423                           # 0xff8f
+	.short	65440                           # 0xffa0
+	.short	65426                           # 0xff92
+	.short	65445                           # 0xffa5
+	.short	65417                           # 0xff89
+	.short	65438                           # 0xff9e
+	.short	65426                           # 0xff92
+	.short	65423                           # 0xff8f
+	.short	65425                           # 0xff91
+	.short	65421                           # 0xff8d
+	.short	65411                           # 0xff83
+	.short	65381                           # 0xff65
+	.short	65374                           # 0xff5e
+	.short	65379                           # 0xff63
+	.short	65369                           # 0xff59
+	.short	65367                           # 0xff57
+	.short	65363                           # 0xff53
+	.short	65367                           # 0xff57
+	.short	65353                           # 0xff49
+	.short	65353                           # 0xff49
+	.short	65349                           # 0xff45
+	.short	65354                           # 0xff4a
+	.short	65343                           # 0xff3f
+	.short	65384                           # 0xff68
+	.short	65413                           # 0xff85
+	.short	65438                           # 0xff9e
+	.short	65426                           # 0xff92
+	.short	65428                           # 0xff94
+	.short	65423                           # 0xff8f
+	.short	65436                           # 0xff9c
+	.short	65417                           # 0xff89
+	.short	65427                           # 0xff93
+	.short	65419                           # 0xff8b
+	.short	65434                           # 0xff9a
+	.short	65416                           # 0xff88
+	.short	65432                           # 0xff98
+	.short	65415                           # 0xff87
+	.short	65439                           # 0xff9f
+	.short	65435                           # 0xff9b
+	.short	65438                           # 0xff9e
+	.short	65427                           # 0xff93
+	.short	65427                           # 0xff93
+	.short	65418                           # 0xff8a
+	.short	65391                           # 0xff6f
+	.short	65372                           # 0xff5c
+	.short	65377                           # 0xff61
+	.short	65371                           # 0xff5b
+	.short	65378                           # 0xff62
+	.short	65368                           # 0xff58
+	.short	65372                           # 0xff5c
+	.short	65360                           # 0xff50
+	.short	65372                           # 0xff5c
+	.short	65355                           # 0xff4b
+	.short	65356                           # 0xff4c
+	.short	65348                           # 0xff44
+	.short	65394                           # 0xff72
+	.short	65409                           # 0xff81
+	.short	65446                           # 0xffa6
+	.short	65431                           # 0xff97
+	.short	65442                           # 0xffa2
+	.short	65425                           # 0xff91
+	.short	65446                           # 0xffa6
+	.short	65426                           # 0xff92
+	.short	65441                           # 0xffa1
+	.short	65420                           # 0xff8c
+	.short	65440                           # 0xffa0
+	.short	65425                           # 0xff91
+	.short	65443                           # 0xffa3
+	.short	65415                           # 0xff87
+	.short	65430                           # 0xff96
+	.short	65423                           # 0xff8f
+	.short	65421                           # 0xff8d
+	.short	65422                           # 0xff8e
+	.short	65416                           # 0xff88
+	.short	65408                           # 0xff80
+	.short	65375                           # 0xff5f
+	.short	65368                           # 0xff58
+	.short	65366                           # 0xff56
+	.short	65355                           # 0xff4b
+	.short	65360                           # 0xff50
+	.short	65361                           # 0xff51
+	.short	65365                           # 0xff55
+	.short	65355                           # 0xff4b
+	.short	65359                           # 0xff4f
+	.short	65356                           # 0xff4c
+	.short	65346                           # 0xff42
+	.short	65339                           # 0xff3b
+	.short	65374                           # 0xff5e
+	.short	65407                           # 0xff7f
+	.short	65436                           # 0xff9c
+	.short	65423                           # 0xff8f
+	.short	65426                           # 0xff92
+	.short	65422                           # 0xff8e
+	.short	65438                           # 0xff9e
+	.short	65419                           # 0xff8b
+	.short	65427                           # 0xff93
+	.short	65419                           # 0xff8b
+	.short	65432                           # 0xff98
+	.short	65417                           # 0xff89
+	.short	65429                           # 0xff95
+	.short	65413                           # 0xff85
+	.short	65438                           # 0xff9e
+	.short	65432                           # 0xff98
+	.short	65437                           # 0xff9d
+	.short	65426                           # 0xff92
+	.short	65427                           # 0xff93
+	.short	65419                           # 0xff8b
+	.short	65395                           # 0xff73
+	.short	65379                           # 0xff63
+	.short	65383                           # 0xff67
+	.short	65363                           # 0xff53
+	.short	65371                           # 0xff5b
+	.short	65358                           # 0xff4e
+	.short	65364                           # 0xff54
+	.short	65355                           # 0xff4b
+	.short	65361                           # 0xff51
+	.short	65352                           # 0xff48
+	.short	65358                           # 0xff4e
+	.short	65341                           # 0xff3d
+	.short	65388                           # 0xff6c
+	.short	65406                           # 0xff7e
+	.short	65441                           # 0xffa1
+	.short	65429                           # 0xff95
+	.short	65439                           # 0xff9f
+	.short	65420                           # 0xff8c
+	.short	65442                           # 0xffa2
+	.short	65425                           # 0xff91
+	.short	65436                           # 0xff9c
+	.short	65421                           # 0xff8d
+	.short	65437                           # 0xff9d
+	.short	65425                           # 0xff91
+	.short	65444                           # 0xffa4
+	.short	65413                           # 0xff85
+	.short	65427                           # 0xff93
+	.short	65421                           # 0xff8d
+	.short	65420                           # 0xff8c
+	.short	65422                           # 0xff8e
+	.short	65417                           # 0xff89
+	.short	65408                           # 0xff80
+	.short	65378                           # 0xff62
+	.short	65371                           # 0xff5b
+	.short	65373                           # 0xff5d
+	.short	65355                           # 0xff4b
+	.short	65354                           # 0xff4a
+	.short	65352                           # 0xff48
+	.short	65352                           # 0xff48
+	.short	65342                           # 0xff3e
+	.short	65341                           # 0xff3d
+	.short	65340                           # 0xff3c
+	.short	65349                           # 0xff45
+	.short	65333                           # 0xff35
+	.short	65371                           # 0xff5b
+	.short	65405                           # 0xff7d
+	.short	65433                           # 0xff99
+	.short	65421                           # 0xff8d
+	.short	65424                           # 0xff90
+	.short	65418                           # 0xff8a
+	.short	65435                           # 0xff9b
+	.short	65416                           # 0xff88
+	.short	65423                           # 0xff8f
+	.short	65416                           # 0xff88
+	.short	65431                           # 0xff97
+	.short	65416                           # 0xff88
+	.short	65430                           # 0xff96
+	.short	65411                           # 0xff83
+	.short	65442                           # 0xffa2
+	.short	65434                           # 0xff9a
+	.short	65439                           # 0xff9f
+	.short	65429                           # 0xff95
+	.short	65430                           # 0xff96
+	.short	65419                           # 0xff8b
+	.short	65386                           # 0xff6a
+	.short	65371                           # 0xff5b
+	.short	65385                           # 0xff69
+	.short	65379                           # 0xff63
+	.short	65373                           # 0xff5d
+	.short	65359                           # 0xff4f
+	.short	65368                           # 0xff58
+	.short	65354                           # 0xff4a
+	.short	65365                           # 0xff55
+	.short	65350                           # 0xff46
+	.short	65372                           # 0xff5c
+	.short	65358                           # 0xff4e
+	.short	65395                           # 0xff73
+	.short	65406                           # 0xff7e
+	.short	65442                           # 0xffa2
+	.short	65430                           # 0xff96
+	.short	65440                           # 0xffa0
+	.short	65425                           # 0xff91
+	.short	65439                           # 0xff9f
+	.short	65424                           # 0xff90
+	.short	65435                           # 0xff9b
+	.short	65419                           # 0xff8b
+	.short	65436                           # 0xff9c
+	.short	65424                           # 0xff90
+	.short	65438                           # 0xff9e
+	.short	65413                           # 0xff85
+	.short	65430                           # 0xff96
+	.short	65419                           # 0xff8b
+	.short	65419                           # 0xff8b
+	.short	65422                           # 0xff8e
+	.short	65420                           # 0xff8c
+	.short	65407                           # 0xff7f
+	.short	65370                           # 0xff5a
+	.short	65370                           # 0xff5a
+	.short	65375                           # 0xff5f
+	.short	65373                           # 0xff5d
+	.short	65359                           # 0xff4f
+	.short	65356                           # 0xff4c
+	.short	65360                           # 0xff50
+	.short	65349                           # 0xff45
+	.short	65352                           # 0xff48
+	.short	65350                           # 0xff46
+	.short	65365                           # 0xff55
+	.short	65353                           # 0xff49
+	.short	65379                           # 0xff63
+	.short	65405                           # 0xff7d
+	.short	65433                           # 0xff99
+	.short	65419                           # 0xff8b
+	.short	65423                           # 0xff8f
+	.short	65420                           # 0xff8c
+	.short	65429                           # 0xff95
+	.short	65416                           # 0xff88
+	.short	65422                           # 0xff8e
+	.short	65414                           # 0xff86
+	.short	65426                           # 0xff92
+	.short	65414                           # 0xff86
+	.short	65426                           # 0xff92
+	.short	65412                           # 0xff84
+	.short	65436                           # 0xff9c
+	.short	65432                           # 0xff98
+	.short	65436                           # 0xff9c
+	.short	65427                           # 0xff93
+	.short	65427                           # 0xff93
+	.short	65421                           # 0xff8d
+	.short	65391                           # 0xff6f
+	.short	65380                           # 0xff64
+	.short	65388                           # 0xff6c
+	.short	65383                           # 0xff67
+	.short	65380                           # 0xff64
+	.short	65363                           # 0xff53
+	.short	65371                           # 0xff5b
+	.short	65362                           # 0xff52
+	.short	65371                           # 0xff5b
+	.short	65358                           # 0xff4e
+	.short	65370                           # 0xff5a
+	.short	65360                           # 0xff50
+	.short	65397                           # 0xff75
+	.short	65406                           # 0xff7e
+	.short	65441                           # 0xffa1
+	.short	65428                           # 0xff94
+	.short	65434                           # 0xff9a
+	.short	65421                           # 0xff8d
+	.short	65442                           # 0xffa2
+	.short	65424                           # 0xff90
+	.short	65436                           # 0xff9c
+	.short	65421                           # 0xff8d
+	.short	65438                           # 0xff9e
+	.short	65422                           # 0xff8e
+	.short	65441                           # 0xffa1
+	.short	65415                           # 0xff87
+	.short	65422                           # 0xff8e
+	.short	65416                           # 0xff88
+	.short	65416                           # 0xff88
+	.short	65418                           # 0xff8a
+	.short	65416                           # 0xff88
+	.short	65405                           # 0xff7d
+	.short	65373                           # 0xff5d
+	.short	65374                           # 0xff5e
+	.short	65380                           # 0xff64
+	.short	65379                           # 0xff63
+	.short	65373                           # 0xff5d
+	.short	65370                           # 0xff5a
+	.short	65371                           # 0xff5b
+	.short	65366                           # 0xff56
+	.short	65363                           # 0xff53
+	.short	65365                           # 0xff55
+	.short	65370                           # 0xff5a
+	.short	65364                           # 0xff54
+	.short	65382                           # 0xff66
+	.short	65405                           # 0xff7d
+	.short	65428                           # 0xff94
+	.short	65415                           # 0xff87
+	.short	65417                           # 0xff89
+	.short	65414                           # 0xff86
+	.short	65430                           # 0xff96
+	.short	65414                           # 0xff86
+	.short	65419                           # 0xff8b
+	.short	65415                           # 0xff87
+	.short	65427                           # 0xff93
+	.short	65412                           # 0xff84
+	.short	65424                           # 0xff90
+	.short	65409                           # 0xff81
+	.short	65435                           # 0xff9b
+	.short	65433                           # 0xff99
+	.short	65434                           # 0xff9a
+	.short	65428                           # 0xff94
+	.short	65431                           # 0xff97
+	.short	65424                           # 0xff90
+	.short	65413                           # 0xff85
+	.short	65402                           # 0xff7a
+	.short	65427                           # 0xff93
+	.short	65418                           # 0xff8a
+	.short	65423                           # 0xff8f
+	.short	65411                           # 0xff83
+	.short	65420                           # 0xff8c
+	.short	65416                           # 0xff88
+	.short	65427                           # 0xff93
+	.short	65413                           # 0xff85
+	.short	65430                           # 0xff96
+	.short	65416                           # 0xff88
+	.short	65424                           # 0xff90
+	.short	65413                           # 0xff85
+	.short	65435                           # 0xff9b
+	.short	65419                           # 0xff8b
+	.short	65433                           # 0xff99
+	.short	65419                           # 0xff8b
+	.short	65439                           # 0xff9f
+	.short	65421                           # 0xff8d
+	.short	65432                           # 0xff98
+	.short	65415                           # 0xff87
+	.short	65436                           # 0xff9c
+	.short	65420                           # 0xff8c
+	.short	65438                           # 0xff9e
+	.short	65412                           # 0xff84
+	.short	65420                           # 0xff8c
+	.short	65414                           # 0xff86
+	.short	65414                           # 0xff86
+	.short	65418                           # 0xff8a
+	.short	65415                           # 0xff87
+	.short	65407                           # 0xff7f
+	.short	65404                           # 0xff7c
+	.short	65406                           # 0xff7e
+	.short	65415                           # 0xff87
+	.short	65398                           # 0xff76
+	.short	65391                           # 0xff6f
+	.short	65384                           # 0xff68
+	.short	65394                           # 0xff72
+	.short	65386                           # 0xff6a
+	.short	65394                           # 0xff72
+	.short	65390                           # 0xff6e
+	.short	65407                           # 0xff7f
+	.short	65388                           # 0xff6c
+	.short	65399                           # 0xff77
+	.short	65406                           # 0xff7e
+	.short	65422                           # 0xff8e
+	.short	65408                           # 0xff80
+	.short	65414                           # 0xff86
+	.short	65412                           # 0xff84
+	.short	65428                           # 0xff94
+	.short	65407                           # 0xff7f
+	.short	65415                           # 0xff87
+	.short	65410                           # 0xff82
+	.short	65425                           # 0xff91
+	.short	65409                           # 0xff81
+	.short	65422                           # 0xff8e
+	.short	65406                           # 0xff7e
+	.short	65433                           # 0xff99
+	.short	65433                           # 0xff99
+	.short	65434                           # 0xff9a
+	.short	65426                           # 0xff92
+	.short	65429                           # 0xff95
+	.short	65425                           # 0xff91
+	.short	65423                           # 0xff8f
+	.short	65410                           # 0xff82
+	.short	65388                           # 0xff6c
+	.short	65369                           # 0xff59
+	.short	65342                           # 0xff3e
+	.short	65318                           # 0xff26
+	.short	65326                           # 0xff2e
+	.short	65318                           # 0xff26
+	.short	65321                           # 0xff29
+	.short	65312                           # 0xff20
+	.short	65323                           # 0xff2b
+	.short	65307                           # 0xff1b
+	.short	65366                           # 0xff56
+	.short	65390                           # 0xff6e
+	.short	65430                           # 0xff96
+	.short	65418                           # 0xff8a
+	.short	65429                           # 0xff95
+	.short	65416                           # 0xff88
+	.short	65433                           # 0xff99
+	.short	65418                           # 0xff8a
+	.short	65431                           # 0xff97
+	.short	65417                           # 0xff89
+	.short	65432                           # 0xff98
+	.short	65420                           # 0xff8c
+	.short	65434                           # 0xff9a
+	.short	65412                           # 0xff84
+	.short	65415                           # 0xff87
+	.short	65415                           # 0xff87
+	.short	65410                           # 0xff82
+	.short	65412                           # 0xff84
+	.short	65413                           # 0xff85
+	.short	65409                           # 0xff81
+	.short	65396                           # 0xff74
+	.short	65388                           # 0xff6c
+	.short	65353                           # 0xff49
+	.short	65333                           # 0xff35
+	.short	65327                           # 0xff2f
+	.short	65316                           # 0xff24
+	.short	65320                           # 0xff28
+	.short	65311                           # 0xff1f
+	.short	65309                           # 0xff1d
+	.short	65306                           # 0xff1a
+	.short	65315                           # 0xff23
+	.short	65301                           # 0xff15
+	.short	65341                           # 0xff3d
+	.short	65387                           # 0xff6b
+	.short	65417                           # 0xff89
+	.short	65404                           # 0xff7c
+	.short	65410                           # 0xff82
+	.short	65408                           # 0xff80
+	.short	65420                           # 0xff8c
+	.short	65405                           # 0xff7d
+	.short	65414                           # 0xff86
+	.short	65409                           # 0xff81
+	.short	65421                           # 0xff8d
+	.short	65409                           # 0xff81
+	.short	65418                           # 0xff8a
+	.short	65405                           # 0xff7d
+	.short	65429                           # 0xff95
+	.short	65430                           # 0xff96
+	.short	65430                           # 0xff96
+	.short	65424                           # 0xff90
+	.short	65427                           # 0xff93
+	.short	65420                           # 0xff8c
+	.short	65398                           # 0xff76
+	.short	65380                           # 0xff64
+	.short	65351                           # 0xff47
+	.short	65339                           # 0xff3b
+	.short	65342                           # 0xff3e
+	.short	65317                           # 0xff25
+	.short	65315                           # 0xff23
+	.short	65311                           # 0xff1f
+	.short	65315                           # 0xff23
+	.short	65309                           # 0xff1d
+	.short	65325                           # 0xff2d
+	.short	65318                           # 0xff26
+	.short	65362                           # 0xff52
+	.short	65390                           # 0xff6e
+	.short	65426                           # 0xff92
+	.short	65417                           # 0xff89
+	.short	65430                           # 0xff96
+	.short	65414                           # 0xff86
+	.short	65432                           # 0xff98
+	.short	65420                           # 0xff8c
+	.short	65433                           # 0xff99
+	.short	65415                           # 0xff87
+	.short	65434                           # 0xff9a
+	.short	65420                           # 0xff8c
+	.short	65434                           # 0xff9a
+	.short	65413                           # 0xff85
+	.short	65415                           # 0xff87
+	.short	65410                           # 0xff82
+	.short	65404                           # 0xff7c
+	.short	65411                           # 0xff83
+	.short	65409                           # 0xff81
+	.short	65400                           # 0xff78
+	.short	65375                           # 0xff5f
+	.short	65363                           # 0xff53
+	.short	65337                           # 0xff39
+	.short	65321                           # 0xff29
+	.short	65323                           # 0xff2b
+	.short	65305                           # 0xff19
+	.short	65297                           # 0xff11
+	.short	65290                           # 0xff0a
+	.short	65288                           # 0xff08
+	.short	65292                           # 0xff0c
+	.short	65305                           # 0xff19
+	.short	65295                           # 0xff0f
+	.short	65333                           # 0xff35
+	.short	65383                           # 0xff67
+	.short	65411                           # 0xff83
+	.short	65405                           # 0xff7d
+	.short	65406                           # 0xff7e
+	.short	65407                           # 0xff7f
+	.short	65419                           # 0xff8b
+	.short	65405                           # 0xff7d
+	.short	65413                           # 0xff85
+	.short	65407                           # 0xff7f
+	.short	65423                           # 0xff8f
+	.short	65407                           # 0xff7f
+	.short	65417                           # 0xff89
+	.short	65406                           # 0xff7e
+	.short	65424                           # 0xff90
+	.short	65428                           # 0xff94
+	.short	65427                           # 0xff93
+	.short	65426                           # 0xff92
+	.short	65422                           # 0xff8e
+	.short	65417                           # 0xff89
+	.short	65401                           # 0xff79
+	.short	65369                           # 0xff59
+	.short	65357                           # 0xff4d
+	.short	65339                           # 0xff3b
+	.short	65337                           # 0xff39
+	.short	65311                           # 0xff1f
+	.short	65314                           # 0xff22
+	.short	65310                           # 0xff1e
+	.short	65313                           # 0xff21
+	.short	65300                           # 0xff14
+	.short	65318                           # 0xff26
+	.short	65306                           # 0xff1a
+	.short	65361                           # 0xff51
+	.short	65387                           # 0xff6b
+	.short	65429                           # 0xff95
+	.short	65419                           # 0xff8b
+	.short	65425                           # 0xff91
+	.short	65412                           # 0xff84
+	.short	65431                           # 0xff97
+	.short	65422                           # 0xff8e
+	.short	65430                           # 0xff96
+	.short	65417                           # 0xff89
+	.short	65430                           # 0xff96
+	.short	65420                           # 0xff8c
+	.short	65433                           # 0xff99
+	.short	65414                           # 0xff86
+	.short	65404                           # 0xff7c
+	.short	65407                           # 0xff7f
+	.short	65402                           # 0xff7a
+	.short	65409                           # 0xff81
+	.short	65406                           # 0xff7e
+	.short	65398                           # 0xff76
+	.short	65380                           # 0xff64
+	.short	65356                           # 0xff4c
+	.short	65351                           # 0xff47
+	.short	65320                           # 0xff28
+	.short	65313                           # 0xff21
+	.short	65294                           # 0xff0e
+	.short	65294                           # 0xff0e
+	.short	65287                           # 0xff07
+	.short	65286                           # 0xff06
+	.short	65283                           # 0xff03
+	.short	65299                           # 0xff13
+	.short	65287                           # 0xff07
+	.short	65328                           # 0xff30
+	.short	65380                           # 0xff64
+	.short	65412                           # 0xff84
+	.short	65401                           # 0xff79
+	.short	65405                           # 0xff7d
+	.short	65404                           # 0xff7c
+	.short	65417                           # 0xff89
+	.short	65405                           # 0xff7d
+	.short	65409                           # 0xff81
+	.short	65406                           # 0xff7e
+	.short	65418                           # 0xff8a
+	.short	65408                           # 0xff80
+	.short	65415                           # 0xff87
+	.short	65407                           # 0xff7f
+	.short	65427                           # 0xff93
+	.short	65430                           # 0xff96
+	.short	65425                           # 0xff91
+	.short	65423                           # 0xff8f
+	.short	65424                           # 0xff90
+	.short	65422                           # 0xff8e
+	.short	65406                           # 0xff7e
+	.short	65382                           # 0xff66
+	.short	65379                           # 0xff63
+	.short	65343                           # 0xff3f
+	.short	65336                           # 0xff38
+	.short	65307                           # 0xff1b
+	.short	65308                           # 0xff1c
+	.short	65298                           # 0xff12
+	.short	65302                           # 0xff16
+	.short	65289                           # 0xff09
+	.short	65307                           # 0xff1b
+	.short	65303                           # 0xff17
+	.short	65356                           # 0xff4c
+	.short	65386                           # 0xff6a
+	.short	65425                           # 0xff91
+	.short	65419                           # 0xff8b
+	.short	65429                           # 0xff95
+	.short	65414                           # 0xff86
+	.short	65428                           # 0xff94
+	.short	65419                           # 0xff8b
+	.short	65427                           # 0xff93
+	.short	65415                           # 0xff87
+	.short	65428                           # 0xff94
+	.short	65424                           # 0xff90
+	.short	65431                           # 0xff97
+	.short	65416                           # 0xff88
+	.short	65398                           # 0xff76
+	.short	65396                           # 0xff74
+	.short	65389                           # 0xff6d
+	.short	65399                           # 0xff77
+	.short	65397                           # 0xff75
+	.short	65390                           # 0xff6e
+	.short	65374                           # 0xff5e
+	.short	65364                           # 0xff54
+	.short	65365                           # 0xff55
+	.short	65339                           # 0xff3b
+	.short	65328                           # 0xff30
+	.short	65322                           # 0xff2a
+	.short	65310                           # 0xff1e
+	.short	65302                           # 0xff16
+	.short	65280                           # 0xff00
+	.short	65271                           # 0xfef7
+	.short	65284                           # 0xff04
+	.short	65278                           # 0xfefe
+	.short	65318                           # 0xff26
+	.short	65368                           # 0xff58
+	.short	65400                           # 0xff78
+	.short	65391                           # 0xff6f
+	.short	65396                           # 0xff74
+	.short	65394                           # 0xff72
+	.short	65404                           # 0xff7c
+	.short	65394                           # 0xff72
+	.short	65401                           # 0xff79
+	.short	65396                           # 0xff74
+	.short	65405                           # 0xff7d
+	.short	65400                           # 0xff78
+	.short	65405                           # 0xff7d
+	.short	65396                           # 0xff74
+	.short	19544                           # 0x4c58
+	.short	6470                            # 0x1946
+	.short	32767                           # 0x7fff
+	.short	6470                            # 0x1946
+	.short	32767                           # 0x7fff
+	.short	6469                            # 0x1945
+	.short	32767                           # 0x7fff
+	.short	6469                            # 0x1945
+	.short	65461                           # 0xffb5
+	.short	52804                           # 0xce44
+	.short	6203                            # 0x183b
+	.short	55037                           # 0xd6fd
+	.short	65529                           # 0xfff9
+	.short	8                               # 0x8
 	.short	65535                           # 0xffff
-	.short	241                             # 0xf1
-	.short	67                              # 0x43
-	.short	10878                           # 0x2a7e
-	.short	58                              # 0x3a
-	.short	241                             # 0xf1
-	.short	67                              # 0x43
-	.short	10878                           # 0x2a7e
-	.short	58                              # 0x3a
+	.short	65532                           # 0xfffc
+	.short	6378                            # 0x18ea
+	.short	1032                            # 0x408
+	.short	625                             # 0x271
+	.short	32767                           # 0x7fff
+	.short	6378                            # 0x18ea
+	.short	1032                            # 0x408
+	.short	625                             # 0x271
+	.short	32767                           # 0x7fff
+	.short	1                               # 0x1
+	.short	1                               # 0x1
+	.short	1                               # 0x1
+	.short	1                               # 0x1
+	.short	1                               # 0x1
+	.short	1                               # 0x1
+	.short	1                               # 0x1
+	.short	1                               # 0x1
+	.short	1617                            # 0x651
+	.short	32767                           # 0x7fff
+	.short	6470                            # 0x1946
+	.short	32767                           # 0x7fff
+	.short	6470                            # 0x1946
+	.short	32767                           # 0x7fff
+	.short	6469                            # 0x1945
+	.short	32767                           # 0x7fff
+	.short	65465                           # 0xffb9
+	.short	62678                           # 0xf4d6
+	.short	53307                           # 0xd03b
+	.short	55080                           # 0xd728
+	.short	7                               # 0x7
+	.short	65533                           # 0xfffd
+	.short	65531                           # 0xfffb
+	.short	0                               # 0x0
+	.short	237                             # 0xed
+	.short	66                              # 0x42
+	.short	10627                           # 0x2983
+	.short	62                              # 0x3e
+	.short	237                             # 0xed
+	.short	65                              # 0x41
+	.short	10627                           # 0x2983
+	.short	62                              # 0x3e
 	.short	1                               # 0x1
 	.short	1                               # 0x1
 	.short	1                               # 0x1
@@ -12556,919 +13378,63 @@ _ZL9subframe1:
 	.short	1                               # 0x1
 	.short	6401                            # 0x1901
 	.short	0                               # 0x0
-	.size	_ZL9subframe1, 1668
-
-	.type	.L.str.133,@object              # @.str.133
-	.section	.rodata.str1.1,"aMS",@progbits,1
-.L.str.133:
-	.asciz	"ta = %e\n"
-	.size	.L.str.133, 9
-
-	.type	.L.str.135,@object              # @.str.135
-.L.str.135:
-	.asciz	"TaMain = %.10f\n"
-	.size	.L.str.135, 16
-
-	.type	.L.str.136,@object              # @.str.136
-.L.str.136:
-	.asciz	"TrMain = %.10f\n"
-	.size	.L.str.136, 16
-
-	.type	_ZL9subframe2,@object           # @_ZL9subframe2
-	.section	.rodata,"a",@progbits
-	.p2align	4
-_ZL9subframe2:
-	.short	65441                           # 0xffa1
-	.short	65434                           # 0xff9a
-	.short	65440                           # 0xffa0
-	.short	65431                           # 0xff97
-	.short	65435                           # 0xff9b
-	.short	65430                           # 0xff96
-	.short	65438                           # 0xff9e
-	.short	65423                           # 0xff8f
-	.short	65433                           # 0xff99
-	.short	65422                           # 0xff8e
-	.short	65430                           # 0xff96
-	.short	65417                           # 0xff89
-	.short	65430                           # 0xff96
-	.short	65418                           # 0xff8a
-	.short	65427                           # 0xff93
-	.short	65413                           # 0xff85
-	.short	65429                           # 0xff95
-	.short	65413                           # 0xff85
-	.short	65426                           # 0xff92
-	.short	65409                           # 0xff81
-	.short	65430                           # 0xff96
-	.short	65412                           # 0xff84
-	.short	65427                           # 0xff93
-	.short	65409                           # 0xff81
-	.short	65430                           # 0xff96
-	.short	65412                           # 0xff84
-	.short	65426                           # 0xff92
-	.short	65411                           # 0xff83
-	.short	65428                           # 0xff94
-	.short	65411                           # 0xff83
-	.short	65434                           # 0xff9a
-	.short	65406                           # 0xff7e
-	.short	65430                           # 0xff96
-	.short	65425                           # 0xff91
-	.short	65425                           # 0xff91
-	.short	65424                           # 0xff90
-	.short	65427                           # 0xff93
-	.short	65421                           # 0xff8d
-	.short	65422                           # 0xff8e
-	.short	65419                           # 0xff8b
-	.short	65424                           # 0xff90
-	.short	65412                           # 0xff84
-	.short	65416                           # 0xff88
-	.short	65414                           # 0xff86
-	.short	65420                           # 0xff8c
-	.short	65408                           # 0xff80
-	.short	65414                           # 0xff86
-	.short	65408                           # 0xff80
-	.short	65419                           # 0xff8b
-	.short	65403                           # 0xff7b
-	.short	65411                           # 0xff83
-	.short	65408                           # 0xff80
-	.short	65422                           # 0xff8e
-	.short	65408                           # 0xff80
-	.short	65416                           # 0xff88
-	.short	65409                           # 0xff81
-	.short	65421                           # 0xff8d
-	.short	65404                           # 0xff7c
-	.short	65415                           # 0xff87
-	.short	65407                           # 0xff7f
-	.short	65421                           # 0xff8d
-	.short	65407                           # 0xff7f
-	.short	65420                           # 0xff8c
-	.short	65407                           # 0xff7f
-	.short	65436                           # 0xff9c
-	.short	65432                           # 0xff98
-	.short	65437                           # 0xff9d
-	.short	65427                           # 0xff93
-	.short	65432                           # 0xff98
-	.short	65425                           # 0xff91
-	.short	65433                           # 0xff99
-	.short	65420                           # 0xff8c
-	.short	65426                           # 0xff92
-	.short	65418                           # 0xff8a
-	.short	65428                           # 0xff94
-	.short	65414                           # 0xff86
-	.short	65425                           # 0xff91
-	.short	65413                           # 0xff85
-	.short	65425                           # 0xff91
-	.short	65408                           # 0xff80
-	.short	65423                           # 0xff8f
-	.short	65408                           # 0xff80
-	.short	65422                           # 0xff8e
-	.short	65409                           # 0xff81
-	.short	65421                           # 0xff8d
-	.short	65411                           # 0xff83
-	.short	65424                           # 0xff90
-	.short	65407                           # 0xff7f
-	.short	65425                           # 0xff91
-	.short	65405                           # 0xff7d
-	.short	65424                           # 0xff90
-	.short	65405                           # 0xff7d
-	.short	65425                           # 0xff91
-	.short	65409                           # 0xff81
-	.short	65432                           # 0xff98
-	.short	65404                           # 0xff7c
-	.short	65429                           # 0xff95
-	.short	65423                           # 0xff8f
-	.short	65421                           # 0xff8d
-	.short	65424                           # 0xff90
-	.short	65421                           # 0xff8d
-	.short	65415                           # 0xff87
-	.short	65417                           # 0xff89
-	.short	65415                           # 0xff87
-	.short	65417                           # 0xff89
-	.short	65411                           # 0xff83
-	.short	65414                           # 0xff86
-	.short	65412                           # 0xff84
-	.short	65417                           # 0xff89
-	.short	65405                           # 0xff7d
-	.short	65412                           # 0xff84
-	.short	65407                           # 0xff7f
-	.short	65414                           # 0xff86
-	.short	65401                           # 0xff79
-	.short	65410                           # 0xff82
-	.short	65404                           # 0xff7c
-	.short	65416                           # 0xff88
-	.short	65404                           # 0xff7c
-	.short	65412                           # 0xff84
-	.short	65407                           # 0xff7f
-	.short	65419                           # 0xff8b
-	.short	65401                           # 0xff79
-	.short	65410                           # 0xff82
-	.short	65402                           # 0xff7a
-	.short	65417                           # 0xff89
-	.short	65402                           # 0xff7a
-	.short	65419                           # 0xff8b
-	.short	65402                           # 0xff7a
-	.short	65441                           # 0xffa1
-	.short	65429                           # 0xff95
-	.short	65437                           # 0xff9d
-	.short	65423                           # 0xff8f
-	.short	65432                           # 0xff98
-	.short	65424                           # 0xff90
-	.short	65430                           # 0xff96
-	.short	65419                           # 0xff8b
-	.short	65429                           # 0xff95
-	.short	65417                           # 0xff89
-	.short	65425                           # 0xff91
-	.short	65411                           # 0xff83
-	.short	65424                           # 0xff90
-	.short	65412                           # 0xff84
-	.short	65424                           # 0xff90
-	.short	65409                           # 0xff81
-	.short	65423                           # 0xff8f
-	.short	65409                           # 0xff81
-	.short	65420                           # 0xff8c
-	.short	65406                           # 0xff7e
-	.short	65423                           # 0xff8f
-	.short	65410                           # 0xff82
-	.short	65421                           # 0xff8d
-	.short	65405                           # 0xff7d
-	.short	65422                           # 0xff8e
-	.short	65403                           # 0xff7b
-	.short	65421                           # 0xff8d
-	.short	65403                           # 0xff7b
-	.short	65420                           # 0xff8c
-	.short	65407                           # 0xff7f
-	.short	65430                           # 0xff96
-	.short	65403                           # 0xff7b
-	.short	65432                           # 0xff98
-	.short	65421                           # 0xff8d
-	.short	65421                           # 0xff8d
-	.short	65419                           # 0xff8b
-	.short	65422                           # 0xff8e
-	.short	65414                           # 0xff86
-	.short	65415                           # 0xff87
-	.short	65414                           # 0xff86
-	.short	65418                           # 0xff8a
-	.short	65408                           # 0xff80
-	.short	65410                           # 0xff82
-	.short	65408                           # 0xff80
-	.short	65415                           # 0xff87
-	.short	65404                           # 0xff7c
-	.short	65411                           # 0xff83
-	.short	65405                           # 0xff7d
-	.short	65415                           # 0xff87
-	.short	65402                           # 0xff7a
-	.short	65406                           # 0xff7e
-	.short	65401                           # 0xff79
-	.short	65416                           # 0xff88
-	.short	65401                           # 0xff79
-	.short	65410                           # 0xff82
-	.short	65402                           # 0xff7a
-	.short	65416                           # 0xff88
-	.short	65398                           # 0xff76
-	.short	65409                           # 0xff81
-	.short	65400                           # 0xff78
-	.short	65414                           # 0xff86
-	.short	65400                           # 0xff78
-	.short	65419                           # 0xff8b
-	.short	65398                           # 0xff76
-	.short	65434                           # 0xff9a
-	.short	65427                           # 0xff93
-	.short	65433                           # 0xff99
-	.short	65421                           # 0xff8d
-	.short	65426                           # 0xff92
-	.short	65422                           # 0xff8e
-	.short	65428                           # 0xff94
-	.short	65419                           # 0xff8b
-	.short	65428                           # 0xff94
-	.short	65417                           # 0xff89
-	.short	65426                           # 0xff92
-	.short	65414                           # 0xff86
-	.short	65423                           # 0xff8f
-	.short	65412                           # 0xff84
-	.short	65422                           # 0xff8e
-	.short	65409                           # 0xff81
-	.short	65421                           # 0xff8d
-	.short	65408                           # 0xff80
-	.short	65417                           # 0xff89
-	.short	65401                           # 0xff79
-	.short	65419                           # 0xff8b
-	.short	65407                           # 0xff7f
-	.short	65421                           # 0xff8d
-	.short	65404                           # 0xff7c
-	.short	65425                           # 0xff91
-	.short	65403                           # 0xff7b
-	.short	65421                           # 0xff8d
-	.short	65405                           # 0xff7d
-	.short	65421                           # 0xff8d
-	.short	65409                           # 0xff81
-	.short	65429                           # 0xff95
-	.short	65401                           # 0xff79
-	.short	65424                           # 0xff90
-	.short	65417                           # 0xff89
-	.short	65418                           # 0xff8a
-	.short	65417                           # 0xff89
-	.short	65418                           # 0xff8a
-	.short	65412                           # 0xff84
-	.short	65413                           # 0xff85
-	.short	65413                           # 0xff85
-	.short	65417                           # 0xff89
-	.short	65407                           # 0xff7f
-	.short	65408                           # 0xff80
-	.short	65409                           # 0xff81
-	.short	65412                           # 0xff84
-	.short	65402                           # 0xff7a
-	.short	65407                           # 0xff7f
-	.short	65405                           # 0xff7d
-	.short	65411                           # 0xff83
-	.short	65399                           # 0xff77
-	.short	65402                           # 0xff7a
-	.short	65399                           # 0xff77
-	.short	65413                           # 0xff85
-	.short	65398                           # 0xff76
-	.short	65407                           # 0xff7f
-	.short	65399                           # 0xff77
-	.short	65417                           # 0xff89
-	.short	65397                           # 0xff75
-	.short	65409                           # 0xff81
-	.short	65401                           # 0xff79
-	.short	65414                           # 0xff86
-	.short	65399                           # 0xff77
-	.short	65416                           # 0xff88
-	.short	65399                           # 0xff77
-	.short	65432                           # 0xff98
-	.short	65427                           # 0xff93
-	.short	65432                           # 0xff98
-	.short	65422                           # 0xff8e
-	.short	65426                           # 0xff92
-	.short	65422                           # 0xff8e
-	.short	65426                           # 0xff92
-	.short	65417                           # 0xff89
-	.short	65425                           # 0xff91
-	.short	65412                           # 0xff84
-	.short	65423                           # 0xff8f
-	.short	65410                           # 0xff82
-	.short	65420                           # 0xff8c
-	.short	65408                           # 0xff80
-	.short	65419                           # 0xff8b
-	.short	65407                           # 0xff7f
-	.short	65420                           # 0xff8c
-	.short	65408                           # 0xff80
-	.short	65417                           # 0xff89
-	.short	65405                           # 0xff7d
-	.short	65417                           # 0xff89
-	.short	65404                           # 0xff7c
-	.short	65418                           # 0xff8a
-	.short	65400                           # 0xff78
-	.short	65422                           # 0xff8e
-	.short	65402                           # 0xff7a
-	.short	65418                           # 0xff8a
-	.short	65402                           # 0xff7a
-	.short	65420                           # 0xff8c
-	.short	65408                           # 0xff80
-	.short	65431                           # 0xff97
-	.short	65400                           # 0xff78
-	.short	65422                           # 0xff8e
-	.short	65415                           # 0xff87
-	.short	65412                           # 0xff84
-	.short	65415                           # 0xff87
-	.short	65415                           # 0xff87
-	.short	65410                           # 0xff82
-	.short	65410                           # 0xff82
-	.short	65409                           # 0xff81
-	.short	65414                           # 0xff86
-	.short	65401                           # 0xff79
-	.short	65407                           # 0xff7f
-	.short	65405                           # 0xff7d
-	.short	65408                           # 0xff80
-	.short	65398                           # 0xff76
-	.short	65402                           # 0xff7a
-	.short	65400                           # 0xff78
-	.short	65409                           # 0xff81
-	.short	65398                           # 0xff76
-	.short	65400                           # 0xff78
-	.short	65398                           # 0xff76
-	.short	65407                           # 0xff7f
-	.short	65394                           # 0xff72
-	.short	65402                           # 0xff7a
-	.short	65397                           # 0xff75
-	.short	65411                           # 0xff83
-	.short	65392                           # 0xff70
-	.short	65407                           # 0xff7f
-	.short	65399                           # 0xff77
-	.short	65416                           # 0xff88
-	.short	65401                           # 0xff79
-	.short	65418                           # 0xff8a
-	.short	65397                           # 0xff75
-	.short	65436                           # 0xff9c
-	.short	65424                           # 0xff90
-	.short	65430                           # 0xff96
-	.short	65422                           # 0xff8e
-	.short	65429                           # 0xff95
-	.short	65421                           # 0xff8d
-	.short	65426                           # 0xff92
-	.short	65416                           # 0xff88
-	.short	65423                           # 0xff8f
-	.short	65410                           # 0xff82
-	.short	65417                           # 0xff89
-	.short	65408                           # 0xff80
-	.short	65419                           # 0xff8b
-	.short	65409                           # 0xff81
-	.short	65420                           # 0xff8c
-	.short	65405                           # 0xff7d
-	.short	65422                           # 0xff8e
-	.short	65407                           # 0xff7f
-	.short	65416                           # 0xff88
-	.short	65400                           # 0xff78
-	.short	65418                           # 0xff8a
-	.short	65404                           # 0xff7c
-	.short	65417                           # 0xff89
-	.short	65403                           # 0xff7b
-	.short	65417                           # 0xff89
-	.short	65404                           # 0xff7c
-	.short	65419                           # 0xff8b
-	.short	65403                           # 0xff7b
-	.short	65421                           # 0xff8d
-	.short	65407                           # 0xff7f
-	.short	65426                           # 0xff92
-	.short	65403                           # 0xff7b
-	.short	65423                           # 0xff8f
-	.short	65410                           # 0xff82
-	.short	65413                           # 0xff85
-	.short	65412                           # 0xff84
-	.short	65416                           # 0xff88
-	.short	65409                           # 0xff81
-	.short	65407                           # 0xff7f
-	.short	65410                           # 0xff82
-	.short	65412                           # 0xff84
-	.short	65400                           # 0xff78
-	.short	65403                           # 0xff7b
-	.short	65401                           # 0xff79
-	.short	65408                           # 0xff80
-	.short	65399                           # 0xff77
-	.short	65404                           # 0xff7c
-	.short	65398                           # 0xff76
-	.short	65410                           # 0xff82
-	.short	65395                           # 0xff73
-	.short	65397                           # 0xff75
-	.short	65394                           # 0xff72
-	.short	65410                           # 0xff82
-	.short	65394                           # 0xff72
-	.short	65402                           # 0xff7a
-	.short	65397                           # 0xff75
-	.short	65410                           # 0xff82
-	.short	65395                           # 0xff73
-	.short	65407                           # 0xff7f
-	.short	65399                           # 0xff77
-	.short	65412                           # 0xff84
-	.short	65399                           # 0xff77
-	.short	65413                           # 0xff85
-	.short	65397                           # 0xff75
-	.short	65429                           # 0xff95
-	.short	65424                           # 0xff90
-	.short	65428                           # 0xff94
-	.short	65420                           # 0xff8c
-	.short	65424                           # 0xff90
-	.short	65417                           # 0xff89
-	.short	65423                           # 0xff8f
-	.short	65413                           # 0xff85
-	.short	65422                           # 0xff8e
-	.short	65411                           # 0xff83
-	.short	65420                           # 0xff8c
-	.short	65407                           # 0xff7f
-	.short	65417                           # 0xff89
-	.short	65408                           # 0xff80
-	.short	65418                           # 0xff8a
-	.short	65403                           # 0xff7b
-	.short	65416                           # 0xff88
-	.short	65400                           # 0xff78
-	.short	65412                           # 0xff84
-	.short	65396                           # 0xff74
-	.short	65416                           # 0xff88
-	.short	65401                           # 0xff79
-	.short	65415                           # 0xff87
-	.short	65401                           # 0xff79
-	.short	65419                           # 0xff8b
-	.short	65404                           # 0xff7c
-	.short	65417                           # 0xff89
-	.short	65403                           # 0xff7b
-	.short	65420                           # 0xff8c
-	.short	65404                           # 0xff7c
-	.short	65427                           # 0xff93
-	.short	65401                           # 0xff79
-	.short	65414                           # 0xff86
-	.short	65409                           # 0xff81
-	.short	65408                           # 0xff80
-	.short	65409                           # 0xff81
-	.short	65412                           # 0xff84
-	.short	65403                           # 0xff7b
-	.short	65406                           # 0xff7e
-	.short	65405                           # 0xff7d
-	.short	65408                           # 0xff80
-	.short	65397                           # 0xff75
-	.short	65402                           # 0xff7a
-	.short	65401                           # 0xff79
-	.short	65407                           # 0xff7f
-	.short	65396                           # 0xff74
-	.short	65401                           # 0xff79
-	.short	65399                           # 0xff77
-	.short	65405                           # 0xff7d
-	.short	65391                           # 0xff6f
-	.short	65395                           # 0xff73
-	.short	65396                           # 0xff74
-	.short	65405                           # 0xff7d
-	.short	65391                           # 0xff6f
-	.short	65399                           # 0xff77
-	.short	65395                           # 0xff73
-	.short	65410                           # 0xff82
-	.short	65396                           # 0xff74
-	.short	65404                           # 0xff7c
-	.short	65401                           # 0xff79
-	.short	65411                           # 0xff83
-	.short	65397                           # 0xff75
-	.short	65412                           # 0xff84
-	.short	65395                           # 0xff73
-	.short	65427                           # 0xff93
-	.short	65426                           # 0xff92
-	.short	65426                           # 0xff92
-	.short	65419                           # 0xff8b
-	.short	65425                           # 0xff91
-	.short	65418                           # 0xff8a
-	.short	65425                           # 0xff91
-	.short	65413                           # 0xff85
-	.short	65422                           # 0xff8e
-	.short	65411                           # 0xff83
-	.short	65418                           # 0xff8a
-	.short	65409                           # 0xff81
-	.short	65413                           # 0xff85
-	.short	65407                           # 0xff7f
-	.short	65416                           # 0xff88
-	.short	65403                           # 0xff7b
-	.short	65417                           # 0xff89
-	.short	65405                           # 0xff7d
-	.short	65413                           # 0xff85
-	.short	65399                           # 0xff77
-	.short	65417                           # 0xff89
-	.short	65403                           # 0xff7b
-	.short	65416                           # 0xff88
-	.short	65403                           # 0xff7b
-	.short	65420                           # 0xff8c
-	.short	65406                           # 0xff7e
-	.short	65417                           # 0xff89
-	.short	65402                           # 0xff7a
-	.short	65420                           # 0xff8c
-	.short	65406                           # 0xff7e
-	.short	65427                           # 0xff93
-	.short	65400                           # 0xff78
-	.short	65414                           # 0xff86
-	.short	65406                           # 0xff7e
-	.short	65407                           # 0xff7f
-	.short	65409                           # 0xff81
-	.short	65410                           # 0xff82
-	.short	65403                           # 0xff7b
-	.short	65404                           # 0xff7c
-	.short	65403                           # 0xff7b
-	.short	65408                           # 0xff80
-	.short	65395                           # 0xff73
-	.short	65399                           # 0xff77
-	.short	65399                           # 0xff77
-	.short	65401                           # 0xff79
-	.short	65394                           # 0xff72
-	.short	65396                           # 0xff74
-	.short	65397                           # 0xff75
-	.short	65404                           # 0xff7c
-	.short	65392                           # 0xff70
-	.short	65396                           # 0xff74
-	.short	65392                           # 0xff70
-	.short	65405                           # 0xff7d
-	.short	65390                           # 0xff6e
-	.short	65399                           # 0xff77
-	.short	65395                           # 0xff73
-	.short	65411                           # 0xff83
-	.short	65392                           # 0xff70
-	.short	65404                           # 0xff7c
-	.short	65396                           # 0xff74
-	.short	65411                           # 0xff83
-	.short	65397                           # 0xff75
-	.short	65410                           # 0xff82
-	.short	65395                           # 0xff73
-	.short	65424                           # 0xff90
-	.short	65427                           # 0xff93
-	.short	65427                           # 0xff93
-	.short	65420                           # 0xff8c
-	.short	65422                           # 0xff8e
-	.short	65421                           # 0xff8d
-	.short	65421                           # 0xff8d
-	.short	65412                           # 0xff84
-	.short	65421                           # 0xff8d
-	.short	65411                           # 0xff83
-	.short	65416                           # 0xff88
-	.short	65406                           # 0xff7e
-	.short	65417                           # 0xff89
-	.short	65409                           # 0xff81
-	.short	65415                           # 0xff87
-	.short	65402                           # 0xff7a
-	.short	65417                           # 0xff89
-	.short	65402                           # 0xff7a
-	.short	65414                           # 0xff86
-	.short	65401                           # 0xff79
-	.short	65417                           # 0xff89
-	.short	65404                           # 0xff7c
-	.short	65417                           # 0xff89
-	.short	65401                           # 0xff79
-	.short	65418                           # 0xff8a
-	.short	65404                           # 0xff7c
-	.short	65418                           # 0xff8a
-	.short	65404                           # 0xff7c
-	.short	65420                           # 0xff8c
-	.short	65407                           # 0xff7f
-	.short	65420                           # 0xff8c
-	.short	65403                           # 0xff7b
-	.short	65410                           # 0xff82
-	.short	65406                           # 0xff7e
-	.short	65404                           # 0xff7c
-	.short	65406                           # 0xff7e
-	.short	65408                           # 0xff80
-	.short	65403                           # 0xff7b
-	.short	65399                           # 0xff77
-	.short	65400                           # 0xff78
-	.short	65405                           # 0xff7d
-	.short	65395                           # 0xff73
-	.short	65397                           # 0xff75
-	.short	65395                           # 0xff73
-	.short	65404                           # 0xff7c
-	.short	65394                           # 0xff72
-	.short	65395                           # 0xff73
-	.short	65392                           # 0xff70
-	.short	65402                           # 0xff7a
-	.short	65390                           # 0xff6e
-	.short	65395                           # 0xff73
-	.short	65392                           # 0xff70
-	.short	65405                           # 0xff7d
-	.short	65391                           # 0xff6f
-	.short	65398                           # 0xff76
-	.short	65395                           # 0xff73
-	.short	65407                           # 0xff7f
-	.short	65390                           # 0xff6e
-	.short	65401                           # 0xff79
-	.short	65397                           # 0xff75
-	.short	65406                           # 0xff7e
-	.short	65395                           # 0xff73
-	.short	65408                           # 0xff80
-	.short	65394                           # 0xff72
-	.short	65425                           # 0xff91
-	.short	65424                           # 0xff90
-	.short	65422                           # 0xff8e
-	.short	65416                           # 0xff88
-	.short	65420                           # 0xff8c
-	.short	65417                           # 0xff89
-	.short	65419                           # 0xff8b
-	.short	65411                           # 0xff83
-	.short	65416                           # 0xff88
-	.short	65411                           # 0xff83
-	.short	65415                           # 0xff87
-	.short	65406                           # 0xff7e
-	.short	65412                           # 0xff84
-	.short	65409                           # 0xff81
-	.short	65413                           # 0xff85
-	.short	65402                           # 0xff7a
-	.short	65415                           # 0xff87
-	.short	65405                           # 0xff7d
-	.short	65411                           # 0xff83
-	.short	65400                           # 0xff78
-	.short	65414                           # 0xff86
-	.short	65405                           # 0xff7d
-	.short	65417                           # 0xff89
-	.short	65402                           # 0xff7a
-	.short	65419                           # 0xff8b
-	.short	65404                           # 0xff7c
-	.short	65419                           # 0xff8b
-	.short	65405                           # 0xff7d
-	.short	65421                           # 0xff8d
-	.short	65408                           # 0xff80
-	.short	65424                           # 0xff90
-	.short	65403                           # 0xff7b
-	.short	65406                           # 0xff7e
-	.short	65404                           # 0xff7c
-	.short	65399                           # 0xff77
-	.short	65402                           # 0xff7a
-	.short	65405                           # 0xff7d
-	.short	65399                           # 0xff77
-	.short	65396                           # 0xff74
-	.short	65400                           # 0xff78
-	.short	65401                           # 0xff79
-	.short	65393                           # 0xff71
-	.short	65394                           # 0xff72
-	.short	65395                           # 0xff73
-	.short	65398                           # 0xff76
-	.short	65391                           # 0xff6f
-	.short	65393                           # 0xff71
-	.short	65395                           # 0xff73
-	.short	65403                           # 0xff7b
-	.short	65388                           # 0xff6c
-	.short	65391                           # 0xff6f
-	.short	65391                           # 0xff6f
-	.short	65402                           # 0xff7a
-	.short	65391                           # 0xff6f
-	.short	65397                           # 0xff75
-	.short	65394                           # 0xff72
-	.short	65406                           # 0xff7e
-	.short	65391                           # 0xff6f
-	.short	65400                           # 0xff78
-	.short	65394                           # 0xff72
-	.short	65409                           # 0xff81
-	.short	65395                           # 0xff73
-	.short	65407                           # 0xff7f
-	.short	65395                           # 0xff73
-	.short	65416                           # 0xff88
-	.short	65424                           # 0xff90
-	.short	65422                           # 0xff8e
-	.short	65419                           # 0xff8b
-	.short	65418                           # 0xff8a
-	.short	65419                           # 0xff8b
-	.short	65419                           # 0xff8b
-	.short	65411                           # 0xff83
-	.short	65416                           # 0xff88
-	.short	65409                           # 0xff81
-	.short	65417                           # 0xff89
-	.short	65407                           # 0xff7f
-	.short	65413                           # 0xff85
-	.short	65411                           # 0xff83
-	.short	65414                           # 0xff86
-	.short	65402                           # 0xff7a
-	.short	65416                           # 0xff88
-	.short	65406                           # 0xff7e
-	.short	65414                           # 0xff86
-	.short	65402                           # 0xff7a
-	.short	65415                           # 0xff87
-	.short	65405                           # 0xff7d
-	.short	65413                           # 0xff85
-	.short	65401                           # 0xff79
-	.short	65417                           # 0xff89
-	.short	65408                           # 0xff80
-	.short	65420                           # 0xff8c
-	.short	65407                           # 0xff7f
-	.short	65418                           # 0xff8a
-	.short	65409                           # 0xff81
-	.short	65424                           # 0xff90
-	.short	65407                           # 0xff7f
-	.short	65397                           # 0xff75
-	.short	65403                           # 0xff7b
-	.short	65396                           # 0xff74
-	.short	65403                           # 0xff7b
-	.short	65402                           # 0xff7a
-	.short	65397                           # 0xff75
-	.short	65396                           # 0xff74
-	.short	65395                           # 0xff73
-	.short	65398                           # 0xff76
-	.short	65394                           # 0xff72
-	.short	65392                           # 0xff70
-	.short	65393                           # 0xff71
-	.short	65400                           # 0xff78
-	.short	65391                           # 0xff6f
-	.short	65392                           # 0xff70
-	.short	65389                           # 0xff6d
-	.short	65399                           # 0xff77
-	.short	65389                           # 0xff6d
-	.short	65393                           # 0xff71
-	.short	65393                           # 0xff71
-	.short	65402                           # 0xff7a
-	.short	65389                           # 0xff6d
-	.short	65394                           # 0xff72
-	.short	65392                           # 0xff70
-	.short	65404                           # 0xff7c
-	.short	65391                           # 0xff6f
-	.short	65402                           # 0xff7a
-	.short	65395                           # 0xff73
-	.short	65407                           # 0xff7f
-	.short	65396                           # 0xff74
-	.short	65408                           # 0xff80
-	.short	65397                           # 0xff75
-	.short	65422                           # 0xff8e
-	.short	65423                           # 0xff8f
-	.short	65422                           # 0xff8e
-	.short	65420                           # 0xff8c
-	.short	65420                           # 0xff8c
-	.short	65420                           # 0xff8c
-	.short	65420                           # 0xff8c
-	.short	65413                           # 0xff85
-	.short	65417                           # 0xff89
-	.short	65411                           # 0xff83
-	.short	65414                           # 0xff86
-	.short	65408                           # 0xff80
-	.short	65415                           # 0xff87
-	.short	65407                           # 0xff7f
-	.short	65413                           # 0xff85
-	.short	65404                           # 0xff7c
-	.short	65417                           # 0xff89
-	.short	65408                           # 0xff80
-	.short	65415                           # 0xff87
-	.short	65405                           # 0xff7d
-	.short	65417                           # 0xff89
-	.short	65408                           # 0xff80
-	.short	65418                           # 0xff8a
-	.short	65406                           # 0xff7e
-	.short	65415                           # 0xff87
-	.short	65409                           # 0xff81
-	.short	65418                           # 0xff8a
-	.short	65406                           # 0xff7e
-	.short	65417                           # 0xff89
-	.short	65413                           # 0xff85
-	.short	65421                           # 0xff8d
-	.short	65409                           # 0xff81
-	.short	65394                           # 0xff72
-	.short	65391                           # 0xff6f
-	.short	65387                           # 0xff6b
-	.short	65395                           # 0xff73
-	.short	65391                           # 0xff6f
-	.short	65390                           # 0xff6e
-	.short	65386                           # 0xff6a
-	.short	65388                           # 0xff6c
-	.short	65390                           # 0xff6e
-	.short	65381                           # 0xff65
-	.short	65384                           # 0xff68
-	.short	65381                           # 0xff65
-	.short	65389                           # 0xff6d
-	.short	65379                           # 0xff63
-	.short	65384                           # 0xff68
-	.short	65378                           # 0xff62
-	.short	65391                           # 0xff6f
-	.short	65381                           # 0xff65
-	.short	65386                           # 0xff6a
-	.short	65383                           # 0xff67
-	.short	65393                           # 0xff71
-	.short	65383                           # 0xff67
-	.short	65388                           # 0xff6c
-	.short	65384                           # 0xff68
-	.short	65394                           # 0xff72
-	.short	65384                           # 0xff68
-	.short	65391                           # 0xff6f
-	.short	65385                           # 0xff69
-	.short	65397                           # 0xff75
-	.short	65389                           # 0xff6d
-	.short	65398                           # 0xff76
-	.short	65389                           # 0xff6d
-	.short	19183                           # 0x4aef
-	.short	6599                            # 0x19c7
-	.short	32767                           # 0x7fff
-	.short	6599                            # 0x19c7
-	.short	32767                           # 0x7fff
-	.short	6598                            # 0x19c6
-	.short	32767                           # 0x7fff
-	.short	6598                            # 0x19c6
-	.short	65460                           # 0xffb4
-	.short	52825                           # 0xce59
-	.short	6080                            # 0x17c0
-	.short	55044                           # 0xd704
-	.short	65526                           # 0xfff6
-	.short	8                               # 0x8
-	.short	65535                           # 0xffff
-	.short	65535                           # 0xffff
-	.short	6520                            # 0x1978
-	.short	1054                            # 0x41e
-	.short	644                             # 0x284
-	.short	32767                           # 0x7fff
-	.short	6520                            # 0x1978
-	.short	1055                            # 0x41f
-	.short	644                             # 0x284
-	.short	32767                           # 0x7fff
-	.short	1                               # 0x1
-	.short	1                               # 0x1
-	.short	1                               # 0x1
-	.short	1                               # 0x1
-	.short	1                               # 0x1
-	.short	1                               # 0x1
-	.short	1                               # 0x1
-	.short	1                               # 0x1
-	.short	1649                            # 0x671
-	.short	32767                           # 0x7fff
-	.short	6599                            # 0x19c7
-	.short	32767                           # 0x7fff
-	.short	6599                            # 0x19c7
-	.short	32767                           # 0x7fff
-	.short	6598                            # 0x19c6
-	.short	32767                           # 0x7fff
-	.short	65464                           # 0xffb8
-	.short	62665                           # 0xf4c9
-	.short	53316                           # 0xd044
-	.short	55083                           # 0xd72b
-	.short	7                               # 0x7
-	.short	65532                           # 0xfffc
-	.short	65533                           # 0xfffd
-	.short	65535                           # 0xffff
-	.short	239                             # 0xef
-	.short	67                              # 0x43
-	.short	10878                           # 0x2a7e
-	.short	58                              # 0x3a
-	.short	239                             # 0xef
-	.short	67                              # 0x43
-	.short	10878                           # 0x2a7e
-	.short	58                              # 0x3a
-	.short	1                               # 0x1
-	.short	1                               # 0x1
-	.short	1                               # 0x1
-	.short	1                               # 0x1
-	.short	1                               # 0x1
-	.short	1                               # 0x1
-	.short	1                               # 0x1
-	.short	1                               # 0x1
-	.short	6401                            # 0x1901
-	.short	1                               # 0x1
 	.size	_ZL9subframe2, 1668
 
-	.type	.L.str.137,@object              # @.str.137
-	.section	.rodata.str1.1,"aMS",@progbits,1
-.L.str.137:
-	.asciz	"maximum t13 %.10f\n"
-	.size	.L.str.137, 19
-
 	.type	.L.str.138,@object              # @.str.138
+	.section	.rodata.str1.1,"aMS",@progbits,1
 .L.str.138:
-	.asciz	"maximum t14 %.10f\n"
+	.asciz	"maximum t13 %.10f\n"
 	.size	.L.str.138, 19
 
 	.type	.L.str.139,@object              # @.str.139
 .L.str.139:
-	.asciz	"mint5 = %.10f\n"
-	.size	.L.str.139, 15
+	.asciz	"maximum t14 %.10f\n"
+	.size	.L.str.139, 19
 
 	.type	.L.str.140,@object              # @.str.140
 .L.str.140:
-	.asciz	"max5 = %.10f\n"
-	.size	.L.str.140, 14
+	.asciz	"mint5 = %.10f\n"
+	.size	.L.str.140, 15
 
-	.type	.L.str.142,@object              # @.str.142
-.L.str.142:
-	.asciz	"Range = %.10f\n"
-	.size	.L.str.142, 15
+	.type	.L.str.141,@object              # @.str.141
+.L.str.141:
+	.asciz	"max5 = %.10f\n"
+	.size	.L.str.141, 14
 
 	.type	.L.str.143,@object              # @.str.143
 .L.str.143:
-	.asciz	"minRange = %.10f\n"
-	.size	.L.str.143, 18
+	.asciz	"Range = %.10f\n"
+	.size	.L.str.143, 15
 
 	.type	.L.str.144,@object              # @.str.144
 .L.str.144:
-	.asciz	"maxVal = %.10f\n"
-	.size	.L.str.144, 16
+	.asciz	"minRange = %.10f\n"
+	.size	.L.str.144, 18
 
 	.type	.L.str.145,@object              # @.str.145
 .L.str.145:
-	.asciz	"minVal = %.10f\n"
+	.asciz	"maxVal = %.10f\n"
 	.size	.L.str.145, 16
 
 	.type	.L.str.146,@object              # @.str.146
 .L.str.146:
-	.asciz	"thermalmap.ppm"
-	.size	.L.str.146, 15
+	.asciz	"minVal = %.10f\n"
+	.size	.L.str.146, 16
 
 	.type	.L.str.147,@object              # @.str.147
 .L.str.147:
-	.asciz	"w"
-	.size	.L.str.147, 2
+	.asciz	"thermalmap.ppm"
+	.size	.L.str.147, 15
 
 	.type	.L.str.148,@object              # @.str.148
 .L.str.148:
+	.asciz	"w"
+	.size	.L.str.148, 2
+
+	.type	.L.str.149,@object              # @.str.149
+.L.str.149:
 	.asciz	"min = %d max = %d\n"
-	.size	.L.str.148, 19
+	.size	.L.str.149, 19
 
 	.type	params_KvPTAT.fixp,@object      # @params_KvPTAT.fixp
 	.bss
@@ -13584,10 +13550,10 @@ params_ilChessC.fixp:
 	.addrsig_sym _ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.27.51
 	.addrsig_sym _ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.25.54
 	.addrsig_sym _ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.14.50.58
-	.addrsig_sym _Z14MLX90640_GetTaPKt.6_1flp
 	.addrsig_sym _Z14MLX90640_GetTaPKt.2_s16_16fixp
-	.addrsig_sym _Z15MLX90640_GetVddPKt.3_s17_15fixp
 	.addrsig_sym _Z15MLX90640_GetVddPKt.1_s16_16fixp
+	.addrsig_sym _Z15MLX90640_GetVddPKt.3_s17_15fixp
+	.addrsig_sym _Z14MLX90640_GetTaPKt.6_1flp
 	.addrsig_sym _Z5max_fff.23_s12_20fixp
 	.addrsig_sym _Z20MLX90640_CalculateToPKtffPf.11_fixp
 	.addrsig_sym _Z8printPPMP8_IO_FILEPfiiff.13_fixp
