@@ -86,6 +86,9 @@ int main(int argc, char *argv[])
     const float emissivity  __attribute((annotate("scalar()"))) = 0.95f;
     const float minRange  __attribute((annotate("scalar()"))) = 15.f;
     
+
+    float __attribute((annotate("scalar(range(0,1) final )"))) em = emissivity;
+    
     const int nx = 32, ny = 24;
 
     // Temperature is an array, the values of temperature are flattened
@@ -108,12 +111,12 @@ int main(int argc, char *argv[])
     printf("TaMain = %.10f\n",Ta);
     printf("TrMain = %.10f\n",tr);
     
-    MLX90640_CalculateTo(subframe1, emissivity, tr, temperature);
+    MLX90640_CalculateTo(subframe1, em, tr, temperature);
     
     Ta = MLX90640_GetTa(subframe2);
     tr = Ta - ta_shift;
 
-    MLX90640_CalculateTo(subframe2, emissivity, tr, temperature);
+    MLX90640_CalculateTo(subframe2, em, tr, temperature);
     printf("TaMain = %.10f\n",Ta);
     printf("TrMain = %.10f\n",tr);
     __attribute__((annotate("scalar()"))) float  minVal = temperature[0], maxVal = temperature[0];

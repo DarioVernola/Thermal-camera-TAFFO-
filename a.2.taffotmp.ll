@@ -176,27 +176,28 @@ $_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integ
 @.str.130 = private unnamed_addr constant [2 x i8] c"\0A\00", align 1
 @_ZL6eeprom = internal constant [832 x i16] [i16 195, i16 14751, i16 0, i16 8289, i16 5, i16 800, i16 992, i16 5919, i16 -13513, i16 393, i16 1177, i16 0, i16 6401, i16 0, i16 0, i16 -16845, i16 16928, i16 -58, i16 530, i16 514, i16 -3582, i16 -7694, i16 -11807, i16 -24640, i16 257, i16 258, i16 -3838, i16 -3838, i16 -3598, i16 -7694, i16 -7966, i16 -16159, i16 -30571, i16 15246, i16 -4678, i16 4607, i16 13106, i16 13107, i16 290, i16 -13057, i16 -8756, i16 255, i16 8465, i16 8755, i16 8755, i16 4386, i16 -4351, i16 -17442, i16 6224, i16 12195, i16 5461, i16 -23164, i16 26197, i16 2512, i16 14646, i16 13363, i16 9298, i16 4262, i16 6079, i16 1572, i16 -2560, i16 -14900, i16 -26703, i16 9833, i16 4126, i16 4240, i16 7246, i16 222, i16 1070, i16 4224, i16 9118, i16 -1010, i16 3072, i16 1216, i16 6382, i16 1022, i16 1950, i16 -18, i16 6238, i16 -1922, i16 5056, i16 2016, i16 5246, i16 -3938, i16 2048, i16 -928, i16 4128, i16 -3042, i16 1938, i16 992, i16 7120, i16 -6048, i16 -64, i16 -5054, i16 4288, i16 -8080, i16 2032, i16 110, i16 -5076, i16 1198, i16 -3040, i16 -946, i16 -3204, i16 944, i16 -32, i16 -3954, i16 -4916, i16 3008, i16 -1166, i16 -4178, i16 -5060, i16 1088, i16 1936, i16 -1106, i16 -5044, i16 -944, i16 980, i16 -4048, i16 -5124, i16 2, i16 884, i16 -1088, i16 -2098, i16 -1982, i16 -1102, i16 -6112, i16 -4976, i16 -3006, i16 5008, i16 4160, i16 6190, i16 -866, i16 -978, i16 3184, i16 8060, i16 -1042, i16 126, i16 1104, i16 6222, i16 878, i16 1870, i16 -96, i16 6158, i16 -1970, i16 3070, i16 2032, i16 6112, i16 -3122, i16 -896, i16 -16, i16 5106, i16 -2096, i16 1968, i16 -912, i16 7120, i16 -6000, i16 -32, i16 -4960, i16 5282, i16 -8144, i16 7008, i16 3102, i16 -2020, i16 5216, i16 2, i16 2126, i16 -180, i16 5008, i16 1088, i16 1054, i16 -980, i16 6928, i16 2850, i16 -146, i16 -36, i16 5136, i16 4018, i16 2976, i16 -66, i16 3984, i16 1106, i16 960, i16 -1074, i16 6064, i16 3972, i16 1104, i16 1998, i16 2144, i16 3010, i16 -2960, i16 -880, i16 18, i16 8992, i16 3152, i16 5150, i16 -882, i16 3072, i16 4128, i16 8062, i16 -1074, i16 3134, i16 1104, i16 6208, i16 974, i16 2926, i16 -80, i16 7134, i16 -1970, i16 5040, i16 2944, i16 6128, i16 -3042, i16 2160, i16 2, i16 3198, i16 -3040, i16 2000, i16 -816, i16 7136, i16 -4976, i16 -16, i16 -3918, i16 6226, i16 -7072, i16 9058, i16 1182, i16 -2964, i16 4272, i16 3170, i16 2142, i16 -82, i16 4080, i16 2176, i16 142, i16 -1892, i16 6112, i16 2976, i16 -18, i16 -978, i16 4238, i16 6130, i16 3022, i16 -1970, i16 3136, i16 3268, i16 62, i16 -2882, i16 5234, i16 3092, i16 1296, i16 1072, i16 1218, i16 2130, i16 -2832, i16 160, i16 162, i16 2990, i16 3152, i16 5150, i16 -882, i16 46, i16 3168, i16 7040, i16 -1090, i16 3038, i16 1056, i16 6176, i16 1790, i16 1808, i16 880, i16 5152, i16 -2034, i16 3040, i16 2896, i16 4112, i16 -4080, i16 82, i16 -974, i16 5106, i16 -3072, i16 2852, i16 98, i16 7106, i16 -6000, i16 978, i16 -3038, i16 6210, i16 -7088, i16 3040, i16 142, i16 -4004, i16 2208, i16 -944, i16 128, i16 -2100, i16 3024, i16 1026, i16 -946, i16 -2962, i16 5904, i16 1890, i16 -1106, i16 -3988, i16 4144, i16 2084, i16 1888, i16 -4018, i16 2096, i16 1154, i16 -944, i16 -4050, i16 3122, i16 4934, i16 128, i16 1022, i16 1202, i16 1026, i16 -1984, i16 -896, i16 130, i16 3038, i16 2128, i16 5150, i16 -1906, i16 30, i16 3072, i16 7008, i16 -2066, i16 3008, i16 160, i16 5168, i16 -80, i16 -1056, i16 -1056, i16 3280, i16 -2896, i16 3024, i16 1024, i16 3168, i16 -4080, i16 -864, i16 -910, i16 2144, i16 -4016, i16 1972, i16 194, i16 5186, i16 -6880, i16 -1008, i16 -3966, i16 6162, i16 -7040, i16 880, i16 -1042, i16 -5170, i16 1056, i16 -2094, i16 912, i16 -3314, i16 880, i16 882, i16 -2978, i16 -4164, i16 3906, i16 -2160, i16 -3200, i16 -6004, i16 1104, i16 1906, i16 -98, i16 -6100, i16 1968, i16 -958, i16 -3056, i16 -6098, i16 3040, i16 1894, i16 -944, i16 -1056, i16 -814, i16 946, i16 -3040, i16 -64, i16 -2014, i16 5906, i16 2066, i16 5038, i16 -2000, i16 2960, i16 4050, i16 4960, i16 -2192, i16 2046, i16 96, i16 2222, i16 -160, i16 1856, i16 -176, i16 4078, i16 -3056, i16 3970, i16 1936, i16 3072, i16 -5104, i16 1010, i16 -1006, i16 3026, i16 -1152, i16 -1070, i16 -894, i16 4066, i16 -5968, i16 -1038, i16 -3054, i16 3202, i16 -7136, i16 6962, i16 1056, i16 -2098, i16 3138, i16 4018, i16 3038, i16 -1140, i16 4994, i16 3074, i16 -928, i16 -2868, i16 6000, i16 3938, i16 848, i16 -1026, i16 4112, i16 6068, i16 2974, i16 -2002, i16 4146, i16 3108, i16 1072, i16 -1026, i16 7058, i16 4084, i16 2192, i16 14, i16 2240, i16 2052, i16 32, i16 160, i16 2082, i16 -80, i16 2082, i16 3056, i16 -2944, i16 -2066, i16 1072, i16 4014, i16 -3120, i16 -1072, i16 -864, i16 2128, i16 -2050, i16 -1216, i16 -1088, i16 4064, i16 -4064, i16 -990, i16 -992, i16 1152, i16 -7072, i16 -2014, i16 -1934, i16 98, i16 -3104, i16 -142, i16 34, i16 2096, i16 -7024, i16 -1118, i16 -4958, i16 3122, i16 -7152, i16 -62, i16 -2002, i16 -7154, i16 1136, i16 -1038, i16 -962, i16 -5172, i16 978, i16 -16, i16 -2898, i16 -5010, i16 4080, i16 -160, i16 -1104, i16 -3074, i16 3120, i16 1076, i16 -992, i16 -5970, i16 1106, i16 1090, i16 -1936, i16 -6002, i16 4098, i16 3972, i16 1056, i16 -1954, i16 2178, i16 1986, i16 -1888, i16 -944, i16 1026, i16 1822, i16 5122, i16 4064, i16 80, i16 912, i16 4130, i16 5920, i16 -112, i16 1968, i16 2130, i16 4222, i16 894, i16 -1074, i16 1922, i16 4208, i16 -1952, i16 3008, i16 4000, i16 3168, i16 -3984, i16 992, i16 1104, i16 3090, i16 -80, i16 2850, i16 2160, i16 5122, i16 -3984, i16 1872, i16 -942, i16 7154, i16 -5120, i16 1826, i16 -1010, i16 -4180, i16 3136, i16 -94, i16 16, i16 -3266, i16 2978, i16 1970, i16 -928, i16 -3970, i16 7026, i16 -46, i16 -144, i16 -4964, i16 4176, i16 4036, i16 1952, i16 -3970, i16 3168, i16 3060, i16 80, i16 -4050, i16 7090, i16 5940, i16 2160, i16 1022, i16 3186, i16 4930, i16 64, i16 2016, i16 4082, i16 928, i16 5104, i16 2976, i16 -944, i16 -2032, i16 5042, i16 2912, i16 -4050, i16 992, i16 1122, i16 1120, i16 -1058, i16 848, i16 834, i16 1104, i16 -2928, i16 96, i16 1138, i16 2128, i16 -4016, i16 1042, i16 50, i16 2080, i16 -1088, i16 -1086, i16 2130, i16 4016, i16 -5040, i16 -1120, i16 -1982, i16 2096, i16 -4160, i16 -2158, i16 -1072, i16 -8290, i16 -960, i16 -5120, i16 -112, i16 -7314, i16 -1008, i16 -46, i16 -4002, i16 -7044, i16 1968, i16 -190, i16 -2224, i16 -7058, i16 144, i16 82, i16 -1938, i16 -6034, i16 64, i16 1042, i16 -992, i16 -6114, i16 5072, i16 962, i16 64, i16 -1106, i16 48, i16 914, i16 -2016, i16 -2032, i16 1954, i16 -4354, i16 3026, i16 -2032, i16 -4000, i16 -5200, i16 2066, i16 -64, i16 -4144, i16 -4114, i16 -926, i16 128, i16 -2162, i16 -5234, i16 -1166, i16 -866, i16 -4048, i16 -1136, i16 992, i16 -880, i16 -6064, i16 -3006, i16 -1022, i16 2, i16 -3120, i16 -2208, i16 1058, i16 3906, i16 -7056, i16 -2318, i16 -1038, i16 2016, i16 -4272, i16 -3200, i16 -3024, i16 -11138, i16 -830, i16 -4062, i16 -1936, i16 -8114, i16 66, i16 -2958, i16 -2880, i16 -6914, i16 4080, i16 -2064, i16 -2080, i16 -6882, i16 3232, i16 1026, i16 96, i16 -6882, i16 1216, i16 178, i16 112, i16 -4994, i16 5186, i16 3010, i16 2176, i16 -66, i16 2226, i16 3922, i16 64, i16 -944, i16 5042, i16 -5154, i16 3074, i16 -2032, i16 -48, i16 -4194, i16 3106, i16 1968, i16 -3984, i16 -4048, i16 1138, i16 1166, i16 -80, i16 -2160, i16 1874, i16 2160, i16 -2848, i16 -16, i16 2080, i16 2112, i16 -4048, i16 -1024, i16 2050, i16 96, i16 -2016, i16 -1152, i16 5074, i16 3954, i16 -4046, i16 -1216, i16 1970, i16 2066, i16 -1216, i16 -7248, i16 -2096, i16 -10242, i16 1952, i16 -4238, i16 -1040, i16 -7250, i16 -958, i16 -3040, i16 -1968, i16 -7042, i16 5008, i16 -1152, i16 -1216, i16 -6034, i16 3248, i16 2018, i16 1024, i16 -5058, i16 2064, i16 3058, i16 976, i16 -6066, i16 6130, i16 1892, i16 4000, i16 -1202, i16 3074, i16 2834, i16 1920, i16 -32, i16 6930, i16 -48, i16 6242, i16 48, i16 64, i16 -3026, i16 6194, i16 2992, i16 -992, i16 64, i16 3312, i16 2224, i16 1056, i16 -994, i16 2144, i16 2206, i16 -704, i16 2128, i16 7138, i16 4160, i16 -912, i16 1138, i16 4178, i16 3104, i16 1072, i16 -1058, i16 6162, i16 3984, i16 -976, i16 -1120, i16 5074, i16 2064, i16 2992, i16 -3152, i16 -3024, i16 -11234, i16 1042, i16 -4112, i16 16, i16 -7266, i16 994, i16 -976, i16 -2880, i16 -7010, i16 2048, i16 -1040, i16 -3024, i16 -4978, i16 1312, i16 2112, i16 4016, i16 -4050, i16 4160, i16 2130, i16 2080, i16 -3074, i16 6146, i16 1954, i16 4064, i16 -146, i16 3104, i16 2946, i16 3968, i16 14, i16 8082], align 16
 @.str.131 = private unnamed_addr constant [28 x i8] c"target('ta_shift') scalar()\00", section "llvm.metadata"
-@.str.132 = private unnamed_addr constant [10 x i8] c"getTa...\0A\00", align 1
-@.str.133 = private unnamed_addr constant [23 x i8] c"scalar(range(-99,999))\00", section "llvm.metadata"
+@.str.132 = private unnamed_addr constant [26 x i8] c"scalar(range(0,1) final )\00", section "llvm.metadata"
+@.str.133 = private unnamed_addr constant [10 x i8] c"getTa...\0A\00", align 1
+@.str.134 = private unnamed_addr constant [23 x i8] c"scalar(range(-99,999))\00", section "llvm.metadata"
 @_ZL9subframe1 = internal constant [834 x i16] [i16 -89, i16 -94, i16 -90, i16 -103, i16 -102, i16 -110, i16 -126, i16 -150, i16 -143, i16 -155, i16 -151, i16 -163, i16 -148, i16 -166, i16 -158, i16 -176, i16 -152, i16 -171, i16 -118, i16 -119, i16 -92, i16 -109, i16 -93, i16 -112, i16 -90, i16 -105, i16 -94, i16 -111, i16 -93, i16 -109, i16 -90, i16 -119, i16 -98, i16 -105, i16 -108, i16 -106, i16 -111, i16 -120, i16 -145, i16 -156, i16 -153, i16 -165, i16 -164, i16 -168, i16 -161, i16 -179, i16 -178, i16 -180, i16 -165, i16 -180, i16 -139, i16 -120, i16 -100, i16 -116, i16 -106, i16 -112, i16 -97, i16 -114, i16 -108, i16 -111, i16 -98, i16 -116, i16 -103, i16 -118, i16 -90, i16 -98, i16 -93, i16 -104, i16 -106, i16 -116, i16 -134, i16 -155, i16 -152, i16 -164, i16 -150, i16 -161, i16 -151, i16 -166, i16 -159, i16 -179, i16 -166, i16 -177, i16 -125, i16 -119, i16 -97, i16 -109, i16 -93, i16 -112, i16 -92, i16 -110, i16 -95, i16 -114, i16 -95, i16 -112, i16 -93, i16 -119, i16 -100, i16 -107, i16 -109, i16 -108, i16 -113, i16 -126, i16 -150, i16 -159, i16 -161, i16 -170, i16 -160, i16 -164, i16 -164, i16 -178, i16 -177, i16 -182, i16 -174, i16 -186, i16 -145, i16 -121, i16 -101, i16 -115, i16 -107, i16 -113, i16 -99, i16 -117, i16 -106, i16 -115, i16 -102, i16 -119, i16 -105, i16 -120, i16 -87, i16 -99, i16 -95, i16 -108, i16 -103, i16 -117, i16 -139, i16 -158, i16 -148, i16 -161, i16 -154, i16 -170, i16 -162, i16 -176, i16 -172, i16 -188, i16 -169, i16 -184, i16 -133, i16 -124, i16 -90, i16 -105, i16 -93, i16 -112, i16 -92, i16 -113, i16 -95, i16 -113, i16 -96, i16 -110, i16 -90, i16 -119, i16 -98, i16 -110, i16 -113, i16 -112, i16 -115, i16 -127, i16 -155, i16 -162, i16 -157, i16 -169, i16 -169, i16 -173, i16 -169, i16 -185, i16 -183, i16 -189, i16 -182, i16 -193, i16 -152, i16 -124, i16 -98, i16 -111, i16 -108, i16 -112, i16 -100, i16 -120, i16 -109, i16 -115, i16 -102, i16 -120, i16 -104, i16 -121, i16 -96, i16 -101, i16 -98, i16 -109, i16 -108, i16 -118, i16 -143, i16 -164, i16 -160, i16 -165, i16 -155, i16 -168, i16 -163, i16 -176, i16 -166, i16 -181, i16 -179, i16 -188, i16 -141, i16 -127, i16 -93, i16 -105, i16 -93, i16 -111, i16 -90, i16 -110, i16 -94, i16 -116, i16 -97, i16 -111, i16 -92, i16 -121, i16 -106, i16 -113, i16 -115, i16 -114, i16 -120, i16 -130, i16 -161, i16 -170, i16 -170, i16 -179, i16 -176, i16 -175, i16 -171, i16 -183, i16 -177, i16 -182, i16 -190, i16 -199, i16 -162, i16 -131, i16 -100, i16 -112, i16 -110, i16 -115, i16 -98, i16 -119, i16 -109, i16 -115, i16 -104, i16 -119, i16 -107, i16 -122, i16 -98, i16 -104, i16 -99, i16 -110, i16 -109, i16 -117, i16 -139, i16 -157, i16 -156, i16 -173, i16 -165, i16 -178, i16 -172, i16 -181, i16 -172, i16 -184, i16 -179, i16 -195, i16 -148, i16 -130, i16 -94, i16 -107, i16 -95, i16 -116, i16 -94, i16 -111, i16 -97, i16 -115, i16 -98, i16 -111, i16 -91, i16 -123, i16 -109, i16 -116, i16 -116, i16 -115, i16 -119, i16 -128, i16 -158, i16 -164, i16 -163, i16 -184, i16 -182, i16 -183, i16 -184, i16 -192, i16 -195, i16 -192, i16 -187, i16 -206, i16 -165, i16 -132, i16 -103, i16 -115, i16 -112, i16 -116, i16 -101, i16 -121, i16 -113, i16 -120, i16 -105, i16 -120, i16 -106, i16 -126, i16 -94, i16 -102, i16 -99, i16 -107, i16 -102, i16 -117, i16 -147, i16 -165, i16 -153, i16 -157, i16 -164, i16 -177, i16 -170, i16 -182, i16 -175, i16 -186, i16 -166, i16 -178, i16 -145, i16 -130, i16 -94, i16 -106, i16 -95, i16 -111, i16 -96, i16 -112, i16 -98, i16 -117, i16 -100, i16 -112, i16 -97, i16 -123, i16 -106, i16 -117, i16 -117, i16 -117, i16 -116, i16 -131, i16 -166, i16 -167, i16 -161, i16 -165, i16 -177, i16 -180, i16 -176, i16 -190, i16 -184, i16 -187, i16 -171, i16 -186, i16 -157, i16 -133, i16 -103, i16 -116, i16 -113, i16 -116, i16 -107, i16 -122, i16 -114, i16 -123, i16 -110, i16 -122, i16 -110, i16 -126, i16 -101, i16 -104, i16 -101, i16 -109, i16 -110, i16 -115, i16 -147, i16 -156, i16 -149, i16 -153, i16 -156, i16 -173, i16 -165, i16 -174, i16 -166, i16 -178, i16 -163, i16 -176, i16 -141, i16 -130, i16 -97, i16 -108, i16 -97, i16 -115, i16 -95, i16 -112, i16 -100, i16 -115, i16 -101, i16 -114, i16 -96, i16 -121, i16 -114, i16 -121, i16 -120, i16 -117, i16 -120, i16 -130, i16 -163, i16 -163, i16 -156, i16 -163, i16 -163, i16 -175, i16 -165, i16 -184, i16 -173, i16 -183, i16 -166, i16 -182, i16 -154, i16 -135, i16 -108, i16 -120, i16 -119, i16 -120, i16 -106, i16 -123, i16 -117, i16 -120, i16 -109, i16 -125, i16 -112, i16 -127, i16 -101, i16 -103, i16 -103, i16 -108, i16 -107, i16 -112, i16 -128, i16 -134, i16 -117, i16 -118, i16 -111, i16 -125, i16 -115, i16 -120, i16 -112, i16 -123, i16 -107, i16 -120, i16 -112, i16 -123, i16 -103, i16 -117, i16 -104, i16 -117, i16 -99, i16 -115, i16 -102, i16 -121, i16 -102, i16 -116, i16 -95, i16 -124, i16 -116, i16 -123, i16 -122, i16 -119, i16 -121, i16 -127, i16 -132, i16 -130, i16 -121, i16 -134, i16 -145, i16 -137, i16 -142, i16 -137, i16 -142, i16 -133, i16 -129, i16 -138, i16 -137, i16 -130, i16 -114, i16 -129, i16 -122, i16 -124, i16 -108, i16 -128, i16 -121, i16 -123, i16 -111, i16 -127, i16 -114, i16 -130, i16 -104, i16 -103, i16 -102, i16 -110, i16 -108, i16 -111, i16 -111, i16 -126, i16 -136, i16 -167, i16 -188, i16 -218, i16 -211, i16 -218, i16 -209, i16 -224, i16 -208, i16 -229, i16 -169, i16 -146, i16 -107, i16 -118, i16 -106, i16 -120, i16 -105, i16 -118, i16 -105, i16 -119, i16 -105, i16 -116, i16 -102, i16 -124, i16 -121, i16 -124, i16 -126, i16 -122, i16 -123, i16 -125, i16 -140, i16 -142, i16 -183, i16 -197, i16 -209, i16 -222, i16 -216, i16 -228, i16 -227, i16 -232, i16 -221, i16 -239, i16 -195, i16 -153, i16 -119, i16 -133, i16 -126, i16 -127, i16 -116, i16 -131, i16 -122, i16 -127, i16 -115, i16 -130, i16 -118, i16 -130, i16 -107, i16 -106, i16 -106, i16 -112, i16 -110, i16 -116, i16 -137, i16 -156, i16 -186, i16 -197, i16 -190, i16 -219, i16 -216, i16 -225, i16 -217, i16 -227, i16 -206, i16 -218, i16 -176, i16 -146, i16 -110, i16 -119, i16 -106, i16 -122, i16 -103, i16 -116, i16 -103, i16 -121, i16 -103, i16 -116, i16 -102, i16 -123, i16 -121, i16 -127, i16 -132, i16 -124, i16 -127, i16 -137, i16 -161, i16 -173, i16 -199, i16 -216, i16 -213, i16 -230, i16 -239, i16 -248, i16 -248, i16 -243, i16 -231, i16 -241, i16 -203, i16 -158, i16 -125, i16 -133, i16 -130, i16 -129, i16 -117, i16 -131, i16 -123, i16 -127, i16 -113, i16 -129, i16 -119, i16 -131, i16 -114, i16 -108, i16 -109, i16 -110, i16 -115, i16 -119, i16 -135, i16 -167, i16 -178, i16 -197, i16 -195, i16 -225, i16 -223, i16 -226, i16 -222, i16 -236, i16 -219, i16 -230, i16 -182, i16 -149, i16 -112, i16 -117, i16 -110, i16 -124, i16 -109, i16 -114, i16 -106, i16 -119, i16 -106, i16 -116, i16 -104, i16 -122, i16 -132, i16 -130, i16 -134, i16 -126, i16 -130, i16 -139, i16 -156, i16 -180, i16 -185, i16 -216, i16 -223, i16 -238, i16 -242, i16 -247, i16 -250, i16 -250, i16 -237, i16 -250, i16 -208, i16 -162, i16 -124, i16 -136, i16 -131, i16 -134, i16 -119, i16 -133, i16 -127, i16 -129, i16 -118, i16 -129, i16 -121, i16 -130, i16 -111, i16 -106, i16 -111, i16 -113, i16 -113, i16 -114, i16 -130, i16 -154, i16 -155, i16 -193, i16 -198, i16 -229, i16 -232, i16 -238, i16 -232, i16 -247, i16 -232, i16 -233, i16 -188, i16 -150, i16 -112, i16 -117, i16 -108, i16 -122, i16 -108, i16 -117, i16 -109, i16 -121, i16 -109, i16 -112, i16 -105, i16 -120, i16 -138, i16 -139, i16 -147, i16 -138, i16 -139, i16 -145, i16 -162, i16 -174, i16 -171, i16 -209, i16 -208, i16 -234, i16 -226, i16 -256, i16 -256, i16 -267, i16 -252, i16 -261, i16 -218, i16 -171, i16 -136, i16 -145, i16 -140, i16 -141, i16 -132, i16 -144, i16 -135, i16 -140, i16 -131, i16 -138, i16 -131, i16 -140, i16 19544, i16 6470, i16 32767, i16 6470, i16 32767, i16 6469, i16 32767, i16 6469, i16 -77, i16 -12732, i16 6201, i16 -10499, i16 -8, i16 8, i16 -1, i16 -4, i16 6377, i16 1032, i16 626, i16 32767, i16 6377, i16 1032, i16 626, i16 32767, i16 1, i16 1, i16 1, i16 1, i16 1, i16 1, i16 1, i16 1, i16 1617, i16 32767, i16 6470, i16 32767, i16 6470, i16 32767, i16 6469, i16 32767, i16 -71, i16 -2858, i16 -12229, i16 -10457, i16 7, i16 -4, i16 -5, i16 0, i16 237, i16 67, i16 10627, i16 60, i16 237, i16 67, i16 10627, i16 60, i16 1, i16 1, i16 1, i16 1, i16 1, i16 1, i16 1, i16 1, i16 6401, i16 1], align 16
-@.str.134 = private unnamed_addr constant [9 x i8] c"ta = %e\0A\00", align 1
-@.str.135 = private unnamed_addr constant [10 x i8] c"scalar() \00", section "llvm.metadata"
-@.str.136 = private unnamed_addr constant [16 x i8] c"TaMain = %.10f\0A\00", align 1
-@.str.137 = private unnamed_addr constant [16 x i8] c"TrMain = %.10f\0A\00", align 1
+@.str.135 = private unnamed_addr constant [9 x i8] c"ta = %e\0A\00", align 1
+@.str.136 = private unnamed_addr constant [10 x i8] c"scalar() \00", section "llvm.metadata"
+@.str.137 = private unnamed_addr constant [16 x i8] c"TaMain = %.10f\0A\00", align 1
+@.str.138 = private unnamed_addr constant [16 x i8] c"TrMain = %.10f\0A\00", align 1
 @_ZL9subframe2 = internal constant [834 x i16] [i16 -90, i16 -94, i16 -90, i16 -103, i16 -100, i16 -110, i16 -128, i16 -150, i16 -141, i16 -155, i16 -150, i16 -163, i16 -152, i16 -166, i16 -160, i16 -176, i16 -156, i16 -171, i16 -119, i16 -119, i16 -92, i16 -109, i16 -93, i16 -112, i16 -91, i16 -105, i16 -92, i16 -111, i16 -93, i16 -109, i16 -91, i16 -119, i16 -98, i16 -102, i16 -108, i16 -107, i16 -111, i16 -119, i16 -145, i16 -158, i16 -153, i16 -165, i16 -164, i16 -166, i16 -161, i16 -175, i16 -178, i16 -179, i16 -165, i16 -179, i16 -139, i16 -120, i16 -100, i16 -116, i16 -106, i16 -113, i16 -97, i16 -112, i16 -108, i16 -112, i16 -98, i16 -114, i16 -103, i16 -118, i16 -90, i16 -98, i16 -95, i16 -104, i16 -105, i16 -116, i16 -132, i16 -155, i16 -151, i16 -164, i16 -148, i16 -161, i16 -151, i16 -166, i16 -160, i16 -179, i16 -167, i16 -177, i16 -126, i16 -119, i16 -98, i16 -109, i16 -92, i16 -112, i16 -92, i16 -110, i16 -95, i16 -114, i16 -94, i16 -112, i16 -91, i16 -119, i16 -100, i16 -105, i16 -109, i16 -108, i16 -113, i16 -124, i16 -150, i16 -159, i16 -161, i16 -168, i16 -160, i16 -167, i16 -164, i16 -179, i16 -177, i16 -184, i16 -174, i16 -186, i16 -145, i16 -119, i16 -101, i16 -114, i16 -107, i16 -111, i16 -99, i16 -115, i16 -106, i16 -114, i16 -102, i16 -118, i16 -105, i16 -122, i16 -88, i16 -99, i16 -95, i16 -108, i16 -105, i16 -117, i16 -140, i16 -158, i16 -148, i16 -161, i16 -153, i16 -170, i16 -162, i16 -176, i16 -169, i16 -188, i16 -172, i16 -184, i16 -133, i16 -124, i16 -90, i16 -105, i16 -93, i16 -112, i16 -93, i16 -113, i16 -94, i16 -113, i16 -96, i16 -110, i16 -91, i16 -119, i16 -98, i16 -110, i16 -113, i16 -111, i16 -115, i16 -125, i16 -155, i16 -162, i16 -157, i16 -167, i16 -169, i16 -173, i16 -169, i16 -183, i16 -183, i16 -187, i16 -182, i16 -193, i16 -152, i16 -123, i16 -98, i16 -110, i16 -108, i16 -113, i16 -100, i16 -119, i16 -109, i16 -117, i16 -102, i16 -120, i16 -104, i16 -121, i16 -97, i16 -101, i16 -98, i16 -109, i16 -109, i16 -118, i16 -145, i16 -164, i16 -159, i16 -165, i16 -158, i16 -168, i16 -164, i16 -176, i16 -164, i16 -181, i16 -180, i16 -188, i16 -142, i16 -127, i16 -90, i16 -105, i16 -94, i16 -111, i16 -90, i16 -110, i16 -95, i16 -116, i16 -96, i16 -111, i16 -93, i16 -121, i16 -106, i16 -113, i16 -115, i16 -114, i16 -120, i16 -128, i16 -161, i16 -168, i16 -170, i16 -181, i16 -176, i16 -175, i16 -171, i16 -181, i16 -177, i16 -180, i16 -190, i16 -197, i16 -162, i16 -129, i16 -100, i16 -113, i16 -110, i16 -114, i16 -98, i16 -117, i16 -109, i16 -117, i16 -104, i16 -119, i16 -107, i16 -123, i16 -98, i16 -104, i16 -99, i16 -110, i16 -109, i16 -117, i16 -141, i16 -157, i16 -153, i16 -173, i16 -165, i16 -178, i16 -172, i16 -181, i16 -175, i16 -184, i16 -178, i16 -195, i16 -148, i16 -130, i16 -95, i16 -107, i16 -97, i16 -116, i16 -94, i16 -111, i16 -100, i16 -115, i16 -99, i16 -111, i16 -92, i16 -123, i16 -109, i16 -115, i16 -116, i16 -114, i16 -119, i16 -128, i16 -158, i16 -165, i16 -163, i16 -181, i16 -182, i16 -184, i16 -184, i16 -194, i16 -195, i16 -196, i16 -187, i16 -203, i16 -165, i16 -131, i16 -103, i16 -115, i16 -112, i16 -118, i16 -101, i16 -120, i16 -113, i16 -120, i16 -105, i16 -120, i16 -106, i16 -125, i16 -94, i16 -102, i16 -97, i16 -107, i16 -106, i16 -117, i16 -150, i16 -165, i16 -151, i16 -157, i16 -163, i16 -177, i16 -168, i16 -182, i16 -171, i16 -186, i16 -164, i16 -178, i16 -141, i16 -130, i16 -94, i16 -106, i16 -96, i16 -111, i16 -97, i16 -112, i16 -101, i16 -117, i16 -100, i16 -112, i16 -98, i16 -123, i16 -106, i16 -117, i16 -117, i16 -114, i16 -116, i16 -129, i16 -166, i16 -166, i16 -161, i16 -163, i16 -177, i16 -180, i16 -176, i16 -187, i16 -184, i16 -186, i16 -171, i16 -183, i16 -157, i16 -131, i16 -103, i16 -117, i16 -113, i16 -116, i16 -107, i16 -120, i16 -114, i16 -122, i16 -110, i16 -122, i16 -110, i16 -124, i16 -100, i16 -104, i16 -100, i16 -109, i16 -109, i16 -115, i16 -145, i16 -156, i16 -148, i16 -153, i16 -156, i16 -173, i16 -165, i16 -174, i16 -165, i16 -178, i16 -166, i16 -176, i16 -139, i16 -130, i16 -95, i16 -108, i16 -102, i16 -115, i16 -94, i16 -112, i16 -100, i16 -115, i16 -98, i16 -114, i16 -95, i16 -121, i16 -114, i16 -120, i16 -120, i16 -118, i16 -120, i16 -131, i16 -163, i16 -162, i16 -156, i16 -157, i16 -163, i16 -166, i16 -165, i16 -170, i16 -173, i16 -171, i16 -166, i16 -172, i16 -154, i16 -131, i16 -108, i16 -121, i16 -119, i16 -122, i16 -106, i16 -122, i16 -117, i16 -121, i16 -109, i16 -124, i16 -112, i16 -127, i16 -101, i16 -103, i16 -102, i16 -108, i16 -105, i16 -112, i16 -123, i16 -134, i16 -109, i16 -118, i16 -113, i16 -125, i16 -116, i16 -120, i16 -109, i16 -123, i16 -106, i16 -120, i16 -112, i16 -123, i16 -101, i16 -117, i16 -103, i16 -117, i16 -97, i16 -115, i16 -104, i16 -121, i16 -100, i16 -116, i16 -98, i16 -124, i16 -116, i16 -122, i16 -122, i16 -118, i16 -121, i16 -129, i16 -132, i16 -130, i16 -121, i16 -138, i16 -145, i16 -152, i16 -142, i16 -150, i16 -142, i16 -146, i16 -129, i16 -148, i16 -137, i16 -130, i16 -114, i16 -128, i16 -122, i16 -124, i16 -108, i16 -129, i16 -121, i16 -126, i16 -111, i16 -127, i16 -114, i16 -130, i16 -103, i16 -103, i16 -102, i16 -110, i16 -107, i16 -111, i16 -113, i16 -126, i16 -148, i16 -167, i16 -194, i16 -218, i16 -210, i16 -218, i16 -215, i16 -224, i16 -213, i16 -229, i16 -170, i16 -146, i16 -106, i16 -118, i16 -107, i16 -120, i16 -103, i16 -118, i16 -105, i16 -119, i16 -104, i16 -116, i16 -102, i16 -124, i16 -121, i16 -121, i16 -126, i16 -124, i16 -123, i16 -127, i16 -140, i16 -148, i16 -183, i16 -203, i16 -209, i16 -220, i16 -216, i16 -225, i16 -227, i16 -230, i16 -221, i16 -235, i16 -195, i16 -149, i16 -119, i16 -132, i16 -126, i16 -128, i16 -116, i16 -131, i16 -122, i16 -127, i16 -115, i16 -127, i16 -118, i16 -131, i16 -107, i16 -106, i16 -106, i16 -112, i16 -109, i16 -116, i16 -138, i16 -156, i16 -185, i16 -197, i16 -194, i16 -219, i16 -221, i16 -225, i16 -221, i16 -227, i16 -211, i16 -218, i16 -174, i16 -146, i16 -110, i16 -119, i16 -106, i16 -122, i16 -104, i16 -116, i16 -103, i16 -121, i16 -102, i16 -116, i16 -102, i16 -123, i16 -121, i16 -126, i16 -132, i16 -125, i16 -127, i16 -136, i16 -161, i16 -173, i16 -199, i16 -215, i16 -213, i16 -231, i16 -239, i16 -246, i16 -248, i16 -244, i16 -231, i16 -241, i16 -203, i16 -153, i16 -125, i16 -131, i16 -130, i16 -129, i16 -117, i16 -131, i16 -123, i16 -129, i16 -113, i16 -129, i16 -119, i16 -130, i16 -112, i16 -108, i16 -109, i16 -110, i16 -114, i16 -119, i16 -135, i16 -167, i16 -179, i16 -197, i16 -199, i16 -225, i16 -222, i16 -226, i16 -223, i16 -236, i16 -218, i16 -230, i16 -175, i16 -149, i16 -107, i16 -117, i16 -111, i16 -124, i16 -105, i16 -114, i16 -106, i16 -119, i16 -106, i16 -116, i16 -103, i16 -122, i16 -132, i16 -129, i16 -134, i16 -127, i16 -130, i16 -138, i16 -156, i16 -180, i16 -185, i16 -216, i16 -223, i16 -242, i16 -242, i16 -249, i16 -250, i16 -253, i16 -237, i16 -249, i16 -208, i16 -156, i16 -124, i16 -135, i16 -131, i16 -132, i16 -119, i16 -131, i16 -127, i16 -130, i16 -118, i16 -128, i16 -121, i16 -129, i16 -109, i16 -106, i16 -111, i16 -113, i16 -112, i16 -114, i16 -130, i16 -154, i16 -157, i16 -193, i16 -200, i16 -229, i16 -228, i16 -238, i16 -234, i16 -247, i16 -229, i16 -233, i16 -180, i16 -150, i16 -111, i16 -117, i16 -107, i16 -122, i16 -108, i16 -117, i16 -109, i16 -121, i16 -108, i16 -112, i16 -105, i16 -120, i16 -138, i16 -140, i16 -147, i16 -137, i16 -139, i16 -146, i16 -162, i16 -172, i16 -171, i16 -197, i16 -208, i16 -214, i16 -226, i16 -234, i16 -256, i16 -265, i16 -252, i16 -258, i16 -218, i16 -168, i16 -136, i16 -145, i16 -140, i16 -142, i16 -132, i16 -142, i16 -135, i16 -140, i16 -131, i16 -136, i16 -131, i16 -140, i16 19544, i16 6470, i16 32767, i16 6470, i16 32767, i16 6469, i16 32767, i16 6469, i16 -75, i16 -12732, i16 6203, i16 -10499, i16 -7, i16 8, i16 -1, i16 -4, i16 6378, i16 1032, i16 625, i16 32767, i16 6378, i16 1032, i16 625, i16 32767, i16 1, i16 1, i16 1, i16 1, i16 1, i16 1, i16 1, i16 1, i16 1617, i16 32767, i16 6470, i16 32767, i16 6470, i16 32767, i16 6469, i16 32767, i16 -71, i16 -2858, i16 -12229, i16 -10456, i16 7, i16 -3, i16 -5, i16 0, i16 237, i16 66, i16 10627, i16 62, i16 237, i16 65, i16 10627, i16 62, i16 1, i16 1, i16 1, i16 1, i16 1, i16 1, i16 1, i16 1, i16 6401, i16 0], align 16
-@.str.138 = private unnamed_addr constant [19 x i8] c"maximum t13 %.10f\0A\00", align 1
-@.str.139 = private unnamed_addr constant [19 x i8] c"maximum t14 %.10f\0A\00", align 1
-@.str.140 = private unnamed_addr constant [15 x i8] c"mint5 = %.10f\0A\00", align 1
-@.str.141 = private unnamed_addr constant [14 x i8] c"max5 = %.10f\0A\00", align 1
-@.str.142 = private unnamed_addr constant [30 x i8] c"scalar(range (-99,999) final)\00", section "llvm.metadata"
-@.str.143 = private unnamed_addr constant [15 x i8] c"Range = %.10f\0A\00", align 1
-@.str.144 = private unnamed_addr constant [18 x i8] c"minRange = %.10f\0A\00", align 1
-@.str.145 = private unnamed_addr constant [16 x i8] c"maxVal = %.10f\0A\00", align 1
-@.str.146 = private unnamed_addr constant [16 x i8] c"minVal = %.10f\0A\00", align 1
-@.str.147 = private unnamed_addr constant [15 x i8] c"thermalmap.ppm\00", align 1
-@.str.148 = private unnamed_addr constant [2 x i8] c"w\00", align 1
+@.str.139 = private unnamed_addr constant [19 x i8] c"maximum t13 %.10f\0A\00", align 1
+@.str.140 = private unnamed_addr constant [19 x i8] c"maximum t14 %.10f\0A\00", align 1
+@.str.141 = private unnamed_addr constant [15 x i8] c"mint5 = %.10f\0A\00", align 1
+@.str.142 = private unnamed_addr constant [14 x i8] c"max5 = %.10f\0A\00", align 1
+@.str.143 = private unnamed_addr constant [30 x i8] c"scalar(range (-99,999) final)\00", section "llvm.metadata"
+@.str.144 = private unnamed_addr constant [15 x i8] c"Range = %.10f\0A\00", align 1
+@.str.145 = private unnamed_addr constant [18 x i8] c"minRange = %.10f\0A\00", align 1
+@.str.146 = private unnamed_addr constant [16 x i8] c"maxVal = %.10f\0A\00", align 1
+@.str.147 = private unnamed_addr constant [16 x i8] c"minVal = %.10f\0A\00", align 1
+@.str.148 = private unnamed_addr constant [15 x i8] c"thermalmap.ppm\00", align 1
+@.str.149 = private unnamed_addr constant [2 x i8] c"w\00", align 1
 @stderr = external global %struct._IO_FILE*, align 8
-@.str.149 = private unnamed_addr constant [19 x i8] c"min = %d max = %d\0A\00", align 1
+@.str.150 = private unnamed_addr constant [19 x i8] c"min = %d max = %d\0A\00", align 1
 @llvm.global.annotations = appending global [23 x { i8*, i8*, i8*, i32, i8* }] [{ i8*, i8*, i8*, i32, i8* } { i8* bitcast (i16* @params_kVdd to i8*), i8* getelementptr inbounds ([37 x i8], [37 x i8]* @.str, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 23, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast (i16* @params_vdd25 to i8*), i8* getelementptr inbounds ([37 x i8], [37 x i8]* @.str, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 24, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast (float* @params_KvPTAT to i8*), i8* getelementptr inbounds ([37 x i8], [37 x i8]* @.str.2, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 25, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast (float* @params_KtPTAT to i8*), i8* getelementptr inbounds ([30 x i8], [30 x i8]* @.str.3, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 26, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast (i16* @params_vPTAT25 to i8*), i8* getelementptr inbounds ([37 x i8], [37 x i8]* @.str, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 27, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast (float* @params_alphaPTAT to i8*), i8* getelementptr inbounds ([30 x i8], [30 x i8]* @.str.4, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 28, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast (i16* @params_gainEE to i8*), i8* getelementptr inbounds ([37 x i8], [37 x i8]* @.str, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 29, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast (float* @params_tgc to i8*), i8* getelementptr inbounds ([27 x i8], [27 x i8]* @.str.5, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 30, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast (float* @params_cpKv to i8*), i8* getelementptr inbounds ([34 x i8], [34 x i8]* @.str.6, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 31, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast (float* @params_cpKta to i8*), i8* getelementptr inbounds ([28 x i8], [28 x i8]* @.str.7, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 32, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast (i32* @params_resolutionEE to i8*), i8* getelementptr inbounds ([30 x i8], [30 x i8]* @.str.8, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 33, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* @params_calibrationModeEE, i8* getelementptr inbounds ([30 x i8], [30 x i8]* @.str.8, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 34, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast (float* @params_KsTa to i8*), i8* getelementptr inbounds ([26 x i8], [26 x i8]* @.str.9, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 35, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast ([4 x float]* @params_ksTo to i8*), i8* getelementptr inbounds ([34 x i8], [34 x i8]* @.str.10, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 36, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast ([4 x i16]* @params_ct to i8*), i8* getelementptr inbounds ([29 x i8], [29 x i8]* @.str.11, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 37, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast ([768 x i16]* @params_offset to i8*), i8* getelementptr inbounds ([37 x i8], [37 x i8]* @.str, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 39, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast ([768 x float]* @params_kta to i8*), i8* getelementptr inbounds ([35 x i8], [35 x i8]* @.str.12, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 40, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast ([768 x float]* @params_kv to i8*), i8* getelementptr inbounds ([26 x i8], [26 x i8]* @.str.13, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 41, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast ([2 x float]* @params_cpAlpha to i8*), i8* getelementptr inbounds ([32 x i8], [32 x i8]* @.str.14, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 42, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast ([2 x i16]* @params_cpOffset to i8*), i8* getelementptr inbounds ([37 x i8], [37 x i8]* @.str, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 43, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast ([3 x float]* @params_ilChessC to i8*), i8* getelementptr inbounds ([9 x i8], [9 x i8]* @.str.15, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 44, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast ([5 x i16]* @params_brokenPixels to i8*), i8* getelementptr inbounds ([32 x i8], [32 x i8]* @.str.16, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 45, i8* null }, { i8*, i8*, i8*, i32, i8* } { i8* bitcast ([5 x i16]* @params_outlierPixels to i8*), i8* getelementptr inbounds ([32 x i8], [32 x i8]* @.str.16, i32 0, i32 0), i8* getelementptr inbounds ([17 x i8], [17 x i8]* @.str.1, i32 0, i32 0), i32 46, i8* null }], section "llvm.metadata"
 
 ; Function Attrs: mustprogress noinline uwtable
@@ -5247,171 +5248,176 @@ define dso_local noundef i32 @main(i32 noundef %0, i8** noundef %1) #6 !taffo.st
   %6 = alloca float, align 4, !taffo.initweight !0, !taffo.info !28, !taffo.target !150
   %7 = alloca float, align 4, !taffo.initweight !0, !taffo.info !28
   %8 = alloca float, align 4, !taffo.initweight !0, !taffo.info !28
-  %9 = alloca i32, align 4
+  %9 = alloca float, align 4, !taffo.initweight !0, !taffo.info !151
   %10 = alloca i32, align 4
-  %11 = alloca [768 x float], align 16, !taffo.initweight !0, !taffo.info !91
-  %12 = alloca float, align 4, !taffo.initweight !0, !taffo.info !151
-  %13 = alloca float, align 4, !taffo.initweight !0, !taffo.info !28
+  %11 = alloca i32, align 4
+  %12 = alloca [768 x float], align 16, !taffo.initweight !0, !taffo.info !91
+  %13 = alloca float, align 4, !taffo.initweight !0, !taffo.info !153
   %14 = alloca float, align 4, !taffo.initweight !0, !taffo.info !28
   %15 = alloca float, align 4, !taffo.initweight !0, !taffo.info !28
-  %16 = alloca i32, align 4
-  %17 = alloca float, align 4, !taffo.initweight !0, !taffo.info !91
-  %18 = alloca %struct._IO_FILE*, align 8
+  %16 = alloca float, align 4, !taffo.initweight !0, !taffo.info !28
+  %17 = alloca i32, align 4
+  %18 = alloca float, align 4, !taffo.initweight !0, !taffo.info !91
+  %19 = alloca %struct._IO_FILE*, align 8
   store i32 0, i32* %3, align 4
   store i32 %0, i32* %4, align 4
   store i8** %1, i8*** %5, align 8
-  %19 = call noundef i32 @_Z26MLX90640_ExtractParametersPKt(i16* noundef getelementptr inbounds ([832 x i16], [832 x i16]* @_ZL6eeprom, i64 0, i64 0))
-  %20 = icmp ne i32 %19, 0
-  br i1 %20, label %21, label %22
-
-21:                                               ; preds = %2
-  store i32 1, i32* %3, align 4
-  br label %127
+  %20 = call noundef i32 @_Z26MLX90640_ExtractParametersPKt(i16* noundef getelementptr inbounds ([832 x i16], [832 x i16]* @_ZL6eeprom, i64 0, i64 0))
+  %21 = icmp ne i32 %20, 0
+  br i1 %21, label %22, label %23
 
 22:                                               ; preds = %2
-  %23 = bitcast float* %6 to i8*, !taffo.initweight !48, !taffo.info !28, !taffo.target !150
-  store float 8.000000e+00, float* %6, align 4, !taffo.initweight !48, !taffo.info !28, !taffo.target !150
-  %24 = bitcast float* %7 to i8*, !taffo.initweight !48, !taffo.info !28
-  store float 0x3FEE666660000000, float* %7, align 4, !taffo.initweight !48, !taffo.info !28
-  %25 = bitcast float* %8 to i8*, !taffo.initweight !48, !taffo.info !28
-  store float 1.500000e+01, float* %8, align 4, !taffo.initweight !48, !taffo.info !28
-  store i32 32, i32* %9, align 4
-  store i32 24, i32* %10, align 4
-  %26 = bitcast [768 x float]* %11 to i8*, !taffo.initweight !48, !taffo.info !91
-  %27 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([10 x i8], [10 x i8]* @.str.132, i64 0, i64 0))
-  %28 = bitcast float* %12 to i8*, !taffo.initweight !48, !taffo.info !151
-  %29 = call noundef float @_Z14MLX90640_GetTaPKt.7(i16* noundef getelementptr inbounds ([834 x i16], [834 x i16]* @_ZL9subframe1, i64 0, i64 0)), !taffo.initweight !54, !taffo.info !151, !taffo.originalCall !115
-  store float %29, float* %12, align 4, !taffo.initweight !48, !taffo.info !151
-  %30 = load float, float* %12, align 4, !taffo.initweight !48, !taffo.info !151
-  %31 = fpext float %30 to double, !taffo.initweight !54, !taffo.info !151
-  %32 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([9 x i8], [9 x i8]* @.str.134, i64 0, i64 0), double noundef %31), !taffo.initweight !55, !taffo.info !151
-  %33 = bitcast float* %13 to i8*, !taffo.initweight !48, !taffo.info !28
-  %34 = load float, float* %12, align 4, !taffo.initweight !48, !taffo.info !151
-  %35 = fsub float %34, 8.000000e+00, !taffo.initweight !54, !taffo.info !151
-  store float %35, float* %13, align 4, !taffo.initweight !48, !taffo.info !28
-  %36 = load float, float* %12, align 4, !taffo.initweight !48, !taffo.info !151
-  %37 = fpext float %36 to double, !taffo.initweight !54, !taffo.info !151
-  %38 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([16 x i8], [16 x i8]* @.str.136, i64 0, i64 0), double noundef %37), !taffo.initweight !55, !taffo.info !151
-  %39 = load float, float* %13, align 4, !taffo.initweight !48, !taffo.info !28
-  %40 = fpext float %39 to double, !taffo.initweight !54, !taffo.info !28
-  %41 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([16 x i8], [16 x i8]* @.str.137, i64 0, i64 0), double noundef %40), !taffo.initweight !55, !taffo.info !28
-  %42 = load float, float* %13, align 4, !taffo.initweight !48, !taffo.info !28
-  %43 = getelementptr inbounds [768 x float], [768 x float]* %11, i64 0, i64 0, !taffo.initweight !48, !taffo.info !91
-  call void @_Z20MLX90640_CalculateToPKtffPf.12(i16* noundef getelementptr inbounds ([834 x i16], [834 x i16]* @_ZL9subframe1, i64 0, i64 0), float noundef 0x3FEE666660000000, float noundef %42, float* noundef %43), !taffo.initweight !54, !taffo.info !91, !taffo.originalCall !152
-  %44 = call noundef float @_Z14MLX90640_GetTaPKt.6(i16* noundef getelementptr inbounds ([834 x i16], [834 x i16]* @_ZL9subframe2, i64 0, i64 0)), !taffo.initweight !54, !taffo.info !151, !taffo.originalCall !115
-  store float %44, float* %12, align 4, !taffo.initweight !48, !taffo.info !151
-  %45 = load float, float* %12, align 4, !taffo.initweight !48, !taffo.info !151
-  %46 = fsub float %45, 8.000000e+00, !taffo.initweight !54, !taffo.info !151
-  store float %46, float* %13, align 4, !taffo.initweight !48, !taffo.info !28
-  %47 = load float, float* %13, align 4, !taffo.initweight !48, !taffo.info !28
-  %48 = getelementptr inbounds [768 x float], [768 x float]* %11, i64 0, i64 0, !taffo.initweight !48, !taffo.info !91
-  call void @_Z20MLX90640_CalculateToPKtffPf.11(i16* noundef getelementptr inbounds ([834 x i16], [834 x i16]* @_ZL9subframe2, i64 0, i64 0), float noundef 0x3FEE666660000000, float noundef %47, float* noundef %48), !taffo.initweight !54, !taffo.info !91, !taffo.originalCall !152
-  %49 = load float, float* %12, align 4, !taffo.initweight !48, !taffo.info !151
-  %50 = fpext float %49 to double, !taffo.initweight !54, !taffo.info !151
-  %51 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([16 x i8], [16 x i8]* @.str.136, i64 0, i64 0), double noundef %50), !taffo.initweight !55, !taffo.info !151
-  %52 = load float, float* %13, align 4, !taffo.initweight !48, !taffo.info !28
-  %53 = fpext float %52 to double, !taffo.initweight !54, !taffo.info !28
-  %54 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([16 x i8], [16 x i8]* @.str.137, i64 0, i64 0), double noundef %53), !taffo.initweight !55, !taffo.info !28
-  %55 = bitcast float* %14 to i8*, !taffo.initweight !48, !taffo.info !28
-  %56 = getelementptr inbounds [768 x float], [768 x float]* %11, i64 0, i64 0, !taffo.initweight !48, !taffo.info !91
-  %57 = load float, float* %56, align 16, !taffo.initweight !54, !taffo.info !91
-  store float %57, float* %14, align 4, !taffo.initweight !48, !taffo.info !28
-  %58 = bitcast float* %15 to i8*, !taffo.initweight !48, !taffo.info !28
-  %59 = getelementptr inbounds [768 x float], [768 x float]* %11, i64 0, i64 0, !taffo.initweight !48, !taffo.info !91
-  %60 = load float, float* %59, align 16, !taffo.initweight !54, !taffo.info !91
-  store float %60, float* %15, align 4, !taffo.initweight !48, !taffo.info !28
-  store i32 1, i32* %16, align 4
-  br label %61
-
-61:                                               ; preds = %77, %22
-  %62 = load i32, i32* %16, align 4
-  %63 = icmp slt i32 %62, 768
-  br i1 %63, label %64, label %80
-
-64:                                               ; preds = %61
-  %65 = load float, float* %14, align 4, !taffo.initweight !48, !taffo.info !28
-  %66 = load i32, i32* %16, align 4
-  %67 = sext i32 %66 to i64
-  %68 = getelementptr inbounds [768 x float], [768 x float]* %11, i64 0, i64 %67, !taffo.initweight !48, !taffo.info !91
-  %69 = load float, float* %68, align 4, !taffo.initweight !54, !taffo.info !91
-  %70 = call noundef float @_Z5min_fff.22(float noundef %65, float noundef %69), !taffo.initweight !54, !taffo.info !28, !taffo.originalCall !153
-  store float %70, float* %14, align 4, !taffo.initweight !48, !taffo.info !28
-  %71 = load float, float* %15, align 4, !taffo.initweight !48, !taffo.info !28
-  %72 = load i32, i32* %16, align 4
-  %73 = sext i32 %72 to i64
-  %74 = getelementptr inbounds [768 x float], [768 x float]* %11, i64 0, i64 %73, !taffo.initweight !48, !taffo.info !91
-  %75 = load float, float* %74, align 4, !taffo.initweight !54, !taffo.info !91
-  %76 = call noundef float @_Z5max_fff.21(float noundef %71, float noundef %75), !taffo.initweight !54, !taffo.info !28, !taffo.originalCall !154
-  store float %76, float* %15, align 4, !taffo.initweight !48, !taffo.info !28
-  br label %77
-
-77:                                               ; preds = %64
-  %78 = load i32, i32* %16, align 4
-  %79 = add nsw i32 %78, 1
-  store i32 %79, i32* %16, align 4
-  br label %61, !llvm.loop !155
-
-80:                                               ; preds = %61
-  %81 = load float, float* @maximum2, align 4
-  %82 = fpext float %81 to double
-  %83 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([19 x i8], [19 x i8]* @.str.138, i64 0, i64 0), double noundef %82)
-  %84 = load float, float* @maximum, align 4
-  %85 = fpext float %84 to double
-  %86 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([19 x i8], [19 x i8]* @.str.139, i64 0, i64 0), double noundef %85)
-  %87 = load float, float* @mint5, align 4
-  %88 = fpext float %87 to double
-  %89 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([15 x i8], [15 x i8]* @.str.140, i64 0, i64 0), double noundef %88)
-  %90 = load float, float* @maxt5, align 4
-  %91 = fpext float %90 to double
-  %92 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([14 x i8], [14 x i8]* @.str.141, i64 0, i64 0), double noundef %91)
-  %93 = bitcast float* %17 to i8*, !taffo.initweight !48, !taffo.info !91
-  %94 = load float, float* %15, align 4, !taffo.initweight !48, !taffo.info !28
-  %95 = load float, float* %14, align 4, !taffo.initweight !48, !taffo.info !28
-  %96 = fsub float %94, %95, !taffo.initweight !54, !taffo.info !28
-  %97 = call noundef float @_Z5max_fff.23(float noundef 1.500000e+01, float noundef %96), !taffo.initweight !55, !taffo.info !28, !taffo.originalCall !154
-  store float %97, float* %17, align 4, !taffo.initweight !48, !taffo.info !91
-  %98 = load float, float* %17, align 4, !taffo.initweight !48, !taffo.info !91
-  %99 = fpext float %98 to double, !taffo.initweight !54, !taffo.info !91
-  %100 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([15 x i8], [15 x i8]* @.str.143, i64 0, i64 0), double noundef %99), !taffo.initweight !55, !taffo.info !91
-  %101 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([18 x i8], [18 x i8]* @.str.144, i64 0, i64 0), double noundef 1.500000e+01)
-  %102 = load float, float* %15, align 4, !taffo.initweight !48, !taffo.info !28
-  %103 = fpext float %102 to double, !taffo.initweight !54, !taffo.info !28
-  %104 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([16 x i8], [16 x i8]* @.str.145, i64 0, i64 0), double noundef %103), !taffo.initweight !55, !taffo.info !28
-  %105 = load float, float* %14, align 4, !taffo.initweight !48, !taffo.info !28
-  %106 = fpext float %105 to double, !taffo.initweight !54, !taffo.info !28
-  %107 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([16 x i8], [16 x i8]* @.str.146, i64 0, i64 0), double noundef %106), !taffo.initweight !55, !taffo.info !28
-  %108 = load %struct._IO_FILE*, %struct._IO_FILE** @stdout, align 8
-  %109 = call i32 @fflush(%struct._IO_FILE* noundef %108)
-  %110 = call noalias %struct._IO_FILE* @fopen(i8* noundef getelementptr inbounds ([15 x i8], [15 x i8]* @.str.147, i64 0, i64 0), i8* noundef getelementptr inbounds ([2 x i8], [2 x i8]* @.str.148, i64 0, i64 0))
-  store %struct._IO_FILE* %110, %struct._IO_FILE** %18, align 8
-  %111 = load %struct._IO_FILE*, %struct._IO_FILE** %18, align 8
-  %112 = icmp eq %struct._IO_FILE* %111, null
-  br i1 %112, label %113, label %114
-
-113:                                              ; preds = %80
   store i32 1, i32* %3, align 4
-  br label %127
+  br label %131
 
-114:                                              ; preds = %80
-  %115 = load %struct._IO_FILE*, %struct._IO_FILE** %18, align 8
-  %116 = getelementptr inbounds [768 x float], [768 x float]* %11, i64 0, i64 0, !taffo.initweight !48, !taffo.info !91
-  %117 = load float, float* %14, align 4, !taffo.initweight !48, !taffo.info !28
-  %118 = load float, float* %17, align 4, !taffo.initweight !48, !taffo.info !91
-  call void @_Z8printPPMP8_IO_FILEPfiiff.13(%struct._IO_FILE* noundef %115, float* noundef %116, i32 noundef 32, i32 noundef 24, float noundef %117, float noundef %118), !taffo.initweight !54, !taffo.info !91, !taffo.originalCall !156
-  %119 = load %struct._IO_FILE*, %struct._IO_FILE** %18, align 8
-  %120 = call i32 @fclose(%struct._IO_FILE* noundef %119)
-  %121 = load %struct._IO_FILE*, %struct._IO_FILE** @stderr, align 8
-  %122 = load float, float* %14, align 4, !taffo.initweight !48, !taffo.info !28
-  %123 = fptosi float %122 to i32, !taffo.initweight !54, !taffo.info !28
-  %124 = load float, float* %15, align 4, !taffo.initweight !48, !taffo.info !28
-  %125 = fptosi float %124 to i32, !taffo.initweight !54, !taffo.info !28
-  %126 = call i32 (%struct._IO_FILE*, i8*, ...) @fprintf(%struct._IO_FILE* noundef %121, i8* noundef getelementptr inbounds ([19 x i8], [19 x i8]* @.str.149, i64 0, i64 0), i32 noundef %123, i32 noundef %125), !taffo.initweight !55, !taffo.info !28
+23:                                               ; preds = %2
+  %24 = bitcast float* %6 to i8*, !taffo.initweight !48, !taffo.info !28, !taffo.target !150
+  store float 8.000000e+00, float* %6, align 4, !taffo.initweight !48, !taffo.info !28, !taffo.target !150
+  %25 = bitcast float* %7 to i8*, !taffo.initweight !48, !taffo.info !28
+  store float 0x3FEE666660000000, float* %7, align 4, !taffo.initweight !48, !taffo.info !28
+  %26 = bitcast float* %8 to i8*, !taffo.initweight !48, !taffo.info !28
+  store float 1.500000e+01, float* %8, align 4, !taffo.initweight !48, !taffo.info !28
+  %27 = bitcast float* %9 to i8*, !taffo.initweight !48, !taffo.info !151
+  store float 0x3FEE666660000000, float* %9, align 4, !taffo.initweight !48, !taffo.info !151
+  store i32 32, i32* %10, align 4
+  store i32 24, i32* %11, align 4
+  %28 = bitcast [768 x float]* %12 to i8*, !taffo.initweight !48, !taffo.info !91
+  %29 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([10 x i8], [10 x i8]* @.str.133, i64 0, i64 0))
+  %30 = bitcast float* %13 to i8*, !taffo.initweight !48, !taffo.info !153
+  %31 = call noundef float @_Z14MLX90640_GetTaPKt.7(i16* noundef getelementptr inbounds ([834 x i16], [834 x i16]* @_ZL9subframe1, i64 0, i64 0)), !taffo.initweight !54, !taffo.info !153, !taffo.originalCall !115
+  store float %31, float* %13, align 4, !taffo.initweight !48, !taffo.info !153
+  %32 = load float, float* %13, align 4, !taffo.initweight !48, !taffo.info !153
+  %33 = fpext float %32 to double, !taffo.initweight !54, !taffo.info !153
+  %34 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([9 x i8], [9 x i8]* @.str.135, i64 0, i64 0), double noundef %33), !taffo.initweight !55, !taffo.info !153
+  %35 = bitcast float* %14 to i8*, !taffo.initweight !48, !taffo.info !28
+  %36 = load float, float* %13, align 4, !taffo.initweight !48, !taffo.info !153
+  %37 = fsub float %36, 8.000000e+00, !taffo.initweight !54, !taffo.info !153
+  store float %37, float* %14, align 4, !taffo.initweight !48, !taffo.info !28
+  %38 = load float, float* %13, align 4, !taffo.initweight !48, !taffo.info !153
+  %39 = fpext float %38 to double, !taffo.initweight !54, !taffo.info !153
+  %40 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([16 x i8], [16 x i8]* @.str.137, i64 0, i64 0), double noundef %39), !taffo.initweight !55, !taffo.info !153
+  %41 = load float, float* %14, align 4, !taffo.initweight !48, !taffo.info !28
+  %42 = fpext float %41 to double, !taffo.initweight !54, !taffo.info !28
+  %43 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([16 x i8], [16 x i8]* @.str.138, i64 0, i64 0), double noundef %42), !taffo.initweight !55, !taffo.info !28
+  %44 = load float, float* %9, align 4, !taffo.initweight !48, !taffo.info !151
+  %45 = load float, float* %14, align 4, !taffo.initweight !48, !taffo.info !28
+  %46 = getelementptr inbounds [768 x float], [768 x float]* %12, i64 0, i64 0, !taffo.initweight !48, !taffo.info !91
+  call void @_Z20MLX90640_CalculateToPKtffPf.12(i16* noundef getelementptr inbounds ([834 x i16], [834 x i16]* @_ZL9subframe1, i64 0, i64 0), float noundef %44, float noundef %45, float* noundef %46), !taffo.initweight !54, !taffo.info !151, !taffo.originalCall !154
+  %47 = call noundef float @_Z14MLX90640_GetTaPKt.6(i16* noundef getelementptr inbounds ([834 x i16], [834 x i16]* @_ZL9subframe2, i64 0, i64 0)), !taffo.initweight !54, !taffo.info !153, !taffo.originalCall !115
+  store float %47, float* %13, align 4, !taffo.initweight !48, !taffo.info !153
+  %48 = load float, float* %13, align 4, !taffo.initweight !48, !taffo.info !153
+  %49 = fsub float %48, 8.000000e+00, !taffo.initweight !54, !taffo.info !153
+  store float %49, float* %14, align 4, !taffo.initweight !48, !taffo.info !28
+  %50 = load float, float* %9, align 4, !taffo.initweight !48, !taffo.info !151
+  %51 = load float, float* %14, align 4, !taffo.initweight !48, !taffo.info !28
+  %52 = getelementptr inbounds [768 x float], [768 x float]* %12, i64 0, i64 0, !taffo.initweight !48, !taffo.info !91
+  call void @_Z20MLX90640_CalculateToPKtffPf.11(i16* noundef getelementptr inbounds ([834 x i16], [834 x i16]* @_ZL9subframe2, i64 0, i64 0), float noundef %50, float noundef %51, float* noundef %52), !taffo.initweight !54, !taffo.info !151, !taffo.originalCall !154
+  %53 = load float, float* %13, align 4, !taffo.initweight !48, !taffo.info !153
+  %54 = fpext float %53 to double, !taffo.initweight !54, !taffo.info !153
+  %55 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([16 x i8], [16 x i8]* @.str.137, i64 0, i64 0), double noundef %54), !taffo.initweight !55, !taffo.info !153
+  %56 = load float, float* %14, align 4, !taffo.initweight !48, !taffo.info !28
+  %57 = fpext float %56 to double, !taffo.initweight !54, !taffo.info !28
+  %58 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([16 x i8], [16 x i8]* @.str.138, i64 0, i64 0), double noundef %57), !taffo.initweight !55, !taffo.info !28
+  %59 = bitcast float* %15 to i8*, !taffo.initweight !48, !taffo.info !28
+  %60 = getelementptr inbounds [768 x float], [768 x float]* %12, i64 0, i64 0, !taffo.initweight !48, !taffo.info !91
+  %61 = load float, float* %60, align 16, !taffo.initweight !54, !taffo.info !91
+  store float %61, float* %15, align 4, !taffo.initweight !48, !taffo.info !28
+  %62 = bitcast float* %16 to i8*, !taffo.initweight !48, !taffo.info !28
+  %63 = getelementptr inbounds [768 x float], [768 x float]* %12, i64 0, i64 0, !taffo.initweight !48, !taffo.info !91
+  %64 = load float, float* %63, align 16, !taffo.initweight !54, !taffo.info !91
+  store float %64, float* %16, align 4, !taffo.initweight !48, !taffo.info !28
+  store i32 1, i32* %17, align 4
+  br label %65
+
+65:                                               ; preds = %81, %23
+  %66 = load i32, i32* %17, align 4
+  %67 = icmp slt i32 %66, 768
+  br i1 %67, label %68, label %84
+
+68:                                               ; preds = %65
+  %69 = load float, float* %15, align 4, !taffo.initweight !48, !taffo.info !28
+  %70 = load i32, i32* %17, align 4
+  %71 = sext i32 %70 to i64
+  %72 = getelementptr inbounds [768 x float], [768 x float]* %12, i64 0, i64 %71, !taffo.initweight !48, !taffo.info !91
+  %73 = load float, float* %72, align 4, !taffo.initweight !54, !taffo.info !91
+  %74 = call noundef float @_Z5min_fff.22(float noundef %69, float noundef %73), !taffo.initweight !54, !taffo.info !28, !taffo.originalCall !155
+  store float %74, float* %15, align 4, !taffo.initweight !48, !taffo.info !28
+  %75 = load float, float* %16, align 4, !taffo.initweight !48, !taffo.info !28
+  %76 = load i32, i32* %17, align 4
+  %77 = sext i32 %76 to i64
+  %78 = getelementptr inbounds [768 x float], [768 x float]* %12, i64 0, i64 %77, !taffo.initweight !48, !taffo.info !91
+  %79 = load float, float* %78, align 4, !taffo.initweight !54, !taffo.info !91
+  %80 = call noundef float @_Z5max_fff.21(float noundef %75, float noundef %79), !taffo.initweight !54, !taffo.info !28, !taffo.originalCall !156
+  store float %80, float* %16, align 4, !taffo.initweight !48, !taffo.info !28
+  br label %81
+
+81:                                               ; preds = %68
+  %82 = load i32, i32* %17, align 4
+  %83 = add nsw i32 %82, 1
+  store i32 %83, i32* %17, align 4
+  br label %65, !llvm.loop !157
+
+84:                                               ; preds = %65
+  %85 = load float, float* @maximum2, align 4
+  %86 = fpext float %85 to double
+  %87 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([19 x i8], [19 x i8]* @.str.139, i64 0, i64 0), double noundef %86)
+  %88 = load float, float* @maximum, align 4
+  %89 = fpext float %88 to double
+  %90 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([19 x i8], [19 x i8]* @.str.140, i64 0, i64 0), double noundef %89)
+  %91 = load float, float* @mint5, align 4
+  %92 = fpext float %91 to double
+  %93 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([15 x i8], [15 x i8]* @.str.141, i64 0, i64 0), double noundef %92)
+  %94 = load float, float* @maxt5, align 4
+  %95 = fpext float %94 to double
+  %96 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([14 x i8], [14 x i8]* @.str.142, i64 0, i64 0), double noundef %95)
+  %97 = bitcast float* %18 to i8*, !taffo.initweight !48, !taffo.info !91
+  %98 = load float, float* %16, align 4, !taffo.initweight !48, !taffo.info !28
+  %99 = load float, float* %15, align 4, !taffo.initweight !48, !taffo.info !28
+  %100 = fsub float %98, %99, !taffo.initweight !54, !taffo.info !28
+  %101 = call noundef float @_Z5max_fff.23(float noundef 1.500000e+01, float noundef %100), !taffo.initweight !55, !taffo.info !28, !taffo.originalCall !156
+  store float %101, float* %18, align 4, !taffo.initweight !48, !taffo.info !91
+  %102 = load float, float* %18, align 4, !taffo.initweight !48, !taffo.info !91
+  %103 = fpext float %102 to double, !taffo.initweight !54, !taffo.info !91
+  %104 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([15 x i8], [15 x i8]* @.str.144, i64 0, i64 0), double noundef %103), !taffo.initweight !55, !taffo.info !91
+  %105 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([18 x i8], [18 x i8]* @.str.145, i64 0, i64 0), double noundef 1.500000e+01)
+  %106 = load float, float* %16, align 4, !taffo.initweight !48, !taffo.info !28
+  %107 = fpext float %106 to double, !taffo.initweight !54, !taffo.info !28
+  %108 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([16 x i8], [16 x i8]* @.str.146, i64 0, i64 0), double noundef %107), !taffo.initweight !55, !taffo.info !28
+  %109 = load float, float* %15, align 4, !taffo.initweight !48, !taffo.info !28
+  %110 = fpext float %109 to double, !taffo.initweight !54, !taffo.info !28
+  %111 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([16 x i8], [16 x i8]* @.str.147, i64 0, i64 0), double noundef %110), !taffo.initweight !55, !taffo.info !28
+  %112 = load %struct._IO_FILE*, %struct._IO_FILE** @stdout, align 8
+  %113 = call i32 @fflush(%struct._IO_FILE* noundef %112)
+  %114 = call noalias %struct._IO_FILE* @fopen(i8* noundef getelementptr inbounds ([15 x i8], [15 x i8]* @.str.148, i64 0, i64 0), i8* noundef getelementptr inbounds ([2 x i8], [2 x i8]* @.str.149, i64 0, i64 0))
+  store %struct._IO_FILE* %114, %struct._IO_FILE** %19, align 8
+  %115 = load %struct._IO_FILE*, %struct._IO_FILE** %19, align 8
+  %116 = icmp eq %struct._IO_FILE* %115, null
+  br i1 %116, label %117, label %118
+
+117:                                              ; preds = %84
+  store i32 1, i32* %3, align 4
+  br label %131
+
+118:                                              ; preds = %84
+  %119 = load %struct._IO_FILE*, %struct._IO_FILE** %19, align 8
+  %120 = getelementptr inbounds [768 x float], [768 x float]* %12, i64 0, i64 0, !taffo.initweight !48, !taffo.info !91
+  %121 = load float, float* %15, align 4, !taffo.initweight !48, !taffo.info !28
+  %122 = load float, float* %18, align 4, !taffo.initweight !48, !taffo.info !91
+  call void @_Z8printPPMP8_IO_FILEPfiiff.13(%struct._IO_FILE* noundef %119, float* noundef %120, i32 noundef 32, i32 noundef 24, float noundef %121, float noundef %122), !taffo.initweight !54, !taffo.info !91, !taffo.originalCall !158
+  %123 = load %struct._IO_FILE*, %struct._IO_FILE** %19, align 8
+  %124 = call i32 @fclose(%struct._IO_FILE* noundef %123)
+  %125 = load %struct._IO_FILE*, %struct._IO_FILE** @stderr, align 8
+  %126 = load float, float* %15, align 4, !taffo.initweight !48, !taffo.info !28
+  %127 = fptosi float %126 to i32, !taffo.initweight !54, !taffo.info !28
+  %128 = load float, float* %16, align 4, !taffo.initweight !48, !taffo.info !28
+  %129 = fptosi float %128 to i32, !taffo.initweight !54, !taffo.info !28
+  %130 = call i32 (%struct._IO_FILE*, i8*, ...) @fprintf(%struct._IO_FILE* noundef %125, i8* noundef getelementptr inbounds ([19 x i8], [19 x i8]* @.str.150, i64 0, i64 0), i32 noundef %127, i32 noundef %129), !taffo.initweight !55, !taffo.info !28
   store i32 0, i32* %3, align 4
-  br label %127
+  br label %131
 
-127:                                              ; preds = %114, %113, %21
-  %128 = load i32, i32* %3, align 4
-  ret i32 %128
+131:                                              ; preds = %118, %117, %22
+  %132 = load i32, i32* %3, align 4
+  ret i32 %132
 }
 
 declare !taffo.initweight !37 !taffo.funinfo !38 noalias %struct._IO_FILE* @fopen(i8* noundef, i8* noundef) #2
@@ -5425,7 +5431,7 @@ declare !taffo.initweight !37 !taffo.funinfo !38 double @pow(double noundef, dou
 declare !taffo.initweight !46 !taffo.funinfo !47 float @sqrtf(float noundef) #7
 
 ; Function Attrs: mustprogress noinline uwtable
-define internal noundef float @_Z15MLX90640_GetVddPKt.1(i16* noundef %0) #0 !taffo.initweight !46 !taffo.equivalentChild !157 !taffo.sourceFunction !114 !taffo.funinfo !47 {
+define internal noundef float @_Z15MLX90640_GetVddPKt.1(i16* noundef %0) #0 !taffo.initweight !46 !taffo.equivalentChild !159 !taffo.sourceFunction !114 !taffo.funinfo !47 {
   %2 = alloca i16*, align 8
   %3 = alloca float, align 4, !taffo.initweight !0, !taffo.info !125
   %4 = alloca float, align 4, !taffo.initweight !0, !taffo.info !127
@@ -5485,7 +5491,7 @@ define internal noundef float @_Z15MLX90640_GetVddPKt.1(i16* noundef %0) #0 !taf
 }
 
 ; Function Attrs: mustprogress noinline uwtable
-define internal noundef float @_Z14MLX90640_GetTaPKt.2(i16* noundef %0) #0 !taffo.initweight !46 !taffo.equivalentChild !158 !taffo.sourceFunction !115 !taffo.funinfo !47 {
+define internal noundef float @_Z14MLX90640_GetTaPKt.2(i16* noundef %0) #0 !taffo.initweight !46 !taffo.equivalentChild !160 !taffo.sourceFunction !115 !taffo.funinfo !47 {
   %2 = alloca i16*, align 8
   %3 = alloca float, align 4, !taffo.initweight !0, !taffo.info !98
   %4 = alloca float, align 4, !taffo.initweight !0, !taffo.info !131
@@ -5642,7 +5648,7 @@ define internal noundef float @_Z14MLX90640_GetTaPKt.2(i16* noundef %0) #0 !taff
 }
 
 ; Function Attrs: mustprogress noinline uwtable
-define internal noundef float @_Z15MLX90640_GetVddPKt.3(i16* noundef %0) #0 !taffo.initweight !46 !taffo.equivalentChild !159 !taffo.sourceFunction !114 !taffo.funinfo !47 {
+define internal noundef float @_Z15MLX90640_GetVddPKt.3(i16* noundef %0) #0 !taffo.initweight !46 !taffo.equivalentChild !161 !taffo.sourceFunction !114 !taffo.funinfo !47 {
   %2 = alloca i16*, align 8
   %3 = alloca float, align 4, !taffo.initweight !0, !taffo.info !125
   %4 = alloca float, align 4, !taffo.initweight !0, !taffo.info !127
@@ -5783,7 +5789,7 @@ define internal noundef float @_Z14MLX90640_GetTaPKt.5(i16* noundef %0) #0 !taff
   %18 = bitcast float* %6 to i8*, !taffo.initweight !48, !taffo.info !93
   %19 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([11 x i8], [11 x i8]* @.str.103, i64 0, i64 0))
   %20 = load i16*, i16** %2, align 8
-  %21 = call noundef float @_Z15MLX90640_GetVddPKt.3.29(i16* noundef %20), !taffo.initweight !54, !taffo.info !21, !taffo.originalCall !160
+  %21 = call noundef float @_Z15MLX90640_GetVddPKt.3.29(i16* noundef %20), !taffo.initweight !54, !taffo.info !21, !taffo.originalCall !162
   store float %21, float* %5, align 4, !taffo.initweight !48, !taffo.info !21
   %22 = load float, float* %5, align 4, !taffo.initweight !48, !taffo.info !21
   %23 = fpext float %22 to double, !taffo.initweight !54, !taffo.info !21
@@ -5940,7 +5946,7 @@ define internal noundef float @_Z14MLX90640_GetTaPKt.6(i16* noundef %0) #0 !taff
   %18 = bitcast float* %6 to i8*, !taffo.initweight !48, !taffo.info !93
   %19 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([11 x i8], [11 x i8]* @.str.103, i64 0, i64 0))
   %20 = load i16*, i16** %2, align 8
-  %21 = call noundef float @_Z15MLX90640_GetVddPKt.3.30(i16* noundef %20), !taffo.initweight !54, !taffo.info !21, !taffo.originalCall !160
+  %21 = call noundef float @_Z15MLX90640_GetVddPKt.3.30(i16* noundef %20), !taffo.initweight !54, !taffo.info !21, !taffo.originalCall !162
   store float %21, float* %5, align 4, !taffo.initweight !48, !taffo.info !21
   %22 = load float, float* %5, align 4, !taffo.initweight !48, !taffo.info !21
   %23 = fpext float %22 to double, !taffo.initweight !54, !taffo.info !21
@@ -6097,7 +6103,7 @@ define internal noundef float @_Z14MLX90640_GetTaPKt.7(i16* noundef %0) #0 !taff
   %18 = bitcast float* %6 to i8*, !taffo.initweight !48, !taffo.info !93
   %19 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([11 x i8], [11 x i8]* @.str.103, i64 0, i64 0))
   %20 = load i16*, i16** %2, align 8
-  %21 = call noundef float @_Z15MLX90640_GetVddPKt.3.31(i16* noundef %20), !taffo.initweight !54, !taffo.info !21, !taffo.originalCall !160
+  %21 = call noundef float @_Z15MLX90640_GetVddPKt.3.31(i16* noundef %20), !taffo.initweight !54, !taffo.info !21, !taffo.originalCall !162
   store float %21, float* %5, align 4, !taffo.initweight !48, !taffo.info !21
   %22 = load float, float* %5, align 4, !taffo.initweight !48, !taffo.info !21
   %23 = fpext float %22 to double, !taffo.initweight !54, !taffo.info !21
@@ -6233,7 +6239,7 @@ define internal noundef float @_Z14MLX90640_GetTaPKt.7(i16* noundef %0) #0 !taff
 }
 
 ; Function Attrs: mustprogress noinline nounwind uwtable
-define internal noundef float @_ZSt4sqrtf.8(float noundef %0) #1 !taffo.initweight !54 !taffo.equivalentChild !161 !taffo.sourceFunction !119 !taffo.funinfo !162 {
+define internal noundef float @_ZSt4sqrtf.8(float noundef %0) #1 !taffo.initweight !54 !taffo.equivalentChild !163 !taffo.sourceFunction !119 !taffo.funinfo !164 {
   %2 = alloca float, align 4, !taffo.initweight !55, !taffo.info !28
   store float %0, float* %2, align 4, !taffo.initweight !59, !taffo.info !28
   %3 = load float, float* %2, align 4, !taffo.initweight !59, !taffo.info !28
@@ -6242,7 +6248,7 @@ define internal noundef float @_ZSt4sqrtf.8(float noundef %0) #1 !taffo.initweig
 }
 
 ; Function Attrs: mustprogress noinline nounwind uwtable
-define internal noundef float @_ZSt4sqrtf.9(float noundef %0) #1 !taffo.initweight !54 !taffo.equivalentChild !163 !taffo.sourceFunction !119 !taffo.funinfo !162 {
+define internal noundef float @_ZSt4sqrtf.9(float noundef %0) #1 !taffo.initweight !54 !taffo.equivalentChild !165 !taffo.sourceFunction !119 !taffo.funinfo !164 {
   %2 = alloca float, align 4, !taffo.initweight !55, !taffo.info !28
   store float %0, float* %2, align 4, !taffo.initweight !59, !taffo.info !28
   %3 = load float, float* %2, align 4, !taffo.initweight !59, !taffo.info !28
@@ -6251,7 +6257,7 @@ define internal noundef float @_ZSt4sqrtf.9(float noundef %0) #1 !taffo.initweig
 }
 
 ; Function Attrs: mustprogress noinline nounwind uwtable
-define internal noundef float @_ZSt4sqrtf.10(float noundef %0) #1 !taffo.initweight !54 !taffo.equivalentChild !164 !taffo.sourceFunction !119 !taffo.funinfo !165 {
+define internal noundef float @_ZSt4sqrtf.10(float noundef %0) #1 !taffo.initweight !54 !taffo.equivalentChild !166 !taffo.sourceFunction !119 !taffo.funinfo !167 {
   %2 = alloca float, align 4, !taffo.initweight !55, !taffo.info !112
   store float %0, float* %2, align 4, !taffo.initweight !59, !taffo.info !112
   %3 = load float, float* %2, align 4, !taffo.initweight !59, !taffo.info !112
@@ -6260,7 +6266,7 @@ define internal noundef float @_ZSt4sqrtf.10(float noundef %0) #1 !taffo.initwei
 }
 
 ; Function Attrs: mustprogress noinline uwtable
-define internal void @_Z20MLX90640_CalculateToPKtffPf.11(i16* noundef %0, float noundef %1, float noundef %2, float* noundef %3) #0 !taffo.initweight !166 !taffo.sourceFunction !152 !taffo.funinfo !167 {
+define internal void @_Z20MLX90640_CalculateToPKtffPf.11(i16* noundef %0, float noundef %1, float noundef %2, float* noundef %3) #0 !taffo.initweight !168 !taffo.sourceFunction !154 !taffo.funinfo !169 {
   %5 = alloca i16*, align 8
   %6 = alloca float, align 4, !taffo.initweight !0, !taffo.info !28
   %7 = alloca float, align 4, !taffo.initweight !0, !taffo.info !28
@@ -6343,10 +6349,10 @@ define internal void @_Z20MLX90640_CalculateToPKtffPf.11(i16* noundef %0, float 
   %80 = load i16, i16* %79, align 2
   store i16 %80, i16* %27, align 2
   %81 = load i16*, i16** %5, align 8
-  %82 = call noundef float @_Z15MLX90640_GetVddPKt.1.33(i16* noundef %81), !taffo.initweight !54, !taffo.info !93, !taffo.originalCall !168
+  %82 = call noundef float @_Z15MLX90640_GetVddPKt.1.33(i16* noundef %81), !taffo.initweight !54, !taffo.info !93, !taffo.originalCall !170
   store float %82, float* %9, align 4, !taffo.initweight !48, !taffo.info !93
   %83 = load i16*, i16** %5, align 8
-  %84 = call noundef float @_Z14MLX90640_GetTaPKt.2.34(i16* noundef %83), !taffo.initweight !54, !taffo.info !95, !taffo.originalCall !169
+  %84 = call noundef float @_Z14MLX90640_GetTaPKt.2.34(i16* noundef %83), !taffo.initweight !54, !taffo.info !95, !taffo.originalCall !171
   store float %84, float* %10, align 4, !taffo.initweight !48, !taffo.info !95
   %85 = load float, float* %10, align 4, !taffo.initweight !48, !taffo.info !95
   %86 = fpext float %85 to double, !taffo.initweight !54, !taffo.info !95
@@ -6522,7 +6528,7 @@ define internal void @_Z20MLX90640_CalculateToPKtffPf.11(i16* noundef %0, float 
   %223 = load i32, i32* %31, align 4
   %224 = add nsw i32 %223, 1
   store i32 %224, i32* %31, align 4
-  br label %194, !llvm.loop !170
+  br label %194, !llvm.loop !172
 
 225:                                              ; preds = %194
   %226 = getelementptr inbounds [2 x float], [2 x float]* %15, i64 0, i64 0, !taffo.initweight !48, !taffo.info !100
@@ -6952,7 +6958,7 @@ define internal void @_Z20MLX90640_CalculateToPKtffPf.11(i16* noundef %0, float 
   %590 = fpext float %589 to double, !taffo.initweight !54, !taffo.info !28
   %591 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([10 x i8], [10 x i8]* @.str.63, i64 0, i64 0), double noundef %590), !taffo.initweight !55, !taffo.info !28
   %592 = load float, float* %49, align 4, !taffo.initweight !48, !taffo.info !28
-  %593 = call noundef float @_ZSt4sqrtf.8.35(float noundef %592), !taffo.initweight !54, !taffo.info !28, !taffo.originalCall !171
+  %593 = call noundef float @_ZSt4sqrtf.8.35(float noundef %592), !taffo.initweight !54, !taffo.info !28, !taffo.originalCall !173
   %594 = call noundef float @_ZSt4sqrtf.36(float noundef %593), !taffo.initweight !55, !taffo.info !28, !taffo.originalCall !119
   %595 = load float, float* getelementptr inbounds ([4 x float], [4 x float]* @params_ksTo, i64 0, i64 1), align 4, !taffo.initweight !54, !taffo.info !19
   %596 = fmul float %594, %595, !taffo.initweight !55, !taffo.info !117
@@ -7053,7 +7059,7 @@ define internal void @_Z20MLX90640_CalculateToPKtffPf.11(i16* noundef %0, float 
   %669 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([10 x i8], [10 x i8]* @.str.75, i64 0, i64 0), double noundef %668), !taffo.initweight !55, !taffo.info !28
   %670 = bitcast float* %56 to i8*, !taffo.initweight !48, !taffo.info !28
   %671 = load float, float* %55, align 4, !taffo.initweight !48, !taffo.info !28
-  %672 = call noundef float @_ZSt4sqrtf.9.37(float noundef %671), !taffo.initweight !54, !taffo.info !28, !taffo.originalCall !172
+  %672 = call noundef float @_ZSt4sqrtf.9.37(float noundef %671), !taffo.initweight !54, !taffo.info !28, !taffo.originalCall !174
   %673 = call noundef float @_ZSt4sqrtf.38(float noundef %672), !taffo.initweight !55, !taffo.info !28, !taffo.originalCall !119
   %674 = fpext float %673 to double, !taffo.initweight !59, !taffo.info !28
   %675 = fsub double %674, 2.731500e+02, !taffo.initweight !60, !taffo.info !28
@@ -7206,7 +7212,7 @@ define internal void @_Z20MLX90640_CalculateToPKtffPf.11(i16* noundef %0, float 
 782:                                              ; preds = %780, %769
   %783 = bitcast float* %64 to i8*, !taffo.initweight !48, !taffo.info !91
   %784 = load float, float* %63, align 4, !taffo.initweight !48, !taffo.info !112
-  %785 = call noundef float @_ZSt4sqrtf.10.39(float noundef %784), !taffo.initweight !54, !taffo.info !112, !taffo.originalCall !173
+  %785 = call noundef float @_ZSt4sqrtf.10.39(float noundef %784), !taffo.initweight !54, !taffo.info !112, !taffo.originalCall !175
   %786 = call noundef float @_ZSt4sqrtf.40(float noundef %785), !taffo.initweight !55, !taffo.info !112, !taffo.originalCall !119
   %787 = fpext float %786 to double, !taffo.initweight !59, !taffo.info !112
   %788 = fsub double %787, 2.731500e+02, !taffo.initweight !60, !taffo.info !112
@@ -7232,7 +7238,7 @@ define internal void @_Z20MLX90640_CalculateToPKtffPf.11(i16* noundef %0, float 
   %802 = load i32, i32* %32, align 4
   %803 = add nsw i32 %802, 1
   store i32 %803, i32* %32, align 4
-  br label %302, !llvm.loop !174
+  br label %302, !llvm.loop !176
 
 804:                                              ; preds = %302
   %805 = load float, float* %9, align 4, !taffo.initweight !48, !taffo.info !93
@@ -7251,7 +7257,7 @@ define internal void @_Z20MLX90640_CalculateToPKtffPf.11(i16* noundef %0, float 
 }
 
 ; Function Attrs: mustprogress noinline uwtable
-define internal void @_Z20MLX90640_CalculateToPKtffPf.12(i16* noundef %0, float noundef %1, float noundef %2, float* noundef %3) #0 !taffo.initweight !166 !taffo.sourceFunction !152 !taffo.funinfo !167 {
+define internal void @_Z20MLX90640_CalculateToPKtffPf.12(i16* noundef %0, float noundef %1, float noundef %2, float* noundef %3) #0 !taffo.initweight !168 !taffo.sourceFunction !154 !taffo.funinfo !169 {
   %5 = alloca i16*, align 8
   %6 = alloca float, align 4, !taffo.initweight !0, !taffo.info !28
   %7 = alloca float, align 4, !taffo.initweight !0, !taffo.info !28
@@ -7334,10 +7340,10 @@ define internal void @_Z20MLX90640_CalculateToPKtffPf.12(i16* noundef %0, float 
   %80 = load i16, i16* %79, align 2
   store i16 %80, i16* %27, align 2
   %81 = load i16*, i16** %5, align 8
-  %82 = call noundef float @_Z15MLX90640_GetVddPKt.1.42(i16* noundef %81), !taffo.initweight !54, !taffo.info !93, !taffo.originalCall !168
+  %82 = call noundef float @_Z15MLX90640_GetVddPKt.1.42(i16* noundef %81), !taffo.initweight !54, !taffo.info !93, !taffo.originalCall !170
   store float %82, float* %9, align 4, !taffo.initweight !48, !taffo.info !93
   %83 = load i16*, i16** %5, align 8
-  %84 = call noundef float @_Z14MLX90640_GetTaPKt.2.43(i16* noundef %83), !taffo.initweight !54, !taffo.info !95, !taffo.originalCall !169
+  %84 = call noundef float @_Z14MLX90640_GetTaPKt.2.43(i16* noundef %83), !taffo.initweight !54, !taffo.info !95, !taffo.originalCall !171
   store float %84, float* %10, align 4, !taffo.initweight !48, !taffo.info !95
   %85 = load float, float* %10, align 4, !taffo.initweight !48, !taffo.info !95
   %86 = fpext float %85 to double, !taffo.initweight !54, !taffo.info !95
@@ -7513,7 +7519,7 @@ define internal void @_Z20MLX90640_CalculateToPKtffPf.12(i16* noundef %0, float 
   %223 = load i32, i32* %31, align 4
   %224 = add nsw i32 %223, 1
   store i32 %224, i32* %31, align 4
-  br label %194, !llvm.loop !175
+  br label %194, !llvm.loop !177
 
 225:                                              ; preds = %194
   %226 = getelementptr inbounds [2 x float], [2 x float]* %15, i64 0, i64 0, !taffo.initweight !48, !taffo.info !100
@@ -7943,7 +7949,7 @@ define internal void @_Z20MLX90640_CalculateToPKtffPf.12(i16* noundef %0, float 
   %590 = fpext float %589 to double, !taffo.initweight !54, !taffo.info !28
   %591 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([10 x i8], [10 x i8]* @.str.63, i64 0, i64 0), double noundef %590), !taffo.initweight !55, !taffo.info !28
   %592 = load float, float* %49, align 4, !taffo.initweight !48, !taffo.info !28
-  %593 = call noundef float @_ZSt4sqrtf.8.44(float noundef %592), !taffo.initweight !54, !taffo.info !28, !taffo.originalCall !171
+  %593 = call noundef float @_ZSt4sqrtf.8.44(float noundef %592), !taffo.initweight !54, !taffo.info !28, !taffo.originalCall !173
   %594 = call noundef float @_ZSt4sqrtf.45(float noundef %593), !taffo.initweight !55, !taffo.info !28, !taffo.originalCall !119
   %595 = load float, float* getelementptr inbounds ([4 x float], [4 x float]* @params_ksTo, i64 0, i64 1), align 4, !taffo.initweight !54, !taffo.info !19
   %596 = fmul float %594, %595, !taffo.initweight !55, !taffo.info !117
@@ -8044,7 +8050,7 @@ define internal void @_Z20MLX90640_CalculateToPKtffPf.12(i16* noundef %0, float 
   %669 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([10 x i8], [10 x i8]* @.str.75, i64 0, i64 0), double noundef %668), !taffo.initweight !55, !taffo.info !28
   %670 = bitcast float* %56 to i8*, !taffo.initweight !48, !taffo.info !28
   %671 = load float, float* %55, align 4, !taffo.initweight !48, !taffo.info !28
-  %672 = call noundef float @_ZSt4sqrtf.9.46(float noundef %671), !taffo.initweight !54, !taffo.info !28, !taffo.originalCall !172
+  %672 = call noundef float @_ZSt4sqrtf.9.46(float noundef %671), !taffo.initweight !54, !taffo.info !28, !taffo.originalCall !174
   %673 = call noundef float @_ZSt4sqrtf.47(float noundef %672), !taffo.initweight !55, !taffo.info !28, !taffo.originalCall !119
   %674 = fpext float %673 to double, !taffo.initweight !59, !taffo.info !28
   %675 = fsub double %674, 2.731500e+02, !taffo.initweight !60, !taffo.info !28
@@ -8197,7 +8203,7 @@ define internal void @_Z20MLX90640_CalculateToPKtffPf.12(i16* noundef %0, float 
 782:                                              ; preds = %780, %769
   %783 = bitcast float* %64 to i8*, !taffo.initweight !48, !taffo.info !91
   %784 = load float, float* %63, align 4, !taffo.initweight !48, !taffo.info !112
-  %785 = call noundef float @_ZSt4sqrtf.10.48(float noundef %784), !taffo.initweight !54, !taffo.info !112, !taffo.originalCall !173
+  %785 = call noundef float @_ZSt4sqrtf.10.48(float noundef %784), !taffo.initweight !54, !taffo.info !112, !taffo.originalCall !175
   %786 = call noundef float @_ZSt4sqrtf.49(float noundef %785), !taffo.initweight !55, !taffo.info !112, !taffo.originalCall !119
   %787 = fpext float %786 to double, !taffo.initweight !59, !taffo.info !112
   %788 = fsub double %787, 2.731500e+02, !taffo.initweight !60, !taffo.info !112
@@ -8223,7 +8229,7 @@ define internal void @_Z20MLX90640_CalculateToPKtffPf.12(i16* noundef %0, float 
   %802 = load i32, i32* %32, align 4
   %803 = add nsw i32 %802, 1
   store i32 %803, i32* %32, align 4
-  br label %302, !llvm.loop !176
+  br label %302, !llvm.loop !178
 
 804:                                              ; preds = %302
   %805 = load float, float* %9, align 4, !taffo.initweight !48, !taffo.info !93
@@ -8242,7 +8248,7 @@ define internal void @_Z20MLX90640_CalculateToPKtffPf.12(i16* noundef %0, float 
 }
 
 ; Function Attrs: mustprogress noinline uwtable
-define internal void @_Z8printPPMP8_IO_FILEPfiiff.13(%struct._IO_FILE* noundef %0, float* noundef %1, i32 noundef %2, i32 noundef %3, float noundef %4, float noundef %5) #0 !taffo.initweight !177 !taffo.sourceFunction !156 !taffo.funinfo !178 {
+define internal void @_Z8printPPMP8_IO_FILEPfiiff.13(%struct._IO_FILE* noundef %0, float* noundef %1, i32 noundef %2, i32 noundef %3, float noundef %4, float noundef %5) #0 !taffo.initweight !179 !taffo.sourceFunction !158 !taffo.funinfo !180 {
   %7 = alloca %struct._IO_FILE*, align 8
   %8 = alloca float*, align 8, !taffo.initweight !55, !taffo.info !91
   %9 = alloca i32, align 4
@@ -8304,7 +8310,7 @@ define internal void @_Z8printPPMP8_IO_FILEPfiiff.13(%struct._IO_FILE* noundef %
   %49 = sext i32 %48 to i64
   %50 = getelementptr inbounds float, float* %40, i64 %49, !taffo.initweight !60, !taffo.info !91
   %51 = load float, float* %50, align 4, !taffo.initweight !120, !taffo.info !91
-  store float %51, float* %15, align 4, !taffo.initweight !179, !taffo.info !91
+  store float %51, float* %15, align 4, !taffo.initweight !181, !taffo.info !91
   %52 = load %struct._IO_FILE*, %struct._IO_FILE** @stdout, align 8
   %53 = call i32 @fflush(%struct._IO_FILE* noundef %52)
   %54 = load float, float* %15, align 4
@@ -8496,7 +8502,7 @@ define internal void @_Z8printPPMP8_IO_FILEPfiiff.13(%struct._IO_FILE* noundef %
   %166 = load i32, i32* %14, align 4
   %167 = add nsw i32 %166, 1
   store i32 %167, i32* %14, align 4
-  br label %33, !llvm.loop !180
+  br label %33, !llvm.loop !182
 
 168:                                              ; preds = %33
   %169 = load %struct._IO_FILE*, %struct._IO_FILE** %7, align 8
@@ -8507,14 +8513,14 @@ define internal void @_Z8printPPMP8_IO_FILEPfiiff.13(%struct._IO_FILE* noundef %
   %172 = load i32, i32* %13, align 4
   %173 = add nsw i32 %172, 1
   store i32 %173, i32* %13, align 4
-  br label %28, !llvm.loop !181
+  br label %28, !llvm.loop !183
 
 174:                                              ; preds = %28
   ret void
 }
 
 ; Function Attrs: mustprogress noinline nounwind uwtable
-define internal noundef double @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.14(i32 noundef %0, double noundef %1) #1 !taffo.initweight !182 !taffo.equivalentChild !183 !taffo.sourceFunction !129 !taffo.funinfo !184 {
+define internal noundef double @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.14(i32 noundef %0, double noundef %1) #1 !taffo.initweight !184 !taffo.equivalentChild !185 !taffo.sourceFunction !129 !taffo.funinfo !186 {
   %3 = alloca i32, align 4
   %4 = alloca double, align 8, !taffo.initweight !59, !taffo.info !15
   store i32 %0, i32* %3, align 4
@@ -8523,11 +8529,11 @@ define internal noundef double @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9_
   %6 = sitofp i32 %5 to double
   %7 = load double, double* %4, align 8, !taffo.initweight !60, !taffo.info !15
   %8 = call double @pow(double noundef %6, double noundef %7) #9, !taffo.initweight !120, !taffo.info !15
-  ret double %8, !taffo.initweight !179, !taffo.info !15
+  ret double %8, !taffo.initweight !181, !taffo.info !15
 }
 
 ; Function Attrs: mustprogress noinline nounwind uwtable
-define internal noundef i32 @_Z19CheckAdjacentPixelstt.15(i16 noundef zeroext %0, i16 noundef zeroext %1) #1 !taffo.initweight !185 !taffo.sourceFunction !81 !taffo.funinfo !186 {
+define internal noundef i32 @_Z19CheckAdjacentPixelstt.15(i16 noundef zeroext %0, i16 noundef zeroext %1) #1 !taffo.initweight !187 !taffo.sourceFunction !81 !taffo.funinfo !188 {
   %3 = alloca i32, align 4
   %4 = alloca i16, align 2, !taffo.initweight !59, !taffo.info !29
   %5 = alloca i16, align 2, !taffo.initweight !59, !taffo.info !29
@@ -8538,8 +8544,8 @@ define internal noundef i32 @_Z19CheckAdjacentPixelstt.15(i16 noundef zeroext %0
   %8 = zext i16 %7 to i32, !taffo.initweight !120, !taffo.info !29
   %9 = load i16, i16* %5, align 2, !taffo.initweight !60, !taffo.info !29
   %10 = zext i16 %9 to i32, !taffo.initweight !120, !taffo.info !29
-  %11 = sub nsw i32 %8, %10, !taffo.initweight !179, !taffo.info !29
-  store i32 %11, i32* %6, align 4, !taffo.initweight !187, !taffo.info !29
+  %11 = sub nsw i32 %8, %10, !taffo.initweight !181, !taffo.info !29
+  store i32 %11, i32* %6, align 4, !taffo.initweight !189, !taffo.info !29
   %12 = load i32, i32* %6, align 4
   %13 = icmp sgt i32 %12, -34
   br i1 %13, label %14, label %18
@@ -8591,7 +8597,7 @@ define internal noundef i32 @_Z19CheckAdjacentPixelstt.15(i16 noundef zeroext %0
 }
 
 ; Function Attrs: mustprogress noinline nounwind uwtable
-define internal noundef i32 @_Z19CheckAdjacentPixelstt.16(i16 noundef zeroext %0, i16 noundef zeroext %1) #1 !taffo.initweight !185 !taffo.sourceFunction !81 !taffo.funinfo !186 {
+define internal noundef i32 @_Z19CheckAdjacentPixelstt.16(i16 noundef zeroext %0, i16 noundef zeroext %1) #1 !taffo.initweight !187 !taffo.sourceFunction !81 !taffo.funinfo !188 {
   %3 = alloca i32, align 4
   %4 = alloca i16, align 2, !taffo.initweight !59, !taffo.info !29
   %5 = alloca i16, align 2, !taffo.initweight !59, !taffo.info !29
@@ -8602,8 +8608,8 @@ define internal noundef i32 @_Z19CheckAdjacentPixelstt.16(i16 noundef zeroext %0
   %8 = zext i16 %7 to i32, !taffo.initweight !120, !taffo.info !29
   %9 = load i16, i16* %5, align 2, !taffo.initweight !60, !taffo.info !29
   %10 = zext i16 %9 to i32, !taffo.initweight !120, !taffo.info !29
-  %11 = sub nsw i32 %8, %10, !taffo.initweight !179, !taffo.info !29
-  store i32 %11, i32* %6, align 4, !taffo.initweight !187, !taffo.info !29
+  %11 = sub nsw i32 %8, %10, !taffo.initweight !181, !taffo.info !29
+  store i32 %11, i32* %6, align 4, !taffo.initweight !189, !taffo.info !29
   %12 = load i32, i32* %6, align 4
   %13 = icmp sgt i32 %12, -34
   br i1 %13, label %14, label %18
@@ -8655,7 +8661,7 @@ define internal noundef i32 @_Z19CheckAdjacentPixelstt.16(i16 noundef zeroext %0
 }
 
 ; Function Attrs: mustprogress noinline nounwind uwtable
-define internal noundef i32 @_Z19CheckAdjacentPixelstt.17(i16 noundef zeroext %0, i16 noundef zeroext %1) #1 !taffo.initweight !185 !taffo.sourceFunction !81 !taffo.funinfo !186 {
+define internal noundef i32 @_Z19CheckAdjacentPixelstt.17(i16 noundef zeroext %0, i16 noundef zeroext %1) #1 !taffo.initweight !187 !taffo.sourceFunction !81 !taffo.funinfo !188 {
   %3 = alloca i32, align 4
   %4 = alloca i16, align 2, !taffo.initweight !59, !taffo.info !29
   %5 = alloca i16, align 2, !taffo.initweight !59, !taffo.info !29
@@ -8666,8 +8672,8 @@ define internal noundef i32 @_Z19CheckAdjacentPixelstt.17(i16 noundef zeroext %0
   %8 = zext i16 %7 to i32, !taffo.initweight !120, !taffo.info !29
   %9 = load i16, i16* %5, align 2, !taffo.initweight !60, !taffo.info !29
   %10 = zext i16 %9 to i32, !taffo.initweight !120, !taffo.info !29
-  %11 = sub nsw i32 %8, %10, !taffo.initweight !179, !taffo.info !29
-  store i32 %11, i32* %6, align 4, !taffo.initweight !187, !taffo.info !29
+  %11 = sub nsw i32 %8, %10, !taffo.initweight !181, !taffo.info !29
+  store i32 %11, i32* %6, align 4, !taffo.initweight !189, !taffo.info !29
   %12 = load i32, i32* %6, align 4
   %13 = icmp sgt i32 %12, -34
   br i1 %13, label %14, label %18
@@ -8719,34 +8725,34 @@ define internal noundef i32 @_Z19CheckAdjacentPixelstt.17(i16 noundef zeroext %0
 }
 
 ; Function Attrs: mustprogress noinline nounwind uwtable
-define internal noundef float @_ZSt4sqrtf.18(float noundef %0) #1 !taffo.initweight !55 !taffo.sourceFunction !119 !taffo.funinfo !162 {
+define internal noundef float @_ZSt4sqrtf.18(float noundef %0) #1 !taffo.initweight !55 !taffo.sourceFunction !119 !taffo.funinfo !164 {
   %2 = alloca float, align 4, !taffo.initweight !59, !taffo.info !28
   store float %0, float* %2, align 4, !taffo.initweight !60, !taffo.info !28
   %3 = load float, float* %2, align 4, !taffo.initweight !60, !taffo.info !28
   %4 = call float @sqrtf(float noundef %3) #9, !taffo.initweight !120, !taffo.info !28
-  ret float %4, !taffo.initweight !179, !taffo.info !28
+  ret float %4, !taffo.initweight !181, !taffo.info !28
 }
 
 ; Function Attrs: mustprogress noinline nounwind uwtable
-define internal noundef float @_ZSt4sqrtf.19(float noundef %0) #1 !taffo.initweight !55 !taffo.sourceFunction !119 !taffo.funinfo !162 {
+define internal noundef float @_ZSt4sqrtf.19(float noundef %0) #1 !taffo.initweight !55 !taffo.sourceFunction !119 !taffo.funinfo !164 {
   %2 = alloca float, align 4, !taffo.initweight !59, !taffo.info !28
   store float %0, float* %2, align 4, !taffo.initweight !60, !taffo.info !28
   %3 = load float, float* %2, align 4, !taffo.initweight !60, !taffo.info !28
   %4 = call float @sqrtf(float noundef %3) #9, !taffo.initweight !120, !taffo.info !28
-  ret float %4, !taffo.initweight !179, !taffo.info !28
+  ret float %4, !taffo.initweight !181, !taffo.info !28
 }
 
 ; Function Attrs: mustprogress noinline nounwind uwtable
-define internal noundef float @_ZSt4sqrtf.20(float noundef %0) #1 !taffo.initweight !55 !taffo.sourceFunction !119 !taffo.funinfo !165 {
+define internal noundef float @_ZSt4sqrtf.20(float noundef %0) #1 !taffo.initweight !55 !taffo.sourceFunction !119 !taffo.funinfo !167 {
   %2 = alloca float, align 4, !taffo.initweight !59, !taffo.info !112
   store float %0, float* %2, align 4, !taffo.initweight !60, !taffo.info !112
   %3 = load float, float* %2, align 4, !taffo.initweight !60, !taffo.info !112
   %4 = call float @sqrtf(float noundef %3) #9, !taffo.initweight !120, !taffo.info !112
-  ret float %4, !taffo.initweight !179, !taffo.info !112
+  ret float %4, !taffo.initweight !181, !taffo.info !112
 }
 
 ; Function Attrs: mustprogress noinline nounwind uwtable
-define internal noundef float @_Z5max_fff.21(float noundef %0, float noundef %1) #1 !taffo.initweight !188 !taffo.sourceFunction !154 !taffo.funinfo !189 {
+define internal noundef float @_Z5max_fff.21(float noundef %0, float noundef %1) #1 !taffo.initweight !190 !taffo.sourceFunction !156 !taffo.funinfo !191 {
   %3 = alloca float, align 4
   %4 = alloca float, align 4, !taffo.initweight !0, !taffo.info !91
   %5 = alloca float, align 4, !taffo.initweight !0, !taffo.info !91
@@ -8775,7 +8781,7 @@ define internal noundef float @_Z5max_fff.21(float noundef %0, float noundef %1)
 }
 
 ; Function Attrs: mustprogress noinline nounwind uwtable
-define internal noundef float @_Z5min_fff.22(float noundef %0, float noundef %1) #1 !taffo.initweight !188 !taffo.sourceFunction !153 !taffo.funinfo !189 {
+define internal noundef float @_Z5min_fff.22(float noundef %0, float noundef %1) #1 !taffo.initweight !190 !taffo.sourceFunction !155 !taffo.funinfo !191 {
   %3 = alloca float, align 4
   %4 = alloca float, align 4, !taffo.initweight !0, !taffo.info !91
   %5 = alloca float, align 4, !taffo.initweight !0, !taffo.info !91
@@ -8804,7 +8810,7 @@ define internal noundef float @_Z5min_fff.22(float noundef %0, float noundef %1)
 }
 
 ; Function Attrs: mustprogress noinline nounwind uwtable
-define internal noundef float @_Z5max_fff.23(float noundef %0, float noundef %1) #1 !taffo.initweight !182 !taffo.sourceFunction !154 !taffo.funinfo !190 {
+define internal noundef float @_Z5max_fff.23(float noundef %0, float noundef %1) #1 !taffo.initweight !184 !taffo.sourceFunction !156 !taffo.funinfo !192 {
   %3 = alloca float, align 4
   %4 = alloca float, align 4, !taffo.initweight !0, !taffo.info !91
   %5 = alloca float, align 4, !taffo.initweight !0, !taffo.info !91
@@ -8833,7 +8839,7 @@ define internal noundef float @_Z5max_fff.23(float noundef %0, float noundef %1)
 }
 
 ; Function Attrs: mustprogress noinline nounwind uwtable
-define internal noundef double @_ZSt3powIdiEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.24(double noundef %0, i32 noundef %1) #1 !taffo.initweight !191 !taffo.sourceFunction !116 !taffo.funinfo !192 {
+define internal noundef double @_ZSt3powIdiEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.24(double noundef %0, i32 noundef %1) #1 !taffo.initweight !193 !taffo.sourceFunction !116 !taffo.funinfo !194 {
   %3 = alloca double, align 8, !taffo.initweight !60, !taffo.info !28
   %4 = alloca i32, align 4
   store double %0, double* %3, align 8, !taffo.initweight !120, !taffo.info !28
@@ -8841,12 +8847,12 @@ define internal noundef double @_ZSt3powIdiEN9__gnu_cxx11__promote_2IT_T0_NS0_9_
   %5 = load double, double* %3, align 8, !taffo.initweight !120, !taffo.info !28
   %6 = load i32, i32* %4, align 4
   %7 = sitofp i32 %6 to double
-  %8 = call double @pow(double noundef %5, double noundef %7) #9, !taffo.initweight !179, !taffo.info !28
-  ret double %8, !taffo.initweight !187, !taffo.info !28
+  %8 = call double @pow(double noundef %5, double noundef %7) #9, !taffo.initweight !181, !taffo.info !28
+  ret double %8, !taffo.initweight !189, !taffo.info !28
 }
 
 ; Function Attrs: mustprogress noinline nounwind uwtable
-define internal noundef double @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.25(i32 noundef %0, double noundef %1) #1 !taffo.initweight !182 !taffo.equivalentChild !193 !taffo.sourceFunction !129 !taffo.funinfo !184 {
+define internal noundef double @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.25(i32 noundef %0, double noundef %1) #1 !taffo.initweight !184 !taffo.equivalentChild !195 !taffo.sourceFunction !129 !taffo.funinfo !186 {
   %3 = alloca i32, align 4
   %4 = alloca double, align 8, !taffo.initweight !59, !taffo.info !15
   store i32 %0, i32* %3, align 4
@@ -8855,11 +8861,11 @@ define internal noundef double @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9_
   %6 = sitofp i32 %5 to double
   %7 = load double, double* %4, align 8, !taffo.initweight !60, !taffo.info !15
   %8 = call double @pow(double noundef %6, double noundef %7) #9, !taffo.initweight !120, !taffo.info !15
-  ret double %8, !taffo.initweight !179, !taffo.info !15
+  ret double %8, !taffo.initweight !181, !taffo.info !15
 }
 
 ; Function Attrs: mustprogress noinline uwtable
-define internal noundef float @_Z15MLX90640_GetVddPKt.26(i16* noundef %0) #0 !taffo.initweight !46 !taffo.equivalentChild !194 !taffo.sourceFunction !114 !taffo.funinfo !47 {
+define internal noundef float @_Z15MLX90640_GetVddPKt.26(i16* noundef %0) #0 !taffo.initweight !46 !taffo.equivalentChild !196 !taffo.sourceFunction !114 !taffo.funinfo !47 {
   %2 = alloca i16*, align 8
   %3 = alloca float, align 4, !taffo.initweight !0, !taffo.info !125
   %4 = alloca float, align 4, !taffo.initweight !0, !taffo.info !127
@@ -8892,7 +8898,7 @@ define internal noundef float @_Z15MLX90640_GetVddPKt.26(i16* noundef %0) #0 !ta
   store i32 %23, i32* %5, align 4
   %24 = load i32, i32* @params_resolutionEE, align 4, !taffo.initweight !48, !taffo.info !15
   %25 = sitofp i32 %24 to double, !taffo.initweight !54, !taffo.info !15
-  %26 = call noundef double @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.14.50(i32 noundef 2, double noundef %25), !taffo.initweight !55, !taffo.info !15, !taffo.originalCall !195
+  %26 = call noundef double @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.14.50(i32 noundef 2, double noundef %25), !taffo.initweight !55, !taffo.info !15, !taffo.originalCall !197
   %27 = load i32, i32* %5, align 4
   %28 = sitofp i32 %27 to double
   %29 = call noundef double @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_(i32 noundef 2, double noundef %28)
@@ -8919,7 +8925,7 @@ define internal noundef float @_Z15MLX90640_GetVddPKt.26(i16* noundef %0) #0 !ta
 }
 
 ; Function Attrs: mustprogress noinline nounwind uwtable
-define internal noundef double @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.27(i32 noundef %0, double noundef %1) #1 !taffo.initweight !182 !taffo.equivalentChild !196 !taffo.sourceFunction !129 !taffo.funinfo !184 {
+define internal noundef double @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.27(i32 noundef %0, double noundef %1) #1 !taffo.initweight !184 !taffo.equivalentChild !198 !taffo.sourceFunction !129 !taffo.funinfo !186 {
   %3 = alloca i32, align 4
   %4 = alloca double, align 8, !taffo.initweight !59, !taffo.info !15
   store i32 %0, i32* %3, align 4
@@ -8928,11 +8934,11 @@ define internal noundef double @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9_
   %6 = sitofp i32 %5 to double
   %7 = load double, double* %4, align 8, !taffo.initweight !60, !taffo.info !15
   %8 = call double @pow(double noundef %6, double noundef %7) #9, !taffo.initweight !120, !taffo.info !15
-  ret double %8, !taffo.initweight !179, !taffo.info !15
+  ret double %8, !taffo.initweight !181, !taffo.info !15
 }
 
 ; Function Attrs: mustprogress noinline nounwind uwtable
-define internal noundef double @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.28(i32 noundef %0, double noundef %1) #1 !taffo.initweight !182 !taffo.sourceFunction !129 !taffo.funinfo !184 {
+define internal noundef double @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.28(i32 noundef %0, double noundef %1) #1 !taffo.initweight !184 !taffo.sourceFunction !129 !taffo.funinfo !186 {
   %3 = alloca i32, align 4
   %4 = alloca double, align 8, !taffo.initweight !59, !taffo.info !15
   store i32 %0, i32* %3, align 4
@@ -8941,11 +8947,11 @@ define internal noundef double @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9_
   %6 = sitofp i32 %5 to double
   %7 = load double, double* %4, align 8, !taffo.initweight !60, !taffo.info !15
   %8 = call double @pow(double noundef %6, double noundef %7) #9, !taffo.initweight !120, !taffo.info !15
-  ret double %8, !taffo.initweight !179, !taffo.info !15
+  ret double %8, !taffo.initweight !181, !taffo.info !15
 }
 
 ; Function Attrs: mustprogress noinline uwtable
-define internal noundef float @_Z15MLX90640_GetVddPKt.3.29(i16* noundef %0) #0 !taffo.initweight !46 !taffo.sourceFunction !160 !taffo.funinfo !47 {
+define internal noundef float @_Z15MLX90640_GetVddPKt.3.29(i16* noundef %0) #0 !taffo.initweight !46 !taffo.sourceFunction !162 !taffo.funinfo !47 {
   %2 = alloca i16*, align 8
   %3 = alloca float, align 4, !taffo.initweight !0, !taffo.info !125
   %4 = alloca float, align 4, !taffo.initweight !0, !taffo.info !127
@@ -8978,7 +8984,7 @@ define internal noundef float @_Z15MLX90640_GetVddPKt.3.29(i16* noundef %0) #0 !
   store i32 %23, i32* %5, align 4
   %24 = load i32, i32* @params_resolutionEE, align 4, !taffo.initweight !48, !taffo.info !15
   %25 = sitofp i32 %24 to double, !taffo.initweight !54, !taffo.info !15
-  %26 = call noundef double @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.27.51(i32 noundef 2, double noundef %25), !taffo.initweight !55, !taffo.info !15, !taffo.originalCall !197
+  %26 = call noundef double @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.27.51(i32 noundef 2, double noundef %25), !taffo.initweight !55, !taffo.info !15, !taffo.originalCall !199
   %27 = load i32, i32* %5, align 4
   %28 = sitofp i32 %27 to double
   %29 = call noundef double @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_(i32 noundef 2, double noundef %28)
@@ -9005,7 +9011,7 @@ define internal noundef float @_Z15MLX90640_GetVddPKt.3.29(i16* noundef %0) #0 !
 }
 
 ; Function Attrs: mustprogress noinline uwtable
-define internal noundef float @_Z15MLX90640_GetVddPKt.3.30(i16* noundef %0) #0 !taffo.initweight !46 !taffo.sourceFunction !160 !taffo.funinfo !47 {
+define internal noundef float @_Z15MLX90640_GetVddPKt.3.30(i16* noundef %0) #0 !taffo.initweight !46 !taffo.sourceFunction !162 !taffo.funinfo !47 {
   %2 = alloca i16*, align 8
   %3 = alloca float, align 4, !taffo.initweight !0, !taffo.info !125
   %4 = alloca float, align 4, !taffo.initweight !0, !taffo.info !127
@@ -9038,7 +9044,7 @@ define internal noundef float @_Z15MLX90640_GetVddPKt.3.30(i16* noundef %0) #0 !
   store i32 %23, i32* %5, align 4
   %24 = load i32, i32* @params_resolutionEE, align 4, !taffo.initweight !48, !taffo.info !15
   %25 = sitofp i32 %24 to double, !taffo.initweight !54, !taffo.info !15
-  %26 = call noundef double @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.27.52(i32 noundef 2, double noundef %25), !taffo.initweight !55, !taffo.info !15, !taffo.originalCall !197
+  %26 = call noundef double @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.27.52(i32 noundef 2, double noundef %25), !taffo.initweight !55, !taffo.info !15, !taffo.originalCall !199
   %27 = load i32, i32* %5, align 4
   %28 = sitofp i32 %27 to double
   %29 = call noundef double @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_(i32 noundef 2, double noundef %28)
@@ -9065,7 +9071,7 @@ define internal noundef float @_Z15MLX90640_GetVddPKt.3.30(i16* noundef %0) #0 !
 }
 
 ; Function Attrs: mustprogress noinline uwtable
-define internal noundef float @_Z15MLX90640_GetVddPKt.3.31(i16* noundef %0) #0 !taffo.initweight !46 !taffo.sourceFunction !160 !taffo.funinfo !47 {
+define internal noundef float @_Z15MLX90640_GetVddPKt.3.31(i16* noundef %0) #0 !taffo.initweight !46 !taffo.sourceFunction !162 !taffo.funinfo !47 {
   %2 = alloca i16*, align 8
   %3 = alloca float, align 4, !taffo.initweight !0, !taffo.info !125
   %4 = alloca float, align 4, !taffo.initweight !0, !taffo.info !127
@@ -9098,7 +9104,7 @@ define internal noundef float @_Z15MLX90640_GetVddPKt.3.31(i16* noundef %0) #0 !
   store i32 %23, i32* %5, align 4
   %24 = load i32, i32* @params_resolutionEE, align 4, !taffo.initweight !48, !taffo.info !15
   %25 = sitofp i32 %24 to double, !taffo.initweight !54, !taffo.info !15
-  %26 = call noundef double @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.27.53(i32 noundef 2, double noundef %25), !taffo.initweight !55, !taffo.info !15, !taffo.originalCall !197
+  %26 = call noundef double @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.27.53(i32 noundef 2, double noundef %25), !taffo.initweight !55, !taffo.info !15, !taffo.originalCall !199
   %27 = load i32, i32* %5, align 4
   %28 = sitofp i32 %27 to double
   %29 = call noundef double @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_(i32 noundef 2, double noundef %28)
@@ -9125,7 +9131,7 @@ define internal noundef float @_Z15MLX90640_GetVddPKt.3.31(i16* noundef %0) #0 !
 }
 
 ; Function Attrs: mustprogress noinline nounwind uwtable
-define internal noundef double @_ZSt3powIdiEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.32(double noundef %0, i32 noundef %1) #1 !taffo.initweight !191 !taffo.sourceFunction !116 !taffo.funinfo !192 {
+define internal noundef double @_ZSt3powIdiEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.32(double noundef %0, i32 noundef %1) #1 !taffo.initweight !193 !taffo.sourceFunction !116 !taffo.funinfo !194 {
   %3 = alloca double, align 8, !taffo.initweight !60, !taffo.info !28
   %4 = alloca i32, align 4
   store double %0, double* %3, align 8, !taffo.initweight !120, !taffo.info !28
@@ -9133,12 +9139,12 @@ define internal noundef double @_ZSt3powIdiEN9__gnu_cxx11__promote_2IT_T0_NS0_9_
   %5 = load double, double* %3, align 8, !taffo.initweight !120, !taffo.info !28
   %6 = load i32, i32* %4, align 4
   %7 = sitofp i32 %6 to double
-  %8 = call double @pow(double noundef %5, double noundef %7) #9, !taffo.initweight !179, !taffo.info !28
-  ret double %8, !taffo.initweight !187, !taffo.info !28
+  %8 = call double @pow(double noundef %5, double noundef %7) #9, !taffo.initweight !181, !taffo.info !28
+  ret double %8, !taffo.initweight !189, !taffo.info !28
 }
 
 ; Function Attrs: mustprogress noinline uwtable
-define internal noundef float @_Z15MLX90640_GetVddPKt.1.33(i16* noundef %0) #0 !taffo.initweight !46 !taffo.sourceFunction !168 !taffo.funinfo !47 {
+define internal noundef float @_Z15MLX90640_GetVddPKt.1.33(i16* noundef %0) #0 !taffo.initweight !46 !taffo.sourceFunction !170 !taffo.funinfo !47 {
   %2 = alloca i16*, align 8
   %3 = alloca float, align 4, !taffo.initweight !0, !taffo.info !125
   %4 = alloca float, align 4, !taffo.initweight !0, !taffo.info !127
@@ -9171,7 +9177,7 @@ define internal noundef float @_Z15MLX90640_GetVddPKt.1.33(i16* noundef %0) #0 !
   store i32 %23, i32* %5, align 4
   %24 = load i32, i32* @params_resolutionEE, align 4, !taffo.initweight !48, !taffo.info !15
   %25 = sitofp i32 %24 to double, !taffo.initweight !54, !taffo.info !15
-  %26 = call noundef double @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.25.54(i32 noundef 2, double noundef %25), !taffo.initweight !55, !taffo.info !15, !taffo.originalCall !198
+  %26 = call noundef double @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.25.54(i32 noundef 2, double noundef %25), !taffo.initweight !55, !taffo.info !15, !taffo.originalCall !200
   %27 = load i32, i32* %5, align 4
   %28 = sitofp i32 %27 to double
   %29 = call noundef double @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_(i32 noundef 2, double noundef %28)
@@ -9198,7 +9204,7 @@ define internal noundef float @_Z15MLX90640_GetVddPKt.1.33(i16* noundef %0) #0 !
 }
 
 ; Function Attrs: mustprogress noinline uwtable
-define internal noundef float @_Z14MLX90640_GetTaPKt.2.34(i16* noundef %0) #0 !taffo.initweight !46 !taffo.sourceFunction !169 !taffo.funinfo !47 {
+define internal noundef float @_Z14MLX90640_GetTaPKt.2.34(i16* noundef %0) #0 !taffo.initweight !46 !taffo.sourceFunction !171 !taffo.funinfo !47 {
   %2 = alloca i16*, align 8
   %3 = alloca float, align 4, !taffo.initweight !0, !taffo.info !98
   %4 = alloca float, align 4, !taffo.initweight !0, !taffo.info !131
@@ -9219,7 +9225,7 @@ define internal noundef float @_Z14MLX90640_GetTaPKt.2.34(i16* noundef %0) #0 !t
   %18 = bitcast float* %6 to i8*, !taffo.initweight !48, !taffo.info !93
   %19 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([11 x i8], [11 x i8]* @.str.103, i64 0, i64 0))
   %20 = load i16*, i16** %2, align 8
-  %21 = call noundef float @_Z15MLX90640_GetVddPKt.26.55(i16* noundef %20), !taffo.initweight !54, !taffo.info !21, !taffo.originalCall !199
+  %21 = call noundef float @_Z15MLX90640_GetVddPKt.26.55(i16* noundef %20), !taffo.initweight !54, !taffo.info !21, !taffo.originalCall !201
   store float %21, float* %5, align 4, !taffo.initweight !48, !taffo.info !21
   %22 = load float, float* %5, align 4, !taffo.initweight !48, !taffo.info !21
   %23 = fpext float %22 to double, !taffo.initweight !54, !taffo.info !21
@@ -9355,7 +9361,7 @@ define internal noundef float @_Z14MLX90640_GetTaPKt.2.34(i16* noundef %0) #0 !t
 }
 
 ; Function Attrs: mustprogress noinline nounwind uwtable
-define internal noundef float @_ZSt4sqrtf.8.35(float noundef %0) #1 !taffo.initweight !54 !taffo.sourceFunction !171 !taffo.funinfo !162 {
+define internal noundef float @_ZSt4sqrtf.8.35(float noundef %0) #1 !taffo.initweight !54 !taffo.sourceFunction !173 !taffo.funinfo !164 {
   %2 = alloca float, align 4, !taffo.initweight !55, !taffo.info !28
   store float %0, float* %2, align 4, !taffo.initweight !59, !taffo.info !28
   %3 = load float, float* %2, align 4, !taffo.initweight !59, !taffo.info !28
@@ -9364,16 +9370,16 @@ define internal noundef float @_ZSt4sqrtf.8.35(float noundef %0) #1 !taffo.initw
 }
 
 ; Function Attrs: mustprogress noinline nounwind uwtable
-define internal noundef float @_ZSt4sqrtf.36(float noundef %0) #1 !taffo.initweight !55 !taffo.sourceFunction !119 !taffo.funinfo !162 {
+define internal noundef float @_ZSt4sqrtf.36(float noundef %0) #1 !taffo.initweight !55 !taffo.sourceFunction !119 !taffo.funinfo !164 {
   %2 = alloca float, align 4, !taffo.initweight !59, !taffo.info !28
   store float %0, float* %2, align 4, !taffo.initweight !60, !taffo.info !28
   %3 = load float, float* %2, align 4, !taffo.initweight !60, !taffo.info !28
   %4 = call float @sqrtf(float noundef %3) #9, !taffo.initweight !120, !taffo.info !28
-  ret float %4, !taffo.initweight !179, !taffo.info !28
+  ret float %4, !taffo.initweight !181, !taffo.info !28
 }
 
 ; Function Attrs: mustprogress noinline nounwind uwtable
-define internal noundef float @_ZSt4sqrtf.9.37(float noundef %0) #1 !taffo.initweight !54 !taffo.sourceFunction !172 !taffo.funinfo !162 {
+define internal noundef float @_ZSt4sqrtf.9.37(float noundef %0) #1 !taffo.initweight !54 !taffo.sourceFunction !174 !taffo.funinfo !164 {
   %2 = alloca float, align 4, !taffo.initweight !55, !taffo.info !28
   store float %0, float* %2, align 4, !taffo.initweight !59, !taffo.info !28
   %3 = load float, float* %2, align 4, !taffo.initweight !59, !taffo.info !28
@@ -9382,16 +9388,16 @@ define internal noundef float @_ZSt4sqrtf.9.37(float noundef %0) #1 !taffo.initw
 }
 
 ; Function Attrs: mustprogress noinline nounwind uwtable
-define internal noundef float @_ZSt4sqrtf.38(float noundef %0) #1 !taffo.initweight !55 !taffo.sourceFunction !119 !taffo.funinfo !162 {
+define internal noundef float @_ZSt4sqrtf.38(float noundef %0) #1 !taffo.initweight !55 !taffo.sourceFunction !119 !taffo.funinfo !164 {
   %2 = alloca float, align 4, !taffo.initweight !59, !taffo.info !28
   store float %0, float* %2, align 4, !taffo.initweight !60, !taffo.info !28
   %3 = load float, float* %2, align 4, !taffo.initweight !60, !taffo.info !28
   %4 = call float @sqrtf(float noundef %3) #9, !taffo.initweight !120, !taffo.info !28
-  ret float %4, !taffo.initweight !179, !taffo.info !28
+  ret float %4, !taffo.initweight !181, !taffo.info !28
 }
 
 ; Function Attrs: mustprogress noinline nounwind uwtable
-define internal noundef float @_ZSt4sqrtf.10.39(float noundef %0) #1 !taffo.initweight !54 !taffo.sourceFunction !173 !taffo.funinfo !165 {
+define internal noundef float @_ZSt4sqrtf.10.39(float noundef %0) #1 !taffo.initweight !54 !taffo.sourceFunction !175 !taffo.funinfo !167 {
   %2 = alloca float, align 4, !taffo.initweight !55, !taffo.info !112
   store float %0, float* %2, align 4, !taffo.initweight !59, !taffo.info !112
   %3 = load float, float* %2, align 4, !taffo.initweight !59, !taffo.info !112
@@ -9400,16 +9406,16 @@ define internal noundef float @_ZSt4sqrtf.10.39(float noundef %0) #1 !taffo.init
 }
 
 ; Function Attrs: mustprogress noinline nounwind uwtable
-define internal noundef float @_ZSt4sqrtf.40(float noundef %0) #1 !taffo.initweight !55 !taffo.sourceFunction !119 !taffo.funinfo !165 {
+define internal noundef float @_ZSt4sqrtf.40(float noundef %0) #1 !taffo.initweight !55 !taffo.sourceFunction !119 !taffo.funinfo !167 {
   %2 = alloca float, align 4, !taffo.initweight !59, !taffo.info !112
   store float %0, float* %2, align 4, !taffo.initweight !60, !taffo.info !112
   %3 = load float, float* %2, align 4, !taffo.initweight !60, !taffo.info !112
   %4 = call float @sqrtf(float noundef %3) #9, !taffo.initweight !120, !taffo.info !112
-  ret float %4, !taffo.initweight !179, !taffo.info !112
+  ret float %4, !taffo.initweight !181, !taffo.info !112
 }
 
 ; Function Attrs: mustprogress noinline nounwind uwtable
-define internal noundef double @_ZSt3powIdiEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.41(double noundef %0, i32 noundef %1) #1 !taffo.initweight !191 !taffo.sourceFunction !116 !taffo.funinfo !192 {
+define internal noundef double @_ZSt3powIdiEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.41(double noundef %0, i32 noundef %1) #1 !taffo.initweight !193 !taffo.sourceFunction !116 !taffo.funinfo !194 {
   %3 = alloca double, align 8, !taffo.initweight !60, !taffo.info !28
   %4 = alloca i32, align 4
   store double %0, double* %3, align 8, !taffo.initweight !120, !taffo.info !28
@@ -9417,12 +9423,12 @@ define internal noundef double @_ZSt3powIdiEN9__gnu_cxx11__promote_2IT_T0_NS0_9_
   %5 = load double, double* %3, align 8, !taffo.initweight !120, !taffo.info !28
   %6 = load i32, i32* %4, align 4
   %7 = sitofp i32 %6 to double
-  %8 = call double @pow(double noundef %5, double noundef %7) #9, !taffo.initweight !179, !taffo.info !28
-  ret double %8, !taffo.initweight !187, !taffo.info !28
+  %8 = call double @pow(double noundef %5, double noundef %7) #9, !taffo.initweight !181, !taffo.info !28
+  ret double %8, !taffo.initweight !189, !taffo.info !28
 }
 
 ; Function Attrs: mustprogress noinline uwtable
-define internal noundef float @_Z15MLX90640_GetVddPKt.1.42(i16* noundef %0) #0 !taffo.initweight !46 !taffo.sourceFunction !168 !taffo.funinfo !47 {
+define internal noundef float @_Z15MLX90640_GetVddPKt.1.42(i16* noundef %0) #0 !taffo.initweight !46 !taffo.sourceFunction !170 !taffo.funinfo !47 {
   %2 = alloca i16*, align 8
   %3 = alloca float, align 4, !taffo.initweight !0, !taffo.info !125
   %4 = alloca float, align 4, !taffo.initweight !0, !taffo.info !127
@@ -9455,7 +9461,7 @@ define internal noundef float @_Z15MLX90640_GetVddPKt.1.42(i16* noundef %0) #0 !
   store i32 %23, i32* %5, align 4
   %24 = load i32, i32* @params_resolutionEE, align 4, !taffo.initweight !48, !taffo.info !15
   %25 = sitofp i32 %24 to double, !taffo.initweight !54, !taffo.info !15
-  %26 = call noundef double @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.25.56(i32 noundef 2, double noundef %25), !taffo.initweight !55, !taffo.info !15, !taffo.originalCall !198
+  %26 = call noundef double @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.25.56(i32 noundef 2, double noundef %25), !taffo.initweight !55, !taffo.info !15, !taffo.originalCall !200
   %27 = load i32, i32* %5, align 4
   %28 = sitofp i32 %27 to double
   %29 = call noundef double @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_(i32 noundef 2, double noundef %28)
@@ -9482,7 +9488,7 @@ define internal noundef float @_Z15MLX90640_GetVddPKt.1.42(i16* noundef %0) #0 !
 }
 
 ; Function Attrs: mustprogress noinline uwtable
-define internal noundef float @_Z14MLX90640_GetTaPKt.2.43(i16* noundef %0) #0 !taffo.initweight !46 !taffo.sourceFunction !169 !taffo.funinfo !47 {
+define internal noundef float @_Z14MLX90640_GetTaPKt.2.43(i16* noundef %0) #0 !taffo.initweight !46 !taffo.sourceFunction !171 !taffo.funinfo !47 {
   %2 = alloca i16*, align 8
   %3 = alloca float, align 4, !taffo.initweight !0, !taffo.info !98
   %4 = alloca float, align 4, !taffo.initweight !0, !taffo.info !131
@@ -9503,7 +9509,7 @@ define internal noundef float @_Z14MLX90640_GetTaPKt.2.43(i16* noundef %0) #0 !t
   %18 = bitcast float* %6 to i8*, !taffo.initweight !48, !taffo.info !93
   %19 = call i32 (i8*, ...) @printf(i8* noundef getelementptr inbounds ([11 x i8], [11 x i8]* @.str.103, i64 0, i64 0))
   %20 = load i16*, i16** %2, align 8
-  %21 = call noundef float @_Z15MLX90640_GetVddPKt.26.57(i16* noundef %20), !taffo.initweight !54, !taffo.info !21, !taffo.originalCall !199
+  %21 = call noundef float @_Z15MLX90640_GetVddPKt.26.57(i16* noundef %20), !taffo.initweight !54, !taffo.info !21, !taffo.originalCall !201
   store float %21, float* %5, align 4, !taffo.initweight !48, !taffo.info !21
   %22 = load float, float* %5, align 4, !taffo.initweight !48, !taffo.info !21
   %23 = fpext float %22 to double, !taffo.initweight !54, !taffo.info !21
@@ -9639,7 +9645,7 @@ define internal noundef float @_Z14MLX90640_GetTaPKt.2.43(i16* noundef %0) #0 !t
 }
 
 ; Function Attrs: mustprogress noinline nounwind uwtable
-define internal noundef float @_ZSt4sqrtf.8.44(float noundef %0) #1 !taffo.initweight !54 !taffo.sourceFunction !171 !taffo.funinfo !162 {
+define internal noundef float @_ZSt4sqrtf.8.44(float noundef %0) #1 !taffo.initweight !54 !taffo.sourceFunction !173 !taffo.funinfo !164 {
   %2 = alloca float, align 4, !taffo.initweight !55, !taffo.info !28
   store float %0, float* %2, align 4, !taffo.initweight !59, !taffo.info !28
   %3 = load float, float* %2, align 4, !taffo.initweight !59, !taffo.info !28
@@ -9648,16 +9654,16 @@ define internal noundef float @_ZSt4sqrtf.8.44(float noundef %0) #1 !taffo.initw
 }
 
 ; Function Attrs: mustprogress noinline nounwind uwtable
-define internal noundef float @_ZSt4sqrtf.45(float noundef %0) #1 !taffo.initweight !55 !taffo.sourceFunction !119 !taffo.funinfo !162 {
+define internal noundef float @_ZSt4sqrtf.45(float noundef %0) #1 !taffo.initweight !55 !taffo.sourceFunction !119 !taffo.funinfo !164 {
   %2 = alloca float, align 4, !taffo.initweight !59, !taffo.info !28
   store float %0, float* %2, align 4, !taffo.initweight !60, !taffo.info !28
   %3 = load float, float* %2, align 4, !taffo.initweight !60, !taffo.info !28
   %4 = call float @sqrtf(float noundef %3) #9, !taffo.initweight !120, !taffo.info !28
-  ret float %4, !taffo.initweight !179, !taffo.info !28
+  ret float %4, !taffo.initweight !181, !taffo.info !28
 }
 
 ; Function Attrs: mustprogress noinline nounwind uwtable
-define internal noundef float @_ZSt4sqrtf.9.46(float noundef %0) #1 !taffo.initweight !54 !taffo.sourceFunction !172 !taffo.funinfo !162 {
+define internal noundef float @_ZSt4sqrtf.9.46(float noundef %0) #1 !taffo.initweight !54 !taffo.sourceFunction !174 !taffo.funinfo !164 {
   %2 = alloca float, align 4, !taffo.initweight !55, !taffo.info !28
   store float %0, float* %2, align 4, !taffo.initweight !59, !taffo.info !28
   %3 = load float, float* %2, align 4, !taffo.initweight !59, !taffo.info !28
@@ -9666,16 +9672,16 @@ define internal noundef float @_ZSt4sqrtf.9.46(float noundef %0) #1 !taffo.initw
 }
 
 ; Function Attrs: mustprogress noinline nounwind uwtable
-define internal noundef float @_ZSt4sqrtf.47(float noundef %0) #1 !taffo.initweight !55 !taffo.sourceFunction !119 !taffo.funinfo !162 {
+define internal noundef float @_ZSt4sqrtf.47(float noundef %0) #1 !taffo.initweight !55 !taffo.sourceFunction !119 !taffo.funinfo !164 {
   %2 = alloca float, align 4, !taffo.initweight !59, !taffo.info !28
   store float %0, float* %2, align 4, !taffo.initweight !60, !taffo.info !28
   %3 = load float, float* %2, align 4, !taffo.initweight !60, !taffo.info !28
   %4 = call float @sqrtf(float noundef %3) #9, !taffo.initweight !120, !taffo.info !28
-  ret float %4, !taffo.initweight !179, !taffo.info !28
+  ret float %4, !taffo.initweight !181, !taffo.info !28
 }
 
 ; Function Attrs: mustprogress noinline nounwind uwtable
-define internal noundef float @_ZSt4sqrtf.10.48(float noundef %0) #1 !taffo.initweight !54 !taffo.sourceFunction !173 !taffo.funinfo !165 {
+define internal noundef float @_ZSt4sqrtf.10.48(float noundef %0) #1 !taffo.initweight !54 !taffo.sourceFunction !175 !taffo.funinfo !167 {
   %2 = alloca float, align 4, !taffo.initweight !55, !taffo.info !112
   store float %0, float* %2, align 4, !taffo.initweight !59, !taffo.info !112
   %3 = load float, float* %2, align 4, !taffo.initweight !59, !taffo.info !112
@@ -9684,16 +9690,16 @@ define internal noundef float @_ZSt4sqrtf.10.48(float noundef %0) #1 !taffo.init
 }
 
 ; Function Attrs: mustprogress noinline nounwind uwtable
-define internal noundef float @_ZSt4sqrtf.49(float noundef %0) #1 !taffo.initweight !55 !taffo.sourceFunction !119 !taffo.funinfo !165 {
+define internal noundef float @_ZSt4sqrtf.49(float noundef %0) #1 !taffo.initweight !55 !taffo.sourceFunction !119 !taffo.funinfo !167 {
   %2 = alloca float, align 4, !taffo.initweight !59, !taffo.info !112
   store float %0, float* %2, align 4, !taffo.initweight !60, !taffo.info !112
   %3 = load float, float* %2, align 4, !taffo.initweight !60, !taffo.info !112
   %4 = call float @sqrtf(float noundef %3) #9, !taffo.initweight !120, !taffo.info !112
-  ret float %4, !taffo.initweight !179, !taffo.info !112
+  ret float %4, !taffo.initweight !181, !taffo.info !112
 }
 
 ; Function Attrs: mustprogress noinline nounwind uwtable
-define internal noundef double @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.14.50(i32 noundef %0, double noundef %1) #1 !taffo.initweight !182 !taffo.equivalentChild !200 !taffo.sourceFunction !195 !taffo.funinfo !184 {
+define internal noundef double @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.14.50(i32 noundef %0, double noundef %1) #1 !taffo.initweight !184 !taffo.equivalentChild !202 !taffo.sourceFunction !197 !taffo.funinfo !186 {
   %3 = alloca i32, align 4
   %4 = alloca double, align 8, !taffo.initweight !59, !taffo.info !15
   store i32 %0, i32* %3, align 4
@@ -9702,11 +9708,11 @@ define internal noundef double @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9_
   %6 = sitofp i32 %5 to double
   %7 = load double, double* %4, align 8, !taffo.initweight !60, !taffo.info !15
   %8 = call double @pow(double noundef %6, double noundef %7) #9, !taffo.initweight !120, !taffo.info !15
-  ret double %8, !taffo.initweight !179, !taffo.info !15
+  ret double %8, !taffo.initweight !181, !taffo.info !15
 }
 
 ; Function Attrs: mustprogress noinline nounwind uwtable
-define internal noundef double @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.27.51(i32 noundef %0, double noundef %1) #1 !taffo.initweight !182 !taffo.sourceFunction !197 !taffo.funinfo !184 {
+define internal noundef double @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.27.51(i32 noundef %0, double noundef %1) #1 !taffo.initweight !184 !taffo.sourceFunction !199 !taffo.funinfo !186 {
   %3 = alloca i32, align 4
   %4 = alloca double, align 8, !taffo.initweight !59, !taffo.info !15
   store i32 %0, i32* %3, align 4
@@ -9715,11 +9721,11 @@ define internal noundef double @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9_
   %6 = sitofp i32 %5 to double
   %7 = load double, double* %4, align 8, !taffo.initweight !60, !taffo.info !15
   %8 = call double @pow(double noundef %6, double noundef %7) #9, !taffo.initweight !120, !taffo.info !15
-  ret double %8, !taffo.initweight !179, !taffo.info !15
+  ret double %8, !taffo.initweight !181, !taffo.info !15
 }
 
 ; Function Attrs: mustprogress noinline nounwind uwtable
-define internal noundef double @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.27.52(i32 noundef %0, double noundef %1) #1 !taffo.initweight !182 !taffo.sourceFunction !197 !taffo.funinfo !184 {
+define internal noundef double @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.27.52(i32 noundef %0, double noundef %1) #1 !taffo.initweight !184 !taffo.sourceFunction !199 !taffo.funinfo !186 {
   %3 = alloca i32, align 4
   %4 = alloca double, align 8, !taffo.initweight !59, !taffo.info !15
   store i32 %0, i32* %3, align 4
@@ -9728,11 +9734,11 @@ define internal noundef double @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9_
   %6 = sitofp i32 %5 to double
   %7 = load double, double* %4, align 8, !taffo.initweight !60, !taffo.info !15
   %8 = call double @pow(double noundef %6, double noundef %7) #9, !taffo.initweight !120, !taffo.info !15
-  ret double %8, !taffo.initweight !179, !taffo.info !15
+  ret double %8, !taffo.initweight !181, !taffo.info !15
 }
 
 ; Function Attrs: mustprogress noinline nounwind uwtable
-define internal noundef double @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.27.53(i32 noundef %0, double noundef %1) #1 !taffo.initweight !182 !taffo.sourceFunction !197 !taffo.funinfo !184 {
+define internal noundef double @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.27.53(i32 noundef %0, double noundef %1) #1 !taffo.initweight !184 !taffo.sourceFunction !199 !taffo.funinfo !186 {
   %3 = alloca i32, align 4
   %4 = alloca double, align 8, !taffo.initweight !59, !taffo.info !15
   store i32 %0, i32* %3, align 4
@@ -9741,11 +9747,11 @@ define internal noundef double @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9_
   %6 = sitofp i32 %5 to double
   %7 = load double, double* %4, align 8, !taffo.initweight !60, !taffo.info !15
   %8 = call double @pow(double noundef %6, double noundef %7) #9, !taffo.initweight !120, !taffo.info !15
-  ret double %8, !taffo.initweight !179, !taffo.info !15
+  ret double %8, !taffo.initweight !181, !taffo.info !15
 }
 
 ; Function Attrs: mustprogress noinline nounwind uwtable
-define internal noundef double @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.25.54(i32 noundef %0, double noundef %1) #1 !taffo.initweight !182 !taffo.sourceFunction !198 !taffo.funinfo !184 {
+define internal noundef double @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.25.54(i32 noundef %0, double noundef %1) #1 !taffo.initweight !184 !taffo.sourceFunction !200 !taffo.funinfo !186 {
   %3 = alloca i32, align 4
   %4 = alloca double, align 8, !taffo.initweight !59, !taffo.info !15
   store i32 %0, i32* %3, align 4
@@ -9754,11 +9760,11 @@ define internal noundef double @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9_
   %6 = sitofp i32 %5 to double
   %7 = load double, double* %4, align 8, !taffo.initweight !60, !taffo.info !15
   %8 = call double @pow(double noundef %6, double noundef %7) #9, !taffo.initweight !120, !taffo.info !15
-  ret double %8, !taffo.initweight !179, !taffo.info !15
+  ret double %8, !taffo.initweight !181, !taffo.info !15
 }
 
 ; Function Attrs: mustprogress noinline uwtable
-define internal noundef float @_Z15MLX90640_GetVddPKt.26.55(i16* noundef %0) #0 !taffo.initweight !46 !taffo.sourceFunction !199 !taffo.funinfo !47 {
+define internal noundef float @_Z15MLX90640_GetVddPKt.26.55(i16* noundef %0) #0 !taffo.initweight !46 !taffo.sourceFunction !201 !taffo.funinfo !47 {
   %2 = alloca i16*, align 8
   %3 = alloca float, align 4, !taffo.initweight !0, !taffo.info !125
   %4 = alloca float, align 4, !taffo.initweight !0, !taffo.info !127
@@ -9791,7 +9797,7 @@ define internal noundef float @_Z15MLX90640_GetVddPKt.26.55(i16* noundef %0) #0 
   store i32 %23, i32* %5, align 4
   %24 = load i32, i32* @params_resolutionEE, align 4, !taffo.initweight !48, !taffo.info !15
   %25 = sitofp i32 %24 to double, !taffo.initweight !54, !taffo.info !15
-  %26 = call noundef double @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.14.50.58(i32 noundef 2, double noundef %25), !taffo.initweight !55, !taffo.info !15, !taffo.originalCall !183
+  %26 = call noundef double @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.14.50.58(i32 noundef 2, double noundef %25), !taffo.initweight !55, !taffo.info !15, !taffo.originalCall !185
   %27 = load i32, i32* %5, align 4
   %28 = sitofp i32 %27 to double
   %29 = call noundef double @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_(i32 noundef 2, double noundef %28)
@@ -9818,7 +9824,7 @@ define internal noundef float @_Z15MLX90640_GetVddPKt.26.55(i16* noundef %0) #0 
 }
 
 ; Function Attrs: mustprogress noinline nounwind uwtable
-define internal noundef double @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.25.56(i32 noundef %0, double noundef %1) #1 !taffo.initweight !182 !taffo.sourceFunction !198 !taffo.funinfo !184 {
+define internal noundef double @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.25.56(i32 noundef %0, double noundef %1) #1 !taffo.initweight !184 !taffo.sourceFunction !200 !taffo.funinfo !186 {
   %3 = alloca i32, align 4
   %4 = alloca double, align 8, !taffo.initweight !59, !taffo.info !15
   store i32 %0, i32* %3, align 4
@@ -9827,11 +9833,11 @@ define internal noundef double @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9_
   %6 = sitofp i32 %5 to double
   %7 = load double, double* %4, align 8, !taffo.initweight !60, !taffo.info !15
   %8 = call double @pow(double noundef %6, double noundef %7) #9, !taffo.initweight !120, !taffo.info !15
-  ret double %8, !taffo.initweight !179, !taffo.info !15
+  ret double %8, !taffo.initweight !181, !taffo.info !15
 }
 
 ; Function Attrs: mustprogress noinline uwtable
-define internal noundef float @_Z15MLX90640_GetVddPKt.26.57(i16* noundef %0) #0 !taffo.initweight !46 !taffo.sourceFunction !199 !taffo.funinfo !47 {
+define internal noundef float @_Z15MLX90640_GetVddPKt.26.57(i16* noundef %0) #0 !taffo.initweight !46 !taffo.sourceFunction !201 !taffo.funinfo !47 {
   %2 = alloca i16*, align 8
   %3 = alloca float, align 4, !taffo.initweight !0, !taffo.info !125
   %4 = alloca float, align 4, !taffo.initweight !0, !taffo.info !127
@@ -9864,7 +9870,7 @@ define internal noundef float @_Z15MLX90640_GetVddPKt.26.57(i16* noundef %0) #0 
   store i32 %23, i32* %5, align 4
   %24 = load i32, i32* @params_resolutionEE, align 4, !taffo.initweight !48, !taffo.info !15
   %25 = sitofp i32 %24 to double, !taffo.initweight !54, !taffo.info !15
-  %26 = call noundef double @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.14.50.59(i32 noundef 2, double noundef %25), !taffo.initweight !55, !taffo.info !15, !taffo.originalCall !183
+  %26 = call noundef double @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.14.50.59(i32 noundef 2, double noundef %25), !taffo.initweight !55, !taffo.info !15, !taffo.originalCall !185
   %27 = load i32, i32* %5, align 4
   %28 = sitofp i32 %27 to double
   %29 = call noundef double @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_(i32 noundef 2, double noundef %28)
@@ -9891,7 +9897,7 @@ define internal noundef float @_Z15MLX90640_GetVddPKt.26.57(i16* noundef %0) #0 
 }
 
 ; Function Attrs: mustprogress noinline nounwind uwtable
-define internal noundef double @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.14.50.58(i32 noundef %0, double noundef %1) #1 !taffo.initweight !182 !taffo.sourceFunction !183 !taffo.funinfo !184 {
+define internal noundef double @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.14.50.58(i32 noundef %0, double noundef %1) #1 !taffo.initweight !184 !taffo.sourceFunction !185 !taffo.funinfo !186 {
   %3 = alloca i32, align 4
   %4 = alloca double, align 8, !taffo.initweight !59, !taffo.info !15
   store i32 %0, i32* %3, align 4
@@ -9900,11 +9906,11 @@ define internal noundef double @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9_
   %6 = sitofp i32 %5 to double
   %7 = load double, double* %4, align 8, !taffo.initweight !60, !taffo.info !15
   %8 = call double @pow(double noundef %6, double noundef %7) #9, !taffo.initweight !120, !taffo.info !15
-  ret double %8, !taffo.initweight !179, !taffo.info !15
+  ret double %8, !taffo.initweight !181, !taffo.info !15
 }
 
 ; Function Attrs: mustprogress noinline nounwind uwtable
-define internal noundef double @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.14.50.59(i32 noundef %0, double noundef %1) #1 !taffo.initweight !182 !taffo.sourceFunction !183 !taffo.funinfo !184 {
+define internal noundef double @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.14.50.59(i32 noundef %0, double noundef %1) #1 !taffo.initweight !184 !taffo.sourceFunction !185 !taffo.funinfo !186 {
   %3 = alloca i32, align 4
   %4 = alloca double, align 8, !taffo.initweight !59, !taffo.info !15
   store i32 %0, i32* %3, align 4
@@ -9913,7 +9919,7 @@ define internal noundef double @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9_
   %6 = sitofp i32 %5 to double
   %7 = load double, double* %4, align 8, !taffo.initweight !60, !taffo.info !15
   %8 = call double @pow(double noundef %6, double noundef %7) #9, !taffo.initweight !120, !taffo.info !15
-  ret double %8, !taffo.initweight !179, !taffo.info !15
+  ret double %8, !taffo.initweight !181, !taffo.info !15
 }
 
 attributes #0 = { mustprogress noinline uwtable "frame-pointer"="all" "min-legal-vector-width"="0" "no-trapping-math"="true" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+cx8,+fxsr,+mmx,+sse,+sse2,+x87" "tune-cpu"="generic" }
@@ -10081,53 +10087,55 @@ attributes #9 = { nounwind }
 !148 = distinct !{!148, !42}
 !149 = !{i1 true}
 !150 = !{!"ta_shift"}
-!151 = !{i1 false, !92, i1 false, i2 1}
-!152 = !{void (i16*, float, float, float*)* @_Z20MLX90640_CalculateToPKtffPf}
-!153 = !{float (float, float)* @_Z5min_fff}
-!154 = !{float (float, float)* @_Z5max_fff}
-!155 = distinct !{!155, !42}
-!156 = !{void (%struct._IO_FILE*, float*, i32, i32, float, float)* @_Z8printPPMP8_IO_FILEPfiiff}
-!157 = !{float (i16*)* @_Z15MLX90640_GetVddPKt.1.33, float (i16*)* @_Z15MLX90640_GetVddPKt.1.42}
-!158 = !{float (i16*)* @_Z14MLX90640_GetTaPKt.2.34, float (i16*)* @_Z14MLX90640_GetTaPKt.2.43}
-!159 = !{float (i16*)* @_Z15MLX90640_GetVddPKt.3.29, float (i16*)* @_Z15MLX90640_GetVddPKt.3.30, float (i16*)* @_Z15MLX90640_GetVddPKt.3.31}
-!160 = !{float (i16*)* @_Z15MLX90640_GetVddPKt.3}
-!161 = !{float (float)* @_ZSt4sqrtf.8.35, float (float)* @_ZSt4sqrtf.8.44}
-!162 = !{i32 1, !28}
-!163 = !{float (float)* @_ZSt4sqrtf.9.37, float (float)* @_ZSt4sqrtf.9.46}
-!164 = !{float (float)* @_ZSt4sqrtf.10.39, float (float)* @_ZSt4sqrtf.10.48}
-!165 = !{i32 1, !112}
-!166 = !{i32 -1, i32 -1, i32 2, i32 2}
-!167 = !{i32 0, i1 false, i32 0, i1 false, i32 1, !28, i32 1, !91}
-!168 = !{float (i16*)* @_Z15MLX90640_GetVddPKt.1}
-!169 = !{float (i16*)* @_Z14MLX90640_GetTaPKt.2}
-!170 = distinct !{!170, !42}
-!171 = !{float (float)* @_ZSt4sqrtf.8}
-!172 = !{float (float)* @_ZSt4sqrtf.9}
-!173 = !{float (float)* @_ZSt4sqrtf.10}
-!174 = distinct !{!174, !42}
-!175 = distinct !{!175, !42}
+!151 = !{i1 false, !152, i1 false, i2 -1}
+!152 = !{double 0.000000e+00, double 1.000000e+00}
+!153 = !{i1 false, !92, i1 false, i2 1}
+!154 = !{void (i16*, float, float, float*)* @_Z20MLX90640_CalculateToPKtffPf}
+!155 = !{float (float, float)* @_Z5min_fff}
+!156 = !{float (float, float)* @_Z5max_fff}
+!157 = distinct !{!157, !42}
+!158 = !{void (%struct._IO_FILE*, float*, i32, i32, float, float)* @_Z8printPPMP8_IO_FILEPfiiff}
+!159 = !{float (i16*)* @_Z15MLX90640_GetVddPKt.1.33, float (i16*)* @_Z15MLX90640_GetVddPKt.1.42}
+!160 = !{float (i16*)* @_Z14MLX90640_GetTaPKt.2.34, float (i16*)* @_Z14MLX90640_GetTaPKt.2.43}
+!161 = !{float (i16*)* @_Z15MLX90640_GetVddPKt.3.29, float (i16*)* @_Z15MLX90640_GetVddPKt.3.30, float (i16*)* @_Z15MLX90640_GetVddPKt.3.31}
+!162 = !{float (i16*)* @_Z15MLX90640_GetVddPKt.3}
+!163 = !{float (float)* @_ZSt4sqrtf.8.35, float (float)* @_ZSt4sqrtf.8.44}
+!164 = !{i32 1, !28}
+!165 = !{float (float)* @_ZSt4sqrtf.9.37, float (float)* @_ZSt4sqrtf.9.46}
+!166 = !{float (float)* @_ZSt4sqrtf.10.39, float (float)* @_ZSt4sqrtf.10.48}
+!167 = !{i32 1, !112}
+!168 = !{i32 -1, i32 2, i32 2, i32 2}
+!169 = !{i32 0, i1 false, i32 1, !151, i32 1, !28, i32 1, !91}
+!170 = !{float (i16*)* @_Z15MLX90640_GetVddPKt.1}
+!171 = !{float (i16*)* @_Z14MLX90640_GetTaPKt.2}
+!172 = distinct !{!172, !42}
+!173 = !{float (float)* @_ZSt4sqrtf.8}
+!174 = !{float (float)* @_ZSt4sqrtf.9}
+!175 = !{float (float)* @_ZSt4sqrtf.10}
 !176 = distinct !{!176, !42}
-!177 = !{i32 -1, i32 2, i32 -1, i32 -1, i32 2, i32 2}
-!178 = !{i32 0, i1 false, i32 1, !91, i32 0, i1 false, i32 0, i1 false, i32 1, !28, i32 1, !91}
-!179 = !{i32 7}
-!180 = distinct !{!180, !42}
-!181 = distinct !{!181, !42}
-!182 = !{i32 -1, i32 3}
-!183 = !{double (i32, double)* @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.14.50}
-!184 = !{i32 0, i1 false, i32 1, !15}
-!185 = !{i32 3, i32 3}
-!186 = !{i32 1, !29, i32 1, !29}
-!187 = !{i32 8}
-!188 = !{i32 2, i32 3}
-!189 = !{i32 1, !28, i32 1, !91}
-!190 = !{i32 0, i1 false, i32 1, !28}
-!191 = !{i32 4, i32 -1}
-!192 = !{i32 1, !28, i32 0, i1 false}
-!193 = !{double (i32, double)* @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.25.54, double (i32, double)* @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.25.56}
-!194 = !{float (i16*)* @_Z15MLX90640_GetVddPKt.26.55, float (i16*)* @_Z15MLX90640_GetVddPKt.26.57}
-!195 = !{double (i32, double)* @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.14}
-!196 = !{double (i32, double)* @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.27.51, double (i32, double)* @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.27.52, double (i32, double)* @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.27.53}
-!197 = !{double (i32, double)* @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.27}
-!198 = !{double (i32, double)* @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.25}
-!199 = !{float (i16*)* @_Z15MLX90640_GetVddPKt.26}
-!200 = !{double (i32, double)* @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.14.50.58, double (i32, double)* @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.14.50.59}
+!177 = distinct !{!177, !42}
+!178 = distinct !{!178, !42}
+!179 = !{i32 -1, i32 2, i32 -1, i32 -1, i32 2, i32 2}
+!180 = !{i32 0, i1 false, i32 1, !91, i32 0, i1 false, i32 0, i1 false, i32 1, !28, i32 1, !91}
+!181 = !{i32 7}
+!182 = distinct !{!182, !42}
+!183 = distinct !{!183, !42}
+!184 = !{i32 -1, i32 3}
+!185 = !{double (i32, double)* @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.14.50}
+!186 = !{i32 0, i1 false, i32 1, !15}
+!187 = !{i32 3, i32 3}
+!188 = !{i32 1, !29, i32 1, !29}
+!189 = !{i32 8}
+!190 = !{i32 2, i32 3}
+!191 = !{i32 1, !28, i32 1, !91}
+!192 = !{i32 0, i1 false, i32 1, !28}
+!193 = !{i32 4, i32 -1}
+!194 = !{i32 1, !28, i32 0, i1 false}
+!195 = !{double (i32, double)* @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.25.54, double (i32, double)* @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.25.56}
+!196 = !{float (i16*)* @_Z15MLX90640_GetVddPKt.26.55, float (i16*)* @_Z15MLX90640_GetVddPKt.26.57}
+!197 = !{double (i32, double)* @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.14}
+!198 = !{double (i32, double)* @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.27.51, double (i32, double)* @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.27.52, double (i32, double)* @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.27.53}
+!199 = !{double (i32, double)* @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.27}
+!200 = !{double (i32, double)* @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.25}
+!201 = !{float (i16*)* @_Z15MLX90640_GetVddPKt.26}
+!202 = !{double (i32, double)* @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.14.50.58, double (i32, double)* @_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.14.50.59}

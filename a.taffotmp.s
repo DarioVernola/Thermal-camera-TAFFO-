@@ -6031,18 +6031,16 @@ _Z8printPPMP8_IO_FILEPfiiff:            # @_Z8printPPMP8_IO_FILEPfiiff
 	.section	.rodata.cst4,"aM",@progbits,4
 	.p2align	2                               # -- Begin function main
 .LCPI39_0:
-	.long	0x3f733333                      # float 0.949999988
-.LCPI39_1:
 	.long	0x41000000                      # float 8
-.LCPI39_5:
+.LCPI39_4:
 	.long	0x41700000                      # float 15
 	.section	.rodata.cst8,"aM",@progbits,8
 	.p2align	3
-.LCPI39_2:
+.LCPI39_1:
 	.quad	0x4140000000000000              # double 2097152
-.LCPI39_3:
+.LCPI39_2:
 	.quad	0x402e000000000000              # double 15
-.LCPI39_4:
+.LCPI39_3:
 	.quad	0x4130000000000000              # double 1048576
 	.text
 	.globl	main
@@ -6066,59 +6064,58 @@ main:                                   # @main
 	movl	%eax, -3076(%rbp)               # 4-byte Spill
 	jmp	.LBB39_9
 .LBB39_2:
-	leaq	.L.str.132(%rip), %rdi
+	leaq	.L.str.133(%rip), %rdi
 	movb	$0, %al
 	callq	printf@PLT
 	leaq	_ZL9subframe1(%rip), %rdi
 	callq	_Z14MLX90640_GetTaPKt.6_1flp
 	movss	%xmm0, -3104(%rbp)              # 4-byte Spill
 	cvtss2sd	%xmm0, %xmm0
-	leaq	.L.str.134(%rip), %rdi
+	leaq	.L.str.135(%rip), %rdi
 	movb	$1, %al
 	callq	printf@PLT
 	movss	-3104(%rbp), %xmm0              # 4-byte Reload
                                         # xmm0 = mem[0],zero,zero,zero
-	movss	.LCPI39_1(%rip), %xmm2          # xmm2 = mem[0],zero,zero,zero
+	movss	.LCPI39_0(%rip), %xmm2          # xmm2 = mem[0],zero,zero,zero
 	movaps	%xmm0, %xmm1
 	subss	%xmm2, %xmm1
 	movss	%xmm1, -3100(%rbp)              # 4-byte Spill
 	cvtss2sd	%xmm0, %xmm0
-	leaq	.L.str.136(%rip), %rdi
+	leaq	.L.str.137(%rip), %rdi
 	movb	$1, %al
 	callq	printf@PLT
 	movss	-3100(%rbp), %xmm0              # 4-byte Reload
                                         # xmm0 = mem[0],zero,zero,zero
 	cvtss2sd	%xmm0, %xmm0
-	leaq	.L.str.137(%rip), %rdi
+	leaq	.L.str.138(%rip), %rdi
 	movb	$1, %al
 	callq	printf@PLT
-	movss	-3100(%rbp), %xmm1              # 4-byte Reload
-                                        # xmm1 = mem[0],zero,zero,zero
-	leaq	-3072(%rbp), %rsi
+	movss	-3100(%rbp), %xmm0              # 4-byte Reload
+                                        # xmm0 = mem[0],zero,zero,zero
+	leaq	-3072(%rbp), %rdx
 	leaq	_ZL9subframe1(%rip), %rdi
-	movss	.LCPI39_0(%rip), %xmm0          # xmm0 = mem[0],zero,zero,zero
+	movl	$2040109440, %esi               # imm = 0x79999980
 	callq	_Z20MLX90640_CalculateToPKtffPf.11_fixp
 	leaq	_ZL9subframe2(%rip), %rdi
 	callq	_Z14MLX90640_GetTaPKt.6_1flp
-	movaps	%xmm0, %xmm1
-	movss	%xmm1, -3096(%rbp)              # 4-byte Spill
-	movss	.LCPI39_1(%rip), %xmm0          # xmm0 = mem[0],zero,zero,zero
-	subss	%xmm0, %xmm1
-	movss	%xmm1, -3092(%rbp)              # 4-byte Spill
-	leaq	-3072(%rbp), %rsi
+	movss	%xmm0, -3096(%rbp)              # 4-byte Spill
+	movss	.LCPI39_0(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
+	subss	%xmm1, %xmm0
+	movss	%xmm0, -3092(%rbp)              # 4-byte Spill
+	leaq	-3072(%rbp), %rdx
 	leaq	_ZL9subframe2(%rip), %rdi
-	movss	.LCPI39_0(%rip), %xmm0          # xmm0 = mem[0],zero,zero,zero
+	movl	$2040109440, %esi               # imm = 0x79999980
 	callq	_Z20MLX90640_CalculateToPKtffPf.11_fixp
 	movss	-3096(%rbp), %xmm0              # 4-byte Reload
                                         # xmm0 = mem[0],zero,zero,zero
 	cvtss2sd	%xmm0, %xmm0
-	leaq	.L.str.136(%rip), %rdi
+	leaq	.L.str.137(%rip), %rdi
 	movb	$1, %al
 	callq	printf@PLT
 	movss	-3092(%rbp), %xmm0              # 4-byte Reload
                                         # xmm0 = mem[0],zero,zero,zero
 	cvtss2sd	%xmm0, %xmm0
-	leaq	.L.str.137(%rip), %rdi
+	leaq	.L.str.138(%rip), %rdi
 	movb	$1, %al
 	callq	printf@PLT
 	movl	-3072(%rbp), %edx
@@ -6166,64 +6163,64 @@ main:                                   # @main
 .LBB39_6:
 	movss	maximum2(%rip), %xmm0           # xmm0 = mem[0],zero,zero,zero
 	cvtss2sd	%xmm0, %xmm0
-	leaq	.L.str.138(%rip), %rdi
+	leaq	.L.str.139(%rip), %rdi
 	movb	$1, %al
 	callq	printf@PLT
 	movss	maximum(%rip), %xmm0            # xmm0 = mem[0],zero,zero,zero
 	cvtss2sd	%xmm0, %xmm0
-	leaq	.L.str.139(%rip), %rdi
+	leaq	.L.str.140(%rip), %rdi
 	movb	$1, %al
 	callq	printf@PLT
 	movss	mint5(%rip), %xmm0              # xmm0 = mem[0],zero,zero,zero
 	cvtss2sd	%xmm0, %xmm0
-	leaq	.L.str.140(%rip), %rdi
+	leaq	.L.str.141(%rip), %rdi
 	movb	$1, %al
 	callq	printf@PLT
 	movss	maxt5(%rip), %xmm0              # xmm0 = mem[0],zero,zero,zero
 	cvtss2sd	%xmm0, %xmm0
-	leaq	.L.str.141(%rip), %rdi
+	leaq	.L.str.142(%rip), %rdi
 	movb	$1, %al
 	callq	printf@PLT
 	movl	-3112(%rbp), %edi               # 4-byte Reload
                                         # kill: def $ecx killed $eax
 	movl	-3108(%rbp), %eax               # 4-byte Reload
 	subl	%eax, %edi
-	movss	.LCPI39_5(%rip), %xmm0          # xmm0 = mem[0],zero,zero,zero
+	movss	.LCPI39_4(%rip), %xmm0          # xmm0 = mem[0],zero,zero,zero
 	callq	_Z5max_fff.23_s12_20fixp
 	movl	%eax, -3140(%rbp)               # 4-byte Spill
 	cvtsi2sd	%eax, %xmm0
-	movsd	.LCPI39_4(%rip), %xmm1          # xmm1 = mem[0],zero
+	movsd	.LCPI39_3(%rip), %xmm1          # xmm1 = mem[0],zero
 	divsd	%xmm1, %xmm0
-	leaq	.L.str.143(%rip), %rdi
+	leaq	.L.str.144(%rip), %rdi
 	movb	$1, %al
 	callq	printf@PLT
-	leaq	.L.str.144(%rip), %rdi
-	movsd	.LCPI39_3(%rip), %xmm0          # xmm0 = mem[0],zero
+	leaq	.L.str.145(%rip), %rdi
+	movsd	.LCPI39_2(%rip), %xmm0          # xmm0 = mem[0],zero
 	movb	$1, %al
 	callq	printf@PLT
                                         # kill: def $ecx killed $eax
 	movl	-3112(%rbp), %eax               # 4-byte Reload
 	shll	$1, %eax
 	cvtsi2sd	%eax, %xmm0
-	movsd	.LCPI39_2(%rip), %xmm1          # xmm1 = mem[0],zero
+	movsd	.LCPI39_1(%rip), %xmm1          # xmm1 = mem[0],zero
 	divsd	%xmm1, %xmm0
-	leaq	.L.str.145(%rip), %rdi
+	leaq	.L.str.146(%rip), %rdi
 	movb	$1, %al
 	callq	printf@PLT
                                         # kill: def $ecx killed $eax
 	movl	-3108(%rbp), %eax               # 4-byte Reload
 	shll	$1, %eax
 	cvtsi2sd	%eax, %xmm0
-	movsd	.LCPI39_2(%rip), %xmm1          # xmm1 = mem[0],zero
+	movsd	.LCPI39_1(%rip), %xmm1          # xmm1 = mem[0],zero
 	divsd	%xmm1, %xmm0
-	leaq	.L.str.146(%rip), %rdi
+	leaq	.L.str.147(%rip), %rdi
 	movb	$1, %al
 	callq	printf@PLT
 	movq	stdout@GOTPCREL(%rip), %rax
 	movq	(%rax), %rdi
 	callq	fflush@PLT
-	leaq	.L.str.147(%rip), %rdi
-	leaq	.L.str.148(%rip), %rsi
+	leaq	.L.str.148(%rip), %rdi
+	leaq	.L.str.149(%rip), %rsi
 	callq	fopen@PLT
 	movq	%rax, -3136(%rbp)               # 8-byte Spill
 	cmpq	$0, %rax
@@ -6248,7 +6245,7 @@ main:                                   # @main
 	movq	(%rax), %rdi
 	sarl	$20, %edx
 	sarl	$20, %ecx
-	leaq	.L.str.149(%rip), %rsi
+	leaq	.L.str.150(%rip), %rsi
 	movb	$0, %al
 	callq	fprintf@PLT
 	xorl	%eax, %eax
@@ -6690,23 +6687,36 @@ _Z14MLX90640_GetTaPKt.2_s16_16fixp:     # @_Z14MLX90640_GetTaPKt.2_s16_16fixp
 	.size	_Z14MLX90640_GetTaPKt.2_s16_16fixp, .Lfunc_end46-_Z14MLX90640_GetTaPKt.2_s16_16fixp
 	.cfi_endproc
                                         # -- End function
-	.section	.rodata.cst4,"aM",@progbits,4
-	.p2align	2                               # -- Begin function _Z15MLX90640_GetVddPKt.1_s16_16fixp
+	.section	.rodata.cst8,"aM",@progbits,8
+	.p2align	3                               # -- Begin function _Z14MLX90640_GetTaPKt.6_1flp
 .LCPI47_0:
-	.long	0x47000000                      # float 32768
+	.quad	0x40e0000000000000              # double 32768
+.LCPI47_4:
+	.quad	0x4150000000000000              # double 4194304
+.LCPI47_5:
+	.quad	0x41d0000000000000              # double 1073741824
+.LCPI47_6:
+	.quad	0x41b0000000000000              # double 268435456
+.LCPI47_7:
+	.quad	0x40a0000000000000              # double 2048
+.LCPI47_8:
+	.quad	0x4130000000000000              # double 1048576
+	.section	.rodata.cst4,"aM",@progbits,4
+	.p2align	2
+.LCPI47_1:
+	.long	0x41c80000                      # float 25
 .LCPI47_2:
 	.long	0x4b000000                      # float 8388608
-	.section	.rodata.cst16,"aM",@progbits,16
-	.p2align	4
-.LCPI47_1:
-	.long	0x80000000                      # float -0
-	.long	0x80000000                      # float -0
-	.long	0x80000000                      # float -0
-	.long	0x80000000                      # float -0
+.LCPI47_3:
+	.long	0x4a800000                      # float 4194304
+.LCPI47_9:
+	.long	0x49800000                      # float 1048576
+.LCPI47_10:
+	.long	0x48800000                      # float 262144
 	.text
 	.p2align	4, 0x90
-	.type	_Z15MLX90640_GetVddPKt.1_s16_16fixp,@function
-_Z15MLX90640_GetVddPKt.1_s16_16fixp:    # @_Z15MLX90640_GetVddPKt.1_s16_16fixp
+	.type	_Z14MLX90640_GetTaPKt.6_1flp,@function
+_Z14MLX90640_GetTaPKt.6_1flp:           # @_Z14MLX90640_GetTaPKt.6_1flp
 	.cfi_startproc
 # %bb.0:
 	pushq	%rbp
@@ -6714,77 +6724,236 @@ _Z15MLX90640_GetVddPKt.1_s16_16fixp:    # @_Z15MLX90640_GetVddPKt.1_s16_16fixp
 	.cfi_offset %rbp, -16
 	movq	%rsp, %rbp
 	.cfi_def_cfa_register %rbp
-	subq	$48, %rsp
+	subq	$144, %rsp
 	movq	%rdi, -16(%rbp)                 # 8-byte Spill
-	movzwl	1620(%rdi), %eax
-	shll	$14, %eax
+	leaq	.L.str.103(%rip), %rdi
+	movb	$0, %al
+	callq	printf@PLT
+	movq	-16(%rbp), %rdi                 # 8-byte Reload
+	callq	_Z15MLX90640_GetVddPKt.3.29_s17_15fixp
+	movl	%eax, -28(%rbp)                 # 4-byte Spill
+	cvtsi2sd	%eax, %xmm0
+	movsd	.LCPI47_0(%rip), %xmm1          # xmm1 = mem[0],zero
+	divsd	%xmm1, %xmm0
+	cvtsi2sd	%eax, %xmm1
+	movsd	.LCPI47_0(%rip), %xmm2          # xmm2 = mem[0],zero
+	divsd	%xmm2, %xmm1
+	movsd	%xmm1, -24(%rbp)                # 8-byte Spill
+	leaq	.L.str.104(%rip), %rdi
+	movb	$1, %al
+	callq	printf@PLT
+	movq	-16(%rbp), %rdi                 # 8-byte Reload
+	movzwl	1600(%rdi), %eax
+	shll	$15, %eax
 	movl	%eax, -8(%rbp)                  # 4-byte Spill
 	movl	$4294836224, %ecx               # imm = 0xFFFE0000
-	shrl	$3, %ecx
+	shrl	$2, %ecx
 	cmpl	%ecx, %eax
 	movl	%eax, -4(%rbp)                  # 4-byte Spill
 	jle	.LBB47_2
 # %bb.1:
 	movl	-8(%rbp), %eax                  # 4-byte Reload
-	movl	$2147483648, %ecx               # imm = 0x80000000
-	shrl	$1, %ecx
-	subl	%ecx, %eax
+	subl	$-2147483648, %eax              # imm = 0x80000000
 	movl	%eax, -4(%rbp)                  # 4-byte Spill
 .LBB47_2:
 	movq	-16(%rbp), %rax                 # 8-byte Reload
 	movl	-4(%rbp), %ecx                  # 4-byte Reload
-	movl	%ecx, -28(%rbp)                 # 4-byte Spill
-	movzwl	1664(%rax), %eax
-	shrl	$10, %eax
-	andl	$3, %eax
-	movl	%eax, -36(%rbp)                 # 4-byte Spill
-	cvtsi2sdl	params_resolutionEE(%rip), %xmm0
-	movl	$2, %edi
-	movl	%edi, -32(%rbp)                 # 4-byte Spill
-	callq	_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.14
-	movl	-36(%rbp), %eax                 # 4-byte Reload
-	movl	-32(%rbp), %edi                 # 4-byte Reload
-	movsd	%xmm0, -24(%rbp)                # 8-byte Spill
-	cvtsi2sd	%eax, %xmm0
-	callq	_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_
-	movl	-28(%rbp), %edx                 # 4-byte Reload
-	movaps	%xmm0, %xmm1
-	movsd	-24(%rbp), %xmm0                # 8-byte Reload
-                                        # xmm0 = mem[0],zero
+	movl	%ecx, -52(%rbp)                 # 4-byte Spill
+	cvtsi2sd	%ecx, %xmm0
+	movsd	.LCPI47_0(%rip), %xmm1          # xmm1 = mem[0],zero
 	divsd	%xmm1, %xmm0
-	cvtsd2ss	%xmm0, %xmm0
-	movswl	params_vdd25(%rip), %eax
-	cvtsi2ss	%eax, %xmm1
-	movaps	.LCPI47_1(%rip), %xmm2          # xmm2 = [-0.0E+0,-0.0E+0,-0.0E+0,-0.0E+0]
-	pxor	%xmm2, %xmm1
-	movss	.LCPI47_2(%rip), %xmm2          # xmm2 = mem[0],zero,zero,zero
-	mulss	%xmm2, %xmm0
-	cvttss2si	%xmm0, %rax
+	movsd	%xmm0, -48(%rbp)                # 8-byte Spill
+	movzwl	1536(%rax), %eax
+	shll	$14, %eax
+	movl	%eax, -36(%rbp)                 # 4-byte Spill
+	movl	$4294836224, %ecx               # imm = 0xFFFE0000
+	shrl	$3, %ecx
+	cmpl	%ecx, %eax
+	movl	%eax, -32(%rbp)                 # 4-byte Spill
+	jle	.LBB47_4
+# %bb.3:
+	movl	-36(%rbp), %eax                 # 4-byte Reload
+	movl	$2147483648, %ecx               # imm = 0x80000000
+	shrl	$1, %ecx
+	subl	%ecx, %eax
+	movl	%eax, -32(%rbp)                 # 4-byte Spill
+.LBB47_4:
+	movl	-52(%rbp), %eax                 # 4-byte Reload
+	movl	-32(%rbp), %ecx                 # 4-byte Reload
+	movl	%ecx, -144(%rbp)                # 4-byte Spill
+	movq	params_alphaPTAT.fixp@GOTPCREL(%rip), %rcx
+	movq	%rcx, -104(%rbp)                # 8-byte Spill
+	movl	(%rcx), %ecx
+                                        # kill: def $rcx killed $ecx
+	cltq
+	movq	%rax, -120(%rbp)                # 8-byte Spill
+	imulq	%rcx, %rax
+	shrq	$32, %rax
                                         # kill: def $eax killed $eax killed $rax
-	movss	.LCPI47_0(%rip), %xmm0          # xmm0 = mem[0],zero,zero,zero
-	mulss	%xmm1, %xmm0
-	cvttss2si	%xmm0, %ecx
-	sarl	$1, %ecx
-	movl	%eax, %eax
+	movl	%eax, -140(%rbp)                # 4-byte Spill
+	cvtsi2sd	%eax, %xmm0
+	movsd	.LCPI47_7(%rip), %xmm1          # xmm1 = mem[0],zero
+	movsd	%xmm1, -136(%rbp)               # 8-byte Spill
+	divsd	%xmm1, %xmm0
+	leaq	.L.str.105(%rip), %rdi
+	movb	$1, %al
+	movb	%al, -105(%rbp)                 # 1-byte Spill
+	callq	printf@PLT
+	movl	-144(%rbp), %edx                # 4-byte Reload
+	movl	-140(%rbp), %ecx                # 4-byte Reload
+	movsd	-136(%rbp), %xmm1               # 8-byte Reload
+                                        # xmm1 = mem[0],zero
+                                        # kill: def $esi killed $eax
+	movb	-105(%rbp), %al                 # 1-byte Reload
+	sarl	$3, %edx
+	addl	%edx, %ecx
+	movl	%ecx, -124(%rbp)                # 4-byte Spill
+	cvtsi2sd	%ecx, %xmm0
+	divsd	%xmm1, %xmm0
+	leaq	.L.str.106(%rip), %rdi
+	callq	printf@PLT
+	movl	-124(%rbp), %ecx                # 4-byte Reload
+                                        # kill: def $edx killed $eax
+	movq	-120(%rbp), %rax                # 8-byte Reload
+	shlq	$16, %rax
+	movslq	%ecx, %rcx
+	cqto
+	idivq	%rcx
+	movq	%rax, %rcx
+	movb	-105(%rbp), %al                 # 1-byte Reload
+	cvtsi2sd	%rcx, %xmm0
+	movsd	.LCPI47_8(%rip), %xmm1          # xmm1 = mem[0],zero
+	divsd	%xmm1, %xmm0
+	cvtsi2ss	%rcx, %xmm1
+	movss	.LCPI47_9(%rip), %xmm2          # xmm2 = mem[0],zero,zero,zero
+	divss	%xmm2, %xmm1
+	movss	%xmm1, -112(%rbp)               # 4-byte Spill
+	leaq	.L.str.107(%rip), %rdi
+	callq	printf@PLT
+	movss	-112(%rbp), %xmm1               # 4-byte Reload
+                                        # xmm1 = mem[0],zero,zero,zero
+	movsd	-48(%rbp), %xmm0                # 8-byte Reload
+                                        # xmm0 = mem[0],zero
+                                        # kill: def $ecx killed $eax
+	movb	-105(%rbp), %al                 # 1-byte Reload
+	movss	.LCPI47_10(%rip), %xmm2         # xmm2 = mem[0],zero,zero,zero
+	mulss	%xmm2, %xmm1
+	movss	%xmm1, -72(%rbp)                # 4-byte Spill
+	leaq	.L.str.108(%rip), %rdi
+	callq	printf@PLT
+                                        # kill: def $ecx killed $eax
+	movq	-104(%rbp), %rax                # 8-byte Reload
+	movl	(%rax), %eax
                                         # kill: def $rax killed $eax
-	movslq	%edx, %rdx
-	imulq	%rdx, %rax
+	cvtsi2sd	%rax, %xmm0
+	movsd	.LCPI47_6(%rip), %xmm1          # xmm1 = mem[0],zero
+	divsd	%xmm1, %xmm0
+	leaq	.L.str.109(%rip), %rdi
+	movb	$1, %al
+	callq	printf@PLT
+	movss	-72(%rbp), %xmm0                # 4-byte Reload
+                                        # xmm0 = mem[0],zero,zero,zero
+	cvtss2sd	%xmm0, %xmm0
+	leaq	.L.str.110(%rip), %rdi
+	movb	$1, %al
+	callq	printf@PLT
+                                        # kill: def $ecx killed $eax
+	movl	-28(%rbp), %eax                 # 4-byte Reload
+	movl	$1771674009, %ecx               # imm = 0x69999999
+	shrl	$14, %ecx
+	subl	%ecx, %eax
+	movl	%eax, -92(%rbp)                 # 4-byte Spill
+	cvtsi2sd	%eax, %xmm0
+	movsd	.LCPI47_0(%rip), %xmm1          # xmm1 = mem[0],zero
+	divsd	%xmm1, %xmm0
+	leaq	.L.str.111(%rip), %rdi
+	movb	$1, %al
+	callq	printf@PLT
+	movl	-92(%rbp), %ecx                 # 4-byte Reload
+	movq	params_KvPTAT.fixp@GOTPCREL(%rip), %rax
+	movslq	(%rax), %rax
+	movslq	%ecx, %rcx
+	imulq	%rcx, %rax
 	sarq	$23, %rax
                                         # kill: def $eax killed $eax killed $rax
+	movl	%eax, -76(%rbp)                 # 4-byte Spill
+	cvtsi2sd	%eax, %xmm0
+	movsd	.LCPI47_4(%rip), %xmm1          # xmm1 = mem[0],zero
+	divsd	%xmm1, %xmm0
+	movsd	%xmm0, -88(%rbp)                # 8-byte Spill
+	movq	params_KvPTAT.fixp@GOTPCREL(%rip), %rax
+	cvtsi2sdl	(%rax), %xmm0
+	movsd	.LCPI47_5(%rip), %xmm1          # xmm1 = mem[0],zero
+	divsd	%xmm1, %xmm0
+	leaq	.L.str.112(%rip), %rdi
+	movb	$1, %al
+	callq	printf@PLT
+	movsd	-24(%rbp), %xmm0                # 8-byte Reload
+                                        # xmm0 = mem[0],zero
+	leaq	.L.str.113(%rip), %rdi
+	movb	$1, %al
+	callq	printf@PLT
+	movsd	-88(%rbp), %xmm0                # 8-byte Reload
+                                        # xmm0 = mem[0],zero
+	leaq	.L.str.114(%rip), %rdi
+	movb	$1, %al
+	callq	printf@PLT
+	movl	-76(%rbp), %ecx                 # 4-byte Reload
+	movl	$2147483648, %eax               # imm = 0x80000000
+	shrl	$9, %eax
 	addl	%ecx, %eax
-	movswl	params_kVdd(%rip), %ecx
-	cltd
-	idivl	%ecx
-	movl	$1771674009, %ecx               # imm = 0x69999999
-	shrl	$15, %ecx
-	addl	%ecx, %eax
-	shll	$2, %eax
-	addq	$48, %rsp
+	cvtsi2sd	%eax, %xmm0
+	movsd	.LCPI47_4(%rip), %xmm1          # xmm1 = mem[0],zero
+	divsd	%xmm1, %xmm0
+	cvtsi2ss	%eax, %xmm1
+	movss	.LCPI47_3(%rip), %xmm2          # xmm2 = mem[0],zero,zero,zero
+	divss	%xmm2, %xmm1
+	movss	%xmm1, -68(%rbp)                # 4-byte Spill
+	leaq	.L.str.115(%rip), %rdi
+	movb	$1, %al
+	callq	printf@PLT
+	movss	-72(%rbp), %xmm0                # 4-byte Reload
+                                        # xmm0 = mem[0],zero,zero,zero
+	movss	-68(%rbp), %xmm1                # 4-byte Reload
+                                        # xmm1 = mem[0],zero,zero,zero
+	divss	%xmm1, %xmm0
+	movss	%xmm0, -64(%rbp)                # 4-byte Spill
+	cvtss2sd	%xmm0, %xmm0
+	leaq	.L.str.116(%rip), %rdi
+	movb	$1, %al
+	callq	printf@PLT
+	movss	-64(%rbp), %xmm0                # 4-byte Reload
+                                        # xmm0 = mem[0],zero,zero,zero
+	movzwl	params_vPTAT25(%rip), %eax
+	cvtsi2ss	%eax, %xmm1
+	subss	%xmm1, %xmm0
+	movss	%xmm0, -60(%rbp)                # 4-byte Spill
+	cvtss2sd	%xmm0, %xmm0
+	leaq	.L.str.117(%rip), %rdi
+	movb	$1, %al
+	callq	printf@PLT
+	movss	-60(%rbp), %xmm0                # 4-byte Reload
+                                        # xmm0 = mem[0],zero,zero,zero
+	movq	params_KtPTAT.fixp@GOTPCREL(%rip), %rax
+	cvtsi2ssl	(%rax), %xmm1
+	movss	.LCPI47_2(%rip), %xmm2          # xmm2 = mem[0],zero,zero,zero
+	divss	%xmm2, %xmm1
+	divss	%xmm1, %xmm0
+	movss	.LCPI47_1(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
+	addss	%xmm1, %xmm0
+	movss	%xmm0, -56(%rbp)                # 4-byte Spill
+	cvtss2sd	%xmm0, %xmm0
+	leaq	.L.str.118(%rip), %rdi
+	movb	$1, %al
+	callq	printf@PLT
+	movss	-56(%rbp), %xmm0                # 4-byte Reload
+                                        # xmm0 = mem[0],zero,zero,zero
+	addq	$144, %rsp
 	popq	%rbp
 	.cfi_def_cfa %rsp, 8
 	retq
 .Lfunc_end47:
-	.size	_Z15MLX90640_GetVddPKt.1_s16_16fixp, .Lfunc_end47-_Z15MLX90640_GetVddPKt.1_s16_16fixp
+	.size	_Z14MLX90640_GetTaPKt.6_1flp, .Lfunc_end47-_Z14MLX90640_GetTaPKt.6_1flp
 	.cfi_endproc
                                         # -- End function
 	.section	.rodata.cst4,"aM",@progbits,4
@@ -6884,36 +7053,23 @@ _Z15MLX90640_GetVddPKt.3_s17_15fixp:    # @_Z15MLX90640_GetVddPKt.3_s17_15fixp
 	.size	_Z15MLX90640_GetVddPKt.3_s17_15fixp, .Lfunc_end48-_Z15MLX90640_GetVddPKt.3_s17_15fixp
 	.cfi_endproc
                                         # -- End function
-	.section	.rodata.cst8,"aM",@progbits,8
-	.p2align	3                               # -- Begin function _Z14MLX90640_GetTaPKt.6_1flp
-.LCPI49_0:
-	.quad	0x40e0000000000000              # double 32768
-.LCPI49_4:
-	.quad	0x4150000000000000              # double 4194304
-.LCPI49_5:
-	.quad	0x41d0000000000000              # double 1073741824
-.LCPI49_6:
-	.quad	0x41b0000000000000              # double 268435456
-.LCPI49_7:
-	.quad	0x40a0000000000000              # double 2048
-.LCPI49_8:
-	.quad	0x4130000000000000              # double 1048576
 	.section	.rodata.cst4,"aM",@progbits,4
-	.p2align	2
-.LCPI49_1:
-	.long	0x41c80000                      # float 25
+	.p2align	2                               # -- Begin function _Z15MLX90640_GetVddPKt.1_s16_16fixp
+.LCPI49_0:
+	.long	0x47000000                      # float 32768
 .LCPI49_2:
 	.long	0x4b000000                      # float 8388608
-.LCPI49_3:
-	.long	0x4a800000                      # float 4194304
-.LCPI49_9:
-	.long	0x49800000                      # float 1048576
-.LCPI49_10:
-	.long	0x48800000                      # float 262144
+	.section	.rodata.cst16,"aM",@progbits,16
+	.p2align	4
+.LCPI49_1:
+	.long	0x80000000                      # float -0
+	.long	0x80000000                      # float -0
+	.long	0x80000000                      # float -0
+	.long	0x80000000                      # float -0
 	.text
 	.p2align	4, 0x90
-	.type	_Z14MLX90640_GetTaPKt.6_1flp,@function
-_Z14MLX90640_GetTaPKt.6_1flp:           # @_Z14MLX90640_GetTaPKt.6_1flp
+	.type	_Z15MLX90640_GetVddPKt.1_s16_16fixp,@function
+_Z15MLX90640_GetVddPKt.1_s16_16fixp:    # @_Z15MLX90640_GetVddPKt.1_s16_16fixp
 	.cfi_startproc
 # %bb.0:
 	pushq	%rbp
@@ -6921,236 +7077,77 @@ _Z14MLX90640_GetTaPKt.6_1flp:           # @_Z14MLX90640_GetTaPKt.6_1flp
 	.cfi_offset %rbp, -16
 	movq	%rsp, %rbp
 	.cfi_def_cfa_register %rbp
-	subq	$144, %rsp
+	subq	$48, %rsp
 	movq	%rdi, -16(%rbp)                 # 8-byte Spill
-	leaq	.L.str.103(%rip), %rdi
-	movb	$0, %al
-	callq	printf@PLT
-	movq	-16(%rbp), %rdi                 # 8-byte Reload
-	callq	_Z15MLX90640_GetVddPKt.3.29_s17_15fixp
-	movl	%eax, -28(%rbp)                 # 4-byte Spill
-	cvtsi2sd	%eax, %xmm0
-	movsd	.LCPI49_0(%rip), %xmm1          # xmm1 = mem[0],zero
-	divsd	%xmm1, %xmm0
-	cvtsi2sd	%eax, %xmm1
-	movsd	.LCPI49_0(%rip), %xmm2          # xmm2 = mem[0],zero
-	divsd	%xmm2, %xmm1
-	movsd	%xmm1, -24(%rbp)                # 8-byte Spill
-	leaq	.L.str.104(%rip), %rdi
-	movb	$1, %al
-	callq	printf@PLT
-	movq	-16(%rbp), %rdi                 # 8-byte Reload
-	movzwl	1600(%rdi), %eax
-	shll	$15, %eax
+	movzwl	1620(%rdi), %eax
+	shll	$14, %eax
 	movl	%eax, -8(%rbp)                  # 4-byte Spill
 	movl	$4294836224, %ecx               # imm = 0xFFFE0000
-	shrl	$2, %ecx
+	shrl	$3, %ecx
 	cmpl	%ecx, %eax
 	movl	%eax, -4(%rbp)                  # 4-byte Spill
 	jle	.LBB49_2
 # %bb.1:
 	movl	-8(%rbp), %eax                  # 4-byte Reload
-	subl	$-2147483648, %eax              # imm = 0x80000000
+	movl	$2147483648, %ecx               # imm = 0x80000000
+	shrl	$1, %ecx
+	subl	%ecx, %eax
 	movl	%eax, -4(%rbp)                  # 4-byte Spill
 .LBB49_2:
 	movq	-16(%rbp), %rax                 # 8-byte Reload
 	movl	-4(%rbp), %ecx                  # 4-byte Reload
-	movl	%ecx, -52(%rbp)                 # 4-byte Spill
-	cvtsi2sd	%ecx, %xmm0
-	movsd	.LCPI49_0(%rip), %xmm1          # xmm1 = mem[0],zero
-	divsd	%xmm1, %xmm0
-	movsd	%xmm0, -48(%rbp)                # 8-byte Spill
-	movzwl	1536(%rax), %eax
-	shll	$14, %eax
+	movl	%ecx, -28(%rbp)                 # 4-byte Spill
+	movzwl	1664(%rax), %eax
+	shrl	$10, %eax
+	andl	$3, %eax
 	movl	%eax, -36(%rbp)                 # 4-byte Spill
-	movl	$4294836224, %ecx               # imm = 0xFFFE0000
-	shrl	$3, %ecx
-	cmpl	%ecx, %eax
-	movl	%eax, -32(%rbp)                 # 4-byte Spill
-	jle	.LBB49_4
-# %bb.3:
+	cvtsi2sdl	params_resolutionEE(%rip), %xmm0
+	movl	$2, %edi
+	movl	%edi, -32(%rbp)                 # 4-byte Spill
+	callq	_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.14
 	movl	-36(%rbp), %eax                 # 4-byte Reload
-	movl	$2147483648, %ecx               # imm = 0x80000000
-	shrl	$1, %ecx
-	subl	%ecx, %eax
-	movl	%eax, -32(%rbp)                 # 4-byte Spill
-.LBB49_4:
-	movl	-52(%rbp), %eax                 # 4-byte Reload
-	movl	-32(%rbp), %ecx                 # 4-byte Reload
-	movl	%ecx, -144(%rbp)                # 4-byte Spill
-	movq	params_alphaPTAT.fixp@GOTPCREL(%rip), %rcx
-	movq	%rcx, -104(%rbp)                # 8-byte Spill
-	movl	(%rcx), %ecx
-                                        # kill: def $rcx killed $ecx
-	cltq
-	movq	%rax, -120(%rbp)                # 8-byte Spill
-	imulq	%rcx, %rax
-	shrq	$32, %rax
-                                        # kill: def $eax killed $eax killed $rax
-	movl	%eax, -140(%rbp)                # 4-byte Spill
+	movl	-32(%rbp), %edi                 # 4-byte Reload
+	movsd	%xmm0, -24(%rbp)                # 8-byte Spill
 	cvtsi2sd	%eax, %xmm0
-	movsd	.LCPI49_7(%rip), %xmm1          # xmm1 = mem[0],zero
-	movsd	%xmm1, -136(%rbp)               # 8-byte Spill
-	divsd	%xmm1, %xmm0
-	leaq	.L.str.105(%rip), %rdi
-	movb	$1, %al
-	movb	%al, -105(%rbp)                 # 1-byte Spill
-	callq	printf@PLT
-	movl	-144(%rbp), %edx                # 4-byte Reload
-	movl	-140(%rbp), %ecx                # 4-byte Reload
-	movsd	-136(%rbp), %xmm1               # 8-byte Reload
-                                        # xmm1 = mem[0],zero
-                                        # kill: def $esi killed $eax
-	movb	-105(%rbp), %al                 # 1-byte Reload
-	sarl	$3, %edx
-	addl	%edx, %ecx
-	movl	%ecx, -124(%rbp)                # 4-byte Spill
-	cvtsi2sd	%ecx, %xmm0
-	divsd	%xmm1, %xmm0
-	leaq	.L.str.106(%rip), %rdi
-	callq	printf@PLT
-	movl	-124(%rbp), %ecx                # 4-byte Reload
-                                        # kill: def $edx killed $eax
-	movq	-120(%rbp), %rax                # 8-byte Reload
-	shlq	$16, %rax
-	movslq	%ecx, %rcx
-	cqto
-	idivq	%rcx
-	movq	%rax, %rcx
-	movb	-105(%rbp), %al                 # 1-byte Reload
-	cvtsi2sd	%rcx, %xmm0
-	movsd	.LCPI49_8(%rip), %xmm1          # xmm1 = mem[0],zero
-	divsd	%xmm1, %xmm0
-	cvtsi2ss	%rcx, %xmm1
-	movss	.LCPI49_9(%rip), %xmm2          # xmm2 = mem[0],zero,zero,zero
-	divss	%xmm2, %xmm1
-	movss	%xmm1, -112(%rbp)               # 4-byte Spill
-	leaq	.L.str.107(%rip), %rdi
-	callq	printf@PLT
-	movss	-112(%rbp), %xmm1               # 4-byte Reload
-                                        # xmm1 = mem[0],zero,zero,zero
-	movsd	-48(%rbp), %xmm0                # 8-byte Reload
-                                        # xmm0 = mem[0],zero
-                                        # kill: def $ecx killed $eax
-	movb	-105(%rbp), %al                 # 1-byte Reload
-	movss	.LCPI49_10(%rip), %xmm2         # xmm2 = mem[0],zero,zero,zero
-	mulss	%xmm2, %xmm1
-	movss	%xmm1, -72(%rbp)                # 4-byte Spill
-	leaq	.L.str.108(%rip), %rdi
-	callq	printf@PLT
-                                        # kill: def $ecx killed $eax
-	movq	-104(%rbp), %rax                # 8-byte Reload
-	movl	(%rax), %eax
-                                        # kill: def $rax killed $eax
-	cvtsi2sd	%rax, %xmm0
-	movsd	.LCPI49_6(%rip), %xmm1          # xmm1 = mem[0],zero
-	divsd	%xmm1, %xmm0
-	leaq	.L.str.109(%rip), %rdi
-	movb	$1, %al
-	callq	printf@PLT
-	movss	-72(%rbp), %xmm0                # 4-byte Reload
-                                        # xmm0 = mem[0],zero,zero,zero
-	cvtss2sd	%xmm0, %xmm0
-	leaq	.L.str.110(%rip), %rdi
-	movb	$1, %al
-	callq	printf@PLT
-                                        # kill: def $ecx killed $eax
-	movl	-28(%rbp), %eax                 # 4-byte Reload
-	movl	$1771674009, %ecx               # imm = 0x69999999
-	shrl	$14, %ecx
-	subl	%ecx, %eax
-	movl	%eax, -92(%rbp)                 # 4-byte Spill
-	cvtsi2sd	%eax, %xmm0
-	movsd	.LCPI49_0(%rip), %xmm1          # xmm1 = mem[0],zero
-	divsd	%xmm1, %xmm0
-	leaq	.L.str.111(%rip), %rdi
-	movb	$1, %al
-	callq	printf@PLT
-	movl	-92(%rbp), %ecx                 # 4-byte Reload
-	movq	params_KvPTAT.fixp@GOTPCREL(%rip), %rax
-	movslq	(%rax), %rax
-	movslq	%ecx, %rcx
-	imulq	%rcx, %rax
-	sarq	$23, %rax
-                                        # kill: def $eax killed $eax killed $rax
-	movl	%eax, -76(%rbp)                 # 4-byte Spill
-	cvtsi2sd	%eax, %xmm0
-	movsd	.LCPI49_4(%rip), %xmm1          # xmm1 = mem[0],zero
-	divsd	%xmm1, %xmm0
-	movsd	%xmm0, -88(%rbp)                # 8-byte Spill
-	movq	params_KvPTAT.fixp@GOTPCREL(%rip), %rax
-	cvtsi2sdl	(%rax), %xmm0
-	movsd	.LCPI49_5(%rip), %xmm1          # xmm1 = mem[0],zero
-	divsd	%xmm1, %xmm0
-	leaq	.L.str.112(%rip), %rdi
-	movb	$1, %al
-	callq	printf@PLT
+	callq	_ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_
+	movl	-28(%rbp), %edx                 # 4-byte Reload
+	movaps	%xmm0, %xmm1
 	movsd	-24(%rbp), %xmm0                # 8-byte Reload
                                         # xmm0 = mem[0],zero
-	leaq	.L.str.113(%rip), %rdi
-	movb	$1, %al
-	callq	printf@PLT
-	movsd	-88(%rbp), %xmm0                # 8-byte Reload
-                                        # xmm0 = mem[0],zero
-	leaq	.L.str.114(%rip), %rdi
-	movb	$1, %al
-	callq	printf@PLT
-	movl	-76(%rbp), %ecx                 # 4-byte Reload
-	movl	$2147483648, %eax               # imm = 0x80000000
-	shrl	$9, %eax
-	addl	%ecx, %eax
-	cvtsi2sd	%eax, %xmm0
-	movsd	.LCPI49_4(%rip), %xmm1          # xmm1 = mem[0],zero
 	divsd	%xmm1, %xmm0
+	cvtsd2ss	%xmm0, %xmm0
+	movswl	params_vdd25(%rip), %eax
 	cvtsi2ss	%eax, %xmm1
-	movss	.LCPI49_3(%rip), %xmm2          # xmm2 = mem[0],zero,zero,zero
-	divss	%xmm2, %xmm1
-	movss	%xmm1, -68(%rbp)                # 4-byte Spill
-	leaq	.L.str.115(%rip), %rdi
-	movb	$1, %al
-	callq	printf@PLT
-	movss	-72(%rbp), %xmm0                # 4-byte Reload
-                                        # xmm0 = mem[0],zero,zero,zero
-	movss	-68(%rbp), %xmm1                # 4-byte Reload
-                                        # xmm1 = mem[0],zero,zero,zero
-	divss	%xmm1, %xmm0
-	movss	%xmm0, -64(%rbp)                # 4-byte Spill
-	cvtss2sd	%xmm0, %xmm0
-	leaq	.L.str.116(%rip), %rdi
-	movb	$1, %al
-	callq	printf@PLT
-	movss	-64(%rbp), %xmm0                # 4-byte Reload
-                                        # xmm0 = mem[0],zero,zero,zero
-	movzwl	params_vPTAT25(%rip), %eax
-	cvtsi2ss	%eax, %xmm1
-	subss	%xmm1, %xmm0
-	movss	%xmm0, -60(%rbp)                # 4-byte Spill
-	cvtss2sd	%xmm0, %xmm0
-	leaq	.L.str.117(%rip), %rdi
-	movb	$1, %al
-	callq	printf@PLT
-	movss	-60(%rbp), %xmm0                # 4-byte Reload
-                                        # xmm0 = mem[0],zero,zero,zero
-	movq	params_KtPTAT.fixp@GOTPCREL(%rip), %rax
-	cvtsi2ssl	(%rax), %xmm1
+	movaps	.LCPI49_1(%rip), %xmm2          # xmm2 = [-0.0E+0,-0.0E+0,-0.0E+0,-0.0E+0]
+	pxor	%xmm2, %xmm1
 	movss	.LCPI49_2(%rip), %xmm2          # xmm2 = mem[0],zero,zero,zero
-	divss	%xmm2, %xmm1
-	divss	%xmm1, %xmm0
-	movss	.LCPI49_1(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
-	addss	%xmm1, %xmm0
-	movss	%xmm0, -56(%rbp)                # 4-byte Spill
-	cvtss2sd	%xmm0, %xmm0
-	leaq	.L.str.118(%rip), %rdi
-	movb	$1, %al
-	callq	printf@PLT
-	movss	-56(%rbp), %xmm0                # 4-byte Reload
-                                        # xmm0 = mem[0],zero,zero,zero
-	addq	$144, %rsp
+	mulss	%xmm2, %xmm0
+	cvttss2si	%xmm0, %rax
+                                        # kill: def $eax killed $eax killed $rax
+	movss	.LCPI49_0(%rip), %xmm0          # xmm0 = mem[0],zero,zero,zero
+	mulss	%xmm1, %xmm0
+	cvttss2si	%xmm0, %ecx
+	sarl	$1, %ecx
+	movl	%eax, %eax
+                                        # kill: def $rax killed $eax
+	movslq	%edx, %rdx
+	imulq	%rdx, %rax
+	sarq	$23, %rax
+                                        # kill: def $eax killed $eax killed $rax
+	addl	%ecx, %eax
+	movswl	params_kVdd(%rip), %ecx
+	cltd
+	idivl	%ecx
+	movl	$1771674009, %ecx               # imm = 0x69999999
+	shrl	$15, %ecx
+	addl	%ecx, %eax
+	shll	$2, %eax
+	addq	$48, %rsp
 	popq	%rbp
 	.cfi_def_cfa %rsp, 8
 	retq
 .Lfunc_end49:
-	.size	_Z14MLX90640_GetTaPKt.6_1flp, .Lfunc_end49-_Z14MLX90640_GetTaPKt.6_1flp
+	.size	_Z15MLX90640_GetVddPKt.1_s16_16fixp, .Lfunc_end49-_Z15MLX90640_GetVddPKt.1_s16_16fixp
 	.cfi_endproc
                                         # -- End function
 	.section	.rodata.cst4,"aM",@progbits,4
@@ -7205,92 +7202,88 @@ _Z5max_fff.23_s12_20fixp:               # @_Z5max_fff.23_s12_20fixp
 	.size	_Z5max_fff.23_s12_20fixp, .Lfunc_end50-_Z5max_fff.23_s12_20fixp
 	.cfi_endproc
                                         # -- End function
-	.section	.rodata.cst4,"aM",@progbits,4
-	.p2align	2                               # -- Begin function _Z20MLX90640_CalculateToPKtffPf.11_fixp
-.LCPI51_0:
-	.long	0x5f000000                      # float 9.22337203E+18
-.LCPI51_1:
-	.long	0x4f000000                      # float 2.14748365E+9
-.LCPI51_4:
-	.long	0x47000000                      # float 32768
-.LCPI51_6:
-	.long	0x48000000                      # float 131072
-.LCPI51_7:
-	.long	0x4e000000                      # float 536870912
-.LCPI51_10:
-	.long	0x42200000                      # float 40
-.LCPI51_11:
-	.long	0x3f800000                      # float 1
-.LCPI51_12:
-	.long	0x44000000                      # float 512
-.LCPI51_13:
-	.long	0x49800000                      # float 1048576
-.LCPI51_14:
-	.long	0x46800000                      # float 16384
-.LCPI51_19:
-	.long	0x4b000000                      # float 8388608
-.LCPI51_20:
-	.long	0x4e800000                      # float 1.07374182E+9
-.LCPI51_22:
-	.long	0x45800000                      # float 4096
-.LCPI51_24:
-	.long	0x4d800000                      # float 268435456
-.LCPI51_28:
-	.long	0x57000000                      # float 1.40737488E+14
-.LCPI51_29:
-	.long	0x4f800000                      # float 4.2949673E+9
-.LCPI51_32:
-	.long	0x59800000                      # float 4.50359963E+15
-.LCPI51_33:
-	.long	0x4c800000                      # float 67108864
-.LCPI51_37:
-	.long	0x4d000000                      # float 134217728
 	.section	.rodata.cst8,"aM",@progbits,8
-	.p2align	3
-.LCPI51_2:
+	.p2align	3                               # -- Begin function _Z20MLX90640_CalculateToPKtffPf.11_fixp
+.LCPI51_0:
 	.quad	0x41e0000000000000              # double 2147483648
-.LCPI51_3:
+.LCPI51_1:
 	.quad	0x40f0000000000000              # double 65536
-.LCPI51_5:
+.LCPI51_3:
 	.quad	0x40e0000000000000              # double 32768
-.LCPI51_8:
+.LCPI51_6:
 	.quad	0x41c0000000000000              # double 536870912
-.LCPI51_9:
+.LCPI51_7:
 	.quad	0x4071126666666666              # double 273.14999999999998
-.LCPI51_15:
+.LCPI51_13:
 	.quad	0x4180000000000000              # double 33554432
-.LCPI51_16:
+.LCPI51_14:
 	.quad	0x4070000000000000              # double 256
-.LCPI51_17:
+.LCPI51_15:
 	.quad	0x40d0000000000000              # double 16384
-.LCPI51_18:
+.LCPI51_16:
 	.quad	0x4170000000000000              # double 16777216
-.LCPI51_21:
+.LCPI51_19:
 	.quad	0x41d0000000000000              # double 1073741824
-.LCPI51_23:
+.LCPI51_21:
 	.quad	0x40b0000000000000              # double 4096
-.LCPI51_25:
+.LCPI51_23:
 	.quad	0x41b0000000000000              # double 268435456
-.LCPI51_26:
+.LCPI51_24:
 	.quad	0x41a0000000000000              # double 134217728
-.LCPI51_27:
+.LCPI51_25:
 	.quad	0x4130000000000000              # double 1048576
-.LCPI51_30:
+.LCPI51_28:
 	.quad	0x41f0000000000000              # double 4294967296
-.LCPI51_31:
+.LCPI51_29:
 	.quad	0x4190000000000000              # double 67108864
 .LCPI51_36:
-	.quad	0x43e0000000000000              # double 9.2233720368547758E+18
-.LCPI51_38:
 	.quad	0x4140000000000000              # double 2097152
+	.section	.rodata.cst4,"aM",@progbits,4
+	.p2align	2
+.LCPI51_2:
+	.long	0x47000000                      # float 32768
+.LCPI51_4:
+	.long	0x48000000                      # float 131072
+.LCPI51_5:
+	.long	0x4e000000                      # float 536870912
+.LCPI51_8:
+	.long	0x42200000                      # float 40
+.LCPI51_9:
+	.long	0x3f800000                      # float 1
+.LCPI51_10:
+	.long	0x44000000                      # float 512
+.LCPI51_11:
+	.long	0x49800000                      # float 1048576
+.LCPI51_12:
+	.long	0x46800000                      # float 16384
+.LCPI51_17:
+	.long	0x4b000000                      # float 8388608
+.LCPI51_18:
+	.long	0x4e800000                      # float 1.07374182E+9
+.LCPI51_20:
+	.long	0x45800000                      # float 4096
+.LCPI51_22:
+	.long	0x4d800000                      # float 268435456
+.LCPI51_26:
+	.long	0x57000000                      # float 1.40737488E+14
+.LCPI51_27:
+	.long	0x4f800000                      # float 4.2949673E+9
+.LCPI51_30:
+	.long	0x59800000                      # float 4.50359963E+15
+.LCPI51_31:
+	.long	0x4c800000                      # float 67108864
+.LCPI51_32:
+	.long	0x5f000000                      # float 9.22337203E+18
+.LCPI51_35:
+	.long	0x4d000000                      # float 134217728
 	.section	.rodata.cst16,"aM",@progbits,16
 	.p2align	4
-.LCPI51_34:
+.LCPI51_33:
 	.long	1127219200                      # 0x43300000
 	.long	1160773632                      # 0x45300000
 	.long	0                               # 0x0
 	.long	0                               # 0x0
-.LCPI51_35:
+.LCPI51_34:
 	.quad	0x4330000000000000              # double 4503599627370496
 	.quad	0x4530000000000000              # double 1.9342813113834067E+25
 	.text
@@ -7304,84 +7297,70 @@ _Z20MLX90640_CalculateToPKtffPf.11_fixp: # @_Z20MLX90640_CalculateToPKtffPf.11_f
 	.cfi_offset %rbp, -16
 	movq	%rsp, %rbp
 	.cfi_def_cfa_register %rbp
-	subq	$768, %rsp                      # imm = 0x300
+	subq	$800, %rsp                      # imm = 0x320
 	movq	%rdi, -64(%rbp)                 # 8-byte Spill
-	movq	%rsi, -224(%rbp)                # 8-byte Spill
-	movss	.LCPI51_0(%rip), %xmm3          # xmm3 = mem[0],zero,zero,zero
-	movaps	%xmm0, %xmm2
-	mulss	%xmm3, %xmm2
-	movaps	%xmm2, %xmm4
-	cvttss2si	%xmm4, %rax
-	movq	%rax, %rdx
-	sarq	$63, %rdx
-	subss	%xmm3, %xmm2
-	cvttss2si	%xmm2, %rcx
-	andq	%rdx, %rcx
-	orq	%rcx, %rax
-	movq	%rax, -120(%rbp)                # 8-byte Spill
-	cvtss2sd	%xmm1, %xmm1
-	movsd	%xmm1, -144(%rbp)               # 8-byte Spill
-	movss	.LCPI51_1(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
-	mulss	%xmm1, %xmm0
-	cvttss2si	%xmm0, %rax
-                                        # kill: def $eax killed $eax killed $rax
-	movl	%eax, %eax
+	movl	%esi, -252(%rbp)                # 4-byte Spill
+	movq	%rdx, -248(%rbp)                # 8-byte Spill
+	movl	%esi, %eax
                                         # kill: def $rax killed $eax
-	cvtsi2sd	%rax, %xmm0
-	movsd	.LCPI51_2(%rip), %xmm1          # xmm1 = mem[0],zero
-	divsd	%xmm1, %xmm0
-	movsd	%xmm0, -104(%rbp)               # 8-byte Spill
+	movq	%rax, -136(%rbp)                # 8-byte Spill
+	cvtsi2sd	%rax, %xmm1
+	movsd	.LCPI51_0(%rip), %xmm2          # xmm2 = mem[0],zero
+	divsd	%xmm2, %xmm1
+	movsd	%xmm1, -128(%rbp)               # 8-byte Spill
+	cvtss2sd	%xmm0, %xmm0
+	movsd	%xmm0, -168(%rbp)               # 8-byte Spill
 	movw	1666(%rdi), %ax
-	movw	%ax, -214(%rbp)                 # 2-byte Spill
+	movw	%ax, -238(%rbp)                 # 2-byte Spill
 	callq	_Z15MLX90640_GetVddPKt.1.33_s16_16fixp
 	movq	-64(%rbp), %rdi                 # 8-byte Reload
 	movl	%eax, %ecx
+	movl	%ecx, -236(%rbp)                # 4-byte Spill
+	cvtsi2sd	%eax, %xmm0
+	movsd	.LCPI51_1(%rip), %xmm1          # xmm1 = mem[0],zero
+	movsd	%xmm1, -224(%rbp)               # 8-byte Spill
+	divsd	%xmm1, %xmm0
+	movsd	%xmm0, -232(%rbp)               # 8-byte Spill
+	callq	_Z14MLX90640_GetTaPKt.2.34_s16_16fixp
+	movsd	-224(%rbp), %xmm1               # 8-byte Reload
+                                        # xmm1 = mem[0],zero
+	movl	%eax, -188(%rbp)                # 4-byte Spill
+	movl	%eax, %ecx
 	movl	%ecx, -212(%rbp)                # 4-byte Spill
 	cvtsi2sd	%eax, %xmm0
-	movsd	.LCPI51_3(%rip), %xmm1          # xmm1 = mem[0],zero
-	movsd	%xmm1, -200(%rbp)               # 8-byte Spill
 	divsd	%xmm1, %xmm0
 	movsd	%xmm0, -208(%rbp)               # 8-byte Spill
-	callq	_Z14MLX90640_GetTaPKt.2.34_s16_16fixp
-	movsd	-200(%rbp), %xmm1               # 8-byte Reload
-                                        # xmm1 = mem[0],zero
-	movl	%eax, -164(%rbp)                # 4-byte Spill
-	movl	%eax, %ecx
-	movl	%ecx, -188(%rbp)                # 4-byte Spill
-	cvtsi2sd	%eax, %xmm0
-	divsd	%xmm1, %xmm0
-	movsd	%xmm0, -184(%rbp)               # 8-byte Spill
 	movaps	%xmm0, %xmm1
-	movsd	%xmm1, -176(%rbp)               # 8-byte Spill
+	movsd	%xmm1, -200(%rbp)               # 8-byte Spill
 	leaq	.L.str.27(%rip), %rdi
 	movb	$1, %al
-	movb	%al, -73(%rbp)                  # 1-byte Spill
+	movb	%al, -89(%rbp)                  # 1-byte Spill
 	callq	printf@PLT
-	movsd	-144(%rbp), %xmm0               # 8-byte Reload
+	movsd	-168(%rbp), %xmm0               # 8-byte Reload
                                         # xmm0 = mem[0],zero
                                         # kill: def $ecx killed $eax
-	movb	-73(%rbp), %al                  # 1-byte Reload
+	movb	-89(%rbp), %al                  # 1-byte Reload
 	leaq	.L.str.28(%rip), %rdi
 	callq	printf@PLT
-	movl	-164(%rbp), %ecx                # 4-byte Reload
+	movl	-188(%rbp), %ecx                # 4-byte Reload
                                         # kill: def $edx killed $eax
-	movb	-73(%rbp), %al                  # 1-byte Reload
+	movb	-89(%rbp), %al                  # 1-byte Reload
 	sarl	%ecx
 	addl	$8950579, %ecx                  # imm = 0x889333
-	movl	%ecx, -156(%rbp)                # 4-byte Spill
+	movl	%ecx, -180(%rbp)                # 4-byte Spill
 	cvtsi2ss	%ecx, %xmm0
-	movss	.LCPI51_4(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
+	movss	.LCPI51_2(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
 	divss	%xmm1, %xmm0
-	movss	%xmm0, -160(%rbp)               # 4-byte Spill
+	movss	%xmm0, -184(%rbp)               # 4-byte Spill
 	cvtsi2sd	%ecx, %xmm0
-	movsd	.LCPI51_5(%rip), %xmm1          # xmm1 = mem[0],zero
+	movsd	.LCPI51_3(%rip), %xmm1          # xmm1 = mem[0],zero
 	divsd	%xmm1, %xmm0
 	leaq	.L.str.29(%rip), %rdi
 	callq	printf@PLT
-	movss	-160(%rbp), %xmm1               # 4-byte Reload
+	movss	-184(%rbp), %xmm1               # 4-byte Reload
                                         # xmm1 = mem[0],zero,zero,zero
                                         # kill: def $ecx killed $eax
-	movl	-156(%rbp), %eax                # 4-byte Reload
+	movl	-180(%rbp), %eax                # 4-byte Reload
 	movslq	%eax, %rdx
 	movq	%rdx, %rax
 	imulq	%rax, %rax
@@ -7393,92 +7372,98 @@ _Z20MLX90640_CalculateToPKtffPf.11_fixp: # @_Z20MLX90640_CalculateToPKtffPf.11_f
 	imull	%esi, %ecx
 	mulq	%rdx
 	movq	%rax, %rsi
-	movb	-73(%rbp), %al                  # 1-byte Reload
-	movq	%rsi, -152(%rbp)                # 8-byte Spill
+	movb	-89(%rbp), %al                  # 1-byte Reload
+	movq	%rsi, -176(%rbp)                # 8-byte Spill
 	movq	%rdx, %rsi
-	movq	-152(%rbp), %rdx                # 8-byte Reload
+	movq	-176(%rbp), %rdx                # 8-byte Reload
                                         # kill: def $esi killed $esi killed $rsi
 	addl	%ecx, %esi
                                         # implicit-def: $rcx
 	movl	%esi, %ecx
 	shldq	$33, %rdx, %rcx
 	cvtsi2ss	%rcx, %xmm0
-	movss	.LCPI51_6(%rip), %xmm2          # xmm2 = mem[0],zero,zero,zero
+	movss	.LCPI51_4(%rip), %xmm2          # xmm2 = mem[0],zero,zero,zero
 	divss	%xmm2, %xmm0
 	mulss	%xmm1, %xmm0
-	movss	.LCPI51_7(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
+	movss	.LCPI51_5(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
 	mulss	%xmm1, %xmm0
 	cvttss2si	%xmm0, %rcx
-	movq	%rcx, -136(%rbp)                # 8-byte Spill
+	movq	%rcx, -152(%rbp)                # 8-byte Spill
 	cvtsi2sd	%rcx, %xmm0
-	movsd	.LCPI51_8(%rip), %xmm1          # xmm1 = mem[0],zero
-	movsd	%xmm1, -112(%rbp)               # 8-byte Spill
+	movsd	.LCPI51_6(%rip), %xmm1          # xmm1 = mem[0],zero
+	movsd	%xmm1, -104(%rbp)               # 8-byte Spill
 	divsd	%xmm1, %xmm0
 	leaq	.L.str.30(%rip), %rdi
 	callq	printf@PLT
-	movsd	-144(%rbp), %xmm0               # 8-byte Reload
+	movsd	-168(%rbp), %xmm0               # 8-byte Reload
                                         # xmm0 = mem[0],zero
-	movsd	.LCPI51_9(%rip), %xmm1          # xmm1 = mem[0],zero
+	movsd	.LCPI51_7(%rip), %xmm1          # xmm1 = mem[0],zero
 	addsd	%xmm1, %xmm0
 	movl	$4, %edi
 	callq	_ZSt3powIdiEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.32_2flp
-	movb	-73(%rbp), %al                  # 1-byte Reload
-	movsd	%xmm0, -96(%rbp)                # 8-byte Spill
+	movb	-89(%rbp), %al                  # 1-byte Reload
+	movsd	%xmm0, -160(%rbp)               # 8-byte Spill
 	leaq	.L.str.31(%rip), %rdi
 	callq	printf@PLT
-	movq	-136(%rbp), %rdx                # 8-byte Reload
-	movsd	-112(%rbp), %xmm1               # 8-byte Reload
-                                        # xmm1 = mem[0],zero
-	movsd	-96(%rbp), %xmm0                # 8-byte Reload
+	movsd	-160(%rbp), %xmm0               # 8-byte Reload
                                         # xmm0 = mem[0],zero
+	movq	-152(%rbp), %rdx                # 8-byte Reload
+	movsd	-104(%rbp), %xmm1               # 8-byte Reload
+                                        # xmm1 = mem[0],zero
                                         # kill: def $ecx killed $eax
-	movb	-73(%rbp), %al                  # 1-byte Reload
+	movb	-89(%rbp), %al                  # 1-byte Reload
 	mulsd	%xmm1, %xmm0
 	cvttsd2si	%xmm0, %rcx
+	movq	%rcx, -120(%rbp)                # 8-byte Spill
 	subq	%rdx, %rcx
-	movq	%rcx, -128(%rbp)                # 8-byte Spill
+	movq	%rcx, -144(%rbp)                # 8-byte Spill
 	cvtsi2sd	%rcx, %xmm0
 	divsd	%xmm1, %xmm0
 	leaq	.L.str.32(%rip), %rdi
 	callq	printf@PLT
-	movq	-128(%rbp), %rdi                # 8-byte Reload
-	movq	-120(%rbp), %rdx                # 8-byte Reload
+	movq	-144(%rbp), %rdi                # 8-byte Reload
+	movq	-136(%rbp), %rdx                # 8-byte Reload
 	movq	%rdi, %rsi
 	sarq	$63, %rsi
-	shldq	$62, %rdi, %rsi
-	shlq	$62, %rdi
+	shldq	$30, %rdi, %rsi
+	shlq	$30, %rdi
 	shrq	%rdx
 	xorl	%eax, %eax
 	movl	%eax, %ecx
 	callq	__divti3@PLT
-	movsd	-112(%rbp), %xmm2               # 8-byte Reload
-                                        # xmm2 = mem[0],zero
-	movsd	-104(%rbp), %xmm1               # 8-byte Reload
+	movsd	-128(%rbp), %xmm1               # 8-byte Reload
                                         # xmm1 = mem[0],zero
+	movsd	-104(%rbp), %xmm2               # 8-byte Reload
+                                        # xmm2 = mem[0],zero
+	movq	%rax, -112(%rbp)                # 8-byte Spill
 	cvtsi2sd	%rax, %xmm0
 	divsd	%xmm2, %xmm0
-	movsd	%xmm0, -88(%rbp)                # 8-byte Spill
 	leaq	.L.str.33(%rip), %rdi
 	movb	$2, %al
 	callq	printf@PLT
-	movsd	-96(%rbp), %xmm0                # 8-byte Reload
-                                        # xmm0 = mem[0],zero
-	movsd	-88(%rbp), %xmm1                # 8-byte Reload
+	movq	-120(%rbp), %rcx                # 8-byte Reload
+	movq	-112(%rbp), %rdx                # 8-byte Reload
+	movsd	-104(%rbp), %xmm1               # 8-byte Reload
                                         # xmm1 = mem[0],zero
-                                        # kill: def $ecx killed $eax
-	movb	-73(%rbp), %al                  # 1-byte Reload
-	subsd	%xmm1, %xmm0
-	movsd	%xmm0, -72(%rbp)                # 8-byte Spill
+                                        # kill: def $esi killed $eax
+	movb	-89(%rbp), %al                  # 1-byte Reload
+	subq	%rdx, %rcx
+	movq	%rcx, -88(%rbp)                 # 8-byte Spill
+	cvtsi2sd	%rcx, %xmm0
+	divsd	%xmm1, %xmm0
+	movsd	%xmm0, -80(%rbp)                # 8-byte Spill
+	movaps	%xmm0, %xmm1
+	movsd	%xmm1, -72(%rbp)                # 8-byte Spill
 	leaq	.L.str.34(%rip), %rdi
 	callq	printf@PLT
 	movq	-64(%rbp), %rdi                 # 8-byte Reload
 	movss	params_ksTo(%rip), %xmm1        # xmm1 = mem[0],zero,zero,zero
-	movss	.LCPI51_10(%rip), %xmm0         # xmm0 = mem[0],zero,zero,zero
+	movss	.LCPI51_8(%rip), %xmm0          # xmm0 = mem[0],zero,zero,zero
 	mulss	%xmm0, %xmm1
-	movss	.LCPI51_11(%rip), %xmm0         # xmm0 = mem[0],zero,zero,zero
+	movss	.LCPI51_9(%rip), %xmm0          # xmm0 = mem[0],zero,zero,zero
 	addss	%xmm0, %xmm1
 	divss	%xmm1, %xmm0
-	movss	.LCPI51_12(%rip), %xmm1         # xmm1 = mem[0],zero,zero,zero
+	movss	.LCPI51_10(%rip), %xmm1         # xmm1 = mem[0],zero,zero,zero
 	mulss	%xmm1, %xmm0
 	cvttss2si	%xmm0, %rax
 	movq	%rax, -48(%rbp)
@@ -7486,7 +7471,7 @@ _Z20MLX90640_CalculateToPKtffPf.11_fixp: # @_Z20MLX90640_CalculateToPKtffPf.11_f
 	movss	params_ksTo+8(%rip), %xmm0      # xmm0 = mem[0],zero,zero,zero
 	movswl	params_ct+4(%rip), %ecx
 	shll	$15, %ecx
-	movss	.LCPI51_13(%rip), %xmm1         # xmm1 = mem[0],zero,zero,zero
+	movss	.LCPI51_11(%rip), %xmm1         # xmm1 = mem[0],zero,zero,zero
 	mulss	%xmm1, %xmm0
 	cvttss2si	%xmm0, %eax
 	cltq
@@ -7538,12 +7523,12 @@ _Z20MLX90640_CalculateToPKtffPf.11_fixp: # @_Z20MLX90640_CalculateToPKtffPf.11_f
 	idivq	%rcx
 	movq	%rax, %rcx
 	movq	-64(%rbp), %rax                 # 8-byte Reload
-	movq	%rcx, -240(%rbp)                # 8-byte Spill
+	movq	%rcx, -272(%rbp)                # 8-byte Spill
 	movzwl	1664(%rax), %ecx
 	andl	$4096, %ecx                     # imm = 0x1000
 	sarl	$5, %ecx
                                         # kill: def $cl killed $cl killed $ecx
-	movb	%cl, -229(%rbp)                 # 1-byte Spill
+	movb	%cl, -257(%rbp)                 # 1-byte Spill
 	movzwl	1552(%rax), %ecx
 	shll	$14, %ecx
 	movl	%ecx, -8(%rbp)
@@ -7551,14 +7536,14 @@ _Z20MLX90640_CalculateToPKtffPf.11_fixp: # @_Z20MLX90640_CalculateToPKtffPf.11_f
 	shll	$14, %eax
 	movl	%eax, -4(%rbp)
 	xorl	%eax, %eax
-	movl	%eax, -228(%rbp)                # 4-byte Spill
+	movl	%eax, -256(%rbp)                # 4-byte Spill
 .LBB51_3:                               # =>This Inner Loop Header: Depth=1
-	movl	-228(%rbp), %eax                # 4-byte Reload
-	movl	%eax, -244(%rbp)                # 4-byte Spill
+	movl	-256(%rbp), %eax                # 4-byte Reload
+	movl	%eax, -276(%rbp)                # 4-byte Spill
 	cmpl	$2, %eax
 	jge	.LBB51_8
 # %bb.4:                                #   in Loop: Header=BB51_3 Depth=1
-	movl	-244(%rbp), %eax                # 4-byte Reload
+	movl	-276(%rbp), %eax                # 4-byte Reload
 	cltq
 	movl	-8(%rbp,%rax,4), %eax
 	movl	$4294836224, %ecx               # imm = 0xFFFE0000
@@ -7566,7 +7551,7 @@ _Z20MLX90640_CalculateToPKtffPf.11_fixp: # @_Z20MLX90640_CalculateToPKtffPf.11_f
 	cmpl	%ecx, %eax
 	jle	.LBB51_6
 # %bb.5:                                #   in Loop: Header=BB51_3 Depth=1
-	movl	-244(%rbp), %eax                # 4-byte Reload
+	movl	-276(%rbp), %eax                # 4-byte Reload
 	movslq	%eax, %rcx
 	movl	-8(%rbp,%rcx,4), %ecx
 	sarl	$1, %ecx
@@ -7577,8 +7562,8 @@ _Z20MLX90640_CalculateToPKtffPf.11_fixp: # @_Z20MLX90640_CalculateToPKtffPf.11_f
 	shll	$1, %ecx
 	movl	%ecx, -8(%rbp,%rax,4)
 .LBB51_6:                               #   in Loop: Header=BB51_3 Depth=1
-	movl	-244(%rbp), %eax                # 4-byte Reload
-	movq	-240(%rbp), %rdx                # 8-byte Reload
+	movl	-276(%rbp), %eax                # 4-byte Reload
+	movq	-272(%rbp), %rdx                # 8-byte Reload
 	movslq	%eax, %rcx
 	movslq	-8(%rbp,%rcx,4), %rcx
 	imulq	%rdx, %rcx
@@ -7587,16 +7572,16 @@ _Z20MLX90640_CalculateToPKtffPf.11_fixp: # @_Z20MLX90640_CalculateToPKtffPf.11_f
 	cltq
 	movl	%ecx, -8(%rbp,%rax,4)
 # %bb.7:                                #   in Loop: Header=BB51_3 Depth=1
-	movl	-244(%rbp), %eax                # 4-byte Reload
+	movl	-276(%rbp), %eax                # 4-byte Reload
 	addl	$1, %eax
-	movl	%eax, -228(%rbp)                # 4-byte Spill
+	movl	%eax, -256(%rbp)                # 4-byte Spill
 	jmp	.LBB51_3
 .LBB51_8:
-	movb	-229(%rbp), %al                 # 1-byte Reload
-	movl	-212(%rbp), %edi                # 4-byte Reload
-	movl	-188(%rbp), %r8d                # 4-byte Reload
+	movb	-257(%rbp), %al                 # 1-byte Reload
+	movl	-236(%rbp), %edi                # 4-byte Reload
+	movl	-212(%rbp), %r8d                # 4-byte Reload
 	cvtsi2sdl	-8(%rbp), %xmm1
-	movsd	.LCPI51_17(%rip), %xmm0         # xmm0 = mem[0],zero
+	movsd	.LCPI51_15(%rip), %xmm0         # xmm0 = mem[0],zero
 	divsd	%xmm0, %xmm1
 	movswl	params_cpOffset(%rip), %edx
 	movq	params_cpKta.fixp@GOTPCREL(%rip), %rcx
@@ -7632,18 +7617,18 @@ _Z20MLX90640_CalculateToPKtffPf.11_fixp: # @_Z20MLX90640_CalculateToPKtffPf.11_f
                                         # kill: def $ecx killed $ecx killed $rcx
 	addl	%esi, %ecx
 	cvtsi2sd	%ecx, %xmm2
-	movsd	.LCPI51_16(%rip), %xmm0         # xmm0 = mem[0],zero
+	movsd	.LCPI51_14(%rip), %xmm0         # xmm0 = mem[0],zero
 	divsd	%xmm0, %xmm2
 	xorl	%ecx, %ecx
                                         # kill: def $rcx killed $ecx
 	subq	%rdx, %rcx
 	cvtsi2sd	%rcx, %xmm0
-	movsd	.LCPI51_15(%rip), %xmm3         # xmm3 = mem[0],zero
+	movsd	.LCPI51_13(%rip), %xmm3         # xmm3 = mem[0],zero
 	divsd	%xmm3, %xmm0
 	mulsd	%xmm2, %xmm0
 	addsd	%xmm1, %xmm0
 	cvtsd2ss	%xmm0, %xmm1
-	movss	.LCPI51_14(%rip), %xmm0         # xmm0 = mem[0],zero,zero,zero
+	movss	.LCPI51_12(%rip), %xmm0         # xmm0 = mem[0],zero,zero,zero
 	mulss	%xmm1, %xmm0
 	cvttss2si	%xmm0, %ecx
 	movl	%ecx, -8(%rbp)
@@ -7652,10 +7637,10 @@ _Z20MLX90640_CalculateToPKtffPf.11_fixp: # @_Z20MLX90640_CalculateToPKtffPf.11_f
 	cmpl	%ecx, %eax
 	jne	.LBB51_10
 # %bb.9:
-	movl	-212(%rbp), %esi                # 4-byte Reload
-	movl	-188(%rbp), %edi                # 4-byte Reload
+	movl	-236(%rbp), %esi                # 4-byte Reload
+	movl	-212(%rbp), %edi                # 4-byte Reload
 	cvtsi2sdl	-4(%rbp), %xmm1
-	movsd	.LCPI51_17(%rip), %xmm0         # xmm0 = mem[0],zero
+	movsd	.LCPI51_15(%rip), %xmm0         # xmm0 = mem[0],zero
 	divsd	%xmm0, %xmm1
 	movswl	params_cpOffset+2(%rip), %ecx
 	movq	params_cpKta.fixp@GOTPCREL(%rip), %rax
@@ -7691,30 +7676,30 @@ _Z20MLX90640_CalculateToPKtffPf.11_fixp: # @_Z20MLX90640_CalculateToPKtffPf.11_f
                                         # kill: def $eax killed $eax killed $rax
 	addl	%edx, %eax
 	cvtsi2sd	%eax, %xmm2
-	movsd	.LCPI51_16(%rip), %xmm0         # xmm0 = mem[0],zero
+	movsd	.LCPI51_14(%rip), %xmm0         # xmm0 = mem[0],zero
 	divsd	%xmm0, %xmm2
 	xorl	%eax, %eax
                                         # kill: def $rax killed $eax
 	subq	%rcx, %rax
 	cvtsi2sd	%rax, %xmm0
-	movsd	.LCPI51_15(%rip), %xmm3         # xmm3 = mem[0],zero
+	movsd	.LCPI51_13(%rip), %xmm3         # xmm3 = mem[0],zero
 	divsd	%xmm3, %xmm0
 	mulsd	%xmm2, %xmm0
 	addsd	%xmm1, %xmm0
 	cvtsd2ss	%xmm0, %xmm1
-	movss	.LCPI51_14(%rip), %xmm0         # xmm0 = mem[0],zero,zero,zero
+	movss	.LCPI51_12(%rip), %xmm0         # xmm0 = mem[0],zero,zero,zero
 	mulss	%xmm1, %xmm0
 	cvttss2si	%xmm0, %eax
 	movl	%eax, -4(%rbp)
 	jmp	.LBB51_11
 .LBB51_10:
-	movl	-212(%rbp), %esi                # 4-byte Reload
-	movl	-188(%rbp), %edi                # 4-byte Reload
+	movl	-236(%rbp), %esi                # 4-byte Reload
+	movl	-212(%rbp), %edi                # 4-byte Reload
 	cvtsi2sdl	-4(%rbp), %xmm1
-	movsd	.LCPI51_17(%rip), %xmm0         # xmm0 = mem[0],zero
+	movsd	.LCPI51_15(%rip), %xmm0         # xmm0 = mem[0],zero
 	divsd	%xmm0, %xmm1
 	movswl	params_cpOffset+2(%rip), %ecx
-	movss	.LCPI51_19(%rip), %xmm0         # xmm0 = mem[0],zero,zero,zero
+	movss	.LCPI51_17(%rip), %xmm0         # xmm0 = mem[0],zero,zero,zero
 	mulss	params_ilChessC(%rip), %xmm0
 	cvttss2si	%xmm0, %eax
 	shll	$15, %ecx
@@ -7753,84 +7738,84 @@ _Z20MLX90640_CalculateToPKtffPf.11_fixp: # @_Z20MLX90640_CalculateToPKtffPf.11_f
                                         # kill: def $eax killed $eax killed $rax
 	addl	%edx, %eax
 	cvtsi2sd	%eax, %xmm2
-	movsd	.LCPI51_16(%rip), %xmm0         # xmm0 = mem[0],zero
+	movsd	.LCPI51_14(%rip), %xmm0         # xmm0 = mem[0],zero
 	divsd	%xmm0, %xmm2
 	xorl	%eax, %eax
                                         # kill: def $rax killed $eax
 	subq	%rcx, %rax
 	cvtsi2sd	%rax, %xmm0
-	movsd	.LCPI51_18(%rip), %xmm3         # xmm3 = mem[0],zero
+	movsd	.LCPI51_16(%rip), %xmm3         # xmm3 = mem[0],zero
 	divsd	%xmm3, %xmm0
 	mulsd	%xmm2, %xmm0
 	addsd	%xmm1, %xmm0
 	cvtsd2ss	%xmm0, %xmm1
-	movss	.LCPI51_14(%rip), %xmm0         # xmm0 = mem[0],zero,zero,zero
+	movss	.LCPI51_12(%rip), %xmm0         # xmm0 = mem[0],zero,zero,zero
 	mulss	%xmm1, %xmm0
 	cvttss2si	%xmm0, %eax
 	movl	%eax, -4(%rbp)
 .LBB51_11:
 	xorl	%eax, %eax
-	movl	%eax, -248(%rbp)                # 4-byte Spill
+	movl	%eax, -280(%rbp)                # 4-byte Spill
 	jmp	.LBB51_12
 .LBB51_12:                              # =>This Inner Loop Header: Depth=1
-	movl	-248(%rbp), %eax                # 4-byte Reload
-	movl	%eax, -252(%rbp)                # 4-byte Spill
+	movl	-280(%rbp), %eax                # 4-byte Reload
+	movl	%eax, -284(%rbp)                # 4-byte Spill
 	cmpl	$768, %eax                      # imm = 0x300
 	jge	.LBB51_43
 # %bb.13:                               #   in Loop: Header=BB51_12 Depth=1
-	movl	-252(%rbp), %eax                # 4-byte Reload
+	movl	-284(%rbp), %eax                # 4-byte Reload
 	movl	$32, %ecx
 	cltd
 	idivl	%ecx
 	movl	%eax, %ecx
-	movl	-252(%rbp), %eax                # 4-byte Reload
+	movl	-284(%rbp), %eax                # 4-byte Reload
 	movl	$64, %esi
 	cltd
 	idivl	%esi
 	movl	%eax, %edx
-	movl	-252(%rbp), %eax                # 4-byte Reload
+	movl	-284(%rbp), %eax                # 4-byte Reload
 	shll	$1, %edx
 	subl	%edx, %ecx
                                         # kill: def $cl killed $cl killed $ecx
-	movb	%cl, -254(%rbp)                 # 1-byte Spill
+	movb	%cl, -286(%rbp)                 # 1-byte Spill
 	movsbl	%cl, %ecx
 	movl	$2, %esi
 	cltd
 	idivl	%esi
 	movl	%eax, %esi
-	movl	-252(%rbp), %eax                # 4-byte Reload
+	movl	-284(%rbp), %eax                # 4-byte Reload
 	shll	$1, %esi
 	movl	%eax, %edx
 	subl	%esi, %edx
 	xorl	%edx, %ecx
                                         # kill: def $cl killed $cl killed $ecx
-	movb	%cl, -255(%rbp)                 # 1-byte Spill
+	movb	%cl, -287(%rbp)                 # 1-byte Spill
 	addl	$2, %eax
 	movl	$4, %ecx
 	cltd
 	idivl	%ecx
 	movl	%eax, %ecx
-	movl	-252(%rbp), %eax                # 4-byte Reload
+	movl	-284(%rbp), %eax                # 4-byte Reload
 	addl	$3, %eax
 	movl	$4, %esi
 	cltd
 	idivl	%esi
 	movl	%eax, %edx
-	movl	-252(%rbp), %eax                # 4-byte Reload
+	movl	-284(%rbp), %eax                # 4-byte Reload
 	subl	%edx, %ecx
 	addl	$1, %eax
 	movl	$4, %esi
 	cltd
 	idivl	%esi
 	movl	%eax, %edx
-	movl	-252(%rbp), %eax                # 4-byte Reload
+	movl	-284(%rbp), %eax                # 4-byte Reload
 	addl	%edx, %ecx
 	movl	$4, %esi
 	cltd
 	idivl	%esi
-	movb	-254(%rbp), %dl                 # 1-byte Reload
+	movb	-286(%rbp), %dl                 # 1-byte Reload
 	movl	%eax, %esi
-	movb	-229(%rbp), %al                 # 1-byte Reload
+	movb	-257(%rbp), %al                 # 1-byte Reload
 	subl	%esi, %ecx
 	movsbl	%dl, %esi
 	shll	$1, %esi
@@ -7838,256 +7823,256 @@ _Z20MLX90640_CalculateToPKtffPf.11_fixp: # @_Z20MLX90640_CalculateToPKtffPf.11_f
 	subl	%esi, %edx
 	imull	%edx, %ecx
                                         # kill: def $cl killed $cl killed $ecx
-	movb	%cl, -253(%rbp)                 # 1-byte Spill
+	movb	%cl, -285(%rbp)                 # 1-byte Spill
 	movzbl	%al, %eax
 	cmpl	$0, %eax
 	jne	.LBB51_15
 # %bb.14:                               #   in Loop: Header=BB51_12 Depth=1
-	movb	-254(%rbp), %al                 # 1-byte Reload
-	movb	%al, -256(%rbp)                 # 1-byte Spill
+	movb	-286(%rbp), %al                 # 1-byte Reload
+	movb	%al, -288(%rbp)                 # 1-byte Spill
 	jmp	.LBB51_16
 .LBB51_15:                              #   in Loop: Header=BB51_12 Depth=1
-	movb	-255(%rbp), %al                 # 1-byte Reload
-	movb	%al, -256(%rbp)                 # 1-byte Spill
+	movb	-287(%rbp), %al                 # 1-byte Reload
+	movb	%al, -288(%rbp)                 # 1-byte Spill
 	jmp	.LBB51_16
 .LBB51_16:                              #   in Loop: Header=BB51_12 Depth=1
 	movq	-64(%rbp), %rcx                 # 8-byte Reload
-	movb	-256(%rbp), %al                 # 1-byte Reload
+	movb	-288(%rbp), %al                 # 1-byte Reload
 	movsbl	%al, %eax
 	movzwl	1666(%rcx), %ecx
 	cmpl	%ecx, %eax
 	jne	.LBB51_41
 # %bb.17:                               #   in Loop: Header=BB51_12 Depth=1
 	movq	-64(%rbp), %rax                 # 8-byte Reload
-	movl	-252(%rbp), %ecx                # 4-byte Reload
+	movl	-284(%rbp), %ecx                # 4-byte Reload
 	movslq	%ecx, %rcx
 	movzwl	(%rax,%rcx,2), %eax
                                         # kill: def $rax killed $eax
 	shlq	$30, %rax
-	movq	%rax, -272(%rbp)                # 8-byte Spill
+	movq	%rax, -304(%rbp)                # 8-byte Spill
 	movabsq	$-562949953421312, %rcx         # imm = 0xFFFE000000000000
 	shrq	$19, %rcx
 	cmpq	%rcx, %rax
-	movq	%rax, -264(%rbp)                # 8-byte Spill
+	movq	%rax, -296(%rbp)                # 8-byte Spill
 	jle	.LBB51_19
 # %bb.18:                               #   in Loop: Header=BB51_12 Depth=1
-	movq	-272(%rbp), %rax                # 8-byte Reload
+	movq	-304(%rbp), %rax                # 8-byte Reload
 	movabsq	$-9223372036854775808, %rcx     # imm = 0x8000000000000000
 	shrq	$17, %rcx
 	subq	%rcx, %rax
-	movq	%rax, -264(%rbp)                # 8-byte Spill
+	movq	%rax, -296(%rbp)                # 8-byte Spill
 .LBB51_19:                              #   in Loop: Header=BB51_12 Depth=1
-	movq	-264(%rbp), %rax                # 8-byte Reload
-	movq	%rax, -400(%rbp)                # 8-byte Spill
+	movq	-296(%rbp), %rax                # 8-byte Reload
+	movq	%rax, -432(%rbp)                # 8-byte Spill
 	cvtsi2sd	%rax, %xmm0
-	movsd	.LCPI51_21(%rip), %xmm1         # xmm1 = mem[0],zero
-	movsd	%xmm1, -368(%rbp)               # 8-byte Spill
+	movsd	.LCPI51_19(%rip), %xmm1         # xmm1 = mem[0],zero
+	movsd	%xmm1, -400(%rbp)               # 8-byte Spill
 	divsd	%xmm1, %xmm0
 	leaq	.L.str.35(%rip), %rdi
 	movb	$1, %al
-	movb	%al, -313(%rbp)                 # 1-byte Spill
+	movb	%al, -345(%rbp)                 # 1-byte Spill
 	callq	printf@PLT
-	movq	-240(%rbp), %rcx                # 8-byte Reload
-	movsd	-368(%rbp), %xmm1               # 8-byte Reload
+	movq	-272(%rbp), %rcx                # 8-byte Reload
+	movsd	-400(%rbp), %xmm1               # 8-byte Reload
                                         # xmm1 = mem[0],zero
                                         # kill: def $edx killed $eax
-	movq	-400(%rbp), %rax                # 8-byte Reload
+	movq	-432(%rbp), %rax                # 8-byte Reload
 	imulq	%rcx
 	movq	%rax, %rcx
-	movb	-313(%rbp), %al                 # 1-byte Reload
+	movb	-345(%rbp), %al                 # 1-byte Reload
 	shldq	$28, %rcx, %rdx
 	movl	%edx, %ecx
 	cvtsi2ss	%ecx, %xmm0
-	movss	.LCPI51_4(%rip), %xmm2          # xmm2 = mem[0],zero,zero,zero
+	movss	.LCPI51_2(%rip), %xmm2          # xmm2 = mem[0],zero,zero,zero
 	divss	%xmm2, %xmm0
-	movss	%xmm0, -292(%rbp)               # 4-byte Spill
+	movss	%xmm0, -324(%rbp)               # 4-byte Spill
 	movslq	%ecx, %rcx
 	shlq	$15, %rcx
 	cvtsi2sd	%rcx, %xmm0
 	divsd	%xmm1, %xmm0
 	leaq	.L.str.36(%rip), %rdi
 	callq	printf@PLT
-	movl	-188(%rbp), %ecx                # 4-byte Reload
-	movsd	-176(%rbp), %xmm0               # 8-byte Reload
+	movl	-212(%rbp), %ecx                # 4-byte Reload
+	movsd	-200(%rbp), %xmm0               # 8-byte Reload
                                         # xmm0 = mem[0],zero
                                         # kill: def $edx killed $eax
-	movb	-313(%rbp), %al                 # 1-byte Reload
+	movb	-345(%rbp), %al                 # 1-byte Reload
 	addl	$-1638400, %ecx                 # imm = 0xFFE70000
-	movl	%ecx, -380(%rbp)                # 4-byte Spill
+	movl	%ecx, -412(%rbp)                # 4-byte Spill
 	cvtsi2sd	%ecx, %xmm1
-	movsd	.LCPI51_3(%rip), %xmm2          # xmm2 = mem[0],zero
+	movsd	.LCPI51_1(%rip), %xmm2          # xmm2 = mem[0],zero
 	divsd	%xmm2, %xmm1
-	movsd	%xmm1, -392(%rbp)               # 8-byte Spill
+	movsd	%xmm1, -424(%rbp)               # 8-byte Spill
 	leaq	.L.str.37(%rip), %rdi
 	callq	printf@PLT
-	movsd	-392(%rbp), %xmm0               # 8-byte Reload
+	movsd	-424(%rbp), %xmm0               # 8-byte Reload
                                         # xmm0 = mem[0],zero
                                         # kill: def $ecx killed $eax
-	movb	-313(%rbp), %al                 # 1-byte Reload
+	movb	-345(%rbp), %al                 # 1-byte Reload
 	leaq	.L.str.38(%rip), %rdi
 	callq	printf@PLT
-	movl	-380(%rbp), %ecx                # 4-byte Reload
-	movsd	-368(%rbp), %xmm1               # 8-byte Reload
+	movl	-412(%rbp), %ecx                # 4-byte Reload
+	movsd	-400(%rbp), %xmm1               # 8-byte Reload
                                         # xmm1 = mem[0],zero
-	movl	-252(%rbp), %edx                # 4-byte Reload
+	movl	-284(%rbp), %edx                # 4-byte Reload
                                         # kill: def $esi killed $eax
-	movb	-313(%rbp), %al                 # 1-byte Reload
+	movb	-345(%rbp), %al                 # 1-byte Reload
 	movslq	%edx, %rsi
-	movq	%rsi, -344(%rbp)                # 8-byte Spill
+	movq	%rsi, -376(%rbp)                # 8-byte Spill
 	movq	params_kta.fixp@GOTPCREL(%rip), %rdx
 	movslq	(%rdx,%rsi,4), %rdx
 	movslq	%ecx, %rcx
 	imulq	%rdx, %rcx
-	movq	%rcx, -376(%rbp)                # 8-byte Spill
+	movq	%rcx, -408(%rbp)                # 8-byte Spill
 	addq	%rcx, %rcx
 	cvtsi2sd	%rcx, %xmm0
 	divsd	%xmm1, %xmm0
 	leaq	.L.str.39(%rip), %rdi
 	callq	printf@PLT
-	movq	-376(%rbp), %rcx                # 8-byte Reload
-	movsd	-368(%rbp), %xmm1               # 8-byte Reload
+	movq	-408(%rbp), %rcx                # 8-byte Reload
+	movsd	-400(%rbp), %xmm1               # 8-byte Reload
                                         # xmm1 = mem[0],zero
                                         # kill: def $edx killed $eax
-	movb	-313(%rbp), %al                 # 1-byte Reload
+	movb	-345(%rbp), %al                 # 1-byte Reload
 	leaq	1073741824(%rcx,%rcx), %rcx
-	movq	%rcx, -312(%rbp)                # 8-byte Spill
+	movq	%rcx, -344(%rbp)                # 8-byte Spill
 	cvtsi2sd	%rcx, %xmm0
 	divsd	%xmm1, %xmm0
 	leaq	.L.str.40(%rip), %rdi
 	callq	printf@PLT
-	movq	-344(%rbp), %rdx                # 8-byte Reload
+	movq	-376(%rbp), %rdx                # 8-byte Reload
                                         # kill: def $ecx killed $eax
-	movq	-312(%rbp), %rax                # 8-byte Reload
+	movq	-344(%rbp), %rax                # 8-byte Reload
 	leaq	params_offset(%rip), %rcx
-	movq	%rcx, -360(%rbp)                # 8-byte Spill
+	movq	%rcx, -392(%rbp)                # 8-byte Spill
 	movswq	(%rcx,%rdx,2), %rcx
 	imulq	%rcx
 	movq	%rax, %rcx
-	movb	-313(%rbp), %al                 # 1-byte Reload
+	movb	-345(%rbp), %al                 # 1-byte Reload
 	shldq	$49, %rcx, %rdx
 	cvtsi2sd	%rdx, %xmm0
-	movsd	.LCPI51_5(%rip), %xmm1          # xmm1 = mem[0],zero
-	movsd	%xmm1, -352(%rbp)               # 8-byte Spill
+	movsd	.LCPI51_3(%rip), %xmm1          # xmm1 = mem[0],zero
+	movsd	%xmm1, -384(%rbp)               # 8-byte Spill
 	divsd	%xmm1, %xmm0
 	leaq	.L.str.41(%rip), %rdi
 	callq	printf@PLT
-	movq	-344(%rbp), %rcx                # 8-byte Reload
+	movq	-376(%rbp), %rcx                # 8-byte Reload
                                         # kill: def $edx killed $eax
-	movq	-360(%rbp), %rax                # 8-byte Reload
+	movq	-392(%rbp), %rax                # 8-byte Reload
 	movswl	(%rax,%rcx,2), %esi
 	leaq	.L.str.42(%rip), %rdi
 	xorl	%eax, %eax
                                         # kill: def $al killed $al killed $eax
 	callq	printf@PLT
-	movl	-212(%rbp), %ecx                # 4-byte Reload
-	movsd	-352(%rbp), %xmm1               # 8-byte Reload
+	movl	-236(%rbp), %ecx                # 4-byte Reload
+	movsd	-384(%rbp), %xmm1               # 8-byte Reload
                                         # xmm1 = mem[0],zero
                                         # kill: def $edx killed $eax
-	movb	-313(%rbp), %al                 # 1-byte Reload
+	movb	-345(%rbp), %al                 # 1-byte Reload
 	sarl	%ecx
 	addl	$-108134, %ecx                  # imm = 0xFFFE599A
-	movl	%ecx, -336(%rbp)                # 4-byte Spill
+	movl	%ecx, -368(%rbp)                # 4-byte Spill
 	cvtsi2sd	%ecx, %xmm0
 	divsd	%xmm1, %xmm0
 	leaq	.L.str.43(%rip), %rdi
 	callq	printf@PLT
-	movq	-344(%rbp), %rsi                # 8-byte Reload
-	movl	-336(%rbp), %ecx                # 4-byte Reload
+	movq	-376(%rbp), %rsi                # 8-byte Reload
+	movl	-368(%rbp), %ecx                # 4-byte Reload
                                         # kill: def $edx killed $eax
-	movb	-313(%rbp), %al                 # 1-byte Reload
+	movb	-345(%rbp), %al                 # 1-byte Reload
 	movq	params_kv.fixp@GOTPCREL(%rip), %rdx
 	movslq	(%rdx,%rsi,4), %rdx
 	movslq	%ecx, %rcx
 	imulq	%rdx, %rcx
 	shrq	$30, %rcx
                                         # kill: def $ecx killed $ecx killed $rcx
-	movl	%ecx, -332(%rbp)                # 4-byte Spill
+	movl	%ecx, -364(%rbp)                # 4-byte Spill
 	cvtsi2sd	%ecx, %xmm0
-	movsd	.LCPI51_23(%rip), %xmm1         # xmm1 = mem[0],zero
-	movsd	%xmm1, -328(%rbp)               # 8-byte Spill
+	movsd	.LCPI51_21(%rip), %xmm1         # xmm1 = mem[0],zero
+	movsd	%xmm1, -360(%rbp)               # 8-byte Spill
 	divsd	%xmm1, %xmm0
 	leaq	.L.str.44(%rip), %rdi
 	callq	printf@PLT
-	movl	-332(%rbp), %ecx                # 4-byte Reload
-	movsd	-328(%rbp), %xmm1               # 8-byte Reload
+	movl	-364(%rbp), %ecx                # 4-byte Reload
+	movsd	-360(%rbp), %xmm1               # 8-byte Reload
                                         # xmm1 = mem[0],zero
                                         # kill: def $edx killed $eax
-	movb	-313(%rbp), %al                 # 1-byte Reload
+	movb	-345(%rbp), %al                 # 1-byte Reload
 	addl	$4096, %ecx                     # imm = 0x1000
-	movl	%ecx, -300(%rbp)                # 4-byte Spill
+	movl	%ecx, -332(%rbp)                # 4-byte Spill
 	cvtsi2sd	%ecx, %xmm0
 	divsd	%xmm1, %xmm0
 	leaq	.L.str.45(%rip), %rdi
 	callq	printf@PLT
-	movq	-312(%rbp), %rcx                # 8-byte Reload
+	movq	-344(%rbp), %rcx                # 8-byte Reload
                                         # kill: def $edx killed $eax
-	movl	-300(%rbp), %eax                # 4-byte Reload
+	movl	-332(%rbp), %eax                # 4-byte Reload
 	cltq
 	imulq	%rcx
 	shldq	$34, %rax, %rdx
 	cvtsi2sd	%rdx, %xmm0
-	movsd	.LCPI51_23(%rip), %xmm1         # xmm1 = mem[0],zero
+	movsd	.LCPI51_21(%rip), %xmm1         # xmm1 = mem[0],zero
 	divsd	%xmm1, %xmm0
 	cvtsi2ss	%rdx, %xmm1
-	movss	.LCPI51_22(%rip), %xmm2         # xmm2 = mem[0],zero,zero,zero
+	movss	.LCPI51_20(%rip), %xmm2         # xmm2 = mem[0],zero,zero,zero
 	divss	%xmm2, %xmm1
-	movss	%xmm1, -296(%rbp)               # 4-byte Spill
+	movss	%xmm1, -328(%rbp)               # 4-byte Spill
 	leaq	.L.str.46(%rip), %rdi
 	movb	$1, %al
 	callq	printf@PLT
-	movss	-296(%rbp), %xmm0               # 4-byte Reload
+	movss	-328(%rbp), %xmm0               # 4-byte Reload
                                         # xmm0 = mem[0],zero,zero,zero
                                         # kill: def $ecx killed $eax
-	movl	-252(%rbp), %eax                # 4-byte Reload
+	movl	-284(%rbp), %eax                # 4-byte Reload
 	movslq	%eax, %rcx
 	leaq	params_offset(%rip), %rax
 	movswl	(%rax,%rcx,2), %eax
 	cvtsi2ss	%eax, %xmm1
 	mulss	%xmm1, %xmm0
-	movss	%xmm0, -288(%rbp)               # 4-byte Spill
+	movss	%xmm0, -320(%rbp)               # 4-byte Spill
 	cvtss2sd	%xmm0, %xmm0
 	leaq	.L.str.47(%rip), %rdi
 	movb	$1, %al
 	callq	printf@PLT
-	movss	-292(%rbp), %xmm1               # 4-byte Reload
+	movss	-324(%rbp), %xmm1               # 4-byte Reload
                                         # xmm1 = mem[0],zero,zero,zero
-	movss	-288(%rbp), %xmm0               # 4-byte Reload
+	movss	-320(%rbp), %xmm0               # 4-byte Reload
                                         # xmm0 = mem[0],zero,zero,zero
 	subss	%xmm0, %xmm1
-	movss	%xmm1, -284(%rbp)               # 4-byte Spill
-	movss	.LCPI51_20(%rip), %xmm0         # xmm0 = mem[0],zero,zero,zero
+	movss	%xmm1, -316(%rbp)               # 4-byte Spill
+	movss	.LCPI51_18(%rip), %xmm0         # xmm0 = mem[0],zero,zero,zero
 	mulss	%xmm1, %xmm0
 	cvttss2si	%xmm0, %rax
 	cvtsi2sd	%rax, %xmm0
-	movsd	.LCPI51_21(%rip), %xmm1         # xmm1 = mem[0],zero
+	movsd	.LCPI51_19(%rip), %xmm1         # xmm1 = mem[0],zero
 	divsd	%xmm1, %xmm0
 	leaq	.L.str.48(%rip), %rdi
 	movb	$1, %al
 	callq	printf@PLT
-	movss	-284(%rbp), %xmm1               # 4-byte Reload
+	movss	-316(%rbp), %xmm1               # 4-byte Reload
                                         # xmm1 = mem[0],zero,zero,zero
                                         # kill: def $ecx killed $eax
-	movb	-229(%rbp), %al                 # 1-byte Reload
+	movb	-257(%rbp), %al                 # 1-byte Reload
 	movzbl	%al, %ecx
 	movzbl	params_calibrationModeEE(%rip), %edx
-	movss	.LCPI51_20(%rip), %xmm0         # xmm0 = mem[0],zero,zero,zero
+	movss	.LCPI51_18(%rip), %xmm0         # xmm0 = mem[0],zero,zero,zero
 	mulss	%xmm1, %xmm0
 	cvttss2si	%xmm0, %rax
 	cmpl	%edx, %ecx
-	movq	%rax, -280(%rbp)                # 8-byte Spill
+	movq	%rax, -312(%rbp)                # 8-byte Spill
 	je	.LBB51_21
 # %bb.20:                               #   in Loop: Header=BB51_12 Depth=1
-	movb	-253(%rbp), %al                 # 1-byte Reload
-	movss	-284(%rbp), %xmm1               # 4-byte Reload
+	movb	-285(%rbp), %al                 # 1-byte Reload
+	movss	-316(%rbp), %xmm1               # 4-byte Reload
                                         # xmm1 = mem[0],zero,zero,zero
-	movb	-254(%rbp), %dl                 # 1-byte Reload
-	movss	.LCPI51_19(%rip), %xmm0         # xmm0 = mem[0],zero,zero,zero
+	movb	-286(%rbp), %dl                 # 1-byte Reload
+	movss	.LCPI51_17(%rip), %xmm0         # xmm0 = mem[0],zero,zero,zero
 	mulss	params_ilChessC+8(%rip), %xmm0
 	cvttss2si	%xmm0, %ecx
 	movsbl	%dl, %esi
 	shll	$1, %esi
 	subl	$1, %esi
-	movss	.LCPI51_20(%rip), %xmm0         # xmm0 = mem[0],zero,zero,zero
+	movss	.LCPI51_18(%rip), %xmm0         # xmm0 = mem[0],zero,zero,zero
 	mulss	%xmm1, %xmm0
 	cvttss2si	%xmm0, %rdx
 	movslq	%ecx, %rcx
@@ -8095,7 +8080,7 @@ _Z20MLX90640_CalculateToPKtffPf.11_fixp: # @_Z20MLX90640_CalculateToPKtffPf.11_f
 	imulq	%rsi, %rcx
 	shlq	$7, %rcx
 	addq	%rdx, %rcx
-	movss	.LCPI51_19(%rip), %xmm0         # xmm0 = mem[0],zero,zero,zero
+	movss	.LCPI51_17(%rip), %xmm0         # xmm0 = mem[0],zero,zero,zero
 	mulss	params_ilChessC+4(%rip), %xmm0
 	cvttss2si	%xmm0, %esi
 	movsbl	%al, %edx
@@ -8106,26 +8091,28 @@ _Z20MLX90640_CalculateToPKtffPf.11_fixp: # @_Z20MLX90640_CalculateToPKtffPf.11_f
 	imulq	%rdx, %rax
 	shlq	$7, %rax
 	addq	%rcx, %rax
-	movq	%rax, -280(%rbp)                # 8-byte Spill
+	movq	%rax, -312(%rbp)                # 8-byte Spill
 .LBB51_21:                              #   in Loop: Header=BB51_12 Depth=1
-	movq	-120(%rbp), %rdx                # 8-byte Reload
-	movq	-280(%rbp), %rdi                # 8-byte Reload
+	movl	-252(%rbp), %eax                # 4-byte Reload
+	movq	-312(%rbp), %rdi                # 8-byte Reload
 	movq	%rdi, %rsi
 	sarq	$63, %rsi
-	shldq	$62, %rdi, %rsi
-	shlq	$62, %rdi
+	shldq	$30, %rdi, %rsi
+	shlq	$30, %rdi
+	movl	%eax, %eax
+	movl	%eax, %edx
 	shrq	%rdx
 	xorl	%eax, %eax
 	movl	%eax, %ecx
 	callq	__divti3@PLT
-	movw	-214(%rbp), %dx                 # 2-byte Reload
+	movw	-238(%rbp), %dx                 # 2-byte Reload
 	movq	%rax, %rdi
 	movq	params_tgc.fixp@GOTPCREL(%rip), %rax
 	movslq	(%rax), %rcx
 	movl	%ecx, %eax
 	movzwl	%dx, %edx
 	movl	%edx, %esi
-	movq	%rsi, -632(%rbp)                # 8-byte Spill
+	movq	%rsi, -664(%rbp)                # 8-byte Spill
 	movslq	-8(%rbp,%rsi,4), %r8
 	movl	%eax, %edx
 	negl	%edx
@@ -8133,74 +8120,74 @@ _Z20MLX90640_CalculateToPKtffPf.11_fixp: # @_Z20MLX90640_CalculateToPKtffPf.11_f
 	imulq	%r8, %rdx
 	sarq	$11, %rdx
 	addq	%rdi, %rdx
-	movq	%rdx, -464(%rbp)                # 8-byte Spill
+	movq	%rdx, -496(%rbp)                # 8-byte Spill
 	cvtsi2ss	%rdx, %xmm0
-	movss	.LCPI51_20(%rip), %xmm1         # xmm1 = mem[0],zero,zero,zero
-	movss	%xmm1, -572(%rbp)               # 4-byte Spill
+	movss	.LCPI51_18(%rip), %xmm1         # xmm1 = mem[0],zero,zero,zero
+	movss	%xmm1, -604(%rbp)               # 4-byte Spill
 	divss	%xmm1, %xmm0
-	movss	%xmm0, -636(%rbp)               # 4-byte Spill
+	movss	%xmm0, -668(%rbp)               # 4-byte Spill
 	cvtsi2sd	%rdx, %xmm0
-	movsd	.LCPI51_21(%rip), %xmm1         # xmm1 = mem[0],zero
-	movsd	%xmm1, -536(%rbp)               # 8-byte Spill
+	movsd	.LCPI51_19(%rip), %xmm1         # xmm1 = mem[0],zero
+	movsd	%xmm1, -568(%rbp)               # 8-byte Spill
 	divsd	%xmm1, %xmm0
-	movsd	%xmm0, -480(%rbp)               # 8-byte Spill
+	movsd	%xmm0, -512(%rbp)               # 8-byte Spill
 	movq	params_cpAlpha.fixp@GOTPCREL(%rip), %rdx
-	movq	%rdx, -624(%rbp)                # 8-byte Spill
+	movq	%rdx, -656(%rbp)                # 8-byte Spill
 	movslq	(%rdx,%rsi,4), %rdx
 	imulq	%rdx, %rcx
 	shrq	$30, %rcx
                                         # kill: def $ecx killed $ecx killed $rcx
 	cvtsi2ss	%ecx, %xmm0
-	movss	.LCPI51_6(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
+	movss	.LCPI51_4(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
 	divss	%xmm1, %xmm0
-	movss	%xmm0, -616(%rbp)               # 4-byte Spill
+	movss	%xmm0, -648(%rbp)               # 4-byte Spill
 	cvtsi2sd	%eax, %xmm0
-	movsd	.LCPI51_26(%rip), %xmm1         # xmm1 = mem[0],zero
+	movsd	.LCPI51_24(%rip), %xmm1         # xmm1 = mem[0],zero
 	divsd	%xmm1, %xmm0
 	leaq	.L.str.49(%rip), %rdi
 	movb	$1, %al
-	movb	%al, -465(%rbp)                 # 1-byte Spill
+	movb	%al, -497(%rbp)                 # 1-byte Spill
 	callq	printf@PLT
-	movq	-632(%rbp), %rdx                # 8-byte Reload
-	movq	-624(%rbp), %rcx                # 8-byte Reload
+	movq	-664(%rbp), %rdx                # 8-byte Reload
+	movq	-656(%rbp), %rcx                # 8-byte Reload
                                         # kill: def $esi killed $eax
-	movb	-465(%rbp), %al                 # 1-byte Reload
+	movb	-497(%rbp), %al                 # 1-byte Reload
 	cvtsi2sdl	(%rcx,%rdx,4), %xmm0
-	movsd	.LCPI51_27(%rip), %xmm1         # xmm1 = mem[0],zero
+	movsd	.LCPI51_25(%rip), %xmm1         # xmm1 = mem[0],zero
 	divsd	%xmm1, %xmm0
 	leaq	.L.str.50(%rip), %rdi
 	callq	printf@PLT
-	movss	-616(%rbp), %xmm0               # 4-byte Reload
+	movss	-648(%rbp), %xmm0               # 4-byte Reload
                                         # xmm0 = mem[0],zero,zero,zero
                                         # kill: def $ecx killed $eax
-	movb	-465(%rbp), %al                 # 1-byte Reload
+	movb	-497(%rbp), %al                 # 1-byte Reload
 	cvtss2sd	%xmm0, %xmm0
 	leaq	.L.str.51(%rip), %rdi
 	callq	printf@PLT
-	movss	-616(%rbp), %xmm2               # 4-byte Reload
+	movss	-648(%rbp), %xmm2               # 4-byte Reload
                                         # xmm2 = mem[0],zero,zero,zero
-	movl	-252(%rbp), %ecx                # 4-byte Reload
+	movl	-284(%rbp), %ecx                # 4-byte Reload
                                         # kill: def $edx killed $eax
-	movb	-465(%rbp), %al                 # 1-byte Reload
+	movb	-497(%rbp), %al                 # 1-byte Reload
 	movslq	%ecx, %rdx
 	leaq	params_alpha(%rip), %rcx
 	movss	(%rcx,%rdx,4), %xmm0            # xmm0 = mem[0],zero,zero,zero
 	movaps	%xmm0, %xmm1
 	subss	%xmm2, %xmm1
-	movss	%xmm1, -608(%rbp)               # 4-byte Spill
+	movss	%xmm1, -640(%rbp)               # 4-byte Spill
 	cvtss2sd	%xmm0, %xmm0
 	leaq	.L.str.52(%rip), %rdi
 	callq	printf@PLT
-	movss	-608(%rbp), %xmm0               # 4-byte Reload
+	movss	-640(%rbp), %xmm0               # 4-byte Reload
                                         # xmm0 = mem[0],zero,zero,zero
                                         # kill: def $ecx killed $eax
-	movb	-465(%rbp), %al                 # 1-byte Reload
+	movb	-497(%rbp), %al                 # 1-byte Reload
 	cvtss2sd	%xmm0, %xmm0
 	leaq	.L.str.53(%rip), %rdi
 	callq	printf@PLT
-	movl	-188(%rbp), %edx                # 4-byte Reload
+	movl	-212(%rbp), %edx                # 4-byte Reload
                                         # kill: def $ecx killed $eax
-	movb	-465(%rbp), %al                 # 1-byte Reload
+	movb	-497(%rbp), %al                 # 1-byte Reload
 	movq	params_KsTa.fixp@GOTPCREL(%rip), %rcx
 	movslq	(%rcx), %rcx
 	addl	$-1638400, %edx                 # imm = 0xFFE70000
@@ -8208,141 +8195,136 @@ _Z20MLX90640_CalculateToPKtffPf.11_fixp: # @_Z20MLX90640_CalculateToPKtffPf.11_f
 	imulq	%rdx, %rcx
 	shrq	$31, %rcx
                                         # kill: def $ecx killed $ecx killed $rcx
-	movl	%ecx, -612(%rbp)                # 4-byte Spill
+	movl	%ecx, -644(%rbp)                # 4-byte Spill
 	addl	%ecx, %ecx
 	cvtsi2sd	%ecx, %xmm0
-	movsd	.LCPI51_3(%rip), %xmm1          # xmm1 = mem[0],zero
+	movsd	.LCPI51_1(%rip), %xmm1          # xmm1 = mem[0],zero
 	divsd	%xmm1, %xmm0
 	leaq	.L.str.54(%rip), %rdi
 	callq	printf@PLT
-	movl	-612(%rbp), %ecx                # 4-byte Reload
+	movl	-644(%rbp), %ecx                # 4-byte Reload
                                         # kill: def $edx killed $eax
-	movb	-465(%rbp), %al                 # 1-byte Reload
+	movb	-497(%rbp), %al                 # 1-byte Reload
 	addl	$32768, %ecx                    # imm = 0x8000
-	movl	%ecx, -604(%rbp)                # 4-byte Spill
+	movl	%ecx, -636(%rbp)                # 4-byte Spill
 	cvtsi2sd	%ecx, %xmm0
-	movsd	.LCPI51_5(%rip), %xmm1          # xmm1 = mem[0],zero
-	movsd	%xmm1, -600(%rbp)               # 8-byte Spill
+	movsd	.LCPI51_3(%rip), %xmm1          # xmm1 = mem[0],zero
+	movsd	%xmm1, -632(%rbp)               # 8-byte Spill
 	divsd	%xmm1, %xmm0
 	leaq	.L.str.55(%rip), %rdi
 	callq	printf@PLT
-	movss	-608(%rbp), %xmm1               # 4-byte Reload
+	movss	-640(%rbp), %xmm1               # 4-byte Reload
                                         # xmm1 = mem[0],zero,zero,zero
-	movl	-604(%rbp), %ecx                # 4-byte Reload
-	movsd	-480(%rbp), %xmm0               # 8-byte Reload
+	movl	-636(%rbp), %ecx                # 4-byte Reload
+	movsd	-512(%rbp), %xmm0               # 8-byte Reload
                                         # xmm0 = mem[0],zero
-	movss	.LCPI51_28(%rip), %xmm2         # xmm2 = mem[0],zero,zero,zero
+	movss	.LCPI51_26(%rip), %xmm2         # xmm2 = mem[0],zero,zero,zero
 	mulss	%xmm2, %xmm1
 	cvttss2si	%xmm1, %rax
 	movslq	%ecx, %rcx
 	imulq	%rcx
 	movq	%rax, %rcx
-	movb	-465(%rbp), %al                 # 1-byte Reload
+	movb	-497(%rbp), %al                 # 1-byte Reload
 	shldq	$34, %rcx, %rdx
-	movq	%rdx, -520(%rbp)                # 8-byte Spill
+	movq	%rdx, -552(%rbp)                # 8-byte Spill
 	cvtsi2ss	%rdx, %xmm1
-	movss	.LCPI51_29(%rip), %xmm2         # xmm2 = mem[0],zero,zero,zero
+	movss	.LCPI51_27(%rip), %xmm2         # xmm2 = mem[0],zero,zero,zero
 	divss	%xmm2, %xmm1
-	movss	%xmm1, -576(%rbp)               # 4-byte Spill
+	movss	%xmm1, -608(%rbp)               # 4-byte Spill
 	leaq	.L.str.56(%rip), %rdi
-	movq	%rdi, -488(%rbp)                # 8-byte Spill
+	movq	%rdi, -520(%rbp)                # 8-byte Spill
 	callq	printf@PLT
-	movq	-240(%rbp), %rcx                # 8-byte Reload
-	movsd	-600(%rbp), %xmm1               # 8-byte Reload
+	movq	-272(%rbp), %rcx                # 8-byte Reload
+	movsd	-632(%rbp), %xmm1               # 8-byte Reload
                                         # xmm1 = mem[0],zero
                                         # kill: def $edx killed $eax
-	movb	-465(%rbp), %al                 # 1-byte Reload
+	movb	-497(%rbp), %al                 # 1-byte Reload
 	shrq	$6, %rcx
                                         # kill: def $ecx killed $ecx killed $rcx
 	cvtsi2sd	%ecx, %xmm0
 	divsd	%xmm1, %xmm0
 	leaq	.L.str.57(%rip), %rdi
 	callq	printf@PLT
-	movss	-576(%rbp), %xmm0               # 4-byte Reload
+	movss	-608(%rbp), %xmm0               # 4-byte Reload
                                         # xmm0 = mem[0],zero,zero,zero
                                         # kill: def $ecx killed $eax
-	movb	-465(%rbp), %al                 # 1-byte Reload
+	movb	-497(%rbp), %al                 # 1-byte Reload
 	cvtss2sd	%xmm0, %xmm0
 	leaq	.L.str.58(%rip), %rdi
 	callq	printf@PLT
-	movsd	-72(%rbp), %xmm0                # 8-byte Reload
-                                        # xmm0 = mem[0],zero
-	movsd	-600(%rbp), %xmm1               # 8-byte Reload
+	movq	-88(%rbp), %rcx                 # 8-byte Reload
+	movsd	-632(%rbp), %xmm1               # 8-byte Reload
                                         # xmm1 = mem[0],zero
-	movsd	-536(%rbp), %xmm2               # 8-byte Reload
-                                        # xmm2 = mem[0],zero
-                                        # kill: def $ecx killed $eax
-	movq	-520(%rbp), %rax                # 8-byte Reload
-	mulsd	%xmm2, %xmm0
-	cvttsd2si	%xmm0, %rcx
+                                        # kill: def $edx killed $eax
+	movq	-552(%rbp), %rax                # 8-byte Reload
 	imulq	%rcx
 	movq	%rax, %rcx
-	movb	-465(%rbp), %al                 # 1-byte Reload
-	movq	%rcx, -592(%rbp)                # 8-byte Spill
+	movb	-497(%rbp), %al                 # 1-byte Reload
+	movq	%rcx, -624(%rbp)                # 8-byte Spill
 	movq	%rdx, %rcx
-	movq	-592(%rbp), %rdx                # 8-byte Reload
-	shldq	$32, %rdx, %rcx
-	movq	%rcx, -584(%rbp)                # 8-byte Spill
+	movq	-624(%rbp), %rdx                # 8-byte Reload
+	shldq	$33, %rdx, %rcx
+	movq	%rcx, -616(%rbp)                # 8-byte Spill
 	shrq	$15, %rcx
                                         # kill: def $ecx killed $ecx killed $rcx
 	cvtsi2sd	%ecx, %xmm0
 	divsd	%xmm1, %xmm0
 	leaq	.L.str.60(%rip), %rdi
 	callq	printf@PLT
-	movq	-584(%rbp), %rdx                # 8-byte Reload
-	movsd	-536(%rbp), %xmm1               # 8-byte Reload
+	movq	-616(%rbp), %rdx                # 8-byte Reload
+	movsd	-568(%rbp), %xmm1               # 8-byte Reload
                                         # xmm1 = mem[0],zero
-	movq	-464(%rbp), %rcx                # 8-byte Reload
+	movq	-496(%rbp), %rcx                # 8-byte Reload
                                         # kill: def $esi killed $eax
-	movb	-465(%rbp), %al                 # 1-byte Reload
+	movb	-497(%rbp), %al                 # 1-byte Reload
 	addq	%rdx, %rcx
-	movq	%rcx, -568(%rbp)                # 8-byte Spill
+	movq	%rcx, -600(%rbp)                # 8-byte Spill
 	cvtsi2sd	%rcx, %xmm0
 	divsd	%xmm1, %xmm0
 	leaq	.L.str.61(%rip), %rdi
 	callq	printf@PLT
-	movss	-576(%rbp), %xmm3               # 4-byte Reload
+	movss	-608(%rbp), %xmm3               # 4-byte Reload
                                         # xmm3 = mem[0],zero,zero,zero
-	movss	-572(%rbp), %xmm2               # 4-byte Reload
+	movss	-604(%rbp), %xmm2               # 4-byte Reload
                                         # xmm2 = mem[0],zero,zero,zero
-	movsd	-536(%rbp), %xmm1               # 8-byte Reload
+	movsd	-568(%rbp), %xmm1               # 8-byte Reload
                                         # xmm1 = mem[0],zero
                                         # kill: def $ecx killed $eax
-	movb	-465(%rbp), %al                 # 1-byte Reload
+	movb	-497(%rbp), %al                 # 1-byte Reload
 	movaps	%xmm3, %xmm0
 	mulss	%xmm0, %xmm0
 	mulss	%xmm3, %xmm0
 	mulss	%xmm2, %xmm0
 	cvttss2si	%xmm0, %ecx
-	movl	%ecx, -556(%rbp)                # 4-byte Spill
+	movl	%ecx, -588(%rbp)                # 4-byte Spill
 	cvttps2dq	%xmm0, %xmm0
 	cvtdq2pd	%xmm0, %xmm0
 	divsd	%xmm1, %xmm0
 	leaq	.L.str.62(%rip), %rdi
 	callq	printf@PLT
-	movq	-568(%rbp), %rcx                # 8-byte Reload
-	movsd	-536(%rbp), %xmm1               # 8-byte Reload
+	movq	-600(%rbp), %rcx                # 8-byte Reload
+	movsd	-568(%rbp), %xmm1               # 8-byte Reload
                                         # xmm1 = mem[0],zero
                                         # kill: def $edx killed $eax
-	movl	-556(%rbp), %eax                # 4-byte Reload
+	movl	-588(%rbp), %eax                # 4-byte Reload
 	cltq
 	imulq	%rcx
 	movq	%rax, %rcx
-	movb	-465(%rbp), %al                 # 1-byte Reload
+	movb	-497(%rbp), %al                 # 1-byte Reload
 	shldq	$34, %rcx, %rdx
-	movq	%rdx, -552(%rbp)                # 8-byte Spill
+	movq	%rdx, -584(%rbp)                # 8-byte Spill
 	cvtsi2sd	%rdx, %xmm0
 	divsd	%xmm1, %xmm0
 	leaq	.L.str.63(%rip), %rdi
 	callq	printf@PLT
-	movq	-552(%rbp), %rdi                # 8-byte Reload
+	movq	-584(%rbp), %rdi                # 8-byte Reload
 	callq	_ZSt4sqrtf.8.35_u17_15fixp
 	movl	%eax, %edi
 	callq	_ZSt4sqrtf.36_u9_23fixp
 	movl	%eax, %ecx
-	movb	-465(%rbp), %al                 # 1-byte Reload
+	movb	-497(%rbp), %al                 # 1-byte Reload
 	movss	params_ksTo+4(%rip), %xmm0      # xmm0 = mem[0],zero,zero,zero
-	movss	.LCPI51_13(%rip), %xmm1         # xmm1 = mem[0],zero,zero,zero
+	movss	.LCPI51_11(%rip), %xmm1         # xmm1 = mem[0],zero,zero,zero
 	mulss	%xmm1, %xmm0
 	cvttss2si	%xmm0, %edx
 	movl	%ecx, %ecx
@@ -8351,84 +8333,84 @@ _Z20MLX90640_CalculateToPKtffPf.11_fixp: # @_Z20MLX90640_CalculateToPKtffPf.11_f
 	imulq	%rdx, %rcx
 	sarq	$31, %rcx
                                         # kill: def $ecx killed $ecx killed $rcx
-	movl	%ecx, -500(%rbp)                # 4-byte Spill
+	movl	%ecx, -532(%rbp)                # 4-byte Spill
 	cvtsi2ss	%ecx, %xmm0
-	movss	.LCPI51_22(%rip), %xmm1         # xmm1 = mem[0],zero,zero,zero
-	movss	%xmm1, -544(%rbp)               # 4-byte Spill
+	movss	.LCPI51_20(%rip), %xmm1         # xmm1 = mem[0],zero,zero,zero
+	movss	%xmm1, -576(%rbp)               # 4-byte Spill
 	divss	%xmm1, %xmm0
 	cvtss2sd	%xmm0, %xmm0
 	leaq	.L.str.64(%rip), %rdi
 	callq	printf@PLT
-	movss	-544(%rbp), %xmm3               # 4-byte Reload
+	movss	-576(%rbp), %xmm3               # 4-byte Reload
                                         # xmm3 = mem[0],zero,zero,zero
-	movsd	-536(%rbp), %xmm2               # 8-byte Reload
+	movsd	-568(%rbp), %xmm2               # 8-byte Reload
                                         # xmm2 = mem[0],zero
 	movss	params_ksTo+4(%rip), %xmm0      # xmm0 = mem[0],zero,zero,zero
 	cvtss2sd	%xmm0, %xmm1
-	movsd	.LCPI51_9(%rip), %xmm4          # xmm4 = mem[0],zero
+	movsd	.LCPI51_7(%rip), %xmm4          # xmm4 = mem[0],zero
 	movaps	%xmm1, %xmm0
 	mulsd	%xmm4, %xmm0
 	cvtsd2ss	%xmm0, %xmm0
 	mulss	%xmm3, %xmm0
 	cvttss2si	%xmm0, %eax
 	shll	$18, %eax
-	movl	%eax, -540(%rbp)                # 4-byte Spill
+	movl	%eax, -572(%rbp)                # 4-byte Spill
 	cvtsi2sd	%eax, %xmm0
 	divsd	%xmm2, %xmm0
 	leaq	.L.str.66(%rip), %rdi
 	movb	$2, %al
 	callq	printf@PLT
-	movl	-540(%rbp), %edx                # 4-byte Reload
-	movsd	-536(%rbp), %xmm1               # 8-byte Reload
+	movl	-572(%rbp), %edx                # 4-byte Reload
+	movsd	-568(%rbp), %xmm1               # 8-byte Reload
                                         # xmm1 = mem[0],zero
                                         # kill: def $ecx killed $eax
-	movb	-465(%rbp), %al                 # 1-byte Reload
+	movb	-497(%rbp), %al                 # 1-byte Reload
 	movl	$1073741824, %ecx               # imm = 0x40000000
 	subl	%edx, %ecx
-	movl	%ecx, -524(%rbp)                # 4-byte Spill
+	movl	%ecx, -556(%rbp)                # 4-byte Spill
 	cvtsi2sd	%ecx, %xmm0
 	divsd	%xmm1, %xmm0
 	leaq	.L.str.67(%rip), %rdi
 	callq	printf@PLT
-	movl	-524(%rbp), %ecx                # 4-byte Reload
+	movl	-556(%rbp), %ecx                # 4-byte Reload
                                         # kill: def $edx killed $eax
-	movq	-520(%rbp), %rax                # 8-byte Reload
+	movq	-552(%rbp), %rax                # 8-byte Reload
 	movslq	%ecx, %rcx
 	imulq	%rcx
 	movq	%rax, %rcx
-	movb	-465(%rbp), %al                 # 1-byte Reload
+	movb	-497(%rbp), %al                 # 1-byte Reload
 	shldq	$34, %rcx, %rdx
-	movq	%rdx, -512(%rbp)                # 8-byte Spill
+	movq	%rdx, -544(%rbp)                # 8-byte Spill
 	cvtsi2sd	%rdx, %xmm0
-	movsd	.LCPI51_30(%rip), %xmm1         # xmm1 = mem[0],zero
-	movsd	%xmm1, -496(%rbp)               # 8-byte Spill
+	movsd	.LCPI51_28(%rip), %xmm1         # xmm1 = mem[0],zero
+	movsd	%xmm1, -528(%rbp)               # 8-byte Spill
 	divsd	%xmm1, %xmm0
 	leaq	.L.str.69(%rip), %rdi
 	callq	printf@PLT
-	movq	-512(%rbp), %rcx                # 8-byte Reload
-	movl	-500(%rbp), %edx                # 4-byte Reload
-	movsd	-496(%rbp), %xmm1               # 8-byte Reload
+	movq	-544(%rbp), %rcx                # 8-byte Reload
+	movl	-532(%rbp), %edx                # 4-byte Reload
+	movsd	-528(%rbp), %xmm1               # 8-byte Reload
                                         # xmm1 = mem[0],zero
                                         # kill: def $esi killed $eax
-	movb	-465(%rbp), %al                 # 1-byte Reload
+	movb	-497(%rbp), %al                 # 1-byte Reload
 	sarq	$2, %rcx
 	movslq	%edx, %rdx
 	shlq	$18, %rdx
 	addq	%rdx, %rcx
-	movq	%rcx, -456(%rbp)                # 8-byte Spill
+	movq	%rcx, -488(%rbp)                # 8-byte Spill
 	shlq	$2, %rcx
 	cvtsi2sd	%rcx, %xmm0
 	divsd	%xmm1, %xmm0
 	leaq	.L.str.70(%rip), %rdi
 	callq	printf@PLT
-	movq	-488(%rbp), %rdi                # 8-byte Reload
-	movsd	-480(%rbp), %xmm0               # 8-byte Reload
+	movq	-520(%rbp), %rdi                # 8-byte Reload
+	movsd	-512(%rbp), %xmm0               # 8-byte Reload
                                         # xmm0 = mem[0],zero
                                         # kill: def $ecx killed $eax
-	movb	-465(%rbp), %al                 # 1-byte Reload
+	movb	-497(%rbp), %al                 # 1-byte Reload
 	callq	printf@PLT
-	movq	-464(%rbp), %rdi                # 8-byte Reload
-	movq	-456(%rbp), %rdx                # 8-byte Reload
+	movq	-496(%rbp), %rdi                # 8-byte Reload
+	movq	-488(%rbp), %rdx                # 8-byte Reload
 	movq	%rdi, %rsi
 	sarq	$63, %rsi
 	shldq	$28, %rdi, %rsi
@@ -8437,110 +8419,107 @@ _Z20MLX90640_CalculateToPKtffPf.11_fixp: # @_Z20MLX90640_CalculateToPKtffPf.11_f
 	sarq	$63, %rcx
 	callq	__divti3@PLT
 	movq	%rax, %rcx
-	movl	-252(%rbp), %eax                # 4-byte Reload
-	movq	%rcx, -448(%rbp)                # 8-byte Spill
+	movl	-284(%rbp), %eax                # 4-byte Reload
+	movq	%rcx, -480(%rbp)                # 8-byte Spill
 	cvtsi2sd	%rcx, %xmm0
-	movsd	.LCPI51_25(%rip), %xmm1         # xmm1 = mem[0],zero
+	movsd	.LCPI51_23(%rip), %xmm1         # xmm1 = mem[0],zero
 	divsd	%xmm1, %xmm0
-	movsd	%xmm0, -440(%rbp)               # 8-byte Spill
+	movsd	%xmm0, -472(%rbp)               # 8-byte Spill
 	cvtsi2sd	%rcx, %xmm0
-	movsd	.LCPI51_25(%rip), %xmm1         # xmm1 = mem[0],zero
+	movsd	.LCPI51_23(%rip), %xmm1         # xmm1 = mem[0],zero
 	divsd	%xmm1, %xmm0
-	movsd	%xmm0, -432(%rbp)               # 8-byte Spill
+	movsd	%xmm0, -464(%rbp)               # 8-byte Spill
 	cvtsi2sd	%rcx, %xmm0
-	movsd	.LCPI51_25(%rip), %xmm1         # xmm1 = mem[0],zero
+	movsd	.LCPI51_23(%rip), %xmm1         # xmm1 = mem[0],zero
 	divsd	%xmm1, %xmm0
-	movsd	%xmm0, -424(%rbp)               # 8-byte Spill
+	movsd	%xmm0, -456(%rbp)               # 8-byte Spill
 	cvtsi2ss	%rcx, %xmm0
-	movss	.LCPI51_24(%rip), %xmm1         # xmm1 = mem[0],zero,zero,zero
+	movss	.LCPI51_22(%rip), %xmm1         # xmm1 = mem[0],zero,zero,zero
 	divss	%xmm1, %xmm0
-	movss	%xmm0, -412(%rbp)               # 4-byte Spill
+	movss	%xmm0, -444(%rbp)               # 4-byte Spill
 	cvtsi2ss	%rcx, %xmm0
-	movss	.LCPI51_24(%rip), %xmm1         # xmm1 = mem[0],zero,zero,zero
+	movss	.LCPI51_22(%rip), %xmm1         # xmm1 = mem[0],zero,zero,zero
 	divss	%xmm1, %xmm0
-	movss	%xmm0, -408(%rbp)               # 4-byte Spill
+	movss	%xmm0, -440(%rbp)               # 4-byte Spill
 	cvtsi2ss	%rcx, %xmm0
-	movss	.LCPI51_24(%rip), %xmm1         # xmm1 = mem[0],zero,zero,zero
+	movss	.LCPI51_22(%rip), %xmm1         # xmm1 = mem[0],zero,zero,zero
 	divss	%xmm1, %xmm0
-	movss	%xmm0, -404(%rbp)               # 4-byte Spill
+	movss	%xmm0, -436(%rbp)               # 4-byte Spill
 	cmpl	$0, %eax
 	jne	.LBB51_23
 # %bb.22:                               #   in Loop: Header=BB51_12 Depth=1
-	movss	-412(%rbp), %xmm0               # 4-byte Reload
+	movss	-444(%rbp), %xmm0               # 4-byte Reload
                                         # xmm0 = mem[0],zero,zero,zero
 	movss	%xmm0, mint5(%rip)
 .LBB51_23:                              #   in Loop: Header=BB51_12 Depth=1
-	movq	-448(%rbp), %rax                # 8-byte Reload
-	movss	.LCPI51_20(%rip), %xmm0         # xmm0 = mem[0],zero,zero,zero
+	movq	-480(%rbp), %rax                # 8-byte Reload
+	movss	.LCPI51_18(%rip), %xmm0         # xmm0 = mem[0],zero,zero,zero
 	mulss	mint5(%rip), %xmm0
 	cvttss2si	%xmm0, %rcx
 	sarq	$2, %rcx
 	cmpq	%rcx, %rax
 	jge	.LBB51_25
 # %bb.24:                               #   in Loop: Header=BB51_12 Depth=1
-	movsd	-440(%rbp), %xmm0               # 8-byte Reload
+	movsd	-472(%rbp), %xmm0               # 8-byte Reload
                                         # xmm0 = mem[0],zero
-	movss	-408(%rbp), %xmm1               # 4-byte Reload
+	movss	-440(%rbp), %xmm1               # 4-byte Reload
                                         # xmm1 = mem[0],zero,zero,zero
 	movss	%xmm1, mint5(%rip)
 	leaq	.L.str.72(%rip), %rdi
 	movb	$1, %al
 	callq	printf@PLT
 .LBB51_25:                              #   in Loop: Header=BB51_12 Depth=1
-	movq	-448(%rbp), %rax                # 8-byte Reload
-	movss	.LCPI51_20(%rip), %xmm0         # xmm0 = mem[0],zero,zero,zero
+	movq	-480(%rbp), %rax                # 8-byte Reload
+	movss	.LCPI51_18(%rip), %xmm0         # xmm0 = mem[0],zero,zero,zero
 	mulss	maxt5(%rip), %xmm0
 	cvttss2si	%xmm0, %rcx
 	sarq	$2, %rcx
 	cmpq	%rcx, %rax
 	jle	.LBB51_27
 # %bb.26:                               #   in Loop: Header=BB51_12 Depth=1
-	movsd	-432(%rbp), %xmm0               # 8-byte Reload
+	movsd	-464(%rbp), %xmm0               # 8-byte Reload
                                         # xmm0 = mem[0],zero
-	movss	-404(%rbp), %xmm1               # 4-byte Reload
+	movss	-436(%rbp), %xmm1               # 4-byte Reload
                                         # xmm1 = mem[0],zero,zero,zero
 	movss	%xmm1, maxt5(%rip)
 	leaq	.L.str.73(%rip), %rdi
 	movb	$1, %al
 	callq	printf@PLT
 .LBB51_27:                              #   in Loop: Header=BB51_12 Depth=1
-	movsd	-424(%rbp), %xmm0               # 8-byte Reload
+	movsd	-456(%rbp), %xmm0               # 8-byte Reload
                                         # xmm0 = mem[0],zero
 	leaq	.L.str.74(%rip), %rdi
 	movb	$1, %al
 	callq	printf@PLT
-	movsd	-72(%rbp), %xmm1                # 8-byte Reload
-                                        # xmm1 = mem[0],zero
-                                        # kill: def $ecx killed $eax
-	movq	-448(%rbp), %rax                # 8-byte Reload
-	shlq	$2, %rax
-	movsd	.LCPI51_21(%rip), %xmm0         # xmm0 = mem[0],zero
-	mulsd	%xmm1, %xmm0
-	cvttsd2si	%xmm0, %rcx
+	movq	-88(%rbp), %rcx                 # 8-byte Reload
+                                        # kill: def $edx killed $eax
+	movq	-480(%rbp), %rax                # 8-byte Reload
+	shlq	$1, %rax
 	addq	%rcx, %rax
+	cvtsi2ss	%rax, %xmm0
+	movss	.LCPI51_5(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
+	divss	%xmm1, %xmm0
+	movss	%xmm0, -684(%rbp)               # 4-byte Spill
+	shlq	$1, %rax
 	cvtsi2sd	%rax, %xmm0
-	movsd	.LCPI51_21(%rip), %xmm1         # xmm1 = mem[0],zero
+	movsd	.LCPI51_19(%rip), %xmm1         # xmm1 = mem[0],zero
 	divsd	%xmm1, %xmm0
-	cvtsi2ss	%rax, %xmm1
-	movss	.LCPI51_20(%rip), %xmm2         # xmm2 = mem[0],zero,zero,zero
-	divss	%xmm2, %xmm1
-	movss	%xmm1, -652(%rbp)               # 4-byte Spill
 	leaq	.L.str.75(%rip), %rdi
 	movb	$1, %al
 	callq	printf@PLT
-	movss	-652(%rbp), %xmm0               # 4-byte Reload
+	movss	-684(%rbp), %xmm0               # 4-byte Reload
                                         # xmm0 = mem[0],zero,zero,zero
 	callq	_ZSt4sqrtf.9.37_s34_30fixp
 	cvtsi2ss	%rax, %xmm0
-	movss	.LCPI51_20(%rip), %xmm1         # xmm1 = mem[0],zero,zero,zero
+	movss	.LCPI51_18(%rip), %xmm1         # xmm1 = mem[0],zero,zero,zero
 	divss	%xmm1, %xmm0
 	callq	_ZSt4sqrtf.8_s34_30fixp
 	movabsq	$-8605478167979544576, %rcx     # imm = 0x8893333333333000
 	shrq	$25, %rcx
 	subq	%rcx, %rax
-	movq	%rax, -648(%rbp)                # 8-byte Spill
+	movq	%rax, -680(%rbp)                # 8-byte Spill
 	cvtsi2sd	%rax, %xmm0
-	movsd	.LCPI51_21(%rip), %xmm1         # xmm1 = mem[0],zero
+	movsd	.LCPI51_19(%rip), %xmm1         # xmm1 = mem[0],zero
 	divsd	%xmm1, %xmm0
 	leaq	.L.str.76(%rip), %rdi
 	movb	$1, %al
@@ -8551,7 +8530,7 @@ _Z20MLX90640_CalculateToPKtffPf.11_fixp: # @_Z20MLX90640_CalculateToPKtffPf.11_f
 	movb	$1, %al
 	callq	printf@PLT
                                         # kill: def $ecx killed $eax
-	movq	-648(%rbp), %rax                # 8-byte Reload
+	movq	-680(%rbp), %rax                # 8-byte Reload
 	sarq	$30, %rax
                                         # kill: def $eax killed $eax killed $rax
 	movswl	params_ct+2(%rip), %ecx
@@ -8560,10 +8539,10 @@ _Z20MLX90640_CalculateToPKtffPf.11_fixp: # @_Z20MLX90640_CalculateToPKtffPf.11_f
 # %bb.28:                               #   in Loop: Header=BB51_12 Depth=1
 	xorl	%eax, %eax
                                         # kill: def $al killed $al killed $eax
-	movb	%al, -653(%rbp)                 # 1-byte Spill
+	movb	%al, -685(%rbp)                 # 1-byte Spill
 	jmp	.LBB51_36
 .LBB51_29:                              #   in Loop: Header=BB51_12 Depth=1
-	movq	-648(%rbp), %rax                # 8-byte Reload
+	movq	-680(%rbp), %rax                # 8-byte Reload
 	sarq	$30, %rax
                                         # kill: def $eax killed $eax killed $rax
 	movswl	params_ct+4(%rip), %ecx
@@ -8571,10 +8550,10 @@ _Z20MLX90640_CalculateToPKtffPf.11_fixp: # @_Z20MLX90640_CalculateToPKtffPf.11_f
 	jge	.LBB51_31
 # %bb.30:                               #   in Loop: Header=BB51_12 Depth=1
 	movb	$1, %al
-	movb	%al, -654(%rbp)                 # 1-byte Spill
+	movb	%al, -686(%rbp)                 # 1-byte Spill
 	jmp	.LBB51_35
 .LBB51_31:                              #   in Loop: Header=BB51_12 Depth=1
-	movq	-648(%rbp), %rax                # 8-byte Reload
+	movq	-680(%rbp), %rax                # 8-byte Reload
 	sarq	$30, %rax
                                         # kill: def $eax killed $eax killed $rax
 	movswl	params_ct+6(%rip), %ecx
@@ -8582,75 +8561,75 @@ _Z20MLX90640_CalculateToPKtffPf.11_fixp: # @_Z20MLX90640_CalculateToPKtffPf.11_f
 	jge	.LBB51_33
 # %bb.32:                               #   in Loop: Header=BB51_12 Depth=1
 	movb	$2, %al
-	movb	%al, -655(%rbp)                 # 1-byte Spill
+	movb	%al, -687(%rbp)                 # 1-byte Spill
 	jmp	.LBB51_34
 .LBB51_33:                              #   in Loop: Header=BB51_12 Depth=1
 	movb	$3, %al
-	movb	%al, -655(%rbp)                 # 1-byte Spill
+	movb	%al, -687(%rbp)                 # 1-byte Spill
 	jmp	.LBB51_34
 .LBB51_34:                              #   in Loop: Header=BB51_12 Depth=1
-	movb	-655(%rbp), %al                 # 1-byte Reload
-	movb	%al, -654(%rbp)                 # 1-byte Spill
+	movb	-687(%rbp), %al                 # 1-byte Reload
+	movb	%al, -686(%rbp)                 # 1-byte Spill
 .LBB51_35:                              #   in Loop: Header=BB51_12 Depth=1
-	movb	-654(%rbp), %al                 # 1-byte Reload
-	movb	%al, -653(%rbp)                 # 1-byte Spill
+	movb	-686(%rbp), %al                 # 1-byte Reload
+	movb	%al, -685(%rbp)                 # 1-byte Spill
 .LBB51_36:                              #   in Loop: Header=BB51_12 Depth=1
-	movb	-653(%rbp), %al                 # 1-byte Reload
-	movb	%al, -721(%rbp)                 # 1-byte Spill
+	movb	-685(%rbp), %al                 # 1-byte Reload
+	movb	%al, -753(%rbp)                 # 1-byte Spill
 	movsbl	%al, %esi
 	leaq	.L.str.78(%rip), %rdi
 	xorl	%eax, %eax
                                         # kill: def $al killed $al killed $eax
 	callq	printf@PLT
-	movb	-721(%rbp), %cl                 # 1-byte Reload
+	movb	-753(%rbp), %cl                 # 1-byte Reload
                                         # kill: def $edx killed $eax
-	movq	-648(%rbp), %rax                # 8-byte Reload
+	movq	-680(%rbp), %rax                # 8-byte Reload
 	movsbq	%cl, %rdx
-	movq	%rdx, -704(%rbp)                # 8-byte Spill
+	movq	%rdx, -736(%rbp)                # 8-byte Spill
 	leaq	params_ct(%rip), %rcx
 	movswl	(%rcx,%rdx,2), %ecx
 	shll	$15, %ecx
 	movslq	%ecx, %rcx
 	shlq	$15, %rcx
 	subq	%rcx, %rax
-	movq	%rax, -720(%rbp)                # 8-byte Spill
+	movq	%rax, -752(%rbp)                # 8-byte Spill
 	cvtsi2sd	%rax, %xmm0
-	movsd	.LCPI51_21(%rip), %xmm1         # xmm1 = mem[0],zero
-	movsd	%xmm1, -688(%rbp)               # 8-byte Spill
+	movsd	.LCPI51_19(%rip), %xmm1         # xmm1 = mem[0],zero
+	movsd	%xmm1, -720(%rbp)               # 8-byte Spill
 	divsd	%xmm1, %xmm0
 	leaq	.L.str.79(%rip), %rdi
 	movb	$1, %al
-	movb	%al, -665(%rbp)                 # 1-byte Spill
+	movb	%al, -697(%rbp)                 # 1-byte Spill
 	callq	printf@PLT
-	movq	-720(%rbp), %rcx                # 8-byte Reload
-	movq	-704(%rbp), %rdx                # 8-byte Reload
-	movsd	-688(%rbp), %xmm1               # 8-byte Reload
+	movq	-752(%rbp), %rcx                # 8-byte Reload
+	movq	-736(%rbp), %rdx                # 8-byte Reload
+	movsd	-720(%rbp), %xmm1               # 8-byte Reload
                                         # xmm1 = mem[0],zero
 	leaq	params_ksTo(%rip), %rax
 	movss	(%rax,%rdx,4), %xmm0            # xmm0 = mem[0],zero,zero,zero
-	movss	.LCPI51_32(%rip), %xmm2         # xmm2 = mem[0],zero,zero,zero
+	movss	.LCPI51_30(%rip), %xmm2         # xmm2 = mem[0],zero,zero,zero
 	mulss	%xmm2, %xmm0
 	cvttss2si	%xmm0, %rax
 	imulq	%rcx
 	movq	%rax, %rcx
-	movb	-665(%rbp), %al                 # 1-byte Reload
+	movb	-697(%rbp), %al                 # 1-byte Reload
                                         # kill: def $edx killed $edx killed $rdx
 	shll	$12, %edx
-	movl	%edx, -712(%rbp)                # 4-byte Spill
+	movl	%edx, -744(%rbp)                # 4-byte Spill
 	shrq	$52, %rcx
                                         # kill: def $ecx killed $ecx killed $rcx
-	movl	%ecx, -708(%rbp)                # 4-byte Spill
+	movl	%ecx, -740(%rbp)                # 4-byte Spill
 	orl	%edx, %ecx
 	cvtsi2sd	%ecx, %xmm0
 	divsd	%xmm1, %xmm0
 	leaq	.L.str.80(%rip), %rdi
 	callq	printf@PLT
-	movl	-712(%rbp), %ecx                # 4-byte Reload
-	movl	-708(%rbp), %esi                # 4-byte Reload
-	movsd	-688(%rbp), %xmm1               # 8-byte Reload
+	movl	-744(%rbp), %ecx                # 4-byte Reload
+	movl	-740(%rbp), %esi                # 4-byte Reload
+	movsd	-720(%rbp), %xmm1               # 8-byte Reload
                                         # xmm1 = mem[0],zero
                                         # kill: def $edx killed $eax
-	movb	-665(%rbp), %al                 # 1-byte Reload
+	movb	-697(%rbp), %al                 # 1-byte Reload
                                         # implicit-def: $rdx
 	movl	%ecx, %edx
                                         # implicit-def: $rcx
@@ -8659,79 +8638,79 @@ _Z20MLX90640_CalculateToPKtffPf.11_fixp: # @_Z20MLX90640_CalculateToPKtffPf.11_f
 	cvtsi2sd	%ecx, %xmm0
 	divsd	%xmm1, %xmm0
 	cvtsi2ss	%ecx, %xmm1
-	movss	.LCPI51_20(%rip), %xmm2         # xmm2 = mem[0],zero,zero,zero
-	movss	%xmm2, -692(%rbp)               # 4-byte Spill
+	movss	.LCPI51_18(%rip), %xmm2         # xmm2 = mem[0],zero,zero,zero
+	movss	%xmm2, -724(%rbp)               # 4-byte Spill
 	divss	%xmm2, %xmm1
-	movss	%xmm1, -672(%rbp)               # 4-byte Spill
+	movss	%xmm1, -704(%rbp)               # 4-byte Spill
 	leaq	.L.str.81(%rip), %rdi
 	callq	printf@PLT
-	movq	-704(%rbp), %rcx                # 8-byte Reload
-	movss	-576(%rbp), %xmm0               # 4-byte Reload
+	movq	-736(%rbp), %rcx                # 8-byte Reload
+	movss	-608(%rbp), %xmm0               # 4-byte Reload
                                         # xmm0 = mem[0],zero,zero,zero
-	movss	-692(%rbp), %xmm2               # 4-byte Reload
+	movss	-724(%rbp), %xmm2               # 4-byte Reload
                                         # xmm2 = mem[0],zero,zero,zero
-	movsd	-688(%rbp), %xmm1               # 8-byte Reload
+	movsd	-720(%rbp), %xmm1               # 8-byte Reload
                                         # xmm1 = mem[0],zero
                                         # kill: def $edx killed $eax
-	movb	-665(%rbp), %al                 # 1-byte Reload
+	movb	-697(%rbp), %al                 # 1-byte Reload
 	cvtsi2ssq	-48(%rbp,%rcx,8), %xmm3
-	movss	.LCPI51_12(%rip), %xmm4         # xmm4 = mem[0],zero,zero,zero
+	movss	.LCPI51_10(%rip), %xmm4         # xmm4 = mem[0],zero,zero,zero
 	divss	%xmm4, %xmm3
 	mulss	%xmm3, %xmm0
-	movss	%xmm0, -676(%rbp)               # 4-byte Spill
+	movss	%xmm0, -708(%rbp)               # 4-byte Spill
 	mulss	%xmm2, %xmm0
 	cvttps2dq	%xmm0, %xmm0
 	cvtdq2pd	%xmm0, %xmm0
 	divsd	%xmm1, %xmm0
 	leaq	.L.str.82(%rip), %rdi
 	callq	printf@PLT
-	movss	-676(%rbp), %xmm0               # 4-byte Reload
+	movss	-708(%rbp), %xmm0               # 4-byte Reload
                                         # xmm0 = mem[0],zero,zero,zero
-	movss	-672(%rbp), %xmm1               # 4-byte Reload
+	movss	-704(%rbp), %xmm1               # 4-byte Reload
                                         # xmm1 = mem[0],zero,zero,zero
                                         # kill: def $ecx killed $eax
-	movb	-665(%rbp), %al                 # 1-byte Reload
+	movb	-697(%rbp), %al                 # 1-byte Reload
 	mulss	%xmm1, %xmm0
-	movss	%xmm0, -664(%rbp)               # 4-byte Spill
+	movss	%xmm0, -696(%rbp)               # 4-byte Spill
 	cvtss2sd	%xmm0, %xmm0
 	leaq	.L.str.83(%rip), %rdi
 	callq	printf@PLT
-	movss	-636(%rbp), %xmm0               # 4-byte Reload
+	movss	-668(%rbp), %xmm0               # 4-byte Reload
                                         # xmm0 = mem[0],zero,zero,zero
-	movss	-664(%rbp), %xmm1               # 4-byte Reload
+	movss	-696(%rbp), %xmm1               # 4-byte Reload
                                         # xmm1 = mem[0],zero,zero,zero
 	divss	%xmm1, %xmm0
-	movss	%xmm0, -660(%rbp)               # 4-byte Spill
-	movss	.LCPI51_33(%rip), %xmm1         # xmm1 = mem[0],zero,zero,zero
+	movss	%xmm0, -692(%rbp)               # 4-byte Spill
+	movss	.LCPI51_31(%rip), %xmm1         # xmm1 = mem[0],zero,zero,zero
 	mulss	%xmm1, %xmm0
 	movaps	%xmm0, %xmm1
 	cvttss2si	%xmm1, %rax
 	movq	%rax, %rdx
 	sarq	$63, %rdx
-	movss	.LCPI51_0(%rip), %xmm1          # xmm1 = mem[0],zero,zero,zero
+	movss	.LCPI51_32(%rip), %xmm1         # xmm1 = mem[0],zero,zero,zero
 	subss	%xmm1, %xmm0
 	cvttss2si	%xmm0, %rcx
 	andq	%rdx, %rcx
 	orq	%rcx, %rax
 	movq	%rax, %xmm0
-	movaps	.LCPI51_34(%rip), %xmm1         # xmm1 = [1127219200,1160773632,0,0]
+	movaps	.LCPI51_33(%rip), %xmm1         # xmm1 = [1127219200,1160773632,0,0]
 	punpckldq	%xmm1, %xmm0            # xmm0 = xmm0[0],xmm1[0],xmm0[1],xmm1[1]
-	movapd	.LCPI51_35(%rip), %xmm1         # xmm1 = [4.503599627370496E+15,1.9342813113834067E+25]
+	movapd	.LCPI51_34(%rip), %xmm1         # xmm1 = [4.503599627370496E+15,1.9342813113834067E+25]
 	subpd	%xmm1, %xmm0
 	movaps	%xmm0, %xmm1
 	unpckhpd	%xmm0, %xmm0                    # xmm0 = xmm0[1,1]
 	addsd	%xmm1, %xmm0
-	movsd	.LCPI51_31(%rip), %xmm1         # xmm1 = mem[0],zero
+	movsd	.LCPI51_29(%rip), %xmm1         # xmm1 = mem[0],zero
 	divsd	%xmm1, %xmm0
 	leaq	.L.str.85(%rip), %rdi
 	movb	$1, %al
 	callq	printf@PLT
-	movss	-660(%rbp), %xmm0               # 4-byte Reload
+	movss	-692(%rbp), %xmm0               # 4-byte Reload
                                         # xmm0 = mem[0],zero,zero,zero
 	ucomiss	maximum2(%rip), %xmm0
 	jbe	.LBB51_38
 # %bb.37:                               #   in Loop: Header=BB51_12 Depth=1
-	movss	-660(%rbp), %xmm0               # 4-byte Reload
+	movss	-692(%rbp), %xmm0               # 4-byte Reload
                                         # xmm0 = mem[0],zero,zero,zero
 	movss	%xmm0, maximum2(%rip)
 	movss	maximum2(%rip), %xmm0           # xmm0 = mem[0],zero,zero,zero
@@ -8740,45 +8719,35 @@ _Z20MLX90640_CalculateToPKtffPf.11_fixp: # @_Z20MLX90640_CalculateToPKtffPf.11_f
 	movb	$1, %al
 	callq	printf@PLT
 .LBB51_38:                              #   in Loop: Header=BB51_12 Depth=1
-	movsd	-72(%rbp), %xmm0                # 8-byte Reload
-                                        # xmm0 = mem[0],zero
-	movss	-660(%rbp), %xmm1               # 4-byte Reload
-                                        # xmm1 = mem[0],zero,zero,zero
-	movss	.LCPI51_33(%rip), %xmm2         # xmm2 = mem[0],zero,zero,zero
-	movss	%xmm2, -756(%rbp)               # 4-byte Spill
-	mulss	%xmm2, %xmm1
-	movaps	%xmm1, %xmm2
-	cvttss2si	%xmm2, %rax
-	movq	%rax, %rdx
-	sarq	$63, %rdx
-	movss	.LCPI51_0(%rip), %xmm2          # xmm2 = mem[0],zero,zero,zero
-	subss	%xmm2, %xmm1
-	cvttss2si	%xmm1, %rcx
-	andq	%rdx, %rcx
-	orq	%rcx, %rax
-	movsd	.LCPI51_31(%rip), %xmm1         # xmm1 = mem[0],zero
-	mulsd	%xmm1, %xmm0
-	movaps	%xmm0, %xmm2
-	cvttsd2si	%xmm2, %rcx
-	movq	%rcx, %rsi
+	movq	-88(%rbp), %rcx                 # 8-byte Reload
+	movss	-692(%rbp), %xmm0               # 4-byte Reload
+                                        # xmm0 = mem[0],zero,zero,zero
+	movss	.LCPI51_31(%rip), %xmm1         # xmm1 = mem[0],zero,zero,zero
+	movss	%xmm1, -788(%rbp)               # 4-byte Spill
+	mulss	%xmm1, %xmm0
+	movaps	%xmm0, %xmm1
+	cvttss2si	%xmm1, %rax
+	movq	%rax, %rsi
 	sarq	$63, %rsi
-	movsd	.LCPI51_36(%rip), %xmm2         # xmm2 = mem[0],zero
-	subsd	%xmm2, %xmm0
-	cvttsd2si	%xmm0, %rdx
+	movss	.LCPI51_32(%rip), %xmm1         # xmm1 = mem[0],zero,zero,zero
+	subss	%xmm1, %xmm0
+	cvttss2si	%xmm0, %rdx
 	andq	%rsi, %rdx
-	orq	%rdx, %rcx
+	orq	%rdx, %rax
+	sarq	$3, %rcx
 	addq	%rcx, %rax
-	movq	%rax, -752(%rbp)                # 8-byte Spill
+	movq	%rax, -784(%rbp)                # 8-byte Spill
 	movq	%rax, %xmm0
-	movaps	.LCPI51_34(%rip), %xmm2         # xmm2 = [1127219200,1160773632,0,0]
-	punpckldq	%xmm2, %xmm0            # xmm0 = xmm0[0],xmm2[0],xmm0[1],xmm2[1]
-	movapd	.LCPI51_35(%rip), %xmm2         # xmm2 = [4.503599627370496E+15,1.9342813113834067E+25]
-	subpd	%xmm2, %xmm0
-	movaps	%xmm0, %xmm2
+	movaps	.LCPI51_33(%rip), %xmm1         # xmm1 = [1127219200,1160773632,0,0]
+	punpckldq	%xmm1, %xmm0            # xmm0 = xmm0[0],xmm1[0],xmm0[1],xmm1[1]
+	movapd	.LCPI51_34(%rip), %xmm1         # xmm1 = [4.503599627370496E+15,1.9342813113834067E+25]
+	subpd	%xmm1, %xmm0
+	movaps	%xmm0, %xmm1
 	unpckhpd	%xmm0, %xmm0                    # xmm0 = xmm0[1,1]
-	addsd	%xmm2, %xmm0
+	addsd	%xmm1, %xmm0
+	movsd	.LCPI51_29(%rip), %xmm1         # xmm1 = mem[0],zero
 	divsd	%xmm1, %xmm0
-	movsd	%xmm0, -744(%rbp)               # 8-byte Spill
+	movsd	%xmm0, -776(%rbp)               # 8-byte Spill
 	movq	%rax, %rdx
 	shrq	%rdx
 	movl	%eax, %ecx
@@ -8788,32 +8757,32 @@ _Z20MLX90640_CalculateToPKtffPf.11_fixp: # @_Z20MLX90640_CalculateToPKtffPf.11_f
 	cvtsi2ss	%rcx, %xmm0
 	addss	%xmm0, %xmm0
 	cvtsi2ss	%rax, %xmm1
-	movss	%xmm1, -732(%rbp)               # 4-byte Spill
+	movss	%xmm1, -764(%rbp)               # 4-byte Spill
 	testq	%rax, %rax
-	movss	%xmm0, -728(%rbp)               # 4-byte Spill
+	movss	%xmm0, -760(%rbp)               # 4-byte Spill
 	js	.LBB51_45
 # %bb.44:                               #   in Loop: Header=BB51_12 Depth=1
-	movss	-732(%rbp), %xmm0               # 4-byte Reload
+	movss	-764(%rbp), %xmm0               # 4-byte Reload
                                         # xmm0 = mem[0],zero,zero,zero
-	movss	%xmm0, -728(%rbp)               # 4-byte Spill
+	movss	%xmm0, -760(%rbp)               # 4-byte Spill
 .LBB51_45:                              #   in Loop: Header=BB51_12 Depth=1
-	movsd	-744(%rbp), %xmm0               # 8-byte Reload
+	movsd	-776(%rbp), %xmm0               # 8-byte Reload
                                         # xmm0 = mem[0],zero
-	movss	-756(%rbp), %xmm2               # 4-byte Reload
+	movss	-788(%rbp), %xmm2               # 4-byte Reload
                                         # xmm2 = mem[0],zero,zero,zero
-	movss	-728(%rbp), %xmm1               # 4-byte Reload
+	movss	-760(%rbp), %xmm1               # 4-byte Reload
                                         # xmm1 = mem[0],zero,zero,zero
 	divss	%xmm2, %xmm1
-	movss	%xmm1, -760(%rbp)               # 4-byte Spill
+	movss	%xmm1, -792(%rbp)               # 4-byte Spill
 	leaq	.L.str.88(%rip), %rdi
 	movb	$1, %al
 	callq	printf@PLT
 	movss	maximum(%rip), %xmm0            # xmm0 = mem[0],zero,zero,zero
-	movss	.LCPI51_37(%rip), %xmm1         # xmm1 = mem[0],zero,zero,zero
+	movss	.LCPI51_35(%rip), %xmm1         # xmm1 = mem[0],zero,zero,zero
 	mulss	%xmm1, %xmm0
 	callq	__fixunssfti@PLT
 	movq	%rdx, %rcx
-	movq	-752(%rbp), %rdx                # 8-byte Reload
+	movq	-784(%rbp), %rdx                # 8-byte Reload
 	shldq	$63, %rax, %rcx
 	xorl	%eax, %eax
                                         # kill: def $rax killed $eax
@@ -8822,30 +8791,30 @@ _Z20MLX90640_CalculateToPKtffPf.11_fixp: # @_Z20MLX90640_CalculateToPKtffPf.11_f
 	jge	.LBB51_40
 	jmp	.LBB51_39
 .LBB51_39:                              #   in Loop: Header=BB51_12 Depth=1
-	movss	-760(%rbp), %xmm0               # 4-byte Reload
+	movss	-792(%rbp), %xmm0               # 4-byte Reload
                                         # xmm0 = mem[0],zero,zero,zero
 	movss	%xmm0, maximum(%rip)
 .LBB51_40:                              #   in Loop: Header=BB51_12 Depth=1
-	movq	-752(%rbp), %rdi                # 8-byte Reload
+	movq	-784(%rbp), %rdi                # 8-byte Reload
 	callq	_ZSt4sqrtf.10.39_u38_26fixp
 	movq	%rax, %rdi
 	callq	_ZSt4sqrtf.20_u38_26fixp
 	movabsq	$-8605478167979544576, %rcx     # imm = 0x8893333333333000
 	shrq	$29, %rcx
 	subq	%rcx, %rax
-	movq	%rax, -768(%rbp)                # 8-byte Spill
+	movq	%rax, -800(%rbp)                # 8-byte Spill
 	shrq	$5, %rax
                                         # kill: def $eax killed $eax killed $rax
 	cvtsi2sd	%eax, %xmm0
-	movsd	.LCPI51_38(%rip), %xmm1         # xmm1 = mem[0],zero
+	movsd	.LCPI51_36(%rip), %xmm1         # xmm1 = mem[0],zero
 	divsd	%xmm1, %xmm0
 	leaq	.L.str.89(%rip), %rdi
 	movb	$1, %al
 	callq	printf@PLT
-	movq	-768(%rbp), %rdx                # 8-byte Reload
-	movl	-252(%rbp), %esi                # 4-byte Reload
+	movq	-800(%rbp), %rdx                # 8-byte Reload
+	movl	-284(%rbp), %esi                # 4-byte Reload
                                         # kill: def $ecx killed $eax
-	movq	-224(%rbp), %rax                # 8-byte Reload
+	movq	-248(%rbp), %rax                # 8-byte Reload
 	movslq	%esi, %rcx
 	shrq	$5, %rdx
                                         # kill: def $edx killed $edx killed $rdx
@@ -8856,32 +8825,32 @@ _Z20MLX90640_CalculateToPKtffPf.11_fixp: # @_Z20MLX90640_CalculateToPKtffPf.11_f
 .LBB51_41:                              #   in Loop: Header=BB51_12 Depth=1
 	jmp	.LBB51_42
 .LBB51_42:                              #   in Loop: Header=BB51_12 Depth=1
-	movl	-252(%rbp), %eax                # 4-byte Reload
+	movl	-284(%rbp), %eax                # 4-byte Reload
 	addl	$1, %eax
-	movl	%eax, -248(%rbp)                # 4-byte Spill
+	movl	%eax, -280(%rbp)                # 4-byte Spill
 	jmp	.LBB51_12
 .LBB51_43:
-	movsd	-208(%rbp), %xmm0               # 8-byte Reload
+	movsd	-232(%rbp), %xmm0               # 8-byte Reload
                                         # xmm0 = mem[0],zero
 	leaq	.L.str.91(%rip), %rdi
 	movb	$1, %al
 	callq	printf@PLT
-	movsd	-184(%rbp), %xmm0               # 8-byte Reload
+	movsd	-208(%rbp), %xmm0               # 8-byte Reload
                                         # xmm0 = mem[0],zero
 	leaq	.L.str.92(%rip), %rdi
 	movb	$1, %al
 	callq	printf@PLT
-	movsd	-144(%rbp), %xmm0               # 8-byte Reload
+	movsd	-168(%rbp), %xmm0               # 8-byte Reload
                                         # xmm0 = mem[0],zero
 	leaq	.L.str.93(%rip), %rdi
 	movb	$1, %al
 	callq	printf@PLT
-	movsd	-72(%rbp), %xmm0                # 8-byte Reload
+	movsd	-80(%rbp), %xmm0                # 8-byte Reload
                                         # xmm0 = mem[0],zero
 	leaq	.L.str.94(%rip), %rdi
 	movb	$1, %al
 	callq	printf@PLT
-	addq	$768, %rsp                      # imm = 0x300
+	addq	$800, %rsp                      # imm = 0x320
 	popq	%rbp
 	.cfi_def_cfa %rsp, 8
 	retq
@@ -11678,11 +11647,11 @@ _ZL6eeprom:
 	.short	8082                            # 0x1f92
 	.size	_ZL6eeprom, 1664
 
-	.type	.L.str.132,@object              # @.str.132
+	.type	.L.str.133,@object              # @.str.133
 	.section	.rodata.str1.1,"aMS",@progbits,1
-.L.str.132:
+.L.str.133:
 	.asciz	"getTa...\n"
-	.size	.L.str.132, 10
+	.size	.L.str.133, 10
 
 	.type	_ZL9subframe1,@object           # @_ZL9subframe1
 	.section	.rodata,"a",@progbits
@@ -12524,21 +12493,21 @@ _ZL9subframe1:
 	.short	1                               # 0x1
 	.size	_ZL9subframe1, 1668
 
-	.type	.L.str.134,@object              # @.str.134
+	.type	.L.str.135,@object              # @.str.135
 	.section	.rodata.str1.1,"aMS",@progbits,1
-.L.str.134:
+.L.str.135:
 	.asciz	"ta = %e\n"
-	.size	.L.str.134, 9
-
-	.type	.L.str.136,@object              # @.str.136
-.L.str.136:
-	.asciz	"TaMain = %.10f\n"
-	.size	.L.str.136, 16
+	.size	.L.str.135, 9
 
 	.type	.L.str.137,@object              # @.str.137
 .L.str.137:
-	.asciz	"TrMain = %.10f\n"
+	.asciz	"TaMain = %.10f\n"
 	.size	.L.str.137, 16
+
+	.type	.L.str.138,@object              # @.str.138
+.L.str.138:
+	.asciz	"TrMain = %.10f\n"
+	.size	.L.str.138, 16
 
 	.type	_ZL9subframe2,@object           # @_ZL9subframe2
 	.section	.rodata,"a",@progbits
@@ -13380,61 +13349,61 @@ _ZL9subframe2:
 	.short	0                               # 0x0
 	.size	_ZL9subframe2, 1668
 
-	.type	.L.str.138,@object              # @.str.138
-	.section	.rodata.str1.1,"aMS",@progbits,1
-.L.str.138:
-	.asciz	"maximum t13 %.10f\n"
-	.size	.L.str.138, 19
-
 	.type	.L.str.139,@object              # @.str.139
+	.section	.rodata.str1.1,"aMS",@progbits,1
 .L.str.139:
-	.asciz	"maximum t14 %.10f\n"
+	.asciz	"maximum t13 %.10f\n"
 	.size	.L.str.139, 19
 
 	.type	.L.str.140,@object              # @.str.140
 .L.str.140:
-	.asciz	"mint5 = %.10f\n"
-	.size	.L.str.140, 15
+	.asciz	"maximum t14 %.10f\n"
+	.size	.L.str.140, 19
 
 	.type	.L.str.141,@object              # @.str.141
 .L.str.141:
-	.asciz	"max5 = %.10f\n"
-	.size	.L.str.141, 14
+	.asciz	"mint5 = %.10f\n"
+	.size	.L.str.141, 15
 
-	.type	.L.str.143,@object              # @.str.143
-.L.str.143:
-	.asciz	"Range = %.10f\n"
-	.size	.L.str.143, 15
+	.type	.L.str.142,@object              # @.str.142
+.L.str.142:
+	.asciz	"max5 = %.10f\n"
+	.size	.L.str.142, 14
 
 	.type	.L.str.144,@object              # @.str.144
 .L.str.144:
-	.asciz	"minRange = %.10f\n"
-	.size	.L.str.144, 18
+	.asciz	"Range = %.10f\n"
+	.size	.L.str.144, 15
 
 	.type	.L.str.145,@object              # @.str.145
 .L.str.145:
-	.asciz	"maxVal = %.10f\n"
-	.size	.L.str.145, 16
+	.asciz	"minRange = %.10f\n"
+	.size	.L.str.145, 18
 
 	.type	.L.str.146,@object              # @.str.146
 .L.str.146:
-	.asciz	"minVal = %.10f\n"
+	.asciz	"maxVal = %.10f\n"
 	.size	.L.str.146, 16
 
 	.type	.L.str.147,@object              # @.str.147
 .L.str.147:
-	.asciz	"thermalmap.ppm"
-	.size	.L.str.147, 15
+	.asciz	"minVal = %.10f\n"
+	.size	.L.str.147, 16
 
 	.type	.L.str.148,@object              # @.str.148
 .L.str.148:
-	.asciz	"w"
-	.size	.L.str.148, 2
+	.asciz	"thermalmap.ppm"
+	.size	.L.str.148, 15
 
 	.type	.L.str.149,@object              # @.str.149
 .L.str.149:
+	.asciz	"w"
+	.size	.L.str.149, 2
+
+	.type	.L.str.150,@object              # @.str.150
+.L.str.150:
 	.asciz	"min = %d max = %d\n"
-	.size	.L.str.149, 19
+	.size	.L.str.150, 19
 
 	.type	params_KvPTAT.fixp,@object      # @params_KvPTAT.fixp
 	.bss
@@ -13551,9 +13520,9 @@ params_ilChessC.fixp:
 	.addrsig_sym _ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.25.54
 	.addrsig_sym _ZSt3powIidEN9__gnu_cxx11__promote_2IT_T0_NS0_9__promoteIS2_Xsr3std12__is_integerIS2_EE7__valueEE6__typeENS4_IS3_Xsr3std12__is_integerIS3_EE7__valueEE6__typeEE6__typeES2_S3_.14.50.58
 	.addrsig_sym _Z14MLX90640_GetTaPKt.2_s16_16fixp
-	.addrsig_sym _Z15MLX90640_GetVddPKt.1_s16_16fixp
-	.addrsig_sym _Z15MLX90640_GetVddPKt.3_s17_15fixp
 	.addrsig_sym _Z14MLX90640_GetTaPKt.6_1flp
+	.addrsig_sym _Z15MLX90640_GetVddPKt.3_s17_15fixp
+	.addrsig_sym _Z15MLX90640_GetVddPKt.1_s16_16fixp
 	.addrsig_sym _Z5max_fff.23_s12_20fixp
 	.addrsig_sym _Z20MLX90640_CalculateToPKtffPf.11_fixp
 	.addrsig_sym _Z8printPPMP8_IO_FILEPfiiff.13_fixp
