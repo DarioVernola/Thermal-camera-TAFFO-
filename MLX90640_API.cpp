@@ -24,6 +24,12 @@
 #define iprintf printf
 #endif
 
+#ifdef NDEBUG
+#define DBG_PRINTF(...) printf(__VA_ARGS__)
+#else
+#define DBG_PRINTF(...)
+#endif
+
 void ExtractVDDParameters(const uint16_t *eeData);
 void ExtractPTATParameters(const uint16_t *eeData);
 void ExtractGainParameters(const uint16_t *eeData);
@@ -376,22 +382,22 @@ void MLX90640_CalculateTo(const uint16_t *frameData, float __attribute__((annota
     vdd = MLX90640_GetVdd(frameData);
     
     ta = MLX90640_GetTa(frameData);
-    printf("taTO %.10f\n",ta);
-    printf("trTO %.10f\n",tr);
+    DBG_PRINTF("taTO %.10f\n",ta);
+    DBG_PRINTF("trTO %.10f\n",tr);
     __attribute__((annotate("scalar()"))) float ta_kelvin = ta + 273.15; // range(-5000000000, 5000000000) final
-    printf("taTO Kelvin %.10f\n",ta_kelvin);
+    DBG_PRINTF("taTO Kelvin %.10f\n",ta_kelvin);
     ta4 = ta_kelvin*ta_kelvin*ta_kelvin*ta_kelvin;
-    printf("ta4 %.10f\n",ta4);
+    DBG_PRINTF("ta4 %.10f\n",ta4);
     tr4 = pow(tr + 273.15,4);
     //tr4 = (tr + 273.15)*(tr + 273.15)*(tr + 273.15)*(tr + 273.15);
-    printf("tr4 %.10f\n",tr4);
+    DBG_PRINTF("tr4 %.10f\n",tr4);
     // taTr decomposition
     float __attribute__((annotate("scalar()"))) taTr1 = tr4 - ta4;
-    printf("taTr1 %e\n",taTr1);
+    DBG_PRINTF("taTr1 %e\n",taTr1);
     float __attribute__((annotate("scalar()"))) taTr2 = taTr1 / emissivity;
-    printf("taTr2 %.10f (emissivity=%.10f)\n",taTr2, emissivity);
+    DBG_PRINTF("taTr2 %.10f (emissivity=%.10f)\n",taTr2, emissivity);
     taTr = tr4 - taTr2;
-    printf("taTr %e\n",taTr);
+    DBG_PRINTF("taTr %e\n",taTr);
     // taTr = tr4 - (tr4-ta4)/emissivity;
     
     alphaCorrR[0] = 1 / (1 + params_ksTo[0] * 40);
@@ -456,44 +462,44 @@ void MLX90640_CalculateTo(const uint16_t *frameData, float __attribute__((annota
                 irData = irData - 65536;
             }
             // IR DATA DECOMPOSITION
-            printf("irDataBGain %.10f\n", irData );
+            DBG_PRINTF("irDataBGain %.10f\n", irData );
             irData = irData * gain;
-            printf("irDataAGain %.10f\n", irData );
+            DBG_PRINTF("irDataAGain %.10f\n", irData );
 
             float __attribute__((annotate("scalar()"))) ir1 = ta - 25; 
-            printf("ta %.10f\n", ta);
-            printf("ir1 %.10f\n", ir1);
+            DBG_PRINTF("ta %.10f\n", ta);
+            DBG_PRINTF("ir1 %.10f\n", ir1);
 
             float __attribute__((annotate("scalar()"))) ir2 = ir1*params_kta[pixelNumber];
-            printf("ir2 %.10f\n", ir2);
+            DBG_PRINTF("ir2 %.10f\n", ir2);
 
             float __attribute__((annotate("scalar()"))) ir3 = 1 + ir2; 
-            printf("ir3 %.10f\n", ir3);
+            DBG_PRINTF("ir3 %.10f\n", ir3);
 
 
             float __attribute__((annotate("scalar()"))) ir4 = ir3*params_offset[pixelNumber];
-            printf("ir4 %.10f\n", ir4);
-            printf("params_offset %d\n", params_offset[pixelNumber]);
+            DBG_PRINTF("ir4 %.10f\n", ir4);
+            DBG_PRINTF("params_offset %d\n", params_offset[pixelNumber]);
 
             float  __attribute__((annotate("scalar()"))) ir5 = vdd - 3.3; // Annotation causes precision loss
-            printf("ir5 %.10f\n", ir5);
+            DBG_PRINTF("ir5 %.10f\n", ir5);
 
             float __attribute__((annotate("scalar()"))) ir6 = ir5*params_kv[pixelNumber]; // Same
-            printf("ir6 %.10f\n", ir6);
+            DBG_PRINTF("ir6 %.10f\n", ir6);
 
             float __attribute__((annotate("scalar()"))) ir7 = 1 + ir6;
-            printf("ir7 %.10f\n", ir7);
+            DBG_PRINTF("ir7 %.10f\n", ir7);
 
             float __attribute__((annotate("scalar()"))) ir8 = ir7*ir3;
-            printf("ir8 %.10f\n", ir8);
+            DBG_PRINTF("ir8 %.10f\n", ir8);
 
             float __attribute__((annotate("scalar()"))) ir9 = ir8*params_offset[pixelNumber];
-            printf("ir9 %.10f\n", ir9);
+            DBG_PRINTF("ir9 %.10f\n", ir9);
 
             irData= irData - ir9;
             
             // irData = irData - params_offset[pixelNumber]*(1 + params_kta[pixelNumber]*(ta - 25))*(1 + params_kv[pixelNumber]*(vdd - 3.3));
-            printf("irDataACalc %.10f\n", irData );
+            DBG_PRINTF("irDataACalc %.10f\n", irData );
             if(mode !=  params_calibrationModeEE)
             {
               irData = irData + params_ilChessC[2] * (2 * ilPattern - 1) - params_ilChessC[1] * conversionPattern; 
@@ -505,56 +511,56 @@ void MLX90640_CalculateTo(const uint16_t *frameData, float __attribute__((annota
             
             //alphaCompensated = (params_alpha[pixelNumber] - params_tgc * params_cpAlpha[subPage])*(1 + params_KsTa * (ta - 25));
             float a1 = params_tgc * params_cpAlpha[subPage]; // Annotation generates FP exeption
-            printf("tgc %.10f\n",params_tgc  );
-            printf("cpAlpha %.10f \n",params_cpAlpha[subPage] );
-            printf("a1 %.10f\n",a1);
+            DBG_PRINTF("tgc %.10f\n",params_tgc  );
+            DBG_PRINTF("cpAlpha %.10f \n",params_cpAlpha[subPage] );
+            DBG_PRINTF("a1 %.10f\n",a1);
 
             float a2 = params_alpha[pixelNumber] - a1; // Same  __attribute__((annotate("scalar()")))
-            printf("alphastruct %.10f \n",params_alpha[pixelNumber] );
-            printf("a2 %.10f\n",a2);
+            DBG_PRINTF("alphastruct %.10f \n",params_alpha[pixelNumber] );
+            DBG_PRINTF("a2 %.10f\n",a2);
 
             float __attribute__((annotate("scalar()"))) a3 = params_KsTa * (ta-25);
-            printf("a3 %.10f\n",a3);
+            DBG_PRINTF("a3 %.10f\n",a3);
 
             float __attribute__((annotate("scalar()"))) a4 = 1 + a3; // Same
-            printf("a4 %.10f\n", a4);
+            DBG_PRINTF("a4 %.10f\n", a4);
 
             alphaCompensated = a2 * a4;
             
             //Sx = pow((double)alphaCompensated, (double)3) * (irData + alphaCompensated * taTr);
-            printf("irData %.10f\n",irData);
-            printf("gain %.10f\n",gain);
-            printf("alpha %.10f\n",alphaCompensated);
+            DBG_PRINTF("irData %.10f\n",irData);
+            DBG_PRINTF("gain %.10f\n",gain);
+            DBG_PRINTF("alpha %.10f\n",alphaCompensated);
 
             float __attribute__((annotate("scalar(range(-65535,65535) final)"))) s1 = alphaCompensated*taTr; // causes FP Exeption 
-            printf("s1 %.10f\n",s1);
+            DBG_PRINTF("s1 %.10f\n",s1);
 
             float  __attribute__((annotate("scalar()"))) s2 = irData + s1;
-            printf("s2 %.10f\n",s2);
+            DBG_PRINTF("s2 %.10f\n",s2);
 
             float __attribute__((annotate("scalar(range(-1,1) final)"))) s3 = alphaCompensated*alphaCompensated*alphaCompensated;
-            printf("s3 %.10f\n",s3);
+            DBG_PRINTF("s3 %.10f\n",s3);
 
             float __attribute__((annotate("scalar()"))) s4 = s3*s2;
-            printf("S4 %.10f\n",s4);
+            DBG_PRINTF("S4 %.10f\n",s4);
 
             Sx = sqrt(sqrt(s4)) * params_ksTo[1];
-            printf("Sx %.10f\n",Sx);
+            DBG_PRINTF("Sx %.10f\n",Sx);
 
             // To = sqrt(sqrt(irData/(alphaCompensated * (1 - params_ksTo[1] * 273.15) + Sx) + taTr)) - 273.15; // <--- THIS ONE
             // --- To Decomposition ---
             float __attribute__((annotate("scalar(range(-1, 1) final)"))) t1 = params_ksTo[1] * 273.15; // tried applying range()
-            printf("t1 %.10f, ksTo %.10f\n",t1, params_ksTo[1]);
+            DBG_PRINTF("t1 %.10f, ksTo %.10f\n",t1, params_ksTo[1]);
 
             float __attribute__((annotate("scalar()"))) t2 = 1 - t1;
-            printf("t2 %.10f\n",t2);
+            DBG_PRINTF("t2 %.10f\n",t2);
 
             float __attribute__((annotate("scalar(range(-2,2))")))  t3 = alphaCompensated * t2;
-            printf("t3 %.10f\n",t3);
+            DBG_PRINTF("t3 %.10f\n",t3);
 
             float  __attribute__((annotate("scalar(range(-2,2))"))) t4 = t3 + Sx; // was range(-1,1000000000) final 
-            printf("t4 %.10f\n",t4);
-            printf("irData %.10f\n",irData);
+            DBG_PRINTF("t4 %.10f\n",t4);
+            DBG_PRINTF("irData %.10f\n",irData);
             float __attribute__((annotate("scalar(range(-29350096896,  29350096896) final)"))) t5 = irData / t4;
             if(pixelNumber == 0)
             {
@@ -563,23 +569,23 @@ void MLX90640_CalculateTo(const uint16_t *frameData, float __attribute__((annota
             if(t5<mint5)
             {
                 mint5 =t5;
-                printf("mint5: %.10f\n",t5);
+                DBG_PRINTF("mint5: %.10f\n",t5);
                 
             }
             if(t5>maxt5)
             {
                 maxt5 = t5;
-                printf("maxt5: %.10f\n",t5);
+                DBG_PRINTF("maxt5: %.10f\n",t5);
             }
-            printf("t5 %.10f\n",t5);
+            DBG_PRINTF("t5 %.10f\n",t5);
 
             float __attribute__((annotate("scalar()"))) t6 = t5 + taTr; // 2as range(0,5000000000) final
-            printf("t6 %.10f\n",t6);
+            DBG_PRINTF("t6 %.10f\n",t6);
 
             float __attribute__((annotate("scalar()"))) To = sqrt(sqrt(t6)) - 273.15;
-            //printf("To %d params 1 %d\n", (int)To, params_ct[1]);     
-            printf("To %.10f\n", To);  
-            printf("taTr %.10f \n", taTr);   
+            //DBG_PRINTF("To %d params 1 %d\n", (int)To, params_ct[1]);     
+            DBG_PRINTF("To %.10f\n", To);  
+            DBG_PRINTF("taTr %.10f \n", taTr);   
                
             // To in if conditions was cast to int because of a taffo problem (?)
             if((int)To < params_ct[1])
@@ -599,55 +605,55 @@ void MLX90640_CalculateTo(const uint16_t *frameData, float __attribute__((annota
                 range = 3; 
                      
             }  
-            printf("range %d \n", range);
+            DBG_PRINTF("range %d \n", range);
             
             //To = sqrt(sqrt(irData / (alphaCompensated * alphaCorrR[range] * (1 + params_ksTo[range] * (To - params_ct[range]))) + taTr)) - 273.15;
             
             // --- To decomposition ---
             
-            //printf("range %d\n", range);
-            //printf("ct %d\n", params_ct[range]);
+            //DBG_PRINTF("range %d\n", range);
+            //DBG_PRINTF("ct %d\n", params_ct[range]);
 
             float __attribute__((annotate("scalar()"))) t8 = To - params_ct[range];
-            printf("t8 %.10f\n",t8);
+            DBG_PRINTF("t8 %.10f\n",t8);
 
             float __attribute__((annotate("scalar(range(-1,1) final)"))) t9 = params_ksTo[range]*t8;
-            printf("t9 %.10f\n",t9);
+            DBG_PRINTF("t9 %.10f\n",t9);
 
             float __attribute__((annotate("scalar()"))) t10 = 1 + t9;
-            printf("t10 %.10f\n",t10);
+            DBG_PRINTF("t10 %.10f\n",t10);
             
             float __attribute__((annotate("scalar(range(-1,1) final)"))) t11 = alphaCompensated * alphaCorrR[range];
-            printf("t11 %.10f\n",t11);
+            DBG_PRINTF("t11 %.10f\n",t11);
 
             float  t12 = t11*t10;
-            printf("t12 %.10f\n",t12);
+            DBG_PRINTF("t12 %.10f\n",t12);
 
             float  __attribute__((annotate("scalar(range(0,169577873408) final)"))) t13 = irData/t12; 
-            printf("t13 %.10f\n",t13);
+            DBG_PRINTF("t13 %.10f\n",t13);
             if(t13 > maximum2)
             {
                 maximum2 = t13;
-                printf("maximum2%.10f\n",maximum2);
+                DBG_PRINTF("maximum2%.10f\n",maximum2);
             }
                 
             float __attribute__((annotate("scalar(range(0, 178186977280) final)"))) t14 = t13 + taTr; 
-            printf("t14 %.10f\n",t14);
+            DBG_PRINTF("t14 %.10f\n",t14);
             if(t14 > maximum)
                 maximum = t14;
             float __attribute__((annotate("scalar(range(-99,999) final)"))) ToF = sqrt(sqrt(t14)) - 273.15;
-            printf("ToF %.10f\n", ToF);
+            DBG_PRINTF("ToF %.10f\n", ToF);
 
           
 
             result[pixelNumber] = ToF;
-            printf("pixel Number %d \n",pixelNumber);
+            DBG_PRINTF("pixel Number %d \n",pixelNumber);
         }
     }
-    printf("vdd %f\n", vdd);
-    printf("ta %f \n", ta);
-    printf("tr %.10f\n",tr);
-    printf("taTr %.10f\n",taTr); 
+    DBG_PRINTF("vdd %f\n", vdd);
+    DBG_PRINTF("ta %f \n", ta);
+    DBG_PRINTF("tr %.10f\n",tr);
+    DBG_PRINTF("taTr %.10f\n",taTr); 
 
    
     
@@ -771,24 +777,24 @@ float MLX90640_GetVdd(const uint16_t *frameData)
     {
         vdd = vdd - 65536;
     }
-    //printf("vdd: %f\n", vdd);
+    //DBG_PRINTF("vdd: %f\n", vdd);
     resolutionRAM = (frameData[832] & 0x0C00) >> 10; // max 3, min 0
     
     resolutionCorrection = pow(2, (double)params_resolutionEE) / pow(2, (double)resolutionRAM); // min 1/2^8, max 2^12
-    //printf("resolutionRAM: %d\n", resolutionRAM);
-    //printf("resolutionEE: %d\n", params_resolutionEE);
-    //printf("resolutionCorrection: %.10f\n", resolutionCorrection);
-    //printf("kVdd: %d, vdd25: %d\n", params_kVdd, params_vdd25);
+    //DBG_PRINTF("resolutionRAM: %d\n", resolutionRAM);
+    //DBG_PRINTF("resolutionEE: %d\n", params_resolutionEE);
+    //DBG_PRINTF("resolutionCorrection: %.10f\n", resolutionCorrection);
+    //DBG_PRINTF("kVdd: %d, vdd25: %d\n", params_kVdd, params_vdd25);
     vdd = (resolutionCorrection * vdd - params_vdd25) / params_kVdd + 3.3; // max 65.543 min 1.32
     /* -- vdd calculation decomposition --
     float vd1 = resolutionCorrection * vdd;
-    printf("vd1: %f\n", vd1);
+    DBG_PRINTF("vd1: %f\n", vd1);
     float vd2 = vd1 - params_vdd25;
-    printf("vd2: %f\n", vd2);
+    DBG_PRINTF("vd2: %f\n", vd2);
     float vd3 = vd2 / params_kVdd;
-    printf("vd3: %f\n", vd3);
+    DBG_PRINTF("vd3: %f\n", vd3);
     vdd = vd3 + 3.3;
-    printf("vdd: %f\n", vdd);
+    DBG_PRINTF("vdd: %f\n", vdd);
     */ 
     #undef BETTER_ERROR //
     return vdd;
@@ -829,9 +835,9 @@ float MLX90640_GetTa(const uint16_t *frameData)
     
     
     
-    printf("getVdd...\n");
+    DBG_PRINTF("getVdd...\n");
     vdd = MLX90640_GetVdd(frameData);
-    printf("vdd = %e\n", vdd);
+    DBG_PRINTF("vdd = %e\n", vdd);
     
     ptat = frameData[800];
     if(ptat > 32767)
@@ -847,9 +853,9 @@ float MLX90640_GetTa(const uint16_t *frameData)
     
     // DECOMPOSED ptatArt calculation
     float __attribute__((annotate("scalar()"))) ptatArt1 = ptat * params_alphaPTAT;
-    printf("ptatArt1= %.10f\n",ptatArt1);
+    DBG_PRINTF("ptatArt1= %.10f\n",ptatArt1);
     float __attribute__((annotate("scalar()"))) ptatArt2 = ptatArt1 + ptatArt;
-    printf("ptatArt2= %.10f\n",ptatArt2);
+    DBG_PRINTF("ptatArt2= %.10f\n",ptatArt2);
 
     #ifdef BETTER_ERROR
     float ptatArt3 = ptat/ptatArt2;
@@ -857,49 +863,49 @@ float MLX90640_GetTa(const uint16_t *frameData)
     float __attribute__((annotate("scalar()"))) ptatArt3 = ptat/ptatArt2;
     #endif
 
-    printf("ptatArt3= %.10f\n",ptatArt3);
+    DBG_PRINTF("ptatArt3= %.10f\n",ptatArt3);
     ptatArt = ptatArt3 * 262144.0f;
     //ptatArt = (ptat / (ptat * params_alphaPTAT + ptatArt)) * pow(2, (double)18);
-    printf("ptat= %.10f\n",ptat);
-    printf("alphaptat= %.10f\n",params_alphaPTAT);
-    printf("ptatArt= %.10f\n",ptatArt);
+    DBG_PRINTF("ptat= %.10f\n",ptat);
+    DBG_PRINTF("alphaptat= %.10f\n",params_alphaPTAT);
+    DBG_PRINTF("ptatArt= %.10f\n",ptatArt);
     // DECOMPOSED ta calculation
     float  __attribute__((annotate("scalar()")))  vd1 = vdd - 3.3;
-    printf("vd1= %.10f\n",vd1);
+    DBG_PRINTF("vd1= %.10f\n",vd1);
     
     float  __attribute__((annotate("scalar()"))) ta1 = params_KvPTAT * vd1;
-    printf("kvPTAT= %.10f\n",params_KvPTAT);
-    printf("vdd= %.10f\n",vdd);
+    DBG_PRINTF("kvPTAT= %.10f\n",params_KvPTAT);
+    DBG_PRINTF("vdd= %.10f\n",vdd);
      
-    printf("ta1= %.10f\n",ta1);
+    DBG_PRINTF("ta1= %.10f\n",ta1);
     #ifdef BETTER_ERROR
     float ta2 = 1 + ta1;
     #else
     float  __attribute__((annotate("scalar()"))) ta2 = 1 + ta1;
     #endif
-    printf("ta2= %.10f\n",ta2);
+    DBG_PRINTF("ta2= %.10f\n",ta2);
     #ifdef BETTER_ERROR
     float ta3 = ptatArt/ta2;
     #else
     float  __attribute__((annotate("scalar()"))) ta3 = ptatArt/ta2;
     #endif
-    printf("ta3= %.10f\n",ta3);
+    DBG_PRINTF("ta3= %.10f\n",ta3);
     ta = ta3 - params_vPTAT25;
     
     //ta = (ptatArt / (1 + params_KvPTAT * (vdd - 3.3)) - params_vPTAT25); // kvptat range(-0.0078,0.0154)
-    printf("taBDiv= %.10f\n",ta);
+    DBG_PRINTF("taBDiv= %.10f\n",ta);
     #ifdef BETTER_ERROR
     float ktptat = params_KtPTAT;
     #else
     float __attribute__((annotate("scalar()"))) ktptat = params_KtPTAT;
     #endif
     ta = ta / ktptat + 25; 
-    printf("taADiv= %.10f\n",ta);
+    DBG_PRINTF("taADiv= %.10f\n",ta);
     /*
-    printf("KvPTAT: %f\n", params_KvPTAT);
-    printf("KtPTAT: %f\n", params_KtPTAT);
-    printf("vdd: %f\n", vdd);
-    printf("ta: %f\n", ta);
+    DBG_PRINTF("KvPTAT: %f\n", params_KvPTAT);
+    DBG_PRINTF("KtPTAT: %f\n", params_KtPTAT);
+    DBG_PRINTF("vdd: %f\n", vdd);
+    DBG_PRINTF("ta: %f\n", ta);
     */
 
     return ta;
