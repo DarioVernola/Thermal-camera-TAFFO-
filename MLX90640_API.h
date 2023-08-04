@@ -33,9 +33,9 @@ float     __attribute__((annotate("scalar(range(0, 255) final)"))) params_cpKta;
 __attribute__((annotate("scalar(range(0,256) disabled)"))) int   params_resolutionEE; // was uint8__t
 __attribute__((annotate("scalar(range(0,256) disabled)"))) uint8_t   params_calibrationModeEE;
 float     __attribute__((annotate("scalar(range(-1,1) final)"))) params_KsTa;
-float     __attribute__((annotate("scalar(range(-256, 256) disabled)"))) params_ksTo[4]; // Causes minor precision loss
+float     __attribute__((annotate("scalar(range(-65535, 65535) disabled)"))) params_ksTo[4]; // Causes minor precision loss
 __attribute__((annotate("scalar(range(-32768,32767) )"))) int16_t   params_ct[4]; // Causes minor precision loss
-float     params_alpha[768];    
+float     params_alpha[768]; //__attribute__((annotate("scalar(range(-524288,3178495))" ))) 
 __attribute__((annotate("scalar(range(-32768,32767) disabled)"))) int16_t   params_offset[768];    
 float     __attribute__((annotate("scalar(range(-131200,98431) final)"))) params_kta[768];    
 float     __attribute__((annotate("scalar(range(-8,7) final)"))) params_kv[768]; // decreases slghtly precision

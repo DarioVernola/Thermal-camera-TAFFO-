@@ -1046,8 +1046,8 @@ void ExtractKsToParameters(const uint16_t *eeData)
     KsToScale = (eeData[63] & 0x000F) + 8;
     KsToScale = 1 << KsToScale;
     
-    params_ksTo[0] = eeData[61] & 0x00FF;
-    params_ksTo[1] = (eeData[61] & 0xFF00) >> 8;
+    params_ksTo[0] = eeData[61] & 0x00FF; // 0 to 255
+    params_ksTo[1] = (eeData[61] & 0xFF00) >> 8; // 0 to 255
     params_ksTo[2] = eeData[62] & 0x00FF;
     params_ksTo[3] = (eeData[62] & 0xFF00) >> 8;
     
@@ -1076,7 +1076,7 @@ void ExtractAlphaParameters(const uint16_t *eeData)
     uint8_t accRemScale;
     
 
-    accRemScale = eeData[32] & 0x000F;
+    accRemScale = eeData[32] & 0x000F; // min 0 max 15
     accColumnScale = (eeData[32] & 0x00F0) >> 4;
     accRowScale = (eeData[32] & 0x0F00) >> 8;
     alphaScale = ((eeData[32] & 0xF000) >> 12) + 30;
@@ -1085,8 +1085,8 @@ void ExtractAlphaParameters(const uint16_t *eeData)
     for(int i = 0; i < 6; i++)
     {
         p = i * 4;
-        accRow[p + 0] = (eeData[34 + i] & 0x000F);
-        accRow[p + 1] = (eeData[34 + i] & 0x00F0) >> 4;
+        accRow[p + 0] = (eeData[34 + i] & 0x000F); // 0 to 15
+        accRow[p + 1] = (eeData[34 + i] & 0x00F0) >> 4; // 0 to 15
         accRow[p + 2] = (eeData[34 + i] & 0x0F00) >> 8;
         accRow[p + 3] = (eeData[34 + i] & 0xF000) >> 12;
     }
@@ -1095,7 +1095,7 @@ void ExtractAlphaParameters(const uint16_t *eeData)
     {
         if (accRow[i] > 7)
         {
-            accRow[i] = accRow[i] - 16;
+            accRow[i] = accRow[i] - 16; // -8 to 15
         }
     }
     
@@ -1112,7 +1112,7 @@ void ExtractAlphaParameters(const uint16_t *eeData)
     {
         if (accColumn[i] > 7)
         {
-            accColumn[i] = accColumn[i] - 16;
+            accColumn[i] = accColumn[i] - 16; // - 8 to 15
         }
     }
 
@@ -1121,13 +1121,13 @@ void ExtractAlphaParameters(const uint16_t *eeData)
         for(int j = 0; j < 32; j ++)
         {
             p = 32 * i +j;
-            params_alpha[p] = (eeData[64 + p] & 0x03F0) >> 4;
+            params_alpha[p] = (eeData[64 + p] & 0x03F0) >> 4; // 0 to 63
             if (params_alpha[p] > 31)
             {
-                params_alpha[p] = params_alpha[p] - 64;
+                params_alpha[p] = params_alpha[p] - 64; // -32 to 63
             }
-            params_alpha[p] = params_alpha[p]*(1 << accRemScale);
-            params_alpha[p] = (alphaRef + (accRow[i] << accRowScale) + (accColumn[j] << accColumnScale) + params_alpha[p]);
+            params_alpha[p] = params_alpha[p]*(1 << accRemScale); // 2.064.384 max
+            params_alpha[p] = (alphaRef + (accRow[i] << accRowScale) + (accColumn[j] << accColumnScale) + params_alpha[p]); // min = -524.288 max = 3.178.495
             params_alpha[p] = params_alpha[p] / pow(2,(double)alphaScale);
         }
     }
